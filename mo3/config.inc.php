@@ -1,17 +1,11 @@
 <?php
-if (IN_serendipity !== true) {
-  die ("Don't hack!");
-}
 
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
+if (IN_serendipity !== true) { die ("Don't hack!"); }
 
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-$serendipity['smarty']->assign(array('currpage' => "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']));
+$serendipity['smarty']->assign(array('currpage'  => "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],
+                                     'currpage2' => $_SERVER['REQUEST_URI']));
 
 $istok = " <img src='" . serendipity_getTemplateFile('img/ok.gif'). "' alt='' /> ";
 $notok = " <img src='" . serendipity_getTemplateFile('img/fehler.gif'). "' alt='' /> ";
@@ -392,7 +386,7 @@ for ($i = 0; $i < $template_loaded_config['sidebbarmenuesamount']; $i++) {
         'menuepoints'   => $menuepoints,
     );
 }
-$serendipity['smarty']->assign_by_ref('sbmenue1', $sbmenue1);
+$serendipity['smarty']->assignByRef('sbmenue1', $sbmenue1);
 
 $tabklotz1 = array();
 for ($i = 0; $i < $template_loaded_config['tabklotzamount']; $i++) {
@@ -457,7 +451,7 @@ for ($i = 0; $i < $template_loaded_config['tabklotzamount']; $i++) {
 
     );
 }
-$serendipity['smarty']->assign_by_ref('tabklotz1', $tabklotz1);
+$serendipity['smarty']->assignByRef('tabklotz1', $tabklotz1);
 
 $navlinks = array();
 for ($i = 0; $i < $template_loaded_config['amount']; $i++) {
@@ -512,7 +506,7 @@ for ($i = 0; $i < $template_loaded_config['amount']; $i++) {
         'dropdownentries' => $dropdownentries,
     );
 }
-$serendipity['smarty']->assign_by_ref('navlinks', $navlinks);
+$serendipity['smarty']->assignByRef('navlinks', $navlinks);
 
 $catlinks = array();
 
@@ -558,7 +552,7 @@ for ($i = 0; $i < $template_loaded_config['amount']; $i++) {
     );
 }
 
-$serendipity['smarty']->assign_by_ref('catlinks', $catlinks);
+$serendipity['smarty']->assignByRef('catlinks', $catlinks);
 
 /* disabled, as possible doublette of LINE 50
  $all_cats = serendipity_fetchCategories('all');
