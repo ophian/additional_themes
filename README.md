@@ -1,3 +1,3 @@
-# Additional themes for [Serendipity](https://s9y.org)
+# Additional themes for [Serendipity Styx](https://ophian.github.io/themes/)
 
-The themes contained here are automatically synced to SourceForge.NETs CVS service (once a day).
+The themes contained here are automatically synced by Spartacus.
