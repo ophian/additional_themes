@@ -1,17 +1,17 @@
 <!-- CONTENT START -->
-{if $searchresult_tooShort}
+{if NOT empty($searchresult_tooShort)}
 <h2>{$CONST.QUICKSEARCH}</h2>
 <p class="serendipity_search_tooshort">{$content_message}</p>
-{elseif $searchresult_error}
+{elseif NOT empty($searchresult_error)}
 <h2>{$CONST.QUICKSEARCH}</h2>
 <p class="serendipity_search_error">{$content_message}</p>
-{elseif $searchresult_noEntries}
+{elseif NOT empty($searchresult_noEntries)}
 <h2>{$CONST.QUICKSEARCH}</h2>
 <p class="serendipity_search_noentries">{$content_message}</p>
-{elseif $searchresult_results}
+{elseif NOT empty($searchresult_results)}
 <h2>{$CONST.QUICKSEARCH}</h2>
 <p class="serendipity_search_results">{$content_message}</p>
-{else}
+{else if NOT empty($content_message)}
 <p class="serendipity_content_message">{$content_message}</p>
 {/if}
 {$ENTRIES}

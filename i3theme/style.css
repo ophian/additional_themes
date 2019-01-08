@@ -1,4 +1,4 @@
-/*  
+/*
 Theme Name: i3Theme 1.6 Classic (Center Edition)
 Theme URI: http://www.mangoorange.com
 Description: WordPress theme designed by <a href="http://www.ndesign-studio.com">N.Design Studio</a>, customized by <a href="http://www.mangoorange.com">MangoOrange&trade;</a>, supported by <a href="http://www.webhostinggeeks.com/">Web Hosting Geeks</a>, sponsored by <a href="http://www.web-hosting-top.com/">Web Hosting Reviews &amp; Free Coupons</a> and <a href="http://www.b4udecide.com/">Cheap Web Hosting</a>.
@@ -7,74 +7,99 @@ Author: Mickey Cheong
 Author URI: http://www.mangoorange.com/about/
 
 	This theme was designed by Nick La, customized by Mickey Cheong Kah Meng.
-	
+
 	By downloading and using this theme, you agree to the following terms:
 		- You may NOT resell this theme
 		- A link back to N.Design Studio and MangoOrange™ must be retained in the footer (either modified or unmodified)
 		- You may use this theme for personal or commercial projects
 		- You may modify, translate or distribute
-   
+
    Sponsored by
-	   * Web Hosting Reviews & Free Coupons (http://www.web-hosting-top.com/)
-	   * Cheap Web Hosting (http://www.b4udecide.com/)
-	   
+	   - Web Hosting Reviews & Free Coupons (http://www.web-hosting-top.com/)
+	   - Cheap Web Hosting (http://www.b4udecide.com/)
+
    Supported by	
-   	* Web Hosting Geeks (http://www.webhostinggeeks.com)
-   	
+        - Web Hosting Geeks (http://www.webhostinggeeks.com)
+
   	Changelog
 	Version 1.6
-		* Site Admin link available in Meta [with icon modified from famfamfam's silk icons (http://famfamfam.com/)]
-		* 4 New Colours available: Grassy Green, Midnight Blue, Ruby Red, Snazzy Pink
-		* Original i3Theme has been renamed to i3Theme Classic
-		* Quote icon available for blockquoted text
-		* Enable coloured bullet points for List
-		* BUG-FIXED: Layout error when display non-exist post
-		* BUG-FIXED: Wrong CSS element [ol li] name
-	
+		- Site Admin link available in Meta [with icon modified from famfamfam's silk icons (http://famfamfam.com/)]
+		- 4 New Colours available: Grassy Green, Midnight Blue, Ruby Red, Snazzy Pink
+		- Original i3Theme has been renamed to i3Theme Classic
+		- Quote icon available for blockquoted text
+		- Enable coloured bullet points for List
+		- BUG-FIXED: Layout error when display non-exist post
+		- BUG-FIXED: Wrong CSS element [ol li] name
+
 	Version 1.5
-		* SEO-friendly header title
-		* Enable hierarchical structure for category's sidebar (for Widgets, use the 'Categories' widget)
-		* BUG-FIXED: (Only in IE6) Information overflow in the sidebar destroy the layout
-		* BUG-FIXED: Next/Previous link display the same [special thanks to Jamie(http://www.jessfortress.com/)]
-		* BUG-FIXED: Category icons missing when using Widgets' categories
-		* BUG-FIXED: Unable to work in WordPress 2.2 or lower [special thanks to mat(http://www.ekstasis.net/)]
-	
+		- SEO-friendly header title
+		- Enable hierarchical structure for category's sidebar (for Widgets, use the 'Categories' widget)
+		- BUG-FIXED: (Only in IE6) Information overflow in the sidebar destroy the layout
+		- BUG-FIXED: Next/Previous link display the same [special thanks to Jamie(http://www.jessfortress.com/)]
+		- BUG-FIXED: Category icons missing when using Widgets' categories
+		- BUG-FIXED: Unable to work in WordPress 2.2 or lower [special thanks to mat(http://www.ekstasis.net/)]
+
   	Version 1.4
-		* Availability of author credential of each post
-		* Improved blog header title with better navigation information
-		* Newly Support Plugins (means fully tested)
-		  * Paged Comments (http://www.keyvan.net/code/paged-comments/)
-		* BUG FIXED: Unable to display more than one row of sub navigation bar
-		* BUG FIXED: Wrong function name used, bloginfo() instead of get_bloginfo() [original iTheme code]
-		* BUG TEMP-FIXED: Temporary increase the length of the list to 2 times (over 2000px in height).
-  	
+		- Availability of author credential of each post
+		- Improved blog header title with better navigation information
+		- Newly Support Plugins (means fully tested)
+		  - Paged Comments (http://www.keyvan.net/code/paged-comments/)
+		- BUG FIXED: Unable to display more than one row of sub navigation bar
+		- BUG FIXED: Wrong function name used, bloginfo() instead of get_bloginfo() [original iTheme code]
+		- BUG TEMP-FIXED: Temporary increase the length of the list to 2 times (over 2000px in height).
+
   	Version 1.3.1
-		* BUG FIXED: Sub-navigation bar will be display regardless whether there are sub-categories
-  	
+		- BUG FIXED: Sub-navigation bar will be display regardless whether there are sub-categories
+
 	Version 1.3
-		* Optimised codings
-		* Fully tested on Internet Explorer 7, Firefox 2, Safari 3 and Opera 9
-		* Works on the latest Wordpress v2.3 release
-		* Newly Support Plugins (means fully tested)
-		  * Inline Adsense (http://philhord.com/phord/adsense-inline-with-wordpress-blog-posts/)
-		  * Secure Contact Form (http://blue-anvil.com/archives/secure-accessible-contact-form-for-wordpress-multi-user-version)
-		* BUG UNFIXED:
-			* IE7 unable to display the toggle button in Wordpress 2.2.3 
-				* SOLUTION: Upgrade to Wordpress 2.3
+		- Optimised codings
+		- Fully tested on Internet Explorer 7, Firefox 2, Safari 3 and Opera 9
+		- Works on the latest Wordpress v2.3 release
+		- Newly Support Plugins (means fully tested)
+		  - Inline Adsense (http://philhord.com/phord/adsense-inline-with-wordpress-blog-posts/)
+		  - Secure Contact Form (http://blue-anvil.com/archives/secure-accessible-contact-form-for-wordpress-multi-user-version)
+		- BUG UNFIXED:
+			- IE7 unable to display the toggle button in Wordpress 2.2.3 
+				- SOLUTION: Upgrade to Wordpress 2.3
 
   	Version 1.2
-		* Bug Fixed: Unable to display sub-navigation bar when using Widgets Plugin by Automattic
-		* Left and Right Edition made available.
+		- Bug Fixed: Unable to display sub-navigation bar when using Widgets Plugin by Automattic
+		- Left and Right Edition made available.
 
 	Version 1.1
-		* Support Widgets Plugin by Automattic.
-		* Support Recent Posts and Recent Comments widgets.
-		* Links sorted according to alphabetical order by default.
+		- Support Widgets Plugin by Automattic.
+		- Support Recent Posts and Recent Comments widgets.
+		- Links sorted according to alphabetical order by default.
 
 */
 
+*,*:before, *:after {
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative;
+}
+
+embed, object, audio, video, img {
+    max-width: 100%;
+}
+
+video, img {
+    height: auto;
+}
+
 body {
-	background: #42afdc url({TEMPLATE_PATH}img/html-bg.gif) repeat-x;
+	background: #42afdc url("{TEMPLATE_PATH}img/html-bg.gif") repeat-x;
 	font: 75%/170% Arial, Helvetica, sans-serif;
 	padding: 0px;
 	margin: 0px;
@@ -103,7 +128,7 @@ ul {
 ul li {
 	margin: 0px;
 	list-style: none;
-	background: url({TEMPLATE_PATH}img/bullet-orange.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/bullet-orange.gif") no-repeat;
 	padding-left: 20px;
 }
 ol {
@@ -121,13 +146,13 @@ small {
 	font-size: 90%;
 }
 blockquote{
-	background: url({TEMPLATE_PATH}img/blockquote.gif) no-repeat left top;
+	background: url("{TEMPLATE_PATH}img/blockquote.gif") no-repeat left top;
 	color: #777;
 	font-style: italic;
 	padding: 10px 5px 5px 36px;
 }
 #page {
-	background: url({TEMPLATE_PATH}img/main-bg.jpg) no-repeat center top;
+	background: url("{TEMPLATE_PATH}img/main-bg.jpg") no-repeat center top;
 }
 #wrapper {
 	width: 985px;
@@ -169,12 +194,12 @@ h1 a:hover {
 	position: absolute;
 	top: 0px;
 	right: 0px;
-	background: url({TEMPLATE_PATH}img/searchform-bg.png) no-repeat right bottom;
+	background: url("{TEMPLATE_PATH}img/searchform-bg.png") no-repeat right bottom;
 	height: 37px;
-	width: 210px;
+	width: 21.32%/*210px;*/
 }
 #searchform #s{
-	background: #ffffff url({TEMPLATE_PATH}img/form-field-bg.gif) no-repeat ;
+	background: #ffffff url("{TEMPLATE_PATH}img/form-field-bg.gif") no-repeat ;
 	height: 17px;
 	width: 148px;
 	margin: 6px 5px 0px 10px;
@@ -183,7 +208,7 @@ h1 a:hover {
 	border: none;
 }
 #searchform #searchsubmit { 
-	background: url({TEMPLATE_PATH}img/search-btn.png) no-repeat left top;
+	background: url("{TEMPLATE_PATH}img/search-btn.png") no-repeat left top;
 	height: 24px;
 	width: 24px;
 	border: none;
@@ -194,13 +219,26 @@ h1 a:hover {
 
 /* ------------------------------------- main content area  */
 #left-col {
-	width: 545px;
+	width: 545px;/*55.33%;=545px;*/
 	float: left;
 	margin-top: 11px;
 }
+/* + 21.32% = 76.65% - 755px both missing sidebars = 97.97% so the resting margins is (20px) 2.03% / 2 = 1.015% (10px) which we add to */
+#left-col.left-0,
+#left-col.right-0 {
+    width: 765px/*77.665%;/* 76.65% + 1.015% */
+}
+/* + 21.32% = 97.97% - 965px full view = 100% so the margins will be (20px) 2.03% / 2 = 1.015% (10px) were added to the left-col + 1 sidebar */
+#left-col.left-0.right-0 {
+    width: 985px;/*100%;*/
+}
 /* main menu */
 #nav {
-	background: url({TEMPLATE_PATH}img/content-top-bg.png) no-repeat left top;
+	background: url("{TEMPLATE_PATH}img/content-top-bg.png") no-repeat left top;
+    background-color: #fff;
+    background-image: -webkit-linear-gradient(top, #ffffff, #cccccc);
+    background-image: linear-gradient(to bottom, #ffffff, #bdbdbd);
+    border-bottom: solid 2px #bbb;
 	height: 26px;
 }
 #nav ul{
@@ -227,7 +265,7 @@ h1 a:hover {
 }
 #nav li a:hover, #nav .current_page_item a, #nav .current_page_item a:visited{
 	text-decoration: none;
-	background: #2e91c6 url({TEMPLATE_PATH}img/nav-item-hover.gif) repeat-x;
+	background: #2e91c6 url("{TEMPLATE_PATH}img/nav-item-hover.gif") repeat-x;
 	color: #ffffff;
 }
 /* sub menu */
@@ -264,7 +302,7 @@ h1 a:hover {
 /* content */
 #content {
 	padding: 25px 25px 15px 25px;
-	width: 495px;
+	width: 100%;
 	background: #ffffff;
 	clear: both;
 	overflow: hidden;
@@ -277,7 +315,7 @@ h1 a:hover {
 .post .date {
 	height: 50px;
 	width: 45px;
-	background: url({TEMPLATE_PATH}img/calendar.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/calendar.gif") no-repeat;
 	font: normal 22px Arial, Helvetica, sans-serif;
 	color: #666666;
 	text-align: center;
@@ -311,17 +349,17 @@ h1 a:hover {
 	text-decoration: none;
 }
 .postdata .category{
-	background: url({TEMPLATE_PATH}img/mini-category.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/mini-category.gif") no-repeat;
 	padding-left: 18px;
 	float: left;
 }
 .postdata .comments{
-	background: url({TEMPLATE_PATH}img/mini-comment.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/mini-comment.gif") no-repeat;
 	padding-left: 18px;
 	float: right;
 }
 .mini-add-comment {
-	background: url({TEMPLATE_PATH}img/mini-down-arrow.gif) no-repeat left center;
+	background: url("{TEMPLATE_PATH}img/mini-down-arrow.gif") no-repeat left center;
 	padding-left: 12px;
 	float: right;
 }
@@ -359,7 +397,9 @@ h3 {
 /* next & previous page navigation */
 .page-nav {
 	clear: both;
-	background: url({TEMPLATE_PATH}img/navigation-bg.gif) no-repeat left center;
+/*	background: url("{TEMPLATE_PATH}img/navigation-bg.gif") no-repeat left center;*/
+    background-color: #888;
+    border-radius: 1em;
 	height: 21px;
 }
 .page-nav a, .page-nav a:visited {
@@ -374,13 +414,13 @@ h3 {
 	float: left;
 	padding-left: 10px;
 	margin-left: 10px;
-	background: url({TEMPLATE_PATH}img/navigation-left.gif) no-repeat left center;
+	background: url("{TEMPLATE_PATH}img/navigation-left.gif") no-repeat left center;
 }
 .next-entries a {
 	float: right;
 	padding-right: 10px;
 	margin-right: 10px;
-	background: url({TEMPLATE_PATH}img/navigation-right.gif) no-repeat right center;
+	background: url("{TEMPLATE_PATH}img/navigation-right.gif") no-repeat right center;
 }
 
 /* next & previous post navigation */
@@ -401,24 +441,24 @@ h3 {
 .post-nav .previous a {
 	float: left;
 	padding-left: 20px;
-	background: url({TEMPLATE_PATH}img/post-nav-previous.gif) no-repeat left center;
+	background: url("{TEMPLATE_PATH}img/post-nav-previous.gif") no-repeat left center;
 }
 .post-nav .next a {
 	float: right;
 	padding-right: 20px;
 	text-align: right;
-	background: url({TEMPLATE_PATH}img/post-nav-next.gif) no-repeat right center;
+	background: url("{TEMPLATE_PATH}img/post-nav-next.gif") no-repeat right center;
 }
 
 /* ------------------------------------- comment area  */
 /*h3#comments {
-	background: url({TEMPLATE_PATH}img/comments.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/comments.gif") no-repeat;
 	padding-left: 22px;
 	font: normal 140%/120% Arial, Helvetica, sans-serif;
 	clear: both;
 }*/
 h3#respond {
-	background: url({TEMPLATE_PATH}img/respond.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/respond.gif") no-repeat;
 	padding-left: 22px;
 	font: normal 140%/120% Arial, Helvetica, sans-serif;
 	margin: 20px 0px 0px;
@@ -442,7 +482,7 @@ h3#respond {
 	font: 110% Arial, Helvetica, sans-serif;
 	width: 220px;
 	padding: 5px 3px 3px 7px;
-	background: url({TEMPLATE_PATH}img/form-field-bg.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/form-field-bg.gif") no-repeat;
 	border-top: 1px solid #e6e6e6;
 	border-right: 1px solid #E2E2E2;
 	border-bottom: 1px solid #E2E2E2;
@@ -452,14 +492,14 @@ h3#respond {
 	font: 110% Arial, Helvetica, sans-serif;
 	width: 480px;
 	height: 140px;
-	background:url({TEMPLATE_PATH}img/form-field-bg.gif) no-repeat;
+	background:url("{TEMPLATE_PATH}img/form-field-bg.gif") no-repeat;
 	border: solid 1px #e6e6e6;
 	padding: 5px 3px 3px 7px;
 }
 #commentform #submit {
 	font: 12px/100% Arial, Helvetica, sans-serif;
 	color: #000000;
-	background: url({TEMPLATE_PATH}img/submit-btn.gif) no-repeat top left;
+	background: url("{TEMPLATE_PATH}img/submit-btn.gif") no-repeat top left;
 	border: none;
 	width: 135px;
 	height: 25px;
@@ -467,7 +507,7 @@ h3#respond {
 	margin-left: 355px;
 }
 #commentform #submit:hover {
-	background: url({TEMPLATE_PATH}img/submit-btn.gif) no-repeat bottom left;
+	background: url("{TEMPLATE_PATH}img/submit-btn.gif") no-repeat bottom left;
 }
 #commentform textarea:focus, #commentform input[type="text"]:focus {
 	border: solid 1px #3b9acc;
@@ -502,11 +542,30 @@ h3#respond {
 .commentlist small a, .commentlist small a:visited{
 	color: #999999;
 }
+.serendipity_comment_author_self .serendipity_comment_source .pc-owner,
+.serendipity_comment_author_self .comment_header .pc-owner {
+    background: #3e5f81e6;
+    padding: .1em .25em;
+    border-radius: 3px;
+    color: #efefef;
+    text-shadow: 1px 1px 2px #222;
+}
+.comments_by_author_pagination {
+    text-align: center;
+}
+.comments_by_author_pagination.top {
+    margin-top: 1em;
+}
+.comments_by_author_pagination.bottom {
+    margin: 2em auto;
+}
 
 /* ------------------------------------- footer area  */
 #footer {
-	background: url({TEMPLATE_PATH}img/content-bottom-bg.png) no-repeat;
-	padding: 12px 0px 0px 10px;
+/*	background: url("{TEMPLATE_PATH}img/content-bottom-bg.png") no-repeat;*/
+    background-color: #fff;
+    border-radius: 0 0 1em 1em;
+/*	padding: 12px 0px 0px 10px;*/
 	font-size: 87%;
 	color: #282828;
 	line-height: 15px;
@@ -522,7 +581,7 @@ h3#respond {
 /* ------------------------------------- sidebar area  */
 /* sidebar */
 #sidebar-right{
-	float:right;
+	float: right;
 	margin-left: 10px;
 }
 #sidebar-left {
@@ -531,7 +590,7 @@ h3#respond {
 }
 #sidebar-right,
 #sidebar-left {
-	width: 210px;
+	width: 21.32%;/*210px;*/
 	color: #666666;
 	line-height: 160%;	
 }
@@ -569,23 +628,23 @@ h3#respond {
 }
 #sidebar-right ul li, 
 #sidebar-left ul li {
-	background: url({TEMPLATE_PATH}img/bullet-orange.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/bullet-orange.gif") no-repeat;
 	padding-left: 18px ;
 }
 #sidebar-right ul li ul li, 
 #sidebar-left ul li ul li {
-	background: url({TEMPLATE_PATH}img/bullet-grey.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/bullet-grey.gif") no-repeat;
 	padding-left: 12px ;
 }
 
 /* ------------------------------------- widget styles  */
 /* archives widget */
 #archives ul li {
-	background: url({TEMPLATE_PATH}img/mini-archive.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/mini-archive.gif") no-repeat;
 }
 /* recent comments widget */
 #recent-comments ul li {
-	background: url({TEMPLATE_PATH}img/mini-comment.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/mini-comment.gif") no-repeat;
 }
 /* category widget */
 #categories ul li,
@@ -598,31 +657,31 @@ h3#respond {
 #categories-7 ul li,
 #categories-8 ul li,
 #categories-9 ul li {
-	background: url({TEMPLATE_PATH}img/mini-category.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/mini-category.gif") no-repeat;
 }
 /* recent posts widget */
 #recent-posts ul li {
-	background: url({TEMPLATE_PATH}img/mini-page.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/mini-page.gif") no-repeat;
 }
 /* links widget */
 #links ul li {
-	background: url({TEMPLATE_PATH}img/mini-blogroll.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/mini-blogroll.gif") no-repeat;
 }
 /* meta */
 #meta .site_admin {
-	background: url({TEMPLATE_PATH}img/cog.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/cog.gif") no-repeat;
 }
 #meta .rss {
-	background: url({TEMPLATE_PATH}img/mini-rss.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/mini-rss.gif") no-repeat;
 }
 #meta .login {
-	background: url({TEMPLATE_PATH}img/mini-user.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/mini-user.gif") no-repeat;
 }
 #meta .check {
-	background: url({TEMPLATE_PATH}img/mini-check.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/mini-check.gif") no-repeat;
 }
 #meta .wordpress {
-	background: url({TEMPLATE_PATH}img/mini-wp.gif) no-repeat;
+	background: url("{TEMPLATE_PATH}img/mini-wp.gif") no-repeat;
 }
 /* calendar */
 #calendar table {

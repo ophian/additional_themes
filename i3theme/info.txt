@@ -1,4 +1,4 @@
 Name: i3Theme 1.6 (2013-10-26)
 Author: N.Design Studio & MangoOrange, ported to s9y by YellowLed
-Date: 2013-10-26
+Date: 2018-12-04
 Require Serendipity: 1.1
