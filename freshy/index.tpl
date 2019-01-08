@@ -36,7 +36,6 @@
     <link rel="pingback" href="{$serendipityBaseURL}comment.php?type=pingback&amp;entry_id={$entry_id}" />
 {/if}
 {serendipity_hookPlugin hook="frontend_header"}
-{if $serendipityVersion>=1.1}
 	<style type="text/css">
 	<!--
 		{if $template_option.freshyheader!="" and $template_option.freshyheader!="custom"}
@@ -62,9 +61,6 @@
 		{/if}
 	-->
 	</style>
-{else}
-<!-- users of s9y <1.1 enter options here -->
-{/if}
 </head>
 
 <body>
@@ -87,27 +83,15 @@
 	</div>
 <div id="frame">
 	<ul class="menu">
-
-		{if $serendipityVersion<1.1}
-			<li class="{if $startpage}current_{/if}page_item">
-				<a class="first_menu" href="{$serendipityBaseURL}">{$CONST.FRESHY_NAVLINK_HOME}</a>
-			</li>
-			<!-- users of s9y <1.1 enter links here -->
-			<!-- Sample link
-			<li class="{if $currpage=="http://yoursite.com"}current_{/if}page_item"><a href="http://yoursite.com" title="Junior parties">Junior parties</a></li>
-			-->
-			<li class="{if $currpage=="http://yoursite.com"}current_page_item{/if} last_menu"><a href="#" class="{if $currpage=="http://yoursite.com"}last_menu{/if} last_menu_off" ></a></li>
-		{else}
-			<li class="{if $startpage}current_{/if}page_item">
-				<a class="first_menu" href="{$serendipityBaseURL}">{$template_option.homelinklabel}</a>
-			</li>
-			{foreach from=$navlinks item="navlink"}
-					{if !($navlink.href=="#" || $navlink.href=="")}
-						<li class="{if $currpage==$navlink.href}current_{/if}page_item"><a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a></li>
-					{/if}
-			{/foreach}
-		    <li class="{if $currpage==$template_option.navlinkurllast}current_page_item {/if}last_menu"><a href="{$template_option.navlinkurllast}" class="{if $currpage==$template_option.navlinkurllast}last_menu_off {/if}last_menu" title="{$template_option.navlinklabellast}">{$template_option.navlinklabellast}</a></li>
-		{/if}
+        <li class="{if $startpage}current_{/if}page_item">
+            <a class="first_menu" href="{$serendipityBaseURL}">{$template_option.homelinklabel}</a>
+        </li>
+{foreach from=$navlinks item="navlink"}
+    {if !($navlink.href=="#" || $navlink.href=="")}
+        <li class="{if $currpage==$navlink.href}current_{/if}page_item"><a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a></li>
+    {/if}
+{/foreach}
+        <li class="{if $currpage==$template_option.navlinkurllast}current_page_item {/if}last_menu"><a href="{$template_option.navlinkurllast}" class="{if $currpage==$template_option.navlinkurllast}last_menu_off {/if}last_menu" title="{$template_option.navlinklabellast}">{$template_option.navlinklabellast}</a></li>
 	</ul>
 <hr style="display:none"/>
 	<div id="content">
