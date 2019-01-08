@@ -1,12 +1,8 @@
-<?php #
+<?php
 
-$probelang = dirname(__FILE__) . '/lang_' . $serendipity['lang'] . '.inc.php';
+if (IN_serendipity !== true) { die ("Don't hack!"); }
 
-if (file_exists($probelang)) {
-    include $probelang;
-} else {
-    include dirname(__FILE__) . '/lang_en.inc.php';
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 @define('HEMINGWAY_DATE_DDMMYYYY', '%d.%m.%Y');
 @define('HEMINGWAY_DATE_MMDDYYYY', '%m.%d.%Y');
@@ -68,4 +64,3 @@ $template_config = array(
  );
 
 $template_config_groups = NULL;
-?>

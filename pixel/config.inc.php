@@ -1,18 +1,11 @@
 <?php
-if (IN_serendipity !== true) {
-  die ("Don't hack!");
-}
 
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
+if (IN_serendipity !== true) { die ("Don't hack!"); }
 
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-$serendipity['smarty']->assign(array('currpage'=> "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']));
-$serendipity['smarty']->assign(array('currpage2'=> $_SERVER['REQUEST_URI']));
+$serendipity['smarty']->assign(array('currpage'  => "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],
+                                     'currpage2' => $_SERVER['REQUEST_URI']));
 
 $template_config = array(
     array(
@@ -53,33 +46,17 @@ $template_config = array(
     )
 );
 
+$top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
 $template_config_groups = NULL;
+$template_global_config = array('navigation' => true);
+$template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
+serendipity_loadGlobalThemeOptions($template_config, $template_loaded_config, $template_global_config);
 
-$template_loaded_config = serendipity_loadThemeOptions($template_config, $serendipity['smarty_vars']['template_option']);
-
-$navlinks = array();
-
-for ($i = 0; $i < $template_loaded_config['amount']; $i++) {
-    $navlinks[] = array(
-        'title' => $template_loaded_config['navlink' . $i . 'text'],
-        'href'  => $template_loaded_config['navlink' . $i . 'url']
-    );
-    $template_config[] = array(
-        'var'           => 'navlink' . $i . 'text',
-        'name'          => NAV_LINK_TEXT . ' #' . $i,
-        'type'          => 'string',
-        'default'       => 'Link #' . $i,
-        );
-    $template_config[] = array(
-        'var'           => 'navlink' . $i . 'url',
-        'name'          => NAV_LINK_URL . ' #' . $i,
-        'type'          => 'string',
-        'default'       => '#',
-    );
+if (isset($_SESSION['serendipityUseTemplate'])) {
+    $template_loaded_config['use_corenav'] = false;
 }
 
-$serendipity['smarty']->assign_by_ref('navlinks', $navlinks);
 $topSidebarElements = serendipity_plugin_api::count_plugins('top');
-$serendipity['smarty']->assign_by_ref('topSidebarElements', $topSidebarElements);
+$serendipity['smarty']->assignByRef('topSidebarElements', $topSidebarElements);
 $botSidebarElements = serendipity_plugin_api::count_plugins('bot');
-$serendipity['smarty']->assign_by_ref('botSidebarElements', $botSidebarElements);
+$serendipity['smarty']->assignByRef('botSidebarElements', $botSidebarElements);

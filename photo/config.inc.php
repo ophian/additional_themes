@@ -33,8 +33,6 @@ if (is_array($required_fieldlist)) {
     $serendipity['smarty']->assign('required_fields', $smarty_required_fields);
 }
 
-$serendipity['smarty']->assign('is_templatechooser', $_SESSION['serendipityUseTemplate']);
-
 $template_config = array(
     array(
         'var' => 'about',
@@ -126,12 +124,6 @@ $template_config = array(
                                 '%Y-%m-%d' => '%Y-%m-%d')
     ),
     array(
-        'var' => 'userstyles',
-        'name' => PHOTO_USERSTYLES,
-        'type' => 'boolean',
-        'default' => false
-    ),
-    array(
         'var' => 'use_corenav',
         'name' => TWOK11_USE_CORENAV,
         'type' => 'boolean',
@@ -141,9 +133,10 @@ $template_config = array(
 
 $template_config['sidebars'] = array('hide,bottom');
 $serendipity['sidebars'] = array('hide', 'bottom');
+$top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
 $template_config_groups = NULL;
 $template_global_config = array('navigation' => true);
-$template_loaded_config = serendipity_loadThemeOptions($template_config, $serendipity['smarty_vars']['template_option'], true);
+$template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
 serendipity_loadGlobalThemeOptions($template_config, $template_loaded_config, $template_global_config);
 
 function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$addData) {
@@ -152,7 +145,7 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
         case 'js':
             global $serendipity;
             $template_config = array();
-            $template_loaded_config = serendipity_loadThemeOptions($template_config, $serendipity['smarty_vars']['template_option'], true);
+            $template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
 
             if (! isset($template_loaded_config['lazyload']) || $template_loaded_config['lazyload'] == true) {
                 echo "(function( $ ) {
@@ -192,7 +185,7 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
         case 'frontend_display':
             global $serendipity;
             $template_config = array();
-            $template_loaded_config = serendipity_loadThemeOptions($template_config, $serendipity['smarty_vars']['template_option'], true);
+            $template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
             
             if (! isset($template_loaded_config['lazyload']) || $template_loaded_config['lazyload'] == true) {
                 $text = $eventData['body'];
@@ -211,4 +204,3 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
 if ($_SESSION['serendipityUseTemplate']) {
     $template_loaded_config['use_corenav'] = false;
 }
-

@@ -1,10 +1,8 @@
 <?php
 
-if (IN_serendipity !== true) {
-  die ("Don't hack!");
-}
+if (IN_serendipity !== true) { die ("Don't hack!"); }
 
-include dirname(__FILE__) . '/lang_de.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 $template_config = array(
     array(
@@ -39,29 +37,12 @@ $template_config = array(
     ),
 );
 
+$top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
 $template_config_groups = NULL;
-$template_loaded_config = serendipity_loadThemeOptions($template_config, $serendipity['smarty_vars']['template_option']);
+$template_global_config = array('navigation' => true);
+$template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
+serendipity_loadGlobalThemeOptions($template_config, $template_loaded_config, $template_global_config);
 
-$navlinks = array();
-
-for ($i = 0; $i < $template_loaded_config['amount']; $i++) {
-    $navlinks[] = array(
-        'title' => $template_loaded_config['navlink' . $i . 'text'],
-        'href'  => $template_loaded_config['navlink' . $i . 'url']
-    );
-    $template_config[] = array(
-        'var'           => 'navlink' . $i . 'text',
-        'name'          => 'Navigation Titel #' . $i,
-        'type'          => 'string',
-        'default'       => 'Titel #' . $i,
-        );
-    $template_config[] = array(
-        'var'           => 'navlink' . $i . 'url',
-        'name'          => 'Navigation Link #' . $i,
-        'type'          => 'string',
-        'default'       => 'Link #' . $i,
-    );
+if (isset($_SESSION['serendipityUseTemplate'])) {
+    $template_loaded_config['use_corenav'] = false;
 }
-
-$serendipity['smarty']->assign_by_ref('navlinks', $navlinks);
-?>

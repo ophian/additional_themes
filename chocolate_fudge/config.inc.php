@@ -1,4 +1,7 @@
 <?php
+
+if (IN_serendipity !== true) { die ("Don't hack!"); }
+
 @define('READ_MORE', 'Read More');
 @define('DATE_CHOCOLATE_THEME', '%B %e. %Y');
 

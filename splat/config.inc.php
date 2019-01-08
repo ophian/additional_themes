@@ -1,4 +1,7 @@
-<?php #
+<?php
+
+if (IN_serendipity !== true) { die ("Don't hack!"); }
+
 $template_config = array(
     array(
         'var'           => 'navlink1text',
@@ -59,4 +62,3 @@ $template_config = array(
 );
 
 $template_config_groups = NULL;
-?>

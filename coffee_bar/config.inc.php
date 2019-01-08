@@ -1,7 +1,9 @@
-<?php #
+<?php
+
+if (IN_serendipity !== true) { die ("Don't hack!"); }
 
 $template_config = array(
- array(
+    array(
         'var'           => 'colorset',
         'name'          => 'Color Set',
         'description'   => 'Enter the color set you want to use for this site',
@@ -68,4 +70,3 @@ $template_config = array(
 );
 
 $template_config_groups = NULL;
-?>

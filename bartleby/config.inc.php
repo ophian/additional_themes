@@ -2,7 +2,6 @@
 if (IN_serendipity !== true) { die ("Don't hack!"); }
 
 @serendipity_plugin_api::load_language(dirname(__FILE__). '/../2k11');
-@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 $serendipity['smarty']->assign(array('currpage'  => "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],
                                      'currpage2' => $_SERVER['REQUEST_URI']));
@@ -27,8 +26,6 @@ if (is_array($required_fieldlist)) {
     $serendipity['smarty']->assign('required_fields', $smarty_required_fields);
 }
 
-$serendipity['smarty']->assign('is_templatechooser', $_SESSION['serendipityUseTemplate']);
-
 $template_config = array(
     array(
         'var' => 'date_format',
@@ -49,34 +46,30 @@ $template_config = array(
     ),
     array(
         'var' => 'font_style',
-        'name' => B6Y_FONTS,
+        'name' => 'Webfonts',
         'type' => 'radio',
         'default' => 'sans',
         'radio' => array('value' => array('sans', 'serif'),
                          'desc' => array('Sans-Serif', 'Serif'))
     ),
     array(
-        'var' => 'userstyles',
-        'name' => B6Y_USERSTYLES,
-        'type' => 'boolean',
-        'default' => false
-    ),
-    array(
         'var' => 'use_corenav',
         'name' => TWOK11_USE_CORENAV,
         'type' => 'boolean',
-        'default' => false
+        'default' => false,
     )
+
 );
 
-$template_config['sidebars'] = array('hide,bottom');
+#$template_config['sidebars'] = array('hide, bottom');
 $serendipity['sidebars'] = array('hide', 'bottom');
+
+$top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
 $template_config_groups = NULL;
 $template_global_config = array('navigation' => true);
-$template_loaded_config = serendipity_loadThemeOptions($template_config, $serendipity['smarty_vars']['template_option'], true);
+$template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
 serendipity_loadGlobalThemeOptions($template_config, $template_loaded_config, $template_global_config);
 
-if ($_SESSION['serendipityUseTemplate']) {
+if (isset($_SESSION['serendipityUseTemplate'])) {
     $template_loaded_config['use_corenav'] = false;
 }
-

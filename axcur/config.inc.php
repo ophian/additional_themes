@@ -1,17 +1,11 @@
 <?php
-if (IN_serendipity !== true) {
-  die ("Don't hack!");
-}
 
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
+if (IN_serendipity !== true) { die ("Don't hack!"); }
 
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-$serendipity['smarty']->assign(array('currpage'=> "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']));
+$serendipity['smarty']->assign(array('currpage'  => "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],
+                                     'currpage2' => $_SERVER['REQUEST_URI']));
 
 $xxsbmtarget      = array ("self Window","new Window", "new Window with nofollow");
 $xxmenuepsition   = array("side-bar-top","side-bar-bottom", "feature-bar-top",  "feature-bar-bottom","news-bar-top","news-bar-bottom","news-bar-middle","footer-l","footer-m","footer-r","footer-b","disable");
@@ -74,9 +68,15 @@ $template_config = array(
 
 );
 
+$top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
 $template_config_groups = NULL;
+$template_global_config = array('navigation' => true);
+$template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
+serendipity_loadGlobalThemeOptions($template_config, $template_loaded_config, $template_global_config);
 
-$template_loaded_config = serendipity_loadThemeOptions($template_config, $serendipity['smarty_vars']['template_option']);
+if (isset($_SESSION['serendipityUseTemplate'])) {
+    $template_loaded_config['use_corenav'] = false;
+}
 
 $sbmenue1 = array();
 
@@ -152,7 +152,7 @@ for ($i = 0; $i < $template_loaded_config['sidebbarmenuesamount']; $i++) {
     );
 }
 
-$serendipity['smarty']->assign_by_ref('sbmenue1', $sbmenue1);
+$serendipity['smarty']->assignByRef('sbmenue1', $sbmenue1);
 
 $navlinks = array();
 for ($i = 0; $i < $template_loaded_config['amount']; $i++) {
@@ -208,7 +208,7 @@ for ($i = 0; $i < $template_loaded_config['amount']; $i++) {
     );
 }
 
-$serendipity['smarty']->assign_by_ref('navlinks', $navlinks);
+$serendipity['smarty']->assignByRef('navlinks', $navlinks);
 
 /* disables, as it seems to be doublette of fixed Line 23ff
 $all_cats   = serendipity_fetchCategories('all');

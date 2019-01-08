@@ -1,17 +1,11 @@
 <?php
-if (IN_serendipity !== true) {
-  die ("Don't hack!");
-}
 
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
+if (IN_serendipity !== true) { die ("Don't hack!"); }
 
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-$serendipity['smarty']->assign(array('currpage'=> "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']));
+$serendipity['smarty']->assign(array('currpage'  => "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],
+                                     'currpage2' => $_SERVER['REQUEST_URI']));
 
 $footerposition= array( "left-column",  "middle-column", "right-column","disable");
 
@@ -196,7 +190,7 @@ for ($i = 0; $i < $template_loaded_config['sidebbarmenuesamount']; $i++) {
         'menuepoints'      => $menuepoints,
     );
 }
-$serendipity['smarty']->assign_by_ref('sbmenue1', $sbmenue1);
+$serendipity['smarty']->assignByRef('sbmenue1', $sbmenue1);
 
 $navlinks = array();
 for ($i = 0; $i < $template_loaded_config['amount']; $i++) {
@@ -251,7 +245,7 @@ for ($i = 0; $i < $template_loaded_config['amount']; $i++) {
         'dropdownentries'   => $dropdownentries,
     );
 }
-$serendipity['smarty']->assign_by_ref('navlinks', $navlinks);
+$serendipity['smarty']->assignByRef('navlinks', $navlinks);
 
  $all_cats = serendipity_fetchCategories('all');
  $categories = serendipity_walkRecursive($categories, 'categoryid', 'parentid', VIEWMODE_THREADED);
@@ -267,7 +261,7 @@ $serendipity['smarty']->assign('catx3_cat', $catsel[$template_loaded_config['cat
 // CODE EXAMPLE:  How to save custom field variables within the serendipity "Edit/Create Entry" backend.
 //                Any custom variables can later be queried inside the .tpl files through
 //                  {if $entry.properties.special_switch == 'true'}...{/if}
-// NOTE THAT THE PROPERTY IS ACCED *WITHOUT* the ep_ prefix! EP_ only comes from entryproperties.
+// NOTE THAT THE PROPERTY IS ADDED *WITHOUT* the ep_ prefix! EP_ only comes from entryproperties.
 
 // Helper function to get the variable content of a variable (TRUE/FALSE)
 function helper_get_value($special_key, &$eventData) {
