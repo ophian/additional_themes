@@ -6,17 +6,17 @@
 <!--[if gt IE 8]><!--> <html class="no-js {$template_option.font_style}" lang="{$lang}"> <!--<![endif]-->
 <head>
     <meta charset="{$head_charset}">
-    <title>{$head_title|@default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
-    <meta name="generator" content="Serendipity v.{$head_version}">
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+    <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
+    <meta name="generator" content="Serendipity v.{$serendipityVersion}">
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow">
 {else}
     <meta name="robots" content="noindex,follow">
 {/if}
-{if ($view == "entry")}
+{if $view == 'entry' AND isset($entry)}
     <link rel="canonical" href="{$entry.rdf_ident}">
 {/if}
-{if ($view == "start")}
+{if in_array($view, ['start', 'entries'])}
     <link rel="canonical" href="{$serendipityBaseURL}">
 {/if}
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,7 +60,7 @@
     </header>
     {if $template_option.use_corenav}
         <nav id="primary-nav">
-            <ul class="clearfix">{foreach from=$navlinks item="navlink" name="sbnav"}{if $navlink.title!=""&&$navlink.href!=""}<li>{if $currpage==$navlink.href or $currpage2==$navlink.href}<span>{else}<a href="{$navlink.href}">{/if}{$navlink.title}{if $currpage==$navlink.href or $currpage2==$navlink.href}</span>{else}</a>{/if}</li>{/if}{/foreach}</ul>
+            <ul class="clearfix">{foreach $navlinks AS $navlink}{if $navlink.title!=""&&$navlink.href!=""}<li>{if $currpage==$navlink.href or $currpage2==$navlink.href}<span>{else}<a href="{$navlink.href}">{/if}{$navlink.title}{if $currpage==$navlink.href or $currpage2==$navlink.href}</span>{else}</a>{/if}</li>{/if}{/foreach}</ul>
         </nav>
     {/if}
 
