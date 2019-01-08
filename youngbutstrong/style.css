@@ -1,3 +1,27 @@
+/* General Styles */
+@-ms-viewport {
+  width: device-width;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative;
+}
+
+embed, object, audio, video, img {
+    max-width: 100%;
+}
+
+video, img {
+    height: auto;
+}
+
+pre {
+    display: block;
+}
+
 /*
 ** YoungButStrong
 ** Theme by Stefan2k1
@@ -5,7 +29,7 @@
 ** http://www.hungryhacker.com/
 */
 
-a {
+a, .dtree a {
 	color: #dabc73;
 	text-decoration: underline;
 }
@@ -168,7 +192,8 @@ div.navigation {
 }
 
 div.box_right {
-	width: 201px;
+	color: #adadad;
+    width: 201px;
 	margin-bottom: 20px;
 	padding-bottom: 15px line-height: 20px;
 	background: #2d251c url('{TEMPLATE_PATH}images/box_right_bg.gif') repeat-x;
@@ -249,4 +274,28 @@ td.serendipity_calendarDay {
 
 td.serendipity_weekDayName {
 	color: #ffffff;
+}
+
+.commentlist {
+    padding: 0;
+}
+.serendipity_commentBody {
+    margin: 1em auto;
+}
+.serendipity_comment_author_self .serendipity_comment_source .pc-owner,
+.serendipity_comment_author_self .comment_header .pc-owner {
+    background: #3e5f81e6;
+    padding: .1em .25em;
+    border-radius: 3px;
+    color: #efefef;
+    text-shadow: 1px 1px 2px #222;
+}
+.comments_by_author_pagination {
+    text-align: center;
+}
+.comments_by_author_pagination.top {
+    margin-top: 1em;
+}
+.comments_by_author_pagination.bottom {
+    margin: 2em auto;
 }

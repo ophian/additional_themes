@@ -6,18 +6,19 @@
 {/if}
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 	<head>
-		<title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+		<title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
 		<meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
 		<meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-    {if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
         <meta name="robots" content="index,follow" />
     {else}
         <meta name="robots" content="noindex,follow" />
     {/if}
-    {if ($view == "entry")}
+    {if $view == 'entry' AND isset($entry)}
         <link rel="canonical" href="{$entry.rdf_ident}" />
     {/if}
-    {if ($view == "start")}
+    {if in_array($view, ['start', 'entries'])}
         <link rel="canonical" href="{$serendipityBaseURL}" />
     {/if}
 		<link rel="stylesheet" type="text/css" href="{$head_link_stylesheet}" />
@@ -34,7 +35,7 @@
 {/if}
 		<div id="container">
 			<div id="logo">
-				<h1><a href="{$serendipityBaseURL}"><span>{$head_title|@default:$blogTitle}</span></a></h1>
+				<h1><a href="{$serendipityBaseURL}"><span>{$head_title|default:$blogTitle}</span></a></h1>
 			</div>
 			<div id="ad_space">&nbsp;</div>
 			<div id="top"></div>
@@ -47,7 +48,7 @@
 {serendipity_printSidebar side="right"}
 				</div>
 {/if}
-			</div>
+			</div><!-- //content end -->
 			<div id="footer"></div>
 		</div>
 <!--
@@ -56,7 +57,7 @@ the Sponsored Links in the Footer !
 If you remove them, you are not allowed to use this Theme anymore,
 you have to remove it then from your Blog !
 // -->
-		<div id="footer_sponsors">
+		<div id="footer_sponsors" rel="nofollow">
 			Wordpress Template by <a href="http://www.fachwissen-katalog.de" title="Artikelverzeichnis" target="_blank">Artikelverzeichnis</a> |
 			Ported by <a href="http://www.hungryhacker.com/">fwaggle</a> and <a href="http://www.infectedloser.com/">sabriena</a>
 		</div>
@@ -66,6 +67,7 @@ the Sponsored Links in the Footer !
 If you remove them, you are not allowed to use this Theme anymore,
 you have to remove it then from your Blog !
 // -->
+
 {if $is_embedded != true}
 	</body>
 </html>
