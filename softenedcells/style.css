@@ -1,9 +1,23 @@
 /* General Styles */
-p {
-  line-height: 20px;
-  padding: 8px 0 8px 5px;
-  margin: 5px 0 5px 0;
+@-ms-viewport {
+  width: device-width;
 }
+
+img {
+    border: 0;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative;
+}
+
+embed, object, audio, video, img {
+    max-width: 100%;
+}
+
+video, img {
+    height: auto;
+}
+
 h1, h4.serendipity_title {
 	clear: both;
 	padding: 5px 0 12px 10px;
@@ -16,7 +30,7 @@ h2 {
 	clear: both;
 	padding: 0 0 0 5px;
 	margin: 0 0 -10px 0;  
-	font-size: 1.0em;
+/*	font-size: 1.0em;*/
 	font-weight: normal;
 	text-transform: uppercase;
 }
@@ -231,6 +245,29 @@ td.serendipity_commentsValue textarea {
 	padding-bottom: 0px;
 	text-align:left;
 }
+
+h2.comments_permalink {
+    margin: initial;
+    padding: initial;
+    font-size: initial;
+}
+.serendipity_comment_author_self .serendipity_comment_source .pc-owner,
+.serendipity_comment_author_self .comment_header .pc-owner {
+    background: #3e5f81e6;
+    padding: .1em .25em;
+    border-radius: 3px;
+    color: #efefef;
+    text-shadow: 1px 1px 2px #222;
+}
+.comments_by_author_pagination {
+    text-align: center;
+}
+.comments_by_author_pagination.top {
+    margin-top: 1em;
+}
+.comments_by_author_pagination.bottom {
+    margin: 2em auto;
+}
 /* End Comment Styles */
 
 
@@ -282,6 +319,10 @@ div.serendipitySideBarItem {
 	width: 90%;
 	margin:3px;
 }
+#serendipity_categories_list input[type="checkbox"] {
+    width: auto;
+}
+
 .serendipityImageButton {
 	cursor: pointer;
 }
