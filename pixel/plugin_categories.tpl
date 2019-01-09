@@ -2,7 +2,7 @@
 <form id="serendipity_category_form" action="{$form_url}" method="post">
 {/if}
 <ul>
-{foreach from=$categories item="plugin_category"}
+{foreach $categories AS $plugin_category}
     <li id="cat-{$plugin_category.categoryid}" class="cat-level-{$plugin_category.catdepth}">
         {if $is_form}
         <input type="checkbox" name="serendipity[multiCat][]" value="{$plugin_category.categoryid}">

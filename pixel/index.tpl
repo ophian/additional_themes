@@ -10,9 +10,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -79,7 +79,7 @@
 
         <ul id="nav">
             <li lang="en">{if $currpage==$serendipityBaseURL or $currpage2==$serendipityBaseURL}<strong>{else}<a href="{$serendipityBaseURL}">{/if}Home{if $currpage==$serendipityBaseURL or $currpage2==$serendipityBaseURL}</strong>{else}</a>{/if}</li>
-            {foreach from=$navlinks item="navlink" name=navbar}
+            {foreach $navlinks AS $navlink}
             <li>{if $currpage==$navlink.href or $currpage2==$navlink.href}<strong>{else}<a href="{$navlink.href}">{/if}{$navlink.title}{if $currpage==$navlink.href or $currpage2==$navlink.href}</strong>{else}</a>{/if}</li>
             {/foreach}
         </ul>

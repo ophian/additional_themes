@@ -1,4 +1,4 @@
-{foreach from=$plugindata item=item}
+{foreach $plugindata AS $item}
   {if $item.class != "serendipity_quicksearch_plugin"}
     <div class="{cycle values="col2,col3,col1"} container_{$item.class}">
     {if $item.title != ""}

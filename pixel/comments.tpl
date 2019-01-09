@@ -1,17 +1,17 @@
 <ul class="commentlist">
-{foreach from=$comments item=comment name="comments"}
+{foreach $comments AS $comment}
     <li id="li-comment-{$comment.id}" class="comment depth-{$comment.depth+1} {cycle values="even,odd"}" style="margin-left: {$comment.depth*10}px">
         <div id="comment-{$comment.id}">
         {if $comment.avatar}
             <a class="gravatar">{$comment.avatar}</a>
         {/if}
             <div class="commentbody">
-                <cite>{if $comment.url}<a href="{$comment.url}" rel="external">{/if}{$comment.author|@default:$CONST.ANONYMOUS}{if $comment.url}</a>{/if}</cite>
+                <cite>{if $comment.url}<a href="{$comment.url}" rel="external">{/if}{$comment.author|default:$CONST.ANONYMOUS}{if $comment.url}</a>{/if}</cite>
                 <br />
                 <small class="commentmetadata">
-                    <a href="#comment-{$comment.id}">{$comment.timestamp|@formatTime:$CONST.DATE_FORMAT_SHORT} {$CONST.AT} {$comment.timestamp|@formatTime:'%H:%m'}</a>
+                    <a href="#comment-{$comment.id}">{$comment.timestamp|formatTime:$CONST.DATE_FORMAT_SHORT} {$CONST.AT} {$comment.timestamp|formatTime:'%H:%m'}</a>
                 {if $entry.is_entry_owner}
-                    <a class="comment-edit-link" href="{$comment.link_delete}" onclick="return confirm('{$CONST.COMMENT_DELETE_CONFIRM|@sprintf:$comment.id:$comment.author}');">{$CONST.DELETE}</a>
+                    <a class="comment-edit-link" href="{$comment.link_delete}" onclick="return confirm('{$CONST.COMMENT_DELETE_CONFIRM|sprintf:$comment.id:$comment.author}');">{$CONST.DELETE}</a>
                 {/if}</small>
             {if $comment.body == 'COMMENT_DELETED'}
                 <p>{$CONST.COMMENT_IS_DELETED}</p>
@@ -19,7 +19,7 @@
                 {$comment.body}
             {/if}
             </div>
-            
+
             <div class="cleared"></div>
         {if $entry.allow_comments AND $comment.body != 'COMMENT_DELETED'}
             <div class="reply">

@@ -11,16 +11,16 @@
 
     <p><input type="text" id="serendipity_commentform_email" name="serendipity[email]" value="{$commentform_email}" size="22" />
        <label for="serendipity_commentform_email"><small>{$CONST.EMAIL}</small></label></p>
-       
+
     <p><input type="text" id="serendipity_commentform_url" name="serendipity[url]" value="{$commentform_url}" size="22" />
        <label for="serendipity_commentform_url"><small>{$CONST.HOMEPAGE}</small></label></p>
-       
+
     <p>{$commentform_replyTo}
        <label for="serendipity_replyTo"><small>{$CONST.IN_REPLY_TO}</small></label></p>
 
     <p><label for="serendipity_commentform_comment" class="invisible">{$CONST.COMMENT}</label>
        <textarea rows="10" cols="100%" id="comment" name="serendipity[comment]">{$commentform_data}</textarea></p>
-       
+
     {serendipity_hookPlugin hook="frontend_comment" data=$commentform_entry}
 
   {if $is_commentform_showToolbar}

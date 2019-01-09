@@ -2,8 +2,8 @@
 <caption class="invisible">{$CONST.CALENDAR}</caption>
 <thead>
     <tr>
-    {foreach from=$plugin_calendar_dow item="dow"}
-        <th scope="col">{$dow.date|@formatTime:"%a":false}</th>
+    {foreach $plugin_calendar_dow AS $dow}
+        <th scope="col">{$dow.date|formatTime:"%a":false}</th>
     {/foreach}
     </tr>
 </thead>
@@ -15,10 +15,10 @@
     </tr>
 </tfoot>
 <tbody>
-    {foreach from=$plugin_calendar_weeks item="week"}
+    {foreach $plugin_calendar_weeks AS $week}
     <tr>
-        {foreach from=$week.days item="day"}
-        <td>{if isset($day.properties.Active) and $day.properties.Active}<a href="{$day.properties.Link}">{/if}{$day.name|@default:"&#160;"}{if isset($day.properties.Active) and $day.properties.Active}</a>{/if}</td>
+        {foreach $week.days AS $day}
+        <td>{if isset($day.properties.Active) AND $day.properties.Active}<a href="{$day.properties.Link}">{/if}{$day.name|default:"&#160;"}{if isset($day.properties.Active) AND $day.properties.Active}</a>{/if}</td>
         {/foreach}
     </tr>
     {/foreach}
