@@ -4,7 +4,7 @@
         <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
         <link rel="stylesheet" type="text/css" href="{$head_link_stylesheet}" />
 {if $head_link_stylesheet_frontend}
-    <link rel="stylesheet" href="{$head_link_stylesheet_frontend}">                                
+    <link rel="stylesheet" href="{$head_link_stylesheet_frontend}">
 {else}
     <link rel="stylesheet" href="{$serendipityHTTPPath}{$serendipityRewritePrefix}serendipity.css">
 {/if}
@@ -22,10 +22,10 @@
 
     <body style="background:#fff;margin:0;padding:0;">
         <div id="mainpane" style="padding: 0px; margin: 5px auto 5px auto; width: 98%;border:none;">
-		<div id="wrapper" style="border:none;">
+        <div id="wrapper" style="border:none;">
             <div id="content" style="padding: 5px; margin: 0px;">
             {$preview}
             </div>
-		<div id="sidebar">&nbsp;</div>
+        <div id="sidebar">&nbsp;</div>
         </div></div>
     </body>

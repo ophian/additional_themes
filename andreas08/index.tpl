@@ -8,10 +8,10 @@
 {/if}
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -61,28 +61,21 @@
 
 <div id="pagetop">
 <div id="header">
-<h1>{$head_title|@default:$blogTitle|truncate:50:" ...":true}</h1>
-<h2>{$head_subtitle|@default:$blogDescription}</h2>
+<h1>{$head_title|default:$blogTitle|truncate:50:" ...":true}</h1>
+<h2>{$head_subtitle|default:$blogDescription}</h2>
 </div>
 <div id="navigation">
-<ul>
-<li class="selected"><a href="{$serendipityBaseURL}" accesskey="h">{$CONST.HOMEPAGE}</a></li>
-	{if $serendipityVersion < 1.1}
-			<!-- ****** Change navbar links here ****** -->
-		<li><a href="#">About</a></li>
-		<li><a href="#">Photos</a></li>
-		<li><a href="#">Contact</a></li>
-	{else}
-        	{foreach from=$navlinks item="navlink"}
-        	<li><a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a></li>
-		{/foreach}
-	{/if}
-</ul>
+    <ul>
+        <li class="selected"><a href="{$serendipityBaseURL}" accesskey="h">{$CONST.HOMEPAGE}</a></li>
+        {foreach $navlinks AS $navlink}
+            <li><a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a></li>
+        {/foreach}
+    </ul>
 <form id="searchform" action="{$serendipityBaseURL}" method="get"><input type="hidden" name="serendipity[action]" value="search" /><input alt="Quicksearch" type="text" name="serendipity[searchTerm]" value="{$CONST.QUICKSEARCH}..." onFocus="if(this.value=='{$CONST.QUICKSEARCH}...')value=''" onBlur="if(this.value=='')value='{$CONST.QUICKSEARCH}...';">
 </form>
 </div>
 </div>
-<div id="mainpane" class="{if $serendipityVersion < 1.1}contentleft{/if}{if $template_option.contentposition == 'true'}contentleft{elseif $template_option.contentposition == 'false'}contentright{/if}">
+<div id="mainpane" class="{if $template_option.contentposition == 'true'}contentleft{elseif $template_option.contentposition == 'false'}contentright{/if}">
 
 <div id="content">{$CONTENT}</div>
 
@@ -94,7 +87,7 @@
 <div class="clearingdiv">&nbsp;</div>
 </div>
 <div id="footer"><div class="footerbg">
-	<p>Layout by <a href="http://andreasviklund.com">Andreas Viklund</a> | <a href="http://www.s9y.org">Serendipity</a> template by <a href="http://www.carlgalloway.com/categories/9-Downloads">Carl</a></p></div>
+    <p>Layout by <a href="http://andreasviklund.com">Andreas Viklund</a> | <a href="http://www.s9y.org">Serendipity</a> template by <a href="http://www.carlgalloway.com/categories/9-Downloads">Carl</a></p></div>
 </div>
 {$raw_data}
 {serendipity_hookPlugin hook="frontend_footer"}
