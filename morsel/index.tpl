@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="charset={$head_charset}"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <!-- morsel 1.0b3 by riscky@gmail -->
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -37,8 +37,8 @@
 <body><div id="pageWrapper">
 
 <div id="pageHead"><div id="banner">
-    <h1><a href="{$serendipityBaseURL}" rel="local">{$head_title|@default:$blogTitle}</a></h1>
-    <h2><a href="{$serendipityBaseURL}" rel="local">{$head_subtitle|@default:$blogDescription}</a></h2></div>
+    <h1><a href="{$serendipityBaseURL}" rel="local">{$head_title|default:$blogTitle}</a></h1>
+    <h2><a href="{$serendipityBaseURL}" rel="local">{$head_subtitle|default:$blogDescription}</a></h2></div>
 </div>
 
 <div id="content">
