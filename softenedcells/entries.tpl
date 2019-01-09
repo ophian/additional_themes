@@ -1,16 +1,13 @@
-
 <!-- ENTRIES START -->
-    {serendipity_hookPlugin hook="entries_header" addData="$entry_id"}
-
+{serendipity_hookPlugin hook="entries_header" addData="$entry_id"}
 {if NOT empty($entries)}{* catch a staticpage startpage which has no $entries array set *}
     {foreach $entries AS $dategroup}
+    <div class="serendipity_Entry_Date">
         {foreach $dategroup.entries AS $entry}
         {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
-    <div class="serendipity_Entry_Date">
-
-      <div class="post-info">
-      <h1 class="serendipity_title"><a href="{$entry.link}">{$entry.title|default:$entry.id}</a></h1>
-</div>
+        <div class="post-info">
+            <h1 class="serendipity_title"><a href="{$entry.link}">{$entry.title|default:$entry.id}</a></h1>
+        </div>
             <div class="serendipity_entry_body">
             {$entry.body}
             </div>
@@ -19,17 +16,17 @@
             <div class="serendipity_entry_extended"><a id="extended"></a>{$entry.extended}</div>
             {/if}
 
-            {if $entry.has_extended and not $is_single_entry and not $entry.is_extended}
+            {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
             <br /><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a><br /><br />
             {/if}
 
-            <div class='serendipity_entryFooter'>
-	{if $dategroup.is_sticky}
-      	<p class="post-date">{$CONST.STICKY_POSTINGS}
-      	{else}
-		<p class="post-date">{$dategroup.date|formatTime:DATE_FORMAT_ENTRY}
-	{/if}
-	<br />{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.IN}
+            <div class="serendipity_entryFooter">
+    {if $dategroup.is_sticky}
+          <p class="post-date">{$CONST.STICKY_POSTINGS}
+          {else}
+        <p class="post-date">{$dategroup.date|formatTime:DATE_FORMAT_ENTRY}
+    {/if}
+    <br />{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.IN}
     {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
                 <br />
                 {if $entry.has_comments}
@@ -50,7 +47,7 @@
                 {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}
                         | <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>
                 {/if}
-		</p>
+        </p>
                 {$entry.add_footer|default:''}
 
 
@@ -67,7 +64,7 @@
         -->
 </div>
         {$entry.plugin_display_dat}
-		<div class="post-footer">&nbsp;</div>
+        <div class="post-footer">&nbsp;</div>
 
         {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
@@ -102,7 +99,7 @@
             </div>
         {/if}
 
-        {if $is_single_entry and not $is_preview}
+        {if $is_single_entry AND NOT $is_preview}
             <div class="serendipity_comments">
                 <br />
                 <a id="comments"></a>
@@ -156,12 +153,12 @@
         {/if}
 
         {$entry.backend_preview}
-        {/foreach}
-    </div>
     {/foreach}
+    </div>
+{/foreach}
 {else}
     {if NOT $plugin_clean_page AND $view != '404'}
-        {$CONST.NO_ENTRIES_TO_PRINT}
+    <p>{$CONST.NO_ENTRIES_TO_PRINT}</p>
     {/if}
 {/if}
 
