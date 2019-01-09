@@ -1,6 +1,5 @@
 <!-- ENTRIES START -->
-    {serendipity_hookPlugin hook="entries_header" addData="$entry_id"}
-
+{serendipity_hookPlugin hook="entries_header" addData="$entry_id"}
 {if NOT empty($entries)}{* catch a staticpage startpage which has no $entries array set *}
     {foreach $entries AS $dategroup}
         {foreach $dategroup.entries AS $entry}
@@ -40,10 +39,10 @@
                 <li><a class="comments" href="{$entry.link}#trackbacks">{$entry.label_trackbacks} ({$entry.trackbacks})</a></li>
                 {/if}
             {/if}
-            {if $entry.has_extended and not $is_single_entry and not $entry.is_extended}
+            {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
                 <li><a class="more" href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></li>
             {/if}
-            {if $entry.is_entry_owner and not $is_preview}
+            {if $entry.is_entry_owner AND NOT $is_preview}
                 <li><a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a></li>
             {/if}
             </ul>
@@ -68,7 +67,7 @@
         -->
         {$entry.plugin_display_dat}
 
-        {if $is_single_entry and not $use_popups and not $is_preview}
+        {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
                 <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|sprintf:$CONST.UNSUBSCRIBE_OK}</div><br />
             {/if}
@@ -101,7 +100,7 @@
             </div>
         {/if}
 
-        {if $is_single_entry and not $is_preview}
+        {if $is_single_entry AND NOT $is_preview}
             <div class="serendipity_comments serendipity_section_comments">
                 <br />
                 <a id="comments"></a>
@@ -148,20 +147,21 @@
 
                 <br />
                 <div class="serendipity_section_commentform">
-	                <div class="serendipity_commentsTitle">{$CONST.ADD_COMMENT}</div>
-	                {$COMMENTFORM}
-				</div>
+                    <div class="serendipity_commentsTitle">{$CONST.ADD_COMMENT}</div>
+                    {$COMMENTFORM}
+                </div>
 
                 {/if}
             </div>
         {/if}
 
         {$entry.backend_preview}
-        {/foreach}
     {/foreach}
+    </div>
+{/foreach}
 {else}
     {if NOT $plugin_clean_page AND $view != '404'}
-        {$CONST.NO_ENTRIES_TO_PRINT}
+    <p>{$CONST.NO_ENTRIES_TO_PRINT}</p>
     {/if}
 {/if}
 
