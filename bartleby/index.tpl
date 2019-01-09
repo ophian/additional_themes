@@ -34,7 +34,6 @@
 {/if}
     {serendipity_hookPlugin hook="frontend_header"}
     <script src="{$head_link_script}"></script>
-    {if $template_option.userstyles == 'true'}<link rel="stylesheet" href="{serendipity_getFile file="user.css"}" />{/if}
 </head>
 {else}
 {serendipity_hookPlugin hook="frontend_header"}
@@ -42,7 +41,7 @@
 {if $is_raw_mode != true}
 <a class="visuallyhidden" href="#content"><span lang="en">Skip to content</span></a>
 <section id="page" class="clearfix">
-    <header id="banner" class="clearfix{if not $template_option.use_corenav} no-nav{/if}">
+    <header id="banner" class="clearfix{if NOT $template_option.use_corenav} no-nav{/if}">
         <form id="searchform" action="{$serendipityHTTPPath}{$serendipityIndexFile}" method="get">
             <div>
                 <input type="hidden" name="serendipity[action]" value="search">
