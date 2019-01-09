@@ -9,10 +9,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -37,38 +37,38 @@
 {serendipity_hookPlugin hook="frontend_header"}
 {/if}
 
-	<div id="content">
-		<div class="right">
-			<div id="message">{$blogDescription}</div>
-			<div id="navigation">
-			<!--	<a href="#">Home</a>
-				<a href="#">Modern world</a>
-		 		<a href="#">Behind the idea</a>
-		 		<a href="#">Join the movement</a>
-			 	<a href="#">Contact</a> -->
-				&nbsp;
-			</div>
-				{$CONTENT}
-				{$raw_data}
-		</div>
-		<div class="left">
-			<div id="logo">
-    				<h2><a href="{$serendipityBaseURL}">{$head_title|@default:$blogTitle}</a></h2>
-				<p><a href="{$serendipityBaseURL}">{$head_subtitle}</a></p>
-			</div>
-			<div id="sidebar">
-				{if $rightSidebarElements > 0}
-					{serendipity_printSidebar side="right"}
-				{/if}
-					{if $leftSidebarElements > 0}
-					{serendipity_printSidebar side="left"}
-				{/if}
-			</div>
-		</div>
-		<div id="footer">
-			<p>&copy; Copyright 2006, <a href="http://www.nerdwg.org" title="http://www.nerdwg.org">nerdwg.org</a> design by <a href="mailto:luka@solucija.com">Luka Cvrk</a>, port for s9y by nerdwg.org</p>
-		</div>
-	</div>
+    <div id="content">
+        <div class="right">
+            <div id="message">{$blogDescription}</div>
+            <div id="navigation">
+            <!--    <a href="#">Home</a>
+                <a href="#">Modern world</a>
+                 <a href="#">Behind the idea</a>
+                 <a href="#">Join the movement</a>
+                 <a href="#">Contact</a> -->
+                &nbsp;
+            </div>
+                {$CONTENT}
+                {$raw_data}
+        </div>
+        <div class="left">
+            <div id="logo">
+                    <h2><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle}</a></h2>
+                <p><a href="{$serendipityBaseURL}">{$head_subtitle}</a></p>
+            </div>
+            <div id="sidebar">
+                {if $rightSidebarElements > 0}
+                    {serendipity_printSidebar side="right"}
+                {/if}
+                    {if $leftSidebarElements > 0}
+                    {serendipity_printSidebar side="left"}
+                {/if}
+            </div>
+        </div>
+        <div id="footer">
+            <p>&copy; Copyright 2006, <a href="http://www.nerdwg.org" title="http://www.nerdwg.org">nerdwg.org</a> design by <a href="mailto:luka@solucija.com">Luka Cvrk</a>, port for s9y by nerdwg.org</p>
+        </div>
+    </div>
 {serendipity_hookPlugin hook="frontend_footer"}
 {if $is_embedded != true}
 </body>
