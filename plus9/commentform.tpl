@@ -16,7 +16,7 @@
            <label for="serendipity_replyTo"><small>{$CONST.IN_REPLY_TO}</small></label></p>
         <p><textarea rows="10" cols="100%" id="serendipity_commentform_comment" name="serendipity[comment]">{$commentform_data}</textarea>
            <label for="serendipity_commentform_comment"><small>{$CONST.COMMENT}</small></label></p>
-        {serendipity_hookPlugin hook="frontend_comment" data=$commentform_entry}   
+        {serendipity_hookPlugin hook="frontend_comment" data=$commentform_entry}
 {if $is_commentform_showToolbar}
         <p><input id="checkbox_remember" type="checkbox" name="serendipity[remember]" {$commentform_remember} /><label for="checkbox_remember">{$CONST.REMEMBER_INFO}</label></p>
     {if $is_allowSubscriptions}

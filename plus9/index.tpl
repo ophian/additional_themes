@@ -9,10 +9,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -53,7 +53,7 @@
                 <li><a href="#">{$template_option.statheader} </a><ul>{serendipity_showPlugin class="serendipity_plugin_staticpage"}</ul></li>
             {/if}
             {if $template_option.enableuser == 'true'}
-                <li><a href="#">{$template_option.dropheader} </a> <ul>{foreach from=$droplinks item="droplink" name=navbar}<li><a href="{$droplink.href}" title="{$droplink.title}">{$droplink.title}</a></li>{/foreach}</ul></li>
+                <li><a href="#">{$template_option.dropheader} </a> <ul>{foreach $droplinks AS $droplink}<li><a href="{$droplink.href}" title="{$droplink.title}">{$droplink.title}</a></li>{/foreach}</ul></li>
             {/if}
 
             {if $template_option.enablelog == 'true'}
@@ -92,7 +92,7 @@
             {/if}
         {/if}
 
-        {foreach from=$navlinks item="navlink" name=navbar}
+        {foreach $navlinks AS $navlink}
                 <li{if $currpage==$navlink.href} class="current_page_item"{/if}><a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a></li>
         {/foreach}
             </ul>
@@ -121,7 +121,7 @@
         </b>
     </div>
     <div id="cm1"> &nbsp;
-        <a class="homelink2" href="{$serendipityBaseURL}">{$head_subtitle|@default:$blogDescription}</a>
+        <a class="homelink2" href="{$serendipityBaseURL}">{$head_subtitle|default:$blogDescription}</a>
     </div>
     <div id="cr1">
         <strong><a style="white-space: nowrap" href="{$plugin_calendar_head.uri_month}/">{$plugin_calendar_head.month_date|formatTime:"%B '%y":false}</a></strong>
