@@ -26,7 +26,7 @@
     <body style="padding: 0px; margin: 0px;">
         <div id="mainpane" style="padding: 0px; margin: 5px auto 5px auto; width: 98%;">
 <div id="primary" class="single-post">
-	<div class="inside">
+    <div class="inside">
             {$preview}
         </div>
 </div></div>
