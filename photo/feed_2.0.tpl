@@ -21,11 +21,11 @@
     {$metadata.additional_fields.channel}
     {$metadata.additional_fields.image}
 
-{foreach from=$entries item="entry"}
+{foreach $entries AS $entry}
 <item>
     <title>{$entry.feed_title}</title>
     <link>{$entry.feed_entryLink}{if $is_comments}#c{$entry.commentid}{/if}</link>
-    {foreach from=$entry.categories item="cat"}
+    {foreach $entry.categories AS $cat}
         <category>{$cat.feed_category_name}</category>
     {/foreach}
 
@@ -35,13 +35,13 @@
 {if !$is_comments}
     <slash:comments>{$entry.comments}</slash:comments>
     <wfw:commentRss>{$serendipityBaseURL}rss.php?version={$metadata.version}&amp;type=comments&amp;cid={$entry.feed_id}</wfw:commentRss>
-{/if}    
+{/if}
 
     <author>{$entry.feed_email} ({$entry.feed_author})</author>
 {if !empty($entry.body)}
     <content:encoded>
-    {if $entry.properties.ep_featuredImage}&lt;img src=&quot;{$entry.properties.ep_featuredImage|@escape}&quot; /&gt;{/if}
-    {$entry.feed_body|@escape} {$entry.feed_ext|@escape}
+    {if $entry.properties.ep_featuredImage}&lt;img src=&quot;{$entry.properties.ep_featuredImage|escape}&quot; /&gt;{/if}
+    {$entry.feed_body|escape} {$entry.feed_ext|escape}
     </content:encoded>
 {/if}
 

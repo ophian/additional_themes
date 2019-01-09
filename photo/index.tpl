@@ -6,9 +6,9 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="{$lang}"> <!--<![endif]-->
 <head>
     <meta charset="{$head_charset}">
-    <title>{$head_title|@default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
     <meta name="generator" content="Serendipity v.{$head_version}">
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow">
 {else}
     <meta name="robots" content="noindex,follow">
@@ -44,7 +44,7 @@
         {$gfonts[]="Crimson+Text:400,400italic,700,700italic"}
     {/if}
     {if $gfonts}
-        <link rel="stylesheet" href="//fonts.googleapis.com/css?family={foreach $gfonts as $gfont}{$gfont}{if not $gfont@last}|{/if}{/foreach}&amp;subset=latin">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family={foreach $gfonts as $gfont}{$gfont}{if NOT $gfont@last}|{/if}{/foreach}&amp;subset=latin">
     {/if}
     <link rel="stylesheet" href="{$head_link_stylesheet}">
 
@@ -83,7 +83,7 @@
 {if $is_raw_mode != true}
 <a class="visuallyhidden" href="#content"><span lang="en">Skip to content</span></a>
 <section id="page" class="clearfix">
-    <header id="banner" class="clearfix{if not $template_option.use_corenav} no-nav{/if}">
+    <header id="banner" class="clearfix{if NOT $template_option.use_corenav} no-nav{/if}">
         <form id="searchform" action="{$serendipityHTTPPath}{$serendipityIndexFile}" method="get">
             <div>
                 <input type="hidden" name="serendipity[action]" value="search">
@@ -104,7 +104,7 @@
     </header>
     {if $template_option.use_corenav}
         <nav id="primary-nav">
-            <ul class="clearfix">{foreach from=$navlinks item="navlink" name="sbnav"}{if $navlink.title!=""&&$navlink.href!=""}<li>{if $currpage==$navlink.href or $currpage2==$navlink.href}<span>{else}<a href="{$navlink.href}">{/if}{$navlink.title}{if $currpage==$navlink.href or $currpage2==$navlink.href}</span>{else}</a>{/if}</li>{/if}{/foreach}</ul>
+            <ul class="clearfix">{foreach $navlinks AS $navlink}{if $navlink.title!=""&&$navlink.href!=""}<li>{if $currpage==$navlink.href or $currpage2==$navlink.href}<span>{else}<a href="{$navlink.href}">{/if}{$navlink.title}{if $currpage==$navlink.href or $currpage2==$navlink.href}</span>{else}</a>{/if}</li>{/if}{/foreach}</ul>
         </nav>
     {/if}
 

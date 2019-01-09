@@ -1,24 +1,24 @@
 {serendipity_hookPlugin hook="entries_header" addData="$entry_id"}
-
-{foreach from=$entries item="dategroup"}
-    {foreach from=$dategroup.entries item="entry"}
-    {assign var="entry" value=$entry scope="parent"}
-    {if $bxloaded and not $dategroup.is_sticky}
+{if NOT empty($entries)}{* catch a staticpage startpage which has no $entries array set *}
+    {foreach $entries AS $dategroup}
+        {foreach $dategroup.entries AS $entry}
+            {assign var="entry" value=$entry scope="root"}
+    {if $bxloaded AND NOT $dategroup.is_sticky}
         {$bxloaded = false}
         </div>
     {/if}
-    {if $dategroup.is_sticky and not $is_single_entry}
-        {if not $bxloaded}
+    {if $dategroup.is_sticky AND NOT $is_single_entry}
+        {if NOT $bxloaded}
             {$bxloaded = true}
             <div id="bxslider">
         {/if}
     {/if}
     <article id="post_{$entry.id}" class="serendipity_entry{if $dategroup.is_sticky}_sticky{/if}{if $is_single_entry} singlepage{/if}">
         <header class="clearfix">
-            {if not $is_single_entry and not $is_preview}
+            {if NOT $is_single_entry AND NOT $is_preview}
                 <a href="{$entry.link}">
                     {if $entry.properties.ep_featuredImage}
-                        <img class="featuredImage lazy" {if not $dategroup.is_sticky && $template_option.lazyload == true}data-original="{else}src="{/if}{$entry.properties.ep_featuredImage}" />
+                        <img class="featuredImage lazy" {if NOT $dategroup.is_sticky && $template_option.lazyload == true}data-original="{else}src="{/if}{$entry.properties.ep_featuredImage}" />
                         <noscript><img class="featuredImage" src="{$entry.properties.ep_featuredImage}" /></noscript>
                     {else}
                         <span class="featuredImage" />
@@ -27,8 +27,8 @@
                 <a class="photoEntryBox" href="{$entry.link}">
                     <h2 class="photoEntryTitle">{$entry.title}</h2>
                     <h3 class="photoEntryData">
-                        <time datetime="{$entry.timestamp|@serendipity_html5time}">{$entry.timestamp|@formatTime:$template_option.date_format}</time>
-                        {if $entry.categories}{foreach from=$entry.categories item="entry_category"}{if $entry_category.category_icon}<img class="serendipity_entryIcon" title="{$entry_category.category_name|@escape}{$entry_category.category_description|@emptyPrefix}" alt="{$entry_category.category_name|@escape}" src="{$entry_category.category_icon}" />{/if}{/foreach}{/if}
+                        <time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:$template_option.date_format}</time>
+                        {if $entry.categories}{foreach $entry.categories AS $entry_category}{if $entry_category.category_icon}<img class="serendipity_entryIcon" title="{$entry_category.category_name|escape}{$entry_category.category_description|emptyPrefix}" alt="{$entry_category.category_name|escape}" src="{$entry_category.category_icon}" />{/if}{/foreach}{/if}
                     </h3>
                 </a>
             {else}
@@ -54,14 +54,14 @@
                 {$entry.plugin_display_dat}
             {/if}
         {/if}
-        
+
 
         {if $is_single_entry or $is_preview}
             <footer class="clearfix">
-                <span class="single_user">{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.ON} </span><time datetime="{$entry.timestamp|@serendipity_html5time}">{$entry.timestamp|@formatTime:$template_option.date_format}s</time>
+                <span class="single_user">{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.ON} </span><time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:$template_option.date_format}s</time>
 
             {if $entry.categories}
-                {$CONST.IN}  <span class="visuallyhidden">{$CONST.CATEGORIES}: </span>{foreach from=$entry.categories item="entry_category" name="categories"}<a href="{$entry_category.category_link}">{$entry_category.category_name|@escape}</a>{if not $smarty.foreach.categories.last}, {/if}{/foreach}
+                {$CONST.IN}  <span class="visuallyhidden">{$CONST.CATEGORIES}: </span>{foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
             {/if}
             {if ($entry.has_comments or $entry.has_disqus)}
             {if $entry.has_disqus }
@@ -80,7 +80,7 @@
                 | <a href="{$entry.url_shorturl}" title="{$CONST.TWOK11_SHORT_URL_HINT}" class="short-url">{$CONST.TWOK11_SHORT_URL}</a>
             {/if}
                 {$entry.add_footer}
-                {if $entry.is_entry_owner and not $is_preview} | <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
+                {if $entry.is_entry_owner AND NOT $is_preview} | <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
             </footer>
         {/if}
         <!--
@@ -90,26 +90,26 @@
         <rdf:Description
                  rdf:about="{$entry.link_rdf}"
                  trackback:ping="{$entry.link_trackback}"
-                 dc:title="{$entry.title_rdf|@default:$entry.title}"
+                 dc:title="{$entry.title_rdf|default:$entry.title}"
                  dc:identifier="{$entry.rdf_ident}" />
         </rdf:RDF>
         -->
 
-    {if $is_single_entry and not $is_preview}
+    {if $is_single_entry AND NOT $is_preview}
         {if $CONST.DATA_UNSUBSCRIBED}
-        <p class="serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|@sprintf:$CONST.UNSUBSCRIBE_OK}</p>
+        <p class="serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|sprintf:$CONST.UNSUBSCRIBE_OK}</p>
         {/if}
         {if $CONST.DATA_TRACKBACK_DELETED}
-        <p class="serendipity_msg_notice">{$CONST.DATA_TRACKBACK_DELETED|@sprintf:$CONST.TRACKBACK_DELETED}</p>
+        <p class="serendipity_msg_notice">{$CONST.DATA_TRACKBACK_DELETED|sprintf:$CONST.TRACKBACK_DELETED}</p>
         {/if}
         {if $CONST.DATA_TRACKBACK_APPROVED}
-        <p class="serendipity_msg_notice">{$CONST.DATA_TRACKBACK_APPROVED|@sprintf:$CONST.TRACKBACK_APPROVED}</p>
+        <p class="serendipity_msg_notice">{$CONST.DATA_TRACKBACK_APPROVED|sprintf:$CONST.TRACKBACK_APPROVED}</p>
         {/if}
         {if $CONST.DATA_COMMENT_DELETED}
-        <p class="serendipity_msg_notice">{$CONST.DATA_COMMENT_DELETED|@sprintf:$CONST.COMMENT_DELETED}</p>
+        <p class="serendipity_msg_notice">{$CONST.DATA_COMMENT_DELETED|sprintf:$CONST.COMMENT_DELETED}</p>
         {/if}
         {if $CONST.DATA_COMMENT_APPROVED}
-        <p class="serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|@sprintf:$CONST.COMMENT_APPROVED}</p>
+        <p class="serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</p>
         {/if}
 
         <section id="trackbacks" class="serendipity_comments serendipity_section_trackbacks">
@@ -133,7 +133,7 @@
         {/if}
         </section>
             <a id="feedback"></a>
-        {foreach from=$comments_messagestack item="message"}
+        {foreach $comments_messagestack AS $message}
             <p class="serendipity_msg_important">{$message}</p>
         {/foreach}
         {if $is_comment_added}
@@ -153,11 +153,13 @@
     {$entry.backend_preview}
     </article>
     {/foreach}
-{foreachelse}
-    {if not $plugin_clean_page}
+{/foreach}
+{else}
+    {if NOT $plugin_clean_page AND $view != '404'}
     <p class="nocontent">{$CONST.NO_ENTRIES_TO_PRINT}</p>
     {/if}
-{/foreach}
+{/if}
+
 {if ($footer_info and ($footer_prev_page or $footer_next_page)) or $footer_prev_page or $footer_next_page}
     <nav class="serendipity_pagination block_level">
         <ul class="clearfix">
