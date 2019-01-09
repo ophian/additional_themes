@@ -14,10 +14,10 @@ RoundedCorner  serendipity theme by Abdussamad Abdurrazzaq
 http://abdussamad.com
 
  -->
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -51,8 +51,8 @@ http://abdussamad.com
 <div id="banner_tl">
 <div id="banner_tr">
 <div id="serendipity_banner">
-    <h1><a class="homelink1" href="{$serendipityBaseURL}">{$head_title|@default:$blogTitle}</a></h1>
-    <h2><a class="homelink2" href="{$serendipityBaseURL}">{$head_subtitle|@default:$blogDescription}</a></h2>
+    <h1><a class="homelink1" href="{$serendipityBaseURL}">{$head_title|default:$blogTitle}</a></h1>
+    <h2><a class="homelink2" href="{$serendipityBaseURL}">{$head_subtitle|default:$blogDescription}</a></h2>
 </div>
  <div id="top_nav">
     <a href="{$serendipityBaseURL}">Home</a>
@@ -65,94 +65,94 @@ http://abdussamad.com
 </div></div></div></div></div></div></div></div>
 
 {if false}
-		<div id="content_lc">
-		<div id="content_rc">
-		<div id="content_tc">
-		<div id="content_bc">
-		<div id="content_bl">
-		<div id="content_br">
-		<div id="content_tl">
-		<div id="content_tr">
+        <div id="content_lc">
+        <div id="content_rc">
+        <div id="content_tc">
+        <div id="content_bc">
+        <div id="content_bl">
+        <div id="content_br">
+        <div id="content_tl">
+        <div id="content_tr">
 
-		<div id="content_inside">
-		{if $leftSidebarElements > 0}
+        <div id="content_inside">
+        {if $leftSidebarElements > 0}
 
-	 	<div class="left_sidebar_container">
-		<div id="serendipityleftSideBar">
+         <div class="left_sidebar_container">
+        <div id="serendipityleftSideBar">
         {serendipity_printSidebar side="left"}
         </div></div>
-		{/if}
-		{if $rightSidebarElements >0 and $leftSidebarElements <=0}
-			<div id="content_right_only_position">
-		{elseif	$rightSidebarElements >0 and $leftSidebarElements > 0}
-			<div id="content_middle_position">
-		{elseif	$rightSidebarElements <=0 and $leftSidebarElements > 0}
-			<div id="content_left_only_position">
-		{else}
+        {/if}
+        {if $rightSidebarElements >0 and $leftSidebarElements <=0}
+            <div id="content_right_only_position">
+        {elseif    $rightSidebarElements >0 and $leftSidebarElements > 0}
+            <div id="content_middle_position">
+        {elseif    $rightSidebarElements <=0 and $leftSidebarElements > 0}
+            <div id="content_left_only_position">
+        {else}
 
-		{/if}
+        {/if}
 
-    	{$CONTENT}
+        {$CONTENT}
 
-    	{if $rightSidebarElements > 0}
-    	<div class="right_sidebar_container">
-		<div id="serendipityRightSideBar">
-		{serendipity_printSidebar side="right"}
-		</div></div>
-		</div>	</div>				</div>		</div>		</div>		</div>		</div>		</div>		</div>		</div>
+        {if $rightSidebarElements > 0}
+        <div class="right_sidebar_container">
+        <div id="serendipityRightSideBar">
+        {serendipity_printSidebar side="right"}
+        </div></div>
+        </div>    </div>                </div>        </div>        </div>        </div>        </div>        </div>        </div>        </div>
 
 
-		{/if}
+        {/if}
 
 {else}
 {if $leftSidebarElements > 0}
 
-	 <div class="left_sidebar_container">
-		<div id="sidebar_lc">
-		<div id="sidebar_rc">
-		<div id="sidebar_tc">
-		<div id="sidebar_bc">
-		<div id="sidebar_bl">
-		<div id="sidebar_br">
-		<div id="sidebar_tl">
-		<div id="sidebar_tr">
-		<div id="serendipityLeftSideBar">
+     <div class="left_sidebar_container">
+        <div id="sidebar_lc">
+        <div id="sidebar_rc">
+        <div id="sidebar_tc">
+        <div id="sidebar_bc">
+        <div id="sidebar_bl">
+        <div id="sidebar_br">
+        <div id="sidebar_tl">
+        <div id="sidebar_tr">
+        <div id="serendipityLeftSideBar">
         {serendipity_printSidebar side="left"}
         </div></div></div></div></div></div></div></div></div></div>
 {/if}
 {if $rightSidebarElements >0 and $leftSidebarElements <=0}
-		<div id="content_right_only_position">
-{elseif	$rightSidebarElements >0 and $leftSidebarElements > 0}
-		<div id="content_middle_position">
-{elseif	$rightSidebarElements <=0 and $leftSidebarElements > 0}
-		<div id="content_left_only_position">
+        <div id="content_right_only_position">
+{elseif    $rightSidebarElements >0 and $leftSidebarElements > 0}
+        <div id="content_middle_position">
+{elseif    $rightSidebarElements <=0 and $leftSidebarElements > 0}
+        <div id="content_left_only_position">
 {else}
 <div>
 {/if}
         <div id="content_lc">
-		<div id="content_rc">
-		<div id="content_tc">
-		<div id="content_bc">
-		<div id="content_bl">
-		<div id="content_br">
-		<div id="content_tl">
-		<div id="content_tr">
-		<div id="content_inside">
-    	{$CONTENT}
-		</div></div>		</div>	</div>		</div>		</div>		</div>		</div>		</div>		</div>
+        <div id="content_rc">
+        <div id="content_tc">
+        <div id="content_bc">
+        <div id="content_bl">
+        <div id="content_br">
+        <div id="content_tl">
+        <div id="content_tr">
+        <div id="content_inside">
+        {$CONTENT}
+        </div></div>        </div>    </div>        </div>        </div>        </div>        </div>        </div>        </div>
 {if $rightSidebarElements > 0}
     <div class="right_sidebar_container">
-		<div id="sidebar_lc">
-		<div id="sidebar_rc">
-		<div id="sidebar_tc">
-		<div id="sidebar_bc">
-		<div id="sidebar_bl">
-		<div id="sidebar_br">
-		<div id="sidebar_tl">
-		<div id="sidebar_tr">
-		<div id="serendipityRightSideBar">
-		{serendipity_printSidebar side="right"}
-		</div></div></div>		</div>		</div>		</div>		</div>		</div>		</div>		</div>
+        <div id="sidebar_lc">
+        <div id="sidebar_rc">
+        <div id="sidebar_tc">
+        <div id="sidebar_bc">
+        <div id="sidebar_bl">
+        <div id="sidebar_br">
+        <div id="sidebar_tl">
+        <div id="sidebar_tr">
+        <div id="serendipityRightSideBar">
+        {serendipity_printSidebar side="right"}
+        </div></div></div>        </div>        </div>        </div>        </div>        </div>        </div>        </div>
 
 {/if}
 {/if}

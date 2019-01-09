@@ -20,7 +20,7 @@
                 <textarea rows="10" cols="35" id="serendipity_commentform_comment" name="serendipity[comment]">{$commentform_data}</textarea><br />
                 {serendipity_hookPlugin hook="frontend_comment" data=$commentform_entry}
           </div>
-      
+
 {if $is_commentform_showToolbar}
     <br />
          <div class="serendipity_commentsLabel">
@@ -30,17 +30,16 @@
                 <input id="checkbox_subscribe" type="checkbox" name="serendipity[subscribe]" {$commentform_subscribe} /><label for="checkbox_subscribe">{$CONST.SUBSCRIBE_TO_THIS_ENTRY}</label>
     {/if}
             </div>
-       
+
 {/if}
 
 {if $is_moderate_comments}
 <br />
        <div class="serendipity_commentsValue serendipity_msg_important">{$CONST.COMMENTS_WILL_BE_MODERATED}</div>
-       
+
 {/if}
           <br />
              <input type="submit" name="serendipity[submit]" value="{$CONST.SUBMIT_COMMENT}" /> <input type="submit" name="serendipity[preview]" value="{$CONST.PREVIEW}" />
-        
-    
+
     </form>
 </div>
