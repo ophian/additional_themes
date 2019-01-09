@@ -9,10 +9,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -33,31 +33,22 @@
 {serendipity_hookPlugin hook="frontend_header"}
 </head>
 
-<body id="{if $serendipityVersion < 1.1}{else}{$template_option.colorset}{/if}">
+<body id="{$template_option.colorset}">
 {else}
 {serendipity_hookPlugin hook="frontend_header"}
 {/if}
 
 {if $is_raw_mode != true}
 <div id="serendipity_banner"><a id="topofpage"></a>
-    <div id="identity"><h1><a class="homelink1" href="{$serendipityBaseURL}">{$head_title|@default:$blogTitle|truncate:60:" ..."}</a></h1>
-    <h2><a class="homelink2" href="{$serendipityBaseURL}">{$head_subtitle|@default:$blogDescription}</a></h2></div>
-	<div id="navbar">
-				<ul>
-				{if $serendipityVersion < 1.1}
-				<!-- ****** Change navbar links here ****** -->
-    				<li><a href="#">About</a></li>
-    				<li><a href="#">Photos</a></li>
-    				<li><a href="#">Projects</a></li>
-    				<li><a href="#">Music</a></li>
-    				<li><a href="#">Contact</a></li>
-				{else}
-        {foreach from=$navlinks item="navlink"}
-        <li><a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a></li>
+    <div id="identity"><h1><a class="homelink1" href="{$serendipityBaseURL}">{$head_title|default:$blogTitle|truncate:60:" ..."}</a></h1>
+    <h2><a class="homelink2" href="{$serendipityBaseURL}">{$head_subtitle|default:$blogDescription}</a></h2></div>
+    <div id="navbar">
+        <ul>
+        {foreach $navlinks AS $navlink}
+            <li><a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a></li>
         {/foreach}
-				{/if}
-				</ul>
-			</div>
+        </ul>
+    </div>
 </div>
 
 <!-- sliding faux columns, part 1 -->
