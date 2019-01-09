@@ -3,10 +3,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -36,41 +36,35 @@
 
 <!-- ***** PRIMARY BANNER AREA ***** -->
 <div id="identity">
-	<h1>{$head_title|@default:$blogTitle|truncate:50:" ...":true}</h1>
-	<h2>{$head_subtitle|@default:$blogDescription}</h2>
+    <h1>{$head_title|default:$blogTitle|truncate:50:" ...":true}</h1>
+    <h2>{$head_subtitle|default:$blogDescription}</h2>
 </div>
 
 <!-- ***** NAVIGATION AREA ***** -->
 <div id="navigation">
 <div style="float: left;">
-	<ul>
-	<li class="selected"><a href="{$serendipityBaseURL}" accesskey="h">{$CONST.HOMEPAGE}</a></li>
-	{if $serendipityVersion < 1.1}
-		<li><a href="#">About</a></li>
-		<li><a href="#">Link</a></li>
-		<li><a href="#">Link</a></li>
-	{else}
-	<li><a href="{$template_option.navlink1url}" title="{$template_option.navlink1text}">{$template_option.navlink1text}</a></li>
-	<li><a href="{$template_option.navlink2url}" title="{$template_option.navlink2text}">{$template_option.navlink2text}</a></li>
-	<li><a href="{$template_option.navlink3url}" title="{$template_option.navlink3text}">{$template_option.navlink3text}</a></li>
-	{/if}
-	<li><a href="{$serendipityBaseURL}serendipity_admin.php">{$CONST.LOGIN}</a></li>
-	</ul>
+    <ul>
+    <li class="selected"><a href="{$serendipityBaseURL}" accesskey="h">{$CONST.HOMEPAGE}</a></li>
+    <li><a href="{$template_option.navlink1url}" title="{$template_option.navlink1text}">{$template_option.navlink1text}</a></li>
+    <li><a href="{$template_option.navlink2url}" title="{$template_option.navlink2text}">{$template_option.navlink2text}</a></li>
+    <li><a href="{$template_option.navlink3url}" title="{$template_option.navlink3text}">{$template_option.navlink3text}</a></li>
+    <li><a href="{$serendipityBaseURL}serendipity_admin.php">{$CONST.LOGIN}</a></li>
+    </ul>
 </div>
 
 
 <div class="quicksearch" style="float: right;">
-	<form id="searchform" action="{$serendipityBaseURL}" method="get">
-		<img src="{$serendipityBaseURL}templates/bex01/img/bexmag.gif" width="21" height="15" alt="search picture" />
-		<input type="hidden" name="serendipity[action]" value="search" />
-	<input alt="Quicksearch" type="text" name="serendipity[searchTerm]" value="{$CONST.QUICKSEARCH}..." /></form>
+    <form id="searchform" action="{$serendipityBaseURL}" method="get">
+        <img src="{$serendipityBaseURL}templates/bex01/img/bexmag.gif" width="21" height="15" alt="search picture" />
+        <input type="hidden" name="serendipity[action]" value="search" />
+    <input alt="Quicksearch" type="text" name="serendipity[searchTerm]" value="{$CONST.QUICKSEARCH}..." /></form>
 </div>
 
 </div>
 
 <!-- ***** CONTENT AREA ***** -->
 <div id="content">
-	{$CONTENT}
+    {$CONTENT}
 </div>
 
 

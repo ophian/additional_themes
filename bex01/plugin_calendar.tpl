@@ -5,7 +5,7 @@
     <tr>
         <td class="serendipity_calendarHeader" align="center">
 {if $plugin_calendar_head.minScroll le $plugin_calendar_head.month_date}
-	<div class="calback"><a title="{$CONST.BACK}" href="{$plugin_calendar_head.uri_previous}"></a></div>
+    <div class="calback"><a title="{$CONST.BACK}" href="{$plugin_calendar_head.uri_previous}"></a></div>
 {/if}
         </td>
 
@@ -21,15 +21,15 @@
     </tr>
 
     <tr>
-    {foreach from=$plugin_calendar_dow item="dow"}
-        <td scope="col" abbr="{$dow.date|@formatTime:"%A":false}" title="{$dow.date|@formatTime:"%A":false}" class="serendipity_weekDayName" align="center">{$dow.date|@formatTime:"%a":false|@truncate:2:'':true}</td>
+    {foreach $plugin_calendar_dow AS $dow}
+        <td scope="col" abbr="{$dow.date|formatTime:"%A":false}" title="{$dow.date|formatTime:"%A":false}" class="serendipity_weekDayName" align="center">{$dow.date|formatTime:"%a":false|truncate:2:'':true}</td>
     {/foreach}
     </tr>
 
-    {foreach from=$plugin_calendar_weeks item="week"}
+    {foreach $plugin_calendar_weeks AS $week}
         <tr class="serendipity_calendar">
-        {foreach from=$week.days item="day"}
-            <td class="serendipity_calendarDay {$day.classes}"{if isset($day.properties.Title)} title="{$day.properties.Title}"{/if}>{if isset($day.properties.Active) and $day.properties.Active}<a href="{$day.properties.Link}">{/if}{$day.name|@default:"&#160;"}{if isset($day.properties.Active) and $day.properties.Active}</a>{/if}</td>
+        {foreach $week.days AS $day}
+            <td class="serendipity_calendarDay {$day.classes}"{if isset($day.properties.Title)} title="{$day.properties.Title}"{/if}>{if isset($day.properties.Active) AND $day.properties.Active}<a href="{$day.properties.Link}">{/if}{$day.name|default:"&#160;"}{if isset($day.properties.Active) AND $day.properties.Active}</a>{/if}</td>
         {/foreach}
         </tr>
     {/foreach}
