@@ -2,10 +2,10 @@
            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -28,32 +28,24 @@
 
 <body>
 <div id="container">
-	<div id="{if $serendipityVersion < 1.1}serendipity_banner{/if}{if $template_option.headerimage == 'true'}serendipity_banner{elseif $template_option.headerimage == 'false'}serendipity_banner_alt{/if}">
-		<h1><a href="{$serendipityBaseURL}">{$head_title|@default:$blogTitle|truncate:40:' ...'}</a></h1>
-    		<h4>{$head_subtitle|@default:$blogDescription}</h4>
-	</div>
-	<div id="navigation">
-	<ul>
-	<li><a href="{$serendipityBaseURL}">Home</a></li>
-		{if $serendipityVersion < 1.1}
-				<!-- ****** Change navbar links here ****** -->
-    			<li><a href="#">Link</a></li>
-    			<li><a href="#">Link</a></li>
-    			<li><a href="#">Link</a></li>
-    			<li><a href="#">Link</a></li>
-		{else}
-        		{foreach from=$navlinks item="navlink"}
-        		<li><a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a></li>
-		      {/foreach}
-		{/if}
-	</ul>
+    <div id="{if $template_option.headerimage == 'true'}serendipity_banner{elseif $template_option.headerimage == 'false'}serendipity_banner_alt{/if}">
+        <h1><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle|truncate:40:' ...'}</a></h1>
+            <h4>{$head_subtitle|default:$blogDescription}</h4>
+    </div>
+    <div id="navigation">
+    <ul>
+        <li><a href="{$serendipityBaseURL}">Home</a></li>
+    {foreach $navlinks AS $navlink}
+        <li><a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a></li>
+    {/foreach}
+    </ul>
 </div>
 <div id="mainpane">
-	<div id="content">{$CONTENT}</div>
+    <div id="content">{$CONTENT}</div>
       <div id="sidebar">
-		{serendipity_printSidebar side="right"}
-		{serendipity_printSidebar side="left"}
-	</div>
+        {serendipity_printSidebar side="right"}
+        {serendipity_printSidebar side="left"}
+    </div>
 </div>
 
 <div id="footer"><p>Design by <a href="http://www.gigadesign.be/" title="main website from the designer">Gigadesign</a> | Ported to <a href="http://www.s9y.org">Serendipity</a> by <a href="http://www.carlgalloway.com/categories/9-Downloads">Carl</a></p></div>
