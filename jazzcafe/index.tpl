@@ -8,10 +8,10 @@
 {/if}
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -42,8 +42,8 @@
       <div id="header" onclick="location.href='{$serendipityBaseURL}';" style="cursor: pointer;">
 
         <div id="logo">
-          <h1 id="sitename">{$head_title|@default:$blogTitle}</h1>
-		  <h2 id="subtitle">{$head_subtitle|@default:$blogDescription}</h2>
+          <h1 id="sitename">{$head_title|default:$blogTitle}</h1>
+          <h2 id="subtitle">{$head_subtitle|default:$blogDescription}</h2>
         </div>
       </div>
 
@@ -62,7 +62,7 @@
 
       <div id="content" class="clearfix">
 
-	  <div id="main">
+      <div id="main">
            {$CONTENT}
 
           </div>
@@ -85,16 +85,16 @@
 
             </div>
 
-			<br clear="all" />
-		{/if}
+            <br clear="all" />
+        {/if}
   <div id="footer">
 {serendipity_hookPlugin hook="frontend_footer"}
         <ul>
 
 
-	  <li> |  <a href="#">Home</a> | </li><li> <a href="#">SiteMap
+      <li> |  <a href="#">Home</a> | </li><li> <a href="#">SiteMap
     </a> | </li><li><a href="http://www.piotrpolak.com">Design by Piotr Polak</a> | <a href="mailto:ahmetusal@gmail.com">Ported by Ahmet Usal</a> |</li>
-	</ul>
+    </ul>
     </div>
 
 {if $is_embedded != true}
