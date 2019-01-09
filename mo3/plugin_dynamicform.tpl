@@ -1,14 +1,14 @@
 <h3 id="response">{$plugin_contactform_pagetitle}</h3>
-            
+
 <div id="contactpreface">{$plugin_contactform_preface}</div>
 
 {if $is_contactform_sent}
-<div class="serendipity_center serendipity_msg_notice">	{$plugin_contactform_sent}</div>
+<div class="serendipity_center serendipity_msg_notice">    {$plugin_contactform_sent}</div>
 {else}
     {if $is_contactform_error}
     <div class="serendipity_center serendipity_msg_important">{$plugin_contactform_error}</div>
     <!-- Needed for Captchas -->
-    {foreach from=$comments_messagestack item="message"}
+    {foreach $comments_messagestack AS $message}
     <div class="serendipity_center serendipity_msg_important">{$message}</div>
     {/foreach}
     {/if}
@@ -19,25 +19,25 @@
         <div>
             <input type="hidden" name="serendipity[subpage]" value="{$commentform_sname}" />
             <input type="hidden" name="serendipity[commentform]" value="true" />
-{foreach name="field" from=$commentform_dynamicfields item="field"}
+{foreach $commentform_dynamicfields AS $field}
     {if $field.type == "hidden"}
             <input type="hidden" name="serendipity[{$field.id}]" value="{$field.default}" />
     {/if}
 {/foreach}
         </div>
 
-{foreach name="field" from=$commentform_dynamicfields item="field"}
+{foreach $commentform_dynamicfields AS $field}
     {if $field.type != "hidden"}
         <p>
         {if $field.type == "checkbox"}
            <input type="checkbox" name="{$field.id}" id="{$field.id}" {$field.default} /><label for="{$field.id}"><small>{$field.message}</small></label>
         {elseif $field.type == "radio"}
-        {foreach name="radio_option" from=$field.options item="option"}
+        {foreach $field.options AS $option}
            <input type="radio" name="{$field.id}" id="{$field.id}.{$option.id}" value="{$option.value}" {$option.default} /><label for="{$field.id}.{$option.id}"><small>{$option.name}</small></label>
         {/foreach}
         {elseif $field.type == "select"}
            <select name="{$field.id}">
-        {foreach name="radio_option" from=$field.options item="option"}
+        {foreach $field.options AS $option}
                <option name="{$field.id}" id="{$field.id}.{$option.id}" value="{$option.value}" {$option.default} >{$option.name}</option>
         {/foreach}
            </select>

@@ -1,4 +1,4 @@
-{foreach from=$plugindata item=item}
+{foreach $plugindata AS $item}
   {if $item.class == "serendipity_quicksearch_plugin"}
   {else}
   {if $item.class == "serendipity_plugin_staticpage"}
