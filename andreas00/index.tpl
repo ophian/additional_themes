@@ -8,10 +8,10 @@
 {/if}
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -42,24 +42,24 @@
 <div id="wrap">
 
 <div id="header">
-<h1><a href="{$serendipityBaseURL}">{$head_title|@default:$blogTitle|truncate:40:' ...'}</a></h1>
-<p><strong>{$head_subtitle|@default:$blogDescription}</strong></p></div>
+<h1><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle|truncate:40:' ...'}</a></h1>
+<p><strong>{$head_subtitle|default:$blogDescription}</strong></p></div>
 
 {if $leftSidebarElements > 0}<div id="LeftSideBar">{serendipity_printSidebar side="left"}</div>{/if}{if $rightSidebarElements > 0}<div id="RightSideBar">{serendipity_printSidebar side="right"}</div>{/if}
 {if $rightSidebarElements < 1}
-	<div id="contentright">
+    <div id="contentright">
 {elseif $leftSidebarElements < 1}
-	<div id="contentleft">
+    <div id="contentleft">
 {else}
-	<div id="content">
+    <div id="content">
 {/if}
-	<a id="main"></a>{$CONTENT}{$raw_data}
-	</div>
+    <a id="main"></a>{$CONTENT}{$raw_data}
+    </div>
 
 <div id="footer">
 <p>Design by <a href="http://andreasviklund.com">Andreas Viklund</a> | Ported to <a href="http://www.s9y.org">Serendipity</a> by <a href="http://www.carlgalloway.com/categories/9-Downloads">Carl</a></p>
 <!--[if IE]><p><img src="{serendipity_getFile file="img/warning.gif"}" alt="warning" /> Warning you are using a non-secure and non-standards compliant browser. <a href="http://www.spreadfirefox.com" title="Get Firefox!" target="_blank">Get a better browser</a>!</p>
-  	<![endif]-->
+      <![endif]-->
 </div>
 
 </div>
