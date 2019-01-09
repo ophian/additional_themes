@@ -2,16 +2,16 @@
 <div class="serendipity_Entry_Date">
 {/if}
 <div class="entry_heading">
-    	<h3 class="entry_title"><a href="#">{$staticpage_headline|@escape}</a></h3>
-	<p class="entry_date">{if $staticpage_articleformat}{$staticpage_articleformattitle|@escape}{/if}</p>
+        <h3 class="entry_title"><a href="#">{$staticpage_headline|escape}</a></h3>
+    <p class="entry_date">{if $staticpage_articleformat}{$staticpage_articleformattitle|escape}{/if}</p>
 </div>
 
 {if $staticpage_navigation}
     <table border="0" cellpadding="2" cellspacing="2" width="100%" class="staticpage_navigation">
         <tr>
-            <td class="staticpage_navigation_left"   style="width: 20%"><a href="{$staticpage_navigation.prev.link}" title="prev">{$staticpage_navigation.prev.name|@escape}</a></td>
-            <td class="staticpage_navigation_center" style="width: 60%; text-align: center"><a href="{$staticpage_navigation.top.link}" title="top">{$staticpage_navigation.top.name|@escape}</a></td>
-            <td class="staticpage_navigation_right"  style="width: 20%; text-align: right"><a href="{$staticpage_navigation.next.link}" title="next">{$staticpage_navigation.next.name|@escape}</a></td>
+            <td class="staticpage_navigation_left"   style="width: 20%"><a href="{$staticpage_navigation.prev.link}" title="prev">{$staticpage_navigation.prev.name|escape}</a></td>
+            <td class="staticpage_navigation_center" style="width: 60%; text-align: center"><a href="{$staticpage_navigation.top.link}" title="top">{$staticpage_navigation.top.name|escape}</a></td>
+            <td class="staticpage_navigation_right"  style="width: 20%; text-align: right"><a href="{$staticpage_navigation.next.link}" title="next">{$staticpage_navigation.next.name|escape}</a></td>
         </tr>
     </table>
 {/if}
@@ -32,7 +32,7 @@
 {else}
 
 <table border="0" width="100%">
-{foreach from=$staticpage_extchildpages item="child"}
+{foreach $staticpage_extchildpages AS $child}
 <tr>
 <td width="200">
         {if $child.image}
@@ -57,7 +57,7 @@
 {/if}
 
 {if $staticpage_author}
-    <div class="staticpage_author">{$staticpage_author|@escape}</div>
+    <div class="staticpage_author">{$staticpage_author|escape}</div>
 {/if}
 
     <div class="staticpage_metainfo">
@@ -66,7 +66,7 @@
 {/if}
 
 {if $staticpage_adminlink AND $staticpage_adminlink.page_user}
-    | <a class="staticpage_metainfo_editlink" href="{$staticpage_adminlink.link_edit}">{$staticpage_adminlink.link_name|@escape}</a>
+    | <a class="staticpage_metainfo_editlink" href="{$staticpage_adminlink.link_edit}">{$staticpage_adminlink.link_name|escape}</a>
 {/if}
     </div>
 
