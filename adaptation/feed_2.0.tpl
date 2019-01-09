@@ -20,11 +20,11 @@
     {$metadata.additional_fields.channel}
     {$metadata.additional_fields.image}
 
-{foreach from=$entries item="entry"}
+{foreach $entries AS $entry}
 <item>
     <title>{$entry.feed_title}</title>
     <link>{$entry.feed_entryLink}{if $is_comments}#c{$entry.commentid}{/if}</link>
-    {foreach from=$entry.categories item="cat"}
+    {foreach $entry.categories AS $cat}
         <category>{$cat.feed_category_name}</category>
     {/foreach}
 
@@ -34,25 +34,25 @@
 {if !$is_comments}
     <slash:comments>{$entry.comments}</slash:comments>
     <wfw:commentRss>{$serendipityBaseURL}rss.php?version={$metadata.version}&amp;type=comments&amp;cid={$entry.feed_id}</wfw:commentRss>
-{/if}    
+{/if}
 
     <author>{$entry.feed_email} ({$entry.feed_author})</author>
 {if !empty($entry.body)}
     <content:encoded>
-    {$entry.feed_body|@escape} {$entry.feed_ext|@escape}
+    {$entry.feed_body|escape} {$entry.feed_ext|escape}
 
 {if !$is_comments}
     &lt;br /&gt;&lt;br /&gt;&lt;a href="{$entry.feed_entryLink}#comments"&gt;{$CONST.COMMENTS}: ({$entry.comments})&lt;/a&gt; | {$CONST.TRACKBACKS}: ({$entry.trackbacks})&lt;br /&gt;&lt;br /&gt;
     &lt;strong&gt;{$CONST.COMMENTS}&lt;/strong&gt;&lt;br /&gt;
     &lt;ol class="commentlist"&gt;
-    {serendipity_printComments|@escape entry=$entry.id}
+    {serendipity_printComments|escape entry=$entry.id}
     &lt;/ol&gt;
 
     &lt;strong&gt;{$CONST.TRACKBACKS}&lt;/strong&gt;&lt;br /&gt;
     &lt;ol class="commentlist"&gt;
-    {serendipity_printTrackbacks|@escape entry=$entry.id}
+    {serendipity_printTrackbacks|escape entry=$entry.id}
     &lt;/ol&gt;
-{/if}    
+{/if}
 
     </content:encoded>
 {/if}
