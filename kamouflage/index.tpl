@@ -9,10 +9,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -41,8 +41,8 @@
 {if $is_raw_mode != true}
 <div id="wrap">
 <div id="serendipity_banner"><a id="topofpage"></a>
-    <h1><a class="homelink1" href="{$serendipityBaseURL}">{$head_title|@default:$blogTitle|truncate:80:" ..."}</a></h1>
-    <h2><a class="homelink2" href="{$serendipityBaseURL}">{$head_subtitle|@default:$blogDescription}</a></h2>
+    <h1><a class="homelink1" href="{$serendipityBaseURL}">{$head_title|default:$blogTitle|truncate:80:" ..."}</a></h1>
+    <h2><a class="homelink2" href="{$serendipityBaseURL}">{$head_subtitle|default:$blogDescription}</a></h2>
 </div>
 
 <table id="mainpane">
@@ -61,7 +61,7 @@
 {serendipity_hookPlugin hook="frontend_footer"}
 {if $is_embedded != true}
 <div id="footer">
-	<p align="center">{$CONST.POWERED_BY} <a href="http://www.s9y.org">Serendipity</a> - Design by <a href="http://themes.daves.me.uk">David Cummins</a></p>
+    <p align="center">{$CONST.POWERED_BY} <a href="http://www.s9y.org">Serendipity</a> - Design by <a href="http://themes.daves.me.uk">David Cummins</a></p>
 </div>
 </div>
 </body>
