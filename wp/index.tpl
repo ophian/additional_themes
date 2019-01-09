@@ -3,10 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
-	<title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
 
-	<meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+    <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -18,10 +18,10 @@
     <link rel="canonical" href="{$serendipityBaseURL}" />
 {/if}
 
-	<style type="text/css" media="screen">
-		@import url( {serendipity_getFile file="wp-layout.css"} );
-	</style>
-	{serendipity_hookPlugin hook="frontend_header"}
+    <style type="text/css" media="screen">
+        @import url( {serendipity_getFile file="wp-layout.css"} );
+    </style>
+    {serendipity_hookPlugin hook="frontend_header"}
 </head>
 
 <body>
@@ -29,7 +29,7 @@
 
 {if $is_raw_mode != true}
 <div id="rap">
-<h1 id="header"><a href="{$serendipityBaseURL}" title="{$head_title|@default:$blogTitle}: {$head_subtitle|@default:$blogDescription}">{$head_title|@default:$blogTitle}</a></h1>
+<h1 id="header"><a href="{$serendipityBaseURL}" title="{$head_title|default:$blogTitle}: {$head_subtitle|default:$blogDescription}">{$head_title|default:$blogTitle}</a></h1>
 
 <div id="content">
 
