@@ -32,7 +32,7 @@
         {foreach $staticpage_navigation.crumbs AS $crumb}
         {if !$crumb@first}&raquo;{/if}<a href="{$crumb.link}">{$crumb.name|escape}</a>
         {/foreach}
-	</td>
+    </td>
     </tr>
 </table>
 {/if}

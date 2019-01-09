@@ -1,6 +1,6 @@
 {assign var="i3submit" value=$CONST.I3_SUBMIT}
 <h2 id="contact">{$plugin_contactform_pagetitle}</h2>
-            
+
 <div id="contactpreface">{$plugin_contactform_preface}</div>
 
 {if $is_contactform_sent}

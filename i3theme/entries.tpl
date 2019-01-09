@@ -1,5 +1,6 @@
 <!-- ENTRIES START -->
-    {serendipity_hookPlugin hook="entries_header" addData="$entry_id"}
+{serendipity_hookPlugin hook="entries_header" addData="$entry_id"}
+{if NOT empty($entries)}{* catch a staticpage startpage which has no $entries array set *}
     {foreach $entries AS $dategroup}
         {foreach $dategroup.entries AS $entry}
         {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
@@ -33,13 +34,13 @@
             <div class="serendipity_entry_extended"><a id="extended"></a>{$entry.extended}</div>
             {/if}
 
-            {if $entry.has_extended and not $is_single_entry and not $entry.is_extended}
+            {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
             <p><a class="more-link" href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
             {/if}
 
             <p class="submeta">
                 {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a>
-                {if $entry.is_entry_owner and not $is_preview}&bull; <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
+                {if $entry.is_entry_owner AND NOT $is_preview}&bull; <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
             </p>
             {$entry.add_footer}
             {$entry.plugin_display_dat}
@@ -58,7 +59,7 @@
         </rdf:RDF>
         -->
 
-        {if $is_single_entry and not $use_popups and not $is_preview}
+        {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|sprintf:$CONST.UNSUBSCRIBE_OK}</div>
             {/if}
@@ -85,7 +86,7 @@
             </div>
         {/if}
 
-        {if $is_single_entry and not $is_preview}
+        {if $is_single_entry AND NOT $is_preview}
             <div class="serendipity_comments serendipity_section_comments">
                 <a id="comments"></a>
                 <h3 id="comments_h3">{$entry.comments} {$CONST.COMMENTS}</h3>
@@ -117,18 +118,19 @@
                 <div class="serendipity_section_commentform">
                     <h3 id="respond">{$CONST.ADD_COMMENT}</h3>
                     {$COMMENTFORM}
-		</div>
+        </div>
                 {/if}
             </div>
         {/if}
 
         {$entry.backend_preview}
-        {/foreach}
-    {foreachelse}
-    {if not $plugin_clean_page}
-        {$CONST.NO_ENTRIES_TO_PRINT}
-    {/if}
     {/foreach}
+{/foreach}
+{else}
+    {if NOT $plugin_clean_page AND $view != '404'}
+    <p>{$CONST.NO_ENTRIES_TO_PRINT}</p>
+    {/if}
+{/if}
 
 {if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
     <div class="page-nav">
