@@ -16,7 +16,7 @@
 {if ($view == "entry")}
     <link rel="canonical" href="{$entry.rdf_ident}">
 {/if}
-{if ($view == "start")}
+{if in_array($view, ['start', 'entries'])}
     <link rel="canonical" href="{$serendipityBaseURL}">
 {/if}
     <meta name="viewport" content="width=device-width, initial-scale=1">

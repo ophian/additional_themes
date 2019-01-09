@@ -26,7 +26,7 @@
 {if ($view == "entry")}
     <link rel="canonical" href="{$entry.rdf_ident}" />
 {/if}
-{if ($view == "start")}
+{if in_array($view, ['start', 'entries'])}
     <link rel="canonical" href="{$serendipityBaseURL}" />
 {/if}
     <link rel="stylesheet" type="text/css" media="screen" href="{$head_link_stylesheet}" />
