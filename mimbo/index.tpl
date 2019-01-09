@@ -9,10 +9,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -62,7 +62,7 @@
 
     <ul id="nav" class="clearfloat">
        <li><a href="{$serendipityBaseURL}"{if $currpage==$serendipityBaseURL} class="on"{/if}>{$CONST.HOMEPAGE}</a></li>
-{foreach from=$navlinks item="navlink" name=navbar}
+{foreach $navlinks AS $navlink}
        <li><a href="{$navlink.href}"{if $currpage==$navlink.href} class="on"{/if}>{$navlink.title}</a></li>
 {/foreach}
     </ul>
@@ -105,7 +105,7 @@
 </div><!-- /#page -->
 
 <div id="footer">
-&#169; {$date|@formatTime:'%Y'} <span class="url fn org">{$blogTitle}</span> | Powered by <a href="http://www.s9y.org/" target="_blank">s9y</a> | <a href="{$serendipityBaseURL}feeds/index.rss2">{$CONST.ENTRIES}&nbsp;(RSS)</a> | <a href="{$serendipityBaseURL}feeds/comments.rss2">{$CONST.COMMENTS}&nbsp;(RSS)</a> | <a href="http://www.darrenhoyt.com/2007/08/05/wordpress-magazine-theme-released/" target="_blank" title="By Darren Hoyt"><em>Mimbo</em> theme</a> | Ported to s9y by <a href="http://yellowled.de/s9y.html" title="Ported by Matthias Mees">YellowLed</a>
+&#169; {$date|formatTime:'%Y'} <span class="url fn org">{$blogTitle}</span> | Powered by <a href="http://www.s9y.org/" target="_blank">s9y</a> | <a href="{$serendipityBaseURL}feeds/index.rss2">{$CONST.ENTRIES}&nbsp;(RSS)</a> | <a href="{$serendipityBaseURL}feeds/comments.rss2">{$CONST.COMMENTS}&nbsp;(RSS)</a> | <a href="http://www.darrenhoyt.com/2007/08/05/wordpress-magazine-theme-released/" target="_blank" title="By Darren Hoyt"><em>Mimbo</em> theme</a> | Ported to s9y by <a href="http://yellowled.de/s9y.html" title="Ported by Matthias Mees">YellowLed</a>
 </div><!-- /#footer -->
 {/if}
 

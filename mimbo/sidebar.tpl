@@ -2,7 +2,7 @@
 <div id="serendipity{$pluginside}SideBar">
 {/if}
 <ul class="sidelist">
-{foreach from=$plugindata item=item}
+{foreach $plugindata AS $item}
    {if $item.class == "serendipity_quicksearch_plugin"}
    {else}
     <li>

@@ -1,11 +1,11 @@
 <!-- ENTRIES START -->
     {serendipity_hookPlugin hook="entries_header" addData="$entry_id"}
-    {foreach from=$entries item="dategroup"}
-    {foreach from=$dategroup.entries item="entry"}
+    {foreach $entries AS $dategroup}
+    {foreach $dategroup.entries AS $entry}
     <div class="post">
-        <h2>{$entry.title|@default:$entry.id}</h2>
+        <h2>{$entry.title|default:$entry.id}</h2>
 
-        <small>{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> &bull; {$entry.timestamp|@formatTime:DATE_FORMAT_ENTRY}{if $entry.categories} &bull; {$CONST.CATEGORY}: {foreach from=$entry.categories item="entry_category" name="categories"}<a href="{$entry_category.category_link}">{$entry_category.category_name|@escape}</a>{if not $smarty.foreach.categories.last}, {/if}{/foreach}{/if}{if $dategroup.is_sticky} &bull; {$CONST.STICKY_POSTINGS}{/if}{if $entry.is_entry_owner and not $is_preview} &bull; <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}</small>
+        <small>{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> &bull; {$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}{if $entry.categories} &bull; {$CONST.CATEGORY}: {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}{/if}{if $dategroup.is_sticky} &bull; {$CONST.STICKY_POSTINGS}{/if}{if $entry.is_entry_owner AND NOT $is_preview} &bull; <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}</small>
 
         <div class="entry">
         {$entry.body}
@@ -16,8 +16,8 @@
             {$entry.extended}
         </div>
 {/if}
-{if $entry.has_extended and not $is_single_entry and not $entry.is_extended}
-        <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|@sprintf:$entry.title}</a></p>
+{if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
+        <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
 {/if}
         {$entry.add_footer}
         </div>
@@ -30,31 +30,31 @@
         <rdf:Description
                  rdf:about="{$entry.link_rdf}"
                  trackback:ping="{$entry.link_trackback}"
-                 dc:title="{$entry.title_rdf|@default:$entry.title}"
+                 dc:title="{$entry.title_rdf|default:$entry.title}"
                  dc:identifier="{$entry.rdf_ident}" />
         </rdf:RDF>
         -->
         {$entry.plugin_display_dat}
 
-        {if $is_single_entry and not $use_popups and not $is_preview}
+        {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
-                <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|@sprintf:$CONST.UNSUBSCRIBE_OK}</div><br />
+                <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|sprintf:$CONST.UNSUBSCRIBE_OK}</div><br />
             {/if}
 
             {if $CONST.DATA_TRACKBACK_DELETED}
-                <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_TRACKBACK_DELETED|@sprintf:$CONST.TRACKBACK_DELETED}</div><br />
+                <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_TRACKBACK_DELETED|sprintf:$CONST.TRACKBACK_DELETED}</div><br />
             {/if}
 
             {if $CONST.DATA_TRACKBACK_APPROVED}
-                <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_TRACKBACK_APPROVED|@sprintf:$CONST.TRACKBACK_APPROVED}</div><br />
+                <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_TRACKBACK_APPROVED|sprintf:$CONST.TRACKBACK_APPROVED}</div><br />
             {/if}
 
             {if $CONST.DATA_COMMENT_DELETED}
-                <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_DELETED|@sprintf:$CONST.COMMENT_DELETED}</div><br />
+                <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_DELETED|sprintf:$CONST.COMMENT_DELETED}</div><br />
             {/if}
 
             {if $CONST.DATA_COMMENT_APPROVED}
-                <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|@sprintf:$CONST.COMMENT_APPROVED}</div><br />
+                <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</div><br />
             {/if}
 
             <div class="serendipity_section_trackbacks">
@@ -62,14 +62,14 @@
                 <h3 id="trackbacks">{$entry.trackbacks} {$CONST.TRACKBACKS}</h3>
 
                 <div class="serendipity_center">
-                    <a rel="nofollow" style="font-weight: normal" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|@escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|@escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
+                    <a rel="nofollow" style="font-weight: normal" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
                 </div>
 
                 {serendipity_printTrackbacks entry=$entry.id}
             </div>
         {/if}
 
-        {if $is_single_entry and not $is_preview}
+        {if $is_single_entry AND NOT $is_preview}
             <div class="serendipity_section_comments">
                 <a id="comments"></a>
                 <h3 id="comments">{$entry.comments} {$CONST.COMMENTS}</h3>
@@ -93,7 +93,7 @@
                 {/if}
                 <a id="feedback"></a>
 
-                {foreach from=$comments_messagestack item="message"}
+                {foreach $comments_messagestack AS $message}
                 <div class="serendipity_center serendipity_msg_important">{$message}</div>
                 {/foreach}
 
@@ -107,7 +107,7 @@
                 <div class="serendipity_section_commentform">
                     <h3 id="respond">{$CONST.ADD_COMMENT}</h3>
                     {$COMMENTFORM}
-		</div>
+        </div>
                 {/if}
             </div>
         {/if}
@@ -115,7 +115,7 @@
         {serendipity_hookPlugin hook="entries_footer"}
         {/foreach}
     {foreachelse}
-    {if not $plugin_clean_page}
+    {if NOT $plugin_clean_page AND $view != '404'}
         {$CONST.NO_ENTRIES_TO_PRINT}
     {/if}
     {/foreach}
