@@ -9,10 +9,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -51,24 +51,24 @@
 </div> <!-- content -->
 
 
-	<div id="sidebar" style="width: {$template_option.SIDEBAR_BREITE};">
+    <div id="sidebar" style="width: {$template_option.SIDEBAR_BREITE};">
 
-		{if $template_option.SIDEBAR_NAVIGATION_TITLE}
+        {if $template_option.SIDEBAR_NAVIGATION_TITLE}
 
-		<h3 class="serendipitySideBarTitle">{$template_option.SIDEBAR_NAVIGATION_TITLE}</h3>
+        <h3 class="serendipitySideBarTitle">{$template_option.SIDEBAR_NAVIGATION_TITLE}</h3>
 
-		<ul class="plainList">
-		{foreach from=$navlinks item="navlinks"}
-        <li><a href="{$navlinks.href}">{$navlinks.title}</a></li>
-		{/foreach}
-		</ul>
+        <ul class="plainList">
+        {foreach $navlinks AS $navlink}
+        <li><a href="{$navlink.href}">{$navlink.title}</a></li>
+        {/foreach}
+        </ul>
 
-		{/if}
+        {/if}
 
-		{if $leftSidebarElements > 0} {serendipity_printSidebar side="left"} {/if}
-		{if $rightSidebarElements > 0} {serendipity_printSidebar side="right"} {/if}
+        {if $leftSidebarElements > 0} {serendipity_printSidebar side="left"} {/if}
+        {if $rightSidebarElements > 0} {serendipity_printSidebar side="right"} {/if}
 
-	</div> <!-- sidebar -->
+    </div> <!-- sidebar -->
 
 
 {/if}
