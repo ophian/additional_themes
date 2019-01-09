@@ -3,10 +3,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -29,28 +29,28 @@
 
 <body>
 <div id="wrap">
-	<div id="header">
-		<ul id="topnav">
-		<li><a href="{$serendipityBaseURL}" id="navHome" title="Posted Recently" accesskey="h">Home |</a></li>
-		<li><a href="#" id="navAbout" title="About the Author" accesskey="a">About |</a></li>
-		<li><a href="#" id="navArchives" title="Posted Previously" accesskey="r">Archives |</a></li>
-		<li><a href="#" id="navLinks" title="Recommended Links" accesskey="l">Links |</a></li>
-		<li><a href="#" id="navContact" title="Contact the Author" accesskey="c">Contact </a></li>
-		</ul>
-    		<h1><a href="{$serendipityBaseURL}">{$head_title|@default:$blogTitle}</a></h1>
-    		<h2>{$head_subtitle|@default:$blogDescription}</h2>
-	</div>
-	<table id="main">
-	<tr valign="top">
-	<td id="content" valign="top">
-			{$CONTENT}
-		</td>
+    <div id="header">
+        <ul id="topnav">
+        <li><a href="{$serendipityBaseURL}" id="navHome" title="Posted Recently" accesskey="h">Home |</a></li>
+        <li><a href="#" id="navAbout" title="About the Author" accesskey="a">About |</a></li>
+        <li><a href="#" id="navArchives" title="Posted Previously" accesskey="r">Archives |</a></li>
+        <li><a href="#" id="navLinks" title="Recommended Links" accesskey="l">Links |</a></li>
+        <li><a href="#" id="navContact" title="Contact the Author" accesskey="c">Contact </a></li>
+        </ul>
+            <h1><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle}</a></h1>
+            <h2>{$head_subtitle|default:$blogDescription}</h2>
+    </div>
+    <table id="main">
+    <tr valign="top">
+    <td id="content" valign="top">
+            {$CONTENT}
+        </td>
       <td id="sidebar" valign="top">
                 {serendipity_printSidebar side="right"}
                 {serendipity_printSidebar side="left"}
       </td>
-	</tr>
-   	</table>
+    </tr>
+       </table>
 <p id="footer">
 Design Downloaded from <a href="http://www.vanillamist.com" title="Vanilla Mist">www.vanillamist.com</a> | Ported to <a href="http://www.s9y.org">Serendipity</a> by <a href="http://www.carlgalloway.com">Carl Galloway</a></p>
 </div>
