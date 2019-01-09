@@ -9,10 +9,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -34,30 +34,30 @@
 </head>
 
 <body>
-	<div id="bg">
-	<div id="wrap">
+    <div id="bg">
+    <div id="wrap">
 {else}
 {serendipity_hookPlugin hook="frontend_header"}
 {/if}
-	<div id="banner"><div id="identity">
-<h1><a href="{$serendipityBaseURL}">{$head_title|@default:$blogTitle|truncate:60:" ..."}</a></h1><h2><a href="{$serendipityBaseURL}">{$head_subtitle|@default:$blogDescription}</a></h2></div>
-	<div id="about-snippet">
-	<p>{$template_option.about} <a href="{$template_option.aboutpageurl}"> More &raquo;</a></p>
-	</div>
-    	</div>
+    <div id="banner"><div id="identity">
+<h1><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle|truncate:60:" ..."}</a></h1><h2><a href="{$serendipityBaseURL}">{$head_subtitle|default:$blogDescription}</a></h2></div>
+    <div id="about-snippet">
+    <p>{$template_option.about} <a href="{$template_option.aboutpageurl}"> More &raquo;</a></p>
+    </div>
+        </div>
 <div id="mainpane">
 <div id="content">
     {$CONTENT}
 </div>
 <div id="leftcolumn">
-	<div id="sidebar">
-		{serendipity_printSidebar side="right"}{serendipity_printSidebar side="left"}
-	</div>
-	<div id="clearingdiv">&nbsp;</div>
+    <div id="sidebar">
+        {serendipity_printSidebar side="right"}{serendipity_printSidebar side="left"}
+    </div>
+    <div id="clearingdiv">&nbsp;</div>
 </div>
-	<div id="footer">
-		<p><a href="{$template_option.navlink1url}" title="{$template_option.navlink1text}">{$template_option.navlink1text}</a> | <a href="{$template_option.navlink2url}" title="{$template_option.navlink2text}">{$template_option.navlink2text}</a> | <a href="{$serendipityBaseURL}serendipity_admin.php">{if $is_logged_in}Admin Suite{else}Login{/if}</a> | Design by <a href="http://www.carlgalloway.com">ceejay</a></p>
-	</div>
+    <div id="footer">
+        <p><a href="{$template_option.navlink1url}" title="{$template_option.navlink1text}">{$template_option.navlink1text}</a> | <a href="{$template_option.navlink2url}" title="{$template_option.navlink2text}">{$template_option.navlink2text}</a> | <a href="{$serendipityBaseURL}serendipity_admin.php">{if $is_logged_in}Admin Suite{else}Login{/if}</a> | Design by <a href="http://www.carlgalloway.com">ceejay</a></p>
+    </div>
 </div></div></div>
 {serendipity_hookPlugin hook="frontend_footer"}
 {if $is_embedded != true}
