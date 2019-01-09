@@ -1,31 +1,31 @@
 <!-- NEWSBOX ENTRIES START -->
   {if $newsbox_data.isContainer}
   <div class="newsbox_container newsbox_{$newsbox_data.title}"><p class="newsbox_title">{$newsbox_data.title}</p>
-    {foreach from=$NEWSBOX item="newsbox"}
+    {foreach $NEWSBOX AS $newsbox}
     {$newsbox}
     {/foreach}
     <div style="clear:both"><br/></div>
   </div>
   {else}
   <div class="newsbox newsbox_{$newsbox_data.title}"><p class="newsbox_title">{$newsbox_data.title}</p>
-    {foreach from=$entries item="dategroup"}
+    {foreach $entries AS $dategroup}
     <div class="serendipity_Entry_Date">
         {if $dategroup.is_sticky}
         <h4 class="serendipity_date">{$CONST.STICKY_POSTINGS}</h4>
         {/if}
 
-        {foreach from=$dategroup.entries item="entry"}
+        {foreach $dategroup.entries AS $entry}
         <div class="shadow">
-          <div class="serendipity_entry serendipity_entry_author_{$entry.author|@makeFilename} {if $entry.is_entry_owner}serendipity_entry_author_self{/if} drop newsbox_entry">
+          <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if $entry.is_entry_owner}serendipity_entry_author_self{/if} drop newsbox_entry">
             <h3 class="serendipity_title"><a href="{$entry.link}">{$entry.title}</a></h3>
-            <h4 class="serendipity_date">{$dategroup.date|@formatTime:DATE_FORMAT_ENTRY}</h4>
+            <h4 class="serendipity_date">{$dategroup.date|formatTime:DATE_FORMAT_ENTRY}</h4>
 
             <div class="serendipity_entry_body">
                 {$entry.body}
             </div>
 
             {if $entry.has_extended}
-            <a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|@sprintf:$entry.title}</a>
+            <a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a>
             {/if}
 
           </div>
@@ -41,17 +41,17 @@
                  dc:identifier="{$entry.rdf_ident}" />
         </rdf:RDF>
         -->
-	{/foreach}
+    {/foreach}
     </div>
     {foreachelse}
-    {if not $plugin_clean_page}
+    {if NOT $plugin_clean_page AND $view != '404'}
         {$CONST.NO_ENTRIES_TO_PRINT}
     {/if}
     {/foreach}
 
-    <div class='serendipity_entryFooter' style="text-align: center">
+    <div class="serendipity_entryFooter" style="text-align: center">
       <form style="display:inline;" action="{$newsbox_data.multicat_action}" method="post">
-      {foreach from=$newsbox_data.cats item="cat_id"}
+      {foreach $newsbox_data.cats AS $cat_id}
         <input type="hidden" name="serendipity[multiCat][]" value="{$cat_id}">
       {/foreach}
         <input type="submit" name="serendipity[isMultiCat]" value="More {$newsbox_data.title}">
