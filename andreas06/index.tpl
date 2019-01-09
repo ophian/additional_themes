@@ -3,10 +3,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -31,23 +31,15 @@
 <a id="topofpage"></a><p class="hide">Skip to: <a href="#menu">site menu</a> | <a href="#sectionmenu">categories</a> | <a href="#main">main content</a></p>
 
 <div id="serendipity_banner">
-    <h1><a href="{$serendipityBaseURL}">{$head_title|@default:$blogTitle|truncate:50:" ..."}</a></h1>
-    <h2>{$head_subtitle|@default:$blogDescription}</h2>
+    <h1><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle|truncate:50:" ..."}</a></h1>
+    <h2>{$head_subtitle|default:$blogDescription}</h2>
 <a id="menu"></a>
 </div>
 
 <div id="nav">
 <ul>
 <li {if $startpage}class="current"{/if}><a href="{$serendipityBaseURL}"><span>{$CONST.BLOG_HOME}</span></a></li>
-    {if $serendipityVersion < 1.1}
-        <!-- ****** Change navbar links here ****** -->
-        <li><a href="#"><span>Link</span></a></li>
-        <li><a href="#"><span>Link</span></a></li>
-        <li><a href="#"><span>Link</span></a></li>
-        <li><a href="#"><span>Link</span></a></li>
-    {else}
-        {foreach from=$navlinks item="navlink"}<li><a href="{$navlink.href}" title="{$navlink.title}"><span>{$navlink.title}</span></a></li>{/foreach}
-    {/if}
+    {foreach $navlinks AS $navlink}<li><a href="{$navlink.href}" title="{$navlink.title}"><span>{$navlink.title}</span></a></li>{/foreach}
 </ul>
 <p class="hide"><a href="#topofpage">{$CONST.BACK_TO_TOP}</a></p>
 </div>
@@ -84,7 +76,7 @@
 {/if}
 </div>
 
-{if not $is_single_entry && not $staticpage_articleformat}
+{if NOT $is_single_entry && not $staticpage_articleformat}
 {if $leftSidebarElements > 0}
 <div id="rightside">
 {serendipity_printSidebar side="right"}
