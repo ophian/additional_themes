@@ -73,56 +73,55 @@
     <table id="mainpane">
         <tr>
 
-{if $staticpage_precontent == '<!--noRightSidebar-->'}
-    {if $leftSidebarElements > 0}
-        <td id="serendipityLeftSideBar" valign="top">
-            {serendipity_printSidebar side="left"}
-        </td>
-    {/if}
-        <td id="content" valign="top">
-            {$CONTENT}
-        </td>
-{else}
-    {if $staticpage_precontent == '<!--noLeftSidebar-->'}
-        <td id="content" valign="top">
-            {$CONTENT}
-        </td>
-        {if $rightSidebarElements > 0}
-        <td id="serendipityRightSideBar" valign="top">
-            {serendipity_printSidebar side="right"}
-        </td>
+    {if $staticpage_precontent == '<!--noRightSidebar-->'}
+        {if $leftSidebarElements > 0}
+            <td id="serendipityLeftSideBar" valign="top">
+                {serendipity_printSidebar side="left"}
+            </td>
         {/if}
+            <td id="content" valign="top">
+                {$CONTENT}
+            </td>
     {else}
-    {if $staticpage_precontent == '<!--noSidebar-->'}
-        <td id="content" valign="top">
-            {$CONTENT}
-        </td>
-    {else}
-    {if $leftSidebarElements > 0}
-        {if $entry.properties.special_switch2 !="true"}
-            <td id="serendipityLeftSideBar" valign="top">{serendipity_printSidebar side="left"}</td>
+        {if $staticpage_precontent == '<!--noLeftSidebar-->'}
+            <td id="content" valign="top">
+                {$CONTENT}
+            </td>
+            {if $rightSidebarElements > 0}
+            <td id="serendipityRightSideBar" valign="top">
+                {serendipity_printSidebar side="right"}
+            </td>
+            {/if}
+        {else}
+        {if $staticpage_precontent == '<!--noSidebar-->'}
+            <td id="content" valign="top">
+                {$CONTENT}
+            </td>
+        {else}
+        {if $leftSidebarElements > 0}
+            {if $entry.properties.special_switch2 !="true"}
+                <td id="serendipityLeftSideBar" valign="top">{serendipity_printSidebar side="left"}</td>
+            {/if}
+        {/if}
+
+            <td id="content" valign="top">{$CONTENT}</td>
+
+    {if $rightSidebarElements > 0}
+        {if $entry.properties.special_switch !="true"}
+            <td id="serendipityRightSideBar" valign="top">{serendipity_printSidebar side="right"}</td>
         {/if}
     {/if}
 
-        <td id="content" valign="top">{$CONTENT}</td>
-
-{if $rightSidebarElements > 0}
-    {if $entry.properties.special_switch !="true"}
-        <td id="serendipityRightSideBar" valign="top">{serendipity_printSidebar side="right"}</td>
+        {/if}
     {/if}
 {/if}
 
- {/if}
- {/if}
- {/if}
-
         </tr>
-</table>
+    </table>
 
-
-<table id="footertable">
-    <tr>
-       <td id="footerLeft" valign="top">{if $template_option.footerpos =="0"}{serendipity_printSidebar side="top"}{/if}
+    <table id="footertable">
+        <tr>
+           <td id="footerLeft" valign="top">{if $template_option.footerpos =="0"}{serendipity_printSidebar side="top"}{/if}
                            {if $template_option.enablefooterl =="true"}<div id="abstand"></div>
                            <h3>  {$catx1_cat} </h3>
                            {serendipity_fetchPrintEntries category=$template_option.catx1 full=true fetchDrafts=false noSticky=true limit="0,5" template="entries_footer.tpl"}
@@ -131,24 +130,23 @@
 
 
 
-     <td id="footerMid" valign="top">{if $template_option.footerpos =="1"}{serendipity_printSidebar side="top"}{/if}
+            <td id="footerMid" valign="top">{if $template_option.footerpos =="1"}{serendipity_printSidebar side="top"}{/if}
                           {if $template_option.enablefooterm =="true"}<div id="abstand"> </div>
                                        <h3> {$tabx2_cat} </h3>
                                      {serendipity_fetchPrintEntries category=$template_option.catx2 full=true fetchDrafts=false noSticky=true limit="0,5" template="entries_footer.tpl"}
                                      {/if}
-      </td>
+            </td>
 
 
 
-     <td id="footerRight" valign="top">{if $template_option.footerpos =="2"}{serendipity_printSidebar side="top"}{/if}
+            <td id="footerRight" valign="top">{if $template_option.footerpos =="2"}{serendipity_printSidebar side="top"}{/if}
                                   {if $template_option.enablefooterr =="true"}<div id="abstand"> </div>
                           <h3>{$catx3_cat}</h3>
                           {serendipity_fetchPrintEntries category=$template_option.catx3 full=true fetchDrafts=false noSticky=true limit="0,5" template="entries_footer.tpl"}
                           {/if}
-      </td>
-    </tr>
-
-</table>
+            </td>
+        </tr>
+    </table>
 
 {/if}
 {$raw_data}
