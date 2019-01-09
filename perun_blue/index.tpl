@@ -2,14 +2,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
 <head>
-<title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+<title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
 <!--
 Serendipity-Template by Vladimir Simovic aka Perun
 www.vlad-design.de | www.perun.net
 -->
 <meta http-equiv="content-type" content="text/html; charset={$head_charset}" />
 <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -41,7 +41,7 @@ www.vlad-design.de | www.perun.net
 
 <div id="banner">
 <div id="header">
-<h1><a href="{$serendipityBaseURL}">{$head_title|@default:$blogTitle}</a></h1>&nbsp;| <h2><a href="{$serendipityBaseURL}">{$head_subtitle|@default:$blogDescription}</a></h2></div>
+<h1><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle}</a></h1>&nbsp;| <h2><a href="{$serendipityBaseURL}">{$head_subtitle|default:$blogDescription}</a></h2></div>
 </div>
 
 <div id="sidebar">
