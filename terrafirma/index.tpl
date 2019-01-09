@@ -10,15 +10,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <!--
 
-	terrafirma1.0 by nodethirtythree design
-	http://www.nodethirtythree.com
+    terrafirma1.0 by nodethirtythree design
+    http://www.nodethirtythree.com
 
 -->
 <head>
-<title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+<title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -42,69 +42,51 @@
 
 <div id="outer">
 
-	<div id="upbg"></div>
+    <div id="upbg"></div>
 
-	<div id="inner">
+    <div id="inner">
 
-		<div id="header">
-			<h1><span>{$head_title|@default:$blogTitle|truncate:20:" ...":true}</span></h1>
-			<h2>{$head_subtitle|@default:$blogDescription}</h2>
-		</div>
+        <div id="header">
+            <h1><span>{$head_title|default:$blogTitle|truncate:20:" ...":true}</span></h1>
+            <h2>{$head_subtitle|default:$blogDescription}</h2>
+        </div>
 
-		<div id="splash"></div>
+        <div id="splash"></div>
 
-		<div id="menu">
-			<ul>
-			{if $serendipityVersion < 1.1}
-								<!-- ****** Change navbar links here ****** -->
-								<li><a href="#">News</a></li>
-								<li><a href="#">Photos</a></li>
-								<li><a href="#">Projects</a></li>
-								<li><a href="#">Music</a></li>
-								<li><a href="#">Contact</a></li>
-						{else}
-						<li class="{if $startpage}current_{/if}page_item">
-								<a href="{$serendipityBaseURL}">{$CONST.HOMEPAGE}</a>
-							</li>
-    					 {foreach from=$navlinks item="navlink"}
+        <div id="menu">
+            <ul>
+                <li class="{if $startpage}current_{/if}page_item">
+                    <a href="{$serendipityBaseURL}">{$CONST.HOMEPAGE}</a>
+                </li>
+            {foreach $navlinks AS $navlink}
 
-							 <li class="{if $currpage==$navlink.href}current_{/if}page_item"><a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a></li>
-   					     {/foreach}
-  						{/if}
-			</ul>
-		<div id="date">{$smarty.now|date_format:"%B %d, %Y"}</div>
-		</div>
+                 <li class="{if $currpage==$navlink.href}current_{/if}page_item"><a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a></li>
+            {/foreach}
+            </ul>
+            <div id="date">{$smarty.now|date_format:"%B %d, %Y"}</div>
+        </div>
 
-		<div id="primarycontent">
-		{$CONTENT}
-		</div>
+        <div id="primarycontent">
+            {$CONTENT}
+        </div>
 
-		<div id="secondarycontent">
-		{if $template_option.about_text_toggle == 'true'}
-		<h3>{$template_option.abouttitle}</h3>
-			<div class="content">
-				<a href="{$template_option.aboutpageurl}"><img src="{$serendipityHTTPPath}templates/{$template}/img/user.jpg" class="picB" alt="" style="border:none;"/></a>
-				<p>{if $serendipityVersion < 1.1}
-					<p>Welcome to my site, please bookmark this page. Read all about me. <a href="#"> More &raquo;</a></p>
-					{else}
-					<p>{$template_option.about} <a href="{$template_option.aboutpageurl}"> {$CONST.MORE} &raquo;</a></p>
-					{/if}
-				</p>
-			</div>
-			{elseif $template_option.about_text_toggle == 'false'}
-			{/if}
-			{serendipity_printSidebar side="left"}{serendipity_printSidebar side="right"}
+        <div id="secondarycontent">
+        {if $template_option.about_text_toggle == 'true'}
+            <h3>{$template_option.abouttitle}</h3>
+            <div class="content">
+                <a href="{$template_option.aboutpageurl}"><img src="{$serendipityHTTPPath}templates/{$template}/img/user.jpg" class="picB" alt="" style="border:none;"/></a>
+                <p>{$template_option.about} <a href="{$template_option.aboutpageurl}"> {$CONST.MORE} &raquo;</a></p>
+            </div>
+            {elseif $template_option.about_text_toggle == 'false'}
+            {/if}
+            {serendipity_printSidebar side="left"}{serendipity_printSidebar side="right"}
 
-		</div>
+        </div>
 
-		<div id="footer">
-
-			Design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree</a> | portetd to <a href="http://www.s9y.org">Serendipity</a> by <a href="http://www.taeglichanders.de">taeglichanders.de</a>.
-
-		</div>
-
-	</div>
-
+        <div id="footer">
+            Design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree</a> | portetd to <a href="http://www.s9y.org">Serendipity</a> by <a href="http://www.taeglichanders.de">taeglichanders.de</a>.
+        </div>
+    </div>
 </div>
 
 </body>
