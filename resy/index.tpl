@@ -10,7 +10,7 @@
     <title>{$blogTitle}</title>
     {serendipity_hookPlugin hook="frontend_header"}
     <meta name="generator" content="Serendipity v.{$serendipityVersion}">
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow">
 {else}
     <meta name="robots" content="noindex,follow">
@@ -44,9 +44,9 @@
         <header class="wrapper clearfix">
             <div id="title">
                 <h1><a class="homelink1" href="{$serendipityBaseURL}"
-                    >{$head_title|@default:$blogTitle}</a></h1>
+                    >{$head_title|default:$blogTitle}</a></h1>
                 <h2><a class="homelink2" href="{$serendipityBaseURL}"
-                    >{$head_subtitle|@default:$blogDescription}</a></h2>
+                    >{$head_subtitle|default:$blogDescription}</a></h2>
             </div>
             {if $template_option.navigation == 'true'}
                 <nav>
