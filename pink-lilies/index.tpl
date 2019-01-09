@@ -2,10 +2,10 @@
            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -27,16 +27,16 @@
 
 <body>
 <div id="mainpane">
-	<div id="serendipity_banner">
-	<h1><a href="{$serendipityBaseURL}">{$head_title|@default:$blogTitle|truncate:80:" ..."}</a></h1>
-	</div>
+    <div id="serendipity_banner">
+    <h1><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle|truncate:80:" ..."}</a></h1>
+    </div>
 
-	<div id="content">{$CONTENT}</div>
+    <div id="content">{$CONTENT}</div>
 
       <div id="sidebar">
-		{serendipity_printSidebar side="right"}
-		{serendipity_printSidebar side="left"}
-	</div>
+        {serendipity_printSidebar side="right"}
+        {serendipity_printSidebar side="left"}
+    </div>
 <div id="footer">Pink Lilies theme designed by <a href="http://blog.detlog.org/" title="Naoko's Blog"><strong>Naoko M.</strong></a> - Ported to <a href="http://www.s9y.org" title="Serendipity Weblog"><strong>s9y</strong></a> by <a href="http://www.carlgalloway.com" title="Carl's Blog"><strong>Carl</strong></a>
 </div>
 {$raw_data}
