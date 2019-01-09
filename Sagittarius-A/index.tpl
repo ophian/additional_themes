@@ -9,10 +9,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -58,7 +58,7 @@
 
   <a class="homelink1" href="{$serendipityBaseURL}">Home</a>
 
-        {foreach from=$navlinks item="navlink" name=navbar}| 	       <a href="{$navlink.href}">{$navlink.title}</a>
+        {foreach $navlinks AS $navlink}|            <a href="{$navlink.href}">{$navlink.title}</a>
 {/foreach}
 
      </div>
@@ -98,12 +98,12 @@
         </div>
         </div>
          </div>
-	    <div id="main">
-	      <div class="subcolumns">
-	        <div class="c66l">
+        <div id="main">
+          <div class="subcolumns">
+            <div class="c66l">
           <div class="subcl maincontent">
                     <a id="content" name="content"></a>
-	  			       {serendipity_fetchPrintEntries category=$template_option.catlead full=true fetchDrafts=false noSticky=true limit="0,1" template="entries_lead.tpl"}
+                         {serendipity_fetchPrintEntries category=$template_option.catlead full=true fetchDrafts=false noSticky=true limit="0,1" template="entries_lead.tpl"}
 
 {elseif $view2 == "404"}
  </div>
@@ -137,15 +137,15 @@
                   <div class="c50l">
                            <div class="subcl">
                                {if $leftSidebarElements > 0}
-		   	        {serendipity_printSidebar side="left"}
-	                       {/if}
+                       {serendipity_printSidebar side="left"}
+                           {/if}
                           </div>
                   </div>
                   <div class="c50r">
                            <div class="subcr">
                                 {if $leftSidebarElements > 0}
- 		   	        {serendipity_printSidebar side="left2"}
-	                      {/if}
+                        {serendipity_printSidebar side="left2"}
+                          {/if}
                            </div>
                  </div>
             </div>
@@ -158,8 +158,8 @@
             <h3>A <em>Simple</em> Sidebar </h3>
 
 
-	    {if $rightSidebarElements > 0}
-	        {serendipity_printSidebar side="right"}
+        {if $rightSidebarElements > 0}
+            {serendipity_printSidebar side="right"}
             {/if}
 
 

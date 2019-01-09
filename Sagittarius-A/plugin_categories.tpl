@@ -2,9 +2,9 @@
 <form id="serendipity_category_form" action="{$form_url}" method="post">
 {/if}
     <ul class="subnav">
-{foreach from=$categories item="plugin_category"}
+{foreach $categories AS $plugin_category}
         <li class="cat-item">
-        {if $is_form}    
+        {if $is_form}
             <input style="width: 15px" type="checkbox" name="serendipity[multiCat][]" value="{$plugin_category.categoryid}" />
         {/if}
             <a href="{$plugin_category.categoryURL}" title="{$plugin_category.category_description|escape}">{$plugin_category.category_name|escape}</a>
