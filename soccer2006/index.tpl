@@ -9,10 +9,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
-    <title>{$head_title|@default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
+    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -34,32 +34,23 @@
 </head>
 
 <body>
-	<div id="bg">
-	<div id="wrap">
+    <div id="bg">
+    <div id="wrap">
 {else}
 {serendipity_hookPlugin hook="frontend_header"}
 {/if}
-	<div id="identity">
-        	<h1><a href="{$serendipityBaseURL}">{$head_title|@default:$blogTitle|truncate:50:" ...":true}</a></h1>
-        	<div class="description">{$head_subtitle|@default:$blogDescription}</div>
-			<div id="navbar">
-				<ul>
-    				<li><a href="{$serendipityBaseURL}">{$CONST.HOMEPAGE}</a></li>
-				{if $serendipityVersion < 1.1}
-				<!-- ****** Change navbar links here ****** -->
-    				<li><a href="#">Link</a></li>
-    				<li><a href="#">Link</a></li>
-    				<li><a href="#">Link</a></li>
-    				<li><a href="#">Link</a></li>
-    				<li><a href="#">Link</a></li>
-				{else}
-        {foreach from=$navlinks item="navlink"}
-        <li><a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a></li>
-        {/foreach}
-				{/if}
-				</ul>
-			</div>
-    	</div>
+    <div id="identity">
+            <h1><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle|truncate:50:" ...":true}</a></h1>
+            <div class="description">{$head_subtitle|default:$blogDescription}</div>
+            <div id="navbar">
+                <ul>
+                    <li><a href="{$serendipityBaseURL}">{$CONST.HOMEPAGE}</a></li>
+                {foreach $navlinks AS $navlink}
+                    <li><a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a></li>
+                {/foreach}
+                </ul>
+            </div>
+        </div>
 <div id="mainpane">
 <div id="content">
     {$CONTENT}
@@ -70,9 +61,9 @@
     {serendipity_printSidebar side="left"}
     </div>
 
-	<div id="footer">
-		<p>Theme designed for <a href="http://www.s9y.org">Serendipity</a> by <a href="http://www.carlgalloway.com">Carl</a> - Photo by <a href="mailto:firey_photographics@yahoo.com">Adam Klepsteen</a></p>
-	</div>
+    <div id="footer">
+        <p>Theme designed for <a href="http://www.s9y.org">Serendipity</a> by <a href="http://www.carlgalloway.com">Carl</a> - Photo by <a href="mailto:firey_photographics@yahoo.com">Adam Klepsteen</a></p>
+    </div>
 </div></div></div>
 {serendipity_hookPlugin hook="frontend_footer"}
 {if $is_embedded != true}
