@@ -10,15 +10,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
 <head>
     <title> Spiritual Enlightenment Truth Realization Non-Duality Blog By Edward Traversa</title>
-	<meta name="author" content="Edward Traversa for Spiritual Enlightenment" />
+    <meta name="author" content="Edward Traversa for Spiritual Enlightenment" />
     <meta name="keywords" content="Spiritual Enlightenment, Spiritual Blog, Spiritual, Truth Realization, enlightenment, cosmic consciousness, illumanition, God, Awakening, Being, Ultimate Truth, Buddha, Becoming, Eddie Traversa" />
     <meta name="description" content="Spiritual Enlightenment, Spiritual Blog, Non-Duality, Spiritual, Spiritual Awakening, Spiritual Development, Enlightenment, illumanition, consciousness, God Realization  by Eddie Traversa" />
-	<meta name="Copyright"  content="Copyright (c) 2005 Edward Traversa" />
-	<meta name="revisit-after" content="3 Days" />
+    <meta name="Copyright"  content="Copyright (c) 2005 Edward Traversa" />
+    <meta name="revisit-after" content="3 Days" />
     <meta http-equiv="Content-Language" content="en-us" />
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
     <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-{if ($view == "entry" || $view == "start" || $view == "feed" || $view == "plugin" || $staticpage_pagetitle != "" || $robots_index == 'index')}
+{if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
     <meta name="robots" content="noindex,follow" />
@@ -57,9 +57,9 @@ Truth Template v.1 provided by Eddie Traversa 2005
 <div id="serendipity_banner">
     <h1><a class="homelink1" href="{$serendipityBaseURL}" title="Spiritual Enlightenment" >Spiritual Enlightenment:Truth Realization</a></h1>
     <h2><a class="homelink2" href="{$serendipityBaseURL}" title="Truth Realization">Wake Up! You Already Are That:::</a></h2>
-	<div id="urlLYR" class="urllogo">
-	:::www.truthrealization.com:::
-	</div>
+    <div id="urlLYR" class="urllogo">
+    :::www.truthrealization.com:::
+    </div>
 </div>
 
 <table id="mainpane">
