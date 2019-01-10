@@ -31,7 +31,7 @@
             </span>
             {/if}
             <div class="serendipity_entry_body">
-                {$entry.multilingual_footer}{$entry.body}{if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
+                {$entry.multilingual_footer|default:''}{$entry.body}{if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
              <a href="{$entry.link}#extended">{$CONST.READ_MORE}</a><br />
             {/if}
             </div>

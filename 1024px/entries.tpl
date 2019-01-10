@@ -24,7 +24,7 @@
             </span>
             {/if}
             <div class="serendipity_entry_body">
-                {$entry.multilingual_footer}{$entry.body}{if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
+                {$entry.multilingual_footer|default:''}{$entry.body}{if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
              <p class="readmore"><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a> &raquo;</p>
             {/if}
             </div>
