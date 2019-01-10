@@ -4,7 +4,7 @@ if (IN_serendipity !== true) { die ("Don't hack!"); }
 
 // Be nice to the frontend users. They don't need the additional constants
 // and file lookups. Only load them when in Admin mode.
-if (isset($serendipity['GET']['adminModule']) AND ($serendipity['GET']['adminModule'] == 'templates' || $serendipity['POST']['adminModule'] != 'templates')) {
+if (defined('IN_serendipity_admin')) {
     @serendipity_plugin_api::load_language(dirname(__FILE__));
 }
 
