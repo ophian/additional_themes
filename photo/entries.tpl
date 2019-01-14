@@ -3,12 +3,12 @@
     {foreach $entries AS $dategroup}
         {foreach $dategroup.entries AS $entry}
             {assign var="entry" value=$entry scope="root"}
-    {if $bxloaded AND NOT $dategroup.is_sticky}
+    {if (isset($bxloaded) AND $bxloaded) AND NOT $dategroup.is_sticky}
         {$bxloaded = false}
         </div>
     {/if}
     {if $dategroup.is_sticky AND NOT $is_single_entry}
-        {if NOT $bxloaded}
+        {if empty($bxloaded)}
             {$bxloaded = true}
             <div id="bxslider">
         {/if}
@@ -17,11 +17,11 @@
         <header class="clearfix">
             {if NOT $is_single_entry AND NOT $is_preview}
                 <a href="{$entry.link}">
-                    {if $entry.properties.ep_featuredImage}
+                    {if isset($entry.properties.ep_featuredImage)}
                         <img class="featuredImage lazy" {if NOT $dategroup.is_sticky && $template_option.lazyload == true}data-original="{else}src="{/if}{$entry.properties.ep_featuredImage}" />
                         <noscript><img class="featuredImage" src="{$entry.properties.ep_featuredImage}" /></noscript>
                     {else}
-                        <span class="featuredImage" />
+                        <span class="featuredImage"></span>
                     {/if}
                 </a>
                 <a class="photoEntryBox" href="{$entry.link}">
@@ -36,9 +36,9 @@
             {/if}
         </header>
 
-        {if $is_single_entry or $is_preview}
+        {if $is_single_entry OR $is_preview}
             <div class="clearfix content serendipity_entry_body">
-            {if $entry.properties.ep_featuredImage}<a class="serendipity_image_link" href="{$entry.properties.ep_featuredImage|replace:'.serendipityThumb':''}"><img id="featuredImage" {if $template_option.lazyload == true}class="lazy" data-original="{else}src="{/if}{$entry.properties.ep_featuredImage}" /><noscript><img id="featuredImage" src="{$entry.properties.ep_featuredImage}" /></noscript></a>{/if}
+            {if isset($entry.properties.ep_featuredImage)}<a class="serendipity_image_link" href="{$entry.properties.ep_featuredImage|replace:'.serendipityThumb':''}"><img id="featuredImage" {if $template_option.lazyload == true}class="lazy" data-original="{else}src="{/if}{$entry.properties.ep_featuredImage}" /><noscript><img id="featuredImage" src="{$entry.properties.ep_featuredImage}" /></noscript></a>{/if}
             {$entry.body}
             {if $entry.is_extended}
                 <div id="extended" class="clearfix content">
@@ -56,27 +56,27 @@
         {/if}
 
 
-        {if $is_single_entry or $is_preview}
+        {if $is_single_entry OR $is_preview}
             <footer class="clearfix">
                 <span class="single_user">{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.ON} </span><time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:$template_option.date_format}s</time>
 
             {if $entry.categories}
                 {$CONST.IN}  <span class="visuallyhidden">{$CONST.CATEGORIES}: </span>{foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
             {/if}
-            {if ($entry.has_comments or $entry.has_disqus)}
-            {if $entry.has_disqus }
+            {if ($entry.has_comments OR NOT empty($entry.has_disqus))}
+            {if isset($entry.has_disqus) AND $entry.has_disqus}
                 | {$entry.comments}{if $entry.has_trackbacks}, <a href="{$entry.link}#trackbacks">{$entry.trackbacks} {$entry.label_trackbacks}</a>{/if}
             {else}
                 | <a href="{$entry.link}#comments" title="{$entry.comments} {$entry.label_comments}{if $entry.has_trackbacks}, {$entry.trackbacks} {$entry.label_trackbacks}{/if}">{$entry.comments} {$entry.label_comments}</a>
             {/if}
             {/if}
-            {if $entry.url_tweetthis}
+            {if isset($entry.url_tweetthis) AND $entry.url_tweetthis}
                 | <a href="{$entry.url_tweetthis}" title="{$CONST.TWOK11_TWEET_THIS}">Twitter</a>
             {/if}
-            {if $entry.url_dentthis}
+            {if isset($entry.url_dentthis) AND $entry.url_dentthis}
                 | <a href="{$entry.url_dentthis}" title="{$CONST.TWOK11_DENT_THIS}">Identica</a>
             {/if}
-            {if $entry.url_shorturl}
+            {if isset($entry.url_shorturl) AND $entry.url_shorturl}
                 | <a href="{$entry.url_shorturl}" title="{$CONST.TWOK11_SHORT_URL_HINT}" class="short-url">{$CONST.TWOK11_SHORT_URL}</a>
             {/if}
                 {$entry.add_footer}
@@ -140,7 +140,7 @@
             <p class="serendipity_msg_notice">{$CONST.COMMENT_ADDED}</p>
         {elseif $is_comment_moderate}
             <p class="serendipity_msg_notice">{$CONST.COMMENT_ADDED}: {$CONST.THIS_COMMENT_NEEDS_REVIEW}</p>
-        {elseif not $entry.allow_comments}
+        {elseif NOT $entry.allow_comments}
             <p class="serendipity_msg_important">{$CONST.COMMENTS_CLOSED}</p>
         {/if}
         {if $entry.allow_comments}
@@ -160,10 +160,10 @@
     {/if}
 {/if}
 
-{if ($footer_info and ($footer_prev_page or $footer_next_page)) or $footer_prev_page or $footer_next_page}
+{if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
     <nav class="serendipity_pagination block_level">
         <ul class="clearfix">
-            {if $footer_info}
+            {if NOT empty($footer_info)}
             <li class="info"><span>{$footer_info}</span></li>
             {/if}
             <li class="prev">{if $footer_prev_page}<a href="{$footer_prev_page}">{/if}{if $footer_prev_page}&larr; {$CONST.PREVIOUS_PAGE}{else}&nbsp;{/if}{if $footer_prev_page}</a>{/if}</li>

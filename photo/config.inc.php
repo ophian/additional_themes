@@ -35,10 +35,10 @@ if (is_array($required_fieldlist)) {
 
 $template_config = array(
     array(
-        'var' => 'about',
-        'name' => 'Template Readme',
-        'type' => 'custom',
-        'custom' => PHOTO_ABOUT
+        'var'           => 'about',
+        'name'          => 'Template Readme',
+        'type'          => 'custom',
+        'custom'        => PHOTO_ABOUT
     ),
     array(
         'var'           => 'colorset',
@@ -48,10 +48,10 @@ $template_config = array(
         'select_values' => array('dark' => 'dark', 'bright' => 'bright')
     ),
     array(
-        'var' => 'webfonts',
-        'name' => TWOK11_WEBFONTS,
-        'type' => 'select',
-        'default' => 'droid',
+        'var'           => 'webfonts',
+        'name'          => TWOK11_WEBFONTS,
+        'type'          => 'select',
+        'default'       => 'droid',
         'select_values' => array('none' => TWOK11_NOWEBFONT,
                                 'droid' => 'Droid Sans',
                                 'ptsans' => 'PT Sans',
@@ -62,55 +62,55 @@ $template_config = array(
                                 'dserif' => 'Droid Serif')
     ),
     array(
-        'var' => 'headlines_webfonts',
-        'name' => PHOTO_HEADLINE_WEBFONTS,
-        'type' => 'select',
-        'default' => 'aleo',
+        'var'           => 'headlines_webfonts',
+        'name'          => PHOTO_HEADLINE_WEBFONTS,
+        'type'          => 'select',
+        'default'       => 'aleo',
         'select_values' => array('none' => TWOK11_NOWEBFONT,
                                 'aleo' => 'Aleo',
                                 'philo' => 'Philosopher')
     ),
     array(
-        'var' => 'quote_webfonts',
-        'name' => PHOTO_QUOTE_WEBFONTS,
-        'type' => 'boolean',
-        'default' => false
+        'var'           => 'quote_webfonts',
+        'name'          => PHOTO_QUOTE_WEBFONTS,
+        'type'          => 'boolean',
+        'default'       => false
     ),
     array(
-        'var' => 'magnific',
-        'name' => PHOTO_MAGNFIC_ENABLED,
-        'type' => 'boolean',
-        'default' => true
+        'var'           => 'magnific',
+        'name'          => PHOTO_MAGNFIC_ENABLED,
+        'type'          => 'boolean',
+        'default'       => true
     ),
     array(
-        'var' => 'lazyload',
-        'name' => PHOTO_LAZYLOAD,
-        'type' => 'boolean',
-        'default' => true
+        'var'           => 'lazyload',
+        'name'          => PHOTO_LAZYLOAD,
+        'type'          => 'boolean',
+        'default'       => true
     ),
     array(
-        'var' => 'sticky_carousel',
-        'name' => PHOTO_USE_CAROUSEL,
-        'type' => 'boolean',
-        'default' => true
+        'var'           => 'sticky_carousel',
+        'name'          => PHOTO_USE_CAROUSEL,
+        'type'          => 'boolean',
+        'default'       => true
     ),
     array(
-        'var' => 'refcomments',
-        'name' => TWOK11_REFCOMMENTS,
-        'type' => 'boolean',
-        'default' => false
+        'var'           => 'refcomments',
+        'name'          => TWOK11_REFCOMMENTS,
+        'type'          => 'boolean',
+        'default'       => false
     ),
     array(
-        'var' => 'header_img',
-        'name' => PHOTO_HEADER_IMG,
-        'type' => 'media',
-        'default' => serendipity_getTemplateFile('header.jpg')
+        'var'           => 'header_img',
+        'name'          => PHOTO_HEADER_IMG,
+        'type'          => 'media',
+        'default'       => serendipity_getTemplateFile('header.jpg')
     ),
     array(
-        'var' => 'date_format',
-        'name' => GENERAL_PLUGIN_DATEFORMAT . " (http://php.net/strftime)",
-        'type' => 'select',
-        'default' => DATE_FORMAT_ENTRY,
+        'var'           => 'date_format',
+        'name'          => GENERAL_PLUGIN_DATEFORMAT . " (http://php.net/strftime)",
+        'type'          => 'select',
+        'default'       => DATE_FORMAT_ENTRY,
         'select_values' => array(DATE_FORMAT_ENTRY => DATE_FORMAT_ENTRY,
                                 '%A, %e. %B %Y' => '%A, %e. %B %Y',
                                 '%a, %e. %B %Y' => '%a, %e. %B %Y',
@@ -124,10 +124,10 @@ $template_config = array(
                                 '%Y-%m-%d' => '%Y-%m-%d')
     ),
     array(
-        'var' => 'use_corenav',
-        'name' => TWOK11_USE_CORENAV,
-        'type' => 'boolean',
-        'default' => false
+        'var'           => 'use_corenav',
+        'name'          => TWOK11_USE_CORENAV,
+        'type'          => 'boolean',
+        'default'       => false
     )
 );
 
@@ -145,6 +145,7 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
         case 'js':
             global $serendipity;
             $template_config = array();
+            $top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
             $template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
 
             if (! isset($template_loaded_config['lazyload']) || $template_loaded_config['lazyload'] == true) {
@@ -185,6 +186,7 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
         case 'frontend_display':
             global $serendipity;
             $template_config = array();
+            $top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
             $template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
             
             if (! isset($template_loaded_config['lazyload']) || $template_loaded_config['lazyload'] == true) {
@@ -201,6 +203,6 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
     }
 }
 
-if ($_SESSION['serendipityUseTemplate']) {
+if (isset($_SESSION['serendipityUseTemplate'])) {
     $template_loaded_config['use_corenav'] = false;
 }

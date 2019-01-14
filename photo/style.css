@@ -83,6 +83,13 @@ legend { border: 0; padding: 0; }
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix { zoom: 1; clear: both;}
 
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    width: 100%;
+    overflow: auto; }
+
 h1 {
     display: inline;
 }
@@ -206,8 +213,7 @@ span.featuredImage {
 
 .serendipity_entry {
     width: 100%;
-    max-width: 400px;
-    max-width: calc(100% / 2 - 1em);
+    max-width: 100%;
     min-height: 400px;
     display: inline-block;
     hyphens: auto;
@@ -215,6 +221,20 @@ span.featuredImage {
     -webkit-hyphens: auto;
     -ie-hyphens: auto;
 }
+@media all and (min-width: 800px) {
+    .serendipity_entry {
+        max-width: 400px;
+        max-width: calc(100% / 2 - 1em);
+    }
+}
+
+.serendipity_entry table {
+    border: 1px solid #333;
+    display: inline-grid;
+    max-width: 100%;
+    width: auto;
+    overflow: auto;
+    padding: .25em; }
 
 .serendipity_entry_sticky {
     width: 100%;
@@ -487,6 +507,13 @@ fieldset,
     opacity: 1;
 }
 
+#c0 { /* a new unsaved comment preview only */
+    border: 1px solid #333;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: .625em;
+}
 
 .serendipity_comment footer {
     clear: both;
