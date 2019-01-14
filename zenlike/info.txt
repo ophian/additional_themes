@@ -1,3 +1,6 @@
-Name: Zenlike (contains sponsor links) (2009-08-26)
-Author: NodeThirtyThree (Ported to s9y by YellowLed)
-Date: 2018-12-04
+Name: Zenlike (contains sponsor links)
+Author: NodeThirtyThree (Ported by YellowLed)
+Date: 2019-01-11
+
+Summary: Additional old theme from 2007-10-09 to 2009-08-26. Ported to s9y by YellowLed.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but not <u>fully</u> mobile friendly! For removing the sponsored links you might still need to ask.

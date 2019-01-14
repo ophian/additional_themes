@@ -5,7 +5,7 @@
 }
 
 @-ms-viewport {
-  width: device-width;
+    width: device-width;
 }
 
 img {
@@ -23,17 +23,54 @@ video, img {
     height: auto;
 }
 
+/* defaults */
+
+ul,ol { list-style-position: inside; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
 pre {
     display: block;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    width: 100%;
+    overflow: auto; }
+
+code,code.hljs {
+    display: block;
+    padding: 1em; }
+
+input[type="checkbox"] {
+    margin-right: .25em;
+    vertical-align: middle; }
+
+#serendipity_comment_0 { /* a new unsaved comment preview only - normally #c0 */
+    border: 1px solid #ddd;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: .625em;
 }
 
-ol { list-style-position: inside; }
+.serendipity_image_link {
+    display: inline-block;
+    min-width: 4em;
+}
+
+.post table {
+    border: 1px solid #ddd;
+    display: inline-grid;
+    max-width: 100%;
+    width: auto;
+    overflow: auto;
+    padding: .25em; }
+
 
 /*
-
 	zenlike1.0 by nodethirtythree design
 	http://www.nodethirtythree.com
-
 */
 
 *
@@ -81,11 +118,16 @@ font-weight: normal;
 
 h3,h4
 {
-display: inline;
+display: inline-block;
 font-weight: bold;
 background-repeat: no-repeat;
 background-position: right;
 }
+.post h3, .post h4 {
+    margin: 1em 0;
+    width: auto; }
+.post:first-child h4 {
+    margin-top: 0; }
 
 h3
 {
@@ -574,6 +616,14 @@ ul.controls {
     text-align: center;
 }
 
+/** some tweaking resets for the Styx gallery */ 
+.serendipity_image_block.row .serendipity_imageComment_left, .serendipity_image_block.row .serendipity_imageComment_right, .serendipity_image_block.row .serendipity_image_link, .serendipity_image_block.row > .serendipity_image_left, .serendipity_image_block.row > .serendipity_image_right {
+    min-width: auto;
+}
+@media only screen and (max-width: 768px) {
+    .serendipity_image_block.row .serendipity_image_left, .serendipity_image_block.row .serendipity_image_right {
+        width: 100% !important; }
+}
 
 /* Sponsored links */
 ul#sponsorlinks {
