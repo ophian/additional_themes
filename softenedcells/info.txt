@@ -1,3 +1,6 @@
-Name: Softened Cells v1.1 (2009-08-27)
+Name: Softened Cells
 Author: Carl Galloway
-Date: 2018-12-04
+Date: 2019-01-11
+
+Summary: Additional old theme from 2006-08-25 to 2009-08-27 as v.1.1 with a size of ~640 pixel content width.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not <u>fully</u> mobile friendly!

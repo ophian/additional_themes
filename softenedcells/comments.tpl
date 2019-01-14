@@ -1,5 +1,5 @@
 {foreach $comments AS $comment}
-<a id="c{$comment.id|default:0}"></a>
+    <a id="c{$comment.id|default:0}"></a>
     <div class="serendipity_comment serendipity_comment_author_{$comment.author|makeFilename}{if isset($entry) AND $entry.author == $comment.author AND $entry.email == $comment.clear_email} serendipity_comment_author_self{/if}"{if $comment.depth > 0} style="padding-left: {$comment.depth*20}px"{/if}>
         <div class="commentwrap">
         <div class="serendipity_comment_source">
@@ -13,8 +13,6 @@
             {if $comment.url}
                 wrote (<a href="{$comment.url}" title="{$comment.url|escape}">Link</a>)
             {/if}
-
-
             {if isset($entry) AND NOT empty($entry.is_entry_owner) AND NOT empty($comment.id)}
                 (<a href="{$comment.link_delete}" onclick="return confirm('{$CONST.COMMENT_DELETE_CONFIRM|sprintf:$comment.id:$comment.author}');">delete</a>)
             {/if}
@@ -26,8 +24,6 @@
         <div class="serendipity_commentBody">{$comment.body}</div>
         <div class="serendipity_commentFooter">&nbsp;</div>
         </div>
-
-
     </div>
 {foreachelse}
     <div class="serendipity_center">{$CONST.NO_COMMENTS}</div>

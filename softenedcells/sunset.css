@@ -33,6 +33,7 @@ a:hover {
 }
 #content ul {
 	list-style-image: url(img/li_bullet_dark.gif);
+    list-style-position: inside;
 }
 #sidebar {
 	float: right;

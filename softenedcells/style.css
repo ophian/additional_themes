@@ -78,6 +78,28 @@ a img, .emoticon {
 	text-align: right;
 }
 
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+#c0 { /* a new unsaved comment preview only */
+    border: 1px solid #ddd;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: .625em;
+}
+
+.serendipity_image_link {
+    display: inline-block;
+}
+.serendipity_entry_body table,
+.serendipity_entry_extended table {
+    border: 1px solid #ddd;
+    display: inline-grid;
+    max-width: 100%;
+    width: auto;
+    overflow: auto;
+    padding: .25em; }
+
 /* End General Styles */
 
 
@@ -186,6 +208,7 @@ div.serendipity_entryFooter {
 	text-align: center;
 	margin-bottom: 40px;
 	clear:both;
+    white-space: nowrap;
 }
 img.serendipity_entryIcon {
 	float: left;
