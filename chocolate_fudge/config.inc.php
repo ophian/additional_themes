@@ -50,4 +50,9 @@ $template_config = array(
     ),
 );
 
+/* when using a $template_config_array(), even without the global set navigation items, you need to keep this following code */
+$top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
 $template_config_groups = NULL;
+$template_global_config = array('navigation' => false); // false, when not using the global navigation
+$template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
+serendipity_loadGlobalThemeOptions($template_config, $template_loaded_config, $template_global_config);
