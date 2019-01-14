@@ -1,3 +1,6 @@
-Name: YoungButStrong port (2008-02-14)
+Name: YoungButStrong port
 Author: Stefan2k1 (Ported by fwaggle)
-Date: 2018-12-04
+Date: 2019-01-11
+
+Summary: Additional old theme from 2007-07-17 to 2008-02-14 with a size of ~850 pixel mainframe width.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not mobile friendly! If this sponsored links usage note is still valid after all these years is at least questionable. Perhaps you could simply make your own engine template without.., without violating..
