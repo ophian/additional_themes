@@ -1,10 +1,43 @@
+/* general */
+
+ul,ol { list-style-position: inside; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+/* defaults */
+
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+#c0 { /* a new unsaved comment preview only */
+    border: 1px solid #ddd;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: .625em;
+}
+
+.serendipity_entry table {
+    border: 1px solid #4d2b2b;
+    display: inline-grid;
+    max-width: 100%;
+    width: auto;
+    overflow: auto;
+    padding: .25em; }
+
+/* As long as not being a fully responsive theme for mobile screens and using the Styx Gallery styles keep this */
+.serendipity_image_link,
+.serendipity_image_block.row, .serendipity_image_block.col {
+    display: inline-block;
+}
+
 /*
-Theme Name: i3Theme 1.6 Classic (Center Edition)
-Theme URI: http://www.mangoorange.com
-Description: WordPress theme designed by <a href="http://www.ndesign-studio.com">N.Design Studio</a>, customized by <a href="http://www.mangoorange.com">MangoOrange&trade;</a>, supported by <a href="http://www.webhostinggeeks.com/">Web Hosting Geeks</a>, sponsored by <a href="http://www.web-hosting-top.com/">Web Hosting Reviews &amp; Free Coupons</a> and <a href="http://www.b4udecide.com/">Cheap Web Hosting</a>.
-Version: 1.6
-Author: Mickey Cheong
-Author URI: http://www.mangoorange.com/about/
+    Theme Name: i3Theme 1.6 Classic (Center Edition)
+    Theme URI: http://www.mangoorange.com
+    Description: WordPress theme designed by <a href="http://www.ndesign-studio.com">N.Design Studio</a>, customized by <a href="http://www.mangoorange.com">MangoOrange&trade;</a>, supported by <a href="http://www.webhostinggeeks.com/">Web Hosting Geeks</a>, sponsored by <a href="http://www.web-hosting-top.com/">Web Hosting Reviews &amp; Free Coupons</a> and <a href="http://www.b4udecide.com/">Cheap Web Hosting</a>.
+    Version: 1.6
+    Author: Mickey Cheong
+    Author URI: http://www.mangoorange.com/about/
 
 	This theme was designed by Nick La, customized by Mickey Cheong Kah Meng.
 
@@ -363,11 +396,11 @@ h1 a:hover {
 	padding-left: 12px;
 	float: right;
 }
-.entry {
+.serendipity_entry {
 	padding: 10px 0px 5px;
 	clear: both;
 }
-.entry p.submeta{
+.serendipity_entry p.submeta{
 	font-size: 11px;
 }
 
@@ -519,9 +552,6 @@ h3#respond {
 	padding-left: 45px;
 	line-height: 130%;
 }
-.commentlist li{
-	padding: 5px 10px;
-}
 .commentlist .alt {
 	background: #F4F4F4;
 }
@@ -534,15 +564,11 @@ h3#respond {
 .commentlist cite a, .commentlist cite a:visited {
 	color: #669900;
 }
-.commentlist small {
-	margin-bottom: 5px;
-	display: block;
-	font-size: 87%;
-}
 .commentlist small a, .commentlist small a:visited{
 	color: #999999;
 }
 .serendipity_comment_author_self .serendipity_comment_source .pc-owner,
+.serendipity_comment_author_self cite .pc-owner,
 .serendipity_comment_author_self .comment_header .pc-owner {
     background: #3e5f81e6;
     padding: .1em .25em;

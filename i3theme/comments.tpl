@@ -1,10 +1,9 @@
-{assign var="i3says" value=$CONST.I3_SAYS}
 <ol class="commentlist">
 {foreach $comments AS $comment}
-    <li id="c{$comment.id|default:0}" class="comment{if isset($entry) AND $entry.author == $comment.author AND $entry.email == $comment.clear_email} serendipity_comment_author_self{/if} {cycle values="alt,even"}{if $comment.depth > 8} commentlevel-9{else} commentlevel-{$comment.depth}{/if}">
+    <li id="c{$comment.id|default:0}" class="serendipity_comment serendipity_comment_author_{$comment.author|makeFilename}{if isset($entry) AND $entry.author == $comment.author AND $entry.email == $comment.clear_email} serendipity_comment_author_self{/if} {cycle values="alt,even"}{if $comment.depth > 8} commentlevel-9{else} commentlevel-{$comment.depth}{/if}">
         <cite>{if $comment.url}<a href="{$comment.url}">{/if}{$comment.author|default:$CONST.ANONYMOUS}{if isset($comment.entryauthor) AND $comment.entryauthor == $comment.author AND isset($entry) AND $entry.email == $comment.clear_email} <span class="pc-owner">Post author</span> {/if}{if $comment.url}</a>{/if} {$CONST.ON} <small class="commentmetadata"><time datetime="{$comment.timestamp|serendipity_html5time}">{$comment.timestamp|formatTime:($template_option.date_format|default:$CONST.DATE_FORMAT_ENTRY)}</time></small>:</cite>
 
-        <div class="comment_content">
+        <div class="serendipity_comment_source">
         {if $comment.body == 'COMMENT_DELETED'}
             <p class="serendipity_msg_important">{$CONST.COMMENT_IS_DELETED}</p>
         {else}
@@ -19,6 +18,9 @@
             <li><a class="comment_source_trace" href="{$comment.url|escape:'htmlall'}#c{$comment.id|default:0}" title="{$CONST.NEXT_PLINK_TITLE}">{$CONST.NEXT_PLINK_TEXT}</a></li>
         {if isset($entry) AND NOT empty($entry.is_entry_owner) AND NOT empty($comment.id)}
             <li><a class="comment_source_ownerlink" href="{$comment.link_delete}" title="{$CONST.COMMENT_DELETE_CONFIRM|sprintf:$comment.id:$comment.author}">{$CONST.DELETE}</a></li>
+        {/if}
+        {if isset($comment.entryauthor) AND $comment.entryauthor == $comment.author AND isset($entry) AND $entry.email == $comment.clear_email}
+            <li><span class="pc-owner">Post author</span></li>
         {/if}
         {if isset($comment.type) AND $comment.type == 'TRACKBACK'}
             <li>{$CONST.IN} {$CONST.TITLE}: <span class="comment_source_ctitle">{$comment.ctitle|truncate:42|wordwrap:15:"\n":true|escape}</span></li>

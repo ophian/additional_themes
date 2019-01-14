@@ -18,32 +18,32 @@
                 </div><!-- /.postdata -->
             </div><!-- /.title -->
 
-            <div class="entry">
-            {if $entry.categories}
-            <span class="serendipity_entryIcon">
-            {foreach $entry.categories AS $entry_category}
-                {if $entry_category.category_icon}
-                    <a href="{$entry_category.category_link}"><img class="serendipity_entryIcon" title="{$entry_category.category_name|escape}{$entry_category.category_description|emptyPrefix}" alt="{$entry_category.category_name|escape}" src="{$entry_category.category_icon}" /></a>
+            <div class="serendipity_entry">
+                {if $entry.categories}
+                <span class="serendipity_entryIcon">
+                {foreach $entry.categories AS $entry_category}
+                    {if $entry_category.category_icon}
+                        <a href="{$entry_category.category_link}"><img class="serendipity_entryIcon" title="{$entry_category.category_name|escape}{$entry_category.category_description|emptyPrefix}" alt="{$entry_category.category_name|escape}" src="{$entry_category.category_icon}" /></a>
+                    {/if}
+                {/foreach}
+                </span>
                 {/if}
-            {/foreach}
-            </span>
-            {/if}
-            {$entry.body}
+                {$entry.body}
 
-            {if $entry.is_extended}
-            <div class="serendipity_entry_extended"><a id="extended"></a>{$entry.extended}</div>
-            {/if}
+                {if $entry.is_extended}
+                <div class="serendipity_entry_extended"><a id="extended"></a>{$entry.extended}</div>
+                {/if}
 
-            {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-            <p><a class="more-link" href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
-            {/if}
+                {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
+                <p><a class="more-link" href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
+                {/if}
 
-            <p class="submeta">
-                {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a>
-                {if $entry.is_entry_owner AND NOT $is_preview}&bull; <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
-            </p>
-            {$entry.add_footer}
-            {$entry.plugin_display_dat}
+                <p class="submeta">
+                    {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a>
+                    {if $entry.is_entry_owner AND NOT $is_preview}&bull; <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
+                </p>
+                {$entry.add_footer}
+                {$entry.plugin_display_dat}
             </div><!-- /.entry -->
         </div><!-- /.post -->
 
