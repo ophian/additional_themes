@@ -1,42 +1,16 @@
 <!-- ENTRIES START -->
 {serendipity_hookPlugin hook="entries_header" addData="$entry_id"}
 
-{if $template_option.show_pagitop == 'true' && $footer_totalPages > 1}
-         <div class="kastentop">{$footer_info}<br/>
-            {assign var="paginationStartPage" value="`$footer_currentPage-3`"}
-            {if $footer_currentPage+3 > $footer_totalPages}
-                {assign var="paginationStartPage" value="`$footer_totalPages-6`"}
-            {/if}
-            {if $paginationStartPage <= 0}
-                {assign var="paginationStartPage" value="1"}
-            {/if}
-            {if $footer_prev_page}
-                <a title="{$CONST.PREVIOUS_PAGE}" href="{$footer_prev_page}"><span class="pagearrow">&#9668;</span></a>
-            {/if}
-            {if $paginationStartPage > 1}
-                <a href="{'1'|string_format:$footer_pageLink}">1</a>
-            {/if}
-            {if $paginationStartPage > 2}
-                &hellip;
-            {/if}
-            {section name=i start=$paginationStartPage loop=$footer_totalPages+1 max=7}
-                {if $smarty.section.i.index != $footer_currentPage}
-                    <a href="{$smarty.section.i.index|string_format:$footer_pageLink}">{$smarty.section.i.index}</a>
-                {else}
-                    <span id="thispage">{$smarty.section.i.index}</span>
-                {/if}
-            {/section}
-            {if $smarty.section.i.index < $footer_totalPages}
-                &hellip;
-            {/if}
-            {if $smarty.section.i.index <= $footer_totalPages}
-                <a href="{$footer_totalPages|string_format:$footer_pageLink}">{$footer_totalPages}</a>
-            {/if}
-            {if $footer_next_page}
-                <a title="{$CONST.NEXT_PAGE}" href="{$footer_next_page}"><span class="pagearrow">&#9658;</span></a>
-            {/if}
-        </div>
-     {/if}
+{if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
+    {if NOT empty($footer_info)}
+    <div class="paginationtop">{$footer_info}<br/>
+    {/if}
+    {if $footer_prev_page}<a href="{$footer_prev_page}">{/if}{if $footer_prev_page}&#9668; {$CONST.PREVIOUS_PAGE}{else}&nbsp;{/if}{if $footer_prev_page}</a>{/if}
+    {if $footer_next_page}<a href="{$footer_next_page}">{/if}{if $footer_next_page}{$CONST.NEXT_PAGE} &#9658;{else}&nbsp;{/if}{if $footer_next_page}</a>{/if}
+    {if NOT empty($footer_info)}
+    </div>
+    {/if}
+{/if}
 
 {if NOT empty($entries)}{* catch a staticpage startpage which has no $entries array set *}
     {foreach $entries AS $dategroup}
@@ -67,23 +41,23 @@
 
         <div class="meta group">
             <div class="signature">
-                <p>{$CONST.POSTED_BY} {$entry.author} {if $entry.is_entry_owner AND NOT $is_preview}<span class="edit"><a href="{$entry.link_edit}">Edit</a></span>{/if}</p>
+                <p>{$CONST.POSTED_BY} {$entry.author} {if isset($entry.is_entry_owner) AND NOT $is_preview}<span class="edit"><a href="{$entry.link_edit}">Edit</a></span>{/if}</p>
                 <p>{$entry.timestamp|formatTime:'%x'} {$CONST.AT} {$entry.timestamp|formatTime:'%X'}</p>
             </div>
             <div class="tags">
             {if $entry.categories}
                 <p>{$CONST.J_POSTED} {$CONST.IN} {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}</p>
             {/if}
-            {$entry.freetag}
+            {$entry.freetag|default:''}
             </div>
         </div>
 
-        <div class="addfooter">{$entry.add_footer}
+        <div class="addfooter">{$entry.add_footer|default:''}
 
         <br/>
 
 
-        {if $template_option.enable_ad== 'true'}
+        {if $template_option.enable_ad== true}
             <script type="text/javascript">
                 addthis_url = '{$entry.rdf_ident|escape:url}';
                 addthis_title = '{$entry.title|escape:url}';
@@ -140,7 +114,7 @@
 
             {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
 
-          {if $entry.is_entry_owner}
+          {if isset($entry.is_entry_owner)}
             {if $entry.allow_comments}
             <p class="comment_meta"><a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a></p>
             {else}
@@ -167,7 +141,6 @@
         {/if}
         {$entry.backend_preview}
     {/foreach}
-    </div>
 {/foreach}
 {else}
     {if NOT $plugin_clean_page AND $view != '404'}
@@ -175,59 +148,25 @@
     {/if}
 {/if}
 
+{if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
     <div class="navigation group">
         <div class="alignleft">{if $footer_prev_page}<a href="{$footer_prev_page}">&laquo; {$CONST.PREVIOUS_PAGE}</a>{/if}</div>
         <div class="alignright">{if $footer_next_page}<a href="{$footer_next_page}">{$CONST.NEXT_PAGE} &raquo;</a>{/if}</div>
      {serendipity_hookPlugin hook="entries_footer"}
     </div>
+{/if}
 
+{if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
+    {if NOT empty($footer_info)}
+    <div class="pagination"><center>{$footer_info}<br/>
+    {/if}
+    {if $footer_prev_page}<a href="{$footer_prev_page}">{/if}{if $footer_prev_page}&#9668; {$CONST.PREVIOUS_PAGE}{else}&nbsp;{/if}{if $footer_prev_page}</a>{/if}
+    {if $footer_next_page}<a href="{$footer_next_page}">{/if}{if $footer_next_page}{$CONST.NEXT_PAGE} &#9658;{else}&nbsp;{/if}{if $footer_next_page}</a>{/if}
+    {if NOT empty($footer_info)}
+    </center></div>
+    {/if}
+{/if}
 
-
-
-
-
- {if $template_option.show_pagibottom == 'true' && $footer_totalPages > 1}
-         <div class="kasten"><center>{$footer_info}<br/>
-            {assign var="paginationStartPage" value="`$footer_currentPage-3`"}
-            {if $footer_currentPage+3 > $footer_totalPages}
-                {assign var="paginationStartPage" value="`$footer_totalPages-6`"}
-            {/if}
-            {if $paginationStartPage <= 0}
-                {assign var="paginationStartPage" value="1"}
-            {/if}
-            {if $footer_prev_page}
-                <a title="{$CONST.PREVIOUS_PAGE}" href="{$footer_prev_page}"><span class="pagearrow">&#9668;</span></a>
-            {/if}
-            {if $paginationStartPage > 1}
-                <a href="{'1'|string_format:$footer_pageLink}">1</a>
-            {/if}
-            {if $paginationStartPage > 2}
-                &hellip;
-            {/if}
-            {section name=i start=$paginationStartPage loop=$footer_totalPages+1 max=7}
-                {if $smarty.section.i.index != $footer_currentPage}
-                    <a href="{$smarty.section.i.index|string_format:$footer_pageLink}">{$smarty.section.i.index}</a>
-                {else}
-                    <span id="thispage2">{$smarty.section.i.index}</span>
-                {/if}
-            {/section}
-            {if $smarty.section.i.index < $footer_totalPages}
-                &hellip;
-            {/if}
-            {if $smarty.section.i.index <= $footer_totalPages}
-                <a href="{$footer_totalPages|string_format:$footer_pageLink}">{$footer_totalPages}</a>
-            {/if}
-            {if $footer_next_page}
-                <a title="{$CONST.NEXT_PAGE}" href="{$footer_next_page}"><span class="pagearrow">&#9658;</span></a>
-            {/if}</center>
-        </div>
-     {/if}
-  <div class="kasten">
-
-</div>
-
-
-
-  <br/>
+  <div class="pagination"></div><br/>
 
 <!-- ENTRIES END -->

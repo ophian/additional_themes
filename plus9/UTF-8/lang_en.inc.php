@@ -22,7 +22,7 @@
 @define('DROP_D1', 'Enter number of links for the User Drop Down Menu');
 @define('USER_DROP', 'Enable User Drop Down Menu ');
 @define('DROP_HEADER', 'Name of user drop down-Link');
-@define('ENABLE_KAT', 'Show Categories in menu');
+@define('ENABLE_CAT', 'Show Categories in menu');
 @define('ENABLE_ARCH', 'Show archive in menu');
 @define('ENABLE_STAT', 'Show static pages in menu');
 @define('ENABLE_USER', 'Show the User Drop Down Menu (entries and numbers below of this page)');

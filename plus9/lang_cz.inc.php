@@ -25,7 +25,7 @@
 @define('DROP_D1', 'Zadejte poèet odkazù pro Rozbalovací menu');
 @define('USER_DROP', 'Povolit Rozbalovací menu');
 @define('DROP_HEADER', 'Název rozbalovacího odkazu');
-@define('ENABLE_KAT','Zobrazit kategorie v menu');
+@define('ENABLE_CAT','Zobrazit kategorie v menu');
 @define('ENABLE_ARCH','Zobrazit archivy v menu');
 @define('ENABLE_STAT','Zobrazit statické stránky v menu');
 @define('ENABLE_USER','Zobrazit rozbalovací menu (pøíspìvky a èísla stránek)');

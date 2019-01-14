@@ -1,6 +1,6 @@
 <?php
 
-@define('J_INSTR', '<strong>zu installierende Plugins</strong>: <br>Damit das Menue korrekt funktioniert, müssen folgende Plugins installiert sein: <em><br>Archive </em>(Spalte versteckt) <br>- Anzahl der Einträge pro Kategorie anzeigen?&nbsp; Nein <br>- Versteckt den Archiv-Link, wenn es keine Einträge für einen Zeitraum gab:&nbsp; Nein<br><br>K<em>ategorien </em>(Spalte versteckt)<br>- XML-Button :none<br>- Besuchern erlauben, mehrere Kategorien gleichzeit darzustellen? Nein<br>-Smarty-Templating aktivieren?&nbsp; Ja<br /><br><em>Statischen Seiten&nbsp; </em>&nbsp;<br />Icons bzw. Klartext <b>: </b>Klartext<br>Grafiken für Baumstruktur aktivieren: Nein<b><br><br>Hinweis:</b>Damit im Template die Anzeige der Tags korrekt funktioniert, muss in der Konfiguration des Event-Plugins <em>Freie Artikel-Tags</em> die Option <em>Zeige die Tags in der Fußzeile an?</em> auf <em>Smarty</em> gesetzt werden<br><br>');
+@define('J_INSTR', '<strong>zu installierende Plugins</strong>: <br>Damit das Menue korrekt funktioniert, müssen folgende Plugins installiert sein: <em><br>Archive </em>(Spalte versteckt) <br>- Anzahl der Einträge pro Kategorie anzeigen?&nbsp; Nein <br>- Versteckt den Archiv-Link, wenn es keine Einträge für einen Zeitraum gab:&nbsp; Nein<br><br>K<em>ategorien </em>(Spalte versteckt)<br>- XML-Button :none<br>- Besuchern erlauben, mehrere Kategorien gleichzeit darzustellen? Nein<br>-Smarty-Templating aktivieren?&nbsp; Ja<br /><br><em>Statischen Seiten&nbsp; </em>&nbsp;<br />Icons bzw. Klartext <b>: </b>Klartext<br>Grafiken für Baumstruktur aktivieren: Nein<b><br><br>Hinweis:</b> Damit im Template die Anzeige der Tags korrekt funktioniert, muss in der Konfiguration des Event-Plugins <em>Freie Artikel-Tags</em> die Option <em>Zeige die Tags in der Fußzeile an?</em> auf <em>Smarty</em> gesetzt werden<br><br>');
 @define('J_MENUTITLE', 'Titel für das Menü in der Seitenleiste');
 @define('J_MENUTEXT', 'Seiten');
 @define('J_SEARCHFIELD', 'Suchbegriffe eingeben');
@@ -22,7 +22,7 @@
 @define('DROP_D1', 'Anzahl der Links im User Drop Down Menuepunkt');
 @define('USER_DROP', 'Anzeige User Drop Down Menuepunkt');
 @define('DROP_HEADER', 'Name des User Drop Down-Links');
-@define('ENABLE_KAT', 'Anzeige der Kategorien im Menue');
+@define('ENABLE_CAT', 'Anzeige der Kategorien im Menue');
 @define('ENABLE_ARCH', 'Anzeige der Archive im Menue');
 @define('ENABLE_STAT', 'Anzeige der statischen Seiten im Menue');
 @define('ENABLE_USER', 'Anzeige des User Drop Down Menue Punkts. (Einträge und Anzahl weiter unten)');
