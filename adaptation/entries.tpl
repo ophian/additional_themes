@@ -6,9 +6,9 @@
         {assign var="entry" value=$entry scope="root"}
         <div class="post">
             <h2 id="post-{$entry.id}"><a href="{$entry.link}">{$entry.title}</a></h2>
-        <div class="serendipity_date">
-          {$entry.timestamp|formatTime:'<span class="z1">%d</span> <span class="z2">%B</span> <span class="z3">%Y</span>'}
-                </div>
+            <div class="serendipity_date">
+                {$entry.timestamp|formatTime:'<span class="z1">%d</span> <span class="z2">%B</span> <span class="z3">%Y</span>'}
+            </div>
             {if $entry.categories}
             <span class="categoryIcon">
             {foreach $entry.categories AS $entry_category}
@@ -19,78 +19,70 @@
             </span>
             {/if}
 
-            <div class="entry">
-              <div>
-                {$entry.body}
-                {if $is_single_entry}
-                <a id="extended"></a>{$entry.extended}
-                {/if}
-              </div>
+            <div class="serendipity_entry">
+                <div>
+                {$entry.body}{if $is_single_entry}<a id="extended"></a>{$entry.extended}{/if}
+                </div>
 
                 {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
                 <br /><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a><br /><br />
                 {/if}
 
-                {if $entry.is_entry_owner AND NOT $is_preview}
-                        <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>
-                {/if}
+                {if $entry.is_entry_owner AND NOT $is_preview}<a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
 
-            <div class="postmetadata {if $is_single_entry} graybox{/if}">
+                <div class="postmetadata {if $is_single_entry} graybox{/if}">
                 {if $is_single_entry}
-
-        {$entry.timestamp|formatTime:"%H:%M"}
-                {if $entry.categories}
-                   | {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}.
-                {/if}<br />
-                {if $entry.allow_comments}
-                    {if $entry.moderate_comments}
-                        {$CONST.SUBJECT_TO_MODERATION}
+                    {$entry.timestamp|formatTime:"%H:%M"}
+                    {if $entry.categories}
+                       | {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}.
+                    {/if}<br />
+                    {if $entry.allow_comments}
+                        {if $entry.moderate_comments}
+                            {$CONST.SUBJECT_TO_MODERATION}
+                        {/if}
+                    {else}
+                        {$CONST.COMMENTS_CLOSED}
                     {/if}
                 {else}
-                    {$CONST.COMMENTS_CLOSED}
-                {/if}
-
-                {else}
-
                 {if $dategroup.is_sticky}
                     {$CONST.ON}
                 {else}
                 {/if} <a href="{$entry.link}">{if $dategroup.is_sticky}{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY} {/if}</a>
 
-        <div class="clearfix">
+                <div class="clearfix boxed">
                 {if $entry.has_comments}
                     {if $use_popups}
                         <div class="fleft">
-                        <div class="obut">
-                <a href="{$entry.link_popup_comments}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{$entry.label_comments} ({$entry.comments})</a>
-            </div>
-            </div>
+                            <div class="obut">
+                                <a href="{$entry.link_popup_comments}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{$entry.label_comments} ({$entry.comments})</a>
+                            </div>
+                        </div>
                     {else}
                         <div class="fleft">
-                        <div class="obut">
-                            <a href="{$entry.link}#comments">{$entry.label_comments} ({$entry.comments})</a>
-            </div>
-            </div>
+                            <div class="obut">
+                                <a href="{$entry.link}#comments">{$entry.label_comments} ({$entry.comments})</a>
+                            </div>
+                        </div>
                     {/if}
                 {/if}
 
                 {if $entry.has_trackbacks}
                     {if $use_popups}
                         <div class="fleft">
-            <div class="obut">
-                            <a href="{$entry.link_popup_trackbacks}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
-            </div>
-            </div>
+                            <div class="obut">
+                                <a href="{$entry.link_popup_trackbacks}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
+                            </div>
+                        </div>
                     {else}
                         <div class="fleft">
-            <div class="obut">
-                            <a href="{$entry.link}#trackbacks">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
-            </div>
-            </div>
+                            <div class="obut">
+                                <a href="{$entry.link}#trackbacks">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
+                            </div>
+                        </div>
                     {/if}
                 {/if}
-        </div>
 
+                    </div>
                 {/if}
                 {$entry.add_footer}
                </div>
@@ -210,17 +202,13 @@
 
     <div class="serendipity_entryFooter">
 
-      {if $footer_prev_page}
-      <a href="{$footer_prev_page}">&laquo; {$CONST.PREVIOUS_PAGE}</a>&#160;&#160;
-      {/if}
+{if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
+    {if $footer_prev_page}<a href="{$footer_prev_page}">{/if}{if $footer_prev_page}&laquo; {$CONST.PREVIOUS_PAGE}{else}<span class="grey">&laquo; {$CONST.PREVIOUS_PAGE}</span>{/if}{if $footer_prev_page}</a>{/if}&#160;&#160;
 
-      {if $footer_info}
-      ({$footer_info})
-      {/if}
+    {if NOT empty($footer_info)}({$footer_info}){/if}
 
-      {if $footer_next_page}
-      &#160;&#160;<a href="{$footer_next_page}">{$CONST.NEXT_PAGE} &raquo;</a>
-      {/if}
+    &#160;&#160;{if $footer_next_page}<a href="{$footer_next_page}">{/if}{if $footer_next_page}{$CONST.NEXT_PAGE} &raquo;{else}<span class="grey">{$CONST.NEXT_PAGE} &raquo;</span>{/if}{if $footer_next_page}</a>{/if}
+{/if}
 
     {serendipity_hookPlugin hook="entries_footer"}
     </div>

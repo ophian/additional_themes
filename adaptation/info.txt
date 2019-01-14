@@ -1,3 +1,6 @@
-Name: adaptation 0.81 (2009-08-25)
+Name: adaptation
 Author: Alp Uçkan
-Date: 02-05-2008
+Date: 2019-01-11
+
+Summary: Additional old theme from 2008-05-02 to 2009-08-25 as v.0.81
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not <u>fully</u> mobile friendly!
