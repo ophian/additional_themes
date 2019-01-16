@@ -12,8 +12,8 @@
                 {$CONST.ON} {$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}
                 {$CONST.AT} {$entry.timestamp|formatTime:'%H:%M'}
                 <!-- <a href="{$entry.link}"></a> -->
-                {if $entry.categories}
-                {$CONST.IN} {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
+                {if NOT empty($entry.categories)}
+                    {$CONST.IN} {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
                 {/if}
             </div>
 
@@ -47,7 +47,7 @@
             {/if}
             </ul>
 
-            <div class="serendipity_entryFooter">{$entry.add_footer}</div>
+            <div class="serendipity_entryFooter">{$entry.add_footer|default:''}</div>
 
         </div>
     </div>
@@ -93,7 +93,7 @@
                 <a id="trackbacks"></a>
                 <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
                 <div class="serendipity_center">
-                    <a rel="nofollow" style="font-weight: normal" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
+                    <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
                 </div>
                 <br />
                     {serendipity_printTrackbacks entry=$entry.id}
