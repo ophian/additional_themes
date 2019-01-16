@@ -89,8 +89,8 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 }
 
 .serendipity_image_link {
-    display: inline-block;
-}
+    display: block; }
+
 .serendipity_entry_body table,
 .serendipity_entry_extended table {
     border: 1px solid #ddd;
