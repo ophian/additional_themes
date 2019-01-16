@@ -45,7 +45,7 @@
                 <p>{$entry.timestamp|formatTime:'%x'} {$CONST.AT} {$entry.timestamp|formatTime:'%X'}</p>
             </div>
             <div class="tags">
-            {if $entry.categories}
+            {if NOT empty($entry.categories)}
                 <p>{$CONST.J_POSTED} {$CONST.IN} {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}</p>
             {/if}
             {$entry.freetag|default:''}
@@ -103,7 +103,9 @@
             <a id="trackbacks"></a>
             <h3 class="reply">{$entry.trackbacks} {$entry.label_trackbacks} {$CONST.J_TO} {$entry.title}</h3>
 
-            <p class="comment_meta"><a rel="nofollow" style="font-weight: normal" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a></p>
+            <p class="comment_meta">
+                <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
+            </p>
 
             {serendipity_printTrackbacks entry=$entry.id}
         {/if}

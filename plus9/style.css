@@ -139,8 +139,8 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 }
 
 .serendipity_image_link {
-    display: inline-block;
-}
+    display: block; }
+
 .main table {
     border: 1px solid #ddd;
     display: inline-grid;
