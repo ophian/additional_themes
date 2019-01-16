@@ -9,7 +9,7 @@
             <div class="serendipity_date">
                 {$entry.timestamp|formatTime:'<span class="z1">%d</span> <span class="z2">%B</span> <span class="z3">%Y</span>'}
             </div>
-            {if $entry.categories}
+            {if NOT empty($entry.categories)}
             <span class="categoryIcon">
             {foreach $entry.categories AS $entry_category}
                 {if $entry_category.category_icon}
@@ -33,7 +33,7 @@
                 <div class="postmetadata {if $is_single_entry} graybox{/if}">
                 {if $is_single_entry}
                     {$entry.timestamp|formatTime:"%H:%M"}
-                    {if $entry.categories}
+                    {if NOT empty($entry.categories)}
                        | {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}.
                     {/if}<br />
                     {if $entry.allow_comments}
@@ -84,7 +84,7 @@
 
                     </div>
                 {/if}
-                {$entry.add_footer}
+                {$entry.add_footer|default:''}
                </div>
             </div>
         </div>
