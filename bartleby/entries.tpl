@@ -26,7 +26,7 @@
         <footer class="clearfix">
             <span class="single_user">{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.ON} </span><time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:$template_option.date_format}</time>
 
-        {if $entry.categories}
+        {if NOT empty($entry.categories)}
             {$CONST.IN}  <span class="visuallyhidden">{$CONST.CATEGORIES}: </span>{foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
         {/if}
         {if NOT empty($entry.has_comments) or NOT empty($entry.has_disqus)}
