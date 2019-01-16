@@ -13,13 +13,13 @@
             <div class="title">
                 <h2><a href="{$entry.link}" rel="bookmark" title="{$entry.title}" >{$entry.title}</a></h2>
                 <div class="postdata">
-                    <span class="category">{if $entry.categories}{foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}{/if}</span>
+                    <span class="category">{if NOT empty($entry.categories)}{foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}{/if}</span>
                     <span class="comments">{if $entry.has_comments}{if $use_popups}<a href="{$entry.link_popup_comments}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{if $entry.comments == 0}{$CONST.NO_COMMENTS}{else}{$entry.comments} {$entry.label_comments}{/if}&nbsp;&raquo;</a>{else}<a href="{$entry.link}#comments">{if $entry.comments == 0}{$CONST.NO_COMMENTS}{else}{$entry.comments} {$entry.label_comments}{/if}&nbsp;&raquo;</a>{/if}{/if}</span>
                 </div><!-- /.postdata -->
             </div><!-- /.title -->
 
             <div class="serendipity_entry">
-                {if $entry.categories}
+            {if NOT empty($entry.categories)}
                 <span class="serendipity_entryIcon">
                 {foreach $entry.categories AS $entry_category}
                     {if $entry_category.category_icon}
@@ -27,7 +27,7 @@
                     {/if}
                 {/foreach}
                 </span>
-                {/if}
+            {/if}
                 {$entry.body}
 
                 {if $entry.is_extended}
@@ -42,7 +42,7 @@
                     {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a>
                     {if $entry.is_entry_owner AND NOT $is_preview}&bull; <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
                 </p>
-                {$entry.add_footer}
+                {$entry.add_footer|default:''}
                 {$entry.plugin_display_dat}
             </div><!-- /.entry -->
         </div><!-- /.post -->
@@ -80,7 +80,7 @@
                 <a id="trackbacks"></a>
                 <h3 id="trackbacks_h3">{$entry.trackbacks} {$CONST.TRACKBACKS}</h3>
 
-                <div class="serendipity_center"><a rel="nofollow" style="font-weight: normal" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a></div>
+                <div class="serendipity_center"><a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a></div>
 
                 {serendipity_printTrackbacks entry=$entry.id}
             </div>

@@ -106,7 +106,7 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 
 */
 
-*,*:before, *:after {
+*, *:before, *:after {
     -moz-box-sizing:border-box;
     -webkit-box-sizing:border-box;
     box-sizing:border-box
