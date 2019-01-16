@@ -1,4 +1,6 @@
-Name: Truth (2013-10-26)
+Name: Truth
 Author: Eddie Traversa
-Date: 2013-10-26
-Require Serendipity: 0.8
+Date: 2019-01-15
+
+Summary: THEME_INFO_SUMMARY (text in lang_info_en.inc.php pattern)
+Description: THEME_INFO_DESC (and LANG_CHARSET depending language files)
