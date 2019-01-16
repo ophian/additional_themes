@@ -28,7 +28,7 @@
                     <h2 class="photoEntryTitle">{$entry.title}</h2>
                     <h3 class="photoEntryData">
                         <time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:$template_option.date_format}</time>
-                        {if $entry.categories}{foreach $entry.categories AS $entry_category}{if $entry_category.category_icon}<img class="serendipity_entryIcon" title="{$entry_category.category_name|escape}{$entry_category.category_description|emptyPrefix}" alt="{$entry_category.category_name|escape}" src="{$entry_category.category_icon}" />{/if}{/foreach}{/if}
+                        {if NOT empty($entry.categories)}{foreach $entry.categories AS $entry_category}{if $entry_category.category_icon}<img class="serendipity_entryIcon" title="{$entry_category.category_name|escape}{$entry_category.category_description|emptyPrefix}" alt="{$entry_category.category_name|escape}" src="{$entry_category.category_icon}" />{/if}{/foreach}{/if}
                     </h3>
                 </a>
             {else}
@@ -60,8 +60,8 @@
             <footer class="clearfix">
                 <span class="single_user">{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.ON} </span><time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:$template_option.date_format}s</time>
 
-            {if $entry.categories}
-                {$CONST.IN}  <span class="visuallyhidden">{$CONST.CATEGORIES}: </span>{foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
+            {if NOT empty($entry.categories)}
+                {$CONST.IN} <span class="visuallyhidden">{$CONST.CATEGORIES}: </span>{foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
             {/if}
             {if ($entry.has_comments OR NOT empty($entry.has_disqus))}
             {if isset($entry.has_disqus) AND $entry.has_disqus}
@@ -79,7 +79,7 @@
             {if isset($entry.url_shorturl) AND $entry.url_shorturl}
                 | <a href="{$entry.url_shorturl}" title="{$CONST.TWOK11_SHORT_URL_HINT}" class="short-url">{$CONST.TWOK11_SHORT_URL}</a>
             {/if}
-                {$entry.add_footer}
+                {$entry.add_footer|default:''}
                 {if $entry.is_entry_owner AND NOT $is_preview} | <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
             </footer>
         {/if}
