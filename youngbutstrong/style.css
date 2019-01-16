@@ -40,8 +40,8 @@ pre {
 }
 
 .serendipity_image_link {
-    display: inline-block;
-}
+    display: block; }
+
 .content_post_body table {
     border: 1px solid #ddd;
     display: inline-grid;
