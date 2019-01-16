@@ -170,8 +170,8 @@ pre {
 }
 
 .serendipity_image_link {
-    display: inline-block;
-}
+    display: block; }
+
 .serendipity_entry table {
     border: 1px solid #ddd;
     display: inline-grid;

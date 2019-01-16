@@ -7,7 +7,7 @@
         {assign var="entry" value=$entry scope="root"}
         <h3 class="serendipity_title"><a href="{$entry.link}">{$entry.title|default:$entry.id}</a></h3>
         <div class="serendipity_entryFooter">
-{if $entry.categories}
+        {if NOT empty($entry.categories)}
             <span class="serendipity_entryIcon">
             {foreach $entry.categories AS $entry_category}
                 {if $entry_category.category_icon}
@@ -15,7 +15,7 @@
                 {/if}
             {/foreach}
             </span>
-            {/if}
+        {/if}
 
         {if $dategroup.is_sticky}
         {$CONST.STICKY_POSTINGS}
@@ -23,8 +23,8 @@
         {$dategroup.date|formatTime:DATE_CHOCOLATE_THEME}
         {/if} {$CONST.AT} {$entry.timestamp|formatTime:'%H:%M'}<br />
                 {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a>
-                {if $entry.categories}
-                   {$CONST.IN} {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
+                {if NOT empty($entry.categories)}
+                    {$CONST.IN} {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
                 {/if}
 
                {if $entry.has_comments}<br />
@@ -46,7 +46,7 @@
                 {if $entry.is_entry_owner AND NOT $is_preview}<br />
                         <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>
                 {/if}
-            {$entry.add_footer}
+            {$entry.add_footer|default:''}
             </div>
 
 
@@ -100,7 +100,7 @@
                 <a id="trackbacks"></a>
                 <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
                     <div class="serendipity_center">
-                        <a rel="nofollow" style="font-weight: normal" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
+                        <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
                     </div>
                     <br />
                         {serendipity_printTrackbacks entry=$entry.id}
