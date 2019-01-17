@@ -12,9 +12,7 @@
 @define('J_POSTED', 'Abgelegt');
 @define('J_COMMTS', 'Kommentaren');
 @define('J_TO', 'zu');
-@define('NAVLINK_AMOUNT', 'Anzahl der Links in der Navigationsleiste (Styles verwalten-Seite muss danach neu geladen werden)');
-@define('NAV_LINK_TEXT', 'Text des Navigationsleisten-Links');
-@define('NAV_LINK_URL', 'URL des Navigationsleisten-Links');
+
 @define('WPP_DDD', 'Werbungsblock');
 @define('ADDVTEXT', 'your Google code');
 @define('DRNAV_LINK_TEXT', 'Text des Drop Down-Links');

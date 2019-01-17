@@ -12,13 +12,9 @@
 @define('J_POSTED', 'Posted');
 @define('J_COMMTS', 'Comments');
 @define('J_TO', 'to');
-@define('NAVLINK_AMOUNT', 'Enter number of links in the navbar (needs reload of the Manage Styles page)');
-@define('NAV_LINK_TEXT', 'Enter the navbar link text');
-@define('NAV_LINK_URL', 'Enter the full URL of your link');
+
 @define('WPP_DDD', 'Advertising');
 @define('ADDVTEXT', 'your Google code');
-@define('NAV_LINK_TEXT', 'Enter the drop-down-link text');
-@define('NAV_LINK_URL', 'Enter the full URL of drop-down-link');
 @define('DROP_D1', 'Enter number of links for the User Drop Down Menu');
 @define('USER_DROP', 'Enable User Drop Down Menu ');
 @define('DROP_HEADER', 'Name of user drop down-Link');
