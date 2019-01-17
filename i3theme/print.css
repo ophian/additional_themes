@@ -1,4 +1,4 @@
-/*  
+/*
 Theme Name: iTheme
 Theme URI: http://www.ndesign-studio.com
 Description: WordPress theme designed by <a href="http://www.ndesign-studio.com">N.Design Studio</a>.
@@ -6,9 +6,9 @@ Version: 1.1
 Author: Nick La
 Author URI: http://www.ndesign-studio.com
 
-	This theme was designed and built by Nick La.
-	
-	By downloading and using this theme, you agree to the following terms:
+    This theme was designed and built by Nick La.
+
+    By downloading and using this theme, you agree to the following terms:
     - You may NOT resell this theme
     - A link back to N.Design Studio must be retained in the footer (either modified or unmodified)
     - You may use this theme for personal or commercial projects
@@ -17,100 +17,100 @@ Author URI: http://www.ndesign-studio.com
 */
 
 body {
-/*	background: #ffffff url(none); */
+/*    background: #ffffff url(none); */
         background-color: #ffffff;
         background-image: none;
 /* changes by YL */
-	font: 12px/16px Arial, Helvetica, sans-serif;
-	padding: 0 40px;
-	margin: 0px;
-	color: #000000;
+    font: 12px/16px Arial, Helvetica, sans-serif;
+    padding: 0 40px;
+    margin: 0px;
+    color: #000000;
 }
 #page {
-	background: none;
+    background: none;
 }
 #wrapper {
-	width: 100%;
-	margin: 0px;
+    width: 100%;
+    margin: 0px;
 }
 #header {
-	border-bottom: solid 1px #000000;
-	height: 100px;
-	margin-bottom: 15px;
+    border-bottom: solid 1px #000000;
+    height: 100px;
+    margin-bottom: 15px;
 }
 
 h1 {
-	color: #000000;
-	margin: 0px;
-	left: 0;
+    color: #000000;
+    margin: 0px;
+    left: 0;
 }
 h1 a, h1 a:visited {
-	color: #000000;
-	text-decoration: none;
+    color: #000000;
+    text-decoration: none;
 }
 h2 {
-	border: none;
+    border: none;
 }
 .description {
-	left: 0;
+    left: 0;
 }
 
 #left-col {
-	width: 100%;
+    width: 100%;
 }
 
 #content {
-	padding: 0;
-	background: #ffffff;
-	width: 100%;
+    padding: 0;
+    background: #ffffff;
+    width: 100%;
 }
 .post {
-	padding: 0;
-	background: none;
+    padding: 0;
+    background: none;
 }
 .post .date {
-	height: auto;
-	width: 100%;
-	background: none;
-	font: normal 11px Arial, Helvetica, sans-serif;
-	color: #666666;
-	text-align: left;
-	padding: 0;
-	line-height: 100%;
+    height: auto;
+    width: 100%;
+    background: none;
+    font: normal 11px Arial, Helvetica, sans-serif;
+    color: #666666;
+    text-align: left;
+    padding: 0;
+    line-height: 100%;
 }
 .post .date span {
-	height: auto;
-	text-align: left;
-	padding: 0;
-	display: inline;
+    height: auto;
+    text-align: left;
+    padding: 0;
+    display: inline;
 }
 .post .title {
-	clear: both;
-	width: 100%;
-	margin: 0;
+    clear: both;
+    width: 100%;
+    margin: 0;
 }
 .postdata .category{
-	background: none;
-	padding: 0;
-	float: left;
+    background: none;
+    padding: 0;
+    float: left;
 }
 .postdata .comments{
-	background: none;
-	padding: 0;
-	float: right;
+    background: none;
+    padding: 0;
+    float: right;
 }
 
 h3#comments {
-	background: none;
-	padding-left: 0;
-	font: bold 14px/120% Arial, Helvetica, sans-serif;
-	clear: both;
+    background: none;
+    padding-left: 0;
+    font: bold 14px/120% Arial, Helvetica, sans-serif;
+    clear: both;
 }
 
 .commentlist li, .commentlist .alt {
-	border: none !important;
+    border: none !important;
 }
 
 #searchform, #nav, #subnav, .mini-add-comment, .page-nav, .post-nav, h3#respond, #commentform, #footer, #sidebar  {
-	display: none !important;
+    display: none !important;
 }

@@ -1,9 +1,9 @@
 {serendipity_hookPlugin hook="entries_header"}
 <h2>{$CONST.ARCHIVES}</h2>
 {foreach $archives AS $archive}
-<table class="archives_listing" cellspacing="4" cellpadding="4" border="0">
+<table class="archives_listing">
     <tr class="archives_header">
-        <td class="archives_header" colspan="4"><h3>{$archive.year}</h3></td>
+        <td class="archives_header" colspan="5"><h3>{$archive.year}</h3></td>
     </tr>
     {foreach $archive.months AS $month}
     <tr class="archives_row">
