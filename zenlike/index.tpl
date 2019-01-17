@@ -85,7 +85,7 @@
 </div><!-- close #secondarycontent -->
 
 <div id="footer">
-    <div class="left">Powered by <a href="http://www.s9y.org">s9y</a></div>
+    <div class="left">Powered by <a href="https://ophian.github.io/">Serendipity Styx Edition</a> <abbr title="and">&amp;</abbr> the <i>{$template}</i> theme.</div>
     <div class="right">Design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree Design</a>, ported to s9y by <a href="http://www.yellowled.de">YellowLed</a></div>
 </div><!-- close #footer -->
 
