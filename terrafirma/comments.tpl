@@ -1,18 +1,27 @@
 {if $entry.viewmode eq $CONST.VIEWMODE_LINEAR}
 <ol><div id="commentlist">
 {foreach $comments AS $comment}
-    <a id="c{$comment.id}"></a>
-    <div id="serendipity_comment_{$comment.id}" class="serendipity_comment serendipity_comment_author_{$comment.author|makeFilename} {if $entry.author == $comment.author}serendipity_comment_author_self{/if}{cycle values="comment_oddbox, comment_evenbox"}">
+    <a id="c{$comment.id|default:0}"></a>
+    <div id="serendipity_comment_{$comment.id|default:0}" class="serendipity_comment serendipity_comment_author_{$comment.author|makeFilename}{if isset($entry) AND $entry.author == $comment.author AND $entry.email == $comment.clear_email} serendipity_comment_author_self{/if} {cycle values="comment_oddbox,comment_evenbox"}">
 
         <div class="serendipity_comment_source">
-            <div class="comment_source_author">
+            <span class="comment_source_author">
             {if $comment.email}
-              <a href="mailto:{$comment.email}"><img src="templates/terrafirma/img/comment.gif" style="border:0px";> {$comment.author|default:$CONST.ANONYMOUS}s {$CONST.EMAIL}</a> + <a href="{$comment.url|escape}"><img src="templates/terrafirma/img/trackback.gif" style="border:0px";> {$comment.author|default:$CONST.ANONYMOUS}s {$CONST.HOMEPAGE}</a>
+                <a href="mailto:{$comment.email}"><img src="{serendipity_getFile file="img/comment.gif"}" /> {$comment.author|default:$CONST.ANONYMOUS}</a>
             {else}
-                <a href="{$comment.url|escape}"><img src="templates/terrafirma/img/comment.gif" style="border:0px";> {$comment.author|default:$CONST.ANONYMOUS}:</a>
-            {/if}</div>
+                {$comment.author|default:$CONST.ANONYMOUS}
+            {/if}
+            {if isset($comment.entryauthor) AND $comment.entryauthor == $comment.author AND isset($entry) AND $entry.email == $comment.clear_email} <span class="pc-owner">Post author</span> {/if}
+        {if isset($comment.type) AND $comment.type == 'TRACKBACK'}
+            <br />
+            {$CONST.IN} {$CONST.TITLE}: <span class="comment_source_ctitle">{$comment.ctitle|truncate:42|wordwrap:15:"\n":true|escape}</span>
+        {/if}
+            </span>
+            {if $comment.url}
+                (<a class="comment_source_url" href="{$comment.url}" title="{$comment.url|escape}"><img src="{serendipity_getFile file="img/trackback.gif"}" /> {$CONST.HOMEPAGE}</a>)
+            {/if}
 
-<div id="serendipity_replyform_{$comment.id}"></div>
+            <div id="serendipity_replyform_{$comment.id}"></div>
         </div>
         <div class="serendipity_commentBody">{$comment.body}</div>
 
@@ -21,11 +30,11 @@
             {if $comment.url}
                 (<a class="comment_source_url" href="{$comment.url}" title="{$comment.url|escape}">Link</a>)
             {/if}
-            {if $entry.allow_comments}
-                (<a class="comment_reply" href="#serendipity_CommentForm" id="serendipity_reply_{$comment.id}" onclick="document.getElementById('serendipity_replyTo').value='{$comment.id}'; {$comment_onchange}">{$CONST.REPLY}</a>)
+            {if isset($comment.id) AND isset($entry.allow_comments) AND $comment.body != 'COMMENT_DELETED'}
+                (<a class="comment_reply" href="#serendipity_CommentForm" id="serendipity_reply_{$comment.id}" onclick="document.getElementById('serendipity_replyTo').value='{$comment.id}'; {$comment_onchange|default:''}">{$CONST.REPLY}</a>)
             {/if}
-            {if $entry.is_entry_owner}
-                (<a class="comment_source_ownerlink" href="{$comment.link_delete}" onclick="return confirm('{$CONST.COMMENT_DELETE_CONFIRM|sprintf:$comment.id:$comment.author}');">delete</a>){/if}</p>
+            {if isset($entry) AND NOT empty($entry.is_entry_owner) AND NOT empty($comment.id)}
+                (<a class="comment_source_ownerlink" href="{$comment.link_delete}" onclick="return confirm('{$CONST.COMMENT_DELETE_CONFIRM|sprintf:$comment.id:$comment.author}');">{$CONST.DELETE}</a>){/if}</p>
     </div>
 {foreachelse}
     <div class="serendipity_center nocomments">{$CONST.NO_COMMENTS}</div>
@@ -34,17 +43,26 @@
 {else}
 <div id="commentlist">
 {foreach $comments AS $comment}
-    <div id="serendipity_comment_{$comment.id}" class="serendipity_comment serendipity_comment_author_{$comment.author|makeFilename} {if $entry.author == $comment.author}serendipity_comment_author_self{/if} {if $comment.depth == 0}comment_threaded_child0 {elseif $comment.depth == 1}comment_threaded_child1{else}comment_threaded_child2{/if}">
-    <a id="c{$comment.id}"></a>
+    <div id="serendipity_comment_{$comment.id|default:0}" class="serendipity_comment serendipity_comment_author_{$comment.author|makeFilename}{if isset($entry) AND $entry.author == $comment.author AND $entry.email == $comment.clear_email} serendipity_comment_author_self{/if} {if $comment.depth == 0}comment_threaded_child0{elseif $comment.depth == 1}comment_threaded_child1{else}comment_threaded_child2{/if}">
+    <a id="c{$comment.id|default:0}"></a>
         <div class="serendipity_comment_source">
-            <div class="comment_source_author">
+            <span class="comment_source_author">
             {if $comment.email}
-                <a href="mailto:{$comment.email}"><img src="templates/terrafirma/img/comment.gif" style="border:0px";> {$comment.author|default:$CONST.ANONYMOUS}s {$CONST.EMAIL}</a> + <a href="{$comment.url|escape}"><img src="templates/terrafirma/img/trackback.gif" style="border:0px";> {$comment.author|default:$CONST.ANONYMOUS}s {$CONST.HOMEPAGE}</a>
+                <a href="mailto:{$comment.email}"><img src="{serendipity_getFile file="img/comment.gif"}" /> {$comment.author|default:$CONST.ANONYMOUS}</a>
             {else}
-                <a href="{$comment.url|escape}"><img src="templates/terrafirma/img/comment.gif" style="border:0px";> {$comment.author|default:$CONST.ANONYMOUS}:</a>
-            {/if}</div>
+                {$comment.author|default:$CONST.ANONYMOUS}
+            {/if}
+            {if isset($comment.entryauthor) AND $comment.entryauthor == $comment.author AND isset($entry) AND $entry.email == $comment.clear_email} <span class="pc-owner">Post author</span> {/if}
+        {if isset($comment.type) AND $comment.type == 'TRACKBACK'}
+            <br />
+            {$CONST.IN} {$CONST.TITLE}: <span class="comment_source_ctitle">{$comment.ctitle|truncate:42|wordwrap:15:"\n":true|escape}</span>
+        {/if}
+            </span>
+            {if $comment.url}
+                (<a class="comment_source_url" href="{$comment.url}" title="{$comment.url|escape}"><img src="{serendipity_getFile file="img/trackback.gif"}" /> {$CONST.HOMEPAGE}</a>)
+            {/if}
 
-<div id="serendipity_replyform_{$comment.id}"></div>
+            <div id="serendipity_replyform_{$comment.id}"></div>
         </div>
         <div class="serendipity_commentBody">{$comment.body}</div>
         <p class="commentmeta">
@@ -52,11 +70,12 @@
             {if $comment.url}
                 (<a class="comment_source_url" href="{$comment.url}" title="{$comment.url|escape}">Link</a>)
             {/if}
-            {if $entry.allow_comments}
-                (<a class="comment_reply" href="#serendipity_CommentForm" id="serendipity_reply_{$comment.id}" onclick="document.getElementById('serendipity_replyTo').value='{$comment.id}'; {$comment_onchange}">{$CONST.REPLY}</a>)
+            {if isset($comment.id) AND isset($entry.allow_comments) AND $comment.body != 'COMMENT_DELETED'}
+                (<a class="comment_reply" href="#serendipity_CommentForm" id="serendipity_reply_{$comment.id}" onclick="document.getElementById('serendipity_replyTo').value='{$comment.id}'; {$comment_onchange|default:''}">{$CONST.REPLY}</a>)
             {/if}
-            {if $entry.is_entry_owner}
-                (<a class="comment_source_ownerlink" href="{$comment.link_delete}" onclick="return confirm('{$CONST.COMMENT_DELETE_CONFIRM|sprintf:$comment.id:$comment.author}');">delete</a>){/if}</p>
+            {if isset($entry) AND NOT empty($entry.is_entry_owner) AND NOT empty($comment.id)}
+                (<a class="comment_source_ownerlink" href="{$comment.link_delete}" onclick="return confirm('{$CONST.COMMENT_DELETE_CONFIRM|sprintf:$comment.id:$comment.author}');">{$CONST.DELETE}</a>){/if}
+        </p>
     </div>
 {foreachelse}
     <div class="serendipity_center nocomments">{$CONST.NO_COMMENTS}</div>

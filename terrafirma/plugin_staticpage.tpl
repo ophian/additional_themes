@@ -1,7 +1,7 @@
 {if $staticpage_articleformat}
 <div id="staticpage_{$staticpage_pagetitle|makeFilename}" class="serendipity_Entry_Date serendipity_staticpage">
-
-<h3 class="header">{$staticpage_articleformattitle|escape}{/if}{$staticpage_headline|escape}</h3>
+{/if}
+    <h2 class="staticpage_title">{if $staticpage_articleformat}{if $staticpage_articleformattitle}{$staticpage_articleformattitle}{else}{$staticpage_pagetitle|escape}{/if}{else}{if $staticpage_headline}{$staticpage_headline}{else}{$staticpage_pagetitle|escape}{/if}{/if}</h2>
 
 {if $staticpage_navigation AND $staticpage_shownavi}
     <table border="0" cellpadding="2" cellspacing="2" width="100%" class="staticpage_navigation">
@@ -28,7 +28,11 @@
              </div>
         </form>
 {else}
-        <div class="post">{$staticpage_precontent}</div>
+        {if $staticpage_precontent}
+        <div class="ccontent serendipity_preface">
+            {$staticpage_precontent}
+        </div>
+        {/if}
         {if is_array($staticpage_childpages)}
         <ul id="staticpage_childpages">
             {foreach $staticpage_childpages AS $childpage}
@@ -36,13 +40,16 @@
             {/foreach}
         </ul>
         {/if}
-        <div class="post">{$staticpage_content}</div>
+        {if $staticpage_content}
+        <div class="{if $staticpage_articleformat}staticpage_content{else}post{/if}">
+            {$staticpage_content}
+        </div>
+        {/if}
 {/if}
 
 {if $staticpage_articleformat}
         </div>
     </div>
-</div>
 {/if}
 
 {if $staticpage_author}
@@ -58,3 +65,8 @@
     | <a class="staticpage_metainfo_editlink" href="{$staticpage_adminlink.link_edit}">{$staticpage_adminlink.link_name|escape}</a>
 {/if}
     </div>
+
+{if $staticpage_articleformat}
+</div>
+{/if}
+

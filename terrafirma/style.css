@@ -1,3 +1,200 @@
+/**! Modernizing Serendipity Styx default styles START **/
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+main { display: block; }
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible; }
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+a { background-color: transparent; }
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted; }
+b,
+strong { font-weight: bolder; }
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+small { font-size: 80%; }
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+sub { bottom: -0.25em; }
+sup { top: -0.5em; }
+img { border-style: none; }
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0; }
+button,
+input {
+  overflow: visible; }
+button,
+select {
+  text-transform: none; }
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+fieldset { padding: 0.35em 0.75em 0.625em; }
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal; }
+progress { vertical-align: baseline; }
+textarea { overflow: auto; }
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px; }
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit; }
+details { display: block; }
+summary { display: list-item; }
+template,
+[hidden] {
+  display: none; }
+
+/* normalize end */
+
+/* Render Browser default styles */
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box }
+@-ms-viewport { width: device-width; }
+ul,ol { list-style-position: inside; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+/* Modern Serendipity image sizing default */
+
+img {
+    border: 0;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative; }
+embed, object, audio, video, img {
+    max-width: 100%; }
+img, video {
+    height: auto; }
+
+/* Serendipity Styx comment summary pages */
+
+.comment_content {
+    margin-bottom: 1em; }
+
+.serendipity_comment_author_self .serendipity_comment_source .pc-owner,
+.serendipity_comment_author_self .comment_header .pc-owner {
+    background: #3e5f81e6;
+    padding: .1em .25em;
+    border-radius: 3px;
+    color: #efefef;
+    font-style: normal;
+    text-shadow: 1px 1px 2px #222; }
+.comments_by_author_pagination {
+    text-align: center; }
+.comments_by_author_pagination.top {
+    margin-top: 1em; }
+.comments_by_author_pagination.bottom {
+    margin: 2em auto; }
+
+/* defaults */
+
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+#c0 { /* a new unsaved comment preview only */
+    border: 1px solid #ddd;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: .625em;
+}
+
+.serendipity_image_link {
+    display: inline-block;
+}
+.serendipity_entry table {
+    border: 1px solid #eee;
+    display: inline-grid;
+    max-width: 100%;
+    width: auto;
+    overflow: auto;
+    padding: 2px; }
+
+/** Modernizing Serendipity Styx default styles END **/
+
+/** Theme fixes depending presets and theme styles **/
+
+[type="checkbox"],
+[type="radio"] {
+    vertical-align: middle; }
+
+.serendipity_Entry_Date.freetag_cloud {
+    display: inline-block;
+    margin-bottom: 1em; }
+
+.serendipity_staticpage h2,
+h2.staticpage_title {
+    display: block;
+    margin-bottom: 1.5em; }
+
+/* backend preview */
+#content {
+    width: 747px !important;
+    padding-left: 2em !important;
+    background: #fff url('{TEMPLATE_PATH}img/abg.gif') repeat-y; }
+#content .footer ul {
+    list-style: none; }
+
+
 /*
 
 	terrafirma1.0 by nodethirtythree design
@@ -5,68 +202,58 @@
 
 */
 
-*
-{
-padding: 0px;
-margin: 0px;
+* {
+    padding: 0px;
+    margin: 0px;
 }
 
-body
-{
-background: #F9F9F7 url('img/a1.gif') repeat-x;
-font-size: 11px;
-font-family: "trebuchet ms", helvetica, sans-serif;
-color: #8C8C73;
-line-height: 18px;
+body {
+    background: #F9F9F7 url('{TEMPLATE_PATH}img/a1.gif') repeat-x;
+    font-size: 11px;
+    font-family: "trebuchet ms", helvetica, sans-serif;
+    color: #8C8C73;
+    line-height: 18px;
 }
 
-a
-{
-color: #FF7800;
-text-decoration: underline;
+a {
+    color: #FF7800;
+    text-decoration: underline;
 }
 
-a:hover
-{
-text-decoration: none;
+a:hover {
+    text-decoration: none;
 }
 
-sup
-{
-font-size: 0.5em;
+sup {
+    font-size: 0.5em;
 }
 
-
-p
-{
-margin-bottom: 14px;
-text-align: justify;
+p {
+    margin-bottom: 14px;
+    text-align: justify;
 }
 
-img.picA
-{
-position: relative;
-top: -2px;
-background: url('img/a47.gif') no-repeat;
-width: 76px;
-height: 74px;
-padding: 8px;
+img.picA {
+    position: relative;
+    top: -2px;
+    background: url('{TEMPLATE_PATH}img/a47.gif') no-repeat;
+    width: 76px;
+    height: 74px;
+    padding: 8px;
 }
 
-img.picB
-{
-position: relative;
-top: -2px;
-background: url('img/a26.gif') no-repeat;
-width: 146px;
-height: 75px;
-padding: 7px;
+img.picB {
+    position: relative;
+    top: -2px;
+    background: url('{TEMPLATE_PATH}img/a26.gif') no-repeat;
+    width: 146px;
+    height: 75px;
+    padding: 7px;
 }
 
-img.floatleft
-{
-float: left;
-margin: 0px 14px 3px 0px;
+img.floatleft {
+    float: left;
+    margin: 0px 14px 3px 0px;
 }
 
 img {
@@ -100,19 +287,13 @@ img a {
 	border-left:1px solid #EEEEE8;
 }
 
-
-
 .serendipity_imageComment_center {
 	margin: auto;
 }
 
-
-
 .serendipity_imageComment_left {
 	float: left;
 }
-
-
 
 .serendipity_imageComment_right {
 	float: right;
@@ -125,242 +306,211 @@ img a {
 	text-decoration:underline;
 }
 
-ul.linklist
-{
-list-style: none;
+ul.linklist {
+    list-style: none;
 }
 
-ul.linklist li
-{
-border-top: solid 1px #EEEEEE;
-padding-top: 5px;
-margin: 5px 0px 0px 0px;
+ul.linklist li {
+    border-top: solid 1px #EEEEEE;
+    padding-top: 5px;
+    margin: 5px 0px 0px 0px;
 }
 
-ul.linklist li.first
-{
-border-top: 0px;
-margin-top: 0px;
-padding-top: 0px;
+ul.linklist li.first {
+    border-top: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
 }
 
-#upbg
-{
-position: absolute;
-top: 0px;
-left: 0px;
-background: #fff url('img/upbg.gif') no-repeat;
-width: 747px;
-height: 264px;
-z-index: 1;
+#upbg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #fff url('{TEMPLATE_PATH}img/upbg.gif') no-repeat;
+    width: 747px;
+    height: 264px;
+    z-index: 1;
 }
 
-#outer
-{
-position: relative;
-width: 747px;
-margin: 0 auto;
-background: #fff url('img/abg.gif') repeat-y;
+#outer {
+    position: relative;
+    width: 747px;
+    margin: 0 auto;
+    background: #fff url('{TEMPLATE_PATH}img/abg.gif') repeat-y;
 }
 
-#inner
-{
-position: relative;
-padding: 13px 30px 13px 30px;
-z-index: 2;
+#inner {
+    position: relative;
+    padding: 13px 30px 13px 30px;
+    z-index: 2;
 }
 
-#header
-{
-position: absolute;
-background: #FF7800 url('img/a8.gif') repeat-x;
-width: 202px;
-height: 92px;
-color: #fff;
-padding-left: 20px;
+#header {
+    position: absolute;
+    background: #FF7800 url('{TEMPLATE_PATH}img/a8.gif') repeat-x;
+    width: 222px;
+    height: 92px;
+    color: #fff;
+    padding-left: 20px;
 }
 
-#header span
-{
-font-weight: normal;
-text-transform:lowercase;
+#header span {
+    font-weight: normal;
+    text-transform:lowercase;
 }
 
-#header h1
-{
-position: absolute;
-font-size: 23px;
-letter-spacing: -1px;
-top: 30px;
-height: 92px;
+#header h1 {
+    position: absolute;
+    font-size: 23px;
+    letter-spacing: -1px;
+    top: 18px;
+    height: 42px;
 }
 
-#header h2
-{
-position: absolute;
-font-size: 10px;
-font-weight: normal;
-color: #FCE2CA;
-top: 51px;
+#header h2 {
+    position: absolute;
+    font-size: 10px;
+    font-weight: normal;
+    color: #FCE2CA;
+    top: 51px;
 }
 
-#header sup
-{
-color: #FCE2CA;
+#header sup {
+    color: #FCE2CA;
 }
 
-#splash
-{
-position: absolute;
-right: 30px;
-background: #EAEAE2 url('img/a10.jpg') no-repeat;
-width: 458px;
-height: 92px;
+#splash {
+    position: absolute;
+    right: 30px;
+    background: #EAEAE2 url('{TEMPLATE_PATH}img/a10.jpg') no-repeat;
+    width: 458px;
+    height: 92px;
 }
 
-#menu
-{
-position: relative;
-background: #46461F url('img/a16.gif') repeat-x;
-height: 67px;
-padding: 0px 20px 0px 5px;
-margin: 98px 0px 20px 0px;
+#menu {
+    position: relative;
+    background: #46461F url('{TEMPLATE_PATH}img/a16.gif') repeat-x;
+    height: 67px;
+    padding: 0px 20px 0px 5px;
+    margin: 98px 0px 20px 0px;
 }
 
-#menu ul
-{
+#menu ul{}
+
+#menu ul li {
+    display: inline;
+    line-height: 52px;
+    padding-left: 3px;
 }
 
-#menu ul li
-{
-display: inline;
-line-height: 52px;
-padding-left: 3px;
+#menu ul li.first {
+    border-left: 0px;
 }
 
-#menu ul li.first
-{
-border-left: 0px;
+#menu ul li a {
+    background-color: transparent;
+    background-repeat: repeat-x;
+    padding: 8px 12px 8px 12px;
+    font-size: 12px;
+    color: #fff;
+    font-weight: bold;
 }
 
-#menu ul li a
-{
-background-color: transparent;
-background-repeat: repeat-x;
-padding: 8px 12px 8px 12px;
-font-size: 12px;
-color: #fff;
-font-weight: bold;
+#menu ul li a:hover {
+    background: #fff url('{TEMPLATE_PATH}img/a18.gif') repeat-x top;
+    color: #4A4A24;
+    text-decoration: none;
 }
 
-#menu ul li a:hover
-{
-background: #fff url('img/a18.gif') repeat-x top;
-color: #4A4A24;
-text-decoration: none;
+#date {
+    position: absolute;
+    top: 0px;
+    line-height: 52px;
+    color: #BDBDA2;
+    right: 30px;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: -1px;
 }
 
-#date
-{
-position: absolute;
-top: 0px;
-line-height: 52px;
-color: #BDBDA2;
-right: 30px;
-font-weight: bold;
-font-size: 12px;
-letter-spacing: -1px;
+#secondarycontent {
+    position: relative;
+    width: 180px;
+    float: right;
 }
 
-#secondarycontent
-{
-position: relative;
-width: 180px;
-float: right;
+#secondarycontent h3 {
+    position: relative;
+    top: 4px;
+    font-size: 16px;
+    line-height: 25px;
+    color: #656551;
+    letter-spacing: -1px;
+    background: url('{TEMPLATE_PATH}img/a22.gif') bottom repeat-x;
+    padding: 0px 0px 10px 10px;
+    margin-bottom: 20px;
 }
 
-#secondarycontent h3
-{
-position: relative;
-top: 4px;
-font-size: 16px;
-line-height: 25px;
-color: #656551;
-letter-spacing: -1px;
-background: url('img/a22.gif') bottom repeat-x;
-padding: 0px 0px 10px 10px;
-margin-bottom: 20px;
+#secondarycontent .content {
+    padding: 0px 10px 0px 10px;
+    margin-bottom: 20px;
 }
 
-#secondarycontent .content
-{
-padding: 0px 10px 0px 10px;
-margin-bottom: 20px;
+#primarycontent {
+    position: relative;
+    width: 480px;
+    float: left;
 }
 
-#primarycontent
-{
-position: relative;
-width: 480px;
-float: left;
+#primarycontent h3 {
+    position: relative;
+    top: 4px;
+    font-size: 18px;
+    line-height: 25px;
+    color: #656551;
+    letter-spacing: -1px;
+    background: url('{TEMPLATE_PATH}img/a22.gif') bottom repeat-x;
+    padding: 0px 0px 10px 15px;
+    margin-bottom: 20px;
 }
 
-#primarycontent h3
-{
-position: relative;
-top: 4px;
-font-size: 18px;
-line-height: 25px;
-color: #656551;
-letter-spacing: -1px;
-background: url('img/a22.gif') bottom repeat-x;
-padding: 0px 0px 10px 15px;
-margin-bottom: 20px;
+h3 a {
+    color: #656551;
+    text-decoration:none;
 }
 
-h3 a
-{
-color: #656551;
-text-decoration:none;
+h3 a:hover {
+    color: #ff7800;
 }
 
-h3 a:hover
-{
-color: #ff7800;
+#primarycontent .content {
+    padding: 0px 15px 0px 15px;
+    margin-bottom: 20px;
 }
 
-#primarycontent .content
-{
-padding: 0px 15px 0px 15px;
-margin-bottom: 20px;
+#primarycontent .post {
+    margin-bottom: 30px;
 }
 
-#primarycontent .post
-{
-margin-bottom: 30px;
+#primarycontent .post .header {
+    position: relative;
 }
 
-#primarycontent .post .header
-{
-position: relative;
+#primarycontent .post .date {
+    position: absolute;
+    right: 15px;
+    top: 0px;
+    line-height: 35px;
+    color: #AFAFA4;
+    font-weight: bold;
 }
 
-#primarycontent .post .date
-{
-position: absolute;
-right: 15px;
-top: 0px;
-line-height: 35px;
-color: #AFAFA4;
-font-weight: bold;
+#primarycontent .post .content {
+    margin-bottom: 0px;
 }
 
-#primarycontent .post .content
-{
-margin-bottom: 0px;
-}
-
-.serendipity_calendar table {font: normal .09em/1.3em Verdana, Arial, Helvetica, sans-serif;
+.serendipity_calendar table {
+    font: normal .09em/1.3em Verdana, Arial, Helvetica, sans-serif;
 	margin: 0px; width: 170px; text-align: center; }
 td.serendipity_calendarHeader {padding-right:2px; }
 td.serendipity_weekDayName {letter-spacing: -.06em;padding:0;margin:0; }	
@@ -371,21 +521,19 @@ td.serendipity_calendarDay a:hover {color: #ffffff; background:#656555;	text-dec
 table.serendipity_calendar td {text-align: center; }
 .large {font-size:larger; }
 
-#primarycontent .post .footer
-{
-position: relative;
-top: -10px;
-background: url('img/a33.gif') repeat-x;
-height: 64px;
+#primarycontent .post .footer {
+    position: relative;
+    top: -10px;
+    background: url('{TEMPLATE_PATH}img/a33.gif') repeat-x;
+    height: 64px;
 }
 
-#primarycontent .post .footer ul
-{
-list-style: none;
-position: absolute;
-right: 15px;
-bottom: 15px;
-text-align:right;
+#primarycontent .post .footer ul {
+    list-style: none;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    text-align:right;
 }
 
 input {
@@ -409,16 +557,16 @@ textarea{
 }
 
 .serendipity_commentsTitle {
-position: relative;
-top: 4px;
-font-size: 18px;
-line-height: 25px;
-color: #656551;
-letter-spacing: -1px;
-background: url('img/a22.gif') bottom repeat-x;
-padding: 0px 0px 10px 15px;
-margin-bottom: 20px;
-	}
+    position: relative;
+    top: 4px;
+    font-size: 18px;
+    line-height: 25px;
+    color: #656551;
+    letter-spacing: -1px;
+    background: url('{TEMPLATE_PATH}img/a22.gif') bottom repeat-x;
+    padding: 0px 0px 10px 15px;
+    margin-bottom: 20px;
+}
 	
 .serendipity_comment {
 	margin-bottom:15px;
@@ -426,111 +574,106 @@ margin-bottom: 20px;
 	background:#f6f6f6;
 	color:#777;
 	font:90% Verdana;
-	background: url('img/a33.gif') bottom left repeat-x;
-	}
+    border: 1px solid #efefef;
+	background: url('{TEMPLATE_PATH}img/a33.gif') bottom left repeat-x;
+}
 	
 .serendipity_comment img {
 	border:0px;
-	}
+}
 	
 .serendipity_commentBody {
-	padding:2px 5px 2px 5px;
-	}
+    padding: 2px 5px 2px 5px;
+    margin-top: 1em;
+}
+
+.comment_threaded_child0 { margin-left: 0; border: 1px solid #ddd; }
+.comment_threaded_child1 { margin-left: 1.5em; border: 1px dashed #eee;}
+.comment_threaded_child2 { margin-left: 3em; border: 1px dashed #eee;}
 
 .comment_source_author {
-position: relative;
-top: 4px;
-font-size: 18px;
-line-height: 25px;
-color: #656551;
-letter-spacing: -1px;
-padding: 0px 0px 10px 5px;
-margin-bottom: 0px;
-	}
+    position: relative;
+    top: 4px;
+    font-size: 1rem;
+    line-height: 25px;
+    color: #656551;
+    letter-spacing: -1px;
+    padding: 0px 0px 10px 5px;
+    margin-bottom: 0px;
+}
 
 .comment_source_author a {
 	color:#656551;
 	text-decoration:none;
-	}
+}
 	
 .comment_source_author a:hover {
 	color:#ff7800;
-	}
+}
 
 .commentmeta {
 	padding-top:8px;
 	padding-left:5px;
 }
 
-.commentmeta a {
+.commentmeta a {}
 
-}
-
-#captcha{
+#captcha {
 	width:150px;
 	height:25px;
 	padding:1px;
 	background:#ffffff;
 	border:4px solid #f6f6f6;}
 
-#checkbox_remember, #checkbox_subscribe{
-width:15px;
+#checkbox_remember, #checkbox_subscribe {
+    width:15px;
 }
 
-#primarycontent .post .footer ul li
-{
-display: inline;
-line-height: 18px;
-padding-top:2px;
-padding-bottom:6px;
-padding-left: 17px;
-margin-left: 25px;
-background-repeat: no-repeat;
-background-position: 0px 2px;
+#primarycontent .post .footer ul li {
+    display: inline;
+    line-height: 18px;
+    padding-top:2px;
+    padding-bottom:6px;
+    padding-left: 17px;
+    margin-left: 25px;
+    background-repeat: no-repeat;
+    background-position: 0px 2px;
 }
 
-#primarycontent .post .footer ul li.printerfriendly
-{
-background-image: url('img/a41.gif');
+#primarycontent .post .footer ul li.printerfriendly {
+    background-image: url('i{TEMPLATE_PATH}mg/a41.gif');
 }
 
-#primarycontent .post .footer ul li.comments
-{
-background-image: url('img/comment.gif');
+#primarycontent .post .footer ul li.comments {
+    background-image: url('{TEMPLATE_PATH}img/comment.gif');
 }
 
-#primarycontent .post .footer ul li.trackbacks
-{
-background-image: url('img/trackback.gif');
+#primarycontent .post .footer ul li.trackbacks {
+    background-image: url('{TEMPLATE_PATH}img/trackback.gif');
 }
 
-#primarycontent .post .footer ul li.author
-{
-background-image: url('img/user.gif');
+#primarycontent .post .footer ul li.author {
+    background-image: url('{TEMPLATE_PATH}img/user.gif');
 }
 
-#primarycontent .post .footer ul li.readmore
-{
-background-image: url('img/category.gif');
+#primarycontent .post .footer ul li.readmore {
+    background-image: url('{TEMPLATE_PATH}img/category.gif');
 }
 
-#primarycontent .post .footer ul li.edit
-{
-background-image: url('img/edit.gif');
+#primarycontent .post .footer ul li.edit {
+    background-image: url('{TEMPLATE_PATH}img/edit.gif');
 }
 
-#footer
-{
-position: relative;
-clear: both;
-height: 66px;
-text-align: center;
-line-height: 66px;
-background-image: url('img/a50.gif');
-color: #A8A88D;
+#footer {
+    position: relative;
+    clear: both;
+    height: 66px;
+    text-align: center;
+    line-height: 66px;
+    background-image: url('{TEMPLATE_PATH}img/a50.gif');
+    color: #A8A88D;
 }
 
-#footer a
-{
-color: #8C8C73;
+#footer a {
+    color: #8C8C73;
 }

@@ -2,11 +2,7 @@
 
 if (IN_serendipity !== true) { die ("Don't hack!"); }
 
-// Be nice to the frontend users. They don't need the additional constants
-// and file lookups. Only load them when in Admin mode.
-if (defined('IN_serendipity_admin')) {
-    @serendipity_plugin_api::load_language(dirname(__FILE__));
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 $serendipity['smarty']->assign(array('currpage'  => "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],
                                      'currpage2' => $_SERVER['REQUEST_URI']));
@@ -14,7 +10,6 @@ $serendipity['smarty']->assign(array('currpage'  => "http://".$_SERVER['HTTP_HOS
 $template_config = array(
     array(
         'var'           => 'abouttitle',
-        'name'          => 'abouttitle',
 		'name'          => ABOUT_TITLE,
         'description'   => ABOUT_TITLE_DESC,
         'type'          => 'string',
@@ -22,7 +17,6 @@ $template_config = array(
     ),
     array(
         'var'           => 'about',
-        'name'          => 'about_text',
 		'name'          => ABOUT_TEXT,
         'description'   => ABOUT_TEXT_DESC,
         'type'          => 'string',
@@ -30,6 +24,7 @@ $template_config = array(
     ),
     array(
         'var'           => 'about_text_toggle',
+		'name'          => ABOUT_BOX,
         'description'   => USE_ABOUT_TEXT_DESC,
         'type'          => 'radio',
         'radio'         => array('value' => array('true', 'false'),
@@ -42,14 +37,7 @@ $template_config = array(
         'description'   => ABOUT_URL,
         'type'          => 'string',
         'default'       => '#',
-    ),
-    array(
-        'var'           => 'amount',
-        'name'          => NAVNUM,
-        'description'   => NAVNUMDESC,
-        'type'          => 'string',
-        'default'       => '4',
-    ),
+    )
 );
 
 $top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';

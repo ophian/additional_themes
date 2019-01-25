@@ -1,13 +1,6 @@
 {if $is_embedded != true}
-{if $is_xhtml}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-{else}
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-           "http://www.w3.org/TR/html4/loose.dtd">
-{/if}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="{$lang}">
 <!--
 
     terrafirma1.0 by nodethirtythree design
@@ -15,9 +8,11 @@
 
 -->
 <head>
-<title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
-    <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
+    <meta charset="{$head_charset}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
+    <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
 {if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
@@ -35,11 +30,13 @@
 {if $entry_id}
     <link rel="pingback" href="{$serendipityBaseURL}comment.php?type=pingback&amp;entry_id={$entry_id}" />
 {/if}
-<link rel="stylesheet" type="text/css" href="{serendipity_getFile file="style.css"}" />
 {serendipity_hookPlugin hook="frontend_header"}
 </head>
-<body>
 
+<body>
+{else}
+{serendipity_hookPlugin hook="frontend_header"}
+{/if}
 <div id="outer">
 
     <div id="upbg"></div>
@@ -48,7 +45,7 @@
 
         <div id="header">
             <h1><span>{$head_title|default:$blogTitle|truncate:20:" ...":true}</span></h1>
-            <h2>{$head_subtitle|default:$blogDescription}</h2>
+            <h2>{if $view == 'plugin'}{$blogDescription}{else}{$head_subtitle|default:$blogDescription}{/if}</h2>
         </div>
 
         <div id="splash"></div>
@@ -74,7 +71,7 @@
         {if $template_option.about_text_toggle == 'true'}
             <h3>{$template_option.abouttitle}</h3>
             <div class="content">
-                <a href="{$template_option.aboutpageurl}"><img src="{$serendipityHTTPPath}templates/{$template}/img/user.jpg" class="picB" alt="" style="border:none;"/></a>
+                <a href="{$template_option.aboutpageurl}"><img src="{serendipity_getFile file="img/user.jpg"}" class="picB" alt="" /></a>
                 <p>{$template_option.about} <a href="{$template_option.aboutpageurl}"> {$CONST.MORE} &raquo;</a></p>
             </div>
             {elseif $template_option.about_text_toggle == 'false'}
@@ -84,11 +81,14 @@
         </div>
 
         <div id="footer">
-            Design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree</a> | portetd to <a href="http://www.s9y.org">Serendipity</a> by <a href="http://www.taeglichanders.de">taeglichanders.de</a>.
+            Design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree</a> | ported to <a href="https://ophian.github.io/">Serendipity Styx Edition</a> by <a href="http://www.taeglichanders.de">taeglichanders.de</a>.
         </div>
     </div>
+    
 </div>
-
+{$raw_data}
+{serendipity_hookPlugin hook="frontend_footer"}
+{if $is_embedded != true}
 </body>
 </html>
 {/if}
