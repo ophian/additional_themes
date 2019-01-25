@@ -27,12 +27,6 @@ $template_config = array(
         'radio'         => array('value' => array('true', 'false'),
                                  'desc'  => array(YES, NO)),
         'default'       => 'false'
-    ),
-    array(
-        'var'           => 'amount',
-        'name'          => NAVLINK_AMOUNT,
-        'type'          => 'string',
-        'default'       => '5',
     )
 );
 
