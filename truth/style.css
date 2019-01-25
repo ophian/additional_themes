@@ -194,15 +194,16 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
     padding: 0; }
 
 
-  /* 
+/**
   Truth Template v.1 provided by Eddie Traversa 2005
   please leave note this intact.
   email:etraversa@dhtmlnirvana.com
   url: http://www.truthrealization.com/
   url: http://www.dhtmlnirvana.com/
-  */
- 
- /* custom additions */
+*/
+
+/* custom additions */
+
 img {
     margin: 0px;
     border: 0px;
