@@ -1,3 +1,6 @@
-Name: square v1.0.1 (2008-02-14)
+Name: square
 Author: David Cummins
-Date: 02 October 2006
+Date: 2019-01-20
+
+Summary: Additional old theme from 2006-10-02 to 2009-02-14 (v1.0.1) with a fixed size of ~900 pixel content width.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not <u>fully</u> mobile friendly!

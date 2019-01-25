@@ -1,4 +1,5 @@
 <?php
+
 @define('NAVLINK1_TEXT_TITLE', 'Navlink #1 Text'); 
 @define('NAVLINK1_TEXT_DESC', 'Enter the first navigation text');
 @define('NAVLINK1_TEXT_DEFAULT', 'About');
@@ -19,3 +20,4 @@
 @define('NAVLINK4_TEXT_DEFAULT', 'Contact');
 @define('NAVLINK4_URL_TITLE', 'Navlink #4 URL');
 @define('NAVLINK4_URL_DESC', 'Enter the fourth navigation URL eg \'http://www.somesite.url\'');
+
