@@ -54,13 +54,15 @@
 <div id="wrap">
     <div id="serendipity_banner">
         <h1 class="title"><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle}</a></h1>
-        <h2 class="subTitle">{$head_subtitle|default:$blogDescription}</h2>
+        <h2 class="subTitle">{if $view == 'plugin'}{$blogDescription}{else}{$head_subtitle|default:$blogDescription}{/if}</h2>
     </div>
     <div id="menu">
         <a href="{$serendipityBaseURL}" id="navHome" title="Posted Recently" accesskey="h" class="active">{$CONST.HOMEPAGE}</a>
+    {if isset($navlinks)}
     {foreach $navlinks AS $navlink}
         <a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a>
     {/foreach}
+    {/if}
     </div>
 
     <div id="mainpane">
@@ -70,7 +72,7 @@
         </div>
         <div id="content">
             {$CONTENT}
-            <p id="footer">Design by <a href="http://www.FullAhead.org" title="FullAhead.org">FullAhead</a> and <a href="http://threetree.net/" title="ThreeTree.net">ThreeTree</a><br />Converted to <a href="https://ophian.github.io/">s9y</a> by <a href="http://www.carlgalloway.com">Carl Galloway</a></p>
+            <p id="footer">Design by <a href="http://www.FullAhead.org" title="FullAhead.org">FullAhead</a> and <a href="http://threetree.net/" title="ThreeTree.net">ThreeTree</a><br />Converted to <a href="https://ophian.github.io/">Serendipity Styx</a> by <a href="http://www.carlgalloway.com">Carl Galloway</a></p>
         </div>
     </div>
 </div>
