@@ -47,7 +47,7 @@
     <div id="wrap">
         <div id="serendipity_banner">
             <h1 class="title"><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle|truncate:27:" ...":true}</a></h1>
-            <h2 class="subTitle">{$head_subtitle|default:$blogDescription}</h2>
+            <h2 class="subTitle">{if $view == 'plugin'}{$blogDescription}{else}{$head_subtitle|default:$blogDescription}{/if}</h2>
         </div>
         <div id="menu">
             <a href="{$serendipityBaseURL}" id="navHome" title="Posted Recently">{$CONST.HOMEPAGE}</a>
