@@ -10,7 +10,7 @@
         {if $dategroup.is_sticky}
             <span class="post-date">{$CONST.STICKY_POSTINGS}
         {else}
-            <span class="post-date">{$dategroup.date|formatTime:$CONST.DATE_FORMAT_ENTRY_TRANSLUCENCY}
+            <span class="post-date">{$dategroup.date|formatTime:'%b %e:'}
         {/if}
             <a href="{$entry.link}">{$entry.title|default:$entry.body|truncate:37:" ..."}</a>
             </span>
@@ -168,13 +168,13 @@
     {/if}
 {/if}
 
-    <div class="serendipity_entryFooterPagination">
+    <div class="serendipity_entryFooter">
 {if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
     {if $footer_prev_page}<a href="{$footer_prev_page}">{/if}{if $footer_prev_page}&#9668; {$CONST.PREVIOUS_PAGE}{else}&nbsp;{/if}{if $footer_prev_page}</a>{/if}
     {if NOT empty($footer_info)}{$footer_info}{/if}
     {if $footer_next_page}<a href="{$footer_next_page}">{/if}{if $footer_next_page}{$CONST.NEXT_PAGE} &#9658;{else}&nbsp;{/if}{if $footer_next_page}</a>{/if}
 {/if}
-    </div>
 
     {serendipity_hookPlugin hook="entries_footer"}
+    </div>
 <!-- ENTRIES END -->
