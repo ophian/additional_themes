@@ -67,6 +67,22 @@ input[type="checkbox"] {
     overflow: auto;
     padding: .25em; }
 
+/* calendar */
+.icon-back::before {
+    content: "<"; }
+.icon-next::before {
+    content: ">"; }
+.icon {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1.065em;
+    /*color: #FFF;*/
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+.serendipity_calendarHeader {
+    text-align: center; }
+
 
 /*
 	zenlike1.0 by nodethirtythree design
