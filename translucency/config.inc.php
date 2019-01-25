@@ -12,14 +12,7 @@ $template_config = array(
         'type'          => 'select',
         'default'       => 'transred',
         'select_values' => array('transred' => 'Translucency red', 'transblue' => 'Translucency blue')
-    ),
-    array(
-        'var'           => 'amount',
-        'name'          => NAVLINK_AMOUNT,
-        'type'          => 'string',
-        'default'       => '4',
-    ),
-
+    )
 );
 
 $top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
