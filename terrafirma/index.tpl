@@ -37,6 +37,7 @@
 {else}
 {serendipity_hookPlugin hook="frontend_header"}
 {/if}
+{if $is_raw_mode != true}
 <div id="outer">
 
     <div id="upbg"></div>
@@ -86,6 +87,7 @@
     </div>
     
 </div>
+{/if}
 {$raw_data}
 {serendipity_hookPlugin hook="frontend_footer"}
 {if $is_embedded != true}
