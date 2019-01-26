@@ -42,7 +42,7 @@
             {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
                 <li><a class="more" href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></li>
             {/if}
-            {if $entry.is_entry_owner AND NOT $is_preview}
+            {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}
                 <li><a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a></li>
             {/if}
             </ul>
@@ -115,7 +115,7 @@
                 <br />
                     {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
 
-                {if $entry.is_entry_owner}
+                {if NOT empty($entry.is_entry_owner)}
                     {if $entry.allow_comments}
                     <div class="serendipity_center">(<a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>)</div>
                     {else}
