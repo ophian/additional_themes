@@ -406,7 +406,7 @@ body {
     height:23px;
     float:right;
     margin: 6px 10px 0px 0px;
-    background: url({TEMPLATE_PATH}img/search-btn.png) no-repeat top right;
+    background: url('{TEMPLATE_PATH}img/search-btn.png') no-repeat top right;
 }
 
 #menu {
@@ -576,7 +576,7 @@ div.serendipitySideBarItem {
     font-size: 11px;
     line-height:1.4;
     margin:0;
-    background: #464646 url({TEMPLATE_PATH}img/block_center.gif) repeat-y top center;
+    background: #464646 url('{TEMPLATE_PATH}img/block_center.gif') repeat-y top center;
 }
 
 .serendipitySideBarContent img {
@@ -591,13 +591,13 @@ div.serendipitySideBarItem {
     font-size: 1.5em;
     font-weight: normal;
     letter-spacing: -1.5px;
-    background: #464646 url("{TEMPLATE_PATH}img/block_top.gif") no-repeat top center;
+    background: #464646 url('{TEMPLATE_PATH}img/block_top.gif') no-repeat top center;
 }
 
 .serendipitySideBarFooter {
     margin-bottom: 10px; 
     height: 28px;
-    background: #464646 url("{TEMPLATE_PATH}img/block_bottom.gif") no-repeat bottom center;
+    background: #464646 url('{TEMPLATE_PATH}img/block_bottom.gif') no-repeat bottom center;
 }
 
 .serendipitySideBarContent a {

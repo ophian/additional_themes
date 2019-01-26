@@ -35,11 +35,11 @@ a:hover {
 }
 
 #wrapper {
-    background: url(img/transred/redtop.gif) no-repeat top left;
+    background: url('{TEMPLATE_PATH}img/transred/redtop.gif') no-repeat top left;
 }
 
 body {
-    background: url(img/transred/bg.gif) center repeat-y;
+    background: url('{TEMPLATE_PATH}img/transred/bg.gif') center repeat-y;
     background-color: #7B7B7B;
 }
 
@@ -53,7 +53,7 @@ body {
 }
 
 div.serendipity_entryFooter {
-    background:#BE8789 url(img/transred/entryfootertop.gif) no-repeat top left;
+    background:#BE8789 url('{TEMPLATE_PATH}img/transred/entryfootertop.gif') no-repeat top left;
     height:6px;
     width:auto;
 }
@@ -70,7 +70,7 @@ div.serendipity_entryFooterMain a {
 }
 
 div.serendipity_entryFooterBottom {
-    background: url(img/transred/entryfooterbottom.gif) no-repeat top left;
+    background: url('{TEMPLATE_PATH}img/transred/entryfooterbottom.gif') no-repeat top left;
     width:auto;
     height:6px;
 }
@@ -95,7 +95,7 @@ div.serendipity_entryFooterBottom {
 }
 
 #footer {
-    background: url(img/transred/footer.gif) no-repeat top left;
+    background: url('{TEMPLATE_PATH}img/transred/footer.gif') no-repeat top left;
 }
 
 #footer a {color:#590A0D; text-decoration:none;}
