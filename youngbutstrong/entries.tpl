@@ -67,7 +67,7 @@
                         {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
                     </ol>
 
-            {if $entry.is_entry_owner}
+            {if NOT empty($entry.is_entry_owner)}
                 {if $entry.allow_comments}
                     <div class="serendipity_center">(<a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>)</div>
                 {else}
