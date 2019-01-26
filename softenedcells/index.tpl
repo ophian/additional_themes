@@ -51,6 +51,7 @@
 {else}
 {serendipity_hookPlugin hook="frontend_header"}
 {/if}
+{if $is_raw_mode != true}
 <div id="wrap">
     <div id="serendipity_banner">
         <h1 class="title"><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle}</a></h1>
@@ -76,6 +77,7 @@
         </div>
     </div>
 </div>
+{/if}
 {$raw_data}
 {serendipity_hookPlugin hook="frontend_footer"}
 {if $is_embedded != true}
