@@ -36,6 +36,7 @@
 {else}
 {serendipity_hookPlugin hook="frontend_header"}
 {/if}
+{if $is_raw_mode != true}
 <div id="wrapper">
 
     <div id="searchbar">
@@ -69,7 +70,7 @@
 
     <div id="footer">Design by <a href="http://www.taeglichanders.de">Christian Hoffmann</a> | <span lang="en">Powered by <a href="https://ophian.github.io/">Serendipity Styx Edition</a> &amp; the <i>{$template}</i> theme.</span></div>
 </div>
-
+{/if}
 {$raw_data}
 {serendipity_hookPlugin hook="frontend_footer"}
 {if $is_embedded != true}
