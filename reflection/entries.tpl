@@ -42,6 +42,7 @@
             <p class="posttime">Continue Reading <a href="{$entry.link}#extended">{$entry.title}</a></p>
             {/if}
 
+            {if NOT $is_preview}
             <div class="serendipity_entryFooter">
                  {if $entry.has_comments}
                     {if $use_popups}
@@ -65,6 +66,7 @@
 
                 {$entry.add_footer|default:''}
             </div>
+            {/if}
         </div>
         <!--
         <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"

@@ -74,11 +74,12 @@
             {serendipity_printSidebar side="left"}
         </div>
 
-</div>
+    </div>
     <div id="footer" class="serendipity_entryFooter">
-        <div id="footerLeft">&nbsp;&nbsp;design <a href="http://openwebdesign.org/userinfo.phtml?user=snop" title="OWD design work">snop</a> - photo <a href="http://www.sxc.hu/browse.phtml?f=profile&amp;l=plasticboy&amp;p=1" title="stock.xchng">plasticboy</a> - Converted to <a href="https://ophian.github.io/">Serendipity Styx Edition</a> by <a href="http://www.carlgalloway.com/pages/serendipity-templates.html">Carl</a></div>
+        <div id="footerLeft">&nbsp;&nbsp;Converted to <a href="https://ophian.github.io/">Serendipity Styx Edition</a> by <a href="http://www.carlgalloway.com/pages/serendipity-templates.html">Carl</a></div>
         <div id="footerRight">&nbsp;</div>
     </div>
+</div>
 {/if}
 {$raw_data}
 {serendipity_hookPlugin hook="frontend_footer"}

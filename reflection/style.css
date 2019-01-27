@@ -215,6 +215,14 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     margin-left: .5em; }
 .serendipity_date {
     text-align: right; }
+#mainpane.preview_preview_container {
+    padding: 0;
+    margin: 0;
+    background-color: transparent; }
+#content.preview_preview_content {
+    background: #777;
+    float: left;
+    color: #fefefe; }
 
 /* mobile sets */
 #content {
