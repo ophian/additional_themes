@@ -342,7 +342,7 @@ div.serendipitySideBarItem {
 .serendipitySideBarContent a img {
     border: 0px;
 }
-.serendipitySideBarContent input, .serendipitySideBarContent select, .serendipitySideBarContent textarea {
+.serendipitySideBarContent input:not(type="submit"), .serendipitySideBarContent select, .serendipitySideBarContent textarea {
     width: 90%;
     margin:3px;
 }
