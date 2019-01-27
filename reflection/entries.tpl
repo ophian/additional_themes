@@ -4,9 +4,9 @@
     {foreach $entries AS $dategroup}
     <div class="serendipity_Entry_Date">
         {if $dategroup.is_sticky}
-
+        <h3 class="serendipity_date">{$CONST.STICKY_POSTINGS}</h3>
         {else}
-
+        <h3 class="serendipity_date">{$dategroup.date|formatTime:DATE_FORMAT_ENTRY}</h3>
         {/if}
 
         {foreach $dategroup.entries AS $entry}

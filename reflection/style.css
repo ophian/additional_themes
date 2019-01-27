@@ -213,6 +213,8 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     max-width: 300px; }
 .comments_permalink {
     margin-left: .5em; }
+.serendipity_date {
+    text-align: right; }
 
 /* mobile sets */
 #content {
