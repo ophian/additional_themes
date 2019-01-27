@@ -148,6 +148,13 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
     width: auto;
     overflow: auto;
     padding: .25em; }
+.main pre {
+    display: inline-block; }
+
+.serendipity_calendarHeader {
+    text-align: center; }
+.serendipity_calendarDay {
+    text-align: center; }
 
 /* Serendipity Styx comment summary pages */
 
