@@ -116,7 +116,7 @@
         </b>
     </div>
     <div id="cm1"> &nbsp;
-        <a class="homelink2" href="{$serendipityBaseURL}">{$head_subtitle|default:$blogDescription}</a>
+        <a class="homelink2" href="{$serendipityBaseURL}">{if $view == 'plugin'}{$blogDescription}{else}{$head_subtitle|default:$blogDescription}{/if}</a>
     </div>
    {if isset($plugin_calendar_head) AND is_array($plugin_calendar_head)}
    <div id="cr1">
