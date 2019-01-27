@@ -1,11 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
+{if $is_embedded != true}
+<!DOCTYPE html>
+<html lang="{$lang}">
 <head>
-    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
-    <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
+    <meta charset="{$head_charset}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
 {if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
@@ -33,15 +33,19 @@
 </head>
 
 <body>
+{else}
+{serendipity_hookPlugin hook="frontend_header"}
+{/if}
+{if $is_raw_mode != true}
 <div id="wrap">
     <div id="serendipity_banner">
         <img src="{serendipity_getFile file="img/corner_tl.gif"}" alt="corner" style="float:left;" />
         <!-- uncomment if you want your blog title and description
             <span class="title">
-              <span class="white">{$head_title|default:$blogTitle}</span>
-              <span class="subTitle">
-                    {$head_subtitle|default:$blogDescription}
-              </span>
+                <span class="white">{$head_title|default:$blogTitle}</span>
+                <span class="subTitle">
+                    {if $view == 'plugin'}{$blogDescription}{else}{$head_subtitle|default:$blogDescription}{/if}
+                </span>
             </span>
         -->
         <a href="{$template_option.navlink4url}" title="{$template_option.navlink4text}">{$template_option.navlink4text}<span class="desc">{$template_option.navlink4alt}</span></a>
@@ -52,23 +56,33 @@
     </div>
 
     <div id="mainpane">
-          <div id="sidebar">
+        <div id="sidebar">
             {serendipity_printSidebar side="right"}
             {serendipity_printSidebar side="left"}
-              <div class="bottomCorner"><img src="{serendipity_getFile file="img/corner_sub_br.gif"}" alt="bottom corner" class="vBottom"/></div>
-          </div>
+            <div class="bottomCorner"><img src="{serendipity_getFile file="img/corner_sub_br.gif"}" alt="bottom corner" class="vBottom"/></div>
+        </div>
 
-    <div id="content">
-        {$CONTENT}
-        {$raw_data}
-        <!-- Creates bottom left rounded corner -->
-        <img src="{serendipity_getFile file="img/corner_sub_bl.gif"}" alt="bottom corner" class="vBottom"/>
-    </div>
+        <div id="content">
+            {$CONTENT}
+            {$raw_data}
+            <!-- Creates bottom left rounded corner -->
+            <img src="{serendipity_getFile file="img/corner_sub_bl.gif"}" alt="bottom corner" class="vBottom"/>
+        </div>
+
+        <div id="sidebar" class="sidebar-append">
+            {serendipity_printSidebar side="right"}
+            {serendipity_printSidebar side="left"}
+        </div>
+
 </div>
-
-    <div id="footer">
-        <div id="footerLeft">&nbsp;&nbsp;design <a href="http://openwebdesign.org/userinfo.phtml?user=snop" title="OWD design work">snop</a> - photo <a href="http://www.sxc.hu/browse.phtml?f=profile&amp;l=plasticboy&amp;p=1" title="stock.xchng">plasticboy</a> - Converted to <a href="http://www.s9y.org">s9y</a> by <a href="http://www.carlgalloway.com/pages/serendipity-templates.html">Carl</a></div>
+    <div id="footer" class="serendipity_entryFooter">
+        <div id="footerLeft">&nbsp;&nbsp;design <a href="http://openwebdesign.org/userinfo.phtml?user=snop" title="OWD design work">snop</a> - photo <a href="http://www.sxc.hu/browse.phtml?f=profile&amp;l=plasticboy&amp;p=1" title="stock.xchng">plasticboy</a> - Converted to <a href="https://ophian.github.io/">Serendipity Styx Edition</a> by <a href="http://www.carlgalloway.com/pages/serendipity-templates.html">Carl</a></div>
         <div id="footerRight">&nbsp;</div>
     </div>
+{/if}
+{$raw_data}
+{serendipity_hookPlugin hook="frontend_footer"}
+{if $is_embedded != true}
 </body>
 </html>
+{/if}

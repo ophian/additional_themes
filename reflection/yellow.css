@@ -18,8 +18,8 @@ h3.serendipity_title, h4.serendipity_title, .serendipity_date, .serendipity_comm
 .serendipity_commentsTitle {
      color: #fc0; }
 
-.serendipity_comment_author_self {
-	border: 3px solid #fc0;}
+/*.serendipity_comment_author_self {
+    border: 3px solid #fc0;}*/
 
 .oddbox {
      border: 1px solid #fc0; }

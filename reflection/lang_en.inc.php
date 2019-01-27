@@ -1,4 +1,5 @@
 <?php
+
 @define('THEME_COLORSET', 'Select colorset option');
 @define('THEME_YELLOW', 'Yellow');
 @define('THEME_AQUA', 'Aqua');
@@ -34,3 +35,4 @@
 @define('NAVLINK4_ALT_TITLE', 'Navlink #4 Description');
 @define('NAVLINK4_ALT_DESC', 'Enter the fourth navigation description (20 characters)');
 @define('NAVLINK4_ALT_DEFAULT', 'Send a msg');
+

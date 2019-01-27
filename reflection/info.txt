@@ -1,3 +1,6 @@
-Name: Reflection v1.1 (2008-02-14)
+Name: Reflection
 Author: Carl Galloway
-Date: 28 August 2006
+Date: 2019-01-25
+
+Summary: Additional old theme from 2006-08-28 to 2008-02-14 as v1.1.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and mobile friendly!
