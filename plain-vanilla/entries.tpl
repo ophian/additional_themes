@@ -133,7 +133,7 @@
                 </ol>
         {/if}
 
-        {if $is_single_entry AND NOT $is_preview}
+            {if NOT $is_preview}
                 <a id="comments"></a>
                 <h3>{$CONST.COMMENTS}</h3>
                 <div class="serendipity_center">{$CONST.DISPLAY_COMMENTS_AS}
@@ -178,7 +178,7 @@
                 {$COMMENTFORM}
 
                 {/if}
-        {/if}
+            {/if}
 
         {$entry.backend_preview}
     {/foreach}
