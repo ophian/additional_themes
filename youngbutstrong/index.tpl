@@ -38,13 +38,13 @@
         <div id="top"></div>
         <div id="content">
             <div id="left">
-{$CONTENT}
+                {$CONTENT}
             </div>
-{if $rightSidebarElements > 0}
+            {if $rightSidebarElements > 0}
             <div id="right">
-{serendipity_printSidebar side="right"}
+                {serendipity_printSidebar side="right"}
             </div>
-{/if}
+            {/if}
         </div><!-- //content end -->
         <div id="footer"></div>
     </div>
