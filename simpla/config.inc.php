@@ -6,34 +6,28 @@ if (IN_serendipity !== true) { die ("Don't hack!"); }
 
 $template_config = array(
     array(
-        'var'           => 'PAGE_BREITE',
-        'name'          => 'Page breite (76em)',
+        'var'           => 'pagewidth',
+        'name'          => PAGE_WIDTH,
         'type'          => 'string',
         'default'       => '76em',
     ),
 	array(
-        'var'           => 'CONTENT_BREITE',
-        'name'          => 'Content breite (40em)',
+        'var'           => 'contentwidth',
+        'name'          => CONTENT_WIDTH,
         'type'          => 'string',
         'default'       => '40em',
     ),
 	array(
-        'var'           => 'SIDEBAR_BREITE',
-        'name'          => 'Sidebar breite (20em)',
+        'var'           => 'sidebarwidth',
+        'name'          => SIDEBAR_WIDTH,
         'type'          => 'string',
         'default'       => '20em',
     ),
     array(
-        'var'           => 'SIDEBAR_NAVIGATION_TITLE',
-        'name'          => 'Titel Sidebar Navigation (zum Ausschalten der Navigation leer lassen)',
+        'var'           => 'sidebarnavtitle',
+        'name'          => SIDEBAR_NAVIGATION_TITLE,
         'type'          => 'string',
         'default'       => 'Navigation',
-    ),
-    array(
-        'var'           => 'amount',
-        'name'          => 'Navigation',
-        'type'          => 'string',
-        'default'       => '4',
     ),
 );
 
