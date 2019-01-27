@@ -1,4 +1,6 @@
-Name:RoundedCorner (2008-11-13)
+Name: RoundedCorner
 Author: Abdussamad Abdurrazzaq
-Date: August 13, 2006, 0.2 
-Require Serendipity: 0.8
+Date: 2019-01-20
+
+Summary: Additional old theme from 2006-08-13 to 2008-11-13.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but not <u>fully</u> mobile friendly!

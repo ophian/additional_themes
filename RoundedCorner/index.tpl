@@ -1,22 +1,17 @@
 {if $is_embedded != true}
-{if $is_xhtml}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-{else}
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-           "http://www.w3.org/TR/html4/loose.dtd">
-{/if}
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
-<head>
+<!DOCTYPE html>
+<html lang="{$lang}">
 <!--
 RoundedCorner  serendipity theme by Abdussamad Abdurrazzaq
 
 http://abdussamad.com
 
  -->
-    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
-    <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
+<head>
+    <meta charset="{$head_charset}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
 {if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
@@ -42,64 +37,66 @@ http://abdussamad.com
 {serendipity_hookPlugin hook="frontend_header"}
 {/if}
 {if $is_raw_mode != true}
-<div id="banner_lc">
-<div id="banner_rc">
-<div id="banner_tc">
-<div id="banner_bc">
-<div id="banner_bl">
-<div id="banner_br">
-<div id="banner_tl">
-<div id="banner_tr">
-<div id="serendipity_banner">
-    <h1><a class="homelink1" href="{$serendipityBaseURL}">{$head_title|default:$blogTitle}</a></h1>
-    <h2><a class="homelink2" href="{$serendipityBaseURL}">{$head_subtitle|default:$blogDescription}</a></h2>
-</div>
- <div id="top_nav">
-    <a href="{$serendipityBaseURL}">Home</a>
-    <a href="{$serendipityBaseURL}categories/13-Templates">Templates</a>
-    <a href="{$serendipityBaseURL}categories/3-Freeware">Freeware</a>
-    <a href="{$serendipityBaseURL}categories/15-Website-Development">Website Development</a>
-      </div>
-
-
-</div></div></div></div></div></div></div></div>
+    <div id="banner_lc">
+    <div id="banner_rc">
+    <div id="banner_tc">
+    <div id="banner_bc">
+    <div id="banner_bl">
+    <div id="banner_br">
+    <div id="banner_tl">
+    <div id="banner_tr">
+    <div id="serendipity_banner">
+        <h1><a class="homelink1" href="{$serendipityBaseURL}">{$head_title|default:$blogTitle}</a></h1>
+        <h2><a class="homelink2" href="{$serendipityBaseURL}">{if $view == 'plugin'}{$blogDescription}{else}{$head_subtitle|default:$blogDescription}{/if}</a></h2>
+    </div>
+    <div id="top_nav">
+        <a href="{$serendipityBaseURL}">Home</a>
+        <a href="{$serendipityBaseURL}categories/13-Templates">Templates</a>
+        <a href="{$serendipityBaseURL}categories/3-Freeware">Freeware</a>
+        <a href="{$serendipityBaseURL}categories/15-Website-Development">Website Development</a>
+    </div>
+    </div></div></div></div></div></div></div></div>
 
 {if false}
-        <div id="content_lc">
-        <div id="content_rc">
-        <div id="content_tc">
-        <div id="content_bc">
-        <div id="content_bl">
-        <div id="content_br">
-        <div id="content_tl">
-        <div id="content_tr">
+    <div id="content_lc">
+    <div id="content_rc">
+    <div id="content_tc">
+    <div id="content_bc">
+    <div id="content_bl">
+    <div id="content_br">
+    <div id="content_tl">
+    <div id="content_tr">
 
         <div id="content_inside">
         {if $leftSidebarElements > 0}
 
-         <div class="left_sidebar_container">
-        <div id="serendipityleftSideBar">
-        {serendipity_printSidebar side="left"}
-        </div></div>
+            <div class="left_sidebar_container">
+                <div id="serendipityleftSideBar">
+                {serendipity_printSidebar side="left"}
+                </div>
+            </div>
         {/if}
-        {if $rightSidebarElements >0 and $leftSidebarElements <=0}
+        {if $rightSidebarElements >0 AND $leftSidebarElements <=0}
             <div id="content_right_only_position">
-        {elseif    $rightSidebarElements >0 and $leftSidebarElements > 0}
+        {elseif $rightSidebarElements > 0 AND $leftSidebarElements > 0}
             <div id="content_middle_position">
-        {elseif    $rightSidebarElements <=0 and $leftSidebarElements > 0}
+        {elseif $rightSidebarElements <= 0 AND $leftSidebarElements > 0}
             <div id="content_left_only_position">
         {else}
-
         {/if}
 
-        {$CONTENT}
+                {$CONTENT}
 
-        {if $rightSidebarElements > 0}
-        <div class="right_sidebar_container">
-        <div id="serendipityRightSideBar">
-        {serendipity_printSidebar side="right"}
-        </div></div>
-        </div>    </div>                </div>        </div>        </div>        </div>        </div>        </div>        </div>        </div>
+                {if $rightSidebarElements > 0}
+                <div class="right_sidebar_container">
+                    <div id="serendipityRightSideBar">
+                    {serendipity_printSidebar side="right"}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div></div></div></div></div></div></div></div>
 
 
         {/if}
@@ -116,9 +113,11 @@ http://abdussamad.com
         <div id="sidebar_br">
         <div id="sidebar_tl">
         <div id="sidebar_tr">
-        <div id="serendipityLeftSideBar">
-        {serendipity_printSidebar side="left"}
-        </div></div></div></div></div></div></div></div></div></div>
+            <div id="serendipityLeftSideBar">
+                {serendipity_printSidebar side="left"}
+            </div>
+        </div></div></div></div></div></div></div></div>
+    </div>
 {/if}
 {if $rightSidebarElements >0 and $leftSidebarElements <=0}
         <div id="content_right_only_position">
@@ -127,19 +126,21 @@ http://abdussamad.com
 {elseif    $rightSidebarElements <=0 and $leftSidebarElements > 0}
         <div id="content_left_only_position">
 {else}
-<div>
+        <div>
 {/if}
-        <div id="content_lc">
-        <div id="content_rc">
-        <div id="content_tc">
-        <div id="content_bc">
-        <div id="content_bl">
-        <div id="content_br">
-        <div id="content_tl">
-        <div id="content_tr">
-        <div id="content_inside">
-        {$CONTENT}
-        </div></div>        </div>    </div>        </div>        </div>        </div>        </div>        </div>        </div>
+            <div id="content_lc">
+            <div id="content_rc">
+            <div id="content_tc">
+            <div id="content_bc">
+            <div id="content_bl">
+            <div id="content_br">
+            <div id="content_tl">
+            <div id="content_tr">
+                <div id="content_inside">
+                    {$CONTENT}
+                </div>
+            </div></div></div></div></div></div></div></div>
+        </div>
 {if $rightSidebarElements > 0}
     <div class="right_sidebar_container">
         <div id="sidebar_lc">
@@ -150,14 +151,16 @@ http://abdussamad.com
         <div id="sidebar_br">
         <div id="sidebar_tl">
         <div id="sidebar_tr">
-        <div id="serendipityRightSideBar">
-        {serendipity_printSidebar side="right"}
-        </div></div></div>        </div>        </div>        </div>        </div>        </div>        </div>        </div>
+            <div id="serendipityRightSideBar">
+                {serendipity_printSidebar side="right"}
+            </div>
+        </div>
+        </div></div></div></div></div></div></div></div>
 
 {/if}
 {/if}
-<div class="credit_footer">
-This website theme by <a href="http://abdussamad.com">Abdussamad Abdurrazzaq</a>
+<div class="serendipity_entryFooter">
+    This website theme by <a href="http://abdussamad.com">Abdussamad Abdurrazzaq</a>. Powered by <a href="https://ophian.github.io/">Serendipity Styx Edition</a>
 </div>
 {/if}
 {$raw_data}
