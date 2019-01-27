@@ -1,17 +1,11 @@
 {if $is_embedded != true}
-{if $is_xhtml}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-{else}
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-           "http://www.w3.org/TR/html4/loose.dtd">
-{/if}
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
+<!DOCTYPE html>
+<html lang="{$lang}">
 <head>
-    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
-    <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
+    <meta charset="{$head_charset}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
 {if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
@@ -37,37 +31,43 @@
 {else}
 {serendipity_hookPlugin hook="frontend_header"}
 {/if}
+{if $is_raw_mode != true}
 
 <div id="container">
-<div id="content">
 
-<div id="header" class="clearfix" onclick="location.href='{$serendipityBaseURL}';" style="cursor: pointer;">
-    <h1>{$blogTitle}</h1>
-       <!-- div id="nav">
-       <ul>
-            <li><a href="">Link1</a></li>
-            <li><a href="">Link2</a></li>
-            <li><a href="">Link3</a></li>
-            <li><a href="">Link4</a></li>
-        </ul>
-       </div -->
+    <div id="content">
+
+        <div id="header" class="clearfix" onclick="location.href='{$serendipityBaseURL}';" style="cursor: pointer;">
+            <h1>{$blogTitle}</h1>
+        {if isset($navlinks)}
+            <div id="nav">
+                <ul>
+                {foreach $navlinks AS $navlink}
+                    <li><a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a></li>
+                {/foreach}
+                </ul>
+            </div>
+        {/if}
+
+            <h4>{if $view == 'plugin'}{$blogDescription}{else}{$head_subtitle|default:$blogDescription}{/if}</h4>
+        </div>
+
+        <div id="bannertop">
+        </div>
+
+        {$CONTENT}
+    </div>
+
+    {if $rightSidebarElements > 0}
+        <div id="sidebar" class="clearfix">{serendipity_printSidebar side="right"}</div>
+    {/if}
+
+    <div id="footer">
+    </div>
+
 </div>
-<h4>{$head_subtitle|default:$blogDescription}</h4>
-
-<div id="bannertop">
-</div>
-
-{$CONTENT}
-</div>
-
-{if $rightSidebarElements > 0}
-    <div id="sidebar" class="clearfix">{serendipity_printSidebar side="right"}</div>
 {/if}
-
-<div id="footer">
-</div>
-
-</div>
+{$raw_data}
 {serendipity_hookPlugin hook="frontend_footer"}
 {if $is_embedded != true}
 </body>
