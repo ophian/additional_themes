@@ -4,7 +4,7 @@
     {foreach $entries AS $dategroup}
     <div class="post">
     {foreach $dategroup.entries AS $entry}
-        {assign var="entry" value=$entry scope="root"}
+        {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <div class="header">
             <h3><a href="{$entry.link}">{$entry.title|default:$entry.body|truncate:37:" ..."}</a></h3>
             <div class="date">

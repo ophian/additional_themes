@@ -10,7 +10,7 @@
         {/if}
 
         {foreach $dategroup.entries AS $entry}
-         {assign var="entry" value=$entry scope="root"}
+         {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <h4 class="serendipity_title"><a href="{$entry.link}">{$entry.title|default:$entry.id}</a></h4>
         {if NOT empty($entry.categories)}
             <span class="serendipity_entryIcon">

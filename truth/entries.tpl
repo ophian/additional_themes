@@ -10,7 +10,7 @@
         {/if}
 
         {foreach $dategroup.entries AS $entry}
-        {assign var="entry" value=$entry scope="root"}
+        {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <h4 class="serendipity_title"><a href="{$entry.link}">{$entry.title}</a></h4>
 
         <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
