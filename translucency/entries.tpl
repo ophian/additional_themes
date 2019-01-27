@@ -29,7 +29,7 @@
         {/if}
 
         <br />
-        <div class="serendipity_entryFooter"></div>
+        <div class="serendipity_entryFooterTop"></div>
         <div class="serendipity_entryFooterMain">
             <a href="{$entry.link_author}"><img src="{serendipity_getFile file="img/icons/user.gif"}">{$CONST.POSTED_BY}: {$entry.author}</a> {$CONST.IN} <img src="{serendipity_getFile file="img/icons/category.gif"}">:
         {if NOT empty($entry.categories)}
@@ -98,11 +98,12 @@
                 <br />
                 <a id="trackbacks"></a>
                 <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
-                    <div class="serendipity_left">
-                        <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
-                    </div>
-                    <br />
-                        {serendipity_printTrackbacks entry=$entry.id}
+                <div class="serendipity_center">
+                    <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
+                </div>
+                <div id="serendipity_trackbacklist">
+                    {serendipity_printTrackbacks entry=$entry.id}
+                </div>
             </div>
         {/if}
 
