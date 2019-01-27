@@ -214,7 +214,14 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
     color: darkred; }
 .dtree a {
     color: #fff; }
-
+body.preview_preview_body {
+    background: #7B7B7B; }
+#content.preview_preview_content {
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    background: #660800; }
+#content.preview_preview_content .preview_entry {
+    color: #fff; }
 
 
 /* General Styles */

@@ -34,33 +34,38 @@
     </head>
 
     <body class="{$mode}_preview_body">
-        <div id="mainpane" class="{$mode}_preview_container">
-        <div id="wrapper" style="margin: 0 auto;min-width: initial;">
-            <div id="content" class="{$mode}_preview_content" style="border-left: 1px solid #bbb;border-right: 1px solid #bbb;">
-        {if $mode == 'save'}
+      <div id="mainpane" class="{$mode}_preview_container">
+        <div id="wrapper">
+          <div id="wrap">
+            <div id="content" class="{$mode}_preview_content">
+            {if $mode == 'preview'}
+                <div class="preview_entry">
+                    {$preview}
+            {elseif $mode == 'save'}
                 <div class="{$mode}_preview_sizing"></div>
-                {$updertHooks}
-            {if $res}
-                <span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> <b>{$CONST.ERROR}:</b><br> {$res}</span>
-            {else}
-                {if isset($lastSavedEntry) && (int)$lastSavedEntry}
+                    {$updertHooks}
+                {if $res}
+                    <span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> <b>{$CONST.ERROR}:</b><br> {$res}</span>
+                {else}
+                    {if isset($lastSavedEntry) && (int)$lastSavedEntry}
 
-                <script type="text/javascript">
-                    window.onload = function() {ldelim}
-                        parent.document.forms['serendipityEntry']['serendipity[id]'].value = "{$lastSavedEntry}";
-                    {rdelim};
-                </script>
+                    <script type="text/javascript">
+                        window.onload = function() {ldelim}
+                            parent.document.forms['serendipityEntry']['serendipity[id]'].value = "{$lastSavedEntry}";
+                        {rdelim};
+                    </script>
+                    {/if}
+
+                    <span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> {$CONST.ENTRY_SAVED}</span>
+                    <a href="{$entrylink}" target="_blank">{$CONST.VIEW}</a>
                 {/if}
-
-                <span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> {$CONST.ENTRY_SAVED}</span>
-                <a href="{$entrylink}" target="_blank">{$CONST.VIEW}</a>
             {/if}
-        {/if}
-            {$preview}
+                </div>
             </div>
+          </div>
         </div>
-        </div>
-<!-- filed by theme "{$template}" -->
+      </div>
+<!-- Filed by theme "{$template}" -->
 
     </body>
 </html>

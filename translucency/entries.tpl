@@ -28,6 +28,7 @@
         <br /><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a><br />
         {/if}
 
+    {if NOT $is_preview}
         <br />
         <div class="serendipity_entryFooterTop"></div>
         <div class="serendipity_entryFooterMain">
@@ -50,6 +51,7 @@
             <a href="{$entry.link}#trackbacks"><img src="{serendipity_getFile file="img/icons/trackback.gif"}">{$entry.label_trackbacks}: [{$entry.trackbacks}]</a>
             {/if}
         {/if}
+    {/if}
 
         {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}
             <a href="{$entry.link_edit}"><img src="{serendipity_getFile file="img/icons/edit.gif"}">: {$CONST.EDIT_ENTRY}</a>
