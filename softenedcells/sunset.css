@@ -2,10 +2,8 @@ h2 {
     color: #a42d41;
 }
 blockquote {
-    float: left;
-    width:100%;
-    margin: 5px 0 20px 5px !important;
-    margin: 5px 0 10px 3px;
+    margin: 0 1em;
+    padding: .5em;
     background: #D3F9FF;
     border-left: 2px solid #4EE8FF;
 }
@@ -20,11 +18,11 @@ a:hover {
 
 #serendipity_banner {
     height: 144px;
-    background: url("{TEMPLATE_PATH}img/hdr_sunset.jpg") no-repeat top center;
+    background: url("img/hdr_sunset.jpg") no-repeat top center;
 }
 
 #menu a:hover, #menu a.active {
-    background: url("{TEMPLATE_PATH}img/menu_tab_dark.gif") no-repeat top center;
+    background: url("img/menu_tab_dark.gif") no-repeat top center;
 }
 
 #content b {
@@ -32,7 +30,7 @@ a:hover {
     color: #a42d41;
 }
 #content ul {
-    list-style-image: url("{TEMPLATE_PATH}img/li_bullet_dark.gif");
+    list-style-image: url("img/li_bullet_dark.gif");
     list-style-position: inside;
 }
 #sidebar {

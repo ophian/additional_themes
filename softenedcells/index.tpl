@@ -24,25 +24,10 @@
 {if $entry_id}
     <link rel="pingback" href="{$serendipityBaseURL}comment.php?type=pingback&amp;entry_id={$entry_id}">
 {/if}
-<script type="text/javascript" src="{serendipity_getFile file="nifty2.js"}"></script>
 {if $template_option.colorset == 'softened'}
     <style type="text/css" media="all">@import "{serendipity_getFile file="softened.css"}";</style>
-    <script type="text/javascript">
-    window.onload=function(){ldelim}
-    if (!NiftyCheck())
-            return;
-        Rounded("#content blockquote" , "#f0f0f0" , "#fefade", 20 ,20, 0, 1, 0, 1);
-    {rdelim}
-    </script>
 {elseif $template_option.colorset == 'sunset'}
-<link rel="stylesheet" type="text/css" href="{serendipity_getFile file="sunset.css"}">
-    <script type="text/javascript">
-    window.onload=function(){ldelim}
-    if (!NiftyCheck())
-            return;
-        Rounded("#content blockquote" , "#f0f0f0" , "#D3F9FF", 20 ,20, 0, 1, 0, 1);
-    {rdelim}
-    </script>
+    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="sunset.css"}">
 {/if}
 
 {serendipity_hookPlugin hook="frontend_header"}
@@ -68,8 +53,8 @@
 
     <div id="mainpane">
         <div id="sidebar">
-            {serendipity_printSidebar side="right"}
             {serendipity_printSidebar side="left"}
+            {serendipity_printSidebar side="right"}
         </div>
         <div id="content">
             {$CONTENT}

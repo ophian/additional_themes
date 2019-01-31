@@ -79,18 +79,14 @@ a img, .emoticon {
 }
 
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
-
 #c0 { /* a new unsaved comment preview only */
     border: 1px solid #ddd;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    padding: .625em;
-}
-
+    padding: .625em; }
 .serendipity_image_link {
-    display: block; }
-
+    display: inline-block; }
 .serendipity_entry_body table,
 .serendipity_entry_extended table {
     border: 1px solid #ddd;
@@ -99,13 +95,37 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
     width: auto;
     overflow: auto;
     padding: .25em; }
-
+.serendipity_entry p > .serendipity_image_left,
+.serendipity_entry p > .serendipity_imageComment_center,
+.serendipity_entry p > .serendipity_image_right {
+    margin: .25em auto; }
 ul#serendipity_categories_list {
     margin: 0;
     padding: 0;
     list-style-type: none; }
+#content .serendipity_staticpage {
+    padding: .5em; }
+#content .serendipity_staticpage header h2 {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: .5em;
+    padding: 0; }
 
 /* End General Styles */
+
+/* backend preview */
+body.save_preview_body {
+    font-family: inherit;
+    font-size: inherit; }
+#content.preview_preview_content h1, #content.preview_preview_content h4.serendipity_title {
+    background: inherit; }
+#content.preview_preview_content div.serendipity_entryFooter {
+    display: none;
+    visibility: hidden; }
+body.preview_preview_body {
+    text-align: left;
+    font-size: 0.8em;
+    color: #222; }
 
 
 /* Begin Structure */
@@ -260,7 +280,7 @@ td.serendipity_commentsLabel {
     vertical-align: top;
 }
 td.serendipity_commentsValue input, td.serendipity_commentsValue select, td.serendipity_commentsValue textarea {
-    border: 1px solid #333;
+    border: 1px solid #bbb;
     padding: 2px;
 }
 td.serendipity_commentsValue textarea {

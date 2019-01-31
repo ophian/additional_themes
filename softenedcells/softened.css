@@ -3,10 +3,8 @@ h2 {
 }
 
 blockquote {
-	float: left;
-	width:100%;
-	margin: 5px 0 20px 5px !important;
-	margin: 5px 0 10px 3px;
+    margin: 0 1em;
+    padding: .5em;
 	background: #fefade;
 	border-left: 2px solid #FEE456;
 }
@@ -22,11 +20,11 @@ a:hover {
 
 #serendipity_banner {
 	height: 144px;
-	background: url('{TEMPLATE_PATH}img/hdr_cones.jpg') no-repeat top center;
+	background: url('img/hdr_cones.jpg') no-repeat top center;
 }
 
 #menu a:hover, #menu a.active {
-	background: url('{TEMPLATE_PATH}img/menu_tab.gif') no-repeat top center;
+	background: url('img/menu_tab.gif') no-repeat top center;
 }
 
 #content b {
@@ -34,7 +32,7 @@ a:hover {
 	color: #4ca000;
 }
 #content ul {
-	list-style-image: url('{TEMPLATE_PATH}img/li_bullet.gif');
+	list-style-image: url('img/li_bullet.gif');
     list-style-position: inside;
 }
 

@@ -3,31 +3,47 @@
 {if NOT empty($entries)}{* catch a staticpage startpage which has no $entries array set *}
     {foreach $entries AS $dategroup}
     <div class="serendipity_Entry_Date">
+        {if $dategroup.is_sticky}
+        <h3 class="serendipity_date">{$CONST.STICKY_POSTINGS}</h3>
+        {else}
+        <h3 class="serendipity_date">{$dategroup.date|formatTime:DATE_FORMAT_ENTRY}</h3>
+        {/if}
+
         {foreach $dategroup.entries AS $entry}
         {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <div class="post-info">
-            <h1 class="serendipity_title"><a href="{$entry.link}">{$entry.title|default:$entry.id}</a></h1>
+            <h2 class="serendipity_title"><a href="{$entry.link}">{$entry.title|default:$entry.id}</a></h2>
         </div>
+        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
             <div class="serendipity_entry_body">
-            {$entry.body}
+                {$entry.body}
             </div>
 
             {if $entry.is_extended}
-            <div class="serendipity_entry_extended"><a id="extended"></a>{$entry.extended}</div>
+            <div class="serendipity_entry_extended">
+                <a id="extended"></a>
+                {$entry.extended}
+            </div>
             {/if}
 
             {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
             <br /><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a><br /><br />
             {/if}
 
+        {if NOT $is_preview}
             <div class="serendipity_entryFooter">
-    {if $dategroup.is_sticky}
-          <p class="post-date">{$CONST.STICKY_POSTINGS}
-          {else}
-        <p class="post-date">{$dategroup.date|formatTime:DATE_FORMAT_ENTRY}
-    {/if}
-    <br />{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.IN}
-    {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
+            {if $dategroup.is_sticky}
+                <p class="post-date">{$CONST.STICKY_POSTINGS}
+            {else}
+                <p class="post-date">{$dategroup.date|formatTime:DATE_FORMAT_ENTRY}
+            {/if}
+            <br />{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.IN}
+        {if NOT empty($entry.categories)}
+            {foreach $entry.categories AS $entry_category}
+                <a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}
+            {/foreach}
+        {/if}
+
                 <br />
                 {if $entry.has_comments}
                     {if $use_popups}
@@ -47,24 +63,26 @@
                 {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}
                         | <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>
                 {/if}
-        </p>
+                </p>
                 {$entry.add_footer|default:''}
+            </div>
 
+                <!--
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+                         xmlns:dc="http://purl.org/dc/elements/1.1/">
+                <rdf:Description
+                         rdf:about="{$entry.link_rdf}"
+                         trackback:ping="{$entry.link_trackback}"
+                         dc:title="{$entry.title_rdf|default:$entry.title}"
+                         dc:identifier="{$entry.rdf_ident}" />
+                </rdf:RDF>
+                -->
+        </div>
 
-        <!--
-        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
-                 xmlns:dc="http://purl.org/dc/elements/1.1/">
-        <rdf:Description
-                 rdf:about="{$entry.link_rdf}"
-                 trackback:ping="{$entry.link_trackback}"
-                 dc:title="{$entry.title_rdf|default:$entry.title}"
-                 dc:identifier="{$entry.rdf_ident}" />
-        </rdf:RDF>
-        -->
-</div>
-        {$entry.plugin_display_dat}
-        <div class="post-footer">&nbsp;</div>
+            {$entry.plugin_display_dat}
+            <div class="post-footer">&nbsp;</div>
+        {/if}
 
         {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
@@ -91,11 +109,12 @@
                 <br />
                 <a id="trackbacks"></a>
                 <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
-                    <div class="serendipity_left">
-                        <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
-                    </div>
-                    <br />
-                        {serendipity_printTrackbacks entry=$entry.id}
+                <div class="serendipity_center">
+                    <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
+                </div>
+                <div id="serendipity_trackbacklist">
+                    {serendipity_printTrackbacks entry=$entry.id}
+                </div>
             </div>
         {/if}
 
