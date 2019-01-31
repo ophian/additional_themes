@@ -129,28 +129,28 @@ img, video {
 /* defaults */
 
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
-
 #c0 { /* a new unsaved comment preview only */
     border: 1px solid #ddd;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    padding: .625em;
-}
-
+    padding: .625em; }
 .serendipity_image_link {
-    display: block; }
-
+    display: inline-block; }
 .main table {
     border: 1px solid #ddd;
     display: inline-grid;
     max-width: 100%;
     width: auto;
     overflow: auto;
-    padding: .25em; }
+    padding: .25em;
+    font-size: smaller; }
 .main pre {
     display: inline-block; }
-
+.serendipity_entry p > .serendipity_image_left,
+.serendipity_entry p > .serendipity_imageComment_center,
+.serendipity_entry p > .serendipity_image_right {
+    margin: .25em auto; }
 .serendipity_calendarHeader {
     text-align: center; }
 .serendipity_calendarDay {
@@ -175,43 +175,100 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 .comments_by_author_pagination.bottom {
     margin: 2em auto; }
 
+/* backend preview */
+body.preview_preview_body {
+    background: #777; }
+body.save_preview_body {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    background: inherit; }
+#container.preview_preview_container {
+    padding: 0;
+    margin: 0;
+    background: #FFF;
+    border: 0 none;
+    width: 100%; }
+#container.save_preview_container {
+    width: inherit;
+    margin: inherit;
+    position: inherit;
+    background-color: inherit;
+    border: 0 none;
+    padding-top: inherit; }
+#content.preview_preview_content {
+    background: #777;
+    color: #fefefe; }
+#content.preview_preview_content div.pagination {
+    display: none;
+    visibility: hidden; }
+
+
 /* Modernizing Serendipity Styx default styles END */
 
 
-/*** Embedded images with the s9y image manager ***/
-.serendipity_image_left { padding: 0 5px 2px 0!important; }
-.serendipity_image_right { padding: 0 0 2px 5px!important; }
-
+/** Embedded images with the s9y image manager (copy of default theme) **/
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
 .serendipity_imageComment_right {
-    border: 1px solid #bbb!important;
-    background-color: #f3f3f3;
-    margin: 3px;
-    padding: 3px;
+    border: 1px solid #DDD;
+    background-color: #EFE;
+    margin: 0.25em;
+    padding: 0.25em;
     text-align: center;
 }
 
-.serendipity_imageComment_center { margin: auto; }
+.serendipity_imageComment_center {
+    margin: .25em auto;
+}
 
-.serendipity_imageComment_left { float: left; }
+.serendipity_imageComment_left {
+    float: left;
+    margin-right: .5em;
+}
 
-.serendipity_imageComment_right { float: right; }
+.serendipity_imageComment_right {
+    float: right;
+    margin-left: .5em;
+}
 
 .serendipity_imageComment_img,
 .serendipity_imageComment_img img {
-    border: none!important;
-    margin: 0px;
-    padding: 0px!important;
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
 .serendipity_imageComment_txt {
-    border-top: 1px solid #bbb!important;
-    margin: 0px;
-    padding: 3px;
+    border-top: 1px solid #DDD;
+    margin: 0;
+    padding: 0.25em;
     clear: both;
+    font-size: 8pt;
     text-align: center;
+}
+/* image parent comment box responsiveness for mobile screens */
+.serendipity_imageComment_left,
+.serendipity_imageComment_center,
+.serendipity_imageComment_right {
+    width: auto !important; /* force overwrite delivered inline styles */
+    display: table;
+}
+.serendipity_comments {
+}
+/* overwrite fallback plain image padding */
+.serendipity_image_center {
+    padding: .25em;
+}
+/* overwrite fallback gallery comment container margins and some of this comment styles */
+.serendipity_image_block .serendipity_imageComment_left,
+.serendipity_image_block .serendipity_imageComment_right {
+    margin-top: auto;
+    margin-right: unset;
+    background-color: unset;
+    padding-top: 0;
 }
 
 /*** Internal messages ***/
@@ -220,7 +277,6 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
     margin-right: auto;
     text-align: center;
 }
-
 .serendipity_msg_important { color: red; }
 .serendipity_msg_notice { color: green; }
 

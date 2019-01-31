@@ -18,7 +18,7 @@
         {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <h2 id="post-{$entry.id}"><a href="{$entry.link}" rel="bookmark">{$entry.title}</a>{if $dategroup.is_sticky} ({$CONST.STICKY_POSTINGS}){/if}</h2>
 
-      {if $entry.has_comments}
+      {if $entry.has_comments AND NOT $is_preview}
         <p class="comments">
         {if $use_popups}
             <a href="{$entry.link_popup_comments}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{if $entry.comments == 0}{$CONST.J_WITHOUT} {else}{$CONST.J_WITH} {$entry.comments} {/if}{if $entry.comments > 1}{$CONST.J_COMMTS}{else}{$entry.label_comments}{/if}</a>
@@ -39,6 +39,7 @@
       {/if}
         </div>
 
+    {if NOT $is_preview}
         <div class="meta group">
             <div class="signature">
                 <p>{$CONST.POSTED_BY} {$entry.author} {if isset($entry.is_entry_owner) AND NOT $is_preview}<span class="edit"><a href="{$entry.link_edit}">Edit</a></span>{/if}</p>
@@ -55,7 +56,6 @@
         <div class="addfooter">{$entry.add_footer|default:''}
 
         <br/>
-
 
         {if $template_option.enable_ad== true}
             <script type="text/javascript">
@@ -82,6 +82,7 @@
         -->
 
         {$entry.plugin_display_dat}
+    {/if}
 
         {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
