@@ -162,7 +162,7 @@ blockquote:lang(de)  p:last-child:after  { content: '“'; content: close-quote;
 .serendipity_entry_sticky header {
     position: relative;
 }
- 
+
 .photoEntryTitle {
     padding: 0.3em;
     margin: 0;
@@ -960,11 +960,11 @@ img.mfp-img {
 }
 .bx-wrapper .bx-prev {
 	left: 10px;
-	background: url({TEMPLATE_PATH}img/controls.png) no-repeat 0 -32px;
+	background: url('{TEMPLATE_PATH}img/controls.png') no-repeat 0 -32px;
 }
 .bx-wrapper .bx-next {
 	right: 10px;
-	background: url({TEMPLATE_PATH}img/controls.png) no-repeat -43px -32px;
+	background: url('{TEMPLATE_PATH}img/controls.png') no-repeat -43px -32px;
 }
 .bx-wrapper .bx-prev:hover {
 	background-position: 0 0;
@@ -997,16 +997,14 @@ img.mfp-img {
   font-style: normal;
 }
 
- 
- [class^="icon-"]:before, [class*=" icon-"]:before {
+[class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fa";
   speak: none;
- 
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
   text-align: center;
 }
- 
+
 .icon-search-1:before { content: '\e801'; } /* '' */

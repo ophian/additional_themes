@@ -2,7 +2,7 @@
 {if NOT empty($entries)}{* catch a staticpage startpage which has no $entries array set *}
     {foreach $entries AS $dategroup}
         {foreach $dategroup.entries AS $entry}
-            {assign var="entry" value=$entry scope="root"}
+            {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
     {if (isset($bxloaded) AND $bxloaded) AND NOT $dategroup.is_sticky}
         {$bxloaded = false}
         </div>
@@ -56,7 +56,7 @@
         {/if}
 
 
-        {if $is_single_entry OR $is_preview}
+        {if $is_single_entry AND NOT empty($is_preview)}
             <footer class="clearfix">
                 <span class="single_user">{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.ON} </span><time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:$template_option.date_format}s</time>
 
@@ -80,7 +80,7 @@
                 | <a href="{$entry.url_shorturl}" title="{$CONST.TWOK11_SHORT_URL_HINT}" class="short-url">{$CONST.TWOK11_SHORT_URL}</a>
             {/if}
                 {$entry.add_footer|default:''}
-                {if $entry.is_entry_owner AND NOT $is_preview} | <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
+                {if NOT empty($entry.is_entry_owner) AND NOT $is_preview} | <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
             </footer>
         {/if}
         <!--
@@ -113,16 +113,21 @@
         {/if}
 
         <section id="trackbacks" class="serendipity_comments serendipity_section_trackbacks">
-            <h3>{$CONST.TRACKBACKS}</h3>
-
-            {serendipity_printTrackbacks entry=$entry.id}
+            <a id="trackbacks"></a>
+            <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
+            <div class="serendipity_center">
+                <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
+            </div>
+            <div id="serendipity_trackbacklist">
+                {serendipity_printTrackbacks entry=$entry.id}
+            </div>
         </section>
 
         <section id="comments" class="serendipity_comments serendipity_section_comments">
             <h3>{$CONST.COMMENTS}</h3>
 
             {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
-        {if $entry.is_entry_owner}
+        {if NOT empty($entry.is_entry_owner)}
             <p class="manage_comments">
             {if $entry.allow_comments}
             <a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>

@@ -1,6 +1,6 @@
 html {
     background-color: #0b0b0b;
-    background-image: url(img/background-dark.jpg);
+    background-image: url('img/background-dark.jpg');
     color: #F1F1F1;
 }
 
@@ -73,7 +73,7 @@ input[type="submit"], button {
 }
 .bx-wrapper .bx-pager.bx-default-pager a:hover,
 .bx-wrapper .bx-pager.bx-default-pager a.active {
-	background: #666;
+    background: #666;
 }
 
 #primary-nav a {
