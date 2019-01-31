@@ -37,6 +37,7 @@
             <a href="{$entry.link}">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a>
             {/if}
 
+        {if NOT $is_preview}
             <div class="serendipity_entryFooter">
                 {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a>
                 {if NOT empty($entry.categories)}
@@ -71,6 +72,7 @@
 
                 {$entry.add_footer|default:''}
             </div>
+        {/if}
 
         </div>
         <!--
@@ -120,7 +122,6 @@
                 </div>
             </div>
         {/if}
-
 
         {if $is_single_entry AND NOT $is_preview}
             <div class="serendipity_comments">

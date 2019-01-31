@@ -149,18 +149,14 @@ img, video {
 /* defaults */
 
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: auto; }
-
-#c0 { /* a new unsaved comment preview only */
+#serendipity_comment_0 { /* a new unsaved comment preview only */
     border: 1px solid #ddd;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    padding: .625em;
-}
-
+    padding: .625em; }
 .serendipity_image_link {
-    display: block; }
-
+    display: inline-block; }
 .serendipity_entry table {
     border: 1px solid #ddd;
     display: inline-grid;
@@ -168,6 +164,13 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     width: auto;
     overflow: auto;
     padding: .5em; }
+.serendipity_entry p > .serendipity_image_left,
+.serendipity_entry p > .serendipity_imageComment_center,
+.serendipity_entry p > .serendipity_image_right {
+    margin: .25em auto; }
+/* staticpages without articleformat */
+#content > .serendipity_staticpage h2 {
+    margin-top: 0; }
 
 /** Modernizing Serendipity Styx default styles END **/
 
@@ -185,7 +188,6 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     display: table;
     margin: 2.5em auto 1em; }
 .serendipity_entryFooter {
-    text-align: center;
     margin-bottom: 1em; }
 #serendipity_categories_list {
     list-style: none;
@@ -199,9 +201,18 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     border: 1px solid #ddd; }
 .serendipity_entry_body pre {
     display: inline-block; }
+body.save_preview_body {
+    font-family: inherit;
+    font-size: inherit; }
+#content.preview_preview_content .preview_entry {
+    padding-bottom: 2em; }
+#content.preview_preview_content div.serendipity_entryFooter {
+    display: none;
+    visibility: hidden;}
 
 
 /* square_box template by David Cummins - style.css  */
+
 /********* General Styles  *********/
 /* used in entry and sidebar titles */
 h3, h4 {
@@ -309,7 +320,7 @@ body {
     color:#333;
     padding:0 0 0 0;
     font-family: verdana, helvetica, sans-serif;
-    font-size: x-small;
+    font-size: small;
     padding: 0; }
 /* containers for content and sidebar */
 #wrapper {
@@ -324,7 +335,7 @@ body {
     width: 900px;
     background-color: #ffffff;
     margin: 0 auto 0 auto;
-    background-image: url('{TEMPLATE_PATH}/square/img/sbbg.gif');
+    background-image: url('{TEMPLATE_PATH}img/sbbg.gif');
     background-position:  right 20px;
     background-repeat: repeat-y;
 }
@@ -346,7 +357,7 @@ body {
 #serendipity_banner, #header {
     float: right;
     background-color: #070D01;
-    background-image: url('{TEMPLATE_PATH}/square/img/square.jpg');
+    background-image: url('{TEMPLATE_PATH}img/square.jpg');
     background-position: top left;
     color: #FFFFFF;
     text-align: left;
@@ -497,7 +508,7 @@ div.serendipity_pageFooter {
     clear:both; }
 /* style for divider between same day posts */
 .entry_separator {
-    background: url('{TEMPLATE_PATH}/square/img/divider.png') no-repeat bottom center;
+    background: url('{TEMPLATE_PATH}img/divider.png') no-repeat bottom center;
     border-bottom: 15px transparent #e2edf9;
     border-top: 15px transparent #e2edf9;
     padding-bottom: 35px;
@@ -581,7 +592,7 @@ td.serendipity_commentsLabel {
     vertical-align: top; }
 /* styles for input boxes in comments form */
 td.serendipity_commentsValue input, td.serendipity_commentsValue select, td.serendipity_commentsValue textarea {
-    border: 1px solid #333;
+    border: 1px solid #ddd;
     padding: 2px; }
 /********* End of Comment Styles *********/
 /********* Sidebar Styles *********/
@@ -654,10 +665,12 @@ td.serendipity_calendarHeader a:link, td.serendipity_calendarHeader a:visited {
     letter-spacing: .25em;
     text-decoration: none; }
 td.serendipity_calendarHeader a:hover {
-    color: #336633;
+    color: #336633; }
+
 /********* End Calendar Styles *********/
 /********* Begin Image Manager Styles *********/
-/* container for images and text */
+/** container for images and text **/
+
 .serendipity_imageComment_center, .serendipity_imageComment_left, .serendipity_imageComment_right {
     margin:0 0 20px 0;
     padding:10px;
