@@ -1,10 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
+{if $is_embedded != true}
+<!DOCTYPE html>
+<html lang="{$lang}">
 <head>
-    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
-    <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
+    <meta charset="{$head_charset}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
 {if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow" />
 {else}
@@ -26,20 +27,33 @@
 </head>
 
 <body>
+{else}
+{serendipity_hookPlugin hook="frontend_header"}
+{/if}
+{if $is_raw_mode != true}
+
 <div id="mainpane">
     <div id="serendipity_banner">
-    <h1><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle|truncate:80:" ..."}</a></h1>
+        <h1><a href="{$serendipityBaseURL}" title="{$head_subtitle|default:$blogDescription}">{if $view == 'comments'}{$blogTitle}{else}{$head_title|default:$blogTitle}{/if}</a></h1>
     </div>
 
-    <div id="content">{$CONTENT}</div>
+    <div id="content">
+        {$CONTENT}
+    </div>
 
-      <div id="sidebar">
+    <div id="sidebar">
         {serendipity_printSidebar side="right"}
         {serendipity_printSidebar side="left"}
     </div>
-<div id="footer">Pink Lilies theme designed by <a href="http://blog.detlog.org/" title="Naoko's Blog"><strong>Naoko M.</strong></a> - Ported to <a href="http://www.s9y.org" title="Serendipity Weblog"><strong>s9y</strong></a> by <a href="http://www.carlgalloway.com" title="Carl's Blog"><strong>Carl</strong></a>
+
+    <div id="footer">
+        Pink Lilies theme designed by <a href="http://blog.detlog.org/" title="Naoko's Blog"><strong>Naoko M.</strong></a> - Ported to <a href="https://ophian.github.io/" title="Serendipity Styx Weblog"><strong>Serendipity Styx Edition</strong></a> by <a href="http://www.carlgalloway.com" title="Carl's Blog"><strong>Carl</strong></a>
+    </div>
 </div>
+{/if}
 {$raw_data}
-</div>
+{serendipity_hookPlugin hook="frontend_footer"}
+{if $is_embedded != true}
 </body>
 </html>
+{/if}

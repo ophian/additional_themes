@@ -1,4 +1,6 @@
-Name: Pink Lilies (2009-08-17)
+Name: Pink Lilies
 Author: Carl Galloway and Naoko M
-Date: 06-03-2006
+Date: 2019-01-25
 
+Summary: Additional old theme from 2006-03-06 to 2009-08-17 with a fixed size of ~718px width.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. "Responsive", but not mobile friendly!
