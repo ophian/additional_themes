@@ -27,33 +27,40 @@
 
 {serendipity_hookPlugin hook="frontend_header"}
 </head>
-
 <body>
-    <div id="bg">
-    <div id="wrap">
 {else}
 {serendipity_hookPlugin hook="frontend_header"}
 {/if}
-    <div id="banner"><div id="identity">
-<h1><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle|truncate:60:" ..."}</a></h1><h2><a href="{$serendipityBaseURL}">{$head_subtitle|default:$blogDescription}</a></h2></div>
-    <div id="about-snippet">
-    <p>{$template_option.about} <a href="{$template_option.aboutpageurl}"> More &raquo;</a></p>
-    </div>
+{if $is_raw_mode != true}
+    <div id="bg">
+        <div id="wrap">
+            <div id="banner">
+                <div id="identity">
+                    <h1><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle|truncate:60:" ..."}</a></h1>
+                    <h2><a href="{$serendipityBaseURL}">{if $view == 'plugin'}{$blogDescription}{else}{$head_subtitle|default:$blogDescription}{/if}</a></h2>
+                </div>
+                <div id="about-snippet">
+                    <p>{$template_option.about} <a href="{$template_option.aboutpageurl}"> More &raquo;</a></p>
+                </div>
+            </div>
+            <div id="mainpane">
+                <div id="content">
+                    {$CONTENT}
+                </div>
+                <div id="leftcolumn">
+                    <div id="sidebar">
+                        {serendipity_printSidebar side="right"}{serendipity_printSidebar side="left"}
+                    </div>
+                    <div id="clearingdiv">&nbsp;</div>
+                </div>
+                <div id="footer">
+                    <p><a href="{$template_option.navlink1url}" title="{$template_option.navlink1text}">{$template_option.navlink1text}</a> | <a href="{$template_option.navlink2url}" title="{$template_option.navlink2text}">{$template_option.navlink2text}</a> | <a href="{$serendipityBaseURL}serendipity_admin.php">{if $is_logged_in}Admin Suite{else}Login{/if}</a> | Design by <a href="http://www.carlgalloway.com">ceejay</a></p>
+                </div>
+            </div>
         </div>
-<div id="mainpane">
-<div id="content">
-    {$CONTENT}
-</div>
-<div id="leftcolumn">
-    <div id="sidebar">
-        {serendipity_printSidebar side="right"}{serendipity_printSidebar side="left"}
     </div>
-    <div id="clearingdiv">&nbsp;</div>
-</div>
-    <div id="footer">
-        <p><a href="{$template_option.navlink1url}" title="{$template_option.navlink1text}">{$template_option.navlink1text}</a> | <a href="{$template_option.navlink2url}" title="{$template_option.navlink2text}">{$template_option.navlink2text}</a> | <a href="{$serendipityBaseURL}serendipity_admin.php">{if $is_logged_in}Admin Suite{else}Login{/if}</a> | Design by <a href="http://www.carlgalloway.com">ceejay</a></p>
-    </div>
-</div></div></div>
+{/if}
+{$raw_data}
 {serendipity_hookPlugin hook="frontend_footer"}
 {if $is_embedded != true}
 </body>

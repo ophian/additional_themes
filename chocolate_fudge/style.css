@@ -160,18 +160,16 @@ pre {
     word-wrap: break-word;
     width: 100%;
     overflow: auto; }
-
-#c0 { /* a new unsaved comment preview only */
+#serendipity_comment_0 { /* a new unsaved comment preview only */
     border: 1px solid #ddd;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    padding: .625em;
-}
-
+    padding: .625em; }
+.serendipity_image_block {
+    display: inline; }
 .serendipity_image_link {
-    display: block; }
-
+    display: inline-block; }
 .serendipity_entry table {
     border: 1px solid #ddd;
     display: inline-grid;
@@ -179,6 +177,22 @@ pre {
     width: auto;
     overflow: auto;
     padding: .25em; }
+.serendipity_entry p > .serendipity_image_left,
+.serendipity_entry p > .serendipity_imageComment_center,
+.serendipity_entry p > .serendipity_image_right {
+    margin: .25em auto; }
+
+/* backend preview */
+#content.save_preview_content {
+    width: 100%;
+    background: #FFF; }
+#content.save_preview_content a:hover {
+    color: #001f3f; }
+#content.save_preview_content a:link, #content.save_preview_content a:visited, #content.save_preview_content a:active {
+    color: #0074d9; }
+#content.preview_preview_content div.serendipity_entryFooter {
+    display: none;
+    visibility: hidden; }
 
 /* Modernizing Serendipity Styx default styles END */
 
@@ -205,7 +219,7 @@ body {
     border:1px solid #0f0504; }
 #banner {
     position:relative;
-    background: #4d2a26 url({TEMPLATE_PATH}img/header.jpg) no-repeat;
+    background: #4d2a26 url('{TEMPLATE_PATH}img/header.jpg') no-repeat;
     height:141px;
     margin:0;
     padding:0; }
@@ -326,7 +340,7 @@ code {
     width:243px;
     height:100%;
     float: left;
-    background:#4d2a26 url({TEMPLATE_PATH}img/sidebar_bg.gif) top left repeat-y; }
+    background:#4d2a26 url('{TEMPLATE_PATH}img/sidebar_bg.gif') top left repeat-y; }
 #sidebar {
     padding:0;
     margin:0 10px 0 0px;
@@ -336,7 +350,7 @@ code {
     padding:0;
     clear:both;
     height:21px;
-    background:transparent url({TEMPLATE_PATH}img/sidebar_bottom.gif) bottom left no-repeat; }
+    background:transparent url('{TEMPLATE_PATH}img/sidebar_bottom.gif') bottom left no-repeat; }
 .serendipitySideBarItem {
     margin:0 20px 20px 20px;
     padding:0;}

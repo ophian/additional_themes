@@ -4,7 +4,7 @@
     {foreach $entries AS $dategroup}
     <div class="serendipity_Entry_Date">
         {foreach $dategroup.entries AS $entry}
-        {assign var="entry" value=$entry scope="root"}
+        {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <h3 class="serendipity_title"><a href="{$entry.link}">{$entry.title|default:$entry.id}</a></h3>
         <div class="serendipity_entryFooter">
         {if NOT empty($entry.categories)}
@@ -43,14 +43,14 @@
                     {/if}
                 {/if}
 
-                {if $entry.is_entry_owner AND NOT $is_preview}<br />
+                {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}<br />
                         <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>
                 {/if}
             {$entry.add_footer|default:''}
             </div>
 
 
-        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if $entry.is_entry_owner}serendipity_entry_author_self{/if}">
+        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
             <div class="serendipity_entry_body">
                 {$entry.multilingual_footer|default:''}{$entry.body}{if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
              <a href="{$entry.link}#extended">{$CONST.READ_MORE}</a><br />{/if}
@@ -99,11 +99,12 @@
                 <br />
                 <a id="trackbacks"></a>
                 <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
-                    <div class="serendipity_center">
-                        <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
-                    </div>
-                    <br />
-                        {serendipity_printTrackbacks entry=$entry.id}
+                <div class="serendipity_center">
+                    <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
+                </div>
+                <div id="serendipity_trackbacklist">
+                    {serendipity_printTrackbacks entry=$entry.id}
+                </div>
             </div>
         {/if}
 
@@ -122,7 +123,7 @@
                 <br />
                     {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
 
-                {if $entry.is_entry_owner}
+                {if NOT empty($entry.is_entry_owner)}
                     {if $entry.allow_comments}
                     <div class="serendipity_center">(<a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>)</div>
                     {else}
@@ -172,7 +173,7 @@
     {/if}
 {/if}
 
-   <div class="serendipity_pageFooter" style="text-align: center">
+   <div class="serendipity_pageFooter">
     {serendipity_hookPlugin hook="entries_footer"}
 {if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
     {if $footer_prev_page}<a href="{$footer_prev_page}">{/if}{if $footer_prev_page}&laquo; {$CONST.PREVIOUS_PAGE}{else}<span class="grey">&laquo; {$CONST.PREVIOUS_PAGE}</span>{/if}{if $footer_prev_page}</a>{/if}&#160;&#160;
