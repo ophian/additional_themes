@@ -4,7 +4,7 @@
        <cite>{$trackback.author|default:$CONST.ANONYMOUS}</cite><br />
        <small class="commentmetadata">
            <a id="c{$trackback.id}">{$trackback.timestamp|formatTime:'%x %X'}</a>
-           {if $entry.is_entry_owner}&bull; <a href="{$serendipityBaseURL}comment.php?serendipity[delete]={$trackback.id}&amp;serendipity[entry]={$trackback.entry_id}&amp;serendipity[type]=trackbacks">{$CONST.DELETE}</a>{/if}
+           {if NOT empty($entry.is_entry_owner)}&bull; <a href="{$serendipityBaseURL}comment.php?serendipity[delete]={$trackback.id}&amp;serendipity[entry]={$trackback.entry_id}&amp;serendipity[type]=trackbacks">{$CONST.DELETE}</a>{/if}
        </small>
        <p><a href="{$trackback.url|strip_tags}" {'blank'|xhtml_target}>{$trackback.title}</a><br />
           {$trackback.body|strip_tags|escape:all}</p>

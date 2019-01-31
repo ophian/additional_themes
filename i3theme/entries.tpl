@@ -40,7 +40,7 @@
 
                 <p class="submeta">
                     {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a>
-                    {if $entry.is_entry_owner AND NOT $is_preview}&bull; <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
+                    {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}&bull; <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
                 </p>
                 {$entry.add_footer|default:''}
                 {$entry.plugin_display_dat}
@@ -80,9 +80,12 @@
                 <a id="trackbacks"></a>
                 <h3 id="trackbacks_h3">{$entry.trackbacks} {$CONST.TRACKBACKS}</h3>
 
-                <div class="serendipity_center"><a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a></div>
-
-                {serendipity_printTrackbacks entry=$entry.id}
+                <div class="serendipity_center">
+                    <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
+                </div>
+                <div id="serendipity_trackbacklist">
+                    {serendipity_printTrackbacks entry=$entry.id}
+                </div>
             </div>
         {/if}
 
@@ -95,7 +98,7 @@
 
                 {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
 
-                {if $entry.is_entry_owner}
+                {if NOT empty($entry.is_entry_owner)}
                     {if $entry.allow_comments}
                     <div class="serendipity_center">(<a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>)</div>
                     {else}
@@ -118,7 +121,7 @@
                 <div class="serendipity_section_commentform">
                     <h3 id="respond">{$CONST.ADD_COMMENT}</h3>
                     {$COMMENTFORM}
-        </div>
+                </div>
                 {/if}
             </div>
         {/if}
@@ -140,9 +143,10 @@
     {if $footer_next_page}
         <span class="next-entries"><a href="{$footer_next_page}">{$CONST.NEXT_PAGE}</a></span>
     {/if}
-    {serendipity_hookPlugin hook="entries_footer"}
     </div><!-- /.page-nav -->
-
-    <p style="text-align: center">{if NOT empty($footer_info)}({$footer_info}){/if}</p>
+    <div class="serendipity_entryFooter">
+        <p>{if NOT empty($footer_info)}({$footer_info}){/if}</p>
+        {serendipity_hookPlugin hook="entries_footer"}
+    </div>
 {/if}
 <!-- ENTRIES END -->

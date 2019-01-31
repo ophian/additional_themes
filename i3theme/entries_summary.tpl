@@ -11,6 +11,6 @@
 {/foreach}
 </ul>
 
-<div class="serendipity_entryFooter" style="text-align: center">
+<div class="serendipity_entryFooter">
 {serendipity_hookPlugin hook="entries_footer"}
 </div>

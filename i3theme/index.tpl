@@ -19,7 +19,6 @@
     <link rel="canonical" href="{$serendipityBaseURL}" />
 {/if}
     <link rel="stylesheet" type="text/css" href="{$head_link_stylesheet}" media="all" />
-    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="s9y.css"}" media="all" />
     <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="print.css"}" media="print" />
     <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="s9y-print.css"}" media="print" />
 {if $template_option.dbx == 'false'}
@@ -28,10 +27,6 @@
     <script type="text/javascript" src="{$serendipityHTTPPath}templates/{$template}/dbx-key.js"></script>
 {/if}
     <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="dbx.css"}" media="screen, projection" />
-<!--[if lt IE 7]>
-     <link rel="stylesheet" href="{serendipity_getFile file="ie-gif.css"}" type="text/css" />
-     <link rel="stylesheet" href="{serendipity_getFile file="s9y-ie-gif.css"}" type="text/css" />
-<![endif]-->
     <link rel="alternate"  type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2" />
     <link rel="alternate"  type="application/x.atom+xml"  title="{$blogTitle} Atom feed"  href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/atom.xml" />
 {if $entry_id}
@@ -51,7 +46,7 @@
     <div id="wrapper">
         <div id="header">
             <h1><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle}</a></h1>
-            <div class="description">{$head_subtitle|default:$blogDescription}</div>
+            <div class="description">{if $view == 'plugin'}{$blogDescription}{else}{$head_subtitle|default:$blogDescription}{/if}</div>
 
             <form method="get" id="searchform" action="{$serendipityHTTPPath}{$serendipityIndexFile}">
             <div>
