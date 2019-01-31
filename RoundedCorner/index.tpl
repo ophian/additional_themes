@@ -24,7 +24,6 @@ http://abdussamad.com
     <link rel="canonical" href="{$serendipityBaseURL}" />
 {/if}
     <link rel="stylesheet" type="text/css" href="{$head_link_stylesheet}" />
-    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="test.css"}" />
      <link rel="alternate"  type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2" />
     <link rel="alternate"  type="application/x.atom+xml"  title="{$blogTitle} Atom feed"  href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/atom.xml" />
 {if $entry_id}

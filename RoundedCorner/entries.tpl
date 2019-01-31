@@ -3,11 +3,13 @@
 {if NOT empty($entries)}{* catch a staticpage startpage which has no $entries array set *}
     {foreach $entries AS $dategroup}
         {foreach $dategroup.entries AS $entry}
-            {assign var="entry" value=$entry scope="root"}
+            {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <h3 class="serendipity_title"><a href="{$entry.link}" >{$entry.title}</a></h3>
-                   <div class="serendipity_Entry_Date">
-<div class="serendipity_date">
-{$dategroup.date|formatTime:DATE_FORMAT_ENTRY}, {if $dategroup.is_sticky}{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY} {/if}{$entry.timestamp|formatTime:'%I:%M %p'}</div></div>
+        <div class="serendipity_Entry_Date">
+            <div class="serendipity_date">
+                {$dategroup.date|formatTime:DATE_FORMAT_ENTRY}, {if $dategroup.is_sticky}{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY} {/if}{$entry.timestamp|formatTime:'%I:%M %p'}
+            </div>
+        </div>
         <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
         {if NOT empty($entry.categories)}
             <span class="serendipity_entryIcon">
@@ -30,6 +32,7 @@
             <br /><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a><br /><br />
             {/if}
 
+        {if NOT $is_preview}
             <div class="serendipity_entryFooter">
                 {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a>
                 {if NOT empty($entry.categories)}
@@ -58,6 +61,7 @@
 
                 {$entry.add_footer|default:''}
             </div>
+        {/if}
         </div>
         <!--
         <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
