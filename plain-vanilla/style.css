@@ -149,18 +149,14 @@ img, video {
 /* defaults */
 
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: auto; }
-
-#c0 { /* a new unsaved comment preview only */
+#serendipity_comment_0 { /* a new unsaved comment preview only */
     border: 1px solid #ddd;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    padding: .625em;
-}
-
+    padding: .625em; }
 .serendipity_image_link {
-    display: block; }
-
+    display: inline-block; }
 .serendipity_entry table {
 /*    border-collapse: separate;
     border-spacing: 2px;*/
@@ -251,6 +247,83 @@ h4 {
     text-align: left;
     font-size: 1em;
     margin:0; }
+.serendipity_entry p > .serendipity_image_left,
+.serendipity_entry p > .serendipity_imageComment_center,
+.serendipity_entry p > .serendipity_image_right {
+    margin: .25em auto; }
+
+/* backend preview */
+body.save_preview_body {
+    background: #fff; }
+body.preview_preview_body {
+    background: #f5f5f5; }
+#content.preview_preview_content {
+    background: #FFF;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    margin: auto 6em; }
+
+/** Embedded images with the s9y image manager (copy of default theme) **/
+.serendipity_imageComment_center,
+.serendipity_imageComment_left,
+.serendipity_imageComment_right {
+    border: 1px solid #DDD;
+    background-color: #EFE;
+    margin: 0.25em;
+    padding: 0.25em;
+    text-align: center;
+}
+
+.serendipity_imageComment_center {
+    margin: .25em auto;
+}
+
+.serendipity_imageComment_left {
+    float: left;
+    margin-right: .5em;
+}
+
+.serendipity_imageComment_right {
+    float: right;
+    margin-left: .5em;
+}
+
+.serendipity_imageComment_img,
+.serendipity_imageComment_img img {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.serendipity_imageComment_txt {
+    border-top: 1px solid #DDD;
+    margin: 0;
+    padding: 0.25em;
+    clear: both;
+    font-size: 8pt;
+    text-align: center;
+}
+/* image parent comment box responsiveness for mobile screens */
+.serendipity_imageComment_left,
+.serendipity_imageComment_center,
+.serendipity_imageComment_right {
+    width: auto !important; /* force overwrite delivered inline styles */
+    display: table;
+}
+.serendipity_comments {
+}
+/* overwrite fallback plain image padding */
+.serendipity_image_center {
+    padding: .25em;
+}
+/* overwrite fallback gallery comment container margins and some of this comment styles */
+.serendipity_image_block .serendipity_imageComment_left,
+.serendipity_image_block .serendipity_imageComment_right {
+    margin-top: auto;
+    margin-right: unset;
+    background-color: unset;
+    padding-top: 0;
+}
 
 /**
     Theme Name: Plain Vanilla
@@ -261,7 +334,7 @@ h4 {
 */
 
 /* page layout */
-body, html {
+body {
     background: #f5f5f5 url('{TEMPLATE_PATH}images/bg_col1.png') repeat-y top center;
     margin:0;
     padding:0;
@@ -298,9 +371,6 @@ body, html {
     width:65%;
     text-align:justify;
 }
-
-#content.preview_preview_content {
-    margin: auto 6em; }
 
 #sidebar {
     position:relative;
