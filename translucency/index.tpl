@@ -59,8 +59,8 @@
 
         <div id="mainpane">
             <div id="sidebar">
-                {serendipity_printSidebar side="right"}
                 {serendipity_printSidebar side="left"}
+                {serendipity_printSidebar side="right"}
             </div>
             <div id="content">
                 {$CONTENT}

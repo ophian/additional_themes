@@ -41,6 +41,7 @@
             {if $mode == 'preview'}
                 <div class="preview_entry">
                     {$preview}
+                </div>
             {elseif $mode == 'save'}
                 <div class="{$mode}_preview_sizing"></div>
                     {$updertHooks}
@@ -60,7 +61,6 @@
                     <a href="{$entrylink}" target="_blank">{$CONST.VIEW}</a>
                 {/if}
             {/if}
-                </div>
             </div>
           </div>
         </div>
