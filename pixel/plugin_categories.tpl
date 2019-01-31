@@ -15,6 +15,6 @@
 {/foreach}
 </ul>
 {if $is_form}
-    <input id="category_submit" type="submit" name="serendipity[isMultiCat]" value="{$CONST.GO}">
+    <input id="category_submit" type="submit" name="serendipity[isMultiCat]" value="{if isset($smarty.get.serendipity.category)}{$CONST.RESET_FILTERS}{else}{$CONST.GO}{/if}">
 </form>
 {/if}

@@ -1,47 +1,70 @@
-{if $is_xhtml}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-{else}
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-           "http://www.w3.org/TR/html4/loose.dtd">
-{/if}
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
+<!DOCTYPE html>
+<html lang="{$lang}">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
+    <meta charset="{$head_charset}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
     <title>{$CONST.SERENDIPITY_ADMIN_SUITE}</title>
-    <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-    <link rel="stylesheet" type="text/css" href="{$head_link_stylesheet}" />
-{if $head_link_stylesheet_frontend}
-    <link rel="stylesheet" href="{$head_link_stylesheet_frontend}">
-{else}
-    <link rel="stylesheet" href="{$serendipityHTTPPath}{$serendipityRewritePrefix}serendipity.css">
-{/if}
-    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="s9y.css" frontend=true}" />
-<!--[if lt IE 8]>
-    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="ie.css" frontend=true}" />
-<![endif]-->
-<!--[if lt IE 7]>
-    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="ie6.css" frontend=true}" />
-    <script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE7.js" type="text/javascript"></script>
-<![endif]-->
-<script type="text/javascript">
-window.onload = function() {ldelim}
-    parent.document.getElementById('serendipity_iframe').style.height = document.getElementById('contentwrapper').offsetHeight
-                                                                      + parseInt(document.getElementById('contentwrapper').style.marginTop)
-                                                                      + parseInt(document.getElementById('contentwrapper').style.marginBottom)
-                                                                      + 'px';
-    parent.document.getElementById('serendipity_iframe').scrolling    = 'no';
-    parent.document.getElementById('serendipity_iframe').style.border = 0;
-{rdelim}
-</script>
-</head>
-<body style="background: #000; padding: 0px; margin: 0px;">
-<div id="wrapper">
-    <div id="main" style="padding: 0px; margin: 5px auto 5px auto; width: 98%;">
-        <div id="contentwrapper" style="padding: 5px; margin: 0px;">
-        {$preview}
+    <meta name="generator" content="Serendipity Styx v.{$serendipityVersion}">
+    {if $head_link_stylesheet_frontend}
+        <link rel="stylesheet" href="{$head_link_stylesheet_frontend}">
+    {else}
+        <link rel="stylesheet" href="{$serendipityHTTPPath}{$serendipityRewritePrefix}serendipity.css">
+    {/if}
+
+        <link rel="stylesheet" href="{serendipity_getFile file='admin/preview_iconizr.css'}">
+
+    {if $mode == 'save'}{* we need this for modernizr.indexDB cleaning up autosave entry modifications *}
+        <script src="{serendipity_getFile file="admin/js/modernizr.min.js"}"></script>
+    {/if}
+
+        <script type="text/javascript">
+            window.onload = function() {ldelim}
+                var isChrome = !!window.chrome || !!window.opera;
+                if (!isChrome) {
+                    var frameheight = document.querySelector('html').offsetHeight{if $mode == 'preview'}-19{/if};
+                } else {
+                    var frameheight = document.querySelector('html').offsetHeight;
+                }
+                parent.document.getElementById('serendipity_iframe').style.height = frameheight + 'px';
+                parent.document.getElementById('serendipity_iframe').scrolling    = 'no';
+                parent.document.getElementById('serendipity_iframe').style.border = 0;
+                parent.document.getElementById('serendipity_iframe').style.overflow = 'hidden';
+            {rdelim}
+        </script>
+
+    </head>
+
+    <body class="{$mode}_preview_body">
+        <div id="wrapper" class="{$mode}_preview_container">
+            <div id="contentwrapper" class="{$mode}_preview_content">
+            {if $mode == 'preview'}
+                <div class="preview_entry">
+                    {$preview}
+                </div>
+            {elseif $mode == 'save'}
+                <div class="{$mode}_preview_sizing"></div>
+                {$updertHooks}
+                {if $res}
+                    <span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> <b>{$CONST.ERROR}:</b><br> {$res}</span>
+                {else}
+                    {if isset($lastSavedEntry) && (int)$lastSavedEntry}
+
+                    <script type="text/javascript">
+                        window.onload = function() {ldelim}
+                            parent.document.forms['serendipityEntry']['serendipity[id]'].value = "{$lastSavedEntry}";
+                        {rdelim};
+                    </script>
+                    {/if}
+
+                    <span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> {$CONST.ENTRY_SAVED}</span>
+                    <a href="{$entrylink}" target="_blank">{$CONST.VIEW}</a>
+                {/if}
+            {/if}
+            </div>
         </div>
-    </div>
-</div>
-</body>
+<!-- Filed by theme "{$template}" -->
+
+    </body>
 </html>

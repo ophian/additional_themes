@@ -1,72 +1,321 @@
-/*  
-Theme Name: Pixel
-Theme URI: http://85ideas.com/public-releases/wordpress-theme-pixel/
-Description: Dark WP theme with 2-3 column layout, dropdown categories menu, multiple widget-ready placement and Feedburner email form integrated, easy to customize. Enjoy!
-Author: Sam @ 85ideas.com
-Author URI: http://85ideas.com/
-Version: 2.0.2
-Tags: black, blue, three-columns, two-columns, threaded-comments, fixed-width, theme-options, right-sidebar, sticky-post
-.
-Released under <a href="http://www.opensource.org/licenses/gpl-license.php">GPL</a>.
-.
-*/
+/**! Modernizing Serendipity Styx default styles START **/
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+main { display: block; }
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible; }
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+a { background-color: transparent; }
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted; }
+b,
+strong { font-weight: bolder; }
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+small { font-size: 80%; }
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+sub { bottom: -0.25em; }
+sup { top: -0.5em; }
+img { border-style: none; }
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0; }
+button,
+input {
+  overflow: visible; }
+button,
+select {
+  text-transform: none; }
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+fieldset { padding: 0.35em 0.75em 0.625em; }
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal; }
+progress { vertical-align: baseline; }
+textarea { overflow: auto; }
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px; }
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit; }
+details { display: block; }
+summary { display: list-item; }
+template,
+[hidden] {
+  display: none; }
+
+/* normalize end */
+
+/* Render Browser default styles */
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box }
+@-ms-viewport { width: device-width; }
+ul,ol { list-style-position: inside; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+/* Modern Serendipity image sizing default */
+
+img {
+    border: 0;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative; }
+embed, object, audio, video, img {
+    max-width: 100%; }
+img, video {
+    height: auto; }
+
+/* Serendipity Styx comment summary pages */
+
+.comment_content {
+    margin-bottom: 1em; }
+
+.serendipity_comment_author_self .serendipity_comment_source .pc-owner,
+.serendipity_comment_author_self .comment_header .pc-owner {
+    background: #3e5f81e6;
+    padding: .1em .25em;
+    border-radius: 3px;
+    border: 1px solid #999;
+    color: #efefef;
+    font-style: normal;
+    text-shadow: 1px 1px 2px #222; }
+.comments_by_author_pagination {
+    text-align: center; }
+.comments_by_author_pagination.top {
+    margin-top: 1em; }
+.comments_by_author_pagination.bottom {
+    margin: 2em auto; }
+
+/* defaults */
+
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: auto; }
+#serendipity_comment_0 { /* a new unsaved comment preview only */
+    border: 1px solid #ddd;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: .625em; }
+.serendipity_image_link {
+    display: inline-block; }
+.topPost table {
+    border: 1px solid #181818;
+    display: inline-block;
+    max-width: 100%;
+    width: auto;
+    overflow: auto;
+    padding: .5em; }
+.topPost p > .serendipity_image_left,
+.topPost p > .serendipity_imageComment_center,
+.topPost p > .serendipity_image_right {
+    margin: .25em auto; }
+
+/** Modernizing Serendipity Styx default styles END **/
+
+/** Theme fixes depending presets and theme styles **/
+
+[type="checkbox"],
+[type="radio"] {
+    vertical-align: middle;
+    margin-right: 2px; }
+.serendipity_Entry_Date {
+    margin-bottom: 2.5em; }
+.comments_by_author_pagination.bottom {
+    display: table;
+    margin: 2.5em auto 1em; }
+.serendipity_entryFooter {
+    text-align: center;
+    margin-bottom: 1em; }
+#serendipity_categories_list {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+.serendipity_commentBody,
+.comment_content {
+    display: block;
+    margin: .5em 0;
+    padding: .5em;
+    border: 1px solid #222; }
+.serendipity_entry_body pre {
+    display: inline-block; }
+.staticpage_sbJsList .dtree a.node {
+    color:#FFF;}
+.staticpage_sbList {
+    margin: 0;
+    padding: 0; }
+.staticpage_sbJsList {
+    overflow: hidden;
+    white-space: nowrap;
+    padding-bottom: 10px; }
+/*#contentwrapper .serendipity_staticpage {
+    margin: 0 1em; }*/
+.serendipity_calendar {
+    max-width: 300px; }
+.comments_permalink {
+    margin-left: .5em; }
+.serendipity_edit_nugget {
+    text-align: right; }
+#sidebars .serendipity_edit_nugget a {
+  color: #6598b8; }
+
+/* backend preview */
+body.preview_preview_body {
+    width: 96.5%;
+    margin: 1em;
+    background: #000; }
+body.save_preview_body {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    background: inherit;
+    color: inherit; }
+#wrapper.preview_preview_container {
+    width: auto; }
+#wrapper.preview_preview_container .topComments,
+#wrapper.preview_preview_container .topMore,
+#wrapper.preview_preview_container .serendipity_footerplugins,
+#contentwrapper.preview_preview_content div.serendipity_entryFooter {
+    display: none;
+    visibility: hidden; }
+#wrapper.save_preview_container {
+    padding: 0;
+    width: inherit;}
+#contentwrapper.save_preview_content {
+    float: inherit;
+    width: 96%;
+    margin: .5em;
+    padding: 0;}
+
+
+/****
+    Theme Name: Pixel
+    Theme URI: http://85ideas.com/public-releases/wordpress-theme-pixel/
+    Description: Dark WP theme with 2-3 column layout, dropdown categories menu, multiple widget-ready placement and Feedburner email form integrated, easy to customize. Enjoy!
+    Author: Sam @ 85ideas.com
+    Author URI: http://85ideas.com/
+    Version: 2.0.2
+    Tags: black, blue, three-columns, two-columns, threaded-comments, fixed-width, theme-options, right-sidebar, sticky-post
+    .
+    Released under <a href="http://www.opensource.org/licenses/gpl-license.php">GPL</a>.
+    .
+***/
 
 /* Defaults */
 
 * {
   margin: 0;
   padding: 0;
-  }
+}
 :focus {
   outline:0;
-  }
+}
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 10px 0;
-  }
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Verdana;
-  }
+}
 
 hr {
   color: #333;
   border: 1px solid #121212;
-  }
+}
 
 pre {
-  height: auto; 
+  height: auto;
   overflow-x:scroll;
-  }
+}
 
 fieldset {
   margin: 0;
-  padding: 0; 
+  padding: 0;
   border: 0;
-  }
+}
 
 dd {
   padding-left: 15px;
-  }
-
+}
 
 p {
   font-size: 9pt;
-  }
+}
 
 a {
   color: #6598b8;
   text-decoration: none;
-  }
+}
 
 a:hover {
   color: #222;
   text-decoration: underline;
-  }
+}
 
 a img {
-  border: none;  
-  }
+  border: none;
+}
 
 blockquote {
   background: #070707;
@@ -75,25 +324,25 @@ blockquote {
   margin: 10px 10px 5px 15px;
   font-style: italic;
   color: #fff;
-  }
+}
 
 code {
   color: #3366cc;
   font-style: italic;
-  }
+}
 
 strong {
   font-size: 110%;
-  }
+}
 
 body {
   text-align: center;
   margin: 0;
   padding: 0 0 15px 0;
   font-family: trebuchet ms, arial, helvetica, sans-serif;
-  background: #000 url({TEMPLATE_PATH}img/bgbody.jpg) top center no-repeat;
+  background: #000 url('{TEMPLATE_PATH}img/bgbody.jpg') top center no-repeat;
   color: #eee;
-  }
+}
 
 
 /* Header and wrapper */
@@ -102,14 +351,14 @@ body {
   width: 960px;
   text-align: left;
   padding: 0;
-  }
+}
 
 #header {
   padding: 0;
   margin: 0;
   height: 80px;
   text-shadow: 0 0 4px #555;
-  }
+}
 
 #header #topright {
   text-align: right;
@@ -121,20 +370,20 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
-  }
+}
 #header #topright li {
   display: inline;
-  }
+}
 #header #topright li a {
   color: #fff;
   font-size: 9pt;
   padding: 0 0 0 25px;
   text-transform: lowercase;
-  }
+}
 #header #topright li a:hover {
   color: #ccc;
   text-decoration: none;
-  }
+}
 
 #header #logo {
   margin: 0;
@@ -143,21 +392,21 @@ body {
 #header h1 {
   padding: 0;
   margin: 0;
-  }
+}
 #header h1 a {
   color: #fff;
   font-size: 17pt;
   text-decoration: none;
-  }
+}
 #header h1 a:hover {
   color: #eee;
   text-decoration: none;
-  }
+}
 #header span {
   padding: 0;
   color: #eee;
   font-size: 10pt;
-  }
+}
 
 
 /* Menu */
@@ -168,24 +417,24 @@ body {
   clear: both;
   height: 44px;
   width: 960px;
-  }
+}
 
 #nav {
   list-style: none;
   margin: 0;
   padding: 0;
-  }
-	
+}
+
 #nav ul {
   margin: 0;
   padding: 0;
-  }
+}
 
 #nav li {
   float: left;
   margin: 0;
   padding: 0;
-  }
+}
 
 #nav a {
   display: block;
@@ -195,32 +444,32 @@ body {
   font-size: 10pt;
   color: #fff;
   letter-spacing: -1px;
-  }
+}
 
 #nav li a:hover {
   color: #6598b8;
   text-decoration: none;
   display: block;
-  }
+}
 
 #nav li ul {
   list-style: none;
   position: absolute;
   width: 150px;
   left: -999em;
-  }
+}
 
 #nav li:hover ul, #nav li.sfhover ul {
   left: auto;
-  }
-	
+}
+
 #nav li li {
   float: left;
   margin: 0;
   padding: 0;
   width: 150px;
-  }
-	
+}
+
 #nav li li a {
   width: 150px;
   height: 24px;
@@ -230,25 +479,24 @@ body {
   background: #040404;
   margin: 0;
   padding: 5px 20px 5px 15px;
-  }
-	
+}
+
 #nav li li a:hover {
   border-top: 1px solid #131f27;
   background: #000;
   padding: 5px 20px 5px 15px;
-  }
+}
 
 #nav li:hover, #nav li.sfhover { /* prevents IE7 drop-down menu bug (focus on a page element prevents nested menus from disappearing) */
   position: static;
-  }
+}
 
 #toprss {
   float: right;
   margin: 10px 15px 0 0;
   display: inline;
   width: 65px;
-  line-height: 41px;
-  }
+}
 
 
 
@@ -259,148 +507,148 @@ body {
   clear: both;
   width: 930px;
   padding-bottom: 5px;
-  }
+}
 #contentwrapper {
   float:left;
   width: 560px;
   margin: 0 0 15px 0;
   padding: 0;
-  }
+}
 #contentwrapper2 {
   float:left;
   width: 900px;  margin: 0 0 15px 0;
   padding: 0;
-  }
+}
 #contentwrapper .pageTitle, #contentwrapper2 .pageTitle {
   margin: 15px 0 10px 0;
   font-size: 14pt;
   letter-spacing: -1px;
   color: #fff;
   font-weight: normal;
-  background: url({TEMPLATE_PATH}img/bg-trans.png) repeat;
+  background: url('{TEMPLATE_PATH}img/bg-trans.png') repeat;
   padding: 5px;
-  }
+}
 .topPost {
   margin: 0;
   padding: 0;
   font-size: 9pt;
-  }
+}
 .topPost h2.topTitle a {
   font-size: 15pt;
   font-weight: normal;
   color: #fff;
   letter-spacing: -2px;
-  }
+}
 .topPost h2.topTitle a:hover {
   text-decoration: none;
   color: #abd1ea;
-  }
+}
 .topPost p.topMeta {
   padding: 0;
   margin: -10px 0 0 0;
   font-size: 9pt;
-  color: #cdcdcd;  
-  }
+  color: #cdcdcd;
+}
 .topPost p.topMeta a {
   text-decoration: none;
   color: #fff;
-  }
+}
 .topPost p.topMeta a:hover {
   color: #ccc;
   text-decoration: underline;
-  }
+}
 .topPost div.topContent {
   font-size: 9pt;
   color: #efefef;
   margin: 8px 0;
-  }
+}
 .topPost div.topContent p {
   font-size: 1.05em;
   line-height: 1.6em;
-  }
+}
 .topPost div.topContent a {
   text-decoration: underline;
   color: #fff;
-  }
+}
 .topPost div.topContent a:hover {
   text-decoration: underline;
   color: #ff9933;
-  }
+}
 
 .topPost div.topContent ul, .topPost div.topContent ol {
   padding: 0 0 0 30px;
-  }
+}
 .topPost div.topContent ul li, .topPost div.topContent ol li {
   font-size: 1.05em;
   color: #eee;
-  }
+}
 .topPost span.topComments, .topPost span.topMore, .topPost span.topTags {
   font-size: 9pt;
   font-style: italic;
-  background: url({TEMPLATE_PATH}img/bg-trans.png) repeat;
+  background: url('{TEMPLATE_PATH}img/bg-trans.png') repeat;
   padding: 8px 10px;
   margin-right: 5px;
   line-height: 27pt;
   color: #fff;
   border: 1px solid #111;
-  }
+}
 .topPost span.linkpages {
   font-size: 9pt;
   font-style: italic;
   color: #fff;
   margin-bottom: 10px; display:block;
-  }
+}
 .topPost span.linkpages a:hover {
   color: #ddd;
-  }
+}
 .topPost span.topComments:hover, .topPost span.topMore:hover, .topPost span.topTags:hover {
   background: #040404;
-  }
+}
 .topPost span.topComments a {
   color: #fff;
-  background: url({TEMPLATE_PATH}img/comments.gif) left no-repeat;
+  background: url('{TEMPLATE_PATH}img/comments.gif') left no-repeat;
   padding-left: 20px;
   line-height: 27pt;
   vertical-align: middle;
-  }
+}
 .topPost span.topMore a {
   color: #fff;
-  background: url({TEMPLATE_PATH}img/more.gif) left no-repeat;
+  background: url('{TEMPLATE_PATH}img/more.gif') left no-repeat;
   padding-left: 20px;
   line-height: 27pt;
   vertical-align: middle;
-  }
+}
 .topPost span.topTags em {
-  background: url({TEMPLATE_PATH}img/tags.gif) left no-repeat;
+  background: url('{TEMPLATE_PATH}img/tags.gif') left no-repeat;
   padding-left: 20px;
   line-height: 27pt;
   vertical-align: middle;
   color: #0a0a0a;
-  }
+}
 .topPost span.topTags a {
   color: #fff;
   line-height: 27pt;
   vertical-align: middle;
-  }
+}
 .topPost span.topComments a:hover, .topPost span.topMore a:hover, .topPost span.topTags a:hover {
   color: #fff;
   text-decoration: underline;
-  }
+}
 
 #nextprevious {
   margin: 10px 0 5px 0;
-  }
+}
 #nextprevious a {
   color: #eee;
   text-transform: lowercase;
-  border: 1px solid #111;
+/*  border: 1px solid #111;*/
   padding: 5px 8px;
   font-size: 10pt;
   line-height: 1.4em;
-  }
+}
 #nextprevious a:hover {
   color: #fff;
-  }
+}
 
 
 /* Comments */
@@ -413,85 +661,85 @@ body {
   border: 1px solid #090909;
   padding: 0px 15px 10px 15px;
   color: #fff;
-  }
+}
 #comments h3 {
   font-size: 10pt;
   font-weight: normal;
   color: #fff;
   margin: 15px 0;
   padding: 0;
-  }
+}
 #comments p a {
   color: #6598b8;
-  }
+}
 #comments p a:hover {
   color: #fff;
-  }
+}
 #comments p {
   padding:0;
   margin: 7px 0;
-  }
+}
 ul.commentlist, ul.trackback  {
   list-style-type: none;
   margin: 10px 0;
   font-size: 9pt;
-  }
+}
 .commentlist li, .trackback li {
   margin: 10px 0 15px 0;
   padding: 10px;
   background: #080808;
   border: 1px solid #040404;
   list-style-type: none;
-  }
+}
 .commentlist li.alt {
   background: #000;
   border: 1px solid #020202;
   border: none;
   margin-top:10px;
-  }
+}
 .commentlist li.cleared {
   background: transparent;
   border: none;
-  }
+}
 .commentlist a:hover {
   color: #eee;
-  }
+}
 .commentlist a.gravatar {
   float: left;
   margin: 0 15px 10px 0;
   width: 60px;
-  }
-.commentlist .commentbody {
+}
+/*.commentlist .commentbody {
   margin: 0;
   padding: 0;
-  }
+}*/
 .commentlist .commentbody p a {
   text-decoration: underline;
-  }
+}
 .commentlist cite {
   font-size: 10pt;
   font-style: normal;
   color: #ddd;
-  }
+}
 .commentlist small.commentmetadata a {
   color: #666;
-  }
+}
 .commentlist p {
   color: #dedede;
-  }
+}
 #respond {
   clear: both;
   margin-top: 15px;
-  }
+}
 textarea#comment {
   width: 450px;
   background: #fff;
   color: #111;
   padding: 10px;
-  }
+}
 #comments #submit {
   margin: 0;
-  }
+}
 #extrastuff a {color:#999; font-size:0.8em;}
 #extrastuff a:hover {color:#6598b8; text-decoration:none;}
 #extrastuff #rssleft {float:left; width:250px;}
@@ -503,8 +751,8 @@ textarea#comment {
 #main #welcome {
   margin: 0 0 20px 0;
   padding: 0 0 5px 0;
-  background: url({TEMPLATE_PATH}img/bg-trans.png) repeat;
-  }
+  background: url('{TEMPLATE_PATH}img/bg-trans.png') repeat;
+}
 #main #welcome h2 {
   font-size: 14pt;
   font-weight: normal;
@@ -513,29 +761,29 @@ textarea#comment {
   letter-spacing: -2px;
   margin: 0 10px;
   padding: 10px 0 3px 0;
-  }
+}
 #main #welcome p {
   font-size: 9pt;
-  color: #eee;  
+  color: #eee;
   margin: 0 10px;
   padding: 6px 0;
-  }
+}
 #main #welcome a {
   text-decoration: underline;
   color: #ff9933;
-  }
+}
 #main #welcome a:hover {
   color: #6598b8;
-  }
+}
 #main #welcome form {
   margin: -5px 0 0 0;
   background: transparent; /* required for IE */
-  }
+}
 #main #welcome #feedbox {
   border: 1px solid #ccc;
   padding: 2px 1px;
   width: 180px;
-  }
+}
 .submitbutton {
   margin: -5px 0 0 5px;
   background: #010101;
@@ -544,11 +792,11 @@ textarea#comment {
   padding: 3px 6px;
   vertical-align: middle;
   border: 1px solid #111;
-  }
+}
 .submitbutton:hover {
   cursor: pointer;
   background: #050505;
-  }
+}
 
 
 /* Sidebars */
@@ -557,26 +805,26 @@ textarea#comment {
   float: right;
   width: 340px;
   color: #eee;
-  }
+}
 #sidebars .sidebarbox {
-  background: url({TEMPLATE_PATH}img/bg-trans.png) repeat;
+  background: url('{TEMPLATE_PATH}img/bg-trans.png') repeat;
   padding: 8px 15px;
-  }
+}
 
 #sidebar_full {
   padding: 0;
   margin: 0;
-  }
+}
 
 #sidebar_left {
   float: left;
   width: 160px;
-  }
+}
 
 #sidebar_right {
   float: right;
   width: 160px;
-  }
+}
 
 #sidebars h2 {
   margin: 0;
@@ -585,53 +833,53 @@ textarea#comment {
   font-size: 11pt;
   color: #fff;
   letter-spacing: -1px;
-  }
+}
 
 #sidebars table {
   width: 130px;
-  }
+}
 
 #sidebars ul {
   margin: 0;
   padding: 0 0 5px 0;
-  }
+}
 
 #sidebars li {
   margin-bottom: 20px;
   list-style: none;
   font-size: 9pt;
-  }
+}
 
 #sidebars li ul {
   padding: 0;
-  }
+}
 
 #sidebars ul ul li {
   margin: 0;
-  padding: 2px 2px 2px 16px;
+  /*padding: 2px 2px 2px 16px;*/
   color: #eee;
-  background: url({TEMPLATE_PATH}img/bullet.gif) left 8px no-repeat;
+  /*background: url('{TEMPLATE_PATH}img/bullet.gif') left 8px no-repeat;*/
   line-height: 17px; /* Required for cross-browser consistency; cross-browser defaults vary. */
-  }
+}
 
 #sidebars a {
   display: inline;
   color: #eee;
-  }
+}
 #sidebars a:hover {
   color: #6598b8;
   text-decoration: underline;
-  }
+}
 
 #sidebars p {
   padding: 2px 0;
   font-size: 9pt;
   color: #eee;
-  }
+}
 
 #tag_cloud a {
   display: inline;
-  }
+}
 
 #sidebars ul.children li {border-bottom:none;}
 #sidebars ul.children {margin-bottom:0;}
@@ -641,31 +889,31 @@ textarea#comment {
 /* Before footer */
 
 #morefoot {
-  background: #000 url({TEMPLATE_PATH}img/bggrad.jpg) top left repeat-x;
+  background: #000 url('{TEMPLATE_PATH}img/bggrad.jpg') top left repeat-x;
   border: 1px solid #070707;
   padding: 15px;
   color: #dfdfdf;
   margin: 0 0 10px 0;
-  }
+}
 #morefoot p {
   margin: 5px 0;
   padding: 5px 0;
-  }
+}
 #morefoot ul {
   list-style-type: none;
   margin-top: 5px;
-  }
+}
 #morefoot ul li, #morefoot p {
   font-size: 9pt;
-  }
+}
 #morefoot a {
   text-decoration: underline;
   color: #ddd;
-  }
+}
 #morefoot a:hover {
   text-decoration: underline;
   color: #6598b8;
-  }
+}
 #morefoot h3 {
   font-size: 12pt;
   font-weight: normal;
@@ -674,28 +922,28 @@ textarea#comment {
   border-bottom: 1px dotted #444;
   margin: 0;
   padding: 0 0 2px 0;
-  }
+}
 #morefoot #searchbox {
   padding: 1px;
   width: 180px;
-  }
+}
 #morefoot .col1 {
   float: left;
   width: 340px;
-  }
+}
 #morefoot .col2 {
   margin: 0 25px;
-  }
+}
 #morefoot .col2, #morefoot .col3 {
   float: left;
   width: 260px;
-  }
+}
 #morefoot li {
   padding-left: 20px;
   margin-bottom: 5px;
-  background: url({TEMPLATE_PATH}img/more.gif) left 2px no-repeat;
+  background: url('{TEMPLATE_PATH}img/more.gif') left 2px no-repeat;
   line-height: 17px; /* Required for cross-browser consistency; cross-browser defaults vary. */
-  }
+}
 
 
 /* footer*/
@@ -704,28 +952,28 @@ textarea#comment {
   background: #000;
   border: 1px solid #070707;
   padding: 15px 15px 10px 15px;
-  }
+}
 #footer p {
   font-size: 9pt;
   color: #bbb;
   padding: 0;
-  }
+}
 #footer a {
   color: #bbb;
   text-decoration:none;
-  }
+}
 #footer a:hover {
   color: #fff;
-  }
+}
 #footerleft {
   float: left;
   width: 500px;
-  }
+}
 #footerright {
   float: right;
   width: 300px;
   text-align: right;
-  }
+}
 
 
 
@@ -734,42 +982,42 @@ textarea#comment {
 .highlight {
   color: #222;
   font-weight: bold;
-  }
+}
 
 .cleared {
   margin: 0;
   padding: 0;
   clear: both;
-  }
+}
 
 .alignleft {
   float: left;
   margin: 10px 15px 5px 0;
-  }
+}
 .alignright {
   float: right;
   margin: 10px 0 5px 15px;
-  }
+}
 .aligncenter,
 div.aligncenter {
   margin: 10px auto;
   text-align: center;
   display: block;
-  }
+}
 
 img.alignleft {
   float: left;
   margin: 10px 15px 5px 0;
-  }
+}
 img.alignright {
   float: right;
   margin: 10px 0 5px 15px;
-  }
+}
 img.aligncenter {
   margin: 10px auto;
   text-align: center;
   display: block;
-  }
+}
 
 .wp-caption {
   border: 1px solid #ddd;
@@ -782,13 +1030,13 @@ img.aligncenter {
   -khtml-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  }
+}
 
 .wp-caption img {
   margin: 0;
   padding: 0;
   border: none;
-  }
+}
 
 .wp-caption p.wp-caption-text {
   font-size: 11px;
@@ -796,7 +1044,167 @@ img.aligncenter {
   padding: 0 4px 5px;
   margin: 0;
   color: #111;
-  }
+}
 
 
+/* serendipity */
+dd {
+    margin-bottom: 7px;
+    padding-left: 0;
+}
+
+#pages-found { font-size: 9pt; }
+
+.category_link_all { display: none; }
+
+#nav strong {
+    display: block;
+    line-height: 44px;
+    margin: 0;
+    padding: 0 20px 0 15px;
+    font-size: 10pt;
+    color: #fff;
+    letter-spacing: -1px;
+    font-weight: normal;
+}
+
+.serendipity_center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.serendipity_msg_important { color: red; }
+
+.serendipity_msg_notice { color: green; }
+
+.serendipity_image_left,
+.serendipity_image_right,
+.serendipity_image_center,
+.serendipity_imageComment_center,
+.serendipity_imageComment_left,
+.serendipity_imageComment_right {
+    border: 1px solid #111!important;
+    padding: 0!important;
+}
+
+.serendipity_image_left {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+.serendipity_image_right {
+    float: right;
+    margin: 0 0 10px 10px;
+}
+
+.serendipity_image_center {
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.serendipity_imageComment_left {
+    display: inline;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+.serendipity_imageComment_right {
+    display: inline;
+    float: right;
+    margin: 0 0 10px 10px;
+}
+
+.serendipity_imageComment_center {
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.serendipity_imageComment_img img {
+    border: none!important;
+    margin: 0!important;
+}
+
+.serendipity_imageComment_txt {
+    background: #000;
+    border-top: 0 none;
+    clear: both;
+    color: #fff;
+    font-size: 9pt;
+    margin: 0;
+    padding: 2px 0;
+    text-align: center;
+}
+
+.invisible,
+.container_serendipity_syndication_plugin .serendipity_xml_icon {
+    position: absolute;
+    left: -9999em;
+}
+
+.serendipity_commentDirection {
+    font-size: 9pt;
+    margin: 7px 0;
+    padding: 0;
+}
+
+.serendipity_footerplugins {
+    background: url('img/bg-trans.png') repeat;
+    padding: 8px 10px;
+    margin: 8px 0;
+    color: #fff;
+    border: 1px solid #111;
+}
+
+.serendipity_freeTag {
+    background: url('img/tags.gif') left center no-repeat;
+    display: block;
+    font-size: 100%;
+    margin: 7px 5px 7px 0;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.serendipity_freeTag a {
+    font-size: 100%;
+    text-decoration: none;
+}
+
+.archive-year strong {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 100%;
+    width: 150px;
+}
+
+#pages-found a:hover,
+#pages-found a:focus,
+.archive-year a:hover,
+.archive-year a:focus,
+#archive-summary a:hover,
+#archive-summary a:focus,
+.serendipity_freetag_taglist a:hover,
+.serendipity_freetag_taglist a:focus,
+.serendipity_footerplugins a:hover,
+.serendipity_footerplugins a:focus {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.serendipity_freeTag_related {
+    display: block;
+    font-size: 100%;
+    margin: 7px 0;
+    text-align: left;
+}
+
+.freetag_cloud h2 {
+    font-size:15pt;
+    font-weight:normal;
+    letter-spacing:-2px;
+}
+
+.serendipity_freetag_taglist { margin: 0 0 14px; }
+
+.commentlist li.odd { background: #000; }
 

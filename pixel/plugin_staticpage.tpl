@@ -1,4 +1,4 @@
-<div id="page-{$staticpage_pagetitle|makeFilename}" class="topPost">
+<div id="page-{$staticpage_pagetitle|makeFilename}" class="topPost serendipity_staticpage">
     <h2 class="topTitle">{if $staticpage_articleformat}{$staticpage_articleformattitle|escape}{else}{$staticpage_headline|escape}{/if}</h2>
 
     <div class="topContent">

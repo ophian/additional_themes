@@ -12,7 +12,7 @@ $template_config = array(
         'var'           => 'sidebars',
         'name'          => SIDEBAR_TITLE,
         'type'          => 'hidden',
-        'value'       => 'top,left,hide,right,bot,',
+        'value'         => 'top,left,hide,right,bot,',
     ),
     array(
         'var'           => 'showwelcome',
@@ -38,12 +38,6 @@ $template_config = array(
         'type'          => 'string',
         'default'       => '',
     ),
-    array(
-        'var'           => 'amount',
-        'name'          => NAVLINK_AMOUNT,
-        'type'          => 'string',
-        'default'       => '5',
-    )
 );
 
 $top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';

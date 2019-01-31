@@ -15,6 +15,4 @@
 @define('PIX_WELCOMETITLE', 'Nadpis uvítacího bloku');
 @define('PIX_WELCOMETEXT', 'Uvítací blok');
 @define('PIX_SEARCHHINT', 'Nenašli jste to, co jste hledali? Napište komentář k příspěvku nebo nás kontaktujte mailem!');
-@define('NAVLINK_AMOUNT', 'Zadejte počet odkazů v navigační liště (následně je třeba znovu načíst stránku Správa stylů vzhledu)');
-@define('NAV_LINK_TEXT', 'Zadejte text odkazu v nvigační liště');
-@define('NAV_LINK_URL', 'Zadejte plnou URL adresu odkazu');
+
