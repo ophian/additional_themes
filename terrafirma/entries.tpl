@@ -39,6 +39,7 @@
             {/if}
             <br />
 
+        {if NOT $is_preview}
             <div class="footer">
                 <ul>
                     <li class="comments">
@@ -73,6 +74,7 @@
                 </ul>
             </div>
             {$entry.add_footer|default:''}<br/>
+        {/if}
         </div>
         <!--
         <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"

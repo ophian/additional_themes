@@ -146,21 +146,70 @@ img, video {
 .comments_by_author_pagination.bottom {
     margin: 2em auto; }
 
+/** Embedded images with the s9y image manager **/
+.serendipity_imageComment_center,
+.serendipity_imageComment_left,
+.serendipity_imageComment_right {
+    border: 1px solid #DDD;
+    background-color: #EFE;
+    margin: 0.25em;
+    padding: 0.25em;
+    text-align: center;
+}
+
+.serendipity_entry p > .serendipity_image_left,
+.serendipity_entry p > .serendipity_imageComment_center,
+.serendipity_entry p > .serendipity_image_right {
+    margin: .25em auto; }
+
+.serendipity_imageComment_center {
+    margin: .25em auto;
+}
+
+.serendipity_imageComment_left {
+    float: left;
+    margin-right: .5em;
+}
+
+.serendipity_imageComment_right {
+    float: right;
+    margin-left: .5em;
+}
+
+.serendipity_imageComment_img,
+.serendipity_imageComment_img img {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.serendipity_imageComment_txt {
+    border-top: 1px solid #DDD;
+    margin: 0;
+    padding: 0.25em;
+    clear: both;
+    font-size: 8pt;
+    text-align: center;
+}
+/* image parent comment box responsiveness for mobile screens */
+.serendipity_imageComment_left,
+.serendipity_imageComment_center,
+.serendipity_imageComment_right {
+    width: auto !important; /* force overwrite delivered inline styles */
+    display: table;
+}
+
 /* defaults */
 
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
-
-#c0 { /* a new unsaved comment preview only */
+#serendipity_comment_0 { /* a new unsaved comment preview only */
     border: 1px solid #ddd;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    padding: .625em;
-}
-
+    padding: .625em; }
 .serendipity_image_link {
-    display: inline-block;
-}
+    display: inline-block; }
 .serendipity_entry table {
     border: 1px solid #eee;
     display: inline-grid;
@@ -187,16 +236,21 @@ h2.staticpage_title {
     margin-bottom: 1.5em; }
 
 /* backend preview */
-#content {
-    width: 747px !important;
-    padding-left: 2em !important;
+#content.preview_preview_content {
+    width: 747px;
+    padding-left: 2em;
     background: #fff url('{TEMPLATE_PATH}img/abg.gif') repeat-y; }
-#content .footer ul {
-    list-style: none; }
+#content.preview_preview_content .preview_entry {
+    width: 97%; }
+body.save_preview_body {
+    background: #FFF;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    line-height: inherit; }
 
 
 /*
-
 	terrafirma1.0 by nodethirtythree design
 	http://www.nodethirtythree.com
 
@@ -254,56 +308,6 @@ img.picB {
 img.floatleft {
     float: left;
     margin: 0px 14px 3px 0px;
-}
-
-img {
-	padding:2px 2px 0px 2px;
-	background:#ffffff;
-	border-top:1px solid #EEEEE8;
-	border-right:1px solid #EEEEE8;
-	border-bottom:0px solid #EEEEE8;
-	border-left:1px solid #EEEEE8;
-}
-
-img a {
-	padding:2px;
-	background:#ffffff;
-	border-top:1px solid #EEEEE8;
-	border-right:1px solid #EEEEE8;
-	border-bottom:0px solid #EEEEE8;
-	border-left:1px solid #EEEEE8;
-}
-
-.serendipity_imageComment_center,
-.serendipity_imageComment_left,
-.serendipity_imageComment_right {
-	margin: 0px 10px 6px 0px;
-	padding-right:6px;
-	text-align: center;
-	background:#ffffff;
-	border-top:0px solid #EEEEE8;
-	border-right:1px solid #EEEEE8;
-	border-bottom:1px solid #EEEEE8;
-	border-left:1px solid #EEEEE8;
-}
-
-.serendipity_imageComment_center {
-	margin: auto;
-}
-
-.serendipity_imageComment_left {
-	float: left;
-}
-
-.serendipity_imageComment_right {
-	float: right;
-}
-
-.serendipity_imageComment_txt {
-	margin: 0px 10px 6px 10px;
-	line-height:120%;
-	color:#ff7800;
-	text-decoration:underline;
 }
 
 ul.linklist {
