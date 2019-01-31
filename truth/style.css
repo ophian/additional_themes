@@ -149,24 +149,28 @@ img, video {
 /* defaults */
 
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
-
-#c0 { /* a new unsaved comment preview only */
+#serendipity_comment_0 { /* a new unsaved comment preview only */
     border: 1px solid #ddd;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    padding: .625em;
-}
-
+    padding: .625em; }
 .serendipity_image_link {
-    display: block; }
-
+    display: inline-block; }
 .serendipity_entry table {
     border: 1px solid #aaa;
     display: inline-grid;
     max-width: 100%;
     width: auto;
     overflow: auto; }
+.serendipity_entry p > .serendipity_image_left,
+.serendipity_entry p > .serendipity_imageComment_center,
+.serendipity_entry p > .serendipity_image_right {
+    margin: .25em auto; }
+/* staticpages without articleformat */
+#content > .serendipity_staticpage h2 {
+    margin-top: 0; }
+
 
 /** Modernizing Serendipity Styx default styles END **/
 
@@ -242,16 +246,17 @@ h4,h3 {
     width: auto;
 }
 
-#serendipityRightSideBar {
-    width: 170px;
-    border-left: 1px dashed #ffffff;
+#serendipityLeftSideBar {
+    min-width: 170px;
+    width: 200px;
+    border-right: 1px dashed #ffffff;
     padding: 10px;
     vertical-align: top;
 }
 
-#serendipityLeftSideBar {
-    width: 170px;
-    border-right: 1px dashed #ffffff;
+#serendipityRightSideBar {
+    min-width: 170px;
+    border-left: 1px dashed #ffffff;
     padding: 10px;
     vertical-align: top;
 }
@@ -352,7 +357,8 @@ a.homelink2:visited,
     /* Inner blocks of .serendipity_entry, can be used for further customization */
 }
 
-.serendipity_entry_date {
+.serendipity_entry_date,
+.serendipity_Entry_Date {
     margin: auto;
 }
 
