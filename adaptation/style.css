@@ -149,26 +149,42 @@ img, video {
 /* defaults */
 
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
-
 #c0 { /* a new unsaved comment preview only */
     border: 1px solid #ddd;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    padding: .625em;
-}
-
+    padding: .625em; }
 .serendipity_image_link {
-    display: inline-block;
-}
+    display: inline-block; }
 .serendipity_entry table {
     border: 1px solid #aaa;
     display: inline-grid;
     max-width: 100%;
     width: auto;
     overflow: auto; }
+.serendipity_entry p > .serendipity_image_left,
+.serendipity_entry p > .serendipity_imageComment_center,
+.serendipity_entry p > .serendipity_image_right {
+    margin: .25em auto; }
 
 /** Modernizing Serendipity Styx default styles END **/
+
+/* calendar */
+.icon-back::before {
+    content: "<"; }
+.icon-next::before {
+    content: ">"; }
+.icon {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1.065em;
+    /*color: #FFF;*/
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+.serendipity_calendarHeader {
+    text-align: center; }
 
 /** Theme fixes depending presets and theme styles **/
 
@@ -176,19 +192,32 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 [type="radio"] {
     vertical-align: middle; }
 
+/* For modernizing the fixed width for content and sidebars was reset */
+body, h2, h3, h4, h5, h6, .post h2, .sidebar h2, .commentlist li, #serendipity_comment p {
+    display: inline-block;
+    width: 100%; }
+    /*#content.preview_preview_content { width: 450px;}*/
 #content ol li {
     list-style-type: none;
     list-style-image: none; }
 #content .boxed {
     display: flex; }
-    #content .boxed .obut{
-    height: 54px; }
-}
+    #content .boxed .obut {
+        height: 54px; }
 #content.paged_comments,
 #footer.paged_comments {
     width: auto;
-    margin: auto 5em;
-}
+    margin: auto 5em; }
+
+/* backend preview */
+#content.preview_preview_content,
+#content.save_preview_content {
+    float: inherit; }
+#content.preview_preview_content div.serendipity_entryFooter {
+    display: none;
+    visibility: hidden; }
+#content.preview_preview_content .preview_entry .entry {
+    padding-bottom: inherit; }
 
 
 /*  
@@ -241,21 +270,21 @@ padding: 0;
 float: left;
 margin: 0;
 padding: 5px 20px;
-width: 450px;
+max-width: 54em;/*was width:450px;*/
 }
 #sidebar1 {
 font-size: 80%;
 float: left;
 margin: 0;
 padding: 0px 5px 5px 5px;
-width: 200px;
+width: 16.5em;/*was 200px;*/
 }
 #sidebar2 {
 font-size: 80%;
 float: left;
 margin: 0;
 padding: 0px 5px 5px 5px;
-width: 240px;
+width: 19.5em;/*was 240px;*/
 }
 #rssicon{
 margin: 30px 0;
@@ -340,10 +369,10 @@ h1, h2, h3, h4, h5, h6 {
 h2 {
 margin: 0 0 10px 0;
 }
-.post h2 {
+.post > h2 {
 margin: 0 auto 7px 0;
 padding: 0;
-width: 350px;
+width: 90%;/* was 350px;*/
 float: left;
 position: relative;
 }
@@ -408,11 +437,11 @@ font-size: 0.9em;
 line-height: 1.5em;
 }
 acronym, abbr, span.caps {
-border-bottom: 1px dashed #777;
+border-bottom: 1px dashed #ccc;/*was #777;*/
 cursor: help;
 }
 acronym, abbr {
-border-bottom: 1px dashed #777;
+border-bottom: 1px dashed #ccc;/*was #777;*/
 }
 blockquote {
 margin: 15px 30px 0 10px;
@@ -615,12 +644,12 @@ input[type=text],
 input[type=radio],
 input[type=checkbox],
 textarea {
-border: 1px solid #777;
+border: 1px solid #ccc;/*was #777;*/
 padding: 2px;
 margin: 5px;
 }
 input:focus, textarea:focus {
-border: 1px solid #333;
+border: 1px solid #777;/*was #333;*/
 }
 label,
 select,
@@ -645,7 +674,7 @@ padding: 5px;
 }
 #tbf {
 margin: 0px;
-border: 1px solid #777;
+border: 1px solid #ccc;/*was #777;*/
 padding: 10px;
 }
 .trackbacklist {

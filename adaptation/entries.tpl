@@ -3,7 +3,7 @@
 {if NOT empty($entries)}{* catch a staticpage startpage which has no $entries array set *}
     {foreach $entries AS $dategroup}
         {foreach $dategroup.entries AS $entry}
-        {assign var="entry" value=$entry scope="root"}
+        {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <div class="post">
             <h2 id="post-{$entry.id}"><a href="{$entry.link}">{$entry.title}</a></h2>
             <div class="serendipity_date">
@@ -28,8 +28,9 @@
                 <br /><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a><br /><br />
                 {/if}
 
-                {if $entry.is_entry_owner AND NOT $is_preview}<a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
+                {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}<a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
 
+            {if NOT $is_preview}
                 <div class="postmetadata {if $is_single_entry} graybox{/if}">
                 {if $is_single_entry}
                     {$entry.timestamp|formatTime:"%H:%M"}
@@ -44,48 +45,46 @@
                         {$CONST.COMMENTS_CLOSED}
                     {/if}
                 {else}
-                {if $dategroup.is_sticky}
-                    {$CONST.ON}
-                {else}
-                {/if} <a href="{$entry.link}">{if $dategroup.is_sticky}{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY} {/if}</a>
+                    {if $dategroup.is_sticky}{$CONST.ON}{else}{/if} <a href="{$entry.link}">{if $dategroup.is_sticky}{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY} {/if}</a>
 
-                <div class="clearfix boxed">
-                {if $entry.has_comments}
-                    {if $use_popups}
-                        <div class="fleft">
-                            <div class="obut">
-                                <a href="{$entry.link_popup_comments}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{$entry.label_comments} ({$entry.comments})</a>
+                    <div class="clearfix boxed">
+                    {if $entry.has_comments}
+                        {if $use_popups}
+                            <div class="fleft">
+                                <div class="obut">
+                                    <a href="{$entry.link_popup_comments}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{$entry.label_comments} ({$entry.comments})</a>
+                                </div>
                             </div>
-                        </div>
-                    {else}
-                        <div class="fleft">
-                            <div class="obut">
-                                <a href="{$entry.link}#comments">{$entry.label_comments} ({$entry.comments})</a>
+                        {else}
+                            <div class="fleft">
+                                <div class="obut">
+                                    <a href="{$entry.link}#comments">{$entry.label_comments} ({$entry.comments})</a>
+                                </div>
                             </div>
-                        </div>
+                        {/if}
                     {/if}
-                {/if}
 
-                {if $entry.has_trackbacks}
-                    {if $use_popups}
-                        <div class="fleft">
-                            <div class="obut">
-                                <a href="{$entry.link_popup_trackbacks}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
+                    {if $entry.has_trackbacks}
+                        {if $use_popups}
+                            <div class="fleft">
+                                <div class="obut">
+                                    <a href="{$entry.link_popup_trackbacks}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
+                                </div>
                             </div>
-                        </div>
-                    {else}
-                        <div class="fleft">
-                            <div class="obut">
-                                <a href="{$entry.link}#trackbacks">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
+                        {else}
+                            <div class="fleft">
+                                <div class="obut">
+                                    <a href="{$entry.link}#trackbacks">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
+                                </div>
                             </div>
-                        </div>
+                        {/if}
                     {/if}
-                {/if}
 
                     </div>
                 {/if}
                 {$entry.add_footer|default:''}
                </div>
+            {/if}
             </div>
         </div>
         <!--
@@ -121,25 +120,20 @@
             {if $CONST.DATA_COMMENT_APPROVED}
                 <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</div><br />
             {/if}
-        <div id="tbf">
-                    <div class="serendipity_center">
-                        <a style="font-weight: normal" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
-                    </div>
-
-                {if $entry.trackbacks>=1}
+            <div id="tbf">
                 <a id="trackbacks"></a>
-
-        <h3>{$CONST.TRACKBACKS}</h3>
-
-                    <ol class="trackbacklist">
-                        {serendipity_printTrackbacks entry=$entry.id}
-                    </ol>
-        {/if}
-        </div>
+                <h3>{$CONST.TRACKBACKS}</h3>
+                <div class="serendipity_center">
+                    <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
+                </div>
+                <ol id="serendipity_trackbacklist">
+                    {serendipity_printTrackbacks entry=$entry.id}
+                </ol>
+            </div>
         {/if}
 
         {if $is_single_entry AND NOT $is_preview}
-        <div id="cof">
+            <div id="cof">
                 <a id="comments"></a><h3>{$CONST.COMMENTS}</h3>
                 <div class="serendipity_center">{$CONST.DISPLAY_COMMENTS_AS}
                 {if $entry.viewmode eq $CONST.VIEWMODE_LINEAR}
@@ -153,7 +147,7 @@
                     {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
                 </ol>
 
-                {if $entry.is_entry_owner}
+                {if NOT empty($entry.is_entry_owner)}
                     {if $entry.allow_comments}
                     <div class="serendipity_center">(<a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>)</div>
                     {else}
@@ -188,7 +182,7 @@
                 {$COMMENTFORM}
 
                 {/if}
-        </div>
+            </div>
         {/if}
 
         {$entry.backend_preview}

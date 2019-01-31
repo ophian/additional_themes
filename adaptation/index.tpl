@@ -62,12 +62,13 @@
 {else}
 {serendipity_hookPlugin hook="frontend_header"}
 {/if}
+{if $is_raw_mode != true}
 <div><a name="top" id="top"></a></div>
     <div id="header">
     {if $template_option.style == 'aqua'}
-        <h1><a href="{$serendipityBaseURL}"><img src="{$serendipityBaseURL}templates/{$template}/img/header.png" alt="{$blogTitle}" /></a><span>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</span></h1>
+        <h1><a href="{$serendipityBaseURL}"><img src="{$serendipityBaseURL}templates/{$template}/img/header.png" alt="{$blogTitle}" /></a><span>{$head_title|default:$blogTitle} {if $head_subtitle AND  $view != 'plugin'} - {$head_subtitle}{/if}</span></h1>
     {elseif $template_option.style == 'oldskool'}
-        <h1><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</a></h1>
+        <h1><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle} {if $head_subtitle AND  $view != 'plugin'} - {$head_subtitle}{/if}</a></h1>
     {/if}
         <div class="description">{$blogDescription}</div>
     </div>
@@ -109,10 +110,10 @@
 <div id="footer"{if $view == 'comments'} class="paged_comments"{/if}>
     <a href="#top"><img src="{$serendipityBaseURL}/templates/{$template}/img/up.png" alt="hoch / up" title="hoch / up" /></a> {$CONST.PROUDLY_POWERED_BY} <a href="https://ophian.github.io/">Serendipity Styx Edition</a> &amp; the <i>{$template}</i> theme.<br />Style is <a href="http://alp-uckan.net/free/s9y/style-adapation/">adaptation 0.8</a> by <a href="http://alp-uckan.net">Alp Uçkan</a>
 </div>
-
+{/if}
+{$raw_data}
 {serendipity_hookPlugin hook="frontend_footer"}
 {if $is_embedded != true}
-
 </body>
 </html>
 {/if}
