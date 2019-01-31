@@ -42,7 +42,7 @@
 
                 {/if}
 
-                {if $is_single_entry}
+                {if $is_single_entry AND NOT $is_preview}
 
                 <div class="entrymeta">
                     <div class="postinfo">
@@ -70,19 +70,20 @@
                         {/if}
                     {/if}
 
-                {if $entry.allow_comments}
-                    <br />{$CONST.LEAVE_RESPONSE|sprintf:'<a href="#serendipity_CommentForm">':'</a>':"<a href=\"{$entry.link}\">":'</a>'}
-                    {if $entry.moderate_comments}
-                        {$CONST.SUBJECT_TO_MODERATION}
+                    {if $entry.allow_comments}
+                        <br />{$CONST.LEAVE_RESPONSE|sprintf:'<a href="#serendipity_CommentForm">':'</a>':"<a href=\"{$entry.link}\">":'</a>'}
+                        {if $entry.moderate_comments}
+                            {$CONST.SUBJECT_TO_MODERATION}
+                        {/if}
+                    {else}
+                        {$CONST.COMMENTS_CLOSED}
                     {/if}
-                {else}
-                    {$CONST.COMMENTS_CLOSED}
-                {/if}
 
                 </div><!-- entrymeta ende -->
 
                 {else}
 
+            {if NOT $is_preview}
                 <div class="entrymeta">
                     <div class="postinfo">
                         <span class="postedby">{$CONST.ENTRY_POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a></span>
@@ -110,6 +111,7 @@
                 {/if}
 
                 </div><!-- entrymeta ende -->
+            {/if}
 
                 {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}
                     <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>
