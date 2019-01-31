@@ -42,6 +42,7 @@
             </div>
             {if $rightSidebarElements > 0}
             <div id="right">
+                {serendipity_printSidebar side="left"}
                 {serendipity_printSidebar side="right"}
             </div>
             {/if}
