@@ -24,6 +24,7 @@
             {$entry.extended}
             {/if}
 
+        {if NOT $is_preview}
             <ul class="controls">
             {if $entry.has_comments}
                 {if $use_popups}
@@ -48,7 +49,7 @@
             </ul>
 
             <div class="serendipity_entryFooter">{$entry.add_footer|default:''}</div>
-
+        {/if}
         </div>
     </div>
 
