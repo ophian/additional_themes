@@ -130,7 +130,6 @@ img, video {
 
 .comment_content {
     margin-bottom: 1em; }
-
 .serendipity_comment_author_self .serendipity_comment_source .pc-owner,
 .serendipity_comment_author_self .comment_header .pc-owner {
     background: #3e5f81e6;
@@ -193,6 +192,8 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
 [type="radio"] {
     vertical-align: middle;
     margin-right: 2px; }
+.save_preview_body {
+    background: #fff; }
 .serendipity_Entry_Date {
     margin-bottom: 2.5em;
     width: 100%; }
@@ -225,8 +226,7 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     white-space: nowrap;
     padding-bottom: .8em; }
 #serendipity_syndication_list li {
-    margin-top: .5em;
-}
+    margin-top: .5em; }
 .serendipity_content_message {
     margin: 1.5em auto;
     background: #336;
@@ -329,6 +329,11 @@ body {
     width: 100%;
     margin-top: .25em;
 }
+#content.content_left_only_position,
+#content.content_middle_position,
+#content.content_right_only_position {
+    width: 100%;
+}
 .left_sidebar_container,
 .right_sidebar_container {
     display: block;
@@ -347,56 +352,58 @@ body {
         display: block;
         overflow: hidden;
     }
+    #content.content_right_only_position,
+    #content.content_left_only_position,
+    #content.content_middle_position {
+        position: relative;
+    }
+    #content.content_right_only_position,
+    #content.content_left_only_position {
+        width: 72%;
+    }
     #content.content_right_only_position {
-        position:relative;
-        float:left;
-        width:84%;
-        background-color:transparent;
+        float: left;
+        background-color: transparent;
     }
     #content.content_left_only_position {
-        position:relative;
-        float:right;
-        width:84%;
+        float: right;
     }
     #content.content_middle_position {
-        position:relative;
-        float:left;
-        width: auto;
+        float: left;
         max-width: 72%;
     }
-    .left_sidebar_container {
-        display:inline-block;
-        float:left;
-        width:14%;
-        min-width: 200px;
-    }
+    .left_sidebar_container,
     .right_sidebar_container {
-        display:inline-block;
-        float:left;
-        width:14%;
+        display: inline-block;
+        float: left;
+        width: 14%;
         min-width: 200px;
     }
 }
 @media screen and (min-width: 830px) {
+    #content.content_left_only_position,
+    #content.content_right_only_position {
+        width: 75%;
+    }
     #content.content_middle_position {
         max-width: 75%;
     }
-    .left_sidebar_container {
-        width:25%;
-    }
+    .left_sidebar_container,
     .right_sidebar_container {
-        width:25%;
+        width: 25%;
     }
 }
 @media screen and (min-width: 1280px) {
+    #content.content_left_only_position,
+    #content.content_right_only_position {
+        width: 75%;
+    }
     #content.content_middle_position {
         max-width: 68%;
     }
-    .left_sidebar_container {
-        width:16%;
-    }
-    .right_sidebar_container {
-        width:16%;
+    .sidebars .left_sidebar_container,
+    .sidebars .right_sidebar_container {
+        width: 16%;
     }
 }
 

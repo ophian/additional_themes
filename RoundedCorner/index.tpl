@@ -36,7 +36,7 @@ http://abdussamad.com
 {serendipity_hookPlugin hook="frontend_header"}
 {/if}
 {if $is_raw_mode != true}
-<div id="mainpane">
+<div id="mainpane" class="{if $rightSidebarElements <= 0 AND $leftSidebarElements <= 0}no-{elseif $rightSidebarElements > 0 AND $leftSidebarElements > 0}sidebars{else}sidebar{/if}">
 
     <div id="banner_lc">
     <div id="banner_rc">
@@ -58,11 +58,11 @@ http://abdussamad.com
     </div>
     </div></div></div></div></div></div></div></div>
 
-{if $rightSidebarElements > 0 and $leftSidebarElements <= 0}
+{if $rightSidebarElements > 0 AND $leftSidebarElements <= 0}
         <div id="content" class="content_right_only_position">
-{elseif    $rightSidebarElements > 0 and $leftSidebarElements > 0}
+{elseif $rightSidebarElements > 0 AND $leftSidebarElements > 0}
         <div id="content" class="content_middle_position">
-{elseif    $rightSidebarElements <= 0 and $leftSidebarElements > 0}
+{elseif $rightSidebarElements <= 0 AND $leftSidebarElements > 0}
         <div id="content" class="content_left_only_position">
 {else}
         <div>
