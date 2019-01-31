@@ -36,6 +36,8 @@ http://abdussamad.com
 {serendipity_hookPlugin hook="frontend_header"}
 {/if}
 {if $is_raw_mode != true}
+<div id="mainpane">
+
     <div id="banner_lc">
     <div id="banner_rc">
     <div id="banner_tc">
@@ -50,80 +52,18 @@ http://abdussamad.com
     </div>
     <div id="top_nav">
         <a href="{$serendipityBaseURL}">Home</a>
-        <a href="{$serendipityBaseURL}categories/13-Templates">Templates</a>
-        <a href="{$serendipityBaseURL}categories/3-Freeware">Freeware</a>
-        <a href="{$serendipityBaseURL}categories/15-Website-Development">Website Development</a>
+        <a href="{$serendipityBaseURL}categories/foo">Foo</a>
+        <a href="{$serendipityBaseURL}categories/bar">Bar</a>
+        <a href="{$serendipityBaseURL}categories/dev">Development</a>
     </div>
     </div></div></div></div></div></div></div></div>
 
-{if false}
-    <div id="content_lc">
-    <div id="content_rc">
-    <div id="content_tc">
-    <div id="content_bc">
-    <div id="content_bl">
-    <div id="content_br">
-    <div id="content_tl">
-    <div id="content_tr">
-
-        <div id="content_inside">
-        {if $leftSidebarElements > 0}
-
-            <div class="left_sidebar_container">
-                <div id="serendipityleftSideBar">
-                {serendipity_printSidebar side="left"}
-                </div>
-            </div>
-        {/if}
-        {if $rightSidebarElements >0 AND $leftSidebarElements <=0}
-            <div id="content_right_only_position">
-        {elseif $rightSidebarElements > 0 AND $leftSidebarElements > 0}
-            <div id="content_middle_position">
-        {elseif $rightSidebarElements <= 0 AND $leftSidebarElements > 0}
-            <div id="content_left_only_position">
-        {else}
-        {/if}
-
-                {$CONTENT}
-
-                {if $rightSidebarElements > 0}
-                <div class="right_sidebar_container">
-                    <div id="serendipityRightSideBar">
-                    {serendipity_printSidebar side="right"}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div></div></div></div></div></div></div></div>
-
-
-        {/if}
-
-{else}
-{if $leftSidebarElements > 0}
-
-     <div class="left_sidebar_container">
-        <div id="sidebar_lc">
-        <div id="sidebar_rc">
-        <div id="sidebar_tc">
-        <div id="sidebar_bc">
-        <div id="sidebar_bl">
-        <div id="sidebar_br">
-        <div id="sidebar_tl">
-        <div id="sidebar_tr">
-            <div id="serendipityLeftSideBar">
-                {serendipity_printSidebar side="left"}
-            </div>
-        </div></div></div></div></div></div></div></div>
-    </div>
-{/if}
-{if $rightSidebarElements >0 and $leftSidebarElements <=0}
-        <div id="content_right_only_position">
-{elseif    $rightSidebarElements >0 and $leftSidebarElements > 0}
-        <div id="content_middle_position">
-{elseif    $rightSidebarElements <=0 and $leftSidebarElements > 0}
-        <div id="content_left_only_position">
+{if $rightSidebarElements > 0 and $leftSidebarElements <= 0}
+        <div id="content" class="content_right_only_position">
+{elseif    $rightSidebarElements > 0 and $leftSidebarElements > 0}
+        <div id="content" class="content_middle_position">
+{elseif    $rightSidebarElements <= 0 and $leftSidebarElements > 0}
+        <div id="content" class="content_left_only_position">
 {else}
         <div>
 {/if}
@@ -140,6 +80,24 @@ http://abdussamad.com
                 </div>
             </div></div></div></div></div></div></div></div>
         </div>
+
+{if $leftSidebarElements > 0}
+
+    <div class="left_sidebar_container">
+        <div id="sidebar_lc">
+        <div id="sidebar_rc">
+        <div id="sidebar_tc">
+        <div id="sidebar_bc">
+        <div id="sidebar_bl">
+        <div id="sidebar_br">
+        <div id="sidebar_tl">
+        <div id="sidebar_tr">
+            <div id="serendipityLeftSideBar">
+                {serendipity_printSidebar side="left"}
+            </div>
+        </div></div></div></div></div></div></div></div>
+    </div>
+{/if}
 {if $rightSidebarElements > 0}
     <div class="right_sidebar_container">
         <div id="sidebar_lc">
@@ -157,9 +115,11 @@ http://abdussamad.com
         </div></div></div></div></div></div></div></div>
 
 {/if}
-{/if}
-<div class="serendipity_entryFooter">
-    This website theme by <a href="http://abdussamad.com">Abdussamad Abdurrazzaq</a>. Powered by <a href="https://ophian.github.io/">Serendipity Styx Edition</a>
+
+    <div class="serendipity_entryFooter">
+        This website theme by <a href="http://abdussamad.com">Abdussamad Abdurrazzaq</a>. Powered by <a href="https://ophian.github.io/">Serendipity Styx Edition</a>
+    </div>
+
 </div>
 {/if}
 {$raw_data}
