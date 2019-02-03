@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
+<html lang="{$lang}">
 <head>
     <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
@@ -49,6 +49,6 @@
     {/if}
 
 {/if}
-<a href="javascript:;" onclick="self.close()">Close Window</a>
+    <a href="javascript:;" onclick="self.close()">Close Window</a>
 </body>
 </html>
