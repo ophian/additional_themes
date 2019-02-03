@@ -3,7 +3,7 @@
 <div id="contactpreface">{$plugin_contactform_preface}</div>
 
 {if $is_contactform_sent}
-<div class="serendipity_center serendipity_msg_notice">    {$plugin_contactform_sent}</div>
+<div class="serendipity_center serendipity_msg_notice">{$plugin_contactform_sent}</div>
 {else}
     {if $is_contactform_error}
     <div class="serendipity_center serendipity_msg_important">{$plugin_contactform_error}</div>
@@ -48,7 +48,8 @@
         {else}
            <input type="text" id="serendipity_commentform_{$field.id}" name="serendipity[{$field.id}]" value="{$field.default}" size="22" />
         {/if}
-        {if $field.required}<sup>*</sup>{/if}<label for="serendipity_commentform_{$field.id}"><small>{$field.name}</small></label></p>
+        {if $field.required}<sup>*</sup>{/if}<label for="serendipity_commentform_{$field.id}"><small>{$field.name}</small></label>
+        </p>
     {/if}
 {/foreach}
         <div><!-- This is where the spamblock/Captcha plugin is called -->

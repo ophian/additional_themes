@@ -1,10 +1,10 @@
 <div id="menu">
     <ul>
     {foreach $plugindata AS $item}
-        <li id={$item}><a href="#nogo">{if $item.title != ""}{$item.title}{else}{$CONST.NONE}{/if}</a>
+        <li id={$item@iteration}-{$item.class}><a href="#nogo">{if NOT empty($item.title)}{$item.title}{else}{$CONST.NONE}{/if}</a>
             <ul>
                 <li>
-                    <div class="serendipityTabSideBarContent">{$item.content}</div><br/>
+                    <div class="serendipityTabSideBarContent">{$item.content}</div>
                 </li>
             </ul>
         </li>

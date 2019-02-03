@@ -7,47 +7,46 @@ if (IN_serendipity !== true) { die ("Don't hack!"); }
 $serendipity['smarty']->assign(array('currpage'  => "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],
                                      'currpage2' => $_SERVER['REQUEST_URI']));
 
-$istok = " <img src='" . serendipity_getTemplateFile('img/ok.gif'). "' alt='' /> ";
-$notok = " <img src='" . serendipity_getTemplateFile('img/fehler.gif'). "' alt='' /> ";
+$istok = ' <img src="' . serendipity_getTemplateFile('img/ok.gif', 'serendipityHTTPPath', true). '" alt="" /> '; // forced!
+$notok = ' <img src="' . serendipity_getTemplateFile('img/fehler.gif', 'serendipityHTTPPath', true). '" alt="" /> '; // forced!
 
-$sbmtarget      = array ("self Window","new Window", "new Window with nofollow");
-$menuepsition   = array("side-bar-top","side-bar-bottom", "feature-bar-top",  "feature-bar-bottom","news-bar-top","news-bar-bottom","news-bar-middle","footer-l","footer-m","footer-r","footer-b","disable");
+$sbmtarget      = array ('self Window', 'new Window', 'new Window with nofollow');
+$menupsition   = array('side-bar-top', 'side-bar-bottom', 'feature-bar-top', 'feature-bar-bottom', 'news-bar-top', 'news-bar-bottom', 'news-bar-middle', 'footer-l', 'footer-m', 'footer-r', 'footer-b', 'disable');
 $installation   = 'Template Check:<br>';
-$bannerposition = array( "top1",  "top2","bottom1","bottom2","disable");
-$leftsidebarpos = array("footer-l","footer-m","footer-r","footer-b","disable");
+$bannerposition = array( 'top1', 'top2', 'bottom1', 'bottom2', 'disable');
+$leftsidebarpos = array('footer-l', 'footer-m', 'footer-r', 'footer-b', 'disable');
 
 if (class_exists('serendipity_event_freetag'))  {
-    $inst_ok = $istok.' <span>OK:serendipity_event_freetag Plugin </span> <br>';
+    $inst_ok = $istok . ' <span>OK: serendipity_event_freetag Plugin </span> <br>';
 } else {
-    $inst_ok = $notok.' <span>MISSING: serendipity_event_freetag Plugin </span> <br>';
+    $inst_ok = $notok . ' <span>MISSING: serendipity_event_freetag Plugin </span> <br>';
 }
 if (class_exists('serendipity_event_entryproperties'))  {
-    $inst_ok = $inst_ok.$istok.' <span>OK:serendipity_event_entryproperties Plugin ';
+    $inst_ok = $inst_ok . $istok . ' <span>OK: serendipity_event_entryproperties Plugin ';
 
     $check = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}config WHERE name LIKE '%serendipity_event_entryproperties:%/customfields' AND value LIKE '%MimboImage%'");
     if (is_array($check) && isset($check[0]['config'])) {
-        $inst_ok = $inst_ok.  "Customfield Mimbo exists</span> <br>";
+        $inst_ok = $inst_ok.  "and customfield: Mimbo exists</span> <br>";
     } else {
-        $inst_ok = $inst_ok.  " Customfield?</span> <br>";
+        $inst_ok = $inst_ok.  "but has no customfield: Mimbo</span> <br>";
     }
+
 } else {
-    $inst_ok = $inst_ok.$notok.' <span>MISSING: serendipity_event_entryproperties Plugin </span> <br>';
+    $inst_ok = $inst_ok . $notok.' <span>MISSING: serendipity_event_entryproperties Plugin </span> <br>';
 }
 
 if (class_exists('serendipity_event_staticpage'))  {
-    $inst_ok = $inst_ok.$istok.' <span>OK:serendipity_plugin_staticpage Plugin </span> <br>';
+    $inst_ok = $inst_ok . $istok.' <span>OK: serendipity_plugin_staticpage Plugin </span> <br>';
 } else {
-    $inst_ok = $inst_ok.$notok.' <span>MISSING: serendipity_plugin_staticpage Plugin </span> <br>';
+    $inst_ok = $inst_ok . $notok.' <span>MISSING: serendipity_plugin_staticpage Plugin </span> <br>';
 }
 
-if ($serendipity['GET']['adminModule'] == 'templates' || $serendipity['POST']['adminModule'] == 'templates') {
-    if (is_array($all_cats = serendipity_fetchCategories('all'))) {
-        $categories = serendipity_walkRecursive($categories, 'categoryid', 'parentid', VIEWMODE_THREADED);
-        $catsel = array();
-        foreach($all_cats AS $cat) {
-            $catsel[$cat['categoryid']] = str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'];
-        }
-	}
+if (is_array($all_cats = serendipity_fetchCategories('all'))) {
+    $all_cats = serendipity_walkRecursive($all_cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
+    $catsel = array();
+    foreach($all_cats AS $cat) {
+        $catsel[$cat['categoryid']] = str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'];
+    }
 }
 
 $template_config = array(
@@ -75,7 +74,7 @@ $template_config = array(
        'default'       => 'true'
     ),
     array(
-       'var'           => 'enablehmenue',
+       'var'           => 'enablehmenu',
        'name'          => ENABLECAT_HMENUE,
        'type'          => 'boolean',
        'default'       => 'true'
@@ -275,11 +274,11 @@ $template_config = array(
         'var'          => 'infotkm',
         'name'         => 'infotkm',
         'type'         => 'custom',
-        'custom'       => INFO_TABKLOTZAMOUNT,
+        'custom'       => INFO_TABNUGAMOUNT,
     ),
     array(
-         'var'         => 'tabklotzamount',
-         'name'        => TABKLOTZ_AMOUNT,
+         'var'         => 'nugamount',
+         'name'        => TABNUG_AMOUNT,
          'type'        => 'string',
          'default'     => '0',
     ),
@@ -302,7 +301,7 @@ $template_config = array(
         'custom'       => INFO_SBARMENUESAMOUNT,
     ),
     array(
-        'var'          => 'sidebbarmenuesamount',
+        'var'          => 'sidebbarmenusamount',
         'name'         => SBMENUES_AMOUNT,
          'type'        => 'string',
         'default'      => '0',
@@ -310,148 +309,150 @@ $template_config = array(
 
 );
 
+$top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
 $template_config_groups = NULL;
+$template_global_config = array('navigation' => false);
+$template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
+serendipity_loadGlobalThemeOptions($template_config, $template_loaded_config, $template_global_config);
 
-$template_loaded_config = serendipity_loadThemeOptions($template_config, $serendipity['smarty_vars']['template_option']);
-
-$sbmenue1 = array();
-for ($i = 0; $i < $template_loaded_config['sidebbarmenuesamount']; $i++) {
+$sbmenu1 = array();
+for ($i = 0; $i < $template_loaded_config['sidebbarmenusamount']; $i++) {
     $template_config[] = array(
-        'var'           => 'menue1' . $i . 'sbmenue_info',
+        'var'           => 'menu1' . $i . 'sbmenu_info',
         'type'          => 'content',
         'default'       => '<b><p style="color:#FFFFFF; background-color: red">'. SBMENUE_TITLE . ' #' . $i .'</p></b>' ,
         );
     $template_config[] = array(
-        'var'           => 'menue1' . $i . 'text',
+        'var'           => 'menu1' . $i . 'text',
         'name'          => SBHEADER_TEXT,
         'type'          => 'string',
-        'default'       => 'Menue #' . $i,
+        'default'       => 'Menu #' . $i,
         );
     $template_config[] = array(
-        'var'           => 'menue1' . $i . 'url',
+        'var'           => 'menu1' . $i . 'url',
         'name'          => SBHEADER_URL,
         'type'          => 'string',
         'default'       => '#',
     );
     $template_config[] = array(
-        'var'           => 'menue1' . $i . 'target',
+        'var'           => 'menu1' . $i . 'target',
         'name'          => SB_TARGET,
         'type'          => 'select',
         'select_values' => $sbmtarget,
     );
     $template_config[] = array(
-        'var'           => 'menue1' . $i . 'sitenav1_amount',
+        'var'           => 'menu1' . $i . 'sitenav1_amount',
         'name'          => SIDEBARMENUE_AMOUNT,
         'type'          => 'string',
         'default'       => '0',
         );
     $template_config[] = array(
-        'var'           => 'menue1' . $i . 'position',
+        'var'           => 'menu1' . $i . 'position',
         'name'          => SB_POSITION,
         'type'          => 'select',
-        'select_values' => $menuepsition,
+        'select_values' => $menupsition,
     );
-    $menuepoints = array();
-    for ($s = 0; $s < $template_loaded_config['menue1' . $i . 'sitenav1_amount']; $s++) {
+    $menupoints = array();
+    for ($s = 0; $s < $template_loaded_config['menu1' . $i . 'sitenav1_amount']; $s++) {
         $template_config[] = array(
-        'var'           => 'menue1' . $i . 'menuepoint' . $s . 'text',
+        'var'           => 'menu1' . $i . 'menupoint' . $s . 'text',
         'name'          => SIDEBARMENUE_TEXT . ' #'. $s,
         'type'          => 'string',
-        'default'       => 'Menue #' . $s.' link #' . $i ,
+        'default'       => 'Menu #' . $s.' link #' . $i ,
             );
     $template_config[] = array(
-        'var'           => 'menue1' . $i . 'menuepoint' . $s . 'url',
+        'var'           => 'menu1' . $i . 'menupoint' . $s . 'url',
         'name'          => SIDEBARMENUE_URL . ' #'. $s,
         'type'          => 'string',
         'default'       => '#',
             );
     $template_config[] = array(
-        'var'           => 'menue1' . $i . 'menuepoint' . $s . 'target',
+        'var'           => 'menu1' . $i . 'menupoint' . $s . 'target',
         'name'          => SB_TARGET . ' #'. $s,
         'type'          => 'select',
         'select_values' => $sbmtarget,
             );
-    $menuepoints[] = array(
-        'title'         => $template_loaded_config['menue1' . $i . 'menuepoint' . $s . 'text'],
-        'href'          => $template_loaded_config['menue1' . $i . 'menuepoint' . $s . 'url'],
-        'target'        => $template_loaded_config['menue1' . $i . 'menuepoint' . $s . 'target'],
+    $menupoints[] = array(
+        'title'         => $template_loaded_config['menu1' . $i . 'menupoint' . $s . 'text'],
+        'href'          => $template_loaded_config['menu1' . $i . 'menupoint' . $s . 'url'],
+        'target'        => $template_loaded_config['menu1' . $i . 'menupoint' . $s . 'target'],
             );
     }
-    $sbmenue1[] = array(
-        'sbmenue_info'  => $template_loaded_config['menue1' . $i . 'sbmenue_info'],
-        'title'         => $template_loaded_config['menue1' . $i . 'text'],
-        'href'          => $template_loaded_config['menue1' . $i . 'url'],
-        'target'        => $template_loaded_config['menue1' . $i . 'target'],
-        'position'      => $template_loaded_config['menue1' . $i . 'position'],
-        'menuepoints'   => $menuepoints,
+    $sbmenu1[] = array(
+        'sbmenu_info'  => $template_loaded_config['menu1' . $i . 'sbmenu_info'],
+        'title'        => $template_loaded_config['menu1' . $i . 'text'],
+        'href'         => $template_loaded_config['menu1' . $i . 'url'],
+        'target'       => $template_loaded_config['menu1' . $i . 'target'],
+        'position'     => $template_loaded_config['menu1' . $i . 'position'],
+        'menupoints'   => $menupoints,
     );
 }
-$serendipity['smarty']->assignByRef('sbmenue1', $sbmenue1);
+$serendipity['smarty']->assignByRef('sbmenu1', $sbmenu1);
 
-$tabklotz1 = array();
-for ($i = 0; $i < $template_loaded_config['tabklotzamount']; $i++) {
+$nug1 = array();
+for ($i = 0; $i < $template_loaded_config['nugamount']; $i++) {
     $template_config[] = array(
-        'var'           => 'tabk1' . $i . 'tabk_info',
+        'var'           => 'tabnug1' . $i . 'tabnug_info',
         'type'          => 'content',
-        'default'       => '<b><p style="color:#FFFFFF; background-color: orange">'. TABKLOTZ_TITLE . ' #' . $i .'</p></b>' ,
+        'default'       => '<p style="color:#FFFFFF; background-color: orange"><b>'. TABNUG_TITLE . ' #' . $i .'</b></p>' ,
         );
 
     $template_config[] = array(
-        'var'           => 'tabk1' . $i . 'tabklotzname',
-        'name'          => KLOTZWIN_NAME,
+        'var'           => 'tabnug1' . $i . 'nugname',
+        'name'          => NUGWIN_NAME,
         'type'          => 'string',
-        'default'       => 'Klotz'.$i,
+        'default'       => 'Nug'.$i,
         );
     $template_config[] = array(
-        'var'           => 'tabk1' . $i . 'tabk1_amount',
+        'var'           => 'tabnug1' . $i . 'tabnug1_amount',
         'name'          => SIDEBARMENUE_AMOUNT,
         'type'          => 'string',
         'default'       => '0',
         );
     $template_config[] = array(
-        'var'           => 'tabk1' . $i . 'position',
-        'name'          => TABKLOTZ_POSITION,
+        'var'           => 'tabnug1' . $i . 'position',
+        'name'          => TABNUG_POSITION,
         'type'          => 'select',
-        'select_values' => $menuepsition,
+        'select_values' => $menupsition,
         );
     $template_config[] = array(
-        'var'           => 'tabk1' . $i . 'tabk1_height',
-        'name'          => TABKLOTZ_HEIGHT,
+        'var'           => 'tabnug1' . $i . 'tabnug1_height',
+        'name'          => TABNUG_HEIGHT,
         'type'          => 'string',
         'default'       => '100',
        );
     $tabs = array();
-    for ($s = 0; $s < $template_loaded_config['tabk1' . $i . 'tabk1_amount']; $s++) {
+    for ($s = 0; $s < $template_loaded_config['tabnug1' . $i . 'tabnug1_amount']; $s++) {
         $template_config[] = array(
-        'var'           => 'tabk1' . $i . 'tabpoint' . $s . 'text',
+        'var'           => 'tabnug1' . $i . 'tabpoint' . $s . 'text',
         'name'          => TABHEADER . ' #'. $s,
         'type'          => 'string',
         'default'       => 'Tab #' . $s ,
             );
 
     $template_config[] = array(
-        'var'           => 'tabk1' . $i . 'tabpoint' . $s . 'tabtext',
+        'var'           => 'tabnug1' . $i . 'tabpoint' . $s . 'tabtext',
         'name'          => TABTEXT . ' #'. $s,
         'type'          => 'text',
         'select_values' => '',
             );
     $tabs[] = array(
-        'title'     => $template_loaded_config['tabk1' . $i . 'tabpoint' . $s . 'text'],
-        'tabstext'    => $template_loaded_config['tabk1' . $i . 'tabpoint' . $s . 'tabtext'],
+        'title'     => $template_loaded_config['tabnug1' . $i . 'tabpoint' . $s . 'text'],
+        'tabstext'  => $template_loaded_config['tabnug1' . $i . 'tabpoint' . $s . 'tabtext'],
 
             );
     }
-    $tabklotz1[] = array(
-        'tabk_info'     => $template_loaded_config['tabk1' . $i . 'tabk_info'],
-        'tabklotzname'     => $template_loaded_config['tabk1' . $i . 'tabklotzname'],
-        'position'      => $template_loaded_config['tabk1' . $i . 'position'],
+    $nug1[] = array(
+        'tabnug_info'   => $template_loaded_config['tabnug1' . $i . 'tabnug_info'],
+        'nugname'       => $template_loaded_config['tabnug1' . $i . 'nugname'],
+        'position'      => $template_loaded_config['tabnug1' . $i . 'position'],
         'tabs'          => $tabs,
-        'tabk1amount'  => $template_loaded_config['tabk1' . $i . 'tabk1_amount'],
-        'tabwinheight'  => $template_loaded_config['tabk1' . $i . 'tabk1_height'],
+        'tabnug1amount' => $template_loaded_config['tabnug1' . $i . 'tabnug1_amount'],
+        'tabwinheight'  => $template_loaded_config['tabnug1' . $i . 'tabnug1_height'],
 
     );
 }
-$serendipity['smarty']->assignByRef('tabklotz1', $tabklotz1);
+$serendipity['smarty']->assignByRef('nug1', $nug1);
 
 $navlinks = array();
 for ($i = 0; $i < $template_loaded_config['amount']; $i++) {
@@ -543,25 +544,17 @@ for ($i = 0; $i < $template_loaded_config['amount']; $i++) {
         'select_values' => $bannerposition,
         );
    $catlinks[] = array(
-        'title'      => $template_loaded_config['catlink' . $i . 'text'],
-        'catlinkinfo'=> $template_loaded_config['navlink' . $i . 'catlink_info'],
-        'bild'       => $template_loaded_config['catlink' . $i . 'url'],
-        'catt'       => $template_loaded_config['catlink' . $i . 'catselect'],
-        'position'   => $template_loaded_config['catlink' . $i . 'position'],
+        'title'       => $template_loaded_config['catlink' . $i . 'text'],
+        'catlinkinfo' => $template_loaded_config['navlink' . $i . 'catlink_info'],
+        'image'       => $template_loaded_config['catlink' . $i . 'url'],
+        'catt'        => $template_loaded_config['catlink' . $i . 'catselect'],
+        'position'    => $template_loaded_config['catlink' . $i . 'position'],
 
     );
 }
 
 $serendipity['smarty']->assignByRef('catlinks', $catlinks);
 
-/* disabled, as possible doublette of LINE 50
- $all_cats = serendipity_fetchCategories('all');
- $categories = serendipity_walkRecursive($categories, 'categoryid', 'parentid', VIEWMODE_THREADED);
- $catsel = array();
- foreach($all_cats AS $cat) {
-   $catsel[$cat['categoryid']] = str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'];
- }*/
- 
-$serendipity['smarty']->assign('tabx1_cat', $catsel[$template_loaded_config['tabx1']]);
-$serendipity['smarty']->assign('tabx2_cat', $catsel[$template_loaded_config['tabx2']]);
-$serendipity['smarty']->assign('tabx3_cat', $catsel[$template_loaded_config['tabx3']]);
+$serendipity['smarty']->assign('tabx1_cat', isset($catsel[$template_loaded_config['tabx1']]) ? $catsel[$template_loaded_config['tabx1']] : array());
+$serendipity['smarty']->assign('tabx2_cat', isset($catsel[$template_loaded_config['tabx2']]) ? $catsel[$template_loaded_config['tabx2']] : array());
+$serendipity['smarty']->assign('tabx3_cat', isset($catsel[$template_loaded_config['tabx3']]) ? $catsel[$template_loaded_config['tabx3']] : array());

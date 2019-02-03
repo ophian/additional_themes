@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 ul.dropdown,
 ul.dropdown li,
 ul.dropdown ul {
@@ -19,7 +18,6 @@ ul.dropdown li {
  float: left;
  line-height: 1.3em;
  vertical-align: middle;
- 
 }
 
 ul.dropdown li.hover,
@@ -50,10 +48,6 @@ ul.dropdown ul ul {
 ul.dropdown li:hover > ul {
  visibility: visible;
 }
-
-
-
-
 
 ul.dropdown li.rtl ul {
  top: 100%;

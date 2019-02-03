@@ -1,2 +1,2 @@
  
-<img alt="" height="108" src="{$catlink.bild}" width="610" />
+<img alt="" height="108" src="{$catlink.image}" width="610" />

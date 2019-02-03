@@ -1,4 +1,4 @@
-<div class="post">
+<div id="staticpage_{$staticpage_pagetitle|makeFilename}" class="clearfloat serendipity_staticpage{if $staticpage_articleformat} serendipity_entry post{/if}">
     <h2>{$staticpage_headline|escape}</h2>
 
 {if $staticpage_pass AND $staticpage_form_pass != $staticpage_pass}

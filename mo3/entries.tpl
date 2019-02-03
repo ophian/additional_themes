@@ -3,11 +3,11 @@
 {if NOT empty($entries)}{* catch a staticpage startpage which has no $entries array set *}
     {foreach $entries AS $dategroup}
         {foreach $dategroup.entries AS $entry}
-            {assign var="entry" value=$entry scope="root"}
-    <div class="post">
+            {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
+    <div class="serendipity_entry post">
         <h3><a class="title2" href="{$entry.link}" rel="bookmark">{$entry.title|default:$entry.id}</a></h3>
 
-        <small>{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> &bull; {$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}{if $entry.categories} &bull; {$CONST.CATEGORY}: {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}{/if}{if $dategroup.is_sticky} &bull; {$CONST.STICKY_POSTINGS}{/if}{if $entry.is_entry_owner AND NOT $is_preview} &bull; <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}</small>
+        <small>{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> &bull; {$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}{if NOT empty($entry.categories)} &bull; {$CONST.CATEGORY}: {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}{/if}{if $dategroup.is_sticky} &bull; {$CONST.STICKY_POSTINGS}{/if}{if NOT empty($entry.is_entry_owner) AND NOT $is_preview} &bull; <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}</small>
 
         <div class="entry">
         {$entry.body}
@@ -21,9 +21,10 @@
 {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
         <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
 {/if}
-        {$entry.add_footer}
+        {if NOT $is_preview}{$entry.add_footer|default:''}{/if}
         </div>
     </div>
+        {if NOT $is_preview}
 
         <!--
         <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -37,6 +38,7 @@
         </rdf:RDF>
         -->
         {$entry.plugin_display_dat}
+        {/if}
 
         {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
@@ -64,10 +66,11 @@
                 <h3 id="trackbacks">{$entry.trackbacks} {$CONST.TRACKBACKS}</h3>
 
                 <div class="serendipity_center">
-                    <a rel="nofollow" style="font-weight: normal" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
+                    <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
                 </div>
-
-                {serendipity_printTrackbacks entry=$entry.id}
+                <div id="serendipity_trackbacklist">
+                    {serendipity_printTrackbacks entry=$entry.id}
+                </div>
             </div>
         {/if}
 
@@ -86,7 +89,7 @@
 
                 {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
 
-                {if $entry.is_entry_owner}
+                {if NOT empty($entry.is_entry_owner)}
                     {if $entry.allow_comments}
                     <div class="serendipity_center">(<a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>)</div>
                     {else}
@@ -109,7 +112,7 @@
                 <div class="serendipity_section_commentform">
                     <h3 id="respond">{$CONST.ADD_COMMENT}</h3>
                     {$COMMENTFORM}
-        </div>
+                </div>
                 {/if}
             </div>
         {/if}
@@ -122,19 +125,14 @@
     {/if}
 {/if}
 
-    <div class="serendipity_pageFooter" style="text-align: center">
-    {if $footer_prev_page}
-        <a href="{$footer_prev_page}">&laquo;&#160;{$CONST.PREVIOUS_PAGE}</a>&#160;&#160;
-    {/if}
-
-    {if $footer_info}
-        ({$footer_info})
-    {/if}
-
-    {if $footer_next_page}
-        &#160;&#160;<a href="{$footer_next_page}">{$CONST.NEXT_PAGE}&#160;&raquo;</a>
-    {/if}
+    <div class="serendipity_entryFooter">
+{if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
+    {if $footer_prev_page}<a href="{$footer_prev_page}">{/if}{if $footer_prev_page}&#9668; {$CONST.PREVIOUS_PAGE}{else}&nbsp;{/if}{if $footer_prev_page}</a>{/if}
+    {if NOT empty($footer_info)}({$footer_info}){/if}
+    {if $footer_next_page}<a href="{$footer_next_page}">{/if}{if $footer_next_page}{$CONST.NEXT_PAGE} &#9658;{else}&nbsp;{/if}{if $footer_next_page}</a>{/if}
+{/if}
 
     {serendipity_hookPlugin hook="entries_footer"}
     </div>
+
 <!-- ENTRIES END -->
