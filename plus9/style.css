@@ -214,7 +214,7 @@ body.save_preview_body {
 .serendipity_imageComment_left,
 .serendipity_imageComment_right {
     border: 1px solid #DDD;
-    background-color: #EFE;
+    background-color: #EFEFEF;
     margin: 0.25em;
     padding: 0.25em;
     text-align: center;
@@ -1277,7 +1277,7 @@ table.serendipity_calendar a  {
     border:0;
 }
 
-#rlmenuefr {
+#rlmenufr {
     position: absolute;
     width: 100%;
     height: 23px;
@@ -1286,7 +1286,7 @@ table.serendipity_calendar a  {
     top: 140px;
 }
     
-#rlmenue  {
+#rlmenu  {
     padding: 0px;
     margin: 0px;
     background-position: center;
@@ -1295,12 +1295,12 @@ table.serendipity_calendar a  {
     height: 23px;
 }
 
-#rlmenue ul {
+#rlmenu ul {
     padding: 0px;
     margin: 0px;
 }
 
-#rlmenue ul li {
+#rlmenu ul li {
     padding:0;
     font-family: Arial, Helvetica, Sans-Serif;
     font-size: 0.9em;
@@ -1312,13 +1312,13 @@ table.serendipity_calendar a  {
     width: 90px;
     display: block;
 }
-#rlmenue ul li ul li {
+#rlmenu ul li ul li {
     padding: 0 10px;
     width: 180px;
     display: inline-block;
     background: #444;
 }
-#rlmenue ul li a {
+#rlmenu ul li a {
     padding:0;
     background-color: #414141;
     color: #FFFFFF;
@@ -1328,24 +1328,24 @@ table.serendipity_calendar a  {
     display: inline-block;
 }
 
-#rlmenue ul li a:hover {
+#rlmenu ul li a:hover {
     background-color: #000000;
 }
 
-#rlmenue ul li ul li a {
+#rlmenu ul li ul li a {
     background-color: #414141;
     background-image: none;
 }
 
-#rlmenue ul li ul li a:hover {
+#rlmenu ul li ul li a:hover {
     background-color: #000000;
 }
 
-#rlmenue ul li ul {
+#rlmenu ul li ul {
     visibility: hidden;
 }
 
-#rlmenue ul li:hover ul {
+#rlmenu ul li:hover ul {
     visibility: visible;
 }
 

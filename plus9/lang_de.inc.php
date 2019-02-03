@@ -1,6 +1,6 @@
 <?php
 
-@define('J_INSTR', '<b>zu installierende Plugins:</b> Damit das Menue korrekt funktioniert, müssen folgende Plugins installiert sein: <em><br>Archive </em>(Spalte versteckt) <br>- <strong>Anzahl der Einträge pro Kategorie anzeigen?&nbsp; Nein <br>- Versteckt den Archiv-Link, wenn es keine Einträge für einen Zeitraum gab:&nbsp; Nein<br><br></strong>K<em><strong>ategorien </strong></em><strong><br>- XML-Button</strong> :none<br><strong>- Besuchern erlauben, mehrere Kategorien gleichzeit darzustellen? Nein</strong><br>-<strong>Smarty-Templating aktivieren?</strong>&nbsp; Ja<br /><br /><b>Hinweis:</b> Damit im Template die Anzeige der Tags korrekt funktioniert, muss in der Konfiguration des Event-Plugins <em>Freie Artikel-Tags</em> die Option <em>Zeige die Tags in der Fußzeile an?</em> auf <em>Smarty</em> gesetzt werden');
+@define('J_INSTR', '<b>zu installierende Plugins:</b> Damit das Menü korrekt funktioniert, müssen folgende Plugins installiert sein: <em><br>Archive </em>(Spalte versteckt) <br>- <strong>Anzahl der Einträge pro Kategorie anzeigen?&nbsp; Nein <br>- Versteckt den Archiv-Link, wenn es keine Einträge für einen Zeitraum gab:&nbsp; Nein<br><br></strong>K<em><strong>ategorien </strong></em><strong><br>- XML-Button</strong> :none<br><strong>- Besuchern erlauben, mehrere Kategorien gleichzeit darzustellen? Nein</strong><br>-<strong>Smarty-Templating aktivieren?</strong>&nbsp; Ja<br /><br /><b>Hinweis:</b> Damit im Template die Anzeige der Tags korrekt funktioniert, muss in der Konfiguration des Event-Plugins <em>Freie Artikel-Tags</em> die Option <em>Zeige die Tags in der Fußzeile an?</em> auf <em>Smarty</em> gesetzt werden');
 @define('J_MENUTITLE', 'Titel für das Menü in der Seitenleiste');
 @define('J_MENUTEXT', 'Seiten');
 @define('J_SEARCHFIELD', 'Suchbegriffe eingeben');
@@ -23,8 +23,8 @@
 @define('ENABLE_CAT', 'Anzeige der Kategorien im Menue');
 @define('ENABLE_ARCH', 'Anzeige der Archive im Menue');
 @define('ENABLE_STAT', 'Anzeige der statischen Seiten im Menue');
-@define('ENABLE_USER', 'Anzeige des User Drop Down Menue Punkts. (Einträge und Anzahl weiter unten)');
-@define('ENABLE_LOG', 'Anzeige des Login und Verwaltungsmenues im Menue');
+@define('ENABLE_USER', 'Anzeige des User Drop Down Menü Punktes. (Einträge und Anzahl weiter unten)');
+@define('ENABLE_LOG', 'Anzeige des Login und Verwaltungsmenus im Menue');
 @define('STAT_HEADER', 'Beschriftung Drop Down Menüpunkt der statischen Seiten');
 @define('MY_ADDTHIS_ACCOUNT', 'Dein AddThis.com Name. Hast Du keinen mach Dir dort einen');
 @define('ENABLE_AD', 'Anzeige des ADDTHIS Buttons?');

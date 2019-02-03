@@ -32,8 +32,8 @@
 
 {if $is_raw_mode != true}
 <div id="container" class="group">
-    <div id="rlmenuefr">
-        <div id="rlmenue">
+    <div id="rlmenufr">
+        <div id="rlmenu">
             <ul>
                 <li><a href="{$serendipityBaseURL}index.php">Home</a></li>
             {if NOT empty($template_option.enablecat)}
