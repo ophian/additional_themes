@@ -46,7 +46,7 @@
             | <a href="{$entry.url_shorturl}" title="{$CONST.TWOK11_SHORT_URL_HINT}" class="short-url">{$CONST.TWOK11_SHORT_URL}</a>
         {/if}
             {$entry.add_footer|default:''}
-            {if $entry.is_entry_owner AND NOT $is_preview} | <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
+            {if NOT empty($entry.is_entry_owner) AND NOT $is_preview} | <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
         </footer>
 
         <!--
@@ -88,7 +88,7 @@
             <h3>{$CONST.COMMENTS}</h3>
 
             {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
-        {if $entry.is_entry_owner}
+        {if NOT empty($entry.is_entry_owner)}
             <p class="manage_comments">
             {if $entry.allow_comments}
             <a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>
