@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
+<html lang="{$lang}">
     <head>
         <title>{$CONST.SERENDIPITY_ADMIN_SUITE}</title>
         <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
