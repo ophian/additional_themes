@@ -1,43 +1,36 @@
-{if $is_xhtml}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-{else}
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-           "http://www.w3.org/TR/html4/loose.dtd">
-{/if}
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
+<!DOCTYPE html>
+<html lang="{$lang}">
 <head>
     <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
-    <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-    <link rel="stylesheet" type="text/css" href="{$serendipityHTTPPath}serendipity.css.php" />
-    <link rel="alternate"  type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2" />
-    <link rel="alternate"  type="application/x.atom+xml"  title="{$blogTitle} Atom feed"  href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/atom.xml" />
+    <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}">
+    <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
+    <link rel="stylesheet" type="text/css" href="{$serendipityHTTPPath}serendipity.css.php">
+    <link rel="alternate"  type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2">
+    <link rel="alternate"  type="application/x.atom+xml"  title="{$blogTitle} Atom feed"  href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/atom.xml">
 </head>
 
 <body class="s9y_wrap" id="serendipity_comment_page">
 
 {if $is_comment_added}
 
-    {$CONST.COMMENT_ADDED}{$comment_string.0}<a href="{$comment_url}">{$comment_string.1}</a>{$comment_string.2}<a href="#" onclick="self.close()">{$comment_string.3}</a>{$comment_string.4}
+    <div class="popup_comments_message popup_comments_message_added">{$CONST.COMMENT_ADDED}{$comment_string.0}<a href="{$comment_url}">{$comment_string.1}</a>{$comment_string.2}<a href="#" onclick="self.close()">{$comment_string.3}</a>{$comment_string.4}</div>
 
 {elseif $is_comment_notadded}
 
-    {$CONST.COMMENT_NOT_ADDED}{$comment_string.0}<a href="{$comment_url}">{$comment_string.1}</a>{$comment_string.2}<a href="#" onclick="self.close()">{$comment_string.3}</a>{$comment_string.4}
+    <div class="popup_comments_message popup_comments_message_notadded">{$CONST.COMMENT_NOT_ADDED}{$comment_string.0}<a href="{$comment_url}">{$comment_string.1}</a>{$comment_string.2}<a href="#" onclick="self.close()">{$comment_string.3}</a>{$comment_string.4}</div>
 
 {elseif $is_comment_empty}
 
-    {$comment_string.0}<a href="#" onclick="history.go(-1)">{$comment_string.1}</a>
+    <div class="popup_comments_message popup_comments_message_empty">{$comment_string.0}<a href="#" onclick="history.go(-1)">{$comment_string.1}</a>{$comment_string.2}</div>
 
 {elseif $is_showtrackbacks}
 
-    <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div><br />
+    <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
     <dl>
-        <dt><b>{$CONST.TRACKBACK_SPECIFIC}:</b><br /></dt>
-        <dd><a rel="nofollow" href="{$comment_url}">{$comment_url}</a><br /></dd>
+        <dt><strong>{$CONST.TRACKBACK_SPECIFIC}:</strong></dt>
+        <dd><a rel="nofollow" href="{$comment_url}">{$comment_url}</a></dd>
 
-        <dt><b>{$CONST.DIRECT_LINK}:</b><br /></dt>
+        <dt><strong>{$CONST.DIRECT_LINK}:</strong></dt>
         <dd><a href="{$comment_entryurl}">{$comment_entryurl}</a></dd>
     </dl>
 

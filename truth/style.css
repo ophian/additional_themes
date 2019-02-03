@@ -246,17 +246,11 @@ h4,h3 {
     width: auto;
 }
 
-#serendipityLeftSideBar {
-    min-width: 170px;
-    width: 200px;
-    border-right: 1px dashed #ffffff;
-    padding: 10px;
-    vertical-align: top;
-}
-
+#serendipityLeftSideBar,
 #serendipityRightSideBar {
-    min-width: 170px;
-    border-left: 1px dashed #ffffff;
+    min-width: 180px;
+    max-width: 280px;
+    border-right: 1px dashed #ffffff;
     padding: 10px;
     vertical-align: top;
 }
