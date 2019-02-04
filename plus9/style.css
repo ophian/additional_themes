@@ -206,6 +206,13 @@ body.save_preview_body {
     visibility: hidden; }
 
 
+/* SMALL SCREENS ONLY */
+@media only screen and (max-width: 551px) {
+    .serendipity_image_block.col .serendipity_image_link {
+        margin: 0;
+    }
+}
+
 /* Modernizing Serendipity Styx default styles END */
 
 
