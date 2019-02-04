@@ -58,12 +58,12 @@
         </div>
 
         <div id="mainpane">
+            <div id="content">
+                {$CONTENT}
+            </div>
             <div id="sidebar">
                 {serendipity_printSidebar side="left"}
                 {serendipity_printSidebar side="right"}
-            </div>
-            <div id="content">
-                {$CONTENT}
             </div>
         </div>
     </div>
