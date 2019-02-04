@@ -27,11 +27,11 @@
 </div>
 
 {if $staticpage_navigation AND $staticpage_shownavi}
-    <table border="0" cellpadding="2" cellspacing="2" width="100%" class="staticpage_navigation">
+    <table class="staticpage_navigation">
         <tr>
-            <td class="staticpage_navigation_left"   style="width: 20%"><a href="{$staticpage_navigation.prev.link}" title="prev">{$staticpage_navigation.prev.name|escape}</a></td>
-            <td class="staticpage_navigation_center" style="width: 60%; text-align: center"><a href="{$staticpage_navigation.top.link}" title="top">{$staticpage_navigation.top.name|escape}</a></td>
-            <td class="staticpage_navigation_right"  style="width: 20%; text-align: right"><a href="{$staticpage_navigation.next.link}" title="next">{$staticpage_navigation.next.name|escape}</a></td>
+            <td class="staticpage_navigation_left"><a href="{$staticpage_navigation.prev.link}" title="prev">{$staticpage_navigation.prev.name|escape}</a></td>
+            <td class="staticpage_navigation_center"><a href="{$staticpage_navigation.top.link}" title="top">{$staticpage_navigation.top.name|escape}</a></td>
+            <td class="staticpage_navigation_right"><a href="{$staticpage_navigation.next.link}" title="next">{$staticpage_navigation.next.name|escape}</a></td>
         </tr>
     <tr>
         <td class="staticpage_navigation_center">

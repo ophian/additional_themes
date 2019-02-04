@@ -3,10 +3,9 @@
 {/if}
 <ul class="sidelist">
 {foreach $plugindata AS $item}
-   {if $item.class == "serendipity_quicksearch_plugin"}
-   {else}
+   {if $item.class != "serendipity_quicksearch_plugin"}
     <li>
-       {if $item.title != ""}<h3>{$item.title}</h3>{/if}
+       {if NOT empty($item.title)}<h3>{$item.title}</h3>{/if}
        {$item.content}
     </li>
     {/if}

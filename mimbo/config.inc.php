@@ -7,14 +7,12 @@ if (IN_serendipity !== true) { die ("Don't hack!"); }
 $serendipity['smarty']->assign(array('currpage'  => "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],
                                      'currpage2' => $_SERVER['REQUEST_URI']));
 
-if ($serendipity['GET']['adminModule'] == 'templates' || $serendipity['POST']['adminModule'] == 'templates') {
-    if (is_array($all_cats = serendipity_fetchCategories('all'))) {
-        $categories = serendipity_walkRecursive($categories, 'categoryid', 'parentid', VIEWMODE_THREADED);
-        $catsel = array();
-        foreach($all_cats AS $cat) {
-            $catsel[$cat['categoryid']] = str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'];
-        }
-  }
+if (is_array($all_cats = serendipity_fetchCategories('all'))) {
+    $all_cats = serendipity_walkRecursive($all_cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
+    $catsel = array();
+    foreach($all_cats AS $cat) {
+        $catsel[$cat['categoryid']] = str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'];
+    }
 }
 
 $template_config = array(
@@ -72,6 +70,7 @@ $template_config_groups = NULL;
 $template_global_config = array('navigation' => true);
 $template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
 serendipity_loadGlobalThemeOptions($template_config, $template_loaded_config, $template_global_config);
+#print_r($template_config);
 
 if (isset($_SESSION['serendipityUseTemplate'])) {
     $template_loaded_config['use_corenav'] = false;

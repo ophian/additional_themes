@@ -1,4 +1,6 @@
-Name: Mimbo (2013-10-26)
+Name: Mimbo
 Author: Darren Hoyt, ported to s9y by Matthias 'YellowLed' Mees.
-Date: 2013-10-26
-Require Serendipity: 1.2
+Date: 2019-02-04
+
+Summary: Additional old, magazine like theme from 2009-04-01(?) to 2013-10-26 with a fixed size of ~900 pixels width.
+Description: Plugin dependency&colon; serendipity_event_entryproperties. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Inner responsive, but <u>not</u> mobile friendly!
