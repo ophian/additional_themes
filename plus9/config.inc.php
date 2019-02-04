@@ -13,28 +13,28 @@ $notok = ' <img src="' . serendipity_getTemplateFile('img/fehler.gif', 'serendip
 $installation = 'Template Check:<br>';
 
 if (class_exists('serendipity_event_freetag'))  {
-    $inst_ok = $istok . ' <span>OK: serendipity_event_freetag Plugin </span> <br>';
+    $inst_ok = $istok . ' <span>OK: serendipity_event_freetag Plugin </span><br>';
 } else {
-    $inst_ok = $notok . ' <span>MISSING: serendipity_event_freetag Plugin </span> <br>';
+    $inst_ok = $notok . ' <span>MISSING: serendipity_event_freetag Plugin </span><br>';
 }
 if (class_exists('serendipity_event_entryproperties'))  {
     $inst_ok = $inst_ok . $istok . ' <span>OK: serendipity_event_entryproperties Plugin ';
 
-    $check = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}config WHERE name LIKE '%serendipity_event_entryproperties:%/customfields' AND value LIKE '%MimboImage%'");
+    $check = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}config WHERE name LIKE '%serendipity_event_entryproperties:%/customfields' AND value LIKE '%MagazineCategoryImage%'");
     if (is_array($check) && isset($check[0]['config'])) {
-        $inst_ok = $inst_ok.  "and customfield: Mimbo exists</span> <br>";
+        $inst_ok = $inst_ok . ' and customfield: "MagazineCategoryImage" exists</span><br>';
     } else {
-        $inst_ok = $inst_ok.  "but has no customfield: Mimbo</span> <br>";
+        $inst_ok = $inst_ok . ', but has no customfield: "MagazineCategoryImage"</span><br>';
     }
 
 } else {
-    $inst_ok = $inst_ok . $notok.' <span>MISSING: serendipity_event_entryproperties Plugin </span> <br>';
+    $inst_ok = $inst_ok . $notok.' <span>MISSING: serendipity_event_entryproperties Plugin </span><br>';
 }
 
 if (class_exists('serendipity_event_staticpage'))  {
-    $inst_ok = $inst_ok . $istok.' <span>OK: serendipity_plugin_staticpage Plugin </span> <br>';
+    $inst_ok = $inst_ok . $istok.' <span>OK: serendipity_plugin_staticpage Plugin </span><br>';
 } else {
-    $inst_ok = $inst_ok . $notok.' <span>MISSING: serendipity_plugin_staticpage Plugin </span> <br>';
+    $inst_ok = $inst_ok . $notok.' <span>MISSING: serendipity_plugin_staticpage Plugin </span><br>';
 }
 
 $template_config = array(
