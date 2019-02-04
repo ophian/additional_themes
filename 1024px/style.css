@@ -218,6 +218,13 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
 .serendipity_date {
     text-align: right; }
 
+/* SMALL SCREENS ONLY */
+@media only screen and (max-width: 551px) {
+    .serendipity_image_block.col .serendipity_image_link {
+        margin: 0;
+    }
+}
+
 /* backend preview */
 #content.save_preview_content {
     background: #FFF;
