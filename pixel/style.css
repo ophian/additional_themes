@@ -218,6 +218,13 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
 #sidebars .serendipity_edit_nugget a {
   color: #6598b8; }
 
+/* SMALL SCREENS ONLY */
+@media only screen and (max-width: 551px) {
+    .serendipity_image_block.col .serendipity_image_link {
+        margin: 0;
+    }
+}
+
 /* backend preview */
 body.preview_preview_body {
     width: 96.5%;
