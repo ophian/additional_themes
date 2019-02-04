@@ -10,8 +10,8 @@
 {foreach $entries AS $dategroup}
 {foreach $dategroup.entries AS $entry}
     <div class="feature">
-{if NOT empty($entry.properties.ep_MimboImage)}
-        <a href="{$entry.link}" rel="bookmark" title="Permanent link: {$entry.title}"><img src="{$entry.properties.ep_MimboImage}" /></a>
+{if NOT empty($entry.properties.ep_MagazineCategoryImage)}
+        <a href="{$entry.link}" rel="bookmark" title="Permanent link: {$entry.title}"><img src="{$entry.properties.ep_MagazineCategoryImage}" /></a>
 {/if}
         <a class="title" href="{$entry.link}" rel="bookmark">{$entry.title|default:$entry.id}&raquo;</a>
     </div><!-- /.feature -->
