@@ -230,6 +230,12 @@ ul#serendipity_categories_list {
 #commentform input[type="checkbox"] {
     width: auto;
     padding: .0; }
+/* SMALL SCREENS ONLY */
+@media only screen and (max-width: 551px) {
+    .serendipity_image_block.col .serendipity_image_link {
+        margin: 0;
+    }
+}
 
 
 /* backend preview */
