@@ -133,7 +133,7 @@
                 <ul>
                 {if $template_option.enabletabx1 === true}
                     <li id="{$view3}">
-                        <a href="{$serendipityBaseURL}{getCategoryLinkByID cid=$template_option.tabx1}">
+                        <a href="{$serendipityBaseURL}{if isset($template_option.tabx1)}{getCategoryLinkByID cid=$template_option.tabx1}{/if}">
                             {assign var="view3" value="noselected"}
                             {if NOT empty($tabx1_cat)}{$tabx1_cat}{/if}
                         </a>
