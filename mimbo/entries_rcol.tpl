@@ -4,8 +4,8 @@
     <div class="clearfloat">
         <h3><a href="{foreach $entry.categories AS $entry_category}{$entry_category.category_link}{/foreach}">{foreach $entry.categories AS $entry_category}{$entry_category.category_name|escape}{/foreach}</a></h3>
 
-{if $entry.properties.ep_MimboImage != ''}
-        <a href="{$entry.link}" rel="bookmark" title="Permanent link: {$entry.title}"><img src="{$entry.properties.ep_MimboImage}" alt="{$entry.properties.ep_MimboImageAlt}" /></a>
+{if $entry.properties.ep_MagazineCategoryImage != ''}
+        <a href="{$entry.link}" rel="bookmark" title="Permanent link: {$entry.title}"><img src="{$entry.properties.ep_MagazineCategoryImage}" alt="{$entry.properties.ep_MagazineCategoryImageAlt}" /></a>
 {/if}
         <a class="title" href="{$entry.link}" rel="bookmark">{$entry.title|default:$entry.id}&raquo;</a>
 

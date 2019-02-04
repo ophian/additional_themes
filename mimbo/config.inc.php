@@ -7,6 +7,23 @@ if (IN_serendipity !== true) { die ("Don't hack!"); }
 $serendipity['smarty']->assign(array('currpage'  => "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],
                                      'currpage2' => $_SERVER['REQUEST_URI']));
 
+$istok = ' <img src="' . serendipity_getTemplateFile('img/ok.gif', 'serendipityHTTPPath', true). '" alt="" /> '; // forced!
+$notok = ' <img src="' . serendipity_getTemplateFile('img/fehler.gif', 'serendipityHTTPPath', true). '" alt="" /> '; // forced!
+
+if (class_exists('serendipity_event_entryproperties'))  {
+    $inst_ok = $istok . ' <span>OK: serendipity_event_entryproperties Plugin';
+
+    $check = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}config WHERE name LIKE '%serendipity_event_entryproperties:%/customfields' AND value LIKE '%MagazineCategoryImage%'");
+    if (is_array($check) && isset($check[0]['config'])) {
+        $inst_ok = $inst_ok.  ' and customfield: "MagazineCategoryImage" exists</span><br>';
+    } else {
+        $inst_ok = $inst_ok.  ', but has no customfield: "MagazineCategoryImage"</span><br>';
+    }
+
+} else {
+    $inst_ok = $inst_ok . $notok.' <span>MISSING: serendipity_event_entryproperties Plugin </span><br>';
+}
+
 if (is_array($all_cats = serendipity_fetchCategories('all'))) {
     $all_cats = serendipity_walkRecursive($all_cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
     $catsel = array();
@@ -21,6 +38,11 @@ $template_config = array(
       'name'          => 'infoxxx1',
       'type'          => 'custom',
       'custom'        => MIMBO_INSTR,
+    ),
+    array(
+        'var'          => 'installation_ok',
+        'type'         => 'content',
+        'default'      => $inst_ok,
     ),
     array(
       'var'           => 'catlead',
