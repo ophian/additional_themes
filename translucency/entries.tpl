@@ -6,7 +6,7 @@
         {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
 
         <div class="post-info">
-            <h1 class="serendipity_title">
+            <h2 class="serendipity_title">
         {if $dategroup.is_sticky}
             <span class="post-date">{$CONST.STICKY_POSTINGS}
         {else}
@@ -14,7 +14,7 @@
         {/if}
             <a href="{$entry.link}">{$entry.title|default:$entry.body|truncate:37:" ..."}</a>
             </span>
-            </h1>
+            </h2>
         </div>
         <div class="serendipity_entry_body">
             {$entry.body}
