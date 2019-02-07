@@ -83,6 +83,7 @@
                 {if NOT empty($entry.is_entry_owner) AND NOT $is_preview} | <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
             </footer>
         {/if}
+    {if NOT $is_preview}
         <!--
         <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
@@ -94,6 +95,7 @@
                  dc:identifier="{$entry.rdf_ident}" />
         </rdf:RDF>
         -->
+    {/if}
 
     {if $is_single_entry AND NOT $is_preview}
         {if $CONST.DATA_UNSUBSCRIBED}
