@@ -55,8 +55,6 @@
 
         <div class="addfooter">{$entry.add_footer|default:''}
 
-        <br/>
-
         {if $template_option.enable_ad== true}
             <script type="text/javascript">
                 addthis_url = '{$entry.rdf_ident|escape:url}';
@@ -67,7 +65,6 @@
         {/if}
 
         </div>
-        <br/>
 
         <!--
         <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -134,7 +131,7 @@
           {if $is_comment_added}
             <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}</div>
           {elseif $is_comment_moderate}
-            <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br />{$CONST.THIS_COMMENT_NEEDS_REVIEW}</div>
+            <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br>{$CONST.THIS_COMMENT_NEEDS_REVIEW}</div>
           {elseif not $entry.allow_comments}
             <div class="serendipity_center serendipity_msg_important">{$CONST.COMMENTS_CLOSED}</div>
           {else}
