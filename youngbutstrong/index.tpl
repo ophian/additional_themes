@@ -30,6 +30,7 @@
 {else}
 {serendipity_hookPlugin hook="frontend_header"}
 {/if}
+{if $is_raw_mode != true}
     <div id="container">
         <div id="logo">
             <h1><a href="{$serendipityBaseURL}"><span>{$head_title|default:$blogTitle}</span></a></h1>
@@ -66,7 +67,11 @@ If you remove them, you are not allowed to use this Theme anymore,
 you have to remove it then from your Blog !
 // -->
 
+{/if}
+{$raw_data}
+{serendipity_hookPlugin hook="frontend_footer"}
 {if $is_embedded != true}
 </body>
 </html>
 {/if}
+
