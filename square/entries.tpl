@@ -74,8 +74,10 @@
 
                 {$entry.add_footer|default:''}
             </div>
+        {/if}
 
         </div>
+        {if NOT $is_preview}
         <!--
         <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
