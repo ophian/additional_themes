@@ -253,8 +253,7 @@ ul.sidelist li {
 body.preview_preview_body,
 body.save_preview_body {
     background: inherit;
-    padding: inherit;
-    font-size: .6em; }
+    padding: inherit; }
 #content.preview_preview_content,
 #content.save_preview_content {
     float: inherit; }
