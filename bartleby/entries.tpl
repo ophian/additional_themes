@@ -23,6 +23,7 @@
             {/if}
         </div>
 
+        {if NOT $is_preview}
         <footer class="clearfix">
             <span class="single_user">{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.ON} </span><time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:$template_option.date_format}</time>
 
@@ -60,6 +61,7 @@
                  dc:identifier="{$entry.rdf_ident}" />
         </rdf:RDF>
         -->
+        {/if}
 
     {if $is_single_entry AND NOT $is_preview}
         {if $CONST.DATA_UNSUBSCRIBED}
