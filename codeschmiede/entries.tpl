@@ -40,7 +40,7 @@
             <div class="serendipity_entryFooter">
                 {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a>
                 {if $entry.categories}
-                   {$CONST.IN} {foreach $entry.categories AS $category}<a href="{$category.category_link}">{$category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
+                   {$CONST.IN} {foreach $entry.categories AS $category}<a href="{$category.category_link}">{$category.category_name|escape}</a>{if NOT $category@last}, {/if}{/foreach}
                 {/if}
 
                 {if $dategroup.is_sticky}
