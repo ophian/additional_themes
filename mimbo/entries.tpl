@@ -10,21 +10,22 @@
         <small>{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> &bull; {$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}{if NOT empty($entry.categories)} &bull; {$CONST.CATEGORY}: {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}{/if}{if $dategroup.is_sticky} &bull; {$CONST.STICKY_POSTINGS}{/if}{if NOT empty($entry.is_entry_owner) AND NOT $is_preview} &bull; <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}</small>
 
         <div class="entry">
-        {$entry.body}
+            {$entry.body}
 {if $entry.is_extended}
-        <div class="serendipity_entry_extended">
-            <a id="extended"></a>
-            {$entry.extended}
-        </div>
+            <div class="serendipity_entry_extended">
+                <a id="extended"></a>
+                {$entry.extended}
+            </div>
 {/if}
 {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-        <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
+            <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
 {/if}
-        {$entry.add_footer|default:''}
+            {if NOT $is_preview}{$entry.add_footer|default:''}{/if}
         </div>
     </div>
 
-        <!--
+    {if NOT $is_preview}
+       <!--
         <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
                  xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -36,6 +37,7 @@
         </rdf:RDF>
         -->
         {$entry.plugin_display_dat}
+    {/if}
 
         {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
