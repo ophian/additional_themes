@@ -38,15 +38,18 @@
                 <p><a class="more-link" href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
                 {/if}
 
+            {if NOT $is_preview}
                 <p class="submeta">
                     {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a>
                     {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}&bull; <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
                 </p>
                 {$entry.add_footer|default:''}
                 {$entry.plugin_display_dat}
+            {/if}
             </div><!-- /.entry -->
         </div><!-- /.post -->
 
+        {if NOT $is_preview}
         <!--
         <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
@@ -58,6 +61,7 @@
                  dc:identifier="{$entry.rdf_ident}" />
         </rdf:RDF>
         -->
+        {/if}
 
         {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
@@ -114,7 +118,7 @@
                 {if $is_comment_added}
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}</div>
                 {elseif $is_comment_moderate}
-                <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br />{$CONST.THIS_COMMENT_NEEDS_REVIEW}</div>
+                <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br>{$CONST.THIS_COMMENT_NEEDS_REVIEW}</div>
                 {elseif not $entry.allow_comments}
                 <div class="serendipity_center serendipity_msg_important">{$CONST.COMMENTS_CLOSED}</div>
                 {else}
