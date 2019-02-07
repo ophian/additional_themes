@@ -31,14 +31,14 @@
                     {$entry.body}
 
                 {if $is_single_entry}
-                    <br /><a id="extended"></a>{$entry.extended}<br />
+                    <br><a id="extended"></a>{$entry.extended}<br>
                 {/if}
 
                 </div>
 
                 {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
 
-                <br /><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a><br /><br />
+                <br><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a><br>
 
                 {/if}
 
@@ -71,7 +71,7 @@
                     {/if}
 
                     {if $entry.allow_comments}
-                        <br />{$CONST.LEAVE_RESPONSE|sprintf:'<a href="#serendipity_CommentForm">':'</a>':"<a href=\"{$entry.link}\">":'</a>'}
+                        <br>{$CONST.LEAVE_RESPONSE|sprintf:'<a href="#serendipity_CommentForm">':'</a>':"<a href=\"{$entry.link}\">":'</a>'}
                         {if $entry.moderate_comments}
                             {$CONST.SUBJECT_TO_MODERATION}
                         {/if}
@@ -137,30 +137,30 @@
         {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
 
             {if $CONST.DATA_UNSUBSCRIBED}
-                <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|sprintf:$CONST.UNSUBSCRIBE_OK}</div><br />
+                <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|sprintf:$CONST.UNSUBSCRIBE_OK}</div>
             {/if}
 
             {if $CONST.DATA_TRACKBACK_DELETED}
-                <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_TRACKBACK_DELETED|sprintf:$CONST.TRACKBACK_DELETED}</div><br />
+                <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_TRACKBACK_DELETED|sprintf:$CONST.TRACKBACK_DELETED}</div>
             {/if}
 
             {if $CONST.DATA_TRACKBACK_APPROVED}
-                <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_TRACKBACK_APPROVED|sprintf:$CONST.TRACKBACK_APPROVED}</div><br />
+                <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_TRACKBACK_APPROVED|sprintf:$CONST.TRACKBACK_APPROVED}</div>
             {/if}
 
             {if $CONST.DATA_COMMENT_DELETED}
-                <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_DELETED|sprintf:$CONST.COMMENT_DELETED}</div><br />
+                <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_DELETED|sprintf:$CONST.COMMENT_DELETED}</div>
             {/if}
 
             {if $CONST.DATA_COMMENT_APPROVED}
-                <br /><div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</div><br />
+                <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</div>
             {/if}
 
             <h3 id="trackbacks">{$CONST.TRACKBACKS}</h3>
 
-            <br />
+            <br>
             <a href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
-            <br />
+            <br>
 
             <ol class="commentlist">
                 {serendipity_printTrackbacks entry=$entry.id}
@@ -192,8 +192,6 @@
                 </div>
                 -->
 
-                <br />
-
                 <ol class="commentlist">
                     {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
                 </ol>
@@ -220,21 +218,18 @@
 
             {if $is_comment_added}
 
-                <br />
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}</div>
 
                 </div>
 
             {elseif $is_comment_moderate}
 
-                <br />
-                <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br />{$CONST.THIS_COMMENT_NEEDS_REVIEW}</div>
+                <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br>{$CONST.THIS_COMMENT_NEEDS_REVIEW}</div>
 
                 </div>
 
             {elseif not $entry.allow_comments}
 
-                <br />
                 <div class="serendipity_center serendipity_msg_important">{$CONST.COMMENTS_CLOSED}</div>
 
                 </div>
