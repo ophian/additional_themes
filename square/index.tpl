@@ -37,7 +37,9 @@
 {if $is_raw_mode != true}
 <div id="mainpane">
     <div class="spacer">&nbsp;</div>
-    <div id="content" valign="top">{$CONTENT}</div>
+    <div id="content">
+        {$CONTENT}
+    </div>
     <div id="wrapper">
         <div id="header">
             <h2><a class="homelink2" href="{$serendipityBaseURL}">{if $view == 'plugin'}{$blogDescription}{else}{$head_subtitle|default:$blogDescription}{/if}</a></h2>
@@ -52,25 +54,30 @@
                 <li><a href="{$template_option.navlink4url}" title="{$template_option.navlink4text}">{$template_option.navlink4text}</a></li>
             </ul>
         </div>
-{if $leftSidebarElements > 0}
-        <div id="serendipityLeftSideBar" valign="top">{serendipity_printSidebar side="left"}</div>
-{/if}
+{* Ordered reverse, since both on right side *}
 {if $rightSidebarElements > 0}
-        <div id="serendipityRightSideBar" valign="top">{serendipity_printSidebar side="right"}</div>
+        <div id="serendipityRightSideBar">
+            {serendipity_printSidebar side="right"}
+        </div>
 {/if}
+{if $leftSidebarElements > 0}
+        <div id="serendipityLeftSideBar">
+            {serendipity_printSidebar side="left"}
+        </div>
+{/if}
+    </div>
 
     <div class="spacer">&nbsp;</div>
 </div>
 <div id="footer" class="serendipity_entryFooter">
     <p>
-    Theme square design by <a href="http://themes.daves.me.uk">David Cummins</a>. Powered by <a href="https://ophian.github.io/">Serendipity Styx Edition</a>
+    Theme "{$template}" design by <a href="http://themes.daves.me.uk">David Cummins</a>. Powered by <a href="https://ophian.github.io/">Serendipity Styx Edition</a>
     </p>
 </div>
 
 {/if}
-
 {$raw_data}
-
+{serendipity_hookPlugin hook="frontend_footer"}
 {if $is_embedded != true}
 </body>
 </html>
