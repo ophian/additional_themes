@@ -112,6 +112,10 @@ ul#serendipity_categories_list {
     padding: 0; }
 .post-info h2.serendipity_title {
     margin-bottom: 1em; }
+.serendipity_comment_source {
+    display: inline-block;
+    width: 100%;
+    margin-top: 1.5em; }
 
 /* End General Styles */
 
@@ -270,11 +274,9 @@ line-height:20px;
 }
 .serendipity_commentForm {
     font-size:x-small;
-    color: #ffffff;
     margin-bottom: 13px;
     margin-right: 10px;
     margin-left: 10px;
-    background-color: #FFFFFF;
 }
 td.serendipity_commentsLabel {
     font-size: x-small;

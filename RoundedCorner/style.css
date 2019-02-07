@@ -214,6 +214,9 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     margin: .5em 0;
     padding: .5em;
     border: 1px solid #ddd; }
+.serendipity_commentForm table {
+    border-collapse: separate;
+    border-spacing: 2px; }
 .serendipity_entry_body pre {
     display: inline-block; }
 .staticpage_sbJsList .dtree a.node {

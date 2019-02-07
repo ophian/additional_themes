@@ -659,8 +659,7 @@ img.serendipity_entryIcon {
 /********* Comment Form *********/
 
 /* container style for entire comment form */
-.serendipityCommentForm{
-    font-size:x-small;
+.serendipity_commentForm {
     color: #fff; }
 
 /* style for name, email etc fields in comments form */

@@ -234,6 +234,8 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
 /*#content > .serendipity_staticpage {
     margin: 0 1em; }*/
 #serendipityCommentFormC {
+    display: inline-table;
+    border-color: #ddd;
     text-align: left; }
 h1 {
     text-align: left;
@@ -497,14 +499,14 @@ h2.serendipity_title, h4.serendipity_title {
 
 .comment_evenbox {background:#fff; }
 
-.serendipityCommentForm input {
+.serendipity_commentForm, input {
     border: 1px solid #999;
     background: #FDF3F5;
     margin: 3px;
     padding-left: 3px;
     color: #666; }
 
-.serendipityCommentForm textarea, .serendipityCommentForm select {
+.serendipity_commentForm, textarea, .serendipity_commentForm, select {
     border: 1px solid #999;
     background: #FDF3F5;
     margin: 3px;

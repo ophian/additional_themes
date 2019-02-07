@@ -130,7 +130,6 @@ img, video {
 
 .comment_content {
     margin-bottom: 1em; }
-
 .serendipity_comment_author_self .serendipity_comment_source .pc-owner,
 .serendipity_comment_author_self .comment_header .pc-owner {
     background: #3e5f81e6;
@@ -154,50 +153,37 @@ img, video {
     background-color: #EFE;
     margin: 0.25em;
     padding: 0.25em;
-    text-align: center;
-}
-
+    text-align: center; }
 .serendipity_entry p > .serendipity_image_left,
 .serendipity_entry p > .serendipity_imageComment_center,
 .serendipity_entry p > .serendipity_image_right {
     margin: .25em auto; }
-
 .serendipity_imageComment_center {
-    margin: .25em auto;
-}
-
+    margin: .25em auto; }
 .serendipity_imageComment_left {
     float: left;
-    margin-right: .5em;
-}
-
+    margin-right: .5em; }
 .serendipity_imageComment_right {
     float: right;
-    margin-left: .5em;
-}
-
+    margin-left: .5em; }
 .serendipity_imageComment_img,
 .serendipity_imageComment_img img {
     margin: 0;
     padding: 0;
-    text-align: center;
-}
-
+    text-align: center; }
 .serendipity_imageComment_txt {
     border-top: 1px solid #DDD;
     margin: 0;
     padding: 0.25em;
     clear: both;
     font-size: 8pt;
-    text-align: center;
-}
+    text-align: center; }
 /* image parent comment box responsiveness for mobile screens */
 .serendipity_imageComment_left,
 .serendipity_imageComment_center,
 .serendipity_imageComment_right {
     width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
+    display: table; }
 
 /* defaults */
 
@@ -225,15 +211,16 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 [type="checkbox"],
 [type="radio"] {
     vertical-align: middle; }
-
 .serendipity_Entry_Date.freetag_cloud {
     display: inline-block;
     margin-bottom: 1em; }
-
 .serendipity_staticpage h2,
 h2.staticpage_title {
     display: block;
     margin-bottom: 1.5em; }
+.serendipity_commentForm table {
+    border-collapse: separate;
+    border-spacing: 2px; }
 
 /* backend preview */
 #content.preview_preview_content {
@@ -540,13 +527,12 @@ table.serendipity_calendar td {text-align: center; }
     text-align:right;
 }
 
-input {
+input, select {
 	padding:4px;
 	background:#f6f6f6;
 	border:1px solid #ccc;
 	color:#777;
 	font:90% Verdana;
-	width:140px;
 }
 
 ol {display:inline;}

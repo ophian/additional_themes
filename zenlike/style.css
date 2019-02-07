@@ -68,6 +68,9 @@ input[type="checkbox"] {
     width: auto;
     overflow: auto;
     padding: .25em; }
+.serendipity_commentForm table {
+    border-collapse: separate;
+    border-spacing: 2px; }
 
 /* calendar */
 .icon-back::before {
