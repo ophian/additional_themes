@@ -842,7 +842,7 @@ background-position:0 0
 margin:26px 0 4px;
 padding:6px 0
 }
-
+/*
 .dock {
 position:relative;
 height:50px;
@@ -891,7 +891,7 @@ position:absolute;
 text-align:center;
 text-decoration:none
 }
-
+*/
 ol,ul,.arrowlistmenu li,.sidelist li {
 list-style:none
 }
@@ -913,7 +913,7 @@ line-height:1.2
 .commentmetadata,.clearfloat {
 display:block
 }
-
+/*
 .dock-item img,.dock-item2 img {
 border:none;
 width:100%;
@@ -924,7 +924,7 @@ margin:5px 10px 0
 display:none;
 padding-left:20px
 }
-
+*/
 /*** Styles used by s9y ***/
 
 .serendipity_entry_extended { clear: both; }

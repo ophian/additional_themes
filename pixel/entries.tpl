@@ -36,7 +36,7 @@
         <div class="cleared"></div>
     {/if}
     </div>
-    <br />
+    <br>
   {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}
     <small><a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a></small>
   {/if}
@@ -102,7 +102,7 @@
         {if $is_comment_added}
             <p class="serendipity_msg_notice">{$CONST.COMMENT_ADDED}</p>
         {elseif $is_comment_moderate}
-            <p class="serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br />{$CONST.THIS_COMMENT_NEEDS_REVIEW}</p>
+            <p class="serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br>{$CONST.THIS_COMMENT_NEEDS_REVIEW}</p>
         {elseif not $entry.allow_comments}
             <p class="serendipity_msg_important">{$CONST.COMMENTS_CLOSED}</p>
         {else}
