@@ -3,16 +3,15 @@
 <html lang="{$lang}">
 <head>
     <meta charset="{$head_charset}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
-    <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
 {if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow">
 {else}
     <meta name="robots" content="noindex,follow">
 {/if}
-{if ($view == "entry")}
+{if $view == 'entry'}
     <link rel="canonical" href="{$entry.rdf_ident}">
 {/if}
 {if in_array($view, ['start', 'entries'])}
@@ -97,41 +96,42 @@
     <h1><a href="{$serendipityBaseURL}">{$blogTitle}</a></h1>
 
     <div id="cl1">
-        <b>{if $startpage}{$CONST.HOMEPAGE}{else}{$CONST.HOMEPAGE}{/if}<br/>
-            {if ($head_title && empty($entry.title)) || (isset($entry.title) AND $head_title != $entry.title)}
-            {if isset($entry.title)}&raquo; {$category_info.category_name|default:''}{/if}
-            {elseif $head_title && isset($entry.title)}
-            {if isset($category_info.category_name)}
-            &raquo; {$category_info.category_name}
-            {/if}
-            {if $entry.title == $head_title}
-            &raquo; {$entry.title|truncate:28:" ...":true}
-            {/if}
-            {elseif $head_subtitle}
-            &raquo;
-            {/if}
-            {if NOT empty($staticpage_pagetitle) && empty($entry.title)}
-            &raquo; {$staticpage_headline}
-            {/if}
+        <b>{if $startpage}{$CONST.HOMEPAGE}{else}{$CONST.HOMEPAGE}{/if}<br>
+        {if ($head_title && empty($entry.title)) || (isset($entry.title) AND $head_title != $entry.title)}
+        {if isset($entry.title)}&raquo; {$category_info.category_name|default:''}{/if}
+        {elseif $head_title && isset($entry.title)}
+        {if isset($category_info.category_name)}
+        &raquo; {$category_info.category_name}
+        {/if}
+        {if $entry.title == $head_title}
+        &raquo; {$entry.title|truncate:28:" ...":true}
+        {/if}
+        {elseif $head_subtitle}
+        &raquo;
+        {/if}
+        {if NOT empty($staticpage_pagetitle) && empty($entry.title)}
+        &raquo; {$staticpage_headline}
+        {/if}
         </b>
     </div>
     <div id="cm1"> &nbsp;
         <a class="homelink2" href="{$serendipityBaseURL}">{if $view == 'plugin'}{$blogDescription}{else}{$head_subtitle|default:$blogDescription}{/if}</a>
     </div>
    {if isset($plugin_calendar_head) AND is_array($plugin_calendar_head)}
-   <div id="cr1">
+    <div id="cr1">
         <strong><a style="white-space: nowrap" href="{$plugin_calendar_head.uri_month}/">{$plugin_calendar_head.month_date|formatTime:"%B '%y":false}</a></strong>
-    </div><br/>
+    </div>
     {/if}
 
     <div id="navbar">
         <ul>
             <li class="selected">{if $template_option.wppddd == true}{$template_option.addvtext}{/if}</li>
         </ul>
-        <form id="searchform" action="{$serendipityBaseURL}" method="get"><input type="hidden" name="serendipity[action]" value="search" /><input alt="Quicksearch" type="text" name="serendipity[searchTerm]" value="{$CONST.QUICKSEARCH}..." onFocus="if(this.value=='{$CONST.QUICKSEARCH}...')value=''" onBlur="if(this.value=='')value='{$CONST.QUICKSEARCH}...';"></input></form>
+        <form id="searchform" action="{$serendipityBaseURL}" method="get">
+            <input type="hidden" name="serendipity[action]" value="search">
+            <input alt="Quicksearch" type="text" name="serendipity[searchTerm]" value="{$CONST.QUICKSEARCH}..." onFocus="if(this.value=='{$CONST.QUICKSEARCH}...')value=''" onBlur="if(this.value=='')value='{$CONST.QUICKSEARCH}...';">
+        </form>
     </div><!-- /#navbar -->
-
-    <br/> <br/>
 
     <div id="content" class="group">
         {$CONTENT}
