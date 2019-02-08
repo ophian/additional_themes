@@ -3,57 +3,56 @@
 <html lang="{$lang}">
 <head>
     <meta charset="{$head_charset}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
-    <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
 {if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
-    <meta name="robots" content="index,follow" />
+    <meta name="robots" content="index,follow">
 {else}
-    <meta name="robots" content="noindex,follow" />
+    <meta name="robots" content="noindex,follow">
 {/if}
-{if ($view == "entry")}
-    <link rel="canonical" href="{$entry.rdf_ident}" />
+{if $view == 'entry'}
+    <link rel="canonical" href="{$entry.rdf_ident}">
 {/if}
 {if in_array($view, ['start', 'entries'])}
-    <link rel="canonical" href="{$serendipityBaseURL}" />
+    <link rel="canonical" href="{$serendipityBaseURL}">
 {/if}
-    <link rel="stylesheet" type="text/css" href="{$head_link_stylesheet}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{$head_link_stylesheet}" media="all">
 
     {if $template_option.fonts == 'times'}
-    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/times.css" />
+    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/times.css">
     {elseif $template_option.fonts == 'bitstream_vera_sans'}
-    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/bitstream_vera_sans.css" />
+    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/bitstream_vera_sans.css">
     {elseif $template_option.fonts == 'bitstream_vera_serif'}
-    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/bitstream_vera_serif.css" />
+    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/bitstream_vera_serif.css">
     {elseif $template_option.fonts == 'georgia'}
-    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/georgia.css" />
+    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/georgia.css">
     {elseif $template_option.fonts == 'courier'}
-    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/courier.css" />
+    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/courier.css">
     {elseif $template_option.fonts == 'trebuchet'}
-    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/trebuchet.css" />
+    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/trebuchet.css">
     {elseif $template_option.fonts == 'verdana'}
-    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/verdana.css" />
+    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/verdana.css">
     {elseif $template_option.fonts == 'arial'}
-    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/arial.css" />
+    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/arial.css">
     {elseif $template_option.fonts == 'helvetica'}
-    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/helvetica.css" />
+    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/helvetica.css">
     {elseif $template_option.fonts == 'tahoma'}
-    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/tahoma.css" />
+    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/fontsets/tahoma.css">
     {/if}
 
     {if $template_option.style == 'aqua'}
-    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/style/aqua.css" />
+    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/style/aqua.css">
     {elseif $template_option.style == 'oldskool'}
-    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/style/oldskool.css" />
+    <link rel="stylesheet" href="{$serendipityBaseURL}templates/{$template}/style/oldskool.css">
     {/if}
 
-    <link rel="home" title="startpage" href="{$serendipityBaseURL}" />
-    <link rel="archive" title="entries archive" href="{$serendipityBaseURL}archive" />
-    <link rel="alternate"  type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2" />
+    <link rel="home" title="startpage" href="{$serendipityBaseURL}">
+    <link rel="archive" title="entries archive" href="{$serendipityBaseURL}archive">
+    <link rel="alternate"  type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2">
 
 {if $entry_id}
-    <link rel="pingback" href="{$serendipityBaseURL}comment.php?type=pingback&amp;entry_id={$entry_id}" />
+    <link rel="pingback" href="{$serendipityBaseURL}comment.php?type=pingback&amp;entry_id={$entry_id}">
 {/if}
 {serendipity_hookPlugin hook="frontend_header"}
 </head>
@@ -108,7 +107,7 @@
 </div> <!-- close column-wrap -->
 
 <div id="footer"{if $view == 'comments'} class="paged_comments"{/if}>
-    <a href="#top"><img src="{$serendipityBaseURL}/templates/{$template}/img/up.png" alt="hoch / up" title="hoch / up" /></a> {$CONST.PROUDLY_POWERED_BY} <a href="https://ophian.github.io/">Serendipity Styx Edition</a> &amp; the <i>{$template}</i> theme.<br />Style is <a href="http://alp-uckan.net/free/s9y/style-adapation/">adaptation 0.8</a> by <a href="http://alp-uckan.net">Alp Uçkan</a>
+    <a href="#top"><img src="{$serendipityBaseURL}/templates/{$template}/img/up.png" alt="hoch / up" title="hoch / up" /></a> {$CONST.PROUDLY_POWERED_BY} <a href="https://ophian.github.io/">Serendipity Styx Edition</a> &amp; the <i>{$template}</i> theme.<br>Style is <a href="http://alp-uckan.net/free/s9y/style-adapation/">adaptation 0.8</a> by <a href="http://alp-uckan.net">Alp Uçkan</a>
 </div>
 {/if}
 {$raw_data}
