@@ -3,10 +3,9 @@
 <html lang="{$lang}">
 <head>
     <meta charset="{$head_charset}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
-    <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
 {if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow">
 {else}
@@ -58,7 +57,7 @@
         </div>
         <div id="content">
             {$CONTENT}
-            <p id="footer">Design by <a href="http://www.FullAhead.org" title="FullAhead.org">FullAhead</a> and <a href="http://threetree.net/" title="ThreeTree.net">ThreeTree</a><br />Converted to <a href="https://ophian.github.io/">Serendipity Styx</a> by <a href="http://www.carlgalloway.com">Carl Galloway</a></p>
+            <p id="footer">Design by <a href="http://www.FullAhead.org" title="FullAhead.org">FullAhead</a> and <a href="http://threetree.net/" title="ThreeTree.net">ThreeTree</a><br>Converted to <a href="https://ophian.github.io/">Serendipity Styx</a> by <a href="http://www.carlgalloway.com">Carl Galloway</a></p>
         </div>
     </div>
 </div>
