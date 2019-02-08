@@ -2,11 +2,8 @@
 <html lang="{$lang}">
 <head>
     <meta charset="{$head_charset}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
     <title>{$CONST.SERENDIPITY_ADMIN_SUITE}</title>
-    <meta name="generator" content="Serendipity Styx v.{$serendipityVersion}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {if $head_link_stylesheet_frontend}
         <link rel="stylesheet" href="{$head_link_stylesheet_frontend}">
     {else}
