@@ -3,7 +3,7 @@
 <html lang="{$lang}">
 <head>
     <meta charset="{$head_charset}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
 {if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
@@ -11,7 +11,7 @@
 {else}
     <meta name="robots" content="noindex,follow">
 {/if}
-{if ($view == "entry")}
+{if $view == 'entry'}
     <link rel="canonical" href="{$entry.rdf_ident}">
 {/if}
 {if in_array($view, ['start', 'entries'])}
@@ -19,9 +19,9 @@
 {/if}
     <link rel="stylesheet" type="text/css" href="{$head_link_stylesheet}" media="screen">
     <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="print.css"}" media="print">
-    <link  href="{serendipity_getFile file="dropdown.linear.css"}" media="screen" rel="stylesheet" type="text/css" />
-    <link href= "{serendipity_getFile file="default.ultimate.linear.css"}" media="screen" rel="stylesheet" type="text/css" />
-    <link href= "{serendipity_getFile file="tab.css"}" media="screen" rel="stylesheet" type="text/css" />
+    <link  href="{serendipity_getFile file="dropdown.linear.css"}" media="screen" rel="stylesheet" type="text/css">
+    <link href= "{serendipity_getFile file="default.ultimate.linear.css"}" media="screen" rel="stylesheet" type="text/css">
+    <link href= "{serendipity_getFile file="tab.css"}" media="screen" rel="stylesheet" type="text/css">
     <link rel="alternate"  type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2">
     <link rel="alternate"  type="application/x.atom+xml"  title="{$blogTitle} Atom feed"  href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/atom.xml">
 {if $entry_id}
@@ -58,7 +58,7 @@
 <div id="page" class="clearfloat">
 
         <h2><a class="homelink1" href="{$serendipityBaseURL}">{$blogTitle}</a></h2>
-        <div class="description">{$blogDescription}</div><!-- /.description -->
+        <div class="description">{$blogDescription}</div>
 
 {if $template_option.enablehmenu === true}
         <ul id="nav" class="dropdown dropdown-linear">
@@ -96,7 +96,7 @@
             <li><a href="{$serendipityBaseURL}/serendipity_admin.php">Login</a></li>
         {/if}
     </ul>
-{/if}<!-- /.template_option.enablehmenu == "true" -->
+{/if}{* /.template_option.enablehmenu == "true" *}
 
     <div class="clearfloat">
 
@@ -194,8 +194,8 @@
                 {/if}
             </ul>
         </div><!-- /#MENU -->
-    {/if}      <!-- /.view =="start" -->
-{/if}       <!-- /.template_option.enabletaba =="true" -->
+    {/if}{* /.view =="start" *}
+{/if}{* /.template_option.enabletaba =="true" *}
 
 {if $template_option.magazinemode === false}{assign var="view2" value="magazine"}{/if}
 
@@ -212,8 +212,8 @@
 {if $template_option.enablecatlead === true}
         <div id="lead" class="feature clearfloat">
             {serendipity_fetchPrintEntries category=$template_option.catlead full=true fetchDrafts=false noSticky=true limit="0,1" template="entries_lead.tpl"}
-        </div><!-- /#lead -->
-{/if}<!-- /.template_option.enablecatlead =="true" -->
+        </div>
+{/if}{* /.template_option.enablecatlead =="true" *}
 
         <div id="leftcol">
             <div class="arrowlistmenu">
@@ -428,7 +428,7 @@
                 </div><!-- /#rightcol -->
 
 {elseif $view2 == "404"}
-    <!-- if some page does not exist and/or cannot be found -->
+    {* if some page does not exist and/or cannot be found *}
     {include file="./404.tpl"}
 {else}
     {$CONTENT}
@@ -704,14 +704,13 @@
     </div>
     <div id="footertext">
 {if $template_option.sidebarpos == "3"}
-    <div id="nofooterbox">{if $leftSidebarElements > 0}{serendipity_printSidebar side="left"}{/if}</div><!-- /#footerbox3 -->
-{/if}
+        <div id="nofooterbox">{if $leftSidebarElements > 0}{serendipity_printSidebar side="left"}{/if}</div>
         <br/>  &#169; {$date|default:''|formatTime:"%Y"} <span class="url fn org">{$blogTitle}</span> |
         <a href="{$serendipityBaseURL}feeds/index.rss2">{$CONST.ENTRIES}&nbsp;(RSS)</a> | <a href="{$serendipityBaseURL}feeds/comments.rss2">{$CONST.COMMENTS}&nbsp;(RSS)</a> |&nbsp; Theme <a href="http://www.plusneun.de/index.php" title="plusneun.de">plusneun.de</a>
         Tabs:<a target="_blank" href="http://www.cssplay.co.uk/">CSSplay</a>
-    </div><!-- /#footertext -->
+    </div>
 
-    {/if}<!-- /#template_option.enablefooter true -->
+    {/if}{* /#template_option.enablefooter true *}
 
 </div><!-- /#page -->
 
