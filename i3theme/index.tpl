@@ -3,34 +3,33 @@
 <html lang="{$lang}">
 <head>
     <meta charset="{$head_charset}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
-    <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
 {if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
-    <meta name="robots" content="index,follow" />
+    <meta name="robots" content="index,follow">
 {else}
-    <meta name="robots" content="noindex,follow" />
+    <meta name="robots" content="noindex,follow">
 {/if}
 {if $view == 'entry' AND isset($entry)}
-    <link rel="canonical" href="{$entry.rdf_ident}" />
+    <link rel="canonical" href="{$entry.rdf_ident}">
 {/if}
 {if in_array($view, ['start', 'entries'])}
-    <link rel="canonical" href="{$serendipityBaseURL}" />
+    <link rel="canonical" href="{$serendipityBaseURL}">
 {/if}
-    <link rel="stylesheet" type="text/css" href="{$head_link_stylesheet}" media="all" />
-    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="print.css"}" media="print" />
-    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="s9y-print.css"}" media="print" />
+    <link rel="stylesheet" type="text/css" href="{$head_link_stylesheet}" media="all">
+    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="print.css"}" media="print">
+    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="s9y-print.css"}" media="print">
 {if $template_option.dbx == 'false'}
 <!-- Sidebar docking boxes (dbx) by Brothercake - http://www.brothercake.com/ -->
     <script type="text/javascript" src="{$serendipityHTTPPath}templates/{$template}/dbx.js"></script>
     <script type="text/javascript" src="{$serendipityHTTPPath}templates/{$template}/dbx-key.js"></script>
 {/if}
-    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="dbx.css"}" media="screen, projection" />
-    <link rel="alternate"  type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2" />
-    <link rel="alternate"  type="application/x.atom+xml"  title="{$blogTitle} Atom feed"  href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/atom.xml" />
+    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="dbx.css"}" media="screen, projection">
+    <link rel="alternate"  type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2">
+    <link rel="alternate"  type="application/x.atom+xml"  title="{$blogTitle} Atom feed"  href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/atom.xml">
 {if $entry_id}
-    <link rel="pingback" href="{$serendipityBaseURL}comment.php?type=pingback&amp;entry_id={$entry_id}" />
+    <link rel="pingback" href="{$serendipityBaseURL}comment.php?type=pingback&amp;entry_id={$entry_id}">
 {/if}
 
 {serendipity_hookPlugin hook="frontend_header"}
@@ -50,9 +49,9 @@
 
             <form method="get" id="searchform" action="{$serendipityHTTPPath}{$serendipityIndexFile}">
             <div>
-                <input type="hidden" name="serendipity[action]" value="search" />
-                <input type="text" id="s" name="serendipity[searchTerm]" value="{$CONST.QUICKSEARCH}..." onfocus="if(this.value=='{$CONST.QUICKSEARCH}...')value=''" onblur="if(this.value=='')value='{$CONST.QUICKSEARCH}...';" />
-                <input id="searchsubmit" type="submit" value="{$CONST.QUICKSEARCH}" name="serendipity[searchButton]" />
+                <input type="hidden" name="serendipity[action]" value="search">
+                <input type="text" id="s" name="serendipity[searchTerm]" value="{$CONST.QUICKSEARCH}..." onfocus="if(this.value=='{$CONST.QUICKSEARCH}...')value=''" onblur="if(this.value=='')value='{$CONST.QUICKSEARCH}...';">
+                <input id="searchsubmit" type="submit" value="{$CONST.QUICKSEARCH}" name="serendipity[searchButton]">
                 <div id="LSResult" style="display: none;"><div id="LSShadow"></div></div>
             </div>
             </form>
@@ -60,13 +59,17 @@
 
 {if ($template_option.layout == 'sbs' || $template_option.layout == 'ssb') AND $leftSidebarElements > 0}
         <div id="sidebar-left" class="dbx-group">
-        {if $leftSidebarElements > 0}{serendipity_printSidebar side="left"}{/if}
+        {if $leftSidebarElements > 0}
+            {serendipity_printSidebar side="left"}
+        {/if}
         </div><!-- /#sidebar-left -->
 {/if}
 
 {if $template_option.layout == 'ssb' AND $rightSidebarElements > 0}
         <div id="sidebar-right" class="dbx-group sidebar-right-ssb">
-        {if $rightSidebarElements > 0}{serendipity_printSidebar side="right"}{/if}
+        {if $rightSidebarElements > 0}
+            {serendipity_printSidebar side="right"}
+        {/if}
         {if $template_option.meta == 'true'}
             <div id="meta" class="dbx-box">
                 <h3 class="dbx-handle">Meta</h3>
@@ -104,7 +107,9 @@
 
 {if $template_option.layout == 'sbs' || $template_option.layout == 'bss'}
         <div id="sidebar-right" class="dbx-group">
-        {if $rightSidebarElements > 0}{serendipity_printSidebar side="right"}{/if}
+        {if $rightSidebarElements > 0}
+            {serendipity_printSidebar side="right"}
+        {/if}
         {if $template_option.meta == 'true'}
             <div id="meta" class="dbx-box">
                 <h3 class="dbx-handle">Meta</h3>
@@ -122,7 +127,9 @@
 {/if}
 {if $template_option.layout == 'bss'}
         <div id="sidebar-left" class="dbx-group sidebar-left-bss">
-        {if $leftSidebarElements > 0}{serendipity_printSidebar side="left"}{/if}
+        {if $leftSidebarElements > 0}
+            {serendipity_printSidebar side="left"}
+        {/if}
         </div><!-- /#sidebar-left -->
 {/if}
 
