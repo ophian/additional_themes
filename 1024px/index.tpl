@@ -3,7 +3,7 @@
 <html lang="{$lang}">
 <head>
     <meta charset="{$head_charset}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
 {if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
@@ -11,7 +11,7 @@
 {else}
     <meta name="robots" content="noindex,follow">
 {/if}
-{if ($view == "entry")}
+{if $view == 'entry'}
     <link rel="canonical" href="{$entry.rdf_ident}">
 {/if}
 {if in_array($view, ['start', 'entries'])}
@@ -52,7 +52,7 @@
     </div>
 
     <div id="footer">
-        <p>&copy; {$template_option.sitename} | {foreach $navlinks AS $navlink}<a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a> | {/foreach}<a href="#pagetop">Back to top</a><br />
+        <p>&copy; {$template_option.sitename} | {foreach $navlinks AS $navlink}<a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a> | {/foreach}<a href="#pagetop">Back to top</a><br>
             Design by <a href="http://andreasviklund.com/">Andreas Viklund</a> | Serendipity Styx Template by <a href="http://www.carlgalloway.com">Carl</a>
         </p>
     </div>
