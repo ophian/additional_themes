@@ -12,7 +12,7 @@
 @define('ABOUT_TEXT', 'About text');
 @define('ABOUT_TEXT_DESC', 'Add some Text for your about box');
 @define('ABOUT_TEXT_DEFAULT', 'Hi, Welcome to my site, please bookmark me, and feel free to comment on my posts.');
-@define('ABOUT_BOX', 'Allow about box?');
+@define('ABOUT_BOX', 'About box?');
 @define('USE_ABOUT_TEXT_DESC', 'Do you want to display the aboutbox?');
 @define('AT_POS', 'Yes');
 @define('AT_NEG', 'No');

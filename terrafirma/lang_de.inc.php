@@ -11,8 +11,8 @@
 @define('ABOUT_TITLE_DESC', 'Hier die Überschrift für die About-Box Eingeben');
 @define('ABOUT_TEXT', 'About-Box Text');
 @define('ABOUT_TEXT_DESC', 'Hier den Text für die About-Box eingeben');
-@define('ABOUT_TEXT_DEFAULT', 'Hallo und Willkommen auf meiner Seite. Bitte bookmarke mich, und fühl Dich frei Kommentare zu meinen Beiträgen zu schreiben.');
-@define('ABOUT_BOX', 'Aktiviere about box?');
+@define('ABOUT_TEXT_DEFAULT', 'Hallo und willkommen auf meiner Seite. Bitte bookmarke mich, und fühl Dich frei Kommentare zu meinen Beiträgen zu schreiben.');
+@define('ABOUT_BOX', 'Aktiviere About-Box?');
 @define('USE_ABOUT_TEXT_DESC', 'Soll die About-Box angezeigt werden?');
 @define('AT_POS', 'Ja');
 @define('AT_NEG', 'Nein');

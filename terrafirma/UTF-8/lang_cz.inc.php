@@ -16,6 +16,7 @@
 @define('ABOUT_TEXT', 'Text "O mě"');
 @define('ABOUT_TEXT_DESC', 'Zadejte obsah obdelníku "O mě"');
 @define('ABOUT_TEXT_DEFAULT', 'Nazdar, vítám Tě na mých stránkách. Ulož si mě do oblíbených a nestyď se psát komentáře k mým článkům.');
+@define('ABOUT_BOX', 'About-Box?');
 @define('USE_ABOUT_TEXT_DESC', 'Má se zobrazovat obedlník "O mě"?');
 @define('AT_POS', 'Ano');
 @define('AT_NEG', 'Ne');
