@@ -1,5 +1,4 @@
-<br /><br />
-<div class="staticpage_results" style="text-align: left">
+<div class="staticpage_results">
     <h1>{$CONST.STATICPAGE_SEARCHRESULTS|sprintf:$staticpage_searchresults}</h1>
 
     {foreach $staticpage_results AS $result}

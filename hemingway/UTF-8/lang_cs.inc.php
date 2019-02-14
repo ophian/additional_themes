@@ -30,3 +30,4 @@
 @define('HEMINGWAY_ABOUT_TEXT_DEFAULT', 'Vítej na mé stránce! Ulož si ji do záložek a nezdráhej se posílat komentáře k příspěvkům.');
 @define('HEMINGWAY_ABOUT_URLTITLE', 'URL adresa stránky "o mě"');
 @define('HEMINGWAY_ABOUT_URL_DESC', 'Zadejte plnou URL adresu ke stránce "o mě"');
+

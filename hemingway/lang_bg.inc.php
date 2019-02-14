@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 @define('RECENTENTRIES', 'Последни статии');
 @define('COMMENTS_RSS', 'Емисии на коментари');
@@ -25,4 +25,4 @@
 @define('HEMINGWAY_ABOUT_TEXT_DEFAULT', 'Добре дошли на моя сайт, моля запишете си адреса и ако желаете, коментирайте моите статии.');
 @define('HEMINGWAY_ABOUT_URLTITLE', 'Адрес на страницата "Относно..."');
 @define('HEMINGWAY_ABOUT_URL_DESC', 'Въведете пълен адрес на връзката');
-?>
+

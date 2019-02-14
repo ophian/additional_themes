@@ -17,28 +17,22 @@
     {/foreach}
     {/foreach}
 
-{if $footer_info}
-    <div style="text-align:center;padding-bottom:2em;">
-    {if $footer_info}
-        {if $footer_prev_page}
+{if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
+    <div class="block_center p2">
+    {if NOT empty($footer_prev_page)}
         <span class="previous"><a href="{$footer_prev_page}">&laquo; {$CONST.PREVIOUS_PAGE}</a></span>
-        {else}
-        <span class="previous">&#160;</span>
-        {/if}
     {else}
+        <span class="previous">&#160;</span>
     {/if}
 
-    {if $footer_info}
+    {if NOT empty($footer_info)}
         <span class="entries_info">({$footer_info})</span>
     {/if}
 
-    {if $footer_info}
-        {if $footer_next_page}
+    {if NOT empty($footer_next_page)}
         <span class="next"><a href="{$footer_next_page}">{$CONST.NEXT_PAGE} &raquo;</a></span>
-        {else}
-        <span class="next">&#160;</span>
-        {/if}
     {else}
+        <span class="next">&#160;</span>
     {/if}
     {serendipity_hookPlugin hook="entries_footer"}
     </div>

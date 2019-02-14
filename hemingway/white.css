@@ -68,7 +68,7 @@ ul.dates, ul.counts, ul.blogroll li ul, ul.pages, .serendipitySideBarContent{
 .serendipitySideBarContent{
 	border-bottom:1px solid #C2C2C2; }
 
-ul.dates li, ul.counts li, ul.blogroll ul li, ul.pages li, .container_serendipity_plugin_staticpage a, 
+ul.dates li, ul.counts li, ul.blogroll ul li, ul.pages li, .container_serendipity_plugin_staticpage a,
 .container_serendipity_plugin_recententries .serendipitySideBarContent div, .container_serendipity_syndication_plugin .serendipitySideBarContent div, .container_serendipity_archives_plugin a, .container_serendipity_authors_plugin div, .serendipitySideBarContent li, .plugin_comment_wrap{
 	border-bottom:1px solid #C2C2C2;
 }

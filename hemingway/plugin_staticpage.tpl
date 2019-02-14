@@ -4,7 +4,7 @@
     <h1 class="serendipity_date">{$staticpage_articleformattitle|escape}</h1>
 {/if}
 {if $staticpage_navigation AND $staticpage_shownavi}
-<div style="text-align:center;padding-bottom:4em;">
+<div class="block_center p4">
     {if $staticpage_navigation.prev.name}
         <span class="previous"><a href="{$staticpage_navigation.prev.link}" title="prev">&laquo; {$staticpage_navigation.prev.name|escape}</a></span>
     {else}
@@ -36,7 +36,7 @@
 {else}
     <div class="staticpage_content">{$staticpage_content}<br /><br />
     {if $staticpage_author}{$staticpage_author|escape}{/if}
-{if $staticpage_lastchange} {$CONST.ON} <span class="staticpage_metainfo_lastchange">{$staticpage_lastchange|formatTime:$HEMINGWAY_DATE}</span>
+{if $staticpage_lastchange} {$CONST.ON} <span class="staticpage_metainfo_lastchange">{$staticpage_lastchange|formatTime:($HEMINGWAY_DATE|default:'%d.%m.%Y')}</span>
 {/if}
 {if $staticpage_adminlink AND $staticpage_adminlink.page_user}
      (<a class="staticpage_metainfo_editlink" href="{$staticpage_adminlink.link_edit}">{$staticpage_adminlink.link_name|escape}</a>)

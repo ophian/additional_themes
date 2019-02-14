@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 @define('RECENTENTRIES', 'Neueste Einträge');
 @define('COMMENTS_RSS', 'RSS Kommentare');
@@ -25,4 +25,4 @@
 @define('HEMINGWAY_ABOUT_TEXT_DEFAULT', 'Willkommen auf meiner Seite! Jeder ist willkommen, sie zu bookmarken und meine Einträge zu kommentieren.');
 @define('HEMINGWAY_ABOUT_URLTITLE', 'URL des Infotextes');
 @define('HEMINGWAY_ABOUT_URL_DESC', 'Vollständige URL für den Link');
-?>
+

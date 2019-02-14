@@ -7,13 +7,13 @@
         <cite>
             <span class="author">{$trackback.timestamp|formatTime:'%b %d, %H:%M'}</span>
         </cite>
-            <div class="content">
-                <em><a href="{$trackback.url|strip_tags}" {'blank'|xhtml_target}>{$trackback.title}</a></em><br />
-                {$trackback.body|strip_tags|escape:all}<br />
-                {if $entry.is_entry_owner}(<a href="{$serendipityBaseURL}comment.php?serendipity[delete]={$trackback.id}&amp;serendipity[entry]={$trackback.entry_id}&amp;serendipity[type]=trackbacks">{$CONST.DELETE}</a>)
+        <div class="content">
+            <em><a href="{$trackback.url|strip_tags}" {'blank'|xhtml_target}>{$trackback.title}</a></em><br />
+            {$trackback.body|strip_tags|escape:all}<br />
+            {if NOT empty($entry.is_entry_owner)}(<a href="{$serendipityBaseURL}comment.php?serendipity[delete]={$trackback.id}&amp;serendipity[entry]={$trackback.entry_id}&amp;serendipity[type]=trackbacks">{$CONST.DELETE}</a>){/if}
         </div>
-        {/if}
-     </li><div class="clear"></div>
+        <div class="clear"></div>
+     </li>
 {/foreach}
 </ol>
 </div>
