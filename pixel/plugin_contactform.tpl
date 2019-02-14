@@ -2,15 +2,15 @@
     <h2 class="topTitle">{if $plugin_contactform_articleformat}{$plugin_contactform_name}{else}{$plugin_contactform_pagetitle}{/if}</h2>
 
     <div>{$plugin_contactform_preface}</div>
-    {if $is_contactform_sent}
+{if NOT empty($is_contactform_sent)}
     <p class="serendipity_msg_notice">{$plugin_contactform_sent}</p>
-    {else}
-    {if $is_contactform_error}
+{else}
+    {if NOT empty($is_contactform_error)}
     <p class="serendipity_msg_important">{$plugin_contactform_error}</p>
     {foreach $comments_messagestack AS $message}
     <p class="serendipity_msg_important">{$message}</p>
     {/foreach}
-    {/if}
+{/if}
     <div class="serendipity_commentForm">
         <a id="serendipity_CommentForm"></a>
         <form id="serendipity_comment" action="{$commentform_action}#feedback" method="post">
