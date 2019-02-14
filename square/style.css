@@ -529,10 +529,10 @@ img.serendipity_entryIcon {
     clear:left;
     border:none;
     margin-right:10px; }
-/* style for all paragraphs in entry */
+/* style for all paragraphs in entry
 .serendipity_entry p {
     margin: 0px;
-    padding-bottom: 10px; }
+    padding-bottom: 10px; } */
 /* style for all bold text within entry */
 .serendipity_entry b {
     color: #336633;
