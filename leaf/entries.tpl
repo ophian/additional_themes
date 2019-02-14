@@ -70,7 +70,7 @@
                 </div>
                 {/if}
 
-              {if $entry.has_trackbacks}
+               {if $entry.has_trackbacks}
                 <div class="trackbacks">
                     {if $use_popups}
                         | <a href="{$entry.link_popup_trackbacks}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
@@ -80,10 +80,8 @@
                      </div>
                 {/if}
 
-                 {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}
-                 <div class="edit">
-                <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>
-                </div>
+                {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}
+                <div class="edit"><a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a></div>
                 {/if}
 
                 {$entry.add_footer|default:''}
