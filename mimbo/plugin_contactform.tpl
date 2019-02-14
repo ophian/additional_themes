@@ -1,11 +1,11 @@
-<h3 id="response">{$plugin_contactform_pagetitle}</h3>
+    <h3 id="response">{$plugin_contactform_pagetitle}</h3>
 
-<div id="contactpreface">{$plugin_contactform_preface}</div>
+    <div id="contactpreface">{$plugin_contactform_preface}</div>
 
-{if $is_contactform_sent}
-<div class="serendipity_center serendipity_msg_notice">{$plugin_contactform_sent}</div>
+{if NOT empty($is_contactform_sent)}
+    <div class="serendipity_center serendipity_msg_notice">{$plugin_contactform_sent}</div>
 {else}
-    {if $is_contactform_error}
+    {if NOT empty($is_contactform_error)}
     <div class="serendipity_center serendipity_msg_important">{$plugin_contactform_error}</div>
     <!-- Needed for Captchas -->
     {foreach $comments_messagestack AS $message}
