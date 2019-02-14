@@ -130,7 +130,6 @@ img, video {
 
 .comment_content {
     margin-bottom: 1em; }
-
 .serendipity_comment_author_self .serendipity_comment_source .pc-owner,
 .serendipity_comment_author_self .comment_header .pc-owner {
     background: #3e5f81e6;
@@ -174,9 +173,9 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
 
 /** Theme fixes depending presets and theme styles **/
 
-.clearfix:before, .clearfix:after { content: ""; display: table; }/**/
+.clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
-.clearfix { zoom: 1; }/**/
+.clearfix { zoom: 1; }
 #mainpane {
     display: table; }
 #content,
