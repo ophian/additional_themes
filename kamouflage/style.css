@@ -1,1 +1,868 @@
-/******************************************************//* Kamouflage v1.0 by David Cummins                   *//* http://themes.daves.me.uk                          *//* Commenting by Carl Galloway                        *//* http://www.carlgalloway.com                        *//* Camouflage is based on a structured and commented  *//* version of the serendipity blog default theme      *//* and Green Mile by LordCoffee                       *//* Styles have been organised into the following      *//* groups; general, header, footer, entry, comments   *//* commentform, sidebar, calendar, image media, and   *//* plugins.                                           *//*                                                    *//* Carl's comments can be safely be deleted           *//* if you do not require them.                        *//******************************************************/h4, h3	{	margin: 0 0; }/* the input boxes used in forms */input, textarea, select {	font-size: 10pt; }/* all table headers and rows */th, td {	font-size: 10pt; }/* style for lists */li {	list-style-position: inside; }/* style for blockquotes inserted into posts */blockquote {	font-style: italic;	color: #000;	margin: 15px 30px 0 15px;	padding-left: 15px;	border-left: 4px solid #74784B;	background: #CCC898; }/* all links are brown with no underline */a:link, a:visited, a:active {	color: #2F2C12;	text-decoration: none; }/* change link color to dark brown and underline when hovered over */a:hover {	color: #1F0F06;	text-decoration: underline; }/* used when s9y needs to center something */.serendipity_center {	margin-left: auto;	margin-right: auto;	text-align: center; }/* warning messages from s9y */.serendipity_msg_important {	color: red; }/* messages letting you know something has happened eg comment saved */.serendipity_msg_notice {	color: green; }/* style to temporarily change something to grey */.grey {	color:#999; }/********* End of General Styles *********//********* Structural Styles *********//* preset styles for entire blog unless overruled elsewhere, page footer is here as well */body {	direction: ltr;	font-size: 0.9em;	background: #ffffff url(templates/kamouflage/img/bg.gif);	background-attachment: fixed;	margin: 0;	padding:0;	font-family: "trebuchet ms", "bitstream vera sans", arial, sans-serif; }/* wrapper for page */#wrap {	width:90%;	margin:0 auto; }/* container for banner */#serendipity_banner {	margin-top:10px;	margin-right: auto;	margin-bottom: auto;	margin-left: auto;	width: 888px;	height: 120px;	border-right:1px solid #222;	border-left:1px solid #222;	border-top:1px solid #222;	background: #74784B url(templates/kamouflage/img/bg2_2.png); }/* container for content and sidebar */#mainpane {	border-right:1px solid #222;	border-left:1px solid #222;	border-bottom:1px solid #222;	margin: 0 auto;	width: 890px;	border-top: 0px;	background: #74784B url(templates/kamouflage/img/bg2.gif);; }/* container for entries column */#content {	padding: 10px 10px 3px 10px;	margin: 0 10px 3px 10px;	width: auto;	 }/* container for right sidebar */#serendipityRightSideBar {	width: 170px;	padding: 1px 12px 0 2px;	margin:0;	vertical-align: top;	 }/* container for left sidebar */#serendipityLeftSideBar {	width: 170px;	padding:1px 2px 0 12px;	margin-left:10px;	vertical-align: top;}/* container for page footer */#footer {	width: 886px;	padding: 0px;	margin: 0px auto; }/********* End of Structural Styles *********//********* Header/Banner Styles *********//* the big link in the banner, blog name/entry title */a.homelink1, a.homelink1:hover, a.homelink1:link, a.homelink1:visited, #serendipity_banner h1 {	color: #85895A;	font-family: courier, monospace;	font-size : 26px;	padding-left:7px;	padding-top: 54px;	margin: 0px;	text-transform:uppercase;	text-decoration: none; }/* the smaller link in the banner, blog description */a.homelink2, a.homelink2:hover, a.homelink2:link, a.homelink2:visited, #serendipity_banner h2 {	color: #85895A;	padding-left: 7px;	font-family: courier, monospace;	font-size: 16px;	margin: 0px;	text-transform:lowercase;	text-decoration: none; }/********* End of Header/Banner Styles *********//********* Footer Styles *********//* footer paragraph text */#footer p {	color:#ffffff;	text-transform:lowercase;	font-size: 9pt;	font-weight:bold;	line-height: 1.5; }/* make footer links blue, no underline */#footer a {	color:#ffffff;	text-decoration:none; }/* underline footer links when hovered over */#footer a:hover {	color:#CCC898;	text-decoration:underline; }/********* End of Footer Styles *********//********* Entry Styles *********//* container for the entry/post */.serendipity_entry {	font-family: courier, monospace;	color: #000;	font-size: 11pt;	font-weight: normal;	border: 1px dashed #464219;	padding-top: 0px;	padding-left: 5px;	padding-right: 5px;	padding-bottom: 0px;	background: #69653C url(templates/kamouflage/img/entrytitlebg03.png) repeat-x top;	margin: 10px 0 40px 0; }/* container for entry title and date */.serendipity_Entry_Date {	font-size:20px;	clear:both; }/* style for the actual date below entry title */.serendipity_date {	text-align:right;	line-height: 0px;	font-weight: bold;	font-family: courier, monospace;	color: #000;	margin: 0px 0 0 0px;	text-transform:uppercase;letter-spacing:2px;	font-size:14px;	border-bottom: 0px solid #504e53;	padding: 10px 0px 0px 0px; }/* entry title */.serendipity_title {	font-size: 24px;	font-family: courier, monospace;	font-weight: bold;	margin: 5px 0 10px 0;letter-spacing:1px;	text-transform:uppercase;	color: #333E17; }/* style for the meta box title */.serendipity_meta_title {	font-size: small;	font-weight: bold;	margin: 0;	padding:0;	color: #333E17; }/* entry title link, regular color is black */.serendipity_title a:link, .serendipity_title a:visited {	text-decoration: none;	font-weight: bold;	border: 0;	background:none;	color: #333E17; }/*entry title link when hovered over, changes to orange */.serendipity_title a:hover {	color: #464219; }/* additional styles used for entry text */.serendipity_entry p {	margin: 0px;	padding-bottom: 0px; }/* style for extended body */.serendipity_entry_extended {	margin-top:20px; }/* prevent styling of the extended placeholder, otherwise the background image is visible */#extended {	background:none;	display:none; }/* style for links within entries */.serendipity_entry_body a, .serendipity_entry_extended a {	padding-right: 11px;	}/* style for links when hovered over within entries */.serendipity_entry_body a:hover, .serendipity_entry_extended a:hover {	}/* the meta box that includes links to comments, trackbacks etc */div.serendipity_entryFooter {	margin: 0 0px 0px 0px;	font-size: 9px;	color: #989B72;	padding-top: 5px;	padding-bottom: 5px; }/* style for links within the page footer */div.serendipity_entryFooter a {	font-weight:bolder; }/* style for hovered over links within page footer */div.serendipity_entryFooter a:hover {	color: #CCC898;	text-decoration:none; }/* styles for category icon if used */img.serendipity_entryIcon {	float: right;	border-top: 0px solid #b8d63a;	border-right: 0px solid #74784B;	border-bottom: 0px solid #b8d63a;	border-left: 0px solid #b8d63a;padding: 0px;margin-top:0px;	margin-right: 3px; }/* styling the continue reading byline, needed to stop firefox making the link 100% wide */.continue_reading {	display:block;	margin-top:10px;	clear:left; }/* styling the continue reading byline link */.continue_reading a {	color: #000000;	text-transform: lowercase;	font-weight:normal;	background:none; }/* styling the continue reading byline when hovered over */.continue_reading a:hover {	color: #CCC898;	background:none;	text-transform: lowercase;	text-decoration: underline; }/* not used, but allows additional style to show author's posts in multi-author blogs */.serendipity_entry_author_self {	}/* styles for the next/previous links above footer, includes start page and archives links */.serendipity_pageFooter {	clear:both;	margin-top:10px; }/* container for summary listings in archives */.archive_summary {	clear:both;	margin:15px 0 0 10px;	font-size:0.9em;}/* style for entry title in summary archives overview */.archive_summary_title {	font-size: 1.0em;	font-weight: bold;	margin: 0; padding:0; }/********* End of Entry Styles *********//********* Comment Styles *********//* container for all comments, not styled separately in default theme */.serendipity_comments {	padding-left: 5px;	padding-right: 5px;/*	background: url(templates/kamouflage/img/entrytitlebg03.png) repeat-x;*/	}/* comments, trackbacks and commentform titles */.serendipity_commentsTitle {	font-size: medium;	font-weight: bold;	margin-top: 10px;margin-bottom: 10px;	padding: 5px;	border-right: 1px solid #464219;	border-bottom: 1px solid #464219;	border-top: 1px solid #69653C;	border-left: 1px solid #69653C;	color: #000;	text-transform:uppercase;letter-spacing: 1px;background: #74784B url(templates/kamouflage/img/title_bg.png) repeat-x;clear:left; }/* container for individual comments */.serendipity_comment {	padding: 10px;border-bottom: 1px dashed #464219; }/* style for comment author, date commented etc */.serendipity_comment_source {margin-top: 5px;	padding-left: 5px;	margin-bottom: 5px;	padding-bottom: 3px;}/* style for comment author if logged in */.serendipity_comment_author_self {font-style: italic;}/********* Comment Form *********//* container style for entire comment form */.serendipity_commentForm {	font-size: 13px;	color: #404040;	margin-bottom: 13px;	margin-right: 10px;	margin-left: 10px;	background-color: #FFFFFF; }/* style for name, email etc fields in comments form */td.serendipity_commentsLabel {	font-size: 12px;	font-weight: bold;	vertical-align: top; }/* styles for input boxes in comments form */td.serendipity_commentsValue input, td.serendipity_commentsValue select, td.serendipity_commentsValue textarea {	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;	font-size: 12px;	padding: 2px; }/********* End of Comment Form *********//********* Sidebar Styles *********//* container style for individual sidebar blocks */div.serendipitySideBarContent {	padding-left: 0px;	padding-bottom: 12px;	margin-bottom: 12px;	font-size: 12px;	font-weight:normal;	color: #ffffff;	}/* style for each sidebar title */.serendipitySideBarTitle {font-family: courier, monospace;	color: #000;	margin:10px 0 4px 0px;	text-transform:uppercase;letter-spacing: 1pt;	display:block;	font-size:11pt;	border-right: 1px solid #464219;	border-bottom: 1px solid #464219;	border-top: 1px solid #69653C;	border-left: 1px solid #69653C;	padding: 8px 0 6px 10px;	background: url(templates/kamouflage/img/title_bg.png); }/* style for the powered by sidebar entry */div.serendipityPlug img {	padding-left:5px; }/* style for the powered by link */div.serendipityPlug a {	text-decoration: none;	cursor: crosshair;	border: 0px; }/* style for input and select drop downs in sidebar */.serendipitySideBarContent input, .serendipitySideBarContent select {	width:150px; }/* style for side bar date eg recent entries plugin */.serendipitySideBarDate {	line-height:0.9em; }/********* End of Sidebar Styles *********//********* Calendar Styles *********//* style for entire table in calendar plugin */table.serendipity_calendar {	border-bottom:1px solid #464219;	border-left:1px solid #464219;	border-right:1px solid #464219; }/* container style for calendar table rows */table.serendipity_calendar td {	text-align:center;	padding: 3px; }/* style for calendar date links */table.serendipity_calendar a {	font-weight: bold;	text-decoration:underline; }/* style for calendar links when hovered over */table.serendipity_calendar a:hover {	text-decoration: underline; }/* style for calender header row */.serendipity_calendarHeader {background:#464219; }/* styles for month name and arrows in calendar */td.serendipity_calendarHeader a:link, td.serendipity_calendarHeader a:visited, td.serendipity_calendarHeader a:hover {	border: 0;	color:#fff;	text-decoration: none; }/* style for calendar weekday names */td.serendipity_weekDayName {	font-size:95%!important;	font-size:90%;	font-weight:575;	color:#fff;	background:#69653C; }/* style for calendar day rows */td.serendipity_calendarDay {	color:#464219;	font-size:90%; }/* separate style for today's date */td.Today {	color: #000;	font-weight:bold;	border:0px solid #464219;	}/* styles for calendar days rows */.row1 {background: #B4C0A8; }.row2 {background: #CCC898; }.row3 {background: #B4C0A8; }.row4 {background: #CCC898; }.row5 {background: #B4C0A8; }.row6 {background: #CCC898; }/********* End of Calendar Styles *********//********* Embedded images with the s9y image manager *********//* container for images and text */.serendipity_imageComment_center, .serendipity_imageComment_left, .serendipity_imageComment_right {	border-top: 1px solid #333E17;	border-right: 1px solid #333E17;	border-bottom: 1px solid #333E17;	border-left: 1px solid #333E17;	background-color: #B9BFA7;	margin: 3px;	padding: 3px;	text-align: center; }/* style for image container when linked to larger image */.serendipity_imageComment_center a, .serendipity_imageComment_left a, .serendipity_imageComment_right a {	background:none; }/* style for image container when hovered over */.serendipity_imageComment_center a:hover, .serendipity_imageComment_left a:hover, .serendipity_imageComment_right a:hover {	background:none; }/* style to center image and text within entry */.serendipity_imageComment_center {	margin: auto; }/* style to left align image and text within entry */.serendipity_imageComment_left {	float: left; }/* style to right align image and text within entry */.serendipity_imageComment_right {	float: right; }/* styles for the images */.serendipity_imageComment_img, .serendipity_imageComment_img img {	margin: 0px;	padding: 0px;	text-align: center; }/* styles for the text below the image if used */.serendipity_imageComment_txt {	border: 0px solid #b8d63a;	margin: 0px;	padding: 3px;	clear: both;	font-size: 8pt;	text-align: center; }/********* End of Media Manager Styles *********//********* Plugin Styles *********//* container for search results, static page navigation and s9y no entries message */.serendipity_search, .staticpage_navigation, .serendipity_overview_noentries {	margin:10px 0 20px 0;	padding:10px;	border:1px solid #c0c0c0;	background-color:#fafbfc;	color:#505050;	line-height:1.5em;	clear:both; }/* style for input box for quicksearch */#serendipityQuickSearchTermField {	width:70%;	margin-top:10px!important;	margin:0;	padding:0; }/* style for the search term and number of results using quicksearch */.searchterm, .searchresults {color:#235587;font-weight:bold; }/* style for freetag items above entries */.serendipity_freetag_taglist {	margin:10px 0 20px 0;	padding:15px;font-family: courier, monospace;	font-size: 80%;	color:#505050;	border: 1px dashed #464219;	background-color: #69653C;	line-height:1.5em;	text-align: justify; }/* container for freetag plugin in entry footer */.serendipity_freeTag {	margin-top:10px;}/* style for the rss feed image in freetag plugin */img.serendipity_freeTag_xmlButton {	border:none;	padding-left:2px; }/* container for karma vote plugin */.serendipity_karmaVoting {	margin-top: 10px; }/* allows additional styling for top exits text in karma plugin */.serendipity_karmaVoting_exits {	}/* style for number of top exits in karma plugin */.serendipity_karmaVoting_exits_num {	}/* style for karma plugin 'Karma for this article:' and vote links */.serendipity_karmaVoting_text {}/* style for vote links in karma plugin */.serendipity_karmaVoting_links {	display:block;	clear:left; }/* style for karma plugin text and vote line */.serendipity_karmaVoting_current, .serendipity_karmaVoting_visits {}/* style for the separator '|' in the karma plugin top exits */.serendipity_karmaVoting_exits_sep, .serendipity_karmaVoting br {	display:none; }/* container for comments plugin within sidebar */.container_serendipity_plugin_comments {	color:#333; }/* style for line break in comments plugin */.container_serendipity_plugin_comments br {	line-height:0.5em; }/* container for individual comment within sidebar */.plugin_comment_wrap {	display:block;	margin:15px 0 0 0;	border-top:1px solid #ddecfb;	border-bottom:1px solid #ddecfb;	background-color:#fafbfc;	color:#505050; }/* style for comment body within sidebar */.plugin_comment_body {	font-style:oblique; }/********* End Plugin Styles *********/
+/**! Modernizing Serendipity Styx default styles START **/
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+/*main { display: block; }*/
+h1 {
+  font-size: 1.6em;
+  margin: 0.67em 0; }
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible; }
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+a { background-color: transparent; }
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted; }
+b,
+strong { font-weight: bolder; }
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+small { font-size: 80%; }
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+sub { bottom: -0.25em; }
+sup { top: -0.5em; }
+img { border-style: none; }
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0; }
+button,
+input {
+  overflow: visible; }
+button,
+select {
+  text-transform: none; }
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+fieldset { padding: 0.35em 0.75em 0.625em; }
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal; }
+progress { vertical-align: baseline; }
+textarea { overflow: auto; }
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px; }
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit; }
+details { display: block; }
+summary { display: list-item; }
+template,
+[hidden] {
+  display: none; }
+
+/* normalize end */
+
+/* Render Browser default styles */
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box }
+@-ms-viewport { width: device-width; }
+ul,ol { list-style-position: inside; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+/* Modern Serendipity image sizing default */
+
+img {
+    border: 0;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative; }
+embed, object, audio, video, img {
+    max-width: 100%; }
+img, video {
+    height: auto; }
+
+/* Serendipity Styx comment summary pages */
+
+.comment_content {
+    margin-bottom: 1em; }
+.serendipity_comment_author_self .serendipity_comment_source .pc-owner,
+.serendipity_comment_author_self .comment_header .pc-owner {
+    background: #3e5f81e6;
+    padding: .1em .25em;
+    border-radius: 3px;
+    border: 1px solid #999;
+    color: #efefef;
+    font-style: normal;
+    text-shadow: 1px 1px 2px #222; }
+.comments_by_author_pagination {
+    text-align: center; }
+.comments_by_author_pagination.top {
+    margin-top: 1em; }
+.comments_by_author_pagination.bottom {
+    margin: 1.5em auto; }
+
+/* defaults */
+
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: auto; }
+#serendipity_comment_0 { /* a new unsaved comment preview only */
+    border: 1px solid #ddd;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: .625em; }
+.serendipity_image_link {
+    display: inline-block; }
+.serendipity_entry table {
+    display: inline-grid;
+    max-width: 100%;
+    width: auto;
+    overflow: auto;
+    border-collapse: separate;
+    border: 1px solid #eee;
+    padding: .5em; }
+.serendipity_entry p > .serendipity_image_left,
+.serendipity_entry p > .serendipity_imageComment_center,
+.serendipity_entry p > .serendipity_image_right {
+    margin: .25em auto; }
+.content.staticpage_content p > .serendipity_image_left,
+.content.staticpage_content p > .serendipity_imageComment_center,
+.content.staticpage_content p > .serendipity_image_right {
+    margin: .25em auto; }
+
+/** Modernizing Serendipity Styx default styles END **/
+
+/** Theme fixes depending presets and theme styles **/
+
+#wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #74784B; }
+#serendipity_banner {
+    grid-column: span 3; }
+#serendipityLeftSideBar {
+    display: inline-flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    padding: 1em; }
+#content {
+    flex: 1;
+    width: 100%;
+    margin: 1em auto;
+    padding: .5em 1em;
+    background: #69653C; }
+#serendipityRightSideBar {
+    display: inline-flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    padding: 1em; }
+#footer {
+    grid-column: span 3;
+    width: 100%; }
+#serendipityRightSideBar .serendipitySideBarItem,
+#serendipityLeftSideBar .serendipitySideBarItem {
+    min-width: 12em;
+    margin: 0 1rem auto; }
+
+/* Add the wrap bgcolor as a workaround, while sometimes a need,
+   when #content contains elements like massive tables not being
+   flexible enough for the wrap flex - should be solved with the
+   MID-Screen word-break Chromium condition though!
+#serendipityRightSideBar, #footer {
+    background-color: #74784B; }
+ */
+[type="checkbox"],
+[type="radio"] {
+    vertical-align: middle;
+    margin-right: 2px; }
+pre {
+    background: #d1cec9;
+    border: 1px solid #69653C;
+    padding: .5em; }
+/* overwrite possible white-space: pre in highlight.css */
+pre code {
+    white-space: pre-wrap !important;
+    overflow-x: auto; }
+#content > .serendipity_staticpage {
+    margin: 0 1em; }
+.serendipity_entryFooter {
+    text-align: center;
+    margin-bottom: 1em; }
+#serendipity_categories_list {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+.serendipity_commentBody,
+.comment_content {
+    display: block;
+    margin: .5em 0;
+    padding: .5em;
+    border: 1px solid #858A4D;
+    background-color: #74784B; }
+.comment_header h4 {
+    line-height: 1.3; }
+.staticpage_sbList {
+    margin: 0;
+    padding: 0; }
+.staticpage_sbJsList {
+    overflow: hidden;
+    white-space: nowrap;
+    padding-bottom: 1em; }
+.staticpage_sbJsList .dtree a.node {
+    font-weight: bold;
+    color: #2F2C12;
+    padding: 2px; }
+.serendipity_calendar {
+    max-width: 300px; }
+.comments_permalink {
+    margin-left: .5em; }
+.serendipity_date {
+    text-align: right; }
+.serendipity_Entry_Date {
+    margin-bottom: 1.5em; }
+.serendipity_entry {
+    padding: 1em; }
+.serendipity_freeTag {
+    width: 100%; }
+.serendipity_entry_body,
+.serendipity_entry_body_folded,
+.serendipity_entry_body_unfolded,
+.serendipity_entry_extended {
+    line-height: 1.6; }
+.serendipity_entry table {
+    border: 1px solid #858A4D; }
+.serendipity_Entry_Date.freetag_cloud {
+    background-color: #79C99580;
+    border: 1px solid #858A4D;
+    padding: .5em;
+    border-radius: .5rem;
+    box-shadow: 1px 2px 3px #555; }
+.serendipity_freetag_taglist {
+    padding: 0 .25em !important;
+    border-radius: .25em; }
+.serendipity_center {
+    margin-bottom: 1em; }
+.serendipity_msg_important,
+.serendipity_msg_notice {
+    display: inherit;
+    padding: .5em;
+    border: 1px solid #777; }
+.serendipity_msg_important {
+    background-color: aliceblue; }
+.serendipity_msg_notice {
+    background-color: azure; }
+.serendipity_entryFooter {
+    margin: 1em; }
+.serendipity_edit_nugget {
+    margin-top: .5em; }
+/* analogue to serendipity_entry [ff] */
+.serendipity_staticpage {
+    font-family: courier, monospace;
+    font-size: 11pt;
+    line-height: 1.6; }
+.serendipity_staticpage header h2 {
+    font-size: 24px;
+    font-family: courier, monospace;
+    margin: .5em 0 1em 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #333E17; }
+.staticpage_metainfo {
+    width: 100%;
+    display: inline-block; }
+.serendipity_commentForm table {
+    border-collapse: separate;
+    border-spacing: 2px; }
+
+/* MIDDLE SCREENS PLUS */
+@media screen and (min-width: 926px) {
+    #wrap {
+        display: grid;
+        width: 90%;
+        margin: 0 auto;
+        border: 1px solid #222;
+        border-top: 0px; }
+    /* two sidebars */
+    #wrap.grid-col {
+        grid-template-columns: 200px 1fr 200px;
+        grid-template-rows: auto 1fr auto; }
+    /* no or one sidebar */
+    .grid #content {
+        margin: 1em; }
+    #serendipityLeftSideBar,
+    #serendipityRightSideBar {
+        display: initial; }
+    #serendipityRightSideBar .serendipitySideBarItem,
+    #serendipityLeftSideBar .serendipitySideBarItem {
+        margin: initial; }
+    /* disables first SideBarItem h3 top margin */
+    #serendipityLeftSideBar > div.serendipitySideBarItem:nth-of-type(1) > h3,
+    #serendipityRightSideBar > div.serendipitySideBarItem:nth-of-type(1) > h3 {
+        margin-top: 0; }
+    .serendipity_entry table {
+        border-spacing: 0; }
+    .serendipity_entry {
+       word-wrap: break-word;  /* this is more or less for Chromium, to explicitly break loooong urls */
+       word-break: break-word; /* and words, which do expand the flexing content width on certain screens */
+    }
+    /* reset for MOZ, since being able to automatically break AND since it interprets -webkit ONLY @media screen and (-webkit-min-device-pixel-ratio:0) conditions now too(!) */
+    @-moz-document url-prefix() {
+      .serendipity_entry {
+        word-wrap: initial;
+        word-break: normal; }
+    }
+}
+
+/* DESKTOP SCREENS PLUS */
+@media screen and (min-width: 1024px) {
+    .serendipity_entry table {
+        display: table; }
+}
+
+/* backend preview */
+body.save_preview_body {
+    font-family: initial;
+    background: initial;
+    background-attachment: initial;
+    font-size: initial;
+    text-align: initial; }
+#content.save_preview_content {
+    background: #FFF;
+    border-radius: 0;
+    width: 100%; }
+#content.preview_preview_content div.serendipity_entryFooter {
+    display: none;
+    visibility: hidden; }
+
+
+/******************************************************/
+/* Kamouflage v1.0 by David Cummins                   */
+/* http://themes.daves.me.uk                          */
+/* Commenting by Carl Galloway                        */
+/* http://www.carlgalloway.com                        */
+/* Camouflage is based on a structured and commented  */
+/* version of the serendipity blog default theme      */
+/* and Green Mile by LordCoffee                       */
+/* Styles have been organised into the following      */
+/* groups; general, header, footer, entry, comments   */
+/* commentform, sidebar, calendar, image media, and   */
+/* plugins.                                           */
+/*                                                    */
+/* Carl's comments can be safely be deleted           */
+/* if you do not require them.                        */
+/******************************************************/
+
+h4, h3    {
+    margin: 0 0; }
+/* the input boxes used in forms */
+input, textarea, select {
+    font-size: 10pt; }
+/* all table headers and rows */
+th, td {
+    font-size: 10pt; }
+/* style for lists */
+li {
+    list-style-position: inside; }
+/* style for blockquotes inserted into posts */
+blockquote {
+    font-style: italic;
+    color: #000;
+    padding: .5em;
+    background: #CCC898; }
+/* all links are brown with no underline */
+a:link, a:visited, a:active {
+    color: #2F2C12;
+    text-decoration: none; }
+/* change link color to dark brown and underline when hovered over */
+a:hover {
+    color: #1F0F06;
+    text-decoration: underline; }
+/* used when s9y needs to center something */
+.serendipity_center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+/* warning messages from s9y */
+.serendipity_msg_important {
+    color: red; }
+/* messages letting you know something has happened eg comment saved */
+.serendipity_msg_notice {
+    color: green; }
+/* style to temporarily change something to grey */
+.grey {
+    color: #999; }
+/********* End of General Styles *********/
+
+/********* Structural Styles *********/
+/* preset styles for entire blog unless overruled elsewhere, page footer is here as well */
+body {
+    direction: ltr;
+    font-size: 0.9em; /* playing around here will need a new MID SCREEN size ! */
+    background: #ffffff url('{TEMPLATE_PATH}img/bg.gif');
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: "trebuchet ms", "bitstream vera sans", arial, sans-serif; }
+/* container for banner */
+#serendipity_banner {
+    height: 120px;
+    background: #74784B url('{TEMPLATE_PATH}img/bg2_2.png'); }
+/*
+ container for wrapper, content and sidebar(s) have been removed
+ for the redesign (see above) and some other theme cleanups
+*/
+/* container for page footer */
+#footer {
+    margin: 0 auto; }
+/********* End of Structural Styles *********/
+
+/********* Header/Banner Styles *********/
+/* the big link in the banner, blog name/entry title */
+a.homelink1, a.homelink1:hover, a.homelink1:link, a.homelink1:visited, #serendipity_banner h1 {
+    color: #85895A;
+    font-family: courier, monospace;
+    font-size: 26px;
+    padding-left: 7px;
+    padding-top: 54px;
+    margin: 0;
+    text-transform: uppercase;
+    text-decoration: none; }
+/* the smaller link in the banner, blog description */
+a.homelink2, a.homelink2:hover, a.homelink2:link, a.homelink2:visited, #serendipity_banner h2 {
+    color: #85895A;
+    padding-left: 7px;
+    font-family: courier, monospace;
+    font-size: 16px;
+    margin: 0;
+    text-transform: lowercase;
+    text-decoration: none; }
+/********* End of Header/Banner Styles *********/
+
+/********* Footer Styles *********/
+/* footer paragraph text */
+#footer p {
+    color: #ffffff;
+    text-transform: lowercase;
+    font-size: 9pt;
+    font-weight: bold;
+    line-height: 1.5; }
+/* make footer links blue, no underline */
+#footer a {
+    color: #ffffff;
+    text-decoration: none; }
+/* underline footer links when hovered over */
+#footer a:hover {
+    color: #CCC898;
+    text-decoration: underline; }
+/********* End of Footer Styles *********/
+
+/********* Entry Styles *********/
+/* container for the entry/post */
+.serendipity_entry {
+    font-family: courier, monospace;
+    color: #000;
+    font-size: 11pt;
+    font-weight: normal;
+    border: 1px dashed #464219;
+    background: #69653C url('{TEMPLATE_PATH}img/entrytitlebg03.png') repeat-x top;
+    margin: 1em 0 1.5em; }
+/* container for entry title and date */
+.serendipity_Entry_Date {
+    font-size: 1.5em; }
+/* style for the actual date below entry title */
+.serendipity_date {
+    text-align: right;
+    line-height: 0px;
+    font-weight: bold;
+    font-family: courier, monospace;
+    color: #000;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    padding: 1em 0 0 0; }
+/* entry title */
+.serendipity_title {
+    font-size: 24px;
+    font-family: courier, monospace;
+    font-weight: bold;
+    margin: .5em 0 1em 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #333E17; }
+/* style for the meta box title */
+.serendipity_meta_title {
+    font-size: small;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    color: #333E17; }
+/* entry title link, regular color is black */
+.serendipity_title a:link, .serendipity_title a:visited {
+    text-decoration: none;
+    font-weight: bold;
+    border: 0;
+    background: none;
+    color: #333E17; }
+/*entry title link when hovered over, changes to orange */
+.serendipity_title a:hover {
+    color: #464219; }
+/* additional styles used for entry text */
+/*.serendipity_entry p,
+.content.staticpage_content p {
+    margin: 0;
+    padding-bottom: 0; }*/
+/* style for extended body
+.serendipity_entry_extended {
+    margin-top: 1.5em; } */
+/* prevent styling of the extended placeholder, otherwise the background image is visible */
+#extended {
+    background: none;
+    display: none; }
+/* the meta box that includes links to comments, trackbacks etc */
+div.serendipity_entryFooter {
+    color: #989B72; }
+/* style for links within the page footer */
+div.serendipity_entryFooter a {
+    font-weight: bolder; }
+/* style for hovered over links within page footer */
+div.serendipity_entryFooter a:hover {
+    color: #CCC898;
+    text-decoration: none; }
+/* styles for category icon if used */
+img.serendipity_entryIcon {
+    float: right;
+    border-top: 0px solid #b8d63a;
+    border-right: 0px solid #74784B;
+    border-bottom: 0px solid #b8d63a;
+    border-left: 0px solid #b8d63a;
+    padding: 0;
+    margin-top: 0;
+    margin-right: 3px; }
+/* styling the continue reading byline, needed to stop firefox making the link 100% wide */
+.continue_reading {
+    display: inline-block;
+    margin-top: 1em; }
+/* styling the continue reading byline link */
+.continue_reading a {
+    color: #FFF;
+    text-transform: lowercase;
+    font-weight: normal;
+    background: none; }
+/* styling the continue reading byline when hovered over */
+.continue_reading a:hover {
+    color: #CCC898;
+    background: none;
+    text-transform: lowercase;
+    text-decoration: underline; }
+/* not used, but allows additional style to show author's posts in multi-author blogs */
+.serendipity_entry_author_self {
+}
+/* styles for the next/previous links above footer, includes start page and archives links */
+.serendipity_pageFooter {
+    margin-top: 1em; }
+/* container for summary listings in archives */
+.archive_summary {
+    margin: 1em 0;
+    font-size: 0.9em; }
+/* style for entry title in summary archives overview
+.archive_summary_title {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0; } */
+/********* End of Entry Styles *********/
+
+/********* Comment Styles *********/
+/* container for all comments, not styled separately in default theme */
+.serendipity_comments {
+    padding: .5em;
+    padding-right: .5em;
+    /*background: url('{TEMPLATE_PATH}img/entrytitlebg03.png') repeat-x;*/
+}
+/* comments, trackbacks and commentform titles */
+.serendipity_commentsTitle {
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: .5em;
+    border-right: 1px solid #464219;
+    border-bottom: 1px solid #464219;
+    border-top: 1px solid #69653C;
+    border-left: 1px solid #69653C;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #74784B url('{TEMPLATE_PATH}img/title_bg.png') repeat-x;
+    clear: left; }
+/* container for individual comments */
+.serendipity_comment {
+    padding: 1em;
+    border-bottom: 1px dashed #464219; }
+/* style for comment author, date commented etc */
+.serendipity_comment_source {
+    margin: .5em 0;
+    padding: 0 .5em; }
+/* style for comment author if logged in */
+.serendipity_comment_author_self {
+    font-style: italic; }
+
+/********* Comment Form *********/
+/* container style for entire comment form */
+.serendipity_commentForm {
+    font-size: 13px;
+    color: #404040;
+    background-color: #74784B;
+    font-weight: bolder; }
+/* style for name, email etc fields in comments form */
+td.serendipity_commentsLabel {
+    font-size: 12px;
+    font-weight: bold;
+    vertical-align: top; }
+/* styles for input boxes in comments form */
+td.serendipity_commentsValue input, td.serendipity_commentsValue select, td.serendipity_commentsValue textarea {
+    font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 2px; }
+/********* End of Comment Form *********/
+
+/********* Sidebar Styles *********/
+/* container style for individual sidebar blocks */
+div.serendipitySideBarContent {
+    padding: 0 0 1em;
+    margin: 0 0 1em;
+    color: #ffffff; }
+/* style for each sidebar title */
+.serendipitySideBarTitle {
+    font-family: courier, monospace;
+    color: #000;
+    margin: 1em 0 .5em;
+    padding: .5em 0 .5em 1em;
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+    font-size: 11pt;
+    border-right: 1px solid #464219;
+    border-bottom: 1px solid #464219;
+    border-top: 1px solid #69653C;
+    border-left: 1px solid #69653C;
+    background: url('{TEMPLATE_PATH}img/title_bg.png'); }
+/* style for the powered by sidebar entry */
+div.serendipityPlug img {
+    padding-left: .5em; }
+/* style for the powered by link */
+div.serendipityPlug a {
+    text-decoration: none;
+    cursor: crosshair;
+    border: 0; }
+/* style for input and select drop downs in sidebar */
+.serendipitySideBarContent input:not(type="checkbox"),
+.serendipitySideBarContent select {
+    width: 150px; }
+/* style for side bar date eg the recent entries plugin */
+.serendipitySideBarDate {
+    line-height: 0.9em; }
+/********* End of Sidebar Styles *********/
+
+/********* Calendar Styles *********/
+/* style for entire table in calendar plugin */
+table.serendipity_calendar {
+    border: 1px solid #464219;
+    border-top: 0 none; }
+/* container style for calendar table rows */
+table.serendipity_calendar td {
+    text-align: center;
+    padding: 3px; }
+/* style for calendar date links */
+table.serendipity_calendar a {
+    font-weight: bold;
+    text-decoration: underline; }
+/* style for calendar links when hovered over */
+table.serendipity_calendar a:hover {
+    text-decoration: underline; }
+/* style for calender header row */
+.serendipity_calendarHeader {
+    background: #464219; }
+/* styles for month name and arrows in calendar */
+td.serendipity_calendarHeader a:link, td.serendipity_calendarHeader a:visited, td.serendipity_calendarHeader a:hover {
+    border: 0;
+    color: #fff;
+    text-decoration: none; }
+/* style for calendar weekday names */
+td.serendipity_weekDayName {
+    font-size: 95%;
+    font-weight: 575;
+    color: #fff;
+    background: #69653C; }
+/* style for calendar day rows */
+td.serendipity_calendarDay {
+    color: #464219;
+    font-size: 90%; }
+/* separate style for today's date */
+td.Today {
+    color: #000;
+    font-weight: bold;
+    border: 0px solid #464219; }
+/* styles for calendar days rows */
+.row1 {background: #B4C0A8; }
+.row2 {background: #CCC898; }
+.row3 {background: #B4C0A8; }
+.row4 {background: #CCC898; }
+.row5 {background: #B4C0A8; }
+.row6 {background: #CCC898; }
+/********* End of Calendar Styles *********/
+
+/********* Embedded images with the s9y image manager *********/
+/* container for images and text */
+.serendipity_imageComment_center, .serendipity_imageComment_left, .serendipity_imageComment_right {
+    border: 1px solid #333E17;
+    background-color: #B9BFA7;
+    margin: 3px;
+    padding: 3px;
+    text-align: center; }
+/* style for image container when linked to larger image */
+.serendipity_imageComment_center a, .serendipity_imageComment_left a, .serendipity_imageComment_right a {
+    background: none; }
+/* style for image container when hovered over */
+.serendipity_imageComment_center a:hover, .serendipity_imageComment_left a:hover, .serendipity_imageComment_right a:hover {
+    background: none; }
+/* style to center image and text within entry */
+.serendipity_imageComment_center {
+    margin: auto; }
+/* style to left align image and text within entry */
+.serendipity_imageComment_left {
+    float: left; }
+/* style to right align image and text within entry */
+.serendipity_imageComment_right {
+    float: right; }
+/* styles for the images */
+.serendipity_imageComment_img, .serendipity_imageComment_img img {
+    margin: 0;
+    padding: 0;
+    text-align: center; }
+/* styles for the text below the image if used */
+.serendipity_imageComment_txt {
+    border: 0px solid #b8d63a;
+    margin: 0;
+    padding: 3px;
+    clear: both;
+    font-size: 8pt;
+    text-align: center; }
+/********* End of Media Manager Styles *********/
+
+/********* Plugin Styles *********/
+/* container for search results, static page navigation and s9y no entries message */
+.serendipity_search, .staticpage_navigation, .serendipity_overview_noentries {
+    margin: 1em 0 1.5em;
+    padding: 1em;
+    border: 1px solid #c0c0c0;
+    background-color: #fafbfc;
+    color: #505050;
+    line-height: initial; }
+/* style for input box for quicksearch */
+#serendipityQuickSearchTermField {
+    width: 70%;
+    margin-top: 1em!important;
+    margin: 0;
+    padding: 0; }
+/* style for the search term and number of results using quicksearch */
+.searchterm, .searchresults {
+    color: #235587;
+    font-weight: bold; }
+/* style for freetag items above entries */
+.serendipity_freetag_taglist {
+    font-family: courier, monospace;
+    color: #505050;
+    border: 1px dashed #464219;
+    background-color: #69653C;
+    /*text-align: justify;*/ }
+/* container for freetag plugin in entry footer */
+.serendipity_freeTag {
+    margin-top: 1em; }
+/* style for the rss feed image in freetag plugin */
+img.serendipity_freeTag_xmlButton {
+    border: 0 none;
+    padding-left: 2px; }
+/* container for karma vote plugin */
+.serendipity_karmaVoting {
+    margin-top: 1em; }
+/* allows additional styling for top exits text in karma plugin */
+.serendipity_karmaVoting_exits {
+}
+/* style for number of top exits in karma plugin */
+.serendipity_karmaVoting_exits_num {
+}
+/* style for karma plugin 'Karma for this article:' and vote links */
+.serendipity_karmaVoting_text {}
+/* style for vote links in karma plugin */
+.serendipity_karmaVoting_links {
+    display: block;
+    clear: left; }
+/* style for karma plugin text and vote line */
+.serendipity_karmaVoting_current, .serendipity_karmaVoting_visits {}
+/* style for the separator '|' in the karma plugin top exits */
+.serendipity_karmaVoting_exits_sep, .serendipity_karmaVoting br {
+    display: none; }
+/* container for comments plugin within sidebar */
+.container_serendipity_plugin_comments {
+    color: #333; }
+/* style for line break in comments plugin */
+.container_serendipity_plugin_comments br {
+    line-height: .5em; }
+/* container for individual comment within sidebar */
+.plugin_comment_wrap {
+    display: block;
+    margin: 1em 0 0 0;
+    border-top: 1px solid #ddecfb;
+    border-bottom: 1px solid #ddecfb;
+    background-color: #fafbfc;
+    color: #505050; }
+/* style for comment body within sidebar */
+.plugin_comment_body {
+    font-style: oblique; }
+/********* End Plugin Styles *********/

@@ -1,3 +1,6 @@
-Name: Kamouflage v1.1 (2013-10-26)
+Name: Kamouflage
 Author: David Cummins
-Date: 2013-10-26
+Date: 2019-02-05
+
+Summary: Additional old theme from 2006-04-08 to 2013-10-26 as v1.1, with a browsers content size of 90 percent.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Now, responsive <u>and</u> mobile friendly! Since being relatively friendly to change the "martial-design", chosen to accomplish a modern browsers grid/flex flexible system example.
