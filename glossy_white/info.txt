@@ -1,3 +1,6 @@
-Name: glossy white (2014-01-09)
+Name: glossy white
 Author: Christian Hoffmann (ported by Ziyad Saeed)
-Date: 2014-01-09
+Date: 2019-02-15
+
+Summary: Additional old theme from 2005-12-13 to 2014-01-09, with a fixed content size of 770px.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!
