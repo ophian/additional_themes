@@ -31,3 +31,4 @@
 @define('ICONS_DEFAULT_0', 'http://www.moje-domena.cz/');
 @define('ICONS_DEFAULT_1', 'http://www.moje-domena.cz/mail');
 @define('ICONS_DEFAULT_2', 'http://www.moje-domena.cz/mapastranek');
+

@@ -20,11 +20,11 @@
 {/if}
 
 {if $staticpage_pass AND $staticpage_form_pass != $staticpage_pass}
-        {$CONST.STATICPAGE_PASSWORD_NOTICE}<br /><br />
+        {$CONST.STATICPAGE_PASSWORD_NOTICE}<br><br>
         <form action="{$staticpage_form_url}" method="post">
             <div>
-                <input type="password" name="serendipity[pass]" value="" />
-                <input type="submit" name="submit" value="{$CONST.GO}" />
+                <input type="password" name="serendipity[pass]" value="">
+                <input type="submit" name="submit" value="{$CONST.GO}">
              </div>
         </form>
 {else}
@@ -34,11 +34,11 @@
 <tr>
 <td width="200">
         {if $child.image}
-        <img src="{$child.image}" alt="" />
+        <img src="{$child.image}" alt="">
         {/if}
 </td>
 <td>
-        <a href="{$child.permalink}">{$child.pagetitle}</a><br />
+        <a href="{$child.permalink}">{$child.pagetitle}</a><br>
         {$child.precontent|truncate:200:"...":true}
 
 </td>

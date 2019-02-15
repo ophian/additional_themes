@@ -8,19 +8,19 @@
 @define('NAV_DEFAULT_1', 'Photos');
 @define('NAV_DEFAULT_2', 'Music');
 @define('NAV_DEFAULT_3', 'Contact');
-@define('SAYS', 'said');
+@define('SAYS', 'schrieb');
 @define('SORRY', 'Sorry');
 @define('STICKY_POST', 'Sticky:');
 @define('STATIC_POST', 'Static:');
-@define('NAV_LINK_BILD', 'Picture for the active Link');
-@define('NAV_LINK_BILD_DESC', 'The picture is shown when link is active. available: 90 .. 99  if you choose 94 the file greenway/images/pic94.jpg must exist');
+@define('NAV_LINK_BILD', 'Bild für den aktiven Link');
+@define('NAV_LINK_BILD_DESC', 'Dieses Bild wird bei aktivem Link angezeigt. Möglich: 90 .. 99 - wenn 94 gewählt, muss das Bild in "greenway/images/pic94.jpg" existieren');
 @define('NAV_LINK_BAR', 'Aktiver Linktext ');
-@define('NAV_LINK_BAR_DESC', 'This text will shown in the grey box when link is active');
+@define('NAV_LINK_BAR_DESC', 'Dieser Text wird in der "grey box" erscheinen, wenn der Link aktiv ist.');
 @define('ICONS_LINK_TEXT', 'ICON');
-@define('ICONS_LINK_URL_DESC', 'Icon in the right top Nr.');
-@define('ICONS_LINK_URL', 'URL of the icon');
-@define('ICONS_LINK_BILD', 'Icon  Picture-File');
-@define('ICONS_LINK_BILD_DESC', 'If you choose  4 it means that greenway/images/ico4.jpg must exist. ');
+@define('ICONS_LINK_URL_DESC', 'Icon in der rechten oberen Nr.');
+@define('ICONS_LINK_URL', 'URL des Icons');
+@define('ICONS_LINK_BILD', 'Icon Picture-File');
+@define('ICONS_LINK_BILD_DESC', 'Wenn sie 4 wählen, muss "greenway/images/ico4.jpg" existieren. ');
 
 @define('ICONS_DEFAULT_0', 'http://www.meine-domain.de/');
 @define('ICONS_DEFAULT_1', 'http://www.meine-domain.de/mail');

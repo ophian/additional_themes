@@ -1,7 +1,8 @@
 {if $staticpage_articleformat}
 <div>
+{/if}
 
-<h3 >{$staticpage_articleformattitle|escape}: {/if}<a href="#">{$staticpage_headline|escape}</a></h3>
+<h3>{if $staticpage_articleformat}{$staticpage_articleformattitle|escape}: {else}<a href="#">{$staticpage_headline|escape}</a>{/if}</h3>
 
 {if $staticpage_navigation AND $staticpage_shownavi}
     <table border="0" cellpadding="2" cellspacing="2" width="90%"  >
@@ -20,11 +21,10 @@
 
 {if $staticpage_pass AND $staticpage_form_pass != $staticpage_pass}
         <div class="staticpage_password">{$CONST.STATICPAGE_PASSWORD_NOTICE}</div>
-        <br /><br />
         <form class="staticpage_password_form" action="{$staticpage_form_url}" method="post">
             <div>
-                <input type="password" name="serendipity[pass]" value="" />
-                <input type="submit" name="submit" value="{$CONST.GO}" />
+                <input type="password" name="serendipity[pass]" value="">
+                <input type="submit" name="submit" value="{$CONST.GO}">
              </div>
         </form>
 {else}

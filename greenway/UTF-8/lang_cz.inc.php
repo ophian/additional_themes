@@ -14,8 +14,6 @@
 @define('NAV_DEFAULT_3', 'Kontakt');
 @define('SAYS', 'říká');
 @define('SORRY', 'Omluva');
-@define('READ_MORE', 'čti dál');
-@define('DATE_FORMAT_ENTRY_ANDREAS', '%b %e:');
 @define('STICKY_POST', 'Přilepený:');
 @define('STATIC_POST', 'Statický:');
 @define('NAV_LINK_BILD', 'Obrázek pro aktivní odkaz');
@@ -31,3 +29,4 @@
 @define('ICONS_DEFAULT_0', 'http://www.moje-domena.cz/');
 @define('ICONS_DEFAULT_1', 'http://www.moje-domena.cz/mail');
 @define('ICONS_DEFAULT_2', 'http://www.moje-domena.cz/mapastranek');
+

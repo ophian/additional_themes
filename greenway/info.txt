@@ -1,3 +1,6 @@
-Name: Greenway (2013-10-26)
-Author: Free Css Templates ported by Reinhard Linnemann
-Date: 2013-10-26
+Name: Greenway
+Author: Reinhard Linnemann
+Date: 2019-02-15
+
+Summary: Additional old theme from 2007-07-27 to 2013-10-26, with a maximum content size of ~900px. Free Css Templates port.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!

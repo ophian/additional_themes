@@ -1,31 +1,18 @@
-{if $is_xhtml}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-{else}
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-           "http://www.w3.org/TR/html4/loose.dtd">
-{/if}
- 
-
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
+<!DOCTYPE html>
+<html lang="{$lang}">
 <head>
+    <meta charset="{$head_charset}">
     <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
-    <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
-    <link rel="stylesheet" type="text/css" href="{$serendipityHTTPPath}serendipity.css.php" />
-    <link rel="alternate"  type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2" />
-    <link rel="alternate"  type="application/x.atom+xml"  title="{$blogTitle} Atom feed"  href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/atom.xml" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
+    <link rel="stylesheet" type="text/css" href="{$serendipityHTTPPath}serendipity.css.php">
 </head>
 
-<body  >
+<body id="serendipity_comment_page" class="s9y_wrap">
 
-<br/><br/><br/><br/><br/><br/><br/>
-<h1 style="color: #FFFFFF">Serendipity Kommentare und Trackbacks</h1>
-<h2 style="color: #CCCCCC">Greenway Serendipity Blog </h2>
-
-<br/>
-
+<div id="content">
+    <h1>Serendipity Kommentare und Trackbacks</h1>
+    <h2>Greenway Serendipity Blog </h2>
 {if $is_comment_added}
 
     <div class="popup_comments_message popup_comments_message_added">{$CONST.COMMENT_ADDED}{$comment_string.0}<a href="{$comment_url}">{$comment_string.1}</a>{$comment_string.2}<a href="#" onclick="self.close()">{$comment_string.3}</a>{$comment_string.4}</div>
@@ -40,7 +27,7 @@
 
 {elseif $is_showtrackbacks}
 
-    <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>xxxxx
+    <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
     <dl>
         <dt><strong>{$CONST.TRACKBACK_SPECIFIC}:</strong></dt>
         <dd><a rel="nofollow" href="{$comment_url}">{$comment_url}</a></dd>
@@ -65,5 +52,6 @@
 
 {/if}
 
+</div>
 </body>
 </html>
