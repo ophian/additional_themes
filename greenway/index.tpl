@@ -54,8 +54,8 @@
         <div id="right_side">
             <div class="pad">
                 <img src="{$serendipityBaseURL}templates/greenway/images/pic{foreach $navlinks AS $navlink}{if $navlink.href==$smarty.server.REQUEST_URI}{$navlink.picture}{/if}{/foreach}{$category_info.categoryid|default:92}.jpg" alt="">
-                {serendipity_printSidebar side="right"}
                 {serendipity_printSidebar side="left"}
+                {serendipity_printSidebar side="right"}
             </div>
         </div>
         <div id="left_side">
