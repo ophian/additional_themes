@@ -26,12 +26,11 @@
 {serendipity_hookPlugin hook="frontend_header"}
 </head>
 
-<body>
+<body id="{if NOT empty($staticpage_pagetitle)}{$staticpage_pagetitle}{else}Weblog{/if}">
 {else}
 {serendipity_hookPlugin hook="frontend_header"}
 {/if}
 {if $is_raw_mode != true}
-<body id="{if NOT empty($staticpage_pagetitle)}{$staticpage_pagetitle}{else}Weblog{/if}">
 
 <div id="container">
     <div id="serendipity_banner">
@@ -51,7 +50,6 @@
                 -->
             </ul>
         </div>
-        <br style="clear: both">
     </div>
     <div id="mainpane">
         <div id="content">
@@ -89,9 +87,10 @@
         </div>
         <div id="credits">Copyright 2005 <a href="http://www.taeglichanders.de/" title="Copyrights 2005">T&auml;glich &amp; Anders</a>
             | Original Code by <a href="http://myschizobuddy.com/" title="Template ported by" target="_blank">Ziyad Saeed</a>
-            <br>Powered by <a href="http://www.s9y.org" title="The best Blog System in the world" target="_blank">Serendipity</a>
+            <br>Powered by <a href="https://ophian.github.io/">Serendipity Styx Edition</a> <abbr title="and">&amp;</abbr> the <i>{$template}</i> theme.
         </div>
     </div>
+</div>
 {/if}
 
 {$raw_data}
