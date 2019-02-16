@@ -178,9 +178,6 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
 .clearfix { zoom: 1; }
 #mainpane {
     display: table; }
-#content,
-#serendipitySideBar {
-    display: inline-table; }
 [type="checkbox"],
 [type="radio"] {
     vertical-align: middle;
@@ -205,6 +202,14 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     margin: .5em 0 .5em 2.75em; /* taking notice of the leaf */
     padding: .5em;
     border: 1px solid #ddd; }
+.serendipity_comments {
+    display: block;
+    width: 100%;
+    margin-top: 1em; }
+.comments_by_author .serendipity_comment.pingback {
+    background: transparent; }
+.comment_content pre {
+    display: grid; }
 .serendipity_entry_body pre {
     display: inline-block; }
 .staticpage_sbJsList .dtree a.node {
@@ -360,7 +365,7 @@ input, textarea {
 }
 
 .serendipity_Entry_Date {
-    margin: auto;
+    /*margin: auto;*/
     text-align: left;
 }
 
@@ -499,8 +504,8 @@ td.serendipity_commentsValue textarea {
     font-size: 13px;
     color: #4C4C4C;
 	margin: 0 10px 15px 40px;
-    padding:10px;
-    width:425px;
+    padding: 10px;
+    width: 425px;
     background: #E2EDF0 url('{TEMPLATE_PATH}img/01_mountaintop.gif') top no-repeat;
 }
 
@@ -510,7 +515,7 @@ td.serendipity_commentsValue textarea {
 
 .serendipity_comment {
     font-size: 13px;
-	margin:10px 10px 0 0px;
+	margin: 10px 10px 0 0px;
     color: #4C4C4C;
     padding: 3px;
     overflow: auto;
