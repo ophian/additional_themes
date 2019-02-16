@@ -3,18 +3,25 @@
 {if NOT empty($entries)}{* catch a staticpage startpage which has no $entries array set *}
     {foreach $entries AS $dategroup}
     <div class="serendipity_Entry_Date">
+    {if NOT $is_single_entry}
         {if $dategroup.is_sticky}
         <h3 class="serendipity_date">{$CONST.STICKY_POSTINGS}</h3>
         {else}
         <h3 class="serendipity_date">{$dategroup.date|formatTime:DATE_FORMAT_ENTRY}</h3>
         {/if}
+    {/if}
 
         {foreach $dategroup.entries AS $entry}
         {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <h4 class="serendipity_title"><a href="{$entry.link}">{$entry.title}</a></h4>
 
         <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
-            <p class="posttime">{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}</p>
+        {if $is_single_entry OR $dategroup.is_sticky}
+            <p class="posttime">{$CONST.ON} <time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}</time></p>
+        {else}
+            {if $dategroup.date|formatTime:DATE_FORMAT_ENTRY != $entry.timestamp|formatTime:DATE_FORMAT_ENTRY}
+            <p class="posttime">{$CONST.ON} <time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}</time>{/if}</p>
+        {/if}
 
         {if NOT empty($entry.categories)}
             <span class="serendipity_entryIcon">
@@ -125,6 +132,18 @@
         {/if}
 
         {if $is_single_entry AND NOT $is_preview}
+            <div class="serendipity_trackbacks">
+            {if $entry.trackbacks > 0}
+                <a id="trackbacks"></a>
+                <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
+                <div class="serendipity_center">
+                    <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
+                </div>
+                <div id="serendipity_trackbacklist">
+                    {serendipity_printTrackbacks entry=$entry.id}
+                </div>
+            {/if}
+            </div>
             <div class="serendipity_comments">
                 {if $entry.comments > 0}
                 <a id="comments"></a>
