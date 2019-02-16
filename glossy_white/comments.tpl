@@ -1,11 +1,11 @@
 {foreach $comments AS $comment}
 
     <a id="c{$comment.id|default:0}"></a>
-    <div id="serendipity_comment_{$comment.id|default:0}" class="serendipity_comment serendipity_comment_author_{$comment.author|makeFilename}{if isset($entry) AND $entry.author == $comment.author AND $entry.email == $comment.clear_email} serendipity_comment_author_self{/if} {cycle values="comment_oddbox,comment_evenbox"}"{if $comment.depth > 0} style="padding-left: {$comment.depth*20}px"{/if}>
+    <div id="serendipity_comment_{$comment.id|default:0}" class="serendipity_comment serendipity_comment_author_{$comment.author|makeFilename}{if isset($entry) AND $entry.author == $comment.author AND $entry.email == $comment.clear_email} serendipity_comment_author_self{/if} {cycle values="comment_oddbox,comment_evenbox"}"{if $comment.depth > 0} style="padding-left: {$comment.depth*20}px"{***}{/if}>
         <div class="serendipity_comment_source">
     {if empty($comment.id) AND isset($smarty.post.serendipity.preview)}
             <strong>{$CONST.PREVIEW|upper}</strong>
-    {else if !isset($comment.meta)}
+    {else if NOT isset($comment.meta)}
         {if isset($comment.type) AND $comment.type == 'TRACKBACK'}<strong>[TRACKBACK]</strong> {$CONST.TRACKED}:{/if}
 
             <a class="comment_source_trace" href="{$comment.url|escape:'htmlall'}#c{$comment.id|default:0}">#{$comment.trace}</a>

@@ -186,6 +186,8 @@ code, pre {
     width: auto !important;
     vertical-align: middle;
     margin-right: 2px; }
+#navigation:after {
+    clear: both; }
 #mainpane {
     display: table; }
 #content {
@@ -203,6 +205,8 @@ code, pre {
     text-align: left; }
 #footer {
     clear: right; }
+#credits {
+    margin-bottom: .5rem; }
 #searchform {
     margin: 0 1rem auto 0; }
 #searchform input {
@@ -215,7 +219,8 @@ code, pre {
     margin: 1em auto; }
 h2.comments_permalink {
     margin-top: 0; }
-.serendipity_date {
+h3.serendipity_date {
+    font-size: small;
     text-align: right; }
 .serendipity_title {
     display: initial; }
@@ -246,12 +251,14 @@ h2.comments_permalink {
     padding: .25em;
     color: #111;
     background-color: #ccc;
-    font-weight: bold; }
+    font-weight: normal; }
 .serendipity_commentBody,
 .comment_content {
     display: block;
     padding: .5em;
     border: 1px solid #dedede; }
+.comment_source_author {
+    font-weight: bold; }
 .serendipity_commentsTitle {
     font-size: large;
     font-weight: bold;
@@ -260,6 +267,10 @@ h2.comments_permalink {
     background-color: #f8f8f8;
     border: 1px solid #ddd;
     padding: 0 .25rem; }
+.comments_by_author .serendipity_entry {
+    margin-bottom: 1rem; }
+.comments_by_author .comment_header {
+    padding: .4em; }
 .serendipity_emoticon_bar {
     margin: .75em auto;
     vertical-align: middle; }
@@ -403,9 +414,9 @@ input, textarea {
     text-align: right;
 }
 
-h3.serendipity_date {
+/*h3.serendipity_date {
     display: none;
-}
+}*/
 
 .serendipity_title {
     font-size: medium;
@@ -788,7 +799,7 @@ div.serendipitySideBarItem {
 #footer {
     width: 770px;
     margin: auto;
-    padding: 0px 0 0 0;
+    padding: 0;
     background: url('{TEMPLATE_PATH}img/footer.jpg') top left no-repeat;
 }
 #serendipity_breadcrumb {
