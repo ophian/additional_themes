@@ -1,6 +1,6 @@
 Name: leaf
 Author: Ivon Fong (ported by Ziyad Saeed)
-Date: 2019-02-05
+Date: 2019-02-16
 
 Summary: Additional old theme from 2005-09-01 to 2014-01-09 with a fixed content size of ~770px.
 Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!
