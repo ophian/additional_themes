@@ -1,4 +1,6 @@
-Name: Freshy (2008-11-13)
+Name: Freshy
 Author: Julien De Luca (ported by Abdussamad Abdurrazzaq)
-Date: 15 April 2008
-Require Serendipity: 0.9
+Date: 2019-02-17
+
+Summary: Additional old theme from 2008-04-15 to 2008-11-13, with a fixed real content size of 999px width with 2 sidebars, 780px with 1 or no sidebar.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!

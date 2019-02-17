@@ -19,7 +19,7 @@
             <b>{$CONST.TRACKED}:</b> {$trackback.timestamp|formatTime:'%b %d, %H:%M'}
             </div>
 
-        {if $entry.is_entry_owner}
+        {if NOT empty($entry.is_entry_owner)}
             (<a href="{$serendipityBaseURL}comment.php?serendipity[delete]={$trackback.id}&amp;serendipity[entry]={$trackback.entry_id}&amp;serendipity[type]=trackbacks">{$CONST.DELETE}</a>)
         {/if}
         </dd>

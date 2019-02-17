@@ -5,9 +5,7 @@ if (IN_serendipity !== true) { die ("Don't hack!"); }
 $serendipity['smarty']->assign(array('currpage'  => "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],
                                      'currpage2' => $_SERVER['REQUEST_URI']));
 
-if (isset($serendipity['GET']['adminModule']) AND ($serendipity['GET']['adminModule'] == 'templates' || $serendipity['POST']['adminModule'] != 'templates')) {
-    @serendipity_plugin_api::load_language(dirname(__FILE__));
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 include(dirname(__FILE__) . '/functions.custom_imgsel.inc.php');
 
@@ -40,7 +38,7 @@ $freshy_header_option = array(
             'custom'    => FRESHY_CUSTOM_HEADER
 );
 
-foreach($imgsrc AS $path=>$filename) {
+foreach($imgsrc AS $path => $filename) {
     $temp_arr = array('val' => $path, 'description' => $filename, 'preview' => true);
     $freshy_header_option['predef'][] = $temp_arr;
 }
@@ -78,13 +76,13 @@ $template_config = array(
         'description'   => FRESHY_HOMELINK_DESCRIPTION,
         'type'          => 'string',
         'default'       => 'Home'
-    )
+        ),
     array(
         'var' => 'use_corenav',
-        'name' => TWOK11_USE_CORENAV,
+        'name' => FRESHY_USE_CORENAV,
         'type' => 'boolean',
         'default' => false
-    )
+        )
 );
 
 $top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';

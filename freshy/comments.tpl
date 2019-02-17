@@ -2,10 +2,10 @@
 {foreach $comments AS $comment}
     <dt class="{if $entry.author == $comment.author}author_comment{else}none{/if}" >
     <small class="date">
-                    <span class="date_day">{$comment.timestamp|formatTime:'%d'}</span>
-                    <span class="date_month">{$comment.timestamp|formatTime:'%m'}</span>
-                    <span class="date_year">{$comment.timestamp|formatTime:'%Y'}</span>
-            </small>
+        <span class="date_day">{$comment.timestamp|formatTime:'%d'}</span>
+        <span class="date_month">{$comment.timestamp|formatTime:'%m'}</span>
+        <span class="date_year">{$comment.timestamp|formatTime:'%Y'}</span>
+    </small>
     </dt>   
     <dd class="commentlist_item {cycle values="alt, "} {if $entry.author == $comment.author}author_comment{else}none{/if}" id="comment-{$comment.id}" style="padding-left: {$comment.depth*20+20}px !important;">
 
@@ -19,11 +19,11 @@
             {/if}
             </strong>
 
-            {if $entry.is_entry_owner}
+            {if isset($entry) AND NOT empty($entry.is_entry_owner) AND NOT empty($comment.id)}
                 (<a class="comment_source_ownerlink" href="{$comment.link_delete}" onclick="return confirm('{$CONST.COMMENT_DELETE_CONFIRM|sprintf:$comment.id:$comment.author}');">{$CONST.DELETE}</a>)
             {/if}
-            {if $entry.allow_comments}
-                (<a class="comment_reply" href="#serendipity_CommentForm" id="serendipity_reply_{$comment.id}" onclick="document.getElementById('serendipity_replyTo').value='{$comment.id}'; {$comment_onchange}">{$CONST.REPLY}</a>)
+            {if isset($comment.id) AND isset($entry.allow_comments) AND $comment.body != 'COMMENT_DELETED'}
+                (<a class="comment_reply" href="#serendipity_CommentForm" id="serendipity_reply_{$comment.id}" onclick="document.getElementById('serendipity_replyTo').value='{$comment.id}'; {$comment_onchange|default:''}">{$CONST.REPLY}</a>)
                 <div id="serendipity_replyform_{$comment.id}"></div>
             {/if}
                 <br style="display:none;"/>
