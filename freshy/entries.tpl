@@ -6,7 +6,7 @@
             {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <div class="post" id="post-{$entry.id}">
 
-        <h2><a href="{$entry.link}" rel="bookmark" title="{$entry.title}">{$entry.title}</a></h2>
+            <h2><a href="{$entry.link}" rel="bookmark" title="{$entry.title}">{$entry.title}</a></h2>
             <small class="date">
                     <span class="date_day">{$dategroup.date|formatTime:'%d'}</span>
                     <span class="date_month">{$dategroup.date|formatTime:'%m'}</span>
@@ -29,11 +29,11 @@
             {/if}
 
             {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-            <br><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a><br>
+            <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
             {/if}
 
         {if NOT $is_preview}
-            <small class='postmetadata'>
+            <small class="postmetadata">
                 {if $entry.has_comments}
                     {$entry.label_comments} :
                     {if $use_popups}
@@ -65,6 +65,8 @@
         {/if}
 
         </div>
+        {if NOT $is_preview}
+
         <!--
         <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
@@ -79,6 +81,7 @@
             <hr style="display:none;"/>
         {$entry.plugin_display_dat}
 
+        {/if}
         {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|sprintf:$CONST.UNSUBSCRIBE_OK}</div>
