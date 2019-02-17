@@ -18,6 +18,6 @@ function mybd_spawn_window(rd_id,rd_desc,section_desc) {
 }
 
 function mybd_spawn_media_manager(target_txt_box) {
-    disable_text_box(false,target_txt_box);
-    window.open('serendipity_admin_image_selector.php?serendipity[htmltarget]='+target_txt_box+'&serendipity[filename_only]=true', 'ImageSel', 'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1');
+    disable_text_box(false, target_txt_box);
+    window.open('serendipity_admin.php?serendipity[adminModule]=media&serendipity[noBanner]=true&serendipity[noSidebar]=true&serendipity[noFooter]=true&serendipity[showMediaToolbar]=false&serendipity[showUpload]=true&serendipity[htmltarget]='+target_txt_box+'&serendipity[filename_only]=true', 'ImageSel', 'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1');
 }
