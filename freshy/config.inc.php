@@ -14,13 +14,13 @@ $headerdir = dirname(__FILE__) . '/images/headers/';
 $handle = @opendir($headerdir);
 $header_img_dir = 'images/headers/';
 
-if(!$handle) {
+if (!$handle) {
     $imgsrc[serendipity_getTemplateFile($header_img_dir . 'Cards.jpg')] = 'Cards.jpg';
     $imgsrc[serendipity_getTemplateFile($header_img_dir . 'Birds.jpg')] = 'Birds.jpg';
 } else {
     while (false !== ($imgfile = readdir($handle))) {
         if ($imgfile != '.' && $imgfile != '..') {
-            $fullpath = serendipity_getTemplateFile($header_img_dir.$imgfile);
+            $fullpath = serendipity_getTemplateFile($header_img_dir.$imgfile, 'serendipityHTTPPath', true);
             $imgsrc[$fullpath] = $imgfile;
         }
     }
@@ -61,18 +61,18 @@ $template_config = array(
         'name'          => FRESHY_NAVBG_TITLE,
         'description'   => FRESHY_NAVBG_DESCRIPTION,
         'type'          => 'select',
-        'select_values' => array('green'        =>FRESHY_NAVBG_GREEN,
-                                 'blue'         =>FRESHY_NAVBG_BLUE,
-                                 'purple'       =>FRESHY_NAVBG_PURPLE,
-                                 'orange'       =>FRESHY_NAVBG_ORANGE,
-                                 'red'          =>FRESHY_NAVBG_RED,
-                                 'gray'         =>FRESHY_NAVBG_GRAY,
-                                 'lightblue'    =>FRESHY_NAVBG_LIGHT_BLUE
+        'select_values' => array('green'        => FRESHY_NAVBG_GREEN,
+                                 'blue'         => FRESHY_NAVBG_BLUE,
+                                 'purple'       => FRESHY_NAVBG_PURPLE,
+                                 'orange'       => FRESHY_NAVBG_ORANGE,
+                                 'red'          => FRESHY_NAVBG_RED,
+                                 'gray'         => FRESHY_NAVBG_GRAY,
+                                 'lightblue'    => FRESHY_NAVBG_LIGHT_BLUE
                                 ),
         'default'       => 'green'
         ),
     array('var'         => 'homelinklabel',
-         'name'          => FRESHY_NAVLINK_TITLE.' 1',
+         'name'         => FRESHY_NAVLINK_TITLE.' 1',
         'description'   => FRESHY_HOMELINK_DESCRIPTION,
         'type'          => 'string',
         'default'       => 'Home'
