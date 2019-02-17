@@ -84,7 +84,7 @@ function custom_imgsel($text,$option) {
 	$output_text = '';
 	
 	$custom_text_box = "serendipity[template][custom_{$text['var']}]";
-	if (array_key_exists("predef",$option) && sizeof($option['predef'])) {
+	if (array_key_exists("predef", $option) && sizeof($option['predef'])) {
         //predefined options exist
 		if ($option['type'] == "radio") {
 			$num = 0;
@@ -93,7 +93,7 @@ function custom_imgsel($text,$option) {
                 $output_predef .= "<label><input type=\"radio\" id=\"{$text['var']}_$num\"";
                 $output_predef .= " name=\"serendipity[template][{$text['var']}]\" value=\"{$opt_arr['val']}\"";
                 $output_predef .= " onclick=\"disable_text_box(true,'$custom_text_box');\"";
-                if ($saved_vars[$text['var']]==$opt_arr['val']) {
+                if ($saved_vars[$text['var']] == $opt_arr['val']) {
                     $output_predef .= " checked=\"checked\"";
                 }
                 $output_predef .= "> {$opt_arr['description']}</label>&nbsp;&nbsp;&nbsp;";
@@ -103,9 +103,9 @@ function custom_imgsel($text,$option) {
                 $output_predef .= "<br>";
 			}
 		}
-		elseif($option['type'] == "select") {
+        elseif ($option['type'] == "select") {
 			$output_predef .= "<select id=\"serendipity[template][{$text['var']}]\" name=\"serendipity[template][{$text['var']}]\"";
-			$output_predef .= "onclick=\"if(this.value!='custom'){disable_text_box(true,'$custom_text_box');}else {disable_text_box(false,'$custom_text_box')}\">";
+			$output_predef .= " onclick=\"if (this.value!='custom') { disable_text_box(true,'$custom_text_box'); } else { disable_text_box(false,'$custom_text_box') }\">";
 			foreach($option['predef'] AS $opt_arr) {
 				$output_predef .= "<option";
 				if ($saved_vars[$text['var']] == $opt_arr['val']) {
@@ -118,13 +118,13 @@ function custom_imgsel($text,$option) {
 	
 	if ($option['type'] == "radio")	{
 		$output_custom .= "<label><input type=\"radio\" name=\"serendipity[template][{$text['var']}]\"";
-		$output_custom .= " value=\"custom\"  onclick=\"disable_text_box(false,'$custom_text_box');\"";
+		$output_custom .= " value=\"custom\" onclick=\"disable_text_box(false,'$custom_text_box');\"";
 		if($saved_vars[$text['var']] == "custom") {
 			$output_custom .= " checked=\"checked\"";
 		}
 		$output_custom .= ">{$option['custom']}</label>&nbsp;&nbsp;&nbsp;";
 		$output_custom .= "<input type=\"text\" id=\"$custom_text_box\"";
-		$output_custom .= " name=\"$custom_text_box\" value=\"".htmlentities($saved_vars["custom_".$text['var']])."\"";
+		$output_custom .= " name=\"$custom_text_box\" value=\"".serendipity_entities($saved_vars["custom_".$text['var']])."\"";
 		if ($saved_vars[$text['var']] != "custom")
 			$output_custom .= " disabled=\"true\"";
 					
@@ -134,26 +134,26 @@ function custom_imgsel($text,$option) {
 		$output_text .= "<h4>{$text['heading']}</h4><p>{$text['description']}</p>";
 	}
 	elseif($option['type'] == "select") {
-		if(!(array_key_exists("predef",$option) && sizeof($option['predef']))) {
+		if (!(array_key_exists("predef", $option) && sizeof($option['predef']))) {
 			$output_custom .= "<select id=\"serendipity[template][{$text['var']}]\" name=\"serendipity[template][{$text['var']}]\"";
-			$output_custom .= "onclick=\"if(this.value!='custom'){disable_text_box(true,'$custom_text_box');}else {disable_text_box(false,'$custom_text_box')}\">";
+			$output_custom .= " onclick=\"if (this.value!='custom') { disable_text_box(true,'$custom_text_box'); } else { disable_text_box(false,'$custom_text_box') }\">";
 		}	
 		$output_custom .= "<option value=\"custom\"";
 		if ($saved_vars[$text['var']] == "custom") {
-			$output_custom .= "selected=\"selected\"";
+			$output_custom .= " selected=\"selected\"";
 		}
 		$output_custom .= ">{$option['custom']}</option>";
 		$output_custom .= "</select>&nbsp;";
-		$output_custom .= "<a href=\"#\" onclick=\"var n=document.getElementById('serendipity[template][{$text['var']}]');if(n.value=='custom'){mybd_spawn_window('$custom_text_box','{$option['custom']}','{$text['heading']}');} else { mybd_spawn_window(n.id,n.options[n.selectedIndex].text,'{$text['heading']}')};\" >".PREVIEW."</a>";;
-		$output_custom .= "<br><br><label>{$option['custom']}&nbsp;</label>";
+		$output_custom .= "<a href=\"#\" onclick=\"var n=document.getElementById('serendipity[template][{$text['var']}]');if (n.value=='custom') { mybd_spawn_window('$custom_text_box','{$option['custom']}','{$text['heading']}'); } else { mybd_spawn_window(n.id,n.options[n.selectedIndex].text,'{$text['heading']}') };\" >".PREVIEW."</a>";;
+		$output_custom .= "<p><label>{$option['custom']}&nbsp;</label>";
 		
 		$output_custom .= "<input type=\"text\" id=\"$custom_text_box\"";
-		$output_custom .= " name=\"$custom_text_box\" value=\"".htmlentities($saved_vars["custom_".$text['var']])."\"";
+		$output_custom .= " name=\"$custom_text_box\" value=\"".serendipity_entities($saved_vars["custom_".$text['var']])."\"";
 		if ($saved_vars[$text['var']] != "custom") {
 			$output_custom .= " disabled=\"true\"";
 		}
 		$output_custom .= ">&nbsp;&nbsp;&nbsp; <a href=\"#\" onclick=\"mybd_spawn_window('$custom_text_box','{$option['custom']}','{$text['heading']}');\">".PREVIEW."</a>";
-		$output_custom .= "&nbsp;&nbsp;&nbsp; <a href=\"#\" onclick=\"mybd_spawn_media_manager('$custom_text_box');\">".MEDIA_LIBRARY."</a>";
+		$output_custom .= "&nbsp;&nbsp;&nbsp; <a href=\"#\" onclick=\"mybd_spawn_media_manager('$custom_text_box');\">".MEDIA_LIBRARY."</a></p>\n\n";
 		
 		$output_text .= "<h4>{$text['heading']}</h4>{$text['description']}&nbsp;";
 	}
@@ -164,11 +164,9 @@ function custom_imgsel($text,$option) {
 
 function custom_output_script() {
 	global $serendipity;
-	$script_path = serendipity_getTemplateFile("custom_imgsel.js");
+	$script_path = serendipity_getTemplateFile('custom_imgsel.js', 'serendipityHTTPPath', true);
     $output_script = <<<EOS
-
-<script type="text/javascript" language="JavaScript" src="serendipity_editor.js"></script>
-<script type="text/javascript" language="JavaScript" src="$script_path"></script>
+    <script type="text/javascript" language="JavaScript" src="$script_path"></script>
 EOS;
     return $output_script;
 }
