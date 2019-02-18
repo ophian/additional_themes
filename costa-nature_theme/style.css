@@ -287,7 +287,7 @@ body.preview_preview_body {
 #content.save_preview_content {
     padding: .75em; }
 #content.preview_preview_content {
-    width: 100%;
+    width: 760px;
     padding: 0 1.5em; }
 #content.save_preview_content a {
     text-align: left;
