@@ -1,4 +1,6 @@
-Name: CoSTa's Nature Theme v0.6 (2013-02-07)
+Name: CoSTa's Nature Theme
 Author: Kostas CoSTa Brzezinski
-Date: 2013.02.07
-Require Serendipity: 0.8
+Date: 2019-02-17
+
+Summary: Additional old theme from 2006-05-02 to 2013-02-07 as v.0.6, with a fixed content size of 700px.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!
