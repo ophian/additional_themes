@@ -14,8 +14,6 @@
 @define('NAV_DEFAULT_3', 'Kontakt');
 @define('SAYS', 'øíká');
 @define('SORRY', 'Omluva');
-@define('READ_MORE', 'èti dál');
-@define('DATE_FORMAT_ENTRY_ANDREAS', '%b %e:');
 @define('STICKY_POST', 'Pøilepený:');
 @define('STATIC_POST', 'Statický:');
 @define('NAV_LINK_BILD', 'Obrázek pro aktivní odkaz');
