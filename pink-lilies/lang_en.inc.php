@@ -1,4 +1,5 @@
-<?php # 
+<?php
+
 @define('DATE_FORMAT_ENTRY_LILIES', '%d %B %Y');
-@define('FILED_UNDER', 'Filed Under: ');
-?>
+@define('FILED_UNDER', 'Filed under: ');
+
