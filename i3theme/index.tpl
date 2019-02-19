@@ -86,7 +86,7 @@
         </div><!-- /#sidebar-right -->
 {/if}
 
-        <div id="left-col" class="{if $leftSidebarElements == 0}{/if}left-0{if $rightSidebarElements == 0} right-0{/if}">
+        <div id="left-col" class="{if $leftSidebarElements == 0}left-0{/if}{if $rightSidebarElements == 0} right-0{/if}">
             <div id="nav">
                 <ul>
 {foreach $navlinks AS $navlink}
@@ -96,12 +96,12 @@
             </div><!-- /#nav -->
 
             <div id="content">
-            {$CONTENT}
+                {$CONTENT}
             </div><!-- /#content -->
 
             <div id="footer">
                 <span class="mangoorange"><a href="http://www.i3theme.com">i3Theme 1.6</a> is designed by <a href="http://www.ndesign-studio.com">N.Design Studio</a>, customized by <a href="http://www.mangoorange.com/">MangoOrange&trade;</a>, supported by <a href="http://www.webhostinggeeks.com/">Web Hosting Geeks</a>, <br/> sponsored by <a href="http://www.web-hosting-top.com/">Web Hosting Reviews &amp; Free Coupons</a> and <a href="http://www.b4udecide.com/">Cheap Web Hosting</a>.</span>
-                <span class="mangoorange">Ported to <a href="http://www.s9y.org">Serendipity</a> by <a href="http://yellowled.de/s9y.html">YellowLed</a>.</span>
+                <span class="mangoorange">{$CONST.POWERED_BY} <a href="https://ophian.github.io/" target="_blank">Serendipity Styx Edition</a> | Ported by <a href="http://yellowled.de/s9y.html">YellowLed</a>.</span>
             </div><!-- /#footer -->
         </div><!-- /#left-col -->
 
