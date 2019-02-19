@@ -965,6 +965,15 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
 #serendipityCommentFormC {
     text-align: left; }
 body.preview_preview_body { background: #fff; }
+#sidebar-right ul li.serendipity_freeTag_xmlTagEntry,
+#sidebar-left ul li.serendipity_freeTag_xmlTagEntry,
+#serendipity_syndication_list li:first-of-type {
+    list-style: none;
+    background: transparent; }
+#sidebar-right ul li.serendipity_freeTag_xmlTagEntry,
+#sidebar-left ul li.serendipity_freeTag_xmlTagEntry {
+    padding: 0; }
+
 
 /* As long as not being a fully responsive theme for mobile screens and using the Styx Gallery styles keep this */
 .serendipity_image_link,
