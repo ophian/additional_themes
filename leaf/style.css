@@ -588,17 +588,9 @@ div.serendipitySideBarItem {
 }
 
 .serendipitySideBarContent {
-	padding:5px 10px 5px 20px;
+	padding: 5px 10px 5px 20px;
     font-size: 10px;
-        color: #23598C;
-}
-
-.serendipitySideBarFooter {
-    margin: 0px;
-    padding: 0px;
-    color: #000000;
-    height: 14px;
-    background: #FFFFFF url('{TEMPLATE_PATH}img/sidefooter.jpg') no-repeat center top;
+    color: #23598C;
 }
 
 .serendipityImageButton {
