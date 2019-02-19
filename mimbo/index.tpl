@@ -98,7 +98,7 @@
 </div><!-- /#page -->
 
 <div id="footer">
-&#169; {$date|default:''|formatTime:'%Y'} <span class="url fn org">{$blogTitle}</span> | Powered by <a href="https://ophian.github.io/" target="_blank">Serendipity Styx</a> | <a href="{$serendipityBaseURL}feeds/index.rss2">{$CONST.ENTRIES}&nbsp;(RSS)</a> | <a href="{$serendipityBaseURL}feeds/comments.rss2">{$CONST.COMMENTS}&nbsp;(RSS)</a> | <a href="http://www.darrenhoyt.com/2007/08/05/wordpress-magazine-theme-released/" target="_blank" title="By Darren Hoyt"><em>Mimbo</em> theme</a> | Ported to s9y by <a href="http://yellowled.de/s9y.html" title="Ported by Matthias Mees">YellowLed</a>
+&#169; {$date|default:''|formatTime:'%Y'} <span class="url fn org">{$blogTitle}</span> | {$CONST.POWERED_BY} <a href="https://ophian.github.io/" target="_blank">Serendipity Styx Edition</a> | <a href="{$serendipityBaseURL}feeds/index.rss2">{$CONST.ENTRIES}&nbsp;(RSS)</a> | <a href="{$serendipityBaseURL}feeds/comments.rss2">{$CONST.COMMENTS}&nbsp;(RSS)</a> | <a href="http://www.darrenhoyt.com/2007/08/05/wordpress-magazine-theme-released/" target="_blank" title="By Darren Hoyt"><em>Mimbo</em> theme</a> | Ported to s9y by <a href="http://yellowled.de/s9y.html" title="Ported by Matthias Mees">YellowLed</a>
 </div>
 {/if}
 
