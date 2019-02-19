@@ -47,7 +47,7 @@
     </div>
 
     <div id="footer">
-        Pink Lilies theme designed by <a href="http://blog.detlog.org/" title="Naoko's Blog"><strong>Naoko M.</strong></a> - Ported to <a href="https://ophian.github.io/" title="Serendipity Styx Weblog"><strong>Serendipity Styx Edition</strong></a> by <a href="http://www.carlgalloway.com" title="Carl's Blog"><strong>Carl</strong></a>
+        Pink Lilies theme designed by <a href="http://blog.detlog.org/" title="Naoko's Blog"><strong>Naoko M.</strong></a> - {$CONST.POWERED_BY} <a href="https://ophian.github.io/" title="Serendipity Styx Weblog"><strong>Serendipity Styx Edition</strong></a> by <a href="http://www.carlgalloway.com" title="Carl's Blog"><strong>Carl</strong></a>
     </div>
 </div>
 {/if}
