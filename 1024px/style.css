@@ -217,6 +217,9 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     margin-left: .5em; }
 .serendipity_date {
     text-align: right; }
+.fade {
+    float: right; }
+
 
 /* SMALL SCREENS ONLY */
 @media only screen and (max-width: 551px) {
