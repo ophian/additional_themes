@@ -75,11 +75,11 @@
             <a href="{$serendipityBaseURL}">Home</a>
             {if ($head_title AND empty($entry.title)) OR (isset($entry.title) AND $head_title != $entry.title)}
                   :: {$category.category_name}
-            {elseif $head_title AND NOT empty($entry.title)}
+            {elseif $head_title AND NOT empty($entry.title) AND NOT empty($category.category_link)}
                 :: <a href="{$category.category_link}">{$category.category_name}</a>
-            {if isset($entry.title) AND $entry.title == $head_title}
-                :: {$entry.title}
-            {/if}
+                {if isset($entry.title) AND $entry.title == $head_title}
+                    :: {$entry.title}
+                {/if}
             {/if}
             {if NOT empty($staticpage_pagetitle) AND empty($entry.title)}
                 :: {$staticpage_pagetitle}
