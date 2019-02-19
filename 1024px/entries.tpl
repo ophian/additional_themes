@@ -12,7 +12,7 @@
             {if $dategroup.is_sticky}
                 {$CONST.STICKY_POST}
             {else}
-                {$entry.timestamp|formatTime:DATE_FORMAT_ENTRY_ANDREAS}
+                {$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}
             {/if}</span>
         </h2>
         <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
@@ -26,7 +26,8 @@
             </span>
             {/if}
             <div class="serendipity_entry_body">
-                {$entry.multilingual_footer|default:''}{$entry.body}
+                {$entry.multilingual_footer|default:''}
+                {$entry.body}
                 {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
                     <p class="readmore"><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a> &raquo;</p>
                 {/if}

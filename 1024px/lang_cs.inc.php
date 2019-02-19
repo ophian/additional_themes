@@ -6,7 +6,6 @@
  */
 @define('SAYS', 'øíká');
 @define('SORRY', 'Omluva');
-@define('DATE_FORMAT_ENTRY_ANDREAS', '%a, %b %e. %Y');
 @define('STICKY_POST', 'Pøilepený:');
 @define('STATIC_POST', 'Statický:');
 @define('NAV_DEFAULT_0', 'O stránkách');
