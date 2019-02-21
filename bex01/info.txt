@@ -1,3 +1,6 @@
-Name: Bex01 (2013-10-26)
+Name: Bex01
 Author: Rebecca Hemstad
-Date: 2013-10-26
+Date: 2019-02-19
+
+Summary: Additional old theme from 2006-05-01 to 2013-10-26, with a fixed content size of 754px. Structural child sibling of andreas* themes.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!

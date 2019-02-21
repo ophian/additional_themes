@@ -1,7 +1,7 @@
 
 
 <div align="center">
-<table style="width: 100%" border="0" cellspacing="0" cellpadding="0" class="serendipity_calendar">
+<table class="serendipity_calendar">
     <tr>
         <td class="serendipity_calendarHeader" align="center">
 {if $plugin_calendar_head.minScroll le $plugin_calendar_head.month_date}
@@ -9,8 +9,8 @@
 {/if}
         </td>
 
-        <td colspan="5" class="serendipity_calendarHeader" style="text-align: center; vertical-align: middle">
-         <a style="white-space: nowrap; font-weight: bold;" href="{$plugin_calendar_head.uri_month}">{$plugin_calendar_head.month_date|formatTime:"%B '%y":false}</a>
+        <td colspan="5" class="serendipity_calendarHeader">
+         <a href="{$plugin_calendar_head.uri_month}">{$plugin_calendar_head.month_date|formatTime:"%B '%y":false}</a>
         </td>
 
         <td class="serendipity_calendarHeader" align="center">
