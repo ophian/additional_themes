@@ -1,3 +1,6 @@
-Name: Be Nice v1.1 (2009-0817)
+Name: Be Nice
 Author: Carl Galloway
-Date: 26 August 2006
+Date: 2019-02-21
+
+Summary: Additional old theme from 2006-08-26 to 2009-08-17 as v.1.1, with a fixed content size of 758px. Structural child sibling of andreas* themes.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!

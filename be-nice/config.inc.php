@@ -10,17 +10,10 @@ $template_config = array(
         'name'          => 'Header Image',
         'description'   => 'With actress, or without actress',
         'type'          => 'radio',
-	  'radio'         => array('value' => array('true', 'false'),
-					'desc' => array('With', 'Without')),
+        'radio'         => array('value' => array('true', 'false'),
+                                 'desc' => array('With', 'Without')),
         'default'       => 'true',
-    ),
-    array(
-        'var'           => 'amount',
-        'name'          => 'Number of navlinks',
-        'description'   => 'Enter the number of navlinks you want to use in the navbar.',
-        'type'          => 'string',
-        'default'       => '4',
-    ),
+    )
 );
 
 $top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
