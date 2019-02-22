@@ -1,3 +1,6 @@
-Name: Bazooka (2008-02-14)
+Name: Bazooka ()
 Author: David Cummins & Carl Galloway
-Date: 21-1-2006
+Date: 2019-02-22
+
+Summary: Additional old theme from 2006-01-21 to 2008-02-14 with a fixed content size of 880px width.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!
