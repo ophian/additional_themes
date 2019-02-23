@@ -20,7 +20,7 @@
             <span class="serendipity_entryIcon">
             {foreach $entry.categories AS $entry_category}
                 {if $entry_category.category_icon}
-                    <a href="{$entry_category.category_link}"><img class="serendipity_entryIcon" title="{$entry_category.category_name|escape}{$entry_category.category_description|emptyPrefix}" alt="{$entry_category.category_name|escape}" src="{$entry_category.category_icon}" /></a>
+                    <a href="{$entry_category.category_link}"><img class="serendipity_entryIcon" title="{$entry_category.category_name|escape}{$entry_category.category_description|emptyPrefix}" alt="{$entry_category.category_name|escape}" src="{$entry_category.category_icon}"></a>
                 {/if}
             {/foreach}
             </span>
@@ -29,7 +29,7 @@
             <div class="content">
                 {$entry.body}
             {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-                <br><br><a href="{$entry.link}#extended" style="text-decoration:none; color:#656561;"><img src="{serendipity_getFile file="img/category.gif"}" />{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title} &raquo;</a>
+                <p><a href="{$entry.link}#extended" style="text-decoration:none; color:#656561;"><img src="{serendipity_getFile file="img/category.gif"}">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title} &raquo;</a></p>
             {/if}
             </div>
             {if $entry.is_extended}

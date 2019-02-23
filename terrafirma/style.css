@@ -221,6 +221,10 @@ h2.staticpage_title {
 .serendipity_commentForm table {
     border-collapse: separate;
     border-spacing: 2px; }
+.serendipity_entryFooter {
+    text-align: center;
+    margin: 1em auto; }
+
 
 /* backend preview */
 #content.preview_preview_content {
@@ -242,12 +246,12 @@ body.save_preview_body {
 	http://www.nodethirtythree.com
 
 */
-
+/* Don't do that!
 * {
     padding: 0px;
     margin: 0px;
 }
-
+*/
 body {
     background: #F9F9F7 url('{TEMPLATE_PATH}img/a1.gif') repeat-x;
     font-size: 11px;
@@ -270,7 +274,7 @@ sup {
 }
 
 p {
-    margin-bottom: 14px;
+    /*margin-bottom: 14px;*/
     text-align: justify;
 }
 
