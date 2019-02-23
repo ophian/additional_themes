@@ -18,20 +18,21 @@
         </div>
         <div class="serendipity_entry_body">
             {$entry.body}
+
+        {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
+            <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
+        {/if}
+
         </div>
 
-        {if $entry.is_extended}
+        {if $is_single_entry AND $entry.is_extended}
         <div class="serendipity_entry_extended">
             <a id="extended"></a>
             {$entry.extended}
         </div>
         {/if}
-
-        {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-        <a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a><br>
-        {/if}
-
     {if NOT $is_preview}
+
         <div class="serendipity_entryFooterTop"></div>
         <div class="serendipity_entryFooterMain">
             <a href="{$entry.link_author}"><img src="{serendipity_getFile file="img/icons/user.gif"}">{$CONST.POSTED_BY}: {$entry.author}</a> {$CONST.IN} <img src="{serendipity_getFile file="img/icons/category.gif"}">:
