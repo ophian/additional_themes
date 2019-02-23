@@ -480,7 +480,8 @@ for ($i = 0; $i < $template_loaded_config['amount']; $i++) {
         'default'       => '0',
         );
     $dropdownentries = array();
-    for ($k = 0; $k < $template_loaded_config['navlink' . $i . 'dramount']; $k++) {
+    if (isset($template_loaded_config['navlink0dramount'])) {
+      for ($k = 0; $k < $template_loaded_config['navlink' . $i . 'dramount']; $k++) {
         $template_config[] = array(
             'var'       => 'navlink' . $i . 'dropdowentry' . $k . 'text',
             'name'      => DROPDOWN_TEXT . ' #'. $k,
@@ -498,14 +499,15 @@ for ($i = 0; $i < $template_loaded_config['amount']; $i++) {
             'title'     => $template_loaded_config['navlink' . $i . 'dropdowentry' . $k . 'text'],
             'href'      => $template_loaded_config['navlink' . $i . 'dropdowentry' . $k . 'url'],
             );
-    }
-    $navlinks[] = array(
+      }
+      $navlinks[] = array(
         'navlinkinfo'     => $template_loaded_config['navlink' . $i . 'navlink_info'],
         'title'           => $template_loaded_config['navlink' . $i . 'text'],
         'href'            => $template_loaded_config['navlink' . $i . 'url'],
         'drop'            => $template_loaded_config['navlink' . $i . 'dramount'],
         'dropdownentries' => $dropdownentries,
-    );
+      );
+    }
 }
 $serendipity['smarty']->assignByRef('navlinks', $navlinks);
 
@@ -543,14 +545,16 @@ for ($i = 0; $i < $template_loaded_config['amount']; $i++) {
         'type'          => 'select',
         'select_values' => $bannerposition,
         );
-   $catlinks[] = array(
+    if (isset($template_loaded_config['catlink0text'])) {
+      $catlinks[] = array(
         'title'       => $template_loaded_config['catlink' . $i . 'text'],
         'catlinkinfo' => $template_loaded_config['navlink' . $i . 'catlink_info'],
         'image'       => $template_loaded_config['catlink' . $i . 'url'],
         'catt'        => $template_loaded_config['catlink' . $i . 'catselect'],
         'position'    => $template_loaded_config['catlink' . $i . 'position'],
 
-    );
+      );
+    }
 }
 
 $serendipity['smarty']->assignByRef('catlinks', $catlinks);
