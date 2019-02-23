@@ -183,7 +183,7 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     vertical-align: middle;
     margin-right: 2px; }
 .serendipity_Entry_Date {
-    margin-bottom: 2.5em; }
+    margin-bottom: 1rem; }
 .comments_by_author_pagination.bottom {
     display: table;
     margin: 2.5em auto 1em; }
