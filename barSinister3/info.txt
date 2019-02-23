@@ -1,5 +1,5 @@
 Name: Bar Sinister
-Author: Martin, Carl
+Author: Martin, Carl Galloway
 Date: 2019-02-22
 
 Summary: Additional old theme from 2006-04-01 to 2008-02-14 with a fixed content size of 780px width.
