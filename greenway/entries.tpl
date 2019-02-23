@@ -10,8 +10,8 @@
         {/if}
 
         {foreach $dategroup.entries AS $entry}
-            {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
-            <h3><a href="{$entry.link}">{$entry.title}</a></h3>
+        {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
+        <h3><a href="{$entry.link}">{$entry.title}</a></h3>
 
         {if NOT empty($entry.categories)}
             <span class="serendipity_entryIcon">
@@ -23,19 +23,24 @@
             </span>
         {/if}
 
-
-            {$entry.body}
-
-
-        {if $entry.is_extended}
-            <div class="serendipity_entry_extended"><a id="extended"></a>{$entry.extended}</div>
-        {/if}
+            <div class="serendipity_entry_body">
+                {$entry.body}
 
             {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-            <br><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a><br>
+                <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
             {/if}
 
-            <div class='date'>
+            </div>
+            {if $is_single_entry AND $entry.is_extended}
+
+            <div class="serendipity_entry_extended">
+                <a id="extended"></a>
+                {$entry.extended}
+            </div>
+            {/if}
+        {if NOT $is_preview}
+
+            <div class="date">
                 {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a>
                 {if NOT empty($entry.categories)}
                     {$CONST.IN} {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
@@ -47,7 +52,6 @@
                     {$CONST.AT}
                 {/if} <a href="{$entry.link}">{if $dategroup.is_sticky}{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY} {/if}{$entry.timestamp|formatTime:'%H:%M'}</a>
 
-            {if NOT $is_preview}
                 {if $entry.has_comments}
                     {if $use_popups}
                         | <a href="{$entry.link_popup_comments}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{$entry.label_comments} ({$entry.comments})</a>
@@ -69,9 +73,7 @@
                 {/if}
 
                 {$entry.add_footer|default:''}
-            {/if}
             </div>
-            {if NOT $is_preview}
 
             <!--
             <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
