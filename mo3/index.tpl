@@ -55,7 +55,7 @@
 {if $is_raw_mode != true}
 {assign var="view2" value=$view}
 
-<div id="page" class="clearfloat">
+    <div id="page" class="clearfloat">
 
         <h2><a class="homelink1" href="{$serendipityBaseURL}">{$blogTitle}</a></h2>
         <div class="description">{$blogDescription}</div>
@@ -701,13 +701,15 @@
             </div>
         </div><!-- /#footerbox3 -->
 
-    </div>
+    </div><!-- /#footerframe end -->
+
     <div id="footertext">
-{if $template_option.sidebarpos == "3"}
+    {if $template_option.sidebarpos == "3"}
         <div id="nofooterbox">{if $leftSidebarElements > 0}{serendipity_printSidebar side="left"}{/if}</div>
         <br/>  &#169; {$date|default:''|formatTime:"%Y"} <span class="url fn org">{$blogTitle}</span> |
         <a href="{$serendipityBaseURL}feeds/index.rss2">{$CONST.ENTRIES}&nbsp;(RSS)</a> | <a href="{$serendipityBaseURL}feeds/comments.rss2">{$CONST.COMMENTS}&nbsp;(RSS)</a> |&nbsp; Theme <a href="http://www.plusneun.de/index.php" title="plusneun.de">plusneun.de</a>
         Tabs:<a target="_blank" href="http://www.cssplay.co.uk/">CSSplay</a>
+    {/if}
     </div>
 
     {/if}{* /#template_option.enablefooter true *}
