@@ -22,17 +22,21 @@
 
             <div class="entry">
                 {$entry.body}
-            </div>
-
-            {if $entry.is_extended}
-            <div class="serendipity_entry_extended"><a id="extended"></a>{$entry.extended}</div>
-            {/if}
 
             {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-            <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
+                <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
             {/if}
 
+            </div>
+            {if $is_single_entry AND $entry.is_extended}
+
+            <div class="serendipity_entry_extended">
+                <a id="extended"></a>
+                {$entry.extended}
+            </div>
+            {/if}
         {if NOT $is_preview}
+
             <small class="postmetadata">
                 {if $entry.has_comments}
                     {$entry.label_comments} :
