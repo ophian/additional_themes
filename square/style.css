@@ -209,6 +209,9 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     margin-bottom: .25em;}
 .serendipity_commentsTitle {
     margin: 1em 0; }
+.serendipity_entries_footer {
+    text-align: center;
+    margin: 1em auto; }
 
 /* backend preview */
 body.save_preview_body {
@@ -496,8 +499,8 @@ div.serendipity_entry_date, div.serendipity_Entry_Date {
     padding:0 5px 0 5px;
     line-height:160%; }
 /* margin for extended body fixes missing break */
-.serendipity_entry_extended {
-    margin-top:15px; }
+/*.serendipity_entry_extended {
+    margin-top:15px; }*/
 /* style for "posted by", comments and trackbacks at bottom of entry */
 div.serendipity_entryFooter {
     color: #444;
