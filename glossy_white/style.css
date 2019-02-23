@@ -228,7 +228,7 @@ h3.serendipity_date {
     text-align: center; }
 .serendipity_entry_body pre {
     display: inline-block; }
-.serendipity_entry_body, .serendipity_entry_extended {
+.serendipity_entry_body {
     margin-top: .5em; }
 .serendipity_Entries_Footer ul li{
     display: inline-block;

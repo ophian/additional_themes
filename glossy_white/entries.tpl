@@ -20,14 +20,15 @@
             <p class="posttime">{$CONST.ON} <time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}</time></p>
         {else}
             {if $dategroup.date|formatTime:DATE_FORMAT_ENTRY != $entry.timestamp|formatTime:DATE_FORMAT_ENTRY}
-            <p class="posttime">{$CONST.ON} <time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}</time>{/if}</p>
+            <p class="posttime">{$CONST.ON} <time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}</time></p>
+            {/if}
         {/if}
 
         {if NOT empty($entry.categories)}
             <span class="serendipity_entryIcon">
             {foreach $entry.categories AS $category}
                 {if $category.category_icon}
-                    <a href="{$category.category_link}"><img class="serendipity_entryIcon" title="{$category.category_name|escape}{$category.category_description|emptyPrefix}" alt="{$category.category_name|escape}" src="{$category.category_icon}" /></a>
+                    <a href="{$category.category_link}"><img class="serendipity_entryIcon" title="{$category.category_name|escape}{$category.category_description|emptyPrefix}" alt="{$category.category_name|escape}" src="{$category.category_icon}"></a>
                 {/if}
             {/foreach}
             </span>
@@ -35,15 +36,20 @@
 
             <div class="serendipity_entry_body">
                 {$entry.body}
-            </div>
-
-            {if $entry.is_extended}
-            <div class="serendipity_entry_extended"><a id="extended"></a>{$entry.extended}</div>
-            {/if}
 
             {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-            <br><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a><br>
+                <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
             {/if}
+
+            </div>
+            {if $is_single_entry AND $entry.is_extended}
+
+            <div class="serendipity_entry_extended">
+                <a id="extended"></a>
+                {$entry.extended}
+            </div>
+            {/if}
+            {if NOT $is_preview}
 
             <div class="serendipity_entryFooter">
                  <div class="postedby">
@@ -59,7 +65,6 @@
                 {/if} <a href="{$entry.link}">{if $dategroup.is_sticky}{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY} {/if}{$entry.timestamp|formatTime:'%H:%M'}</a>
                 </div>
 
-            {if NOT $is_preview}
                 {if $entry.has_comments}
                 <div class="comments">
                     {if $use_popups}
@@ -91,10 +96,11 @@
                 {/if}
 
                 {$entry.add_footer|default:''}
-            {/if}
             </div>
+            {/if}
         </div>
         {if NOT $is_preview}
+
         <!--
         <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
@@ -129,8 +135,6 @@
             {if $CONST.DATA_COMMENT_APPROVED}
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</div>
             {/if}
-
-
         {/if}
 
         {if $is_single_entry AND NOT $is_preview}
