@@ -11,14 +11,15 @@
 
         <div class="entry">
             {$entry.body}
-{if $entry.is_extended}
+{if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
+            <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
+{/if}
+{if $is_single_entry AND $entry.is_extended}
+
             <div class="serendipity_entry_extended">
                 <a id="extended"></a>
                 {$entry.extended}
             </div>
-{/if}
-{if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-            <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
 {/if}
             {if NOT $is_preview}{$entry.add_footer|default:''}{/if}
         </div>
