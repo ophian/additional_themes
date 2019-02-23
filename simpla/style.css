@@ -192,15 +192,17 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 [type="checkbox"],
 [type="radio"] {
     vertical-align: middle; }
-
 .serendipity_Entry_Date.freetag_cloud {
     display: inline-block;
     margin-bottom: 1em; }
-
 .serendipity_staticpage h2,
 h2.staticpage_title {
     display: block;
     margin-bottom: 1.5em; }
+.serendipity_entryFooter {
+    margin: 1em auto;
+    text-align: center; }
+
 
 /* backend preview */
 body.save_preview_body {

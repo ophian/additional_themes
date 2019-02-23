@@ -10,7 +10,7 @@
         {/if}
 
         {foreach $dategroup.entries AS $entry}
-            {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
+        {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
 
         <h2 class="serendipity_title"><a href="{$entry.link}">{$entry.title}</a></h2>
 
@@ -20,7 +20,7 @@
             <span class="categoryIcon">
         {foreach $entry.categories AS $entry_category}
             {if $entry_category.category_icon}
-                <a href="{$entry_category.category_link}"><img class="categoryIcon" title="{$entry_category.category_name|escape}{$entry_category.category_description|emptyPrefix}" alt="{$entry_category.category_name|escape}" src="{$entry_category.category_icon}" /></a>
+                <a href="{$entry_category.category_link}"><img class="categoryIcon" title="{$entry_category.category_name|escape}{$entry_category.category_description|emptyPrefix}" alt="{$entry_category.category_name|escape}" src="{$entry_category.category_icon}"></a>
             {/if}
         {/foreach}
             </span>
@@ -30,18 +30,16 @@
                 <div class="serendipity_entry_body">
                     {$entry.body}
 
-                {if $is_single_entry}
-                    <br><a id="extended"></a>{$entry.extended}<br>
+                {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
+                    <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
+                {/if}
+                {if $is_single_entry AND $entry.is_extended}
+
+                    <a id="extended"></a>
+                    {$entry.extended}
                 {/if}
 
                 </div>
-
-                {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-
-                <br><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a><br>
-
-                {/if}
-
                 {if $is_single_entry AND NOT $is_preview}
 
                 <div class="entrymeta">
@@ -82,8 +80,8 @@
                 </div><!-- entrymeta ende -->
 
                 {else}
-
             {if NOT $is_preview}
+
                 <div class="entrymeta">
                     <div class="postinfo">
                         <span class="postedby">{$CONST.ENTRY_POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a></span>
@@ -111,28 +109,31 @@
                 {/if}
 
                 </div><!-- entrymeta ende -->
-            {/if}
 
-                {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}
+                {if NOT empty($entry.is_entry_owner)}
                     <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>
                 {/if}
+            {/if}
 
-                {/if}
+                {/if}{* else end *}
 
             </div>
-        <!--
-        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
-                 xmlns:dc="http://purl.org/dc/elements/1.1/">
-        <rdf:Description
-                 rdf:about="{$entry.link_rdf}"
-                 trackback:ping="{$entry.link_trackback}"
-                 dc:title="{$entry.title_rdf|default:$entry.title}"
-                 dc:identifier="{$entry.rdf_ident}" />
-        </rdf:RDF>
-        -->
+            {if NOT $is_preview}
 
-        {$entry.plugin_display_dat}
+            <!--
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                     xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+                     xmlns:dc="http://purl.org/dc/elements/1.1/">
+            <rdf:Description
+                     rdf:about="{$entry.link_rdf}"
+                     trackback:ping="{$entry.link_trackback}"
+                     dc:title="{$entry.title_rdf|default:$entry.title}"
+                     dc:identifier="{$entry.rdf_ident}" />
+            </rdf:RDF>
+            -->
+
+            {$entry.plugin_display_dat}
+            {/if}
 
         {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
 
