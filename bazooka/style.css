@@ -279,6 +279,10 @@ body.preview_preview_body,
 }
 
 
+/**!
+  Bazooka theme
+**/
+
 /********* General Styles  *********/
 
 /* used in entry and sidebar titles */
@@ -564,9 +568,9 @@ div.serendipity_entry_date, div.serendipity_Entry_Date {
     padding: 0 5px 0 5px;
     line-height: 160%; }
 
-/* margin for extended body fixes missing break */
+/* margin for extended body fixes missing break [this is intended, since in div container and text normally in p-paragraphs]
 .serendipity_entry_extended {
-    margin-top: 15px; }
+    margin-top: 15px; } */
 
 /* style for "posted by", comments and trackbacks at bottom of entry */
 div.serendipity_entryFooter {

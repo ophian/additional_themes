@@ -15,7 +15,7 @@
             <span class="serendipity_entryIcon">
             {foreach $entry.categories AS $category}
                 {if $category.category_icon}
-                    <a href="{$category.category_link}"><img class="serendipity_entryIcon" title="{$category.category_name|escape}{$category.category_description|emptyPrefix}" alt="{$category.category_name|escape}" src="{$category.category_icon}" /></a>
+                    <a href="{$category.category_link}"><img class="serendipity_entryIcon" title="{$category.category_name|escape}{$category.category_description|emptyPrefix}" alt="{$category.category_name|escape}" src="{$category.category_icon}"></a>
                 {/if}
             {/foreach}
             </span>
@@ -24,23 +24,23 @@
 
         <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if} {if NOT $smarty.foreach.dategroup.last}entry_separator{/if}">
 
-
             <div class="serendipity_entry_body">
                 {$entry.body}
-            </div>
 
-            {if $entry.is_extended}
+            {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
+                <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
+            {/if}
+
+            </div>
+            {if $is_single_entry AND $entry.is_extended}
+
             <div class="serendipity_entry_extended">
                 <a id="extended"></a>
                 {$entry.extended}
             </div>
             {/if}
-
-            {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-            <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
-            {/if}
-
         {if NOT $is_preview}
+
             <div class="serendipity_entryFooter">
                 {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a>
                 {if NOT empty($entry.categories)}
