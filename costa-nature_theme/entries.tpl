@@ -20,7 +20,7 @@
             <span class="serendipity_entryIcon">
             {foreach $entry.categories AS $category}
                 {if $category.category_icon}
-                    <a href="{$category.category_link}"><img class="serendipity_entryIcon" title="{$category.category_name|escape}{$category.category_description|emptyPrefix}" alt="{$category.category_name|escape}" src="{$category.category_icon}" /></a>
+                    <a href="{$category.category_link}"><img class="serendipity_entryIcon" title="{$category.category_name|escape}{$category.category_description|emptyPrefix}" alt="{$category.category_name|escape}" src="{$category.category_icon}"></a>
                 {/if}
             {/foreach}
             </span>
@@ -28,36 +28,40 @@
 
             <div class="serendipity_entry_body">
                 {$entry.body}
-            </div>
-
-            {if $entry.is_extended}
-            <div class="serendipity_entry_extended"><a id="extended"></a>{$entry.extended}</div>
-            {/if}
 
             {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-            <p class="continue_reading"><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
+                <p class="continue_reading"><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
             {/if}
 
+            </div>
+            {if $is_single_entry AND $entry.is_extended}
+
+            <div class="serendipity_entry_extended">
+                <a id="extended"></a>
+                {$entry.extended}
+            </div>
+            {/if}
+            {if NOT $is_preview}
+
             <div class="serendipity_entryFooter">
-                {$CONST.POSTED_BY} <img src='{serendipity_getFile file="img/arrow_right-01.png"}' alt="" /> <a href="{$entry.link_author}">{$entry.author}</a>
+                {$CONST.POSTED_BY} <img src="{serendipity_getFile file="img/arrow_right-01.png"}" alt=""> <a href="{$entry.link_author}">{$entry.author}</a>
                 {if NOT empty($entry.categories)}
-                    {$CONST.IN} {foreach $entry.categories AS $entry_category}<img src='{serendipity_getFile file="img/arrow_right-01.png"}' alt="" /> <a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
+                    {$CONST.IN} {foreach $entry.categories AS $entry_category}<img src="{serendipity_getFile file="img/arrow_right-01.png"}" alt=""> <a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
                 {/if}
 
-            {if NOT $is_preview}
                 {if $entry.has_comments}
                     {if $use_popups}
-                        | <img src='{serendipity_getFile file="img/comment.gif"}' alt="" align="top" /> <a href="{$entry.link_popup_comments}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{$entry.label_comments} ({$entry.comments})</a>
+                        | <img src="{serendipity_getFile file="img/comment.gif"}" alt="" align="top"> <a href="{$entry.link_popup_comments}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{$entry.label_comments} ({$entry.comments})</a>
                     {else}
-                        | <img src='{serendipity_getFile file="img/comment.gif"}' alt="" align="top" /> <a href="{$entry.link}#comments">{$entry.label_comments} ({$entry.comments})</a>
+                        | <img src="{serendipity_getFile file="img/comment.gif"}" alt="" align="top"> <a href="{$entry.link}#comments">{$entry.label_comments} ({$entry.comments})</a>
                     {/if}
                 {/if}
 
                 {if $entry.has_trackbacks}
                     {if $use_popups}
-                        | <img src='{serendipity_getFile file="img/trackback.gif"}' alt="" align="top" /> <a href="{$entry.link_popup_trackbacks}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
+                        | <img src="{serendipity_getFile file="img/trackback.gif"}" alt="" align="top"> <a href="{$entry.link_popup_trackbacks}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
                     {else}
-                        | <img src='{serendipity_getFile file="img/trackback.gif"}' alt="" align="top" /> <a href="{$entry.link}#trackbacks">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
+                        | <img src="{serendipity_getFile file="img/trackback.gif"}" alt="" align="top"> <a href="{$entry.link}#trackbacks">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
                     {/if}
                 {/if}
 
@@ -66,8 +70,8 @@
                 {/if}
 
                 {$entry.add_footer|default:''}
-            {/if}
             </div>
+            {/if}
         </div>
         {if NOT $is_preview}
 
