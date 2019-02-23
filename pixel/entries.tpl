@@ -14,14 +14,15 @@
 
         <div class="topContent">
             {$entry.body}
-        {if $entry.is_extended}
-            <div id="extended">{$entry.extended}</div>
-        {/if}
         {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
             <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
         {/if}
+        {if $is_single_entry AND $entry.is_extended}
+            <div id="extended">{$entry.extended}</div>
+        {/if}
         </div>
     {if NOT $is_preview}
+
       {if $entry.has_comments AND NOT $is_single_entry}
         <span class="topComments"><a href="{$entry.link}#comments">{$entry.comments} {$entry.label_comments}</a></span>
       {/if}
