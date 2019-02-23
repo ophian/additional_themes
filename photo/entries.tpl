@@ -55,7 +55,6 @@
             {/if}
         {/if}
 
-
         {if $is_single_entry AND NOT empty($is_preview)}
             <footer class="clearfix">
                 <span class="single_user">{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.ON} </span><time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:$template_option.date_format}s</time>
@@ -80,7 +79,7 @@
                 | <a href="{$entry.url_shorturl}" title="{$CONST.TWOK11_SHORT_URL_HINT}" class="short-url">{$CONST.TWOK11_SHORT_URL}</a>
             {/if}
                 {$entry.add_footer|default:''}
-                {if NOT empty($entry.is_entry_owner) AND NOT $is_preview} | <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
+                {if NOT empty($entry.is_entry_owner)} | <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
             </footer>
         {/if}
     {if NOT $is_preview}

@@ -52,12 +52,11 @@
             <a href="{$entry.link}#trackbacks"><img src="{serendipity_getFile file="img/icons/trackback.gif"}">{$entry.label_trackbacks}: [{$entry.trackbacks}]</a>
             {/if}
         {/if}
-    {/if}
 
-        {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}
+        {if NOT empty($entry.is_entry_owner)}
             <a href="{$entry.link_edit}"><img src="{serendipity_getFile file="img/icons/edit.gif"}">: {$CONST.EDIT_ENTRY}</a>
         {/if}
-        {if NOT $is_preview}{$entry.add_footer|default:''}{/if}
+            {$entry.add_footer|default:''}
         </div>
         <div class="serendipity_entryFooterBottom">
 
@@ -75,6 +74,7 @@
         </div>
         {$entry.plugin_display_dat}
         <div class="post-footer">&nbsp;</div>
+    {/if}
 
         {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}

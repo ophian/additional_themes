@@ -44,7 +44,7 @@
         {/if}
     {/if}
 
-        {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}<br>
+        {if NOT empty($entry.is_entry_owner)}<br>
             <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>
         {/if}
             {$entry.add_footer|default:''}

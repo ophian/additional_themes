@@ -43,7 +43,7 @@
             {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
                 <li><a class="more" href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></li>
             {/if}
-            {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}
+            {if NOT empty($entry.is_entry_owner)}
                 <li><a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a></li>
             {/if}
             </ul>

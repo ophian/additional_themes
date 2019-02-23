@@ -59,7 +59,7 @@
                     {/if}
                 {/if}
 
-                {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}
+                {if NOT empty($entry.is_entry_owner)}
                         | <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>
                 {/if}
 
@@ -67,6 +67,8 @@
             </div>
         {/if}
         </div>
+        {if NOT $is_preview}
+
         <!--
         <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
@@ -79,6 +81,7 @@
         </rdf:RDF>
         -->
         {$entry.plugin_display_dat}
+        {/if}
 
         {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
