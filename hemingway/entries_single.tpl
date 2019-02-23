@@ -8,18 +8,21 @@
         <h1>{$entry.title|default:$entry.id}</h1>
         <div class="serendipity_entry_body">
             {$entry.body}
+        {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
+
+            <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
+        {/if}
         </div>
-    {if $entry.has_extended}
+    {if $is_single_entry AND $entry.is_extended}
 
         <div class="serendipity_entry_extended">
             <a id="extended"></a>
             {$entry.extended}
         </div>
     {/if}
-    {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-        <br><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a>
-    {/if}
-        <!-- entry.add.footer begins -->{$entry.add_footer|default:''}{$entry.plugin_display_dat}
+        <!-- entry.add.footer begins -->
+        {$entry.add_footer|default:''}
+        {$entry.plugin_display_dat}
     </div>
 {if NOT $is_preview}
 

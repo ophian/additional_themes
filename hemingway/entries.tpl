@@ -64,6 +64,11 @@
     <h1 class="serendipity_title">{$entry.title|default:$entry.id}</h1>
     <div class="serendipity_entry_body">
         {$entry.body}
+
+    {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
+        <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
+    {/if}
+
     </div>
 {if $entry.has_extended}
 
