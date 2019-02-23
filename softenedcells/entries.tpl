@@ -17,6 +17,11 @@
         <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
             <div class="serendipity_entry_body">
                 {$entry.body}
+
+                {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
+                <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
+                {/if}
+
             </div>
 
             {if $entry.is_extended}
@@ -26,9 +31,6 @@
             </div>
             {/if}
 
-            {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-            <br><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a><br>
-            {/if}
 
         {if NOT $is_preview}
             <div class="serendipity_entryFooter">
