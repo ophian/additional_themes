@@ -21,12 +21,15 @@
 
             <div class="serendipity_entry">
                 <div>
-                {$entry.body}{if $is_single_entry}<a id="extended"></a>{$entry.extended}{/if}
-                </div>
-
+                {$entry.body}
                 {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-                <a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a><br>
+                <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
                 {/if}
+            {if $is_single_entry AND $entry.is_extended}
+                <a id="extended"></a>
+                {$entry.extended}
+            {/if}
+                </div>
 
                 {if NOT empty($entry.is_entry_owner) AND NOT $is_preview}<a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}
 
