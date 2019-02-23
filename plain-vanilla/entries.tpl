@@ -18,7 +18,7 @@
             <span class="categoryIcon">
             {foreach $entry.categories AS $category}
                 {if $category.category_icon}
-                    <a href="{$category.category_link}"><img class="categoryIcon" title="{$category.category_name|escape}{$category.category_description|emptyPrefix}" alt="{$category.category_name|escape}" src="{$category.category_icon}" /></a>
+                    <a href="{$category.category_link}"><img class="categoryIcon" title="{$category.category_name|escape}{$category.category_description|emptyPrefix}" alt="{$category.category_name|escape}" src="{$category.category_icon}"></a>
                 {/if}
             {/foreach}
             </span>
@@ -26,15 +26,17 @@
 
             <div class="entrytext">
                 {$entry.body}
-                {if $is_single_entry}
-                <a id="extended"></a>{$entry.extended}
-                {/if}
 
                 {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-                <a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a><br>
+                <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
                 {/if}
+                {if $is_single_entry AND $entry.is_extended}
 
+                <a id="extended"></a>
+                {$entry.extended}
+                {/if}
             {if $is_single_entry AND NOT $is_preview}
+
                 <div class="postmetadata{if $is_single_entry} graybox{/if}">
                     <small>
                     {if $is_single_entry}
