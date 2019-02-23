@@ -572,12 +572,12 @@ h3.serendipity_title, h4.serendipity_title, .serendipity_date, .serendipity_comm
     clear:left;}
 
 /* not used in reflection theme, but can be used to apply additional styles for full entry */
-.serendipity_entry_body_folded, .serendipity_entry_body_unfolded, .serendipity_entry_extended {
-    }
+.serendipity_entry_body_folded, .serendipity_entry_body_unfolded, .serendipity_entry_extended {}
+/*
 .serendipity_entry_extended {
     float:left;
     margin-top:20px;}
-
+*/
 
 /* the small text at the end of each entry 'comments, trackbacks etc' */
 div.serendipity_entryFooter {
