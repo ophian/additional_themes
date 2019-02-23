@@ -527,7 +527,7 @@ h2.post-title, h2.serendipity_date {
     line-height:1em;
 }
 .serendipity_entry_body, .serendipity_entry {
-    padding:10px 0;
+    padding:10px 0 0;
     margin:3px 0;
     border-top:#BBC4A3 1px solid;
     font-size:12px;
@@ -543,7 +543,7 @@ div.serendipity_entryFooter {
     color: #999999;
     font-size: xx-small;
     text-align: center;
-    margin-bottom: 40px;
+    /*margin-bottom: 40px;*/
     line-height: normal;
     clear:both;
 }
