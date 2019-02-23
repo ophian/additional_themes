@@ -51,9 +51,11 @@
         </div>
         <div id="menu">
             <a href="{$serendipityBaseURL}" id="navHome" title="Posted Recently">{$CONST.HOMEPAGE}</a>
+        {if NOT empty($navlinks)}
         {foreach $navlinks AS $navlink}
-            <a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a>
+            {if $navlink.title != "" AND $navlink.href != ""}<a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a>{/if}
         {/foreach}
+        {/if}
         </div>
 
         <div id="mainpane">
