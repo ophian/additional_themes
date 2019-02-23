@@ -19,16 +19,18 @@
                 <div class="serendipity_entry_body">
                     {$entry.body}
                 {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
+
                     <span class="continue_reading"><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></span>
                 {/if}
                 </div>
+            {if $is_single_entry AND $entry.is_extended}
 
-            {if $entry.is_extended}
                 <div class="serendipity_entry_extended">
                     <a id="extended"></a>
                     {$entry.extended}
                 </div>
             {/if}
+        {if NOT $is_preview}
 
                 <div class="serendipity_entryFooter">
                 {if $is_single_entry}
@@ -49,13 +51,12 @@
                         <span class="serendipity_entryIcon">
                         {foreach $entry.categories AS $category}
                             {if $category.category_icon}
-                                <a href="{$category.category_link}"><img class="serendipity_entryIcon" title="{$category.category_name|escape}{$category.category_description|emptyPrefix}" alt="{$category.category_name|escape}" src="{$category.category_icon}" /></a>{if NOT $entry_category@last}, {/if}
+                                <a href="{$category.category_link}"><img class="serendipity_entryIcon" title="{$category.category_name|escape}{$category.category_description|emptyPrefix}" alt="{$category.category_name|escape}" src="{$category.category_icon}"></a>{if NOT $entry_category@last}, {/if}
                             {/if}
                         {/foreach}
                         </span>
                     {/if}
                     </div>
-        {if NOT $is_preview}
             {if $entry.has_comments}
                 {if $use_popups}
                     <br><a href="{$entry.link_popup_comments}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{$entry.label_comments} ({$entry.comments})</a>
@@ -75,22 +76,20 @@
             {/if}
 
                     {$entry.add_footer|default:''}
-        {/if}
 
                 </div><!-- //entryFooter -->
-        {if NOT $is_preview}
-            <!--
-                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
-                xmlns:dc="http://purl.org/dc/elements/1.1/">
-                <rdf:Description
-                rdf:about="{$entry.link_rdf}"
-                trackback:ping="{$entry.link_trackback}"
-                dc:title="{$entry.title_rdf|default:$entry.title}"
-                dc:identifier="{$entry.rdf_ident}" />
-                </rdf:RDF>
-            -->
-            {$entry.plugin_display_dat}
+                <!--
+                    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+                        xmlns:dc="http://purl.org/dc/elements/1.1/">
+                        <rdf:Description
+                        rdf:about="{$entry.link_rdf}"
+                        trackback:ping="{$entry.link_trackback}"
+                        dc:title="{$entry.title_rdf|default:$entry.title}"
+                        dc:identifier="{$entry.rdf_ident}" />
+                    </rdf:RDF>
+                -->
+                {$entry.plugin_display_dat}
         {/if}
 
         {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
