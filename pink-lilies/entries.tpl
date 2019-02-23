@@ -19,7 +19,7 @@
             <span class="serendipity_entryIcon">
             {foreach $entry.categories AS $category}
                 {if $category.category_icon}
-                    <a href="{$category.category_link}"><img class="serendipity_entryIcon" title="{$category.category_name|escape}{$category.category_description|emptyPrefix}" alt="{$category.category_name|escape}" src="{$category.category_icon}" /></a>
+                    <a href="{$category.category_link}"><img class="serendipity_entryIcon" title="{$category.category_name|escape}{$category.category_description|emptyPrefix}" alt="{$category.category_name|escape}" src="{$category.category_icon}"></a>
                 {/if}
             {/foreach}
             </span>
@@ -27,16 +27,21 @@
 
             <div class="serendipity_entry_body">
                 {$entry.body}
-            </div>
-            {if $entry.is_extended}
-            <div class="serendipity_entry_extended"><a id="extended"></a>{$entry.extended}</div>
-            {/if}
 
             {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-            <a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a>
+                <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
             {/if}
 
+            </div>
+            {if $is_single_entry AND $entry.is_extended}
+
+            <div class="serendipity_entry_extended">
+                <a id="extended"></a>
+                {$entry.extended}
+            </div>
+            {/if}
             {if NOT $is_preview}
+
             <div class="serendipity_entryFooter">
                  {if $entry.has_comments}
                     {if $use_popups}
@@ -57,6 +62,8 @@
             </div>
             {/if}
         </div>
+        {if NOT $is_preview}
+
         <!--
         <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
@@ -69,6 +76,7 @@
         </rdf:RDF>
         -->
         {$entry.plugin_display_dat}
+        {/if}
 
         {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
