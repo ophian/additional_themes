@@ -86,6 +86,7 @@
         </div>
     </div>
 
+</div>
 {/if}
 {$raw_data}
 {serendipity_hookPlugin hook="frontend_footer"}
