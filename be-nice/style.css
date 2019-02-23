@@ -612,8 +612,11 @@ div#content p.day-date span.editlink a {
 div.serendipity_entry_body, div.serendipity_entry_extended {
     color: #494949;
     font-size: 1.0em;
-    line-height: 1.1em;
+    line-height: 1.1em; }
+div.serendipity_entry_body {
     padding: 10px 9px 0 10px; }
+div.serendipity_entry_extended {
+    padding: 0 9px 10px 10px; }
 
 .staticpage_author, .staticpage_metainfo {margin-left:10px;}
 
