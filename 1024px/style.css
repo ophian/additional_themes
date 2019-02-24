@@ -64,10 +64,10 @@ button::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0; }
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+button: -moz-focusring,
+[type="button"]: -moz-focusring,
+[type="reset"]: -moz-focusring,
+[type="submit"]: -moz-focusring {
   outline: 1px dotted ButtonText; }
 fieldset { padding: 0.35em 0.75em 0.625em; }
 legend {
@@ -238,258 +238,337 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     visibility: hidden; }
 
 /**
- 1024px - An open source xhtml/css website template by Andreas Viklund - http://andreasviklund.com .
+ 1024px - An open source xhtml/css website template by Andreas Viklund - http: //andreasviklund.com .
  Free to use in any way and for any purpose as long as the proper credits are given to the original designer.
- Version: 1.2, April 20, 2006 
- Serendipity template created by Carl Galloway - http://www.carlgalloway.com
+ Version: 1.2, April 20, 2006
+ Serendipity template created by Carl Galloway - http: //www.carlgalloway.com
 */
 
 /******** General tags ********/
 
-body{
-font:76% Verdana,Tahoma,Arial,sans-serif;
-background:#ffffff url({TEMPLATE_PATH}img/background.gif) top center repeat-y;
-color:#404040;
-line-height:1.2em;
-margin:0 auto;
-padding:0;
+body {
+    font: 76% Verdana,Tahoma,Arial,sans-serif;
+    background: #ffffff url('{TEMPLATE_PATH}img/background.gif') top center repeat-y;
+    color: #404040;
+    line-height: 1.2em;
+    margin: 0 auto;
+    padding: 0;
 }
 
-a{
-text-decoration:none;
-color:#4088b8;
-font-weight:bold;
+a {
+    text-decoration: none;
+    color: #4088b8;
+    font-weight: bold;
 }
 
-a:hover{text-decoration:underline;}
-a img{border:0;}
-ul,ol,dl{font-size:0.9em; margin:2px 0 16px 35px;}
-ul ul,ol ol{margin:4px 0 4px 35px;}
+a:hover {
+    text-decoration: underline; }
+a img {
+    border: 0; }
+ul,ol,dl {
+    font-size: 0.9em;
+    margin: 2px 0 16px 35px; }
+ul ul,ol ol {
+    margin: 4px 0 4px 35px; }
 
-h1{
-font-family: Lucida Grande, Tahoma, Arial, Helvetica, sans-serif;
-font-size:3.2em;
-letter-spacing:-3px;
-margin:0 0 30px 45px;
-color:#4088b8;
+h1 {
+    font-family: Lucida Grande, Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 3.2em;
+    letter-spacing: -3px;
+    margin: 0 0 30px 45px;
+    color: #4088b8;
 }
 
-h1 a{text-transform:none; color:#4088b8;}
+h1 a {
+    text-transform: none;
+    color: #4088b8; }
 
 h2, .serendipity_commentsTitle, .serendipity_date, .serendipity_title, .staticpage_result_header {
-font-size:1.4em;
-color:#4088b8;
-border-bottom:4px solid #dadada;
-padding:0 2px 2px 5px;
-margin:0 0 10px 0;
-letter-spacing:-1px;
+    font-size: 1.4em;
+    color: #4088b8;
+    border-bottom: 4px solid #dadada;
+    padding: 0 2px 2px 5px;
+    margin: 0 0 10px 0;
+    letter-spacing: -1px;
 }
-.serendipity_commentsTitle, .staticpage_result_header {font-weight:bold;}
+.serendipity_commentsTitle, .staticpage_result_header {
+    font-weight: bold; }
 
-blockquote{
-font-size:0.9em;
-border:1px solid #dadada;
-border-left:5px solid #dadada;
-margin:20px 10px;
-padding:8px;
-width:600px;
+blockquote {
+    font-size: 0.9em;
+    border: 1px solid #dadada;
+    border-left: 5px solid #dadada;
+    margin: 20px 10px;
+    padding: 8px;
+    width: 600px;
 }
 
 /******** Main wrap ********/
-#wrap{
-color:#404040;
-width:970px;
-margin:10px auto;
-padding:0;
+#wrap {
+    color: #404040;
+    width: 970px;
+    margin: 10px auto;
+    padding: 0;
 }
 
-#pagetop{margin:0;}
+#pagetop {
+    margin: 0; }
 
-#toplinks{text-align:right; padding:5px 2px 2px 3px;}
+#toplinks {
+    text-align: right;
+    padding: 5px 2px 2px 3px; }
 
-#slogan{
-font-size:1.5em;
-color:#808080;
-font-weight:bold;
-letter-spacing:-1px;
-margin:15px 0px 20px 45px;
-line-height:1.2em;
+#slogan {
+    font-size: 1.5em;
+    color: #808080;
+    font-weight: bold;
+    letter-spacing: -1px;
+    margin: 15px 0px 20px 45px;
+    line-height: 1.2em;
 }
 
 /******** sidebar ********/
-#sidebar{
-float:left;
-width:195px;
-margin:0 0 5px 0;
-padding:0;
+#sidebar {
+    float: left;
+    width: 195px;
+    margin: 0 0 5px 0;
+    padding: 0;
 }
 
-#sidebar ul, .serendipitySideBarContent{
-list-style:none;
-font-size:0.9em;
-margin:0;
-padding:0 0 15px 10px;
+#sidebar ul, .serendipitySideBarContent {
+    list-style: none;
+    font-size: 0.9em;
+    margin: 0;
+    padding: 0 0 15px 10px;
 }
 
-#sidebar li{
-list-style:none;
-margin:0 0 4px 0;
-padding:0;
+#sidebar li {
+    list-style: none;
+    margin: 0 0 4px 0;
+    padding: 0;
 }
 
-#sidebar li a{
-font-size:1.2em;
-font-weight:bold;
-padding:2px;
+#sidebar li a {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 2px;
 }
 
-#sidebar ul ul{
-margin:4px 0 3px 15px;
-line-height:1.2em;
-padding:0;
+#sidebar ul ul {
+    margin: 4px 0 3px 15px;
+    line-height: 1.2em;
+    padding: 0;
 }
 
-#sidebar ul ul li a{font-weight:normal;}
-#sidebar h2{margin:3px 0px 8px 0px;}
-#sidebar input:not(type="checkbox"), #sidebar select, #sidebar td input {width:90%;}
+#sidebar ul ul li a {
+    font-weight: normal; }
+#sidebar h2 {
+    margin: 3px 0px 8px 0px; }
+#sidebar input:not(type="checkbox"), #sidebar select, #sidebar td input {
+    width: 90%; }
 
 /******** Content variations ********/
-#content{
-line-height:1.5em;
-width:750px;
-float:right;
-text-align:left;
-margin:0;
-padding:0;
+#content {
+    line-height: 1.5em;
+    width: 750px;
+    float: right;
+    text-align: left;
+    margin: 0;
+    padding: 0;
 }
 
-#contentalt{
-line-height:1.5em;
-width:750px;
-float:left;
-text-align:left;
-padding:0;
-margin-right:20px;
+#contentalt {
+    line-height: 1.5em;
+    width: 750px;
+    float: left;
+    text-align: left;
+    padding: 0;
+    margin-right: 20px;
 }
 
-#content h2 a, #contentalt h2 a {text-decoration:none;}
-#content h3, #contentalt h3{margin:10px 0 8px;}
+#content h2 a, #contentalt h2 a {
+    text-decoration: none; }
+#content h3, #contentalt h3 {
+    margin: 10px 0 8px; }
 
 /******** Footer ********/
-#footer{
-clear:both;
-text-align:right;
-color:#808080;
-font-size:0.9em;
-border-top:4px solid #dadada;
-margin:0 auto;
-padding:8px 0;
-line-height:1.6em;
+#footer {
+    clear: both;
+    text-align: right;
+    color: #808080;
+    font-size: 0.9em;
+    border-top: 4px solid #dadada;
+    margin: 0 auto;
+    padding: 8px 0;
+    line-height: 1.6em;
 }
 
-#footer p{margin:0; padding:0;}
-#footer a{color:#808080;}
+#footer p {
+    margin: 0;
+    padding: 0; }
+#footer a {
+    color: #808080; }
 
 /******** Various classes ********/
 .box {
-clear:both;
-color:#ffffff;
-font-size:0.9em;
-background-color:#4088b8;
-border:1px solid #c8c8c8;
-line-height:1.3em;
-padding:5px 5px 5px 8px;
-margin:0 0 30px 0px;
+    clear: both;
+    color: #ffffff;
+    font-size: 0.9em;
+    background-color: #4088b8;
+    border: 1px solid #c8c8c8;
+    line-height: 1.3em;
+    padding: 5px 5px 5px 8px;
+    margin: 0 0 30px 0px;
 }
-.serendipity_entryFooter {font-style:oblique;clear:both;font-size:0.8em;margin:0 0 40px 10px;line-height:1.2;}
-
+.serendipity_entryFooter {
+    font-style: oblique;
+    clear: both;
+    font-size: 0.8em;
+    margin: 0 0 40px 10px;
+    line-height: 1.2; }
 
 .serendipity_freeTag, .serendipity_multilingualInfo {}
-.serendipity_pageFooter {margin:30px 0 15px 0;}
+.serendipity_pageFooter {
+    margin: 30px 0 15px 0; }
 
-.box a {color:#f0f0f0;}
-.left{float:left; margin:0 15px 4px 0;}
-.right{float:right; margin:0 0 4px 15px;}
-.textright{text-align:right;}
-.readmore{text-align:right;}
+.box a {
+    color: #f0f0f0; }
+.left {
+    float: left;
+    margin: 0 15px 4px 0; }
+.right {
+    float: right;
+    margin: 0 0 4px 15px; }
+.textright {
+    text-align: right; }
+.readmore {
+    text-align: right; }
 
-.center{text-align:center;}
-.blue{color:#4088b8;}
-.big{font-size:1.3em;}
-.small{font-size:0.8em;}
-.bold{font-weight:bold;}
+.center {
+    text-align: center; }
+.blue {
+    color: #4088b8; }
+.big {
+    font-size: 1.3em; }
+.small {
+    font-size: 0.8em; }
+.bold {
+    font-weight: bold; }
 
-.clear{clear:both;}
-.hide{display:none;}
-.fade{color:#c8c8c8;}
-.gray{color:#808080;}
+.clear {
+    clear: both; }
+.hide {
+    display: none; }
+.fade {
+    color: #c8c8c8; }
+.gray {
+    color: #808080; }
 
-.photo{
-border:1px solid #bababa;
-padding:2px;
-background-color:#ffffff;
-margin:6px 18px 2px 5px;
+.photo {
+    border: 1px solid #bababa;
+    padding: 2px;
+    background-color: #ffffff;
+    margin: 6px 18px 2px 5px;
 }
 
 .searchterm, .searchresults {
-font-weight:bold; 
+    font-weight: bold;
 }
 
 .serendipity_entryIcon a img {
-float:right;
-padding:0 2px 2px 2px;
-margin:0 0 10px 10px;
-display:inline;
-background:none;
-border:none;}
+    float: right;
+    padding: 0 2px 2px 2px;
+    margin: 0 0 10px 10px;
+    display: inline;
+    background: none;
+    border: none; }
 
 .serendipity_center {
-margin-left: auto;
-margin-right: auto;
-text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .serendipity_msg_important {
-color: red;
+    color: red;
 }
 
 .serendipity_msg_notice {
-color: green; 
+    color: green;
 }
 
-code {font-size:1.2em;}
+code {
+    font-size: 1.2em; }
 
-/********* Embedded images with the s9y image manager *********/
+/** Embedded images with the s9y image manager **/
 
-/* container for images and text */
-.serendipity_imageComment_center, .serendipity_imageComment_left, .serendipity_imageComment_right {
-	margin:0 0 20px 0;
-	padding:10px;
-	border:1px solid #c0c0c0;
-	background-color:#fafbfc;
-	color:#505050;
-	line-height:1.5em; }
-
-/* style to center image and text within entry */
-.serendipity_imageComment_center {
-	display:block; margin:0 auto 5px auto; }
-
-/* style to left align image and text within entry */
-.serendipity_imageComment_left {
-	float:left; margin:0 12px 5px 0; }
-
-/* style to right align image and text within entry */
+.serendipity_imageComment_center,
+.serendipity_imageComment_left,
 .serendipity_imageComment_right {
-	float:right; margin:0 0 5px 12px; }
-
-/* styles for the images */
-.serendipity_imageComment_img, .serendipity_imageComment_img img {
-	text-align: center; }
-
-/* styles for the text below the image if used */
+    border: 1px solid #DDD;
+    background-color: transparent;
+    margin: 0.25em;
+    padding: 0.25em;
+    text-align: center;
+}
+.serendipity_entry p > .serendipity_image_left,
+.serendipity_entry p > .serendipity_imageComment_center,
+.serendipity_entry p > .serendipity_image_right {
+    margin: .25em auto;
+}
+.serendipity_imageComment_center {
+    margin: .25em auto;
+}
+.serendipity_imageComment_left {
+    float: left;
+    margin-right: .5em;
+}
+.serendipity_imageComment_right {
+    float: right;
+    margin-left: .5em;
+}
+.serendipity_imageComment_img,
+.serendipity_imageComment_img img {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
 .serendipity_imageComment_txt {
-     clear: both;
-     text-align: center; }
+    border-top: 1px solid #DDD;
+    background-color: #EFEFEF;
+    padding: .25em;
+    clear: both;
+    font-size: 8pt;
+    text-align: center;
+}
+/* image parent comment box responsiveness for mobile screens */
+.serendipity_imageComment_left,
+.serendipity_imageComment_center,
+.serendipity_imageComment_right {
+    width: auto !important; /* force overwrite delivered inline styles */
+    display: table;
+}
+/* overwrite fallback plain image padding */
+.serendipity_image_center {
+    padding: .25em;
+}
+/* overwrite fallback gallery comment container margins and some of this comment styles */
+.serendipity_image_block .serendipity_imageComment_left,
+.serendipity_image_block .serendipity_imageComment_right {
+    margin-top: auto;
+    margin-right: unset;
+    background-color: unset;
+    padding-top: 0;
+}
+.serendipity_entry_body > .serendipity_imageComment_center > .serendipity_imageComment_txt,
+.serendipity_entry_extended > .serendipity_imageComment_center > .serendipity_imageComment_txt {
+    margin-top: .25em;
+}
+/* inside image blocks closely append .serendipity_imageComment_txt */
+.serendipity_image_block > .serendipity_imageComment_left > .serendipity_imageComment_txt,
+.serendipity_image_block > .serendipity_imageComment_right > .serendipity_imageComment_txt {
+    margin-top: -6px;
+}
 
 /********* End of Image Manager Styles *********/
 
@@ -498,26 +577,28 @@ code {font-size:1.2em;}
 
 /* style for calendar date links */
 table.serendipity_calendar a {
-	text-decoration:none; }
+    text-decoration: none; }
 
 /* style for calendar links when hovered over */
 table.serendipity_calendar a:hover {
-	text-decoration: none; }
+    text-decoration: none; }
 
 /* style for calendar weekday names */
 td.serendipity_weekDayName {
-	font-weight:bold;
-	text-align:center; }
+    font-weight: bold;
+    text-align: center; }
 
 /* styles for month name and arrows in calendar */
 td.serendipity_calendarHeader a:link, td.serendipity_calendarHeader a:visited, td.serendipity_calendarHeader a:hover {
-	text-decoration: none; }
+    text-decoration: none; }
 
 /* style for wekday names in calendar */
-td.serendipity_weekDayName {border-bottom:1px solid #dddddd; }
+td.serendipity_weekDayName {
+    border-bottom: 1px solid #dddddd; }
 
 /* style to center dates */
-tr.serendipity_calendar td {text-align:center; }
+tr.serendipity_calendar td {
+    text-align: center; }
 
 
 
@@ -525,9 +606,10 @@ tr.serendipity_calendar td {text-align:center; }
 
 /* used in comments */
 .oddbox, .plugin_comment_wrap {
-	margin:0 0 20px 0;
-	border-top:1px solid #c0c0c0;
-	border-bottom:1px solid #c0c0c0;
-	background-color:#fafbfc;
-	color:#505050;
-	line-height:1.5em; }
+    margin: 0 0 20px 0;
+    border-top: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
+    background-color: #fafbfc;
+    color: #505050;
+    line-height: 1.5em; }
+
