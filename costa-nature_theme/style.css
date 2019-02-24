@@ -924,7 +924,7 @@ a.serendipity_image_link:active {
 /* === livesearch === */
 .serendipity_livesearch_result {
     background: white;
-    background-image: url({TEMPLATE_PATH}img/search.png);
+    background-image: url('{TEMPLATE_PATH}img/search.png');
     background-repeat: no-repeat;
     background-position: right bottom;
     padding-left: 10px;
