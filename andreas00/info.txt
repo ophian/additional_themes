@@ -1,3 +1,6 @@
-Name: Andreas00 (2009-08-16)
+Name: Andreas00
 Author: Carl Galloway & Andreas Viklund
-Date: 10-04-2006
+Date: 2019-02-22
+
+Summary: Additional old theme from 2006-04-10 to 2008-08-16 with a fixed content size of 780px width.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!
