@@ -64,10 +64,10 @@ button::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0; }
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+button: -moz-focusring,
+[type="button"]: -moz-focusring,
+[type="reset"]: -moz-focusring,
+[type="submit"]: -moz-focusring {
   outline: 1px dotted ButtonText; }
 fieldset { padding: 0.35em 0.75em 0.625em; }
 legend {
@@ -298,7 +298,7 @@ body.preview_preview_body,
 /* SMALL SCREENS ONLY */
 @media only screen and (max-width: 551px) {
     .serendipity_image_block.col .serendipity_image_link {
-       margin: 0;
+        margin: 0;
     }
 }
 
@@ -309,7 +309,7 @@ body.preview_preview_body,
 /******  Structural Styles ******/
 body {
     margin: 0;
-    padding:0;
+    padding: 0;
     background-color: #2F2D2D; }
 
 .s9y_wrap{
@@ -348,8 +348,8 @@ body {
     margin: 0; }
 
 #barsinister h1 a {
-    color:#fff;
-    text-decoration:none; }
+    color: #fff;
+    text-decoration: none; }
 
 #barsinister h2 {
     color: #fff;
@@ -391,7 +391,7 @@ body {
 #footer p {
     /*background-color: #fff;*/
     font: 9pt Geneva, Arial, Helvetica, sans-serif;
-    text-align:center; }
+    text-align: center; }
 
 #serendipity_comment_page {
     background-color: #2d3d4d;
@@ -418,7 +418,7 @@ blockquote {
     border: 1px dotted black;
     width: 75%;
     padding: 10px;
-    margin: 10px;}
+    margin: 10px; }
 
 q {
     border: 1px dotted black; }
@@ -491,7 +491,7 @@ div.serendipity_Entry_Date {
     padding-bottom: 10px; }
 
 .continue_reading {
-    clear:left; }
+    clear: left; }
 
 div.serendipity_entryFooter {
     color: #555;
@@ -609,7 +609,7 @@ td.serendipity_commentsLabel {
     margin-right: 15px;
     margin-left: 15px;
     color: #2d3d4d;
-    background-color:#fff;
+    background-color: #fff;
     border-bottom: 2 px solid #fff;
     margin-bottom: 10px;
     overflow: auto; }
@@ -639,7 +639,7 @@ td.serendipity_commentsLabel {
 .comment_right {
     float: right;
     width: 25%;
-    text-align:right; }
+    text-align: right; }
 
 div.comment_source_url {
     color: #ddd;
