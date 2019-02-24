@@ -1,3 +1,6 @@
-Name: Andreas06 v1.1.1 (2014-01-08)
+Name: Andreas06
 Author: Carl Galloway, Andreas Viklund
-Date: 2014-01-08
+Date: 2019-02-24
+
+Summary: Additional old theme from 2005-11-28 to 2014-01-08 as v1.1.1, with a fixed content size of 752px width.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!

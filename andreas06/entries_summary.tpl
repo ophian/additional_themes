@@ -1,8 +1,8 @@
 {serendipity_hookPlugin hook="entries_header"}
-<div class='serendipity_date'>{$CONST.TOPICS_OF} {$dateRange.0|formatTime:"%B, %Y"}</div>
+<div class="serendipity_date serendipity_date_summary">{$CONST.TOPICS_OF} {$dateRange.0|formatTime:"%B, %Y"}</div>
 
 <div class="serendipity_entry">
-    <ul>
+    <ul class="entries_summary">
     {foreach $entries AS $sentries}
         {foreach $sentries.entries AS $entry}
             <li><a href="{$entry.link}">{$entry.title|default:$entry.id}</a>
