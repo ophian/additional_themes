@@ -783,25 +783,6 @@ img.serendipity_freeTag_xmlButton {
 #commentlist {
     padding-left: 3px; }
 
-.serendipity_commentBody {}
-.comment_threaded_child0 {
-    padding-left: 5px;
-    padding-right: 5px;
-    background: #f8e8dc;
-    border: 1px solid #e1cfc6; }
-.comment_threaded_child1 {
-    margin-left: 14px;
-    padding-left: 5px;
-    padding-right: 5px;
-    background: #f9efe6;
-    border: 1px solid #e1cfc6; }
-.comment_threaded_child2 {
-    margin-left: 30px;
-    padding-left: 5px;
-    padding-right: 5px;
-    background: #fdf7f2;
-    border: 1px solid #e1cfc6; }
-
 .serendipity_center {
     margin-left: auto;
     margin-right: auto;
