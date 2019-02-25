@@ -21,14 +21,7 @@ $template_config = array(
         'radio'         => array('value' => array('true', 'false'),
                                  'desc' => array('Left', 'Right')),
         'default'       => 'true',
-    ),
-    array(
-        'var'           => 'amount',
-        'name'          => 'Number of navlinks',
-        'description'   => 'Enter the number of navlinks you want to use in the navbar.',
-        'type'          => 'string',
-        'default'       => '4',
-    ),
+    )
 );
 
 $top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';

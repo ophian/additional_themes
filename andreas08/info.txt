@@ -1,3 +1,6 @@
-Name: Andreas08 s9y v2.0 (2013-10-26)
+Name: Andreas08
 Author: Carl Galloway, Andreas Viklund
-Date: 2013-10-26
+Date: 2019-02-25
+
+Summary: Additional old theme from 2006-10-23 to 2013-10-26 as v2.0, with a fixed content size of 760px width.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!
