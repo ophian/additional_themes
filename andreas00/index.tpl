@@ -34,8 +34,6 @@
 {/if}
 {if $is_raw_mode != true}
 
-<p class="hide">Skip to: <a href="#sectionmenu">categories</a> | <a href="#main">main content</a></p>
-
 <div id="wrap">
 
     <div id="header">
