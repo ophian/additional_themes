@@ -581,10 +581,6 @@ textarea{
     margin-top: 1em;
 }
 
-.comment_threaded_child0 { margin-left: 0; border: 1px solid #ddd; }
-.comment_threaded_child1 { margin-left: 1.5em; border: 1px dashed #eee;}
-.comment_threaded_child2 { margin-left: 3em; border: 1px dashed #eee;}
-
 .comment_source_author {
     position: relative;
     top: 4px;
