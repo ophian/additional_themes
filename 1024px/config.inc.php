@@ -28,14 +28,7 @@ $template_config = array(
         'description'   => 'Enter the year and business name',
         'type'          => 'string',
         'default'       => '2006 Your Business Name',
-    ),
-    array(
-        'var'           => 'amount',
-        'name'          => 'Number of navlinks',
-        'description'   => 'Enter the number of navlinks you want to use in the navbar.',
-        'type'          => 'string',
-        'default'       => '3',
-    ),
+    )
 );
 
 $top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
