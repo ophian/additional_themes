@@ -4,6 +4,9 @@ if (IN_serendipity !== true) { die ("Don't hack!"); }
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
+/* ATTENT: There is currently NO WAY to preset a themes amount like this since it will be overwritten by the
+           core preset default amount of (5). This also applies for both NAV_LINK_URL and NAV_LINK_TEXT constants.
+*/
 $template_config = array(
     array(
         'var'           => 'amount',
@@ -46,7 +49,7 @@ for ($i = 0; $i < $vars['amount']; $i++) {
     $navlinks[] = array(
         'title'   => $vars['navlink' . $i . 'text'],
         'href'    => $vars['navlink' . $i . 'url'],
-        'picture' => $vars['navlink' . $i . 'bild'] ?? '',
+        'picture' => $vars['navlink' . $i . 'img'] ?? '',
         'bartext' => $vars['navlink' . $i . 'bar'] ?? ''
     );
     $template_config[] = array(
@@ -54,7 +57,7 @@ for ($i = 0; $i < $vars['amount']; $i++) {
         'name'          => NAV_LINK_TEXT . '/' . $i,
         'description'   => NAV_LINK_DESC . '/' .$i,
         'type'          => 'string',
-        'default'       => @constant('NAV_DEFAULT_' . $i),
+        'default'       => 'dummy',
     );
     $template_config[] = array(
         'var'           => 'navlink' . $i . 'url',
@@ -66,9 +69,9 @@ for ($i = 0; $i < $vars['amount']; $i++) {
 
 
     $template_config[] = array(
-        'var'           => 'navlink' . $i . 'bild',
-        'name'          => NAV_LINK_BILD . '/' . $i,
-        'description'   => NAV_LINK_BILD_DESC . '/' . $i,
+        'var'           => 'navlink' . $i . 'img',
+        'name'          => NAV_LINK_IMG . '/' . $i,
+        'description'   => NAV_LINK_IMG_DESC . '/' . $i,
         'type'          => 'string',
         'default'       => '9'.$i,
     );
@@ -95,8 +98,8 @@ $icons = array();
 
 for ($i = 0; $i < $vars['iconsamount']; $i++) {
     $icons[] = array(
-        'thehref'  => $vars['icon' . $i . 'theurl'] ?? '',
-        'thepicture'=>$vars['icon' . $i . 'thebild'] ?? ''
+        'thehref'    => $vars['icon' . $i . 'theurl'] ?? '',
+        'thepicture' => $vars['icon' . $i . 'theimg'] ?? ''
     );
 
     $template_config[] = array(
@@ -108,13 +111,13 @@ for ($i = 0; $i < $vars['iconsamount']; $i++) {
     );
 
     $template_config[] = array(
-        'var'           => 'icon' . $i . 'thebild',
-        'name'          => ICONS_LINK_BILD . '/' . $i,
-        'description'   => ICONS_LINK_BILD_DESC . '/' . $i,
+        'var'           => 'icon' . $i . 'theimg',
+        'name'          => ICONS_LINK_IMG . '/' . $i,
+        'description'   => ICONS_LINK_IMG_DESC . '/' . $i,
         'type'          => 'string',
         'default'       => $i,
     );
 }
 
-$serendipity['smarty']->assignByRef('icons', $icons, $icons,$icons);
-$serendipity['smarty']->assignByRef('navlinks', $navlinks, $navlinks,$navlinks);
+$serendipity['smarty']->assignByRef('icons', $icons);
+$serendipity['smarty']->assignByRef('navlinks', $navlinks);
