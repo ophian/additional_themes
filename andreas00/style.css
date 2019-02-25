@@ -861,21 +861,6 @@ img.serendipity_freeTag_xmlButton {
 
 /*.serendipity_commentBody {
     margin-bottom: 20px; }*/
-.comment_threaded_child0 {
-    padding-left: 5px;
-    padding-right: 5px;
-    background: #f4f4f4 url('{TEMPLATE_PATH}img/menubg.gif') bottom left repeat-x;
-    border: 1px solid #d8d8d8; }
-.comment_threaded_child1 {
-    margin-left: 14px; padding-left: 5px;
-    padding-right: 5px;
-    background: #f4f4f4 url('{TEMPLATE_PATH}img/menubg.gif') bottom left repeat-x;
-    border: 1px solid #d8d8d8; }
-.comment_threaded_child2 {
-    margin-left: 30px; padding-left: 5px;
-    padding-right: 5px;
-    background: #f4f4f4 url('{TEMPLATE_PATH}img/menubg.gif') bottom left repeat-x;
-    border: 1px solid #d8d8d8; }
 
 #content .serendipity_entryIcon a img, #contentleft .serendipity_entryIcon a img, #contentright .serendipity_entryIcon a img {
     float: right;
