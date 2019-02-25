@@ -390,22 +390,6 @@ abbr, acronym {
 .comment_source_date {
     font-size: smaller; }
 
-.serendipity_commentBody {}
-.comment_threaded_child0 {
-    padding: 8px 5px;
-    background: #F3F7FC;
-    border: 1px solid #CCDDF2; }
-.comment_threaded_child1 {
-    margin-left: 14px;
-    padding: 8px 5px;
-    background: #D9E4F4;
-    border: 1px solid #B4C9E9; }
-.comment_threaded_child2 {
-    margin-left: 30px;
-    padding: 8px 5px;
-    background: #F3F7FC;
-    border: 1px solid #B4C9E9; }
-
 /* enkele classes -----------------------------------------*/
 
 .cmtinfo, .serendipity_comment_source{
