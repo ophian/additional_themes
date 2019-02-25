@@ -1,4 +1,4 @@
-Name: Bazooka ()
+Name: Bazooka
 Author: David Cummins & Carl Galloway
 Date: 2019-02-22
 
