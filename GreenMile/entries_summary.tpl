@@ -1,15 +1,16 @@
 {serendipity_hookPlugin hook="entries_header"}
-<div class='serendipity_date'>{$CONST.TOPICS_OF} {$dateRange.0|formatTime:"%B, %Y"}</div>
+<div class="serendipity_date serendipity_date_summary">{$CONST.TOPICS_OF} {$dateRange.0|formatTime:"%B, %Y"}</div>
 
 <div class="serendipity_entry">
+    <ul class="entries_summary">
     {foreach $entries AS $sentries}
         {foreach $sentries.entries AS $entry}
-        <div class="archive_summary">
-            <h4 class="archive_summary_title">{$entry.id} - <a href="{$entry.link}">{$entry.title|truncate:80:" ..."}</a></h4>
-            {$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}. {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {if $entry.categories} {$CONST.IN} {foreach $entry.categories AS $category}<a href="{$category.category_link}">{$category.category_name|escape}</a>{/foreach}{/if}
-        </div>
+            <li><a href="{$entry.link}">{$entry.title|default:$entry.id}</a>
+                <div class="summary_posted_by">{$CONST.POSTED_BY} <span class="posted_by_author">{$entry.author}</span> {$CONST.ON} <span class="posted_by_date">{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}</span></div></li>
         {/foreach}
     {/foreach}
-
-<div class="serendipity_pageFooter" style="text-align: center">
-{serendipity_hookPlugin hook="entries_footer"}</div>
+    </ul>
+</div>
+<div class="serendipity_entryFooter">
+    {serendipity_hookPlugin hook="entries_footer"}
+</div>
