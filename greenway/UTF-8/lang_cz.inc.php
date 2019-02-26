@@ -12,13 +12,13 @@
 @define('NAV_DEFAULT_3', 'Kontakt');
 @define('SAYS', 'říká');
 @define('STICKY_POST', 'Přilepený:');
-@define('NAV_LINK_BILD', 'Obrázek pro aktivní odkaz');
-@define('NAV_LINK_BILD_DESC', 'Obrázek je zobrazen, pokud je odkaz aktivní. Přípustné hodnoty: 90 až 99. Použití: úokud je hodnota 94, pak musí existovat soubor greenway/images/pic94.jpg');
+@define('NAV_LINK_IMG', 'Obrázek pro aktivní odkaz');
+@define('NAV_LINK_IMG_DESC', 'Obrázek je zobrazen, pokud je odkaz aktivní. Přípustné hodnoty: 90 až 99. Použití: úokud je hodnota 94, pak musí existovat soubor greenway/images/pic94.jpg');
 @define('NAV_LINK_BAR', 'Text aktivního odkazu');
 @define('NAV_LINK_BAR_DESC', 'Tento text se zobrazuje v šedivém obdelníku, pokud je odkaz aktivní');
 @define('ICONS_LINK_TEXT', 'Ikona');
 @define('ICONS_LINK_URL_DESC', 'Číslo ikony v pravém horním rohu');
 @define('ICONS_LINK_URL', 'URL adresa ikony');
-@define('ICONS_LINK_BILD', 'Soubor s ikonou');
-@define('ICONS_LINK_BILD_DESC', 'Pokud zadáte 4, pak musí existovat soubor greenway/images/ico4.jpg.');
+@define('ICONS_LINK_IMG', 'Soubor s ikonou');
+@define('ICONS_LINK_IMG_DESC', 'Pokud zadáte 4, pak musí existovat soubor greenway/images/ico4.jpg.');
 
