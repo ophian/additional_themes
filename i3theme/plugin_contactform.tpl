@@ -18,23 +18,23 @@
         <a id="serendipity_CommentForm"></a>
         <form id="serendipity_comment" action="{$commentform_action}#feedback" method="post">
         <div>
-            <input type="hidden" name="serendipity[subpage]" value="{$commentform_sname}" />
-            <input type="hidden" name="serendipity[commentform]" value="true" />
+            <input type="hidden" name="serendipity[subpage]" value="{$commentform_sname}">
+            <input type="hidden" name="serendipity[commentform]" value="true">
         </div>
 
-            <p><input type="text" id="author" name="serendipity[name]" value="{$commentform_name}" size="22" tabindex="1" />
+            <p><input type="text" id="author" name="serendipity[name]" value="{$commentform_name}" size="22" tabindex="1">
                <label for="author"><strong>{$CONST.NAME}</strong></label></p>
-            <p><input type="text" id="email" name="serendipity[email]" value="{$commentform_email}" size="22" tabindex="2" />
+            <p><input type="text" id="email" name="serendipity[email]" value="{$commentform_email}" size="22" tabindex="2">
                <label for="email"><strong>{$CONST.EMAIL}</strong></label></p>
-            <p><input type="text" id="url" name="serendipity[url]" value="{$commentform_url}" size="22" tabindex="3" />
+            <p><input type="text" id="url" name="serendipity[url]" value="{$commentform_url}" size="22" tabindex="3">
                <label for="url"><strong>{$CONST.HOMEPAGE}</strong></label></p>
 
             <p><textarea rows="10" cols="100%" id="serendipity_commentform_comment" name="serendipity[comment]" tabindex="4">{$commentform_data}</textarea></p>
-               <br />
+               <br>
                <!-- This is where the spamblock/Captcha plugin is called -->
                {serendipity_hookPlugin hook="frontend_comment" data=$commentform_entry}
 
-            <p><input type="submit" id="submit" name="serendipity[submit]" value="{$i3submit}" tabindex="5" /></p>
+            <p><input type="submit" id="submit" name="serendipity[submit]" value="{$i3submit}" tabindex="5"></p>
         </form>
     </div>
 {/if}
