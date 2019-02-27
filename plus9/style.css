@@ -263,8 +263,8 @@ body.save_preview_body {
     width: auto !important; /* force overwrite delivered inline styles */
     display: table;
 }
-.serendipity_comments {
-}
+.serendipity_comments {}
+
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
@@ -284,8 +284,8 @@ body.save_preview_body {
     margin-right: auto;
     text-align: center;
 }
-.serendipity_msg_important { color: red; }
-.serendipity_msg_notice { color: green; }
+.serendipity_msg_important { color: #ff4136; }
+.serendipity_msg_notice { color: #2ecc40; }
 
 /*** Future compatibility for various plugins ***/
 .container_serendipity_archives_plugin ul,
@@ -389,16 +389,13 @@ body.save_preview_body {
 }
 
 .serendipity_entrypaging:after {
-    content: "."; 
-    display: block; 
-    height: 0; 
-    clear: both; 
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
     visibility: hidden;
 }
 
-* html .serendipity_entrypaging { height: 1%; }
-
-*:first-child+html .serendipity_entrypaging { min-height: 1px; }
 body {
     font-family:Verdana,Arial,"Lucida Grande", "Lucida Sans Unicode", Helvetica, sans-serif;
     /* font-size:13px; */
@@ -411,13 +408,13 @@ body {
     background-position: 0% 0%;
     background-repeat: repeat-x;
 }
-
+/* Don't do that
 * {
     padding:0;
     margin:0;
     line-height:1.6em;
 }
-
+*/
 a {
     color:#590000;
     text-decoration:none;
@@ -429,7 +426,7 @@ a:hover {
 }
 
 #container {
-    width:994px; 
+    width:994px;
     margin:0 auto;
     position:relative;
     background-color: #FFFFFF;
@@ -471,7 +468,7 @@ a:hover {
 
 #container h4 {
     font-family: "Times New Roman", Times, Serif;
-    font-size: 12px; 
+    font-size: 12px;
     text-align: center;
     text-transform: capitalize;
     padding:0px 0 5px 0;
@@ -500,7 +497,7 @@ a:hover {
 #content {
     float:left;
     /* width:700px; */
-    width: 36em;
+    width: 72%;
 }
 
 #content h2 {
@@ -637,7 +634,7 @@ a:hover {
     font-size:12px;
     float:right;
     /* width:180px; */
-    width: 28em;
+    width: 28%;
     border-left:#BBBBBB 1px solid;
     padding:0 0 20px 15px;
     margin:0 0 20px 0;
@@ -860,7 +857,7 @@ ol.commentlist {
 
 blockquote {
     list-style-image: url("{TEMPLATE_PATH}img/quote1.png");
-    background: #E6B1AA url("{TEMPLATE_PATH}img/quote2.png") no-repeat 98% 95%;  
+    background: #E6B1AA url("{TEMPLATE_PATH}img/quote2.png") no-repeat 98% 95%;
     border: 1px solid #CC0000;
     display: list-item;
     list-style-position: inside;
@@ -986,34 +983,11 @@ abbr {
 }
 
 .group:after {
-    content: "."; 
-    display: block; 
-    height: 0; 
-    clear: both; 
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
     visibility: hidden;
-}
-
-/* IE Hacks */
-
-*html #bubble {
-    display:none;
-}
-
-*html #bubble p {
-    display:none;
-}
-
-* html .group,
-* html #nav ul li a {
-    height: 1%;
-}
-
-*:first-child+html .group {
-    min-height: 1px;
-}
-
-* html #nav ul li a {
-    display: inline;
 }
 
 .serendipity_freeTag {
@@ -1051,7 +1025,7 @@ abbr {
 }
 
 .serendipity_freeTag a:hover {
-    color: red;
+    color: #ff4136;
     font-size: 10pt;
     text-decoration: underline;
 }
@@ -1061,8 +1035,7 @@ img.serendipity_freeTag_xmlButton {
     border: 0px
 }
 
-div.linklist span.menu_title {
-}
+div.linklist span.menu_title {}
 
 div.linklist {
     padding: 0px;
@@ -1161,35 +1134,41 @@ p.song {
 }
 
 #serendipity_calendar_plugin  h3 {
-    text-align: center;font: bold 20px Arial, Helvetica, sans-serif;
-    border-bottom:1px  solid #bbbbbb;
+    text-align: center;
+    font: bold 20px Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid #bbbbbb;
 }
 .serendipity_weekDayName { text-align: center; }
- 
+
 #searchform {
-     margin:0 5px 0 0;
-     background-color:inherit;
-     border-right:none;
-     text-align:right; }
- 
+    margin:0 5px 0 0;
+    background-color:inherit;
+    border-right:none;
+    text-align:right; }
+
 #searchform input {
-     width:193px; 
-     margin-top:3px;
-     border: 1px solid #aaa;
-     font-size: 1.0em;
-     vertical-align:middle;
-     color: #414141;
-     background: #FFF url("{TEMPLATE_PATH}img/mag_glass.gif") no-repeat 97% 50%; }
- 
+    width:193px;
+    margin-top:3px;
+    border: 1px solid #aaa;
+    font-size: 1.0em;
+    vertical-align:middle;
+    color: #414141;
+    background: #FFF url("{TEMPLATE_PATH}img/mag_glass.gif") no-repeat 97% 50%; }
+
 #navbar {
     background-color:#F9F9F9;
-    color:#000000; 
+    color:#000000;
     position: absolute;
     width: 100%;
     height: 30px;
     left: 0px;
     top: 160px;
     border-bottom:1px  solid #DBDBDB;
+}
+
+#navbar ul {
+    margin: 0;
+    padding: 0;
 }
 
 #navbar li {
@@ -1210,26 +1189,44 @@ p.song {
     vertical-align:middle;
     color: #000000; }
 
-* html #navbar a {width:1%;}
-
 #navbar .selected, #navbar a:hover{
-    text-decoration:none; 
+    text-decoration:none;
     padding-top:7px;}
-    
+
 #serendipity_plugin_multilingual   {
     text-align: center;
 }
 
 #serendipity_plugin_multilingual h3{
-    text-align: center;font: bold 20px Arial, Helvetica, sans-serif;
-    border-bottom:1px  solid #bbbbbb;
+    text-align: center;
+    font: bold 20px Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid #bbbbbb;
 }
 
-#cl1 {width: 33%; float: left; font-size: 12px; text-align: left;}
-#cm1 {width: 34%; float: left; font-size: 12px; text-align: center;}
-#cr1 {width: 33%; float: left; font-size: 12px; text-align: right;}
+#cspan {
+    width: 100%;
+    display: inline-block;
+    margin: 1.5em auto auto;
+}
 
-.serendipity_calendarDay LastInRow Active Link {border-bottom:1px  solid #bbbbbb;}
+#cl1 {
+    width: 33%;
+    float: left;
+    font-size: 12px;
+    text-align: left;}
+#cm1 {
+    width: 34%;
+    float: left;
+    font-size: 12px;
+    text-align: center;}
+#cr1 {
+    width: 33%;
+    float: left;
+    font-size: 12px;
+    text-align: right;}
+
+.serendipity_calendarDay {
+    border-bottom: 1px  solid #bbbbbb; }
 
 a.homelink2  {
     font-weight:bold;
@@ -1248,12 +1245,17 @@ a.homelink2  {
     border-color:#999999;
     font-weight:bold;
     padding:2px 6px;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     vertical-align:top;
     font-family:Verdana,Arial,"Lucida Grande", "Lucida Sans Unicode", Helvetica, sans-serif;
-    font-size:10pt; 
+    font-size:10pt;
 }
-
+.prev_page {
+    float: left;
+}
+.next_page {
+    float: right;
+}
 .pagination a {
     background:#FFFFFF none repeat scroll 0%;
     border:1px solid #DDDDDD;
@@ -1292,7 +1294,7 @@ table.serendipity_calendar a  {
     left: 0px;
     top: 140px;
 }
-    
+
 #rlmenu  {
     padding: 0px;
     margin: 0px;
@@ -1357,6 +1359,7 @@ table.serendipity_calendar a  {
 }
 
 /*** Embedded images with the s9y image manager ***/
+
 .serendipity_image_left { padding: 0 5px 2px 0!important; }
 .serendipity_image_right { padding: 0 0 2px 5px!important; }
 
@@ -1392,16 +1395,6 @@ table.serendipity_calendar a  {
     text-align: center;
 }
 
-/*** Internal messages ***/
-.serendipity_center {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-.serendipity_msg_important { color: red; }
-.serendipity_msg_notice { color: green; }
-
 #serendipity_categories_list input {
     margin-right: .25em;
     vertical-align: middle;
@@ -1409,15 +1402,6 @@ table.serendipity_calendar a  {
 
 .serendipity_freeTag_xmlTagEntry img {
     vertical-align: middle;
-}
-
-/*** Future compatibility for various plugins ***/
-.container_serendipity_archives_plugin ul,
-.container_serendipity_syndication_plugin ul,
-.container_serendipity_authors_plugin ul,
-.container_serendipity_plugin_entrylinks ul {
-    list-style: none;
-    padding-left: 0;
 }
 
 .container_serendipity_authors_plugin .serendipitySideBarContent div {
@@ -1513,13 +1497,10 @@ table.serendipity_calendar a  {
 }
 
 .serendipity_entrypaging:after {
-    content: "."; 
-    display: block; 
-    height: 0; 
-    clear: both; 
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
     visibility: hidden;
 }
 
-* html .serendipity_entrypaging { height: 1%; }
-
-*:first-child+html .serendipity_entrypaging { min-height: 1px; }

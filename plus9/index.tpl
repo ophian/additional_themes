@@ -95,27 +95,29 @@
 
     <h1><a href="{$serendipityBaseURL}">{$blogTitle}</a></h1>
 
-    <div id="cl1">
-        <b>{if $startpage}{$CONST.HOMEPAGE}{else}{$CONST.HOMEPAGE}{/if}<br>
-        {if ($head_title && empty($entry.title)) || (isset($entry.title) AND $head_title != $entry.title)}
-        {if isset($entry.title)}&raquo; {$category_info.category_name|default:''}{/if}
-        {elseif $head_title && isset($entry.title)}
-        {if isset($category_info.category_name)}
-        &raquo; {$category_info.category_name}
-        {/if}
-        {if $entry.title == $head_title}
-        &raquo; {$entry.title|truncate:28:" ...":true}
-        {/if}
-        {elseif $head_subtitle}
-        &raquo;
-        {/if}
-        {if NOT empty($staticpage_pagetitle) && empty($entry.title)}
-        &raquo; {$staticpage_headline}
-        {/if}
-        </b>
-    </div>
-    <div id="cm1"> &nbsp;
-        <a class="homelink2" href="{$serendipityBaseURL}">{if $view == 'plugin'}{$blogDescription}{else}{$head_subtitle|default:$blogDescription}{/if}</a>
+    <div id="cspan">
+        <div id="cl1">
+            <b>{if $startpage}{$CONST.HOMEPAGE}{else}{$CONST.HOMEPAGE}{/if}<br>
+            {if ($head_title && empty($entry.title)) OR (isset($entry.title) AND $head_title != $entry.title)}
+            {if isset($entry.title)}&raquo; {$category_info.category_name|default:''}{/if}
+            {elseif $head_title && isset($entry.title)}
+            {if isset($category_info.category_name)}
+            &raquo; {$category_info.category_name}
+            {/if}
+            {if $entry.title == $head_title}
+            &raquo; {$entry.title|truncate:28:" ...":true}
+            {/if}
+            {elseif $head_subtitle}
+            &raquo;
+            {/if}
+            {if NOT empty($staticpage_pagetitle) AND empty($entry.title)}
+            &raquo; {$staticpage_headline}
+            {/if}
+            </b>
+        </div>
+        <div id="cm1"> &nbsp;
+            <a class="homelink2" href="{$serendipityBaseURL}">{if $view == 'plugin'}{$blogDescription}{else}{$head_subtitle|default:$blogDescription}{/if}</a>
+        </div>
     </div>
    {if isset($plugin_calendar_head) AND is_array($plugin_calendar_head)}
     <div id="cr1">

@@ -5,8 +5,8 @@
     {if NOT empty($footer_info)}
     <div class="paginationtop">{$footer_info}<br/>
     {/if}
-    {if $footer_prev_page}<a href="{$footer_prev_page}">{/if}{if $footer_prev_page}&#9668; {$CONST.PREVIOUS_PAGE}{else}&nbsp;{/if}{if $footer_prev_page}</a>{/if}
-    {if $footer_next_page}<a href="{$footer_next_page}">{/if}{if $footer_next_page}{$CONST.NEXT_PAGE} &#9658;{else}&nbsp;{/if}{if $footer_next_page}</a>{/if}
+    <span class="prev_page">{if $footer_prev_page}<a href="{$footer_prev_page}">{/if}{if $footer_prev_page}&#9668; {$CONST.PREVIOUS_PAGE}{else}&nbsp;{/if}{if $footer_prev_page}</a>{/if}</span>
+    <span class="next_page">{if $footer_next_page}<a href="{$footer_next_page}">{/if}{if $footer_next_page}{$CONST.NEXT_PAGE} &#9658;{else}&nbsp;{/if}{if $footer_next_page}</a>{/if}</span>
     {if NOT empty($footer_info)}
     </div>
     {/if}
@@ -29,13 +29,13 @@
       {/if}
 
         <div class="main">
-        {$entry.body}
+            {$entry.body}
       {if $entry.is_extended}
-        <a id="extended"></a>
-        {$entry.extended}
+            <a id="extended"></a>
+            {$entry.extended}
       {/if}
       {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
-         <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title} &raquo;</a></p>
+            <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title} &raquo;</a></p>
       {/if}
         </div>
 
@@ -149,24 +149,14 @@
 {/if}
 
 {if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
-    <div class="navigation group">
-        <div class="alignleft">{if $footer_prev_page}<a href="{$footer_prev_page}">&laquo; {$CONST.PREVIOUS_PAGE}</a>{/if}</div>
-        <div class="alignright">{if $footer_next_page}<a href="{$footer_next_page}">{$CONST.NEXT_PAGE} &raquo;</a>{/if}</div>
-     {serendipity_hookPlugin hook="entries_footer"}
+    {if NOT empty($footer_info)}
+    <div class="pagination navigation group">{$footer_info}<br/>
+    {/if}
+    <span class="prev_page">{if $footer_prev_page}<a href="{$footer_prev_page}">{/if}{if $footer_prev_page}&#9668; {$CONST.PREVIOUS_PAGE}{else}&nbsp;{/if}{if $footer_prev_page}</a>{/if}</span>
+    <span class="next_page">{if $footer_next_page}<a href="{$footer_next_page}">{/if}{if $footer_next_page}{$CONST.NEXT_PAGE} &#9658;{else}&nbsp;{/if}{if $footer_next_page}</a>{/if}</span>
+    {if NOT empty($footer_info)}
     </div>
-{/if}
-
-{if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
-    {if NOT empty($footer_info)}
-    <div class="pagination"><center>{$footer_info}<br/>
-    {/if}
-    {if $footer_prev_page}<a href="{$footer_prev_page}">{/if}{if $footer_prev_page}&#9668; {$CONST.PREVIOUS_PAGE}{else}&nbsp;{/if}{if $footer_prev_page}</a>{/if}
-    {if $footer_next_page}<a href="{$footer_next_page}">{/if}{if $footer_next_page}{$CONST.NEXT_PAGE} &#9658;{else}&nbsp;{/if}{if $footer_next_page}</a>{/if}
-    {if NOT empty($footer_info)}
-    </center></div>
     {/if}
 {/if}
-
-  <div class="pagination"></div><br/>
 
 <!-- ENTRIES END -->
