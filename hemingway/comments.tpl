@@ -14,7 +14,7 @@
         {if $comment.url}
             (<a class="comment_source_url" href="{$comment.url}" title="{$comment.url|escape}">Link</a>)
         {/if}
-        {if $entry.allow_comments}
+        {if isset($comment.id) AND isset($entry.allow_comments) AND $comment.body != 'COMMENT_DELETED'}
             (<a class="comment_reply" href="#serendipity_CommentForm" id="serendipity_reply_{$comment.id}" onclick="document.getElementById('serendipity_replyTo').value='{$comment.id}'; {$comment_onchange|default:''}">{$CONST.REPLY}</a>)
         {/if}
         {if isset($entry) AND NOT empty($entry.is_entry_owner) AND NOT empty($comment.id)}
@@ -41,7 +41,7 @@
         {if $comment.url}
             (<a class="comment_source_url" href="{$comment.url}" title="{$comment.url|escape}">Link</a>)
         {/if}
-        {if $entry.allow_comments}
+        {if isset($comment.id) AND isset($entry.allow_comments) AND $comment.body != 'COMMENT_DELETED'}
             (<a class="comment_reply" href="#serendipity_CommentForm" id="serendipity_reply_{$comment.id}" onclick="document.getElementById('serendipity_replyTo').value='{$comment.id}'; {$comment_onchange|default:''}">{$CONST.REPLY}</a>)
         {/if}
         {if isset($entry) AND NOT empty($entry.is_entry_owner) AND NOT empty($comment.id)}
