@@ -11,5 +11,5 @@
 
 {serendipity_showPlugin class="serendipity_plugin_freetag"}
 <div class="navigation group">
-{serendipity_hookPlugin hook="entries_footer"}
+    {serendipity_hookPlugin hook="entries_footer"}
 </div>

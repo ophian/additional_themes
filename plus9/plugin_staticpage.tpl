@@ -1,3 +1,4 @@
+{* this template does not show current staticpage features *}
 {if $staticpage_articleformat}
     <h2>{$staticpage_articleformattitle|escape}</h2>
 {else}
