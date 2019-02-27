@@ -187,19 +187,24 @@ code, pre {
     vertical-align: middle;
     margin-right: 2px; }
 #content.content {
-    width: 780px;
-}
+    width: 780px; }
 #content.content_archive,
 #content.content_archives,
 #content.content_comments,
-#content.content_plugin {
-    padding: 20px; }
+#content.content_plugin,
+#content.content_start > .serendipity_staticpage {
+    padding: 1em; }
 #content.content_archive > h3 {
-    margin-top: 0; }
+    margin-top: 0;
+    margin-bottom: 1em; }
 #content.content_plugin .serendipity_staticpage > header{
     margin-bottom: 1em; }
 #content.content_archives .serendipity_entry ul li {
     margin-bottom: .5em; }
+.serendipity_date.serendipity_date_summary {
+    margin-bottom: 1em;
+    font-size: 1.17em;
+    font-weight: bold; }
 .serendipity_entryFooter {
     text-align: center;
     margin-bottom: 1em;
