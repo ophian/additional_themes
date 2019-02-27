@@ -15,17 +15,17 @@
         <a id="serendipity_CommentForm"></a>
         <form id="serendipity_comment" action="{$commentform_action}#feedback" method="post">
         <div>
-            <input type="hidden" name="serendipity[subpage]" value="{$commentform_sname}" />
-            <input type="hidden" name="serendipity[commentform]" value="true" />
+            <input type="hidden" name="serendipity[subpage]" value="{$commentform_sname}">
+            <input type="hidden" name="serendipity[commentform]" value="true">
         </div>
 
-        <p><input type="text" id="serendipity_commentform_name" name="serendipity[name]" value="{$commentform_name}" size="22" />
+        <p><input type="text" id="serendipity_commentform_name" name="serendipity[name]" value="{$commentform_name}" size="22">
            <label for="serendipity_commentform_name"><small>{$CONST.NAME}</small></label></p>
 
-        <p><input type="text" id="serendipity_commentform_email" name="serendipity[email]" value="{$commentform_email}" size="22" />
+        <p><input type="text" id="serendipity_commentform_email" name="serendipity[email]" value="{$commentform_email}" size="22">
            <label for="serendipity_commentform_email"><small>{$CONST.EMAIL}</small></label></p>
 
-        <p><input type="text" id="serendipity_commentform_url" name="serendipity[url]" value="{$commentform_url}" size="22" />
+        <p><input type="text" id="serendipity_commentform_url" name="serendipity[url]" value="{$commentform_url}" size="22">
            <label for="serendipity_commentform_url"><small>{$CONST.HOMEPAGE}</small></label></p>
 
         <p><label for="serendipity_commentform_comment" class="invisible"><small>{$plugin_contactform_message}</small></label>
@@ -33,7 +33,7 @@
 
         {serendipity_hookPlugin hook="frontend_comment" data=$commentform_entry}
 
-        <p><input type="submit" name="serendipity[submit]" value="{$CONST.SUBMIT_COMMENT}" /></p>
+        <p><input type="submit" name="serendipity[submit]" value="{$CONST.SUBMIT_COMMENT}"></p>
         </form>
     </div>
     {/if}
