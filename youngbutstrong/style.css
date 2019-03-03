@@ -49,6 +49,16 @@ pre {
 .content_post p > .serendipity_imageComment_center,
 .content_post p > .serendipity_image_right {
     margin: .25em auto; }
+p {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hypens: auto;
+    hyphens: auto; }
+p code, p samp, p kbd {
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hypens: none;
+    hyphens: none; }
 
 
 /*
