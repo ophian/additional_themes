@@ -183,6 +183,16 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     -moz-osx-font-smoothing: grayscale; }
 .serendipity_calendarHeader {
     text-align: center; }
+p {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hypens: auto;
+    hyphens: auto; }
+p code, p samp, p kbd {
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hypens: none;
+    hyphens: none; }
 
 /** Modernizing Serendipity Styx default styles END **/
 
@@ -800,12 +810,12 @@ div.serendipitySideBarItem a:hover{
 }
 
 .serendipity_msg_important {
-    color: red;
+    color: #ff4136;
     background-color:inherit;
 }
 
 .serendipity_msg_notice {
-    color: green;
+    color: #2ecc40;
     background-color:inherit;
 }
 
