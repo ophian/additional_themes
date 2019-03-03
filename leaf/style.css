@@ -168,6 +168,16 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
 .serendipity_entry p > .serendipity_imageComment_center,
 .serendipity_entry p > .serendipity_image_right {
     margin: .25em auto; }
+p {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hypens: auto;
+    hyphens: auto; }
+p code, p samp, p kbd {
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hypens: none;
+    hyphens: none; }
 
 /** Modernizing Serendipity Styx default styles END **/
 
@@ -644,15 +654,14 @@ div.serendipitySideBarItem {
 }
 
 .serendipity_msg_important {
-    color: red;
+    color: #ff4136;
 }
 
 .serendipity_msg_notice {
-    color: green;
+    color: #2ecc40;
 }
 
-.serendipity_entry_author_self {
-}
+.serendipity_entry_author_self {}
 
 .serendipity_comment_author_self .serendipity_commentSource {
     background-color: #EEEFFF;
