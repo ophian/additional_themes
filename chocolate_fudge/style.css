@@ -181,6 +181,16 @@ pre {
 .serendipity_entry p > .serendipity_imageComment_center,
 .serendipity_entry p > .serendipity_image_right {
     margin: .25em auto; }
+p {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hypens: auto;
+    hyphens: auto; }
+p code, p samp, p kbd {
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hypens: none;
+    hyphens: none; }
 
 /* backend preview */
 #content.save_preview_content {
@@ -238,9 +248,9 @@ body {
     margin-right: auto;
     text-align: center; }
 .serendipity_msg_important {
-    color: red; }
+    color: #ff4136; }
 .serendipity_msg_notice {
-    color: green; }
+    color: #2ecc40; }
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal; }
 h1, h2, h3, h4, h5, h6, p, ol, ul, pre, blockquote {
