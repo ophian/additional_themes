@@ -155,6 +155,16 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
     text-align: center; }
 .serendipity_calendarDay {
     text-align: center; }
+p {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hypens: auto;
+    hyphens: auto; }
+p code, p samp, p kbd {
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hypens: none;
+    hyphens: none; }
 
 /* Serendipity Styx comment summary pages */
 
@@ -320,7 +330,7 @@ body.save_preview_body {
 
 .serendipity_freeTag {
     display: block;
-    font-size:10pt;
+    font-size: 10pt;
     margin: 0;
     text-align: left;
     padding-left: 0pt;
@@ -384,8 +394,8 @@ body.save_preview_body {
 }
 
 .serendipity_entrypaging a:hover {
-    color:#333;
-    text-decoration:none;
+    color: #333;
+    text-decoration: none;
 }
 
 .serendipity_entrypaging:after {
@@ -397,50 +407,50 @@ body.save_preview_body {
 }
 
 body {
-    font-family:Verdana,Arial,"Lucida Grande", "Lucida Sans Unicode", Helvetica, sans-serif;
-    /* font-size:13px; */
+    font-family: Verdana,Arial,"Lucida Grande", "Lucida Sans Unicode", Helvetica, sans-serif;
+    /* font-size: 13px; */
     font-size: 100.01%;
-    color:#222;
-    padding:0;
-    margin:0;
-    padding-top:20px;
+    color: #222;
+    padding: 0;
+    margin: 0;
+    padding-top: 20px;
     background-color: #eeeeee;
     background-position: 0% 0%;
     background-repeat: repeat-x;
 }
 /* Don't do that
 * {
-    padding:0;
-    margin:0;
-    line-height:1.6em;
+    padding: 0;
+    margin: 0;
+    line-height: 1.6em;
 }
 */
 a {
-    color:#590000;
-    text-decoration:none;
+    color: #590000;
+    text-decoration: none;
 }
 
 a:hover {
-    color:#c00;
-    text-decoration:underline;
+    color: #c00;
+    text-decoration: underline;
 }
 
 #container {
-    width:994px;
-    margin:0 auto;
-    position:relative;
+    width: 994px;
+    margin: 0 auto;
+    position: relative;
     background-color: #FFFFFF;
-    border-right:17px  solid #FFFFFF;
-    border-left:17px  solid #FFFFFF;
-    padding-top:10px;
+    border-right: 17px solid #FFFFFF;
+    border-left: 17px solid #FFFFFF;
+    padding-top: 10px;
 }
 
 #hbar {
-    padding-left:10px;
-    border-bottom:1px  solid #DBDBDB;
+    padding-left: 10px;
+    border-bottom: 1px solid #DBDBDB;
     background-color: #F9F9F9;
-    line-height:1.6em;
-    width:950px;
+    line-height: 1.6em;
+    width: 950px;
 }
 
 #container h1 {
@@ -451,19 +461,19 @@ a:hover {
     letter-spacing: 4px;
     /*text-decoration: underline;*/
     text-transform: capitalize;
-    border-top:2px solid #414141;
-    /* letter-spacing:-1px; */
-    /* width:600px; */
-    padding:12px 0 0 0;
+    border-top: 2px solid #414141;
+    /* letter-spacing: -1px; */
+    /* width: 600px; */
+    padding: 12px 0 0 0;
 }
 
 #container h1 a {
-    color:#c00;
-    text-decoration:none;
+    color: #c00;
+    text-decoration: none;
 }
 
 #container h1 a:hover {
-    color:#AE0000;
+    color: #AE0000;
 }
 
 #container h4 {
@@ -471,58 +481,58 @@ a:hover {
     font-size: 12px;
     text-align: center;
     text-transform: capitalize;
-    padding:0px 0 5px 0;
+    padding: 0 0 5px 0;
 }
 #container .comments_by_author h4 {
     text-align: left;
 }
 #bubble {
-    top:40px;
-    right:0;
-    position:absolute;
-    display:block;
-    height:28px;
-    background:url("{TEMPLATE_PATH}img/bubble_right.gif") no-repeat right;
+    top: 40px;
+    right: 0;
+    position: absolute;
+    display: block;
+    height: 28px;
+    background: url("{TEMPLATE_PATH}img/bubble_right.gif") no-repeat right;
 }
 
 #bubble p {
-    display:block;
-    font-size:11px;
-    color:#fff;
-    height:28px;
-    padding:4px 12px 0 10px;
-    background:url("{TEMPLATE_PATH}img/bubble_left.gif") no-repeat top left;
+    display: block;
+    font-size: 11px;
+    color: #fff;
+    height: 28px;
+    padding: 4px 12px 0 10px;
+    background: url("{TEMPLATE_PATH}img/bubble_left.gif") no-repeat top left;
 }
 
 #content {
-    float:left;
-    /* width:700px; */
+    float: left;
+    /* width: 700px; */
     width: 72%;
     padding: 1em .5em 0 0;
 }
 
 #content h2 {
-    font-size:20px;
-    margin:5px 0 7px 0;
+    font-size: 20px;
+    margin: 5px 0 7px 0;
 }
 
 #content h2 a {
-    color:#222;
-    text-decoration:none;
+    color: #222;
+    text-decoration: none;
 }
 
 #content h2 a:hover {
-    color:#c00;
+    color: #c00;
 }
 
 #content h2.archive {
-    font-weight:bold;
-    font-size:24px;
-    color:#1c1c1c;
-    padding:0;
-    margin:5px 0 20px 0;
-    border:none;
-    text-align:left;
+    font-weight: bold;
+    font-size: 24px;
+    color: #1c1c1c;
+    padding: 0;
+    margin: 5px 0 20px 0;
+    border: none;
+    text-align: left;
 }
 
 #content dt{
@@ -534,20 +544,20 @@ a:hover {
 }
 
 .comments {
-    /* color:#333; */
+    /* color: #333; */
     margin: 0 0 15px 0;
-    /* Nb border-bottom:#bbb 1px solid; */
+    /* Nb border-bottom: #bbb 1px solid; */
 }
 
 .comments a {
-    /* Nb background:#fff; */
-    padding:0 7px 5px 0;
-    /* color:#333; */
-    /* Nb text-decoration:none; */
+    /* Nb background: #fff; */
+    padding: 0 7px 5px 0;
+    /* color: #333; */
+    /* Nb text-decoration: none; */
 }
 
 .comments a:hover {
-    /* color:#c00; */
+    /* color: #c00; */
 }
 
 .navigation {
@@ -628,7 +638,7 @@ a:hover {
     float: left;
     padding: 0 0 0 15px;
     border-left: #bbb 1px solid;
-    /* width:440px; */
+    /* width: 440px; */
     width: 34em;
 }
 
@@ -892,7 +902,7 @@ blockquote {
 }
 
 .clear {
-    clear:both;
+    clear: both;
 }
 
 .warning p {
@@ -994,23 +1004,23 @@ abbr {
 
 .serendipity_freeTag {
     margin-left: auto;
-    margin-right: 0px;
+    margin-right: 0;
     text-align: right;
     font-size: 10px;
     display: block;
     margin-top: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     line-height: 1em;
 }
 
 .serendipity_freeTag_related {
     margin-left: 50px;
-    margin-right: 0px;
+    margin-right: 0;
     text-align: left;
     font-size: 10px;
     display: block;
     margin-top: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .serendipity_freetag_taglist {
@@ -1034,14 +1044,14 @@ abbr {
 img.serendipity_freeTag_xmlButton {
     vertical-align: bottom;
     display: inline;
-    border: 0px
+    border: 0;
 }
 
 div.linklist span.menu_title {}
 
 div.linklist {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     text-align: left;
     font-size: 11px;
     color: #666;
@@ -1051,22 +1061,22 @@ div.linklist {
 
 div.linklist ul {
     list-style: none;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     text-align: left;
     white-space: nowrap;
 }
 
 div.linklist li {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     white-space: nowrap;
     font-family: Arial, Helvetica, sans-serif;
     white-space: nowrap;
 }
 
 div.linklist img {
-    border: 0px;
+    border: 0;
     vertical-align: middle;
 }
 
@@ -1096,8 +1106,8 @@ p.song {
     float: right;
     height: 60px;
     position: absolute;
-    right: 0px;
-    top: 0px;
+    right: 0;
+    top: 0;
     width: 80px;
 }
 
@@ -1131,7 +1141,7 @@ p.song {
 
 .rss {
     float: left;
-    margin: 0px;
+    margin: 0;
     padding: 8px 0 0 19px;
 }
 
@@ -1143,19 +1153,19 @@ p.song {
 .serendipity_weekDayName { text-align: center; }
 
 #searchform {
-    margin: 0 5px 0 0;
-    background-color: inherit;
-    border-right: none;
-    text-align: right; }
+     margin: 0 5px 0 0;
+     background-color: inherit;
+     border-right: none;
+     text-align: right; }
 
 #searchform input {
-    width: 193px;
-    margin-top: 3px;
-    border:  1px solid #aaa;
-    font-size:  1.0em;
-    vertical-align: middle;
-    color: #414141;
-    background: #FFF url("{TEMPLATE_PATH}img/mag_glass.gif") no-repeat 97% 50%; }
+     width: 193px;
+     margin-top: 3px;
+     border: 1px solid #aaa;
+     font-size: 1.0em;
+     vertical-align: middle;
+     color: #414141;
+     background: #FFF url("{TEMPLATE_PATH}img/mag_glass.gif") no-repeat 97% 50%; }
 
 #navbar {
     background-color: #F9F9F9;
@@ -1163,11 +1173,10 @@ p.song {
     position: absolute;
     width: 100%;
     height: 30px;
-    left: 0px;
+    left: 0;
     top: 160px;
-    border-bottom: 1px  solid #DBDBDB;
+    border-bottom: 1px solid #DBDBDB;
 }
-
 #navbar ul {
     margin: 0;
     padding: 0;
@@ -1215,20 +1224,20 @@ p.song {
     width: 33%;
     float: left;
     font-size: 12px;
-    text-align: left;}
+    text-align: left; }
 #cm1 {
     width: 34%;
     float: left;
     font-size: 12px;
-    text-align: center;}
+    text-align: center; }
 #cr1 {
     width: 33%;
     float: left;
     font-size: 12px;
-    text-align: right;}
+    text-align: right; }
 
 .serendipity_calendarDay {
-    border-bottom: 1px  solid #bbbbbb; }
+    border-bottom: 1px solid #bbbbbb; }
 
 a.homelink2  {
     font-weight: bold;
@@ -1262,15 +1271,15 @@ a.homelink2  {
     background: #FFFFFF none repeat scroll 0%;
     border: 1px solid #DDDDDD;
     padding: 2px 6px;
-    text-decoration:none;
+    text-decoration: none;
 }
 
 .pagination a:hover {
-    background:#E6B1AA none repeat scroll 0%;
+    background: #E6B1AA none repeat scroll 0%;
     border: 1px solid #333333;
     padding: 2px 6px;
-    text-decoration:none;
-    color:#ffffff;
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .pagination .stopp {
@@ -1293,13 +1302,13 @@ table.serendipity_calendar a  {
     width: 100%;
     height: 23px;
     z-index: 1;
-    left: 0px;
+    left: 0;
     top: 140px;
 }
 
 #rlmenu  {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     background-position: center;
     background-color: #414141;
     width: 100%;
@@ -1307,18 +1316,18 @@ table.serendipity_calendar a  {
 }
 
 #rlmenu ul {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 #rlmenu ul li {
-    padding:0;
+    padding: 0;
     font-family: Arial, Helvetica, Sans-Serif;
     font-size: 0.9em;
     float: left;
     list-style-type: none;
     height: 23px;
-    color:#ffffff;
+    color: #ffffff;
     line-height: 23px;
     width: 90px;
     display: block;
@@ -1384,14 +1393,14 @@ table.serendipity_calendar a  {
 .serendipity_imageComment_img,
 .serendipity_imageComment_img img {
     border: none!important;
-    margin: 0px;
-    padding: 0px!important;
+    margin: 0;
+    padding: 0!important;
     text-align: center;
 }
 
 .serendipity_imageComment_txt {
     border-top: 1px solid #bbb!important;
-    margin: 0px;
+    margin: 0;
     padding: 3px;
     clear: both;
     text-align: center;
