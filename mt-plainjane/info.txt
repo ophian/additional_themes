@@ -1,3 +1,7 @@
 Name: MT - Plainjane
 Author: Evan Nemerson
-Date: 29/06/2004
+Date: 2019-03-03
+
+Summary: Additional full-screen theme from 2004-06-29. Now 2019, and as an example, fully mobile first responsive.
+Description: This "MT-Trendy" child port (by date), basically an early days ~2003 MovableType "Plainjane" theme port, is styled by CSS only. Theme-wise it is a sister theme of MT-Georgiablue and MT-Clean.
+Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!
