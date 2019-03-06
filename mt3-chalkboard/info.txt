@@ -1,3 +1,7 @@
 Name: MT3 - Chalkboard
-Author: Kaustubh Srikanth
-Date: 31-06-2004
+Author: Kaustubh Srikanth, Ian Styx
+Date: 2019-03-05
+
+Summary: Additional small-screen theme from 2004-06-31 with a fixed content width of 860px. Revision 2019 made it fully mobile first responsive.
+Description: This early days MovableType-3 theme port, is styled by CSS only. Theme-wise it is a sister theme of MT3-Independence, MT3-Squash, MT3-Gettysburg.
+Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!
