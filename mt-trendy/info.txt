@@ -1,5 +1,5 @@
 Name: MT - Trendy
-Author: Sebastian Bergmann
+Author: Sebastian Bergmann, Ian Styx
 Date: 2019-02-28
 
 Summary: Additional full-screen theme from 2004-02-16. Now 2019, and as an example, fully mobile first responsive.
