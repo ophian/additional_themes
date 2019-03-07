@@ -479,8 +479,6 @@ a:active, a:hover {
     color: #666;
     font: 9pt Geneva, Arial, Helvetica, sans-serif; }
 
-.serendipity_entry_body_folded,
-.serendipity_entry_body_unfolded,
 .serendipity_entry_extended {
     /* Inner blocks of .serendipity_entry, can be used for further customization */
 }
@@ -697,6 +695,7 @@ div.serendipity_showentry_title{
 .serendipityImageButton {
     cursor: pointer; }
 
+/* for any plugins that use tables */
 td.serendipitySideBar {
     font-size: x-small;
     width: 200px;
