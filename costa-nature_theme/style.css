@@ -478,8 +478,6 @@ a.homelink2:visited,
     line-height: 120%;
 }
 
-.serendipity_entry_body_folded,
-.serendipity_entry_body_unfolded,
 .serendipity_entry_extended {
     clear: both;
     overflow: auto;
