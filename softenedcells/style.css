@@ -225,7 +225,7 @@ body {
     background: url('{TEMPLATE_PATH}img/h1_bg.jpg') no-repeat bottom center;
 }
 
-.serendipity_entry_body, .serendipity_entry_body_folded, .serendipity_entry_body_unfolded, .serendipity_entry_extended {
+.serendipity_entry_body, .serendipity_entry_extended {
     line-height:20px;
 }
 /*
