@@ -546,8 +546,7 @@ h2.post-title, h2.serendipity_date {
     background: #F3F6ED;
     border: #E1D6C6 1px solid;
 }
-.serendipity_entry_body_folded, .serendipity_entry_body_unfolded, .serendipity_entry_extended {
-}
+.serendipity_entry_extended {}
 
 div.serendipity_entryFooter {
     color: #999999;
