@@ -502,7 +502,7 @@ body {
     color:#ffffff;
 }
 
-.serendipity_entry_body, .serendipity_entry_body_folded, .serendipity_entry_body_unfolded, .serendipity_entry_extended {
+.serendipity_entry_extended {
     line-height:120%;
     text-align:justify;
 }
