@@ -245,8 +245,6 @@ p code, p samp, p kbd {
     display: inline-block;
     width: 100%;}
 .serendipity_entry_body,
-.serendipity_entry_body_folded,
-.serendipity_entry_body_unfolded,
 .serendipity_entry_extended {
     line-height: 1.6; }
 
@@ -427,8 +425,6 @@ h3.serendipity_date {
 }
 
 /*.serendipity_entry_body,
-.serendipity_entry_body_folded,
-.serendipity_entry_body_unfolded,
 .serendipity_entry_extended {
     line-height: 200%;
 }*/
