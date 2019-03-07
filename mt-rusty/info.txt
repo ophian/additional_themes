@@ -1,5 +1,5 @@
 Name: MT - Rusty
-Author: Evan Nemerson
+Author: Evan Nemerson, Ian Styx
 Date: 2019-03-03
 
 Summary: Additional full-screen theme from 2004-06-29. Now 2019, and as an example, fully mobile first responsive.
