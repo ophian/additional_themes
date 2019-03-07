@@ -280,8 +280,6 @@ pre code {
 .serendipity_freeTag {
     width: 100%; }
 .serendipity_entry_body,
-.serendipity_entry_body_folded,
-.serendipity_entry_body_unfolded,
 .serendipity_entry_extended {
     line-height: 1.6; }
 .serendipity_entry table {
