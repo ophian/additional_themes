@@ -8,7 +8,7 @@
     {foreach $sentries.entries AS $entry}
     <div class="archive_summary">
         <h4 class="archive_summary_title">{$entry.id} - <a href="{$entry.link}">{$entry.title|truncate:80:" ..."}</a></h4>
-        {$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}. {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {if $entry.categories} {$CONST.IN} {foreach $entry.categories AS $category}<a href="{$category.category_link}">{$category.category_name|escape}</a>{if NOT $category@last}, {/if}{/foreach}{/if}
+        {$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}. {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {if NOT empty($entry.categories)} {$CONST.IN} {foreach $entry.categories AS $category}<a href="{$category.category_link}">{$category.category_name|escape}</a>{if NOT $category@last}, {/if}{/foreach}{/if}
     </div>
     {/foreach}
 {/foreach}
