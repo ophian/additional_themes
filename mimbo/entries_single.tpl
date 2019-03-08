@@ -6,7 +6,7 @@
     <div class="post">
         <h2>{$entry.title|default:$entry.id}</h2>
 
-        <small>{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> &bull; {$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}{if $entry.categories} &bull; {$CONST.CATEGORY}: {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}{/if}{if $dategroup.is_sticky} &bull; {$CONST.STICKY_POSTINGS}{/if}{if NOT empty($entry.is_entry_owner) AND NOT $is_preview} &bull; <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}</small>
+        <small>{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> &bull; {$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}{if NOT empty($entry.categories)} &bull; {$CONST.CATEGORY}: {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}{/if}{if $dategroup.is_sticky} &bull; {$CONST.STICKY_POSTINGS}{/if}{if NOT empty($entry.is_entry_owner) AND NOT $is_preview} &bull; <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>{/if}</small>
 
         <div class="entry">
             {$entry.body}
