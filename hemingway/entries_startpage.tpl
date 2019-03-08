@@ -5,7 +5,7 @@
     <h3><a href="{$entry.link}">{$entry.title}</a></h3>
     <div class="entry_body">{$entry.body}</div>
         <div class="details">{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a>
-        {if $entry.categories}
+        {if NOT empty($entry.categories)}
             {$CONST.IN} {foreach $entry.categories AS $category}<a href="{$category.category_link}">{$category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
         {/if}
 
@@ -41,7 +41,7 @@
 {else}
     <li><span class="date">{$entry.timestamp|formatTime:($HEMINGWAY_DATE|default:'%d.%m.%Y')}</span>
         <a href="{$entry.link}">{$entry.title|default:$entry.id}</a> 
-        {if $entry.categories} {$CONST.IN} {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
+        {if NOT empty($entry.categories)} {$CONST.IN} {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
         {/if}</li>
     {/if}
 {/foreach}

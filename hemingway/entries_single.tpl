@@ -50,7 +50,7 @@
                 {if $dategroup.is_sticky}{$CONST.ON}{else}{$CONST.AT}{/if}
                 <a href="{$entry.link}">{if NOT $dategroup.is_sticky}{$dategroup.date|formatTime:($HEMINGWAY_DATE|default:'%d.%m.%Y')}{/if}</a> / {$entry.timestamp|formatTime:'%H:%M'}<br>Last updated {$entry.last_modified|formatTime:($HEMINGWAY_DATE|default:'%d.%m.%Y')}</dd>
             </dl>
-            {if $entry.categories}
+            {if NOT empty($entry.categories)}
             <dl>
                 <dt>{$CONST.CATEGORY}:</dt>
                 <dd>
