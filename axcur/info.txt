@@ -1,3 +1,6 @@
-Name: xcur (2013-10-26)
+Name: xcur
 Author: reinhardl
-Date: 2013-10-26
+Date: 2019-03-09
+
+Summary: Additional old small-screen theme from 2009-08-13 to 2013-10-26, with a fixed content width of 1000px.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly! Derivate of xkur theme.
