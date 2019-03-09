@@ -1,3 +1,6 @@
-Name: Artistic v1.1 (2009-08-27)
+Name: Artistic
 Author: Carl Galloway & Ricky Wilson
-Date: 24 August 2006
+Date: 2019-03-08
+
+Summary: Additional old small-screen theme from 2006-08-24 to 2009-08-27 as v.1.1, with a fixed content width of 774px.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!

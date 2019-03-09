@@ -2,7 +2,7 @@
 
 if (IN_serendipity !== true) { die ("Don't hack!"); }
 
-@serendipity_plugin_api::load_language(dirname(__FILE__));
+//@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 $template_config = array(
     array(
@@ -25,14 +25,7 @@ $template_config = array(
         'description'   => 'Enter the URL of your about page eg \'http://www.somesite.url\'',
         'type'          => 'string',
         'default'       => '#',
-    ),
-    array(
-        'var'           => 'amount',
-        'name'          => 'Number of navlinks',
-        'description'   => 'Enter the number of navlinks you want to use in the navbar.',
-        'type'          => 'string',
-        'default'       => '4',
-    ),
+    )
 );
 
 $top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
