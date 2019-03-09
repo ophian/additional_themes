@@ -37,7 +37,7 @@ $template_config = array(
       'var'           => 'infoxxx1',
       'name'          => 'infoxxx1',
       'type'          => 'custom',
-      'custom'        => MIMBO_INSTR,
+      'custom'        => IMAGECAT_INSTR,
     ),
     array(
         'var'          => 'installation_ok',
