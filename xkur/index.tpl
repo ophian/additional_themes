@@ -26,7 +26,7 @@
 
  <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="dropline_one.css"}" />
  <style type="text/css">
-    { background-color: {$template_option.backgroundc}; }
+    body { background-color: {$template_option.backgroundc}; }
   </style>
 {serendipity_hookPlugin hook="frontend_header"}
 </head>
@@ -133,7 +133,7 @@
             {serendipity_printSidebar side="top"}
         {/if}
         {if $template_option.enablefooterm}
-            <div id="abstand"> </div>
+            <div id="abstand"></div>
             <h3>{$tab2_cat}</h3>
             {serendipity_fetchPrintEntries category=$template_option.catx2 full=true fetchDrafts=false noSticky=true limit="0,5" template="entries_footer.tpl"}
         {/if}
@@ -144,7 +144,7 @@
             {serendipity_printSidebar side="top"}
         {/if}
         {if $template_option.enablefooterr}
-            <div id="abstand"> </div>
+            <div id="abstand"></div>
             <h3>{$tab3_cat}</h3>
             {serendipity_fetchPrintEntries category=$template_option.catx3 full=true fetchDrafts=false noSticky=true limit="0,5" template="entries_footer.tpl"}
         {/if}
