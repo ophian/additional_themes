@@ -135,7 +135,7 @@
                     <li id="{$view3}">
                         <a href="{$serendipityBaseURL}{if isset($template_option.tabx1)}{getCategoryLinkByID cid=$template_option.tabx1}{/if}">
                             {assign var="view3" value="noselected"}
-                            {if NOT empty($tabx1_cat)}{$tabx1_cat}{/if}
+                            {$tab1_cat}
                         </a>
                         <ul>
                             <li>
@@ -150,7 +150,7 @@
                     <li id="{$view3}">
                         <a href="{$serendipityBaseURL}{getCategoryLinkByID cid=$template_option.tabx2}">
                             {assign var="view3" value="noselected"}
-                            {if NOT empty($tabx2_cat)}{$tabx2_cat}{/if}
+                            {$tab2_cat}
                         </a>
                         <ul>
                             <li>
@@ -166,7 +166,7 @@
                     <li id="{$view3}">
                         <a href="{$serendipityBaseURL}{getCategoryLinkByID cid=$template_option.tabx3}">
                             {assign var="view3" value="noselected"}
-                            {if NOT empty($tabx3_cat)}{$tabx3_cat}{/if}
+                            {$tab3_cat}
                         </a>
                         <ul>
                             <li>
