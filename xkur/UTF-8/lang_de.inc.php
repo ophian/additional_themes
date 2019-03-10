@@ -18,5 +18,5 @@
 @define('ENABLE_FOOTER_R', 'Enable footer column right? ');
 @define('FOOTERPOS', 'Position of footer');
 @define('BACKGROUNDC', 'Enter background color (hex) Example:#f1f6fb');
-@define('SIDEBAR_TITLE', 'Sidebar title');
+@define('SIDEBAR_TITLE', 'Sidebars: (please do not change!)');
 
