@@ -1,5 +1,5 @@
 {serendipity_hookPlugin hook="entries_header"}
-<div class='serendipity_date'>{$CONST.TOPICS_OF} {$dateRange.0|formatTime:"%B, %Y"}</div>
+<div class="serendipity_date">{$CONST.TOPICS_OF} {$dateRange.0|formatTime:"%B, %Y"}</div>
 
 <div class="serendipity_entry">
 {foreach $entries AS $sentries}
@@ -10,6 +10,8 @@
     </div>
     {/foreach}
 {/foreach}
+</div>
 
-<div class="serendipity_pageFooter" style="text-align: center">
-{serendipity_hookPlugin hook="entries_footer"}</div>
+<div class="serendipity_pageFooter">
+    {serendipity_hookPlugin hook="entries_footer"}
+</div>
