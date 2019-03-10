@@ -1537,6 +1537,8 @@ img.serendipity_freeTag_xmlButton {
     border-top: 2px solid #DDDDDD;
     background-color: #FAFAFA;
     background-color: #ffffff; }
+    #footertable h3 {
+        text-transform: uppercase; }
 
 #footerLeft, #footerMid, #footerRight{
     width:33%;
