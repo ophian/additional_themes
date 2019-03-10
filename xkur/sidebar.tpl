@@ -4,7 +4,7 @@
 
 {if $pluginside != "Top"}
 {foreach $plugindata AS $item}
- <div class="art-Block">
+<div class="art-Block">
     <div class="art-Block-tl"></div>
     <div class="art-Block-tr"></div>
     <div class="art-Block-bl"></div>
@@ -31,7 +31,7 @@
 </div>
 {/foreach}
 {/if}
-{if $pluginside =="Top"}
+{if $pluginside == "Top"}
    {foreach $plugindata AS $item}
        <div class="serendipitySideBarItem container_{$item.class}">
            {if $item.title != ""}<h3 class="serendipitySideBarTitle {$item.class}">{$item.title}</h3>{/if}

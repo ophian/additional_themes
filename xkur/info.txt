@@ -1,4 +1,6 @@
-Name: xkur (2013-10-26)
-Author: Reinhard Linnemann Based on Carl Galloway`s Serendipity Theme 3.0
-Date: 2013-10-26
-Require Serendipity: 1.5
+Name: xkur
+Author: Reinhard Linnemann
+Date: 2019-03-10
+
+Summary: Additional old small-screen theme from 2006-01-26 to 2013-10-26, with a fixed content width of 1024px.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly! Based on Carl Galloway`s Serendipity Theme 3.0.
