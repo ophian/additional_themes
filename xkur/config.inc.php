@@ -328,7 +328,7 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
 
             // This is the actual HTML output on the backend screen.
             // echo '<pre>' . print_r($eventData, true) . '</pre>';
-            echo' <fieldset id="edit_entry_xkurtheme" class="entryproperties_disablesidebars">
+            echo '<fieldset id="edit_entry_xkurtheme" class="entryproperties_disablesidebars">
                         <span class="wrap_legend"><legend>Disable xkur-theme sidebars</legend></span>';
             echo "Disable left sidebar? ";
 
