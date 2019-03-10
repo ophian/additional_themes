@@ -7,7 +7,7 @@ if (IN_serendipity !== true) { die ("Don't hack!"); }
 $serendipity['smarty']->assign(array('currpage'  => "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],
                                      'currpage2' => $_SERVER['REQUEST_URI']));
 
-$footerposition= array( "left-column",  "middle-column", "right-column","disable");
+$footerposition= array("left-column", "middle-column", "right-column", "disable");
 
 $istok = ' <span class="icon-ok-circled"></span> ';
 $notok = ' <span class="icon-attention-circled"></span> ';
@@ -35,6 +35,12 @@ if (is_array($all_cats = serendipity_fetchCategories('all'))) {
 }
 
 $template_config = array(
+    array(
+      'var'           => 'infoxkur',
+      'name'          => 'infoxkur',
+      'type'          => 'custom',
+      'custom'        => $notok . INFO_XKUR,
+    ),
     array(
 		'var' 			=> 'sidebars',
 		'name' 			=> SIDEBAR_TITLE,
@@ -171,7 +177,7 @@ if (isset($template_loaded_config['sidebbarmenuesamount'])) {
             'select_values' => $menuepsition,
         );
         $menuepoints = array();
-        #if (isset($template_loaded_config['menue10sitenav1_amount'])) {
+        if (isset($template_loaded_config['menue10sitenav1_amount'])) {
             for ($s = 0; $s < $template_loaded_config['menue1' . $i . 'sitenav1_amount']; $s++) {
                 $template_config[] = array(
                 'var'           => 'menue1' . $i . 'menuepoint' . $s . 'text',
@@ -198,14 +204,14 @@ if (isset($template_loaded_config['sidebbarmenuesamount'])) {
                     );
             }
             $sbmenue1[] = array(
-                'sbmenue_info' => $template_loaded_config['menue1' . $i . 'sbmenue_info'],
+                'sbmenue_info'  => $template_loaded_config['menue1' . $i . 'sbmenue_info'] ?? '',
                 'title'         => $template_loaded_config['menue1' . $i . 'text'],
                 'href'          => $template_loaded_config['menue1' . $i . 'url'],
                 'target'        => $template_loaded_config['menue1' . $i . 'target'],
                 'position'      => $template_loaded_config['menue1' . $i . 'position'],
-                'menuepoints'      => $menuepoints,
+                'menuepoints'   => $menuepoints,
             );
-        #}
+        }
     }
 }
 $serendipity['smarty']->assignByRef('sbmenue1', $sbmenue1);
@@ -258,7 +264,7 @@ if (!empty($template_loaded_config['enablehmenue'])) {
                     );
             }
             $navlinks[] = array(
-                'navlinkinfo' 	=> $template_loaded_config['navlink' . $i . 'navlink_info'],
+                'navlinkinfo' 	    => $template_loaded_config['navlink' . $i . 'navlink_info'] ?? '',
                 'title'         	=> $template_loaded_config['navlink' . $i . 'text'],
                 'href'           	=> $template_loaded_config['navlink' . $i . 'url'],
                 'drop'           	=> $template_loaded_config['navlink' . $i . 'dramount'],
@@ -269,9 +275,9 @@ if (!empty($template_loaded_config['enablehmenue'])) {
 }
 $serendipity['smarty']->assignByRef('navlinks', $navlinks);
 
-$serendipity['smarty']->assign('tab1_cat', $catsel[$template_loaded_config['catx1']] ?? null);
-$serendipity['smarty']->assign('tab2_cat', $catsel[$template_loaded_config['catx2']] ?? null);
-$serendipity['smarty']->assign('tab3_cat', $catsel[$template_loaded_config['catx3']] ?? null);
+$serendipity['smarty']->assign('tab1_cat', str_replace('&nbsp;', '', trim($catsel[$template_loaded_config['catx1']])) ?? null);
+$serendipity['smarty']->assign('tab2_cat', str_replace('&nbsp;', '', trim($catsel[$template_loaded_config['catx2']])) ?? null);
+$serendipity['smarty']->assign('tab3_cat', str_replace('&nbsp;', '', trim($catsel[$template_loaded_config['catx3']])) ?? null);
 
 // CODE EXAMPLE:  How to save custom field variables within the serendipity "Edit/Create Entry" backend.
 //                Any custom variables can later be queried inside the .tpl files through
@@ -321,9 +327,10 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
             $is_special2 = helper_get_value($special_key2, $eventData);
 
             // This is the actual HTML output on the backend screen.
-           // echo '<pre>' . print_r($eventData, true) . '</pre>';
+            // echo '<pre>' . print_r($eventData, true) . '</pre>';
+            echo' <fieldset id="edit_entry_xkurtheme" class="entryproperties_disablesidebars">
+                        <span class="wrap_legend"><legend>Disable xkur-theme sidebars</legend></span>';
             echo "Disable left sidebar? ";
-
 
             echo '<input type="radio" name="serendipity[properties][' . $special_key2 . ']" value="true" ' . ($is_special2 ? 'checked="checked"' : '') . ' id="' . $special_key2 . '_true">';
             echo '  <label for="' . $special_key2 . '_true">' . YES . '</label> ';
@@ -331,7 +338,7 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
             echo '<input type="radio" name="serendipity[properties][' . $special_key2 . ']" value="false" ' . (!$is_special2 ? 'checked="checked"' : '')  . ' id="' . $special_key2 . '_false">';
             echo '  <label for="' . $special_key2 . '_false">' . NO . '</label> ';
 
-            echo "<br/><br/> Disable right sidebar?  ";
+            echo "<br><br> Disable right sidebar? ";
 
             echo '<input type="radio" name="serendipity[properties][' . $special_key . ']" value="true" ' . ($is_special ? 'checked="checked"' : '') . ' id="' . $special_key . '_true">';
             echo '  <label for="' . $special_key . '_true">' . YES . '</label> ';
@@ -339,6 +346,7 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
             echo '<input type="radio" name="serendipity[properties][' . $special_key . ']" value="false" ' . (!$is_special ? 'checked="checked"' : '')  . ' id="' . $special_key . '_false">';
             echo '  <label for="' . $special_key . '_false">' . NO . '</label> ';
 
+            echo "</fieldset>\n";
             break;
 
         // To store the value of our entryproperties
