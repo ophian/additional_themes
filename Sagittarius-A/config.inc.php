@@ -7,13 +7,11 @@ if (IN_serendipity !== true) { die ("Don't hack!"); }
 $serendipity['smarty']->assign(array('currpage'  => "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],
                                      'currpage2' => $_SERVER['REQUEST_URI']));
 
-if ($serendipity['GET']['adminModule'] == 'templates' || $serendipity['POST']['adminModule'] == 'templates') {
-    if (is_array($all_cats = serendipity_fetchCategories('all'))) {
-        $categories = serendipity_walkRecursive($categories, 'categoryid', 'parentid', VIEWMODE_THREADED);
-        $catsel = array();
-        foreach($all_cats AS $cat) {
-            $catsel[$cat['categoryid']] = str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'];
-        }
+if (is_array($all_cats = serendipity_fetchCategories('all'))) {
+    $all_cats = serendipity_walkRecursive($all_cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
+    $catsel = array();
+    foreach($all_cats AS $cat) {
+        $catsel[$cat['categoryid']] = str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'];
     }
 }
 
@@ -66,7 +64,7 @@ $template_config = array(
     ),
     array(
         'var'         => 'enableslogan',
-        'name'        => ENABLE_SOLGAN,
+        'name'        => ENABLE_SLOGAN,
         'type'        => 'boolean',
         'default'     => 'true',
     ),
@@ -138,6 +136,8 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
             $is_special3 = helper_get_value($special_key3, $eventData);
             // This is the actual HTML output on the backend screen.
             // echo '<pre>' . print_r($eventData, true) . '</pre>';
+            echo '<fieldset id="edit_entry_sagittariustheme" class="entryproperties_disablesidebars">
+                        <span class="wrap_legend"><legend>Disable Sagittarius-theme sidebars</legend></span>';
             echo "Disable the footer sidebar (LEFT and LEFT2 Sidebar) ? ";
 
             echo '<input type="radio" name="serendipity[properties][' . $special_key2 . ']" value="true" ' . ($is_special2 ? 'checked="checked"' : '') . ' id="' . $special_key2 . '_true">';
@@ -162,6 +162,7 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
             echo '<input type="radio" name="serendipity[properties][' . $special_key3 . ']" value="false" ' . (!$is_special3 ? 'checked="checked"' : '')  . ' id="' . $special_key3 . '_false">';
             echo '  <label for="' . $special_key3 . '_false">' . NO . '</label> ';
 
+            echo "</fieldset>\n";
             break;
 
         // To store the value of our entryproperties

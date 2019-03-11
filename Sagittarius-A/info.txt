@@ -1,4 +1,6 @@
-Name: Sagittarius-A (2014-01-09)
-Author: Blueprint Theme port with yaml by RL
-Date: 2014-01-09
-Require Serendipity: 1.5
+Name: Sagittarius-A
+Author: Reinhard Linnemann
+Date: 2019-03-11
+
+Summary: Additional old "full"-screen newspaper/magazine Blueprint Theme port with yaml from 2009-04-01 to 2014-01-09, with a fixed maximum content width of 1440px.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive until minimum width of 768px, but <u>not</u> mobile friendly!

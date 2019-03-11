@@ -1,169 +1,895 @@
- #page_margins, #page, .page_margins, .page { height: 1%; }                              
-  #page_margins, #page, .page_margins, .page, #header, #nav, #main, #footer { zoom:1; }   
-  .page_margins { width: auto;  min-width: 740px; max-width: 90em; background: #ddd; padding: 12px; }
-  .page_margins { margin: 0 auto; }
+/**! Modernizing Serendipity Styx default styles START **/
 
-  * { margin:0; padding: 0; }
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+main { display: block; }
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible; }
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+a { background-color: transparent; }
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted; }
+b,
+strong { font-weight: bolder; }
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+small { font-size: 80%; }
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+sub { bottom: -0.25em; }
+sup { top: -0.5em; }
+img { border-style: none; }
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0; }
+button,
+input {
+  overflow: visible; }
+button,
+select {
+  text-transform: none; }
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+fieldset { padding: 0.35em 0.75em 0.625em; }
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal; }
+progress { vertical-align: baseline; }
+textarea { overflow: auto; }
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px; }
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit; }
+details { display: block; }
+summary { display: list-item; }
+template,
+[hidden] {
+  display: none; }
 
-  .page { padding: 12px 24px; border: 1px #aaa solid; background: #fff; }
-  #header { padding: 12px 24px 0 24px; color: #000; background: #fff; }
-  #header, #nav, #main, #footer { clear:both; }
+/* normalize end */
 
-  #header { position:relative; }
+/* Render Browser default styles */
 
-  #header #topnav {
-    position:absolute;
+/**/
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box }
+@-ms-viewport { width: device-width; }
+ul,ol { list-style-position: inside; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+table td { display: table-cell; vertical-align: top; }
+
+[type="checkbox"],
+[type="radio"] {
+    vertical-align: middle;
+    margin-right: 2px; }
+[type="checkbox"],
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  width: auto !important; }
+
+body.save_preview_body {
+    background-color: #fff;
+    color: initial;
+}
+body.save_preview_body a {
+    color: initial;
+}
+
+/** Modern Serendipity image sizing default **/
+
+img {
+    border: 0;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative; }
+embed, object, audio, video, img {
+    max-width: 100%; }
+img, video {
+    height: auto; }
+
+/** New Styx defaults **/
+
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: auto; }
+/* a new unsaved comment preview only */
+#serendipity_comment_0 {
+    border: 1px solid #777;
+    -webkit-border-radius: .25em;
+    -moz-border-radius: .25em;
+    border-radius: .25em;
+    padding: .625em; }
+.serendipity_image_link {
+    display: inline-block; }
+.serendipity_entry table {
+    border-collapse: separate;
+    border-spacing: 2px;
+    border: 1px solid #eee;
+    display: inline-grid;
+    max-width: 100%;
+    width: auto;
+    overflow: auto;
+    padding: .5em; }
+p {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hypens: auto;
+    hyphens: auto; }
+p code, p samp, p kbd {
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hypens: none;
+    hyphens: none; }
+
+/** Modernizing Serendipity Styx default styles END **/
+
+/* Theme additions and fixes */
+
+/* when pre uses overflows scroll */
+pre {
+    padding-bottom: .5em;
+    font-family: Menlo,Consolas,Monaco,monospace;
+}
+
+hr {
+    height: 1px;
+    border: 0;
+    background: transparent;
+    border-top: 1px solid #aaa;
+}
+
+body.save_preview_body {
+    font-size: initial;
+}
+
+.serendipity_edit_nugget {
+    text-align: right;
+}
+.serendipity_freetag_taglist {
+    display: inline-table; }
+.maincontent .serendipity_freetag_taglist .ftr-empty {
+    margin-left: auto;
+}
+
+/* Sidebar Calendar */
+table.serendipity_calendar {
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+.serendipity_calendar .icon-back::before {
+    content: "<";
+}
+.serendipity_calendar .icon-next::before {
+    content: ">";
+}
+.serendipity_calendar .icon {
+    display: inline-table;
+    font-weight: 600;
+    font-size: 1.065em;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.serendipity_calendarHeader {
+    text-align: center;
+}
+
+#serendipity_category_form ul {
+    margin: 0 0 1em;
+    padding: 0;
+}
+
+/* entries */
+.serendipity_entry_read_more {
+    margin: 1em auto;
+}
+
+.serendipity_entries_footer {
+    text-align: center;
+    margin: 1em auto;
+    padding-bottom: 1em;
+}
+
+/* comments */
+.serendipity_commentForm {
+    color: #666;
+    margin: 1em auto;
+    background-color: #fff;
+}
+
+.comments_by_author .serendipity_entry {
+    margin-bottom: 0;
+}
+.comment_content {
+    margin-bottom: 1em;
+}
+.serendipity_comment_author_self .serendipity_comment_source .pc-owner,
+.serendipity_comment_author_self .comment_header .pc-owner {
+    background: #3e5f81e6;
+    padding: 0 .25em;
+    border-radius: 3px;
+    border: 1px solid #666;
+    color: #efefef;
+    font-style: normal;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px #222;
+}
+.comments_by_author_pagination {
+    text-align: center;
+}
+.comments_by_author_pagination.top {
+    margin-top: 1em;
+}
+.comments_by_author_pagination.bottom {
+    margin: 2em auto;
+}
+
+.serendipity_comment {
+    overflow: hidden;
+    display: block;
+    margin: .5em auto;
+    padding: .5em;
+    color: #666;
+}
+
+.serendipity_comment .serendipity_commentBody {
+    border: 1px solid #ddd;
+}
+.serendipity_content_message,
+.serendipity_commentBody,
+.comment_content {
+    display: block;
+    padding: .5em;
+    border: 1px solid #ccc;
+}
+.serendipity_comment_source,
+.serendipity_comment_author_self .serendipity_comment_source {
+    padding: .25em;
+    font-weight: normal;
+    line-height: 1.5;
+}
+.comment_header h4 {
+    margin: 0 auto;
+}
+/* comment_oddbox is single entry view cycles, while serendipity_comment.odd is for comment summary pages */
+.serendipity_comment.comment_oddbox .serendipity_commentBody {
+    background-color: #f5f5f5;
+}
+.serendipity_comment.comment_evenbox .serendipity_commentBody {
+    background-color: #fafbfc;
+}
+.serendipity_comment.odd .comment_content {
+    background-color: #eee;
+}
+
+td.serendipity_commentsLabel {
+    padding-right: .5em;
+    font-weight: bold;
+}
+
+.serendipity_commentsTitle {
+    color: #666;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.serendipity_commentDirection {
+    margin: .5em auto;
+}
+
+.serendipity_comments.serendipity_section_trackbacks,
+.serendipity_comments.serendipity_section_comments,
+.serendipity_section_commentform {
+    margin: 1em auto;
+    padding: 0 1em;
+}
+#serendipity_comment {
+    padding: 0 1em;
+}
+
+.comments_for_entry .serendipity_comment {
+    margin-bottom: initial; }
+.comments_for_entry .comment_header h4 {
+    padding: .5em 0; }
+.comments_by_author_pagination.bottom {
+    margin-top: initial;
+    margin-bottom: 1.5em; }
+
+h2.comments_permalink {
+    margin: 0;
+    padding-right: .5em;
+    text-align: right;
+}
+
+#serendipity_comment_page {
+    margin: .5em;
+    overflow-x: auto;
+    width: auto;
+    background-color: #fff;
+}
+
+/** Embedded images with the s9y image manager **/
+
+.serendipity_imageComment_center,
+.serendipity_imageComment_left,
+.serendipity_imageComment_right {
+    border: 1px solid #666;
+    background-color: transparent;
+    margin: 0.25em;
+    padding: 0.25em;
+    text-align: center;
+}
+.serendipity_entry p > .serendipity_image_left,
+.serendipity_entry p > .serendipity_imageComment_center,
+.serendipity_entry p > .serendipity_image_right {
+    margin: .25em auto;
+}
+.serendipity_imageComment_center {
+    margin: .25em auto;
+}
+.serendipity_imageComment_left {
+    float: left;
+    margin-right: .5em;
+}
+.serendipity_imageComment_right {
+    float: right;
+    margin-left: .5em;
+}
+.serendipity_imageComment_img,
+.serendipity_imageComment_img img {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.serendipity_imageComment_txt {
+    border-top: 1px solid #777;
+    background-color: #efefef;
+    padding: .25em;
+    font-size: x-small;
+}
+/* image parent comment box responsiveness for mobile screens */
+.serendipity_imageComment_left,
+.serendipity_imageComment_center,
+.serendipity_imageComment_right {
+    width: auto !important; /* force overwrite delivered inline styles */
+    display: table;
+}
+/* overwrite fallback plain image padding */
+.serendipity_image_center {
+    padding: .25em;
+}
+/* overwrite fallback gallery comment container margins and some of this comment styles */
+.serendipity_image_block .serendipity_imageComment_left,
+.serendipity_image_block .serendipity_imageComment_right {
+    margin-top: auto;
+    margin-right: unset;
+    background-color: unset;
+    padding-top: 0;
+}
+.serendipity_entry_body > .serendipity_imageComment_center > .serendipity_imageComment_txt,
+.serendipity_entry_extended > .serendipity_imageComment_center > .serendipity_imageComment_txt {
+    margin-top: .25em;
+}
+/* inside image blocks closely append .serendipity_imageComment_txt */
+.serendipity_image_block > .serendipity_imageComment_left > .serendipity_imageComment_txt,
+.serendipity_image_block > .serendipity_imageComment_right > .serendipity_imageComment_txt {
+    margin-top: -6px;
+}
+
+/** Embedded images with the s9y image manager end **/
+
+h2.comments_permalink {
+    word-break: break-all;
+}
+
+.serendipity_center {
+    margin: .5em auto;
+    text-align: center;
+}
+
+.serendipity_msg_important{
+    color: #ff4136;
+}
+.serendipity_msg_important:not(.msg_error) {
+    background-color: #f3f8fc;
+    padding: .5em;
+    border: 1px solid #ddd;
+}
+
+.serendipity_msg_notice {
+    color: #2ecc40;
+    background-color: #fff;
+    padding: .5em;
+    border: 1px solid #ddd;
+}
+
+.serendipity_search,
+.serendipity_content_message,
+.serendipity_overview_noentries,
+#serendipity_trackbacklist,
+.serendipity_comments  .nocomments {
+    margin: 1em .5rem;
+    border: 1px solid #ccc;
+    padding: .5em .5em;
+    background-color: #efefef;
+    min-width: 564px;
+}
+/* for static pages, works like content */
+.maincontent {
+    display: initial;
+}
+
+
+/* Theme start */
+
+#page_margins, #page, .page_margins, .page {
+    height: 1%; }
+#page_margins, #page, .page_margins, .page, #header, #nav, #main, #footer {
+    zoom:1; }
+.page_margins {
+    width: auto;
+    min-width: 740px;
+    max-width: 90em;
+    background: #ddd;
+    padding: 12px; }
+.page_margins {
+    margin: 0 auto; }
+
+/*  * { margin:0; padding: 0; }*/
+
+.page {
+    padding: 12px 24px;
+    border: 1px #aaa solid;
+    background: #fff; }
+#header {
+    padding: 12px 24px 0 24px;
+    color: #000;
+    background: #fff; }
+#header, #nav, #main, #footer {
+    clear: both; }
+
+#header { position:relative; }
+
+#header #topnav {
+    position: absolute;
     top: 10px;
     right: 10px; /* LTR */
-  }
+}
 
-  #topnav { top: 24px; right: 24px; color: #aaa; background: transparent; }
-  #topnav { text-align: right; }  
+#topnav {
+    top: 24px;
+    right: 24px;
+    color: #aaa;
+    background: transparent; }
+#topnav {
+    text-align: right; }
 
-  #topnav a { color: #999; font-weight: normal; background:transparent; text-decoration:none; }
-  .skip, .hideme, .print, dfn {
+#topnav a {
+    color: #999;
+    font-weight: normal;
+    background:transparent;
+    text-decoration: none; }
+
+.skip, .hideme, .print, dfn {
     position: absolute;
     left: -1000em; /* LTR */
     top: -1000em;
-  }
+}
 
-  a {color: #4D87C7; text-decoration:none;}
-  
-  h1 { font-size: 300%; line-height: .5em; margin-top: .5em; margin-bottom: .5em; letter-spacing: -2px; }
+a {
+    color: #4D87C7;
+    text-decoration:none; }
 
-  h1,h3,h4,h5,h6 {
+h1 {
+    font-size: 300%;
+    line-height: .5em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    letter-spacing: -2px; }
+
+h1,h3,h4,h5,h6 {
     font-family: Geneva, Arial, Helvetica, sans-serif;
-    font-weight:normal;
-  letter-spacing: -1px;
-    color:#000;
-  }
+    font-weight: normal;
+    letter-spacing: -1px;
+    color: #000;
+}
 
-  #header h2 {border-top: 1px #ddd solid; border-bottom: 1px #ddd solid; margin: 0; padding: .75em 0 .75em 0;}
-  h2 { font-size: 200%; line-height: 1.5em; margin-top: .75em; margin-bottom: .75em; color: #666; }    
+#header h2 {
+    border-top: 1px #ddd solid;
+    border-bottom: 1px #ddd solid;
+    margin: 0;
+    padding: .75em 0 .75em 0; }
+h2 {
+    font-size: 200%;
+    line-height: 1.5em;
+    margin-top: .75em;
+    margin-bottom: .75em;
+    color: #666; }
 
-  h2, h3 em {
+h2, h3 em {
     font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",Georgia,serif;
-  font-weight:normal;
-  letter-spacing: 0px;
-  font-style:italic;
-  }
-#serendipity_commentform_comment {width:90%;}
-#serendipity_commentform_name {padding-left:30px;margin-right:10px;}
-#serendipity_commentform_email,#serendipity_commentform_url {margin-right:10px;}
-  .subcolumns { border-bottom: 1px #ddd solid; }
-  .entry {padding-top:20px;}
-   .post h2 {color:black;
-   font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",Georgia,serif;
-   
-   font-weight: normal;
-   
-   letter-spacing: 0px;
-   
-font-style: italic;
-   }
-  .subcolumns { width: 100%; overflow:hidden; }
+    font-weight: normal;
+    letter-spacing: 0px;
+    font-style: italic;
+}
+#serendipity_commentform_comment {
+    width: 90%; }
+#serendipity_commentform_name {
+    /*padding-left: 30px;*/
+    margin-right: 10px; }
+#serendipity_commentform_email,
+#serendipity_commentform_url {
+    margin-right: 10px; }
+.subcolumns {
+    border-bottom: 1px #ddd solid; }
+.entry {
+    padding-top:20px; }
+.post h2 {
+    color:black;
+    font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",Georgia,serif;
+    font-weight: normal;
+    letter-spacing: 0px;
+    font-style: italic;
+}
+.subcolumns {
+    width: 100%;
+    overflow: hidden; }
 
-  .c50l, .c25l, .c33l, .c38l, .c66l, .c75l, .c62l,
-  .c50r, .c25r, .c33r, .c38r, .c66r, .c75r, .c62r { display:inline; }
+.c50l, .c25l, .c33l, .c38l, .c66l, .c75l, .c62l,
+.c50r, .c25r, .c33r, .c38r, .c66r, .c75r, .c62r {
+    display:inline; }
 
-  .c33l, .c33r { width: 33.333%; }
-  
-  .c50l, .c25l, .c33l, .c38l, .c66l, .c75l, .c62l {float: left; }
-  .subc, .subcl, .subcr { height: 1%; }
+.c33l, .c33r { width: 33.333%; }
 
-  .subcl { padding: 0 24px 0 0; }
-  .subcl { padding: 0 1em 0 0; }
-  h6 { font-size: 116.67%; line-height: 1.286em; margin-top: 1.286em; margin-bottom: 1.286em; font-weight:bold;}  
+.c50l, .c25l, .c33l, .c38l, .c66l, .c75l, .c62l {
+    float: left; }
+.subc, .subcl, .subcr {
+    height: 1%; }
 
-  ul, ol, dl { line-height: 1.5em; margin: 0 0 1em 1em }
-  ul, ol, dl { margin: 0 0 1em 1em } 
-  li { margin-left: 1.5em; line-height: 1.5em }
+.subcl { padding: 0 24px 0 0; }
+.subcl { padding: 0 1em 0 0; }
+h6 {
+    font-size: 116.67%;
+    line-height: 1.286em;
+    margin-top: 1.286em;
+    margin-bottom: 1.286em;
+    font-weight: bold; }
 
-  li {
+ul, ol, dl {
+    line-height: 1.5em;
+    margin: 0 0 1em 1em; }
+ul, ol, dl {
+    margin: 0 0 1em 1em; }
+li {
+    margin-left: 1.5em;
+    line-height: 1.5em; }
+
+li {
     margin-left: 0.8em; /* LTR */
     line-height: 1.5em;
-  }
+}
 
-  #header .subc  { border-left: 1px #ddd solid; border-right: 1px #ddd solid; }
-  
-  #header .subc  { padding: 0 24px; }
-  
-  .subc  { padding: 0 0.5em; }
-  #header .subcolumns p, .subcolumns .subcolumns p { margin-bottom: 0; padding-bottom: 1.5em;}
+#header .subc  {
+    border-left: 1px #ddd solid;
+    border-right: 1px #ddd solid; }
 
-  p { font-size: 1em; color: #444; line-height: 1.5em; margin: 1.5em 0; }
-  .c50r, .c25r, .c33r, .c38r, .c66r, .c75r, .c62r {float: right; margin-left: -5px; }
+#header .subc  {
+    padding: 0 24px 1rem; }
 
-  .subcr { padding: 0 0 0 24px; }
-  .subcr { padding: 0 0 0 1em; }
+.subc  { padding: 0 0.5em; }
+#header .subcolumns p, .subcolumns .subcolumns p {
+    margin-bottom: 0;
+    padding-bottom: 1.5em; }
 
-  #main { position: relative; } 
+/*p {
+    font-size: 1em;
+    color: #444;
+    line-height: 1.5em;
+    margin: 1.5em 0; }*/
+.c50r, .c25r, .c33r, .c38r, .c66r, .c75r, .c62r {
+    float: right;
+    margin-left: -5px; }
 
-  #main { padding: 0px 24px; }
+.subcr {
+    padding: 0 0 0 24px; }
+.subcr {
+    padding: 0 0 0 1em; }
 
-  #main { margin: 12px 0; background: #fff; }
-  .c66l, .c66r { width: 66.666%; }
-  #main .subcl { border-right: 1px #ddd solid; }
-  
-  .maincontent { padding-left: 6px; }
+#main {
+    position: relative;
+    padding: 0px 24px;
+    margin: 12px 0;
+    background: #fff; }
 
-  .float_left { float: left; display:inline; margin: 0 1.5em 1em -36px; }
-  
-  img {padding: 5px; border: 1px #888 solid; }
-  fieldset, img { border: 0 solid; }
+.c66l, .c66r {
+    width: 66.666%; }
+#main .subcl {
+    border-right: 1px #ddd solid; }
 
-  em,i { font-style:italic }
+.maincontent {
+    padding-left: 6px; }
 
-  #main p + p { text-indent: 2em; }
-  blockquote { margin: 1.5em 0 1.5em 2em; color: #888;}
+.float_left {
+    float: left;
+    display:inline;
+    margin: 0 1.5em 1em -36px; }
 
-  cite, blockquote { font-style:italic }
-  
-  blockquote { margin: 0 0 1em 0.8em; } 
+/*img {
+    padding: 5px;
+    border: 1px #888 solid; }*/
+fieldset, img {
+    border: 0 solid; }
 
-  hr {
+em, i { font-style: italic}
+
+/*#main p + p {
+    text-indent: 2em; }*/
+
+blockquote {
+    margin: 1.5em 0 1.5em 2em;
+    color: #888; }
+
+cite, blockquote {
+    font-style:italic}
+
+blockquote {
+    margin: 0 0 1em 0.8em; }
+
+hr {
     color: #fff;
     background:transparent;
     margin: 1.5em 0;
-  padding:0;
+    padding:0;
     border:0;
     border-bottom: 2px #ddd solid;
-  }
-  .subcolumns  .subcolumns {border-bottom: 0px #ddd solid; }
-
-  .c50l, .c50r { width: 50%; }
-  
-  .subcolumns .subcolumns p { text-indent: 0; margin-left: 0;}
-
-  h3 {  color:#464646; font-size: 150%; line-height: 1.0em; margin-top: 1.0em; margin-bottom: 1.0em; }                 
-  h3 a{  color:#464646; font-size: 110%; line-height: 1.0em; margin-top: 1.0em; margin-bottom: 1.0em; }                 
-
-  .note { text-indent: 0 !important; color: #333; background: #f4f4f4; padding: 1.5em; }
-  p.small { font-size: 0.8333em; line-height: 1.8em; margin: 1.8em 0; }
-  #footer { padding: 0px 24px; color:#666; }
-
-  #footer h2 {border-bottom: 1px #ddd solid; margin-bottom: 0; padding-bottom: .75em;}
-
-  #footer a { color: #222; background:transparent; font-weight: bold;}
-
- .clearfloat h6 a {  color:#464646; 
-                      
-                   font-size: 150%; line-height: 1.0em; margin-top: 1.0em; margin-bottom: 1.0em;font-weight: normal;
-                   
-                   }   
-  .title  {
-  font-family: Arial;
-
-  
-  font-weight: bold;font-size: 100%; line-height: 1.0em;}
-  .sidelist li  {list-style:none;}
-  .serendipity_calendarDay {text-align:center;}
-  .link a { color: #222; background:transparent; font-weight: bold;}
-  
-  table.serendipity_calendar a  
-  
-  {
-  
-   font-weight: bold;
-  
 }
+.subcolumns .subcolumns {
+    border-bottom: 0px #ddd solid; }
+
+.c50l, .c50r {
+    width: 50%; }
+
+.subcolumns .subcolumns p {
+    text-indent: 0;
+    margin-left: 0; }
+
+h3 {
+    color:#464646;
+    font-size: 150%;
+    line-height: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em; }
+h3 a {
+    color:#464646;
+    font-size: 110%;
+    line-height: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em; }
+
+.note {
+    text-indent: 0 !important;
+    color: #333;
+    background: #f4f4f4;
+    padding: 1.5em; }
+
+p.small {
+    font-size: 0.8333em;
+    line-height: 1.8em;
+    margin: 1.8em 0; }
+
+#footer {
+    padding: 0px 24px;
+    color:#666; }
+
+#footer h2 {
+    border-bottom: 1px #ddd solid;
+    margin-bottom: 0;
+    padding-bottom: .75em; }
+
+#footer a {
+    color: #222;
+    background: transparent;
+    font-weight: bold; }
+
+.clearfloat h6 a {
+    color: #464646;
+    font-size: 150%;
+    line-height: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-weight: normal;
+}
+
+.title  {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 100%;
+    line-height: 1em; }
+.sidelist li  {
+    list-style:none; }
+.serendipity_calendarDay {
+    text-align:center; }
+.link a {
+    color: #222;
+    background:transparent;
+    font-weight: bold; }
+
+table.serendipity_calendar a  {
+   font-weight: bold;
+}
+
+
+/*** Styles used by s9y ***/
+.serendipity_entry_extended {
+    clear: both; }
+
+.serendipity_pageFooter {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.serendipity_center {
+    margin: 5px auto 10px;
+    text-align: center;
+}
+
+.serendipity_msg_important {
+    margin: 1em;
+}
+.serendipity_msg_notice {
+    margin: 1em;
+}
+/*** /Styles used by s9y ***/
+
+#content .post h3 {
+    padding: 6px 0 6px 0;
+    margin: 22px 0 4px 0;
+}
+
+/*** Comment form ***/
+#commentform p select {
+    margin: 5px 5px 1px 0;
+    width: 170px;
+}
+
+#checkbox_remember,
+#checkbox_subscribe {
+    width: 15px!important; }
+/*** /Comment form ***/
+
+/*** s9y image manager ***/
+#rightcol .serendipity_imageComment_center,
+#rightcol .serendipity_imageComment_left,
+#rightcol .serendipity_imageComment_right {
+    display: none!important; }
+/*** /s9y image manager ***/
+
+/*** freetag ***/
+.serendipity_freeTag {
+    background: #eef5e1;
+    display: inline;
+    font-size: 0.95em;
+    margin: 0;
+    padding: 3px 6px;
+    text-align: left;
+    width: auto;
+}
+
+.serendipity_freeTag a {
+    font-size: 0.95em; }
+.serendipity_freeTag a:hover {
+    color:#333; }
+
+.serendipity_freeTag_related {
+    display: block;
+    font-size: 0.95em;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.serendipity_freetag_taglist {
+    background-color: #eef5e1;
+    border: none;
+    margin: 0 0 15px 0;
+    padding: 5px;
+    text-align: justify;
+}
+
+.serendipity_freetag_taglist_related {
+    color: #5f5f5f;
+    font: 1em Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin-bottom:4px;
+    text-transform: uppercase;
+}
+/*** /freetag ***/
+
+/*** static pages ***/
+.staticpage_navigation {
+    margin-top: 10px; }
+/*** /static pages ***/
+
+/*** archives ***/
+.archives_header h3,
+.summary_title {
+    font-size: 1.2em; }
+
+/*.archives_row td {
+    padding: 2px 3px; }*/
+
+.archiverule {
+    margin: 10px 0 5px; }
+/*** /archives ***/
+
+.serendipity_entrypaging,
+#response {
+    margin-top: 22px; }
+
+ul, ol {
+    margin: 15px 0; }
+
+/*** karma plugin ***/
+.serendipity_karmaVoting_links li {
+    margin: 0 !important;
+}
+/*** /karma plugin ***/
+
