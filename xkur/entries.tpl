@@ -4,7 +4,7 @@
     {foreach $entries AS $dategroup}
     <div class="serendipity_Entry_Date">
         {foreach $dategroup.entries AS $entry}
-            {assign var="entry" value=$entry scope="root"}
+        {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
 
         {if $dategroup.is_sticky}
         <h3 class="serendipity_date">{$CONST.STICKY_POSTINGS}</h3>
