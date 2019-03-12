@@ -1,5 +1,6 @@
-Name: morsel (2007-04-03)
+Name: morsel
 Author: risc
-Date: 2005.03.18
-Require Serendipity: 0.8
-Version: 1.0b3
+Date: 2019-03-12
+
+Summary: Additional old small-screen theme from 2005-03-18 to 2007-04-03, with a fixed content width of 900px.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and mobile friendly!

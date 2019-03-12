@@ -1,74 +1,62 @@
-<?xml version="1.0" encoding="charset={$head_charset}"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<!-- morsel 1.0b3 by riscky@gmail -->
+{if $is_embedded != true}
+<!DOCTYPE html>
+<html lang="{$lang}">
 <head>
-    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
-    <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
+    <meta charset="{$head_charset}">
+    <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
 {if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
-    <meta name="robots" content="index,follow" />
+    <meta name="robots" content="index,follow">
 {else}
-    <meta name="robots" content="noindex,follow" />
+    <meta name="robots" content="noindex,follow">
 {/if}
-{if ($view == "entry")}
-    <link rel="canonical" href="{$entry.rdf_ident}" />
+{if $view == 'entry'}
+    <link rel="canonical" href="{$entry.rdf_ident}">
 {/if}
-{if ($view == "start")}
-    <link rel="canonical" href="{$serendipityBaseURL}" />
+{if in_array($view, ['start', 'entries'])}
+    <link rel="canonical" href="{$serendipityBaseURL}">
 {/if}
-    <meta name="mssmarttagspreventparsing" content="true" />
-
-    <!-- XML Feed -->
-    <link rel="stylesheet" type="text/css" href="{$head_link_stylesheet}" />
-    <link rel="alternate"  type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2" />
-    <link rel="alternate"  type="application/x.atom+xml"  title="{$blogTitle} Atom feed"  href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/atom.xml" />
+    <link rel="stylesheet" type="text/css" href="{$head_link_stylesheet}">
+    <link rel="alternate" type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2">
+    <link rel="alternate" type="application/x.atom+xml" title="{$blogTitle} Atom feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/atom.xml">
 {if $entry_id}
-    <link rel="pingback" href="{$serendipityBaseURL}comment.php?type=pingback&amp;entry_id={$entry_id}" />
-<!--
-    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/" xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <rdf:Description rdf:about="{$entry.link_rdf}" trackback:ping="{$entry.link_trackback}" dc:title="{$entry.title}" dc:identifier="{$entry.rdf_ident}" /> </rdf:RDF>
--->{/if}
+    <link rel="pingback" href="{$serendipityBaseURL}comment.php?type=pingback&amp;entry_id={$entry_id}">
+{/if}
+
 {serendipity_hookPlugin hook="frontend_header"}
 </head>
 
-<body><div id="pageWrapper">
+<body>
+{else}
+{serendipity_hookPlugin hook="frontend_header"}
+{/if}
+{if $is_raw_mode != true}
 
-<div id="pageHead"><div id="banner">
-    <h1><a href="{$serendipityBaseURL}" rel="local">{$head_title|default:$blogTitle}</a></h1>
-    <h2><a href="{$serendipityBaseURL}" rel="local">{$head_subtitle|default:$blogDescription}</a></h2></div>
-</div>
+<div id="pageWrapper">
 
-<div id="content">
-    <div id="contentBody">
-        {$CONTENT}
-    </div><!-- contentBody -->
-    <div id="contentSide">
-        {serendipity_printSidebar side="left"}
-        {serendipity_printSidebar side="right"}
-    </div><!-- contentSide -->
-</div>
-<div class="clear mozclear"></div>
+    <div id="serendipity_banner">
+        <h1><a href="{$serendipityBaseURL}" rel="local">{$head_title|default:$blogTitle}</a></h1>
+        <h2><a href="{$serendipityBaseURL}" rel="local">{$head_subtitle|default:$blogDescription}</a></h2>
+    </div>
 
-<div id="pageFoot">
-    {if $footer_prev_page}
-        <a href="{$footer_prev_page}" rel="local">&laquo; {$CONST.PREVIOUS_PAGE}</a>&#160;&#160;
-    {/if}
-
-    {if $footer_info}
-        ({$footer_info})
-    {/if}
-
-    {if $footer_next_page}
-        <a href="{$footer_next_page}" rel="local">&raquo; {$CONST.NEXT_PAGE}</a>
-    {/if}
-
-    {serendipity_hookPlugin hook="entries_footer"}
+    <div id="mainpane">
+        <div id="contentBody">
+            {$CONTENT}
+        </div><!-- contentBody -->
+        <div id="contentSide">
+            {serendipity_printSidebar side="left"}
+            {serendipity_printSidebar side="right"}
+        </div><!-- contentSide -->
+    </div>
+    <div class="clear mozclear"></div>
 
 </div>
-</div>
+
+{/if}
+{$raw_data}
 {serendipity_hookPlugin hook="frontend_footer"}
+{if $is_embedded != true}
 </body>
 </html>
+{/if}
