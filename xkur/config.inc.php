@@ -285,7 +285,7 @@ $serendipity['smarty']->assign('tab3_cat', str_replace('&nbsp;', '', trim(@$cats
 // NOTE THAT THE PROPERTY IS ADDED *WITHOUT* the ep_ prefix! EP_ only comes from entryproperties.
 
 // Helper function to get the variable content of a variable (TRUE/FALSE)
-function helper_get_value($special_key, &$eventData) {
+function xkur_helper_get_value($special_key, &$eventData) {
     global $serendipity;
     $value = (isset($eventData['properties'][$special_key]) && serendipity_db_bool($eventData['properties'][$special_key]))
             || (isset($serendipity['POST']['properties'][$special_key]) && serendipity_db_bool($serendipity['POST']['properties'][$special_key]))
@@ -296,7 +296,7 @@ function helper_get_value($special_key, &$eventData) {
 }
 
 // Helper function to store form values into the serendipity database, so that they will be retrieved later.
-function helper_store($special_key, $special_val, &$eventData) {
+function xkur_helper_store($special_key, $special_val, &$eventData) {
     global $serendipity;
 
     $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$eventData['id'] . " AND property = '" . serendipity_db_escape_string($special_key) . "'";
@@ -323,8 +323,8 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
             $special_key = 'special_switch';
             $special_key2 = 'special_switch2';
             // Check what our special key is set to (checks both POST data as well as the actual data)
-            $is_special = helper_get_value($special_key, $eventData);
-            $is_special2 = helper_get_value($special_key2, $eventData);
+            $is_special = xkur_helper_get_value($special_key, $eventData);
+            $is_special2 = xkur_helper_get_value($special_key2, $eventData);
 
             // This is the actual HTML output on the backend screen.
             // echo '<pre>' . print_r($eventData, true) . '</pre>';
@@ -354,8 +354,8 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
         case 'backend_save':
 
             // Call the helper function with all custom variables here.
-            helper_store('special_switch', $serendipity['POST']['properties']['special_switch'], $eventData);
-            helper_store('special_switch2', $serendipity['POST']['properties']['special_switch2'], $eventData);
+            xkur_helper_store('special_switch', $serendipity['POST']['properties']['special_switch'], $eventData);
+            xkur_helper_store('special_switch2', $serendipity['POST']['properties']['special_switch2'], $eventData);
 
             break;
     }
