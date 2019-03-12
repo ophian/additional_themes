@@ -104,7 +104,6 @@ template,
 
 /* Render Browser default styles */
 
-/**/
 *, *:before, *:after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -529,9 +528,9 @@ h2.comments_permalink {
 
 /* Theme start */
 
- /********* General Styles  *********/
+/********* General Styles  *********/
 
- /* used in entry/sidebar titles */
+/* used in entry/sidebar titles */
 h4, h3    {
     margin: 0; }
 
