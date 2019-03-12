@@ -1,3 +1,6 @@
-Name: Peruns Vorlage (2007-04-03)
+Name: Peruns Vorlage
 Author: Vladimir Simovic (aka Perun) | www.perun.net | www.vlad-design.de
-Date: 12. 01. 2005
+Date: 2019-03-11
+
+Summary: Additional old small-screen theme from 2005-01-12 to 2007-04-03, with a fixed content width of 760px.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. <u>Not</u> mobile friendly!
