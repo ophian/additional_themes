@@ -228,7 +228,6 @@ p code, p samp, p kbd {
 .serendipity_imageComment_right {
     width: auto !important; /* force overwrite delivered inline styles */
     display: table; }
-.serendipity_comments {}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em; }
