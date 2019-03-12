@@ -1,3 +1,6 @@
-Name: Ladybug (2008-02-14)
+Name: Ladybug
 Author: Jude Anthony
-Date: 2005-12-13
+Date: 2019-03-12
+
+Summary: Additional old full-screen theme from 2005-12-13 to 2008-02-14, with a fixed minimum content width of ~640px.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but <u>not</u> fully mobile friendly!
