@@ -92,7 +92,7 @@ if (isset($_SESSION['serendipityUseTemplate'])) {
 // NOTE THAT THE PROPERTY IS ADDED *WITHOUT* the ep_ prefix! EP_ only comes from entryproperties.
 
 // Helper function to get the variable content of a variable (TRUE/FALSE)
-function helper_get_value($special_key, &$eventData) {
+function sga_helper_get_value($special_key, &$eventData) {
     global $serendipity;
     $value = (isset($eventData['properties'][$special_key]) && serendipity_db_bool($eventData['properties'][$special_key]))
             || (isset($serendipity['POST']['properties'][$special_key]) && serendipity_db_bool($serendipity['POST']['properties'][$special_key]))
@@ -103,7 +103,7 @@ function helper_get_value($special_key, &$eventData) {
 }
 
 // Helper function to store form values into the serendipity database, so that they will be retrieved later.
-function helper_store($special_key, $special_val, &$eventData) {
+function sga_helper_store($special_key, $special_val, &$eventData) {
     global $serendipity;
 
     $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$eventData['id'] . " AND property = '" . serendipity_db_escape_string($special_key) . "'";
@@ -131,9 +131,9 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
             $special_key2 = 'special_switch2';
             $special_key3 = 'special_switch3';
             // Check what our special key is set to (checks both POST data as well as the actual data)
-            $is_special  = helper_get_value($special_key, $eventData);
-            $is_special2 = helper_get_value($special_key2, $eventData);
-            $is_special3 = helper_get_value($special_key3, $eventData);
+            $is_special  = sga_helper_get_value($special_key, $eventData);
+            $is_special2 = sga_helper_get_value($special_key2, $eventData);
+            $is_special3 = sga_helper_get_value($special_key3, $eventData);
             // This is the actual HTML output on the backend screen.
             // echo '<pre>' . print_r($eventData, true) . '</pre>';
             echo '<fieldset id="edit_entry_sagittariustheme" class="entryproperties_disablesidebars">
@@ -146,7 +146,7 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
             echo '<input type="radio" name="serendipity[properties][' . $special_key2 . ']" value="false" ' . (!$is_special2 ? 'checked="checked"' : '')  . ' id="' . $special_key2 . '_false">';
             echo '  <label for="' . $special_key2 . '_false">' . NO . '</label> ';
 
-            echo "<br/><br/> Disable right sidebar?  ";
+            echo "<br><br> Disable right sidebar?  ";
 
             echo '<input type="radio" name="serendipity[properties][' . $special_key . ']" value="true" ' . ($is_special ? 'checked="checked"' : '') . ' id="' . $special_key . '_true">';
             echo '  <label for="' . $special_key . '_true">' . YES . '</label> ';
@@ -154,7 +154,7 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
             echo '<input type="radio" name="serendipity[properties][' . $special_key . ']" value="false" ' . (!$is_special ? 'checked="checked"' : '')  . ' id="' . $special_key . '_false">';
             echo '  <label for="' . $special_key . '_false">' . NO . '</label> ';
 
-            echo "<br/><br/> Disable any text if comments are not allowed in entry-footer?  ";
+            echo "<br><br> Disable any text if comments are not allowed in entry-footer?  ";
 
             echo '<input type="radio" name="serendipity[properties][' . $special_key3 . ']" value="true" ' . ($is_special3 ? 'checked="checked"' : '') . ' id="' . $special_key3 . '_true">';
             echo '  <label for="' . $special_key . '_true">' . YES . '</label> ';
@@ -170,9 +170,9 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
         case 'backend_save':
 
             // Call the helper function with all custom variables here.
-            helper_store('special_switch', $serendipity['POST']['properties']['special_switch'], $eventData);
-            helper_store('special_switch2', $serendipity['POST']['properties']['special_switch2'], $eventData);
-            helper_store('special_switch3', $serendipity['POST']['properties']['special_switch3'], $eventData);
+            sga_helper_store('special_switch', $serendipity['POST']['properties']['special_switch'], $eventData);
+            sga_helper_store('special_switch2', $serendipity['POST']['properties']['special_switch2'], $eventData);
+            sga_helper_store('special_switch3', $serendipity['POST']['properties']['special_switch3'], $eventData);
 
             break;
     }
