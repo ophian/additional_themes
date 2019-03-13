@@ -193,9 +193,13 @@ hr {
     border-top: 1px solid #aaa;
 }
 
+body.preview_preview_body,
 body.save_preview_body {
     font-size: initial;
+    background: none;
+    text-align: left;
 }
+
 
 .serendipity_edit_nugget {
     text-align: right;
