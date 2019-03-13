@@ -39,6 +39,7 @@
             <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
             {/if}
 
+        {if NOT $is_preview}
             <div class="serendipity_entryFooter">
                 {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a>
                 {if NOT empty($entry.categories)}
@@ -66,19 +67,18 @@
 
                 {$entry.add_footer|default:''}
             </div>
-        {if NOT $is_preview}
-        <!--
-        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
-                 xmlns:dc="http://purl.org/dc/elements/1.1/">
-        <rdf:Description
-                 rdf:about="{$entry.link_rdf}"
-                 trackback:ping="{$entry.link_trackback}"
-                 dc:title="{$entry.title_rdf|default:$entry.title}"
-                 dc:identifier="{$entry.rdf_ident}" />
-        </rdf:RDF>
-        -->
-        {$entry.plugin_display_dat}
+            <!--
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                     xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+                     xmlns:dc="http://purl.org/dc/elements/1.1/">
+            <rdf:Description
+                     rdf:about="{$entry.link_rdf}"
+                     trackback:ping="{$entry.link_trackback}"
+                     dc:title="{$entry.title_rdf|default:$entry.title}"
+                     dc:identifier="{$entry.rdf_ident}" />
+            </rdf:RDF>
+            -->
+            {$entry.plugin_display_dat}
         {/if}
 
         {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}

@@ -198,6 +198,9 @@ hr {
 body.save_preview_body {
     font-size: initial;
 }
+body.preview_preview_body {
+    background-color: #fff;
+}
 
 .serendipity_freetag_taglist {
     display: inline-table; }
