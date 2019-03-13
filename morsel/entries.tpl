@@ -19,7 +19,7 @@
 
                 <div class="morselFooter">
                 {$CONST.POSTED_BY} <a href="{$entry.link_author}" rel="external">{$entry.author}</a>
-                {if $entry.categories}
+                {if NOT empty($entry.categories)}
                     {$CONST.IN} {foreach $entry.categories AS $category}<a href="{$category.category_link}" rel="external">{$category.category_name|escape}</a>{if NOT $category@last}, {/if}{/foreach}
                 {/if}
                 {
