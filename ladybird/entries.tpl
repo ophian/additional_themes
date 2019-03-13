@@ -14,7 +14,7 @@
             <h4 class="serendipity_date">{$dategroup.date|formatTime:DATE_FORMAT_ENTRY}</h4>
         {/if}
 
-            {if $entry.categories}
+            {if NOT empty($entry.categories)}
             <span class="serendipity_entryIcon">
             {foreach $entry.categories AS $category}
                 {if $category.category_icon}
@@ -42,7 +42,7 @@
         {if NOT $is_preview}
             <div class="serendipity_entryFooter">
                 {$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a>
-                {if $entry.categories}
+                {if NOT empty($entry.categories)}
                    {$CONST.IN} {foreach $entry.categories AS $category}<a href="{$category.category_link}">{$category.category_name|escape}</a>{if NOT $category@last}, {/if}{/foreach}
                 {/if}
 
