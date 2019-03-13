@@ -202,6 +202,7 @@ hr {
 
 body.save_preview_body {
     font-size: initial;
+    background: none;
 }
 
 .serendipitySideBarTitle:first-of-type {
