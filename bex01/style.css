@@ -602,7 +602,7 @@ body {
 }
 
 /* styles for bottom of page next and previous page links */
-div.serendipity_pageFooter {
+div.serendipity_entries_footer {
     font-size: .9em;
     clear: both;
     margin: 10px auto 50px auto;
