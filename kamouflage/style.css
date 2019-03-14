@@ -612,7 +612,7 @@ img.serendipity_entryIcon {
 .serendipity_entry_author_self {
 }
 /* styles for the next/previous links above footer, includes start page and archives links */
-.serendipity_pageFooter {
+.serendipity_entries_footer {
     margin-top: 1em; }
 /* container for summary listings in archives */
 .archive_summary {
