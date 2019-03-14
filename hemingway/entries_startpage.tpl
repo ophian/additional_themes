@@ -64,6 +64,7 @@
     {else}
         <span class="next">&#160;</span>
     {/if}
-    {serendipity_hookPlugin hook="entries_footer"}
     </div>
-{/if}</div>
+{/if}
+    {serendipity_hookPlugin hook="entries_footer"}
+</div>
