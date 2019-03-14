@@ -591,7 +591,7 @@ div.serendipity_entryFooter {
     clear: both; }
 
 /* styles for the previous and next paging at bottom of content */
-div.serendipity_pageFooter {
+div.serendipity_entries_footer {
     color: #444;
     font-size: 1.2em;
     text-align: center;
