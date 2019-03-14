@@ -819,17 +819,17 @@ div.serendipitySideBarItem a:hover{
     background-color:inherit;
 }
 
-div.serendipity_pageFooter, div.serendipity_pageFooter a {
+.serendipity_entries_footer, .serendipity_entries_footer a {
     color:#000;
     background-color:inherit;
     text-align:center;
     border:0px;
 }
-div.serendipity_pageFooter a{
+.serendipity_entries_footer a {
     text-decoration:underline;
 }
-div.serendipity_pageFooter a:hover,
-div.serendipity_pageFooter a:visited{
+.serendipity_entries_footer a:hover,
+.serendipity_entries_footer a:visited {
     color:#000;
 }
 
