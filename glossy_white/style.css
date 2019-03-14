@@ -234,13 +234,13 @@ h3.serendipity_date {
     text-align: right; }
 .serendipity_title {
     display: initial; }
-.serendipity_Entries_Footer {
+.serendipity_entries_footer {
     text-align: center; }
 .serendipity_entry_body pre {
     display: inline-block; }
 .serendipity_entry_body {
     margin-top: .5em; }
-.serendipity_Entries_Footer ul li{
+.serendipity_entries_footer ul li{
     display: inline-block;
     width: 49%; }
 .edit,
