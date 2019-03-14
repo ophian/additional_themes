@@ -191,8 +191,8 @@
     {if NOT empty($footer_info)}<span class="entries_info">({$footer_info})</span>{/if}
     <span class="next">{if $footer_next_page}<a href="{$footer_next_page}">{/if}{if $footer_next_page}{$CONST.NEXT_PAGE} &raquo;{else}&#160;{/if}{if $footer_next_page}</a>{/if}</span>
 
-    {serendipity_hookPlugin hook="entries_footer"}
     </div>
 {/if}
+    {serendipity_hookPlugin hook="entries_footer"}
 
 <!-- ENTRIES END -->
