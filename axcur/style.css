@@ -2073,7 +2073,7 @@ img.serendipity_entryIcon{float: right;border: 0;margin-top: 1px}
 .continue_reading{display: block;margin-top: 10px;clear: left}
 .continue_reading a{font-weight: 400;background: none}
 .continue_reading a:hover{color: #5f90ba;background: none;text-decoration: underline}
-.serendipity_pageFooter{clear: both;margin-top: 10px}
+.serendipity_entries_footer{clear: both;margin-top: 10px}
 .archive_summary{clear: both;font-size: .9em;margin: 15px 0 0 10px}
 .archive_summary_title{font-size: 1em;font-weight: 700;margin: 0;padding: 0}
 .serendipity_commentsTitle{font-size: medium;font-weight: 700;margin-top: 10px;color: #336d9f;clear: left}
