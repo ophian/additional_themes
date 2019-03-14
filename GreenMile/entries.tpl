@@ -185,15 +185,19 @@
     {/if}
 {/if}
 
+{if NOT $is_single_entry AND NOT $is_preview}
     <div class="serendipity_entries_footer">
-{if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
+{/if}
+{if NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
     <div>{if NOT empty($footer_info)}({$footer_info}){/if}</div>
     <div class="footer_left">{if $footer_prev_page}<a href="{$footer_prev_page}">{/if}{if $footer_prev_page}&#9668; {$CONST.PREVIOUS_PAGE}{else}&nbsp;{/if}{if $footer_prev_page}</a>{/if}</div>
     <div class="footer_right">{if $footer_next_page}<a href="{$footer_next_page}">{/if}{if $footer_next_page}{$CONST.NEXT_PAGE} &#9658;{else}&nbsp;{/if}{if $footer_next_page}</a>{/if}</div>
 {/if}
 
-    <br>{if NOT isset($startpage) AND NOT $is_preview}<a href="{$serendipityBaseURL}">{$CONST.ADMIN_FRONTPAGE}</a>{/if}{if NOT empty($footer_info)} - <a href="#topofpage">{$CONST.TOP_LEVEL}</a>{/if}
+    {if NOT isset($startpage) AND NOT $is_preview}<br><a href="{$serendipityBaseURL}">{$CONST.ADMIN_FRONTPAGE}</a>{/if}{if NOT empty($footer_info)} - <a href="#topofpage">{$CONST.TOP_LEVEL}</a>{/if}
     {serendipity_hookPlugin hook="entries_footer"}
+{if NOT $is_single_entry AND NOT $is_preview}
     </div>
+{/if}
 
 <!-- ENTRIES END -->
