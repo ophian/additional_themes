@@ -469,7 +469,7 @@ h2.serendipity_title, h4.serendipity_title {
     padding: 0 20px 2px 16px;
     background: url('{TEMPLATE_PATH}img/comment.gif') no-repeat 2px 1px; }
 
-.serendipity_pageFooter {
+.serendipity_entries_footer {
     font-size: .8em;
     width:350px;
     margin: 8px 0 10px 0;
