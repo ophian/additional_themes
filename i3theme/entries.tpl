@@ -150,7 +150,7 @@
     </div><!-- /.page-nav -->
     <div class="serendipity_entryFooter">
         <p>{if NOT empty($footer_info)}({$footer_info}){/if}</p>
-        {serendipity_hookPlugin hook="entries_footer"}
     </div>
 {/if}
+{serendipity_hookPlugin hook="entries_footer"}
 <!-- ENTRIES END -->
