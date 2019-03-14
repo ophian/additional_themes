@@ -21,7 +21,7 @@
       {if $entry.has_comments AND NOT $is_preview}
         <p class="comments">
         {if $use_popups}
-            <a href="{$entry.link_popup_comments}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{if $entry.comments == 0}{$CONST.J_WITHOUT} {else}{$CONST.J_WITH} {$entry.comments} {/if}{if $entry.comments > 1}{$CONST.J_COMMTS}{else}{$entry.label_comments}{/if}</a>
+            <a href="{$entry.link_popup_comments}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{if $entry.comments == 0}{$CONST.J_WITHOUT} {else}{$CONST.J_WITH} {$entry.comments} {/if}{if $entry.comments > 1}{$CONST.J_COMMTS}{else}{$entry.label_comments|default:''}{/if}</a>
         {else}
             <a href="{$entry.link}#comments">{if $entry.comments == 0}{$CONST.J_WITHOUT} {else}{$CONST.J_WITH} {$entry.comments} {/if}{if $entry.comments > 1}{$CONST.J_COMMTS}{else}{$entry.label_comments}{/if}</a>
         {/if}
@@ -110,7 +110,7 @@
 
         {if $is_single_entry AND NOT $is_preview}
             <a id="comments"></a>
-            <h3 class="reply">{$entry.comments} {$entry.label_comments} {$CONST.J_TO} {$entry.title}</h3>
+            <h3 class="reply">{$entry.comments} {$entry.label_comments|default:''} {$CONST.J_TO} {$entry.title}</h3>
 
             {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
 
@@ -158,5 +158,5 @@
     </div>
     {/if}
 {/if}
-
+{serendipity_hookPlugin hook="entries_footer"}
 <!-- ENTRIES END -->
