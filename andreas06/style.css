@@ -741,7 +741,7 @@ f   ont-weight: 400;
     padding : 0 0 0 14px;
     background: url('{TEMPLATE_PATH}img/trackbacks.gif') no-repeat 0 50%; }
 
-.serendipity_pageFooter {
+.serendipity_entries_footer {
     margin-top: 20px; }
 
 .serendipity_entryIcon {
