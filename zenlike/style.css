@@ -492,7 +492,7 @@ blockquote {
 }
 
 .serendipity_entrypaging,
-.serendipity_pageFooter {
+.serendipity_entries_footer {
     font-size: 90%;
     margin: 1em 0;
 }
