@@ -102,10 +102,8 @@
     {/if}
 {/if}
 
-{if NOT $is_single_entry AND NOT $is_preview}
+{if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
     <div class="navigation">
-{/if}
-{if NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
     {if $footer_prev_page}
         <a href="{$footer_prev_page}">&laquo; {$CONST.PREVIOUS_PAGE}</a>&#160;&#160;
     {/if}
@@ -117,9 +115,7 @@
     {if $footer_next_page}
         <a href="{$footer_next_page}">&raquo; {$CONST.NEXT_PAGE}</a>
     {/if}
+    </div>
 {/if}
 
     {serendipity_hookPlugin hook="entries_footer"}
-{if NOT $is_single_entry AND NOT $is_preview}
-    </div>
-{/if}
