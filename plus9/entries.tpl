@@ -158,5 +158,6 @@
     </div>
     {/if}
 {/if}
+
 {serendipity_hookPlugin hook="entries_footer"}
 <!-- ENTRIES END -->
