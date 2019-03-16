@@ -185,18 +185,14 @@
     {/if}
 {/if}
 
-{if NOT $is_single_entry AND NOT $is_preview}
+{if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
     <div class="serendipity_entries_footer pager">
-{/if}
-{if NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
     {if $footer_prev_page}<a href="{$footer_prev_page}">{/if}{if $footer_prev_page}&laquo; {$CONST.PREVIOUS_PAGE}{else}&nbsp;{/if}{if $footer_prev_page}</a>{/if}
     {if NOT empty($footer_info)}({$footer_info}){/if}
     {if $footer_next_page}<a href="{$footer_next_page}">{/if}{if $footer_next_page}{$CONST.NEXT_PAGE} &raquo;{else}&nbsp;{/if}{if $footer_next_page}</a>{/if}
+    </div>
 {/if}
 
     {serendipity_hookPlugin hook="entries_footer"}
-{if NOT $is_single_entry AND NOT $is_preview}
-    </div>
-{/if}
 
 <!-- ENTRIES END -->
