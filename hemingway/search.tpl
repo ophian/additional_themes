@@ -36,5 +36,6 @@
     {/if}
     </div>
 {/if}
+
     {serendipity_hookPlugin hook="entries_footer"}
 </div>
