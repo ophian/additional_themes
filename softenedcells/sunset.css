@@ -44,10 +44,9 @@ a:hover {
 
 .serendipity_freetag_taglist {
     padding:15px;
-    background-color:#F3F6ED;
     border:1px solid #ddd;
     margin: 15px 0 40px 0;
-    font-size:0.7em;
+    font-size: .9rem;
 }
 #sidebar {
     float:right;
