@@ -52,17 +52,25 @@ Truth Template v.1 provided by Eddie Traversa 2005
     </div>
 </div>
 
-<table id="mainpane">
-    <tr>
+<div id="mainpane">
 {if $leftSidebarElements > 0}
-        <td id="serendipityLeftSideBar" valign="top">{serendipity_printSidebar side="left"}</td>
+
+        <div id="serendipityLeftSideBar">
+            {serendipity_printSidebar side="left"}
+        </div>
 {/if}
-        <td id="content" valign="top">{$CONTENT}</td>
+
+        <div id="content">
+            {$CONTENT}
+        </div>
 {if $rightSidebarElements > 0}
-        <td id="serendipityRightSideBar" valign="top">{serendipity_printSidebar side="right"}</td>
+
+        <div id="serendipityRightSideBar">
+            {serendipity_printSidebar side="right"}
+        </div>
 {/if}
-    </tr>
-</table>
+</div>
+
 {/if}
 
 {$raw_data}

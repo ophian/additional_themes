@@ -206,6 +206,42 @@ p code, p samp, p kbd {
     margin: 0;
     padding: 0; }
 
+.serendipity_search,
+.serendipity_content_message,
+.serendipity_overview_noentries,
+#serendipity_trackbacklist,
+.serendipity_comments  .nocomments {
+    margin: 1em .5rem;
+    border: 1px solid #ccc;
+    padding: .5em .5em;
+    background-color: #efefef;
+    font-size: small;
+}
+
+#content .serendipity_freetag_taglist .ftr-empty {
+    margin-left: 0;
+}
+
+#mainpane {
+    display: flex;
+}
+
+#content, #serendipityLeftSideBar, #serendipityRightSideBar {
+    display: inline-block;
+}
+
+#mainpane #content {
+    width: 62%;
+}
+
+#mainpane #serendipityLeftSideBar {
+    float: left;
+}
+#mainpane #serendipityRightSideBar {
+    float: right;
+    border-left: 1px dashed #fff;
+    border-right: 0 none;
+}
 
 /**
   Truth Template v.1 provided by Eddie Traversa 2005
@@ -245,7 +281,7 @@ h4,h3 {
     margin: auto;
     width: 100%;
     border-top: 0px;
-    background-color: #E3E5D8D;
+    background-color: #E3E5D8;
     border-top: 1px solid #ffffff;
 }
 
@@ -369,16 +405,15 @@ a.homelink2:visited,
     margin: 0;
     margin-top: 20px;
     text-align: center;
-    float: left;
     font-size: 12px;
     font-weight: bold;
     margin: 3px 10px 0 0;
     padding: 8px 3px;
     width: 90px;
-    background: #E3E5D8D;
+    background: #E3E5D8;
     line-height:1em;
     border: 1px solid #CCCCCC;
-    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
 }
 
 .serendipity_commentsTitle {
@@ -535,11 +570,6 @@ div.serendipitySideBarItem {
 
 .serendipityImageButton {
     cursor: pointer;
-}
-.serendipity_entry p {
-    margin-top: 0;
-    padding-bottom: 0;
-    width: auto;
 }
 
 /** Embedded images with the s9y image manager **/
