@@ -1,6 +1,6 @@
 Name: Zenlike (contains sponsor links)
-Author: NodeThirtyThree (Ported by YellowLed)
+Author: NodeThirtyThree
 Date: 2019-01-11
 
-Summary: Additional old theme from 2007-10-09 to 2009-08-26. Ported to s9y by YellowLed.
+Summary: Additional old theme from 2007-10-09 to 2009-08-26 with a concatenated sidebar to the right. Ported to Serendipity by YellowLed.
 Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but not <u>fully</u> mobile friendly! For removing the sponsored links you might still need to ask.

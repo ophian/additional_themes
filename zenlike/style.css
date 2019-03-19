@@ -83,6 +83,36 @@ p code, p samp, p kbd {
     border-collapse: separate;
     border-spacing: 2px; }
 
+.serendipity_search,
+.serendipity_content_message,
+.serendipity_overview_noentries,
+#serendipity_trackbacklist,
+.serendipity_comments  .nocomments {
+    margin: 1em .5rem;
+    border: 1px solid #ccc;
+    padding: .5em .5em;
+    background-color: #efefef;
+    font-size: small;
+}
+
+.comment_content h3 {
+    background-image: none;
+    padding-right: 0;
+    font-size: small;
+}
+
+.staticpage_password_form {
+    margin-top: 1em;
+}
+.staticpage_password_form fieldset {
+    background-color: #eee;
+    padding: .5em;
+}
+
+#primarycontent .serendipity_freetag_taglist .ftr-empty {
+    margin-left: 0;
+}
+
 /* calendar */
 .icon-back::before {
     content: "<"; }
