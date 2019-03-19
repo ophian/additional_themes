@@ -218,6 +218,19 @@ body, h2, h3, h4, h5, h6, .post h2, .sidebar h2, .commentlist li, #serendipity_c
 #footer.paged_comments {
     width: auto;
     margin: auto 5em; }
+.serendipity_search,
+.serendipity_content_message,
+.serendipity_overview_noentries,
+#serendipity_trackbacklist,
+.serendipity_comments  .nocomments {
+    margin: 1em .5rem;
+    border: 1px solid #ccc;
+    padding: .5em .5em;
+    background-color: #efefef;
+    font-size: small; }
+#content .serendipity_freetag_taglist .ftr-empty {
+    margin-left: 0; }
+
 
 /* backend preview */
 #content.preview_preview_content,
@@ -492,11 +505,6 @@ visibility: hidden;
 
 .clearfix {display: inline-block;}
 
-/* Hides from IE-mac \*/
-* html .clearfix {height: 1%;}
-.clearfix {display: block;}
-/* End hide from IE-mac */
-
 /*** entries */
 
 .post {
@@ -507,7 +515,9 @@ padding: 0;
 margin:  0 0 0 auto;
 padding: 0 0 7px 0;
 text-align: right;
-width: 90px;
+}
+.post .serendipity_date {
+    width: 90px;
 }
 .serendipity_date span.z1,
 .serendipity_date span.z2,
