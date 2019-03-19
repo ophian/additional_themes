@@ -60,7 +60,7 @@
                  <li class="{if $currpage==$navlink.href}current_{/if}page_item"><a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a></li>
             {/foreach}
             </ul>
-            <div id="date">{$smarty.now|date_format:"%B %d, %Y"}</div>
+            <div id="date">{$smarty.now|formatTime:"%B %e, %Y"}</div>
         </div>
 
         <div id="primarycontent">
