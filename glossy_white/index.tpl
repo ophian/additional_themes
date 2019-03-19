@@ -55,16 +55,17 @@
         <div id="content">
             {$CONTENT}
         </div>
+    {if $leftSidebarElements > 0 OR $rightSidebarElements > 0}
+
+        <div id="serendipitySideBar">
     {if $leftSidebarElements > 0}
 
-        <div id="serendipityLeftSideBar">
             {serendipity_printSidebar side="left"}
-        </div>
     {/if}
     {if $rightSidebarElements > 0}
 
-        <div id="serendipityRightSideBar">
             {serendipity_printSidebar side="right"}
+     {/if}
         </div>
     {/if}
 
