@@ -2,5 +2,5 @@ Name: Plain Vanilla
 Author:  Chetan Kunte. Port by Jason Levitt.
 Date: 2019-01-20
 
-Summary: Additional old theme from 2005-04-12 to 2009-08-17.
+Summary: Additional old theme from 2005-04-12 to 2009-08-17 with a concatenated sidebar to the right and a fixed size of 750px content with.
 Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but not <u>fully</u> mobile friendly!

@@ -262,6 +262,20 @@ h4 {
 .serendipity_entry p > .serendipity_imageComment_center,
 .serendipity_entry p > .serendipity_image_right {
     margin: .25em auto; }
+.serendipity_search,
+.serendipity_content_message,
+.serendipity_overview_noentries,
+#serendipity_trackbacklist,
+.serendipity_comments  .nocomments {
+    margin: 1em .5rem;
+    border: 1px solid #ccc;
+    padding: .5em .5em;
+    background-color: #efefef;
+    font-size: small;
+}
+#content .serendipity_freetag_taglist .ftr-empty {
+    margin-left: 0;
+}
 
 /* backend preview */
 body.save_preview_body {
