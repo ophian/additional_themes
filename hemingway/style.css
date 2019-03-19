@@ -258,6 +258,11 @@ p code, p samp, p kbd {
 .comment_content .hljs {
     background: transparent;
     color: #e0e0e0; }
+.secondary .serendipity_freetag_taglist .ftr-empty {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
 
 
 /* backend preview */

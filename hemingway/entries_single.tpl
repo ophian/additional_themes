@@ -148,7 +148,7 @@
     {/foreach}
 {/foreach}
 {else}
-    {if NOT $plugin_clean_page AND $view != '404'}<p>{$CONST.NO_ENTRIES_TO_PRINT}</p>{/if}
+    {if NOT $plugin_clean_page AND $view != '404'}<div class="serendipity_overview_noentries">{$CONST.NO_ENTRIES_TO_PRINT}</div>{/if}
 {/if}
     {if NOT empty($footer_info)}({$footer_info}){/if}
 {if $is_single_entry}
