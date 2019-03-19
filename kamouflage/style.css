@@ -285,7 +285,7 @@ pre code {
 .serendipity_entry table {
     border: 1px solid #858A4D; }
 .serendipity_Entry_Date.freetag_cloud {
-    background-color: #79C99580;
+    background-color: transparent;
     border: 1px solid #858A4D;
     padding: .5em;
     border-radius: .5rem;
@@ -326,6 +326,20 @@ pre code {
 .serendipity_commentForm table {
     border-collapse: separate;
     border-spacing: 2px; }
+.serendipity_search,
+.serendipity_content_message,
+.serendipity_overview_noentries,
+#serendipity_trackbacklist,
+.serendipity_comments  .nocomments {
+    margin: 1em .5rem;
+    border: 1px solid #5D6038;
+    padding: .5em .5em;
+    background-color: #74784B;
+    font-size: small; }
+#content .serendipity_freetag_taglist .ftr-empty {
+    margin-left: 0; }
+.serendipity_freetag_taglist_related {
+    color: #222; }
 
 /* MIDDLE SCREENS PLUS */
 @media screen and (min-width: 926px) {
@@ -804,14 +818,14 @@ td.Today {
 /********* End of Media Manager Styles *********/
 
 /********* Plugin Styles *********/
-/* container for search results, static page navigation and s9y no entries message */
+/* container for search results, static page navigation and s9y no entries message
 .serendipity_search, .staticpage_navigation, .serendipity_overview_noentries {
     margin: 1em 0 1.5em;
     padding: 1em;
     border: 1px solid #c0c0c0;
     background-color: #fafbfc;
     color: #505050;
-    line-height: initial; }
+    line-height: initial; } */
 /* style for input box for quicksearch */
 #serendipityQuickSearchTermField {
     width: 70%;

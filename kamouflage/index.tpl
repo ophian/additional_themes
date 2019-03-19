@@ -33,7 +33,7 @@
 {/if}
 
 {if $is_raw_mode != true}
-<div id="wrap" class="grid{if $leftSidebarElements > 0 AND  $rightSidebarElements > 0}-col{/if}">
+<div id="wrap" class="grid{if $leftSidebarElements > 0 AND $rightSidebarElements > 0}-col{/if}">
 
     <header id="serendipity_banner"><a id="topofpage"></a>
         <h1><a class="homelink1" href="{$serendipityBaseURL}">{$head_title|default:$blogTitle|truncate:80:" ..."}</a></h1>
