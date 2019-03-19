@@ -8,7 +8,7 @@
         {/if}
 
         {foreach $dategroup.entries AS $entry}
-         {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
+        {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <div class="shadow">
           <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if $entry.is_entry_owner}serendipity_entry_author_self{/if} drop">
             <h3 class="serendipity_title"><a href="{$entry.link}">{$entry.title}</a></h3>
@@ -181,7 +181,7 @@
 {/foreach}
 {else}
     {if NOT $plugin_clean_page AND $view != '404'}
-    <p>{$CONST.NO_ENTRIES_TO_PRINT}</p>
+    <div class="serendipity_overview_noentries">{$CONST.NO_ENTRIES_TO_PRINT}</div>
     {/if}
 {/if}
 
