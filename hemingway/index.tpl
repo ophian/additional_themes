@@ -76,19 +76,21 @@
 
     <div id="primary" class="single-post">
         <div class="inside"><!-- search.tpl -->
-            {if $searchresult_results}
+            {if isset($searchresult_results)}
             {assign var="searchtitle" value=$CONST.YOUR_RESULTS}
-            {elseif $searchresult_tooShort}
+            {elseif isset($searchresult_tooShort)}
             {assign var="searchtitle" value=$CONST.OOPS_RESULTS}
-            {elseif $searchresult_noEntries}
+            {elseif isset($searchresult_noEntries)}
             {assign var="searchtitle" value=$CONST.NONE_RESULTS}
             {/if}
             {include file="./search.tpl"}
             <div class="secondary">
-                    <h2>{$CONST.QUICKSEARCH}</h2>
+                <h2>{$CONST.QUICKSEARCH}</h2>
+            {if isset($content_message)}
                 <div class="featured">
                 <p>{$content_message}</p>
                 </div>
+            {/if}
             </div>
         </div>
         <div class="clear"></div>
