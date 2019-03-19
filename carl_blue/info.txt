@@ -1,3 +1,6 @@
-Name: Carl Blue (2008-02-14)
-Author: Carl Galloway, www.carlgalloway.com 
-Date: 9-12-2005
+Name: Carl Blue
+Author: Carl Galloway
+Date: 2019-03-19
+
+Summary: Additional old mid-screen 2-sidebar-right theme from 2005-12-09 to 2008-02-14, with a fixed content width of 880px.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. <u>Not</u> mobile friendly!
