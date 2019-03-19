@@ -11,7 +11,7 @@
             </div><!-- /.date -->
 
             <div class="title">
-                <h2><a href="{$entry.link}" rel="bookmark" title="{$entry.title}" >{$entry.title}</a></h2>
+                <h2><a href="{$entry.link}" rel="bookmark" title="{$entry.title}">{$entry.title}</a></h2>
                 <div class="postdata">
                     <span class="category">{if NOT empty($entry.categories)}{foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}{/if}</span>
                     <span class="comments">{if $entry.has_comments}{if $use_popups}<a href="{$entry.link_popup_comments}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{if $entry.comments == 0}{$CONST.NO_COMMENTS}{else}{$entry.comments} {$entry.label_comments}{/if}&nbsp;&raquo;</a>{else}<a href="{$entry.link}#comments">{if $entry.comments == 0}{$CONST.NO_COMMENTS}{else}{$entry.comments} {$entry.label_comments}{/if}&nbsp;&raquo;</a>{/if}{/if}</span>
@@ -135,7 +135,7 @@
 {/foreach}
 {else}
     {if NOT $plugin_clean_page AND $view != '404'}
-    <p>{$CONST.NO_ENTRIES_TO_PRINT}</p>
+    <div class="serendipity_overview_noentries">{$CONST.NO_ENTRIES_TO_PRINT}</div>
     {/if}
 {/if}
 
