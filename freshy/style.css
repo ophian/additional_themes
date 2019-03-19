@@ -240,7 +240,21 @@ code, pre {
     margin: 1em auto; }
 .serendipity_center {
     margin: 1em auto; }
-
+.serendipity_search,
+.serendipity_content_message,
+.serendipity_overview_noentries,
+#serendipity_trackbacklist,
+.serendipity_comments  .nocomments {
+    margin: 1em .5rem;
+    border: 1px solid #ccc;
+    padding: .5em .5em;
+    background-color: #efefef;
+    font-size: small; }
+#content .serendipity_freetag_taglist .ftr-empty {
+    margin-left: 0; }
+.content_search h3.serendipity_date {
+    margin-left: .5rem;
+}
 
 /* backend preview */
 body.save_preview_body {
