@@ -198,6 +198,10 @@ code.hljs {
     width: auto !important;
     vertical-align: middle;
     margin-right: 2px; }
+#mainpane {
+    display: flex; }
+#mainpane #content {
+    width: 100%; }
 #content, #serendipityLeftSideBar, #serendipityRightSideBar {
     display: table-cell; }
 #mainpane #content {
