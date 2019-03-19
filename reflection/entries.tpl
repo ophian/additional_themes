@@ -22,20 +22,24 @@
             </span>
         {/if}
 
-        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
+        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename}{if NOT empty($entry.is_entry_owner)} serendipity_entry_author_self{/if}">
             <p class="posttime">{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.IN}
         {if NOT empty($entry.categories)}
-            {foreach $entry.categories AS $category}<a href="{$category.category_link}"> {$category.category_name|escape}</a>{if NOT $category@last}, {/if}{/foreach}<br>
+            {foreach $entry.categories AS $category}<a href="{$category.category_link}"> {$category.category_name|escape}</a>{if NOT $category@last}, {/if}{/foreach}
         {/if}
 
-            {$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}
+            <br>{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}
+            </p>
 
             <div class="serendipity_entry_body">
                 {$entry.body}
             </div>
 
             {if $entry.is_extended}
-            <div class="serendipity_entry_extended"><a id="extended"></a>{$entry.extended}</div>
+            <div class="serendipity_entry_extended">
+                <a id="extended"></a>
+                {$entry.extended}
+            </div>
             {/if}
 
             {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
