@@ -13,11 +13,11 @@
          {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <h4 class="serendipity_title"><a href="{$entry.link}">{$entry.title}</a></h4>
 
-        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if $entry.is_entry_owner}serendipity_entry_author_self{/if}">
+        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename}{if $entry.is_entry_owner} serendipity_entry_author_self{/if}">
             <p class="posttime">{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.IN}
-{if NOT empty($entry.categories)}{foreach $entry.categories AS $category}<a href="{$category.category_link}">{$category.category_name|escape}</a>{if NOT $category@last}, {/if}{/foreach}{/if}<br>
+            {if NOT empty($entry.categories)}{foreach $entry.categories AS $category}<a href="{$category.category_link}">{$category.category_name|escape}</a>{if NOT $category@last}, {/if}{/foreach}{/if}
 
-{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}
+            <br>{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}
         {if NOT empty($entry.categories)}
             <span class="serendipity_entryIcon">
             {foreach $entry.categories AS $category}
@@ -27,6 +27,7 @@
             {/foreach}
             </span>
             {/if}
+            </p>
 
             <div class="serendipity_entry_body">
                 {$entry.body}
@@ -166,7 +167,7 @@
 {/foreach}
 {else}
     {if NOT $plugin_clean_page AND $view != '404'}
-    <p>{$CONST.NO_ENTRIES_TO_PRINT}</p>
+    <div class="serendipity_overview_noentries">{$CONST.NO_ENTRIES_TO_PRINT}</div>
     {/if}
 {/if}
 
