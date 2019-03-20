@@ -379,7 +379,8 @@ td.serendipity_commentsLabel {
 .comments_for_entry .serendipity_comment {
     margin-bottom: initial; }
 .comments_for_entry .comment_header h4 {
-    padding: .5em 0; }
+    padding: .5em 0;
+    font-size: small; }
 .comments_by_author_pagination.bottom {
     margin-top: initial;
     margin-bottom: 1.5em; }
