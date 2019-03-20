@@ -569,7 +569,7 @@ body {
     font-size: 62.5%;
     color: #555;
     text-align:center;
-    margin-top: 0px;
+    margin-top: 0;
     background: #EDEFEC url('{TEMPLATE_PATH}img/background.png') repeat-y center top;
 }
 
@@ -597,7 +597,7 @@ a:hover {
 
 #serendipity_banner {
     position: relative;
-    margin: 0px auto 0px auto;
+    margin: 0 auto;
     padding-left: 1px;
     width: 824px;
     height: 252px;
@@ -605,14 +605,14 @@ a:hover {
 }
 
 #wrap {
-    margin: 0px auto 0px auto;
+    margin: 0 auto;
     width: 745px;
 }
 
 #mainpane {
     margin: auto;
     width: 100%;
-    border-top: 0px;
+    border-top: 0;
     background-color: #FFFFFF;
 }
 
@@ -624,7 +624,7 @@ a:hover {
 
 #serendipityRightSideBar {
     width: 200px;
-    padding: 0px;
+    padding: 0;
     vertical-align: top;
     text-align: left;
 }
@@ -666,13 +666,13 @@ input, textarea {
    text-decoration: none;
    border: 0;
    color: #669900;
-   border: 0px;
+   border: 0;
 }
 
 .serendipity_title a:hover {
    color: #FFFFFF;
    background-color: #669900;
-   border: 0px;
+   border: 0;
 }
 
 .serendipity_entry {
@@ -680,7 +680,7 @@ input, textarea {
     font-size: 9.5pt;
     font-weight: normal;
     width: 95%;
-    margin: 0px;
+    margin: 0;
     padding: 7px;
     border-left: 1px solid #EBF2DE;
 }
@@ -715,7 +715,7 @@ div.serendipity_entryFooter {
 
 img.serendipity_entryIcon {
     float: right;
-    border: 0px;
+    border: 0;
 }
 
 .serendipity_comments {}
@@ -799,8 +799,8 @@ div.serendipitySideBarItem {
 }
 
 .serendipitySideBarTitle {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     color: #669900;
     font-size: 12px;
     font-weight:bold;
@@ -829,13 +829,13 @@ div.serendipitySideBarItem {
 }
 
 .serendipitySideBarFooter {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     color: #000000;
     width: 191px;
     height: 14px;
     background: #FFFFFF url('{TEMPLATE_PATH}img/sidefooter.jpg') no-repeat center top;
-    border: 0px;
+    border: 0;
 }
 
 .serendipityImageButton {
@@ -854,7 +854,7 @@ div.serendipitySideBarItem {
     height: 18px;
     left: 201px;
     top: 160px;
-    border: 0px;
+    border: 0;
 }
 
 #linkvideos {
@@ -864,7 +864,7 @@ div.serendipitySideBarItem {
     height: 18px;
     left: 256px;
     top: 160px;
-    border: 0px;
+    border: 0;
 }
 
 #linkphotos {
@@ -874,7 +874,7 @@ div.serendipitySideBarItem {
     height: 18px;
     left: 342px;
     top: 160px;
-    border: 0px;
+    border: 0;
 }
 
 #linkboris {
@@ -884,6 +884,6 @@ div.serendipitySideBarItem {
     height: 114px;
     left: 633px;
     top: 84px;
-    border: 0px;
+    border: 0;
 }
 
