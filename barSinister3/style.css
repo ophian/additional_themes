@@ -592,7 +592,7 @@ div.serendipitySideBarItem h3 {
     text-align: right;
     margin: 15px; }
 
-td.serendipity_commentsValue input,
+td.serendipity_commentsValue input:not(type="checkbox"),
 td.serendipity_commentsValue select,
 td.serendipity_commentsValue textarea {
     width: 95%;
