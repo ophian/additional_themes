@@ -14,7 +14,7 @@
             <p class="serendipity_date">{$dategroup.date|formatTime:DATE_FORMAT_ENTRY}</p>
         {/if}
         </div>
-        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if $entry.is_entry_owner}serendipity_entry_author_self{/if}">
+        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
             {if NOT empty($entry.categories)}
             <span class="serendipity_entryIcon">
             {foreach $entry.categories AS $entry_category}
@@ -61,7 +61,7 @@
                         | <a href="{$entry.link}#trackbacks">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
                     {/if}
                 {/if}
-                {if $entry.is_entry_owner AND NOT $is_preview}
+                {if NOT empty($entry.is_entry_owner)}
                         | <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>
                 {/if}
 
@@ -109,7 +109,7 @@
                 <a id="trackbacks"></a>
                 <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
                 <div class="serendipity_center">
-                    <a rel="nofollow" style="font-weight: normal" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
+                    <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
                 </div>
                     {serendipity_printTrackbacks entry=$entry.id}
             </div>
@@ -125,7 +125,7 @@
                 </div>
                     {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
 
-                {if $entry.is_entry_owner}
+                {if NOT empty($entry.is_entry_owner)}
                     {if $entry.allow_comments}
                     <div class="serendipity_center">(<a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>)</div>
                     {else}
