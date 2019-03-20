@@ -437,10 +437,6 @@ input, textarea {
     text-align: right;
 }
 
-/*h3.serendipity_date {
-    display: none;
-}*/
-
 .serendipity_title {
     font-size: medium;
     font-weight: bold;
@@ -539,7 +535,7 @@ td.serendipity_commentsLabel {
     vertical-align: top;
 }
 
-td.serendipity_commentsValue input,
+td.serendipity_commentsValue input:not(type="checkbox"),
 td.serendipity_commentsValue select,
 td.serendipity_commentsValue textarea {
     font-size: 12px;
