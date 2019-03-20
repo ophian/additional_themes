@@ -6,7 +6,7 @@
         {foreach $dategroup.entries AS $entry}
         {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <h3><a href="{$entry.link}">{$entry.title|default:$entry.id}</a> <span class="postdate">{if $dategroup.is_sticky}{$CONST.STICKY_POSTINGS}{else}{$dategroup.date|formatTime:DATE_FORMAT_CEEJAY01_TITLE}{/if}</span></h3>
-        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if $entry.is_entry_owner}serendipity_entry_author_self{/if}">
+        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
             {if NOT empty($entry.categories)}
             <span class="serendipity_entryIcon">
             {foreach $entry.categories AS $entry_category}
@@ -39,7 +39,7 @@
                 {foreach $entry.categories AS $category}<a href="{$category.category_link}">{$category.category_name|escape}</a>{if NOT $category@last}, {/if}{/foreach}
                 {/if}
                 &#160;&#160;<a href="{$entry.link}" class="date">{$entry.timestamp|formatTime:DATE_FORMAT_CEEJAY01_FOOTER}</a>
-                 {if $entry.is_entry_owner AND NOT $is_preview}
+                 {if NOT empty($entry.is_entry_owner)}
                 <span class="editlink"><a href="{$entry.link_edit}" alt="{$CONST.EDIT_ENTRY}" title="{$CONST.EDIT_ENTRY}">{$CONST.EDIT_ENTRY}</a></span>
                 {/if}<br>
                 {if $entry.has_comments}
@@ -120,7 +120,7 @@
                 </div>
                 {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
 
-                {if $entry.is_entry_owner}
+                {if NOT empty($entry.is_entry_owner)}
                     {if $entry.allow_comments}
                     <div class="serendipity_center">(<a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>)</div>
                     {else}
