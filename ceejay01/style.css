@@ -643,8 +643,8 @@ h3 a:link, h3 a:visited, h3 a:active {
 #identity {
     position:absolute;
     float: left;
-    margin: 55px 0px 0px 45px;
-    padding: 10px 0px 5px 0px; }
+    margin: 55px 0 0 45px;
+    padding: 10px 0 5px 0; }
 #identity h1 a {
     color: #f9f7e8;
     font-size: 11pt;
@@ -673,8 +673,8 @@ h3 a:link, h3 a:visited, h3 a:active {
 #about-snippet {
     position: absolute;
     right: 40px;
-    margin: 105px 20px 0px 0px;
-    padding: 20px 0px 5px 0px;
+    margin: 105px 20px 0 0;
+    padding: 20px 0 5px 0;
     float: right;
     width: 170px; }
 #about-snippet p {
@@ -767,7 +767,7 @@ html>body .editlink {
     float: right;
     border: 1px solid #e3dfbc;
     background-color: #f4f0cd;
-    margin: 0px -1px 10px 15px;
+    margin: 0 -1px 10px 15px;
     padding: 15px; }
 #sidebar p {
     line-height: 15px;
@@ -820,7 +820,7 @@ html>body .editlink {
 /****** Calendar ******/
 .serendipity_calendar table {
     font: normal .09em/1.3em Verdana, Arial, Helvetica, sans-serif;
-    margin: 0px;
+    margin: 0;
     width: 170px;
     text-align: center; }
 td.serendipity_calendarHeader {
@@ -836,7 +836,7 @@ td.serendipity_calendarDay a {
     width: 100%;
     height: 100%;
     text-decoration: none;
-    border: 0px; }
+    border: 0; }
 td.serendipity_calendarDay a:hover {
     color: #606c3a;
     background: #d6cc73;
