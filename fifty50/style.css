@@ -637,7 +637,7 @@ body {
 #mainpane {
     line-height: 110%;
     text-align: left;
-    padding: 0px;
+    padding: 0;
     width: 800px;
     margin: 0 auto;
     overflow:auto;
@@ -698,7 +698,7 @@ a.homelink2, a.homelink2:hover, a.homelink2:link, a.homelink2:visited, #serendip
     color: #FFF;
     font-size: 16px;
     font-weight: bold;
-    margin: 15px 0px 0px 20px;
+    margin: 15px 0 0 20px;
     text-decoration: none;
     text-align:left;
 }
@@ -749,7 +749,7 @@ div.serendipity_Entry_Date {
     text-transform: uppercase;
     font-weight: bold;
     margin-top: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     border-bottom: 1px solid #ececec;
 }
 
@@ -779,7 +779,7 @@ td.serendipity_commentsLabel {
     vertical-align: top;
 }
 
-td.serendipity_commentsValue input, td.serendipity_commentsValue select, td.serendipity_commentsValue textarea {
+td.serendipity_commentsValue input:not(type="checkbox"), td.serendipity_commentsValue select, td.serendipity_commentsValue textarea {
     width: 289px;
     border: 1px solid #333;
     padding: 2px;
@@ -787,9 +787,9 @@ td.serendipity_commentsValue input, td.serendipity_commentsValue select, td.sere
 
 .serendipity_commentForm {
     font-size: small;
-    margin-bottom: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
     background-color: transparent;
 }
 .serendipity_comment {
