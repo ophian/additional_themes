@@ -1,3 +1,6 @@
-Name: fifty50 (2008-02-14)
+Name: fifty50
 Author: Rainer Steinke
-Date: 8-19-2006
+Date: 2019-03-20
+
+Summary: Additional old mid-screen, 2-sidebar to left theme from 2006-08-19 to 2008-02-14, with a fixed content width of 800 to 844px.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. <u>Not</u> mobile friendly!
