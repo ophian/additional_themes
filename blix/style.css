@@ -521,11 +521,6 @@ input, textarea {
     /*text-align: right;*/
 }
 
-/* don't do this!
-h3.serendipity_date {
-    display: none;
-}
-*/
 .serendipity_title {
     font-family: Georgia, serif;
     font-size: 16pt;
