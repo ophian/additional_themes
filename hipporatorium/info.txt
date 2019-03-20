@@ -1,3 +1,6 @@
-Name: HippoRatorium (2008-02-14)
+Name: HippoRatorium
 Author: Rainer Steinke
-Date: 09-03-2006
+Date: 2019-03-20
+
+Summary: Additional old mid-screen, 2-sidebar to right theme from 2006-03-09 to 2008-02-14, with a fixed content width of 830px.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. <u>Not</u> mobile friendly!
