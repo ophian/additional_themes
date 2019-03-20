@@ -621,7 +621,7 @@ div.serendipity_Entry_Date {
 
 /* Comments */
 
-td.serendipity_commentsValue input,
+td.serendipity_commentsValue input:not(type="checkbox"),
 td.serendipity_commentsValue select,
 td.serendipity_commentsValue textarea {
     width: 100%;
@@ -629,7 +629,7 @@ td.serendipity_commentsValue textarea {
     padding: 2px;
 }
 @media only screen and (min-width: 536px) {
-    td.serendipity_commentsValue input,
+    td.serendipity_commentsValue input:not(type="checkbox"),
     td.serendipity_commentsValue select,
     td.serendipity_commentsValue textarea {
         width: 84%;
