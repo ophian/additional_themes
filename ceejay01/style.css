@@ -197,15 +197,7 @@ body.save_preview_body {
     font-size: initial;
     background: none;
 }
-/*
-#mainpane {
-    display: flow-root;
-}
-#mainpane #content {
-    width: 510px;
-    display: inline-block;
-}
-*/
+
 .serendipity_edit_nugget {
     text-align: right;
     padding-right: .5em;
