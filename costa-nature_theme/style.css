@@ -579,7 +579,7 @@ td.serendipity_commentsLabel {
     vertical-align: top;
 }
 
-td.serendipity_commentsValue input,
+td.serendipity_commentsValue input:not(type="checkbox"),
 td.serendipity_commentsValue select,
 td.serendipity_commentsValue textarea {
     font-family: "Courier New", Courier, monospace;
