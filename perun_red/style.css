@@ -542,7 +542,7 @@ padding: 15px 20px;
 }
 
 #banner h1 {
-font: italic normal 2.2em 'times new roman' times, serif;
+font: italic normal 2.2em "Times New Roman", Times, serif;
 margin: 0 0 2px 20px;
 letter-spacing: 2px;
 }
