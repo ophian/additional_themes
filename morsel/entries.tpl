@@ -18,6 +18,7 @@
                 </div><!-- morselBody -->
 
                 <div class="morselFooter">
+            {if NOT $is_preview}
                 {$CONST.POSTED_BY} <a href="{$entry.link_author}" rel="external">{$entry.author}</a>
                 {if NOT empty($entry.categories)}
                     {$CONST.IN} {foreach $entry.categories AS $category}<a href="{$category.category_link}" rel="external">{$category.category_name|escape}</a>{if NOT $category@last}, {/if}{/foreach}
@@ -33,12 +34,13 @@
                     | <a href="{$entry.link}#trackbacks" rel="external">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
                 {/if}
 
-                {if $entry.is_entry_owner AND NOT $is_preview}
+                {if NOT empty($entry.is_entry_owner)}
                     | <a href="{$entry.link_edit}" rel="external">{$CONST.EDIT_ENTRY}</a>
                 {/if}
 
                 {$entry.add_footer|default:''}
                 </div>
+            {/if}
                 {$entry.plugin_display_dat}
             </div> <!-- aBody -->
             {$entry.plugin_display_dat}
@@ -68,7 +70,7 @@
                 <a id="trackbacks"></a>
                 <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
                     <div class="serendipity_center">
-                        <a rel="nofollow" style="font-weight: normal" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
+                        <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
                     </div>
                     {serendipity_printTrackbacks entry=$entry.id}
             </div>
@@ -87,7 +89,7 @@
                 </div>
                 {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
 
-                {if $entry.is_entry_owner}
+                {if NOT empty($entry.is_entry_owner)}
                     {if $entry.allow_comments}
                     <div class="serendipity_center">(<a href="{$entry.link_deny_comments} rel="external"">{$CONST.COMMENTS_DISABLE}</a>)</div>
                     {else}
