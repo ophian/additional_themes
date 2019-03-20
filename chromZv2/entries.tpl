@@ -13,7 +13,7 @@
                     </div>
                 </div>
 
-                <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if $entry.is_entry_owner}serendipity_entry_author_self{/if}">
+                <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
                 {if NOT empty($entry.categories)}
                     <span class="serendipity_entryIcon">
                     {foreach $entry.categories AS $category}
@@ -62,7 +62,7 @@
                         {/if}
                     {/if}
 
-                    {if $entry.is_entry_owner AND NOT $is_preview}
+                    {if NOT empty($entry.is_entry_owner)}
                             | <a href="{$entry.link_edit}">{$CONST.EDIT_ENTRY}</a>
                     {/if}
 
@@ -130,7 +130,7 @@
                 </div>
                 {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
 
-                {if $entry.is_entry_owner}
+                {if NOT empty($entry.is_entry_owner)}
                     {if $entry.allow_comments}
                     <div class="serendipity_center">(<a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>)</div>
                     {else}
