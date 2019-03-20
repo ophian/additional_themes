@@ -683,7 +683,7 @@ font-weight: bold;
 vertical-align: top;
 }
 
-td.serendipity_commentsValue input,
+td.serendipity_commentsValue input:not(type="checkbox"),
 td.serendipity_commentsValue select,
 td.serendipity_commentsValue textarea {
 padding: 2px;
