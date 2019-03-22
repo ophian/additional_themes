@@ -11,7 +11,7 @@
         {else}
         {$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}
         {/if}{/if} <a href="{$entry.link}">{$entry.title|default:$entry.id}</a></h2>
-        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
+        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename}{if NOT empty($entry.is_entry_owner)} serendipity_entry_author_self{/if}">
             {if NOT empty($entry.categories)}
             <span class="serendipity_entryIcon">
             {foreach $entry.categories AS $category}
@@ -105,9 +105,6 @@
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</div>
             {/if}
 
-        {/if}
-
-        {if $is_single_entry AND NOT $is_preview}
             <div class="serendipity_comments serendipity_section_trackbacks">
                 <a id="trackbacks"></a>
                 <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
@@ -118,6 +115,9 @@
                     {serendipity_printTrackbacks entry=$entry.id}
                 </div>
             </div>
+        {/if}
+
+        {if $is_single_entry AND NOT $is_preview}
             <div class="serendipity_comments serendipity_section_comments">
                 <a id="comments"></a>
                 <div class="serendipity_commentsTitle">{$CONST.COMMENTS}</div>
