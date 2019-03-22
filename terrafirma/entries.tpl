@@ -15,7 +15,7 @@
             {/if}
         </div>
 
-        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
+        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename}{if NOT empty($entry.is_entry_owner)} serendipity_entry_author_self{/if}">
         {if NOT empty($entry.categories)}
             <span class="serendipity_entryIcon">
             {foreach $entry.categories AS $entry_category}
