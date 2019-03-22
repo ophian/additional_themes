@@ -108,7 +108,7 @@
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</div>
             {/if}
 
-            <div class="serendipity_comments">
+            <div class="serendipity_comments serendipity_section_trackbacks">
                 <a id="trackbacks"></a>
                 <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
                 <div class="serendipity_center">
@@ -121,7 +121,7 @@
         {/if}
 
         {if $is_single_entry AND NOT $is_preview}
-            <div class="serendipity_comments">
+            <div class="serendipity_comments serendipity_section_comments">
                 <a id="comments"></a>
                 <div class="serendipity_commentsTitle">{$CONST.COMMENTS}</div>
                 <div class="serendipity_center">{$CONST.DISPLAY_COMMENTS_AS}
@@ -131,8 +131,6 @@
                     (<a href="{$entry.link_viewmode_linear}#comments">{$CONST.COMMENTS_VIEWMODE_LINEAR}</a> | {$CONST.COMMENTS_VIEWMODE_THREADED})
                 {/if}
                 </div>
-            </div>
-            <div class="serendipity_comments">
                 {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
 
                 {if NOT empty($entry.is_entry_owner)}
