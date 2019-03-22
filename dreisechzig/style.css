@@ -778,8 +778,8 @@ table.serendipity_calendar a:hover {
 }
 
 td.serendipity_weekDayName {
-    font-size:11px;
-    font-weight:bold;
+    font-size: 11px;
+    font-weight: bold;
 }
 td.serendipity_calendarHeader a:link,
 td.serendipity_calendarHeader a:visited,
