@@ -14,7 +14,7 @@
 
         <h2 class="serendipity_title"><a href="{$entry.link}">{$entry.title}</a></h2>
 
-        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
+        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename}{if NOT empty($entry.is_entry_owner)} serendipity_entry_author_self{/if}">
         {if NOT empty($entry.categories)}
 
             <span class="categoryIcon">
