@@ -11,7 +11,7 @@
         {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <h3 class="serendipity_title"><a href="{$entry.link}">{$entry.title|default:$entry.id}</a></h3>
 
-        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
+        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename}{if NOT empty($entry.is_entry_owner)} serendipity_entry_author_self{/if}">
             <div class="serendipity_entry_body">
                 {$entry.body}
 
@@ -92,9 +92,6 @@
             {if $CONST.DATA_COMMENT_APPROVED}
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</div>
             {/if}
-        {/if}
-
-        {if $is_single_entry AND NOT $is_preview}
 
             <div class="serendipity_comments serendipity_section_trackbacks">
                 <a id="trackbacks"></a>
@@ -106,10 +103,13 @@
                     {serendipity_printTrackbacks entry=$entry.id}
                 </div>
             </div>
+        {/if}
+
+        {if $is_single_entry AND NOT $is_preview}
             <div class="serendipity_comments serendipity_section_comments">
                 <a id="comments"></a>
                 <h3 class="serendipity_commentsTitle">{if $entry.comments == 0}{$CONST.COMMENTS}{else}{$entry.comments} {if $entry.comments >= 2}{$CONST.COMMENTS}{else}{$CONST.COMMENT}{/if}{/if}</h3>
-                <div class="serendipity_comments">
+                <div class="serendipity_comments serendipity_section_trackbacks">
                     <div class="serendipity_center">{$CONST.DISPLAY_COMMENTS_AS}
                     {if $entry.viewmode eq $CONST.VIEWMODE_LINEAR}
                         ({$CONST.COMMENTS_VIEWMODE_LINEAR} | <a href="{$entry.link_viewmode_threaded}#comments">{$CONST.COMMENTS_VIEWMODE_THREADED}</a>)
@@ -118,9 +118,7 @@
                     {/if}
                     </div>
                 </div>
-                <div class="serendipity_comments">
-                    {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
-                </div>
+                {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
                 {if NOT empty($entry.is_entry_owner)}
                     {if $entry.allow_comments}
                     <div class="serendipity_center">(<a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>)</div>
