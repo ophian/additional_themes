@@ -7,7 +7,7 @@
         {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <h3 class="serendipity_title"><a href="{$entry.link}">{$entry.title|default:$entry.id}</a></h3>
 
-        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
+        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename}{if NOT empty($entry.is_entry_owner)} serendipity_entry_author_self{/if}">
             <p class="day-date">{$CONST.POSTED_BY} <em><a href="{$entry.link_author}">{$entry.author}</a></em> {$CONST.ON} <em>{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}</em> {$CONST.AT} <em>{$entry.timestamp|formatTime:'%H:%M'}</em><br>
             {if NOT empty($entry.categories)}
                 {$CONST.FILED_UNDER} {foreach $entry.categories AS $entry_category}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if NOT $entry_category@last}, {/if}{/foreach}
@@ -92,7 +92,7 @@
         {/if}
 
         {if $is_single_entry AND NOT $is_preview}
-            <div class="serendipity_comments">
+            <div class="serendipity_comments serendipity_section_trackbacks">
                 <a id="trackbacks"></a>
                 <div class="serendipity_commentsTitle">{if $entry.trackbacks == 0}{$CONST.TRACKBACKS}{else}{$entry.trackbacks} {if $entry.trackbacks >= 2}{$CONST.TRACKBACKS}{else}{$CONST.TRACKBACK}{/if}{/if}</div>
                 <div class="serendipity_center">
@@ -102,7 +102,7 @@
                     {serendipity_printTrackbacks entry=$entry.id}
                 </div>
             </div>
-            <div class="serendipity_comments">
+            <div class="serendipity_comments serendipity_section_comments">
                 <a id="comments"></a>
                 <div class="serendipity_commentsTitle">{if $entry.comments == 0}{$CONST.COMMENTS}{else}{$entry.comments} {if $entry.comments >= 2}{$CONST.COMMENTS}{else}{$CONST.COMMENT}{/if}{/if}</div>
                 <div class="serendipity_center">{$CONST.DISPLAY_COMMENTS_AS}
@@ -112,17 +112,15 @@
                     (<a href="{$entry.link_viewmode_linear}#comments">{$CONST.COMMENTS_VIEWMODE_LINEAR}</a> | {$CONST.COMMENTS_VIEWMODE_THREADED})
                 {/if}
                 </div>
-            </div>
-            <div class="serendipity_comments">
                 {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
-            </div>
-                {if NOT empty($entry.is_entry_owner)}
-                    {if $entry.allow_comments}
-                    <div class="serendipity_center">(<a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>)</div>
-                    {else}
-                    <div class="serendipity_center">(<a href="{$entry.link_allow_comments}">{$CONST.COMMENTS_ENABLE}</a>)</div>
-                    {/if}
+
+            {if NOT empty($entry.is_entry_owner)}
+                {if $entry.allow_comments}
+                <div class="serendipity_center">(<a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>)</div>
+                {else}
+                <div class="serendipity_center">(<a href="{$entry.link_allow_comments}">{$CONST.COMMENTS_ENABLE}</a>)</div>
                 {/if}
+            {/if}
                 <a id="feedback"></a>
 
                 {foreach $comments_messagestack AS $message}
@@ -147,7 +145,7 @@
                 {$COMMENTFORM}
 
                 {/if}
-
+            </div>
         {/if}
 
         {$entry.backend_preview}
