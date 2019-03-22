@@ -13,7 +13,7 @@
         {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <h4 class="serendipity_title"><a href="{$entry.link}">{$entry.title}</a></h4>
 
-        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
+        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename}{if NOT empty($entry.is_entry_owner)} serendipity_entry_author_self{/if}">
             <p class="posttime">{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.IN}
         {if NOT empty($entry.categories)}
             {foreach $entry.categories AS $category}<a href="{$category.category_link}"> {$category.category_name|escape}</a>{if NOT $category@last}, {/if}{/foreach}<br>
@@ -106,18 +106,20 @@
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</div>
             {/if}
 
-            <div class="serendipity_comments">
+            <div class="serendipity_comments serendipity_section_trackbacks">
                 <a id="trackbacks"></a>
                 <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
                     <div class="serendipity_center">
-                        <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
+                        <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
                     </div>
-                    {serendipity_printTrackbacks entry=$entry.id}
+                    <div id="serendipity_trackbacklist">
+                        {serendipity_printTrackbacks entry=$entry.id}
+                    </div>
             </div>
         {/if}
 
         {if $is_single_entry AND NOT $is_preview}
-            <div class="serendipity_comments">
+            <div class="serendipity_comments serendipity_section_comments">
                 <a id="comments"></a>
                 <div class="serendipity_commentsTitle">{$CONST.COMMENTS}</div>
                 <div class="serendipity_center">{$CONST.DISPLAY_COMMENTS_AS}
