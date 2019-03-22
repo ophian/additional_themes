@@ -13,7 +13,7 @@
          {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
         <h4 class="serendipity_title"><a href="{$entry.link}">{$entry.title}</a></h4>
 
-        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if}">
+        <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename}{if NOT empty($entry.is_entry_owner)} serendipity_entry_author_self{/if}">
             <p class="posttime">{$entry.timestamp|formatTime:DATE_FORMAT_ENTRY}</p>
 
         {if NOT empty($entry.categories)}
@@ -126,7 +126,7 @@
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</div>
             {/if}
 
-            <div class="serendipity_comments">
+            <div class="serendipity_comments serendipity_section_trackbacks">
                 <a id="trackbacks"></a>
                 <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
                 <div class="serendipity_center">
@@ -139,7 +139,7 @@
         {/if}
 
         {if $is_single_entry AND NOT $is_preview}
-            <div class="serendipity_comments">
+            <div class="serendipity_comments serendipity_section_comments">
                 {if $entry.comments > 0}
                 <a id="comments"></a>
                 <div class="serendipity_commentsTitle">{$CONST.COMMENTS}</div>
