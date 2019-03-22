@@ -70,7 +70,7 @@
     <div class="inside">
         <div class="comment-head">
             <h2>{if $entry.comments == 0}{$CONST.NO_COMMENTS}{else}{$entry.comments} {if $entry.comments >= 2}{$CONST.COMMENTS}{else}{$CONST.COMMENT}{/if}{/if}</h2>
-            <span class="details"><a href="#comment-form">Jump to comment form</a> | <a href="{$serendipityBaseURL}/feeds/comments.rss2">{$CONST.COMMENTS} RSS</a> | <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a></span></div>
+            <span class="details"><a href="#comment-form">Jump to comment form</a> | <a href="{$serendipityBaseURL}/feeds/comments.rss2">{$CONST.COMMENTS} RSS</a> | <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a></span></div>
 
         {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
