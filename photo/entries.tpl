@@ -127,7 +127,9 @@
         <section id="comments" class="serendipity_comments serendipity_section_comments">
             <h3>{$CONST.COMMENTS}</h3>
 
+            <div id="serendipity_commentlist">
             {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
+            </div>
         {if NOT empty($entry.is_entry_owner)}
             <p class="manage_comments">
             {if $entry.allow_comments}
