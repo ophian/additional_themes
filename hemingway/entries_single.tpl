@@ -4,6 +4,7 @@
 {if NOT empty($entries)}{* catch a staticpage startpage which has no $entries array set *}
 {foreach $entries AS $dategroup}
     {foreach $dategroup.entries AS $entry}
+        {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
 
         <h1>{$entry.title|default:$entry.id}</h1>
         <div class="serendipity_entry_body">
@@ -95,7 +96,11 @@
         {/if}
 
         {if $is_single_entry AND NOT $is_preview}
-            {if $entry.trackbacks >= 1}{serendipity_printTrackbacks entry=$entry.id}{/if}
+            {if $entry.trackbacks >= 1}
+                <div id="serendipity_trackbacklist">
+                {serendipity_printTrackbacks entry=$entry.id}
+                </div>
+            {/if}
 
                  <a id="comments"></a>
                  <p>
@@ -105,7 +110,9 @@
                 (<a href="{$entry.link_viewmode_linear}#comments">{$CONST.COMMENTS_VIEWMODE_LINEAR}</a> | {$CONST.COMMENTS_VIEWMODE_THREADED})
             {/if}
                 </p>
+                <div id="serendipity_commentlist">
                 {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
+                </div>
         {/if}
 
             {if NOT empty($entry.is_entry_owner)}
@@ -132,7 +139,7 @@
 
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br>{$CONST.THIS_COMMENT_NEEDS_REVIEW}</div>
 
-                {elseif not $entry.allow_comments}
+                {elseif NOT $entry.allow_comments}
 
                 <div class="serendipity_center serendipity_msg_important">{$CONST.COMMENTS_CLOSED}</div>
 
