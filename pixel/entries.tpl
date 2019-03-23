@@ -72,6 +72,19 @@
 
   {if $is_single_entry AND NOT $is_preview}
     <div id="comments">
+    {if $entry.trackbacks > 0}
+        <h3>{$entry.trackbacks} {$entry.label_trackbacks} {$CONST.PIX_FORTHIS}</h3>
+        <div id="serendipity_trackbacklist">
+        {serendipity_printTrackbacks entry=$entry.id}
+        </div>
+    {/if}
+    {if NOT empty($entry.is_entry_owner)}
+        {if $entry.allow_comments}
+        <p><a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a></p>
+        {else}
+        <p><a href="{$entry.link_allow_comments}">{$CONST.COMMENTS_ENABLE}</a></p>
+        {/if}
+    {/if}
     {if $entry.comments > 0}
         <h3 id="commentstitle">{$entry.comments} {$entry.label_comments} {$CONST.PIX_FORTHIS}</h3>
 
@@ -82,18 +95,9 @@
             <a rel="nofollow" href="{$entry.link_viewmode_linear}#comments">{$CONST.COMMENTS_VIEWMODE_LINEAR}</a> | {$CONST.COMMENTS_VIEWMODE_THREADED}
         {/if}
         </p>
+        <div id="serendipity_commentlist">
         {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
-    {/if}
-    {if $entry.trackbacks > 0}
-        <h3>{$entry.trackbacks} {$entry.label_trackbacks} {$CONST.PIX_FORTHIS}</h3>
-        {serendipity_printTrackbacks entry=$entry.id}
-    {/if}
-    {if NOT empty($entry.is_entry_owner)}
-        {if $entry.allow_comments}
-        <p><a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a></p>
-        {else}
-        <p><a href="{$entry.link_allow_comments}">{$CONST.COMMENTS_ENABLE}</a></p>
-        {/if}
+        </div>
     {/if}
         <div id="respond">
             <a id="feedback"></a>
@@ -104,7 +108,7 @@
             <p class="serendipity_msg_notice">{$CONST.COMMENT_ADDED}</p>
         {elseif $is_comment_moderate}
             <p class="serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br>{$CONST.THIS_COMMENT_NEEDS_REVIEW}</p>
-        {elseif not $entry.allow_comments}
+        {elseif NOT $entry.allow_comments}
             <p class="serendipity_msg_important">{$CONST.COMMENTS_CLOSED}</p>
         {else}
             <h3>{$CONST.ADD_COMMENT}</h3>
