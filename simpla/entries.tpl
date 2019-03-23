@@ -163,8 +163,8 @@
             <a href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
             <br>
 
-            <ol class="commentlist">
-                {serendipity_printTrackbacks entry=$entry.id}
+            <ol id="serendipity_trackbacklist" class="commentlist">
+            {serendipity_printTrackbacks entry=$entry.id}
             </ol>
 
         {/if}
@@ -193,8 +193,8 @@
                 </div>
                 -->
 
-                <ol class="commentlist">
-                    {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
+                <ol id="serendipity_commentlist" class="commentlist">
+                {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
                 </ol>
 
             {if NOT empty($entry.is_entry_owner)}
@@ -229,7 +229,7 @@
 
                 </div>
 
-            {elseif not $entry.allow_comments}
+            {elseif NOT $entry.allow_comments}
 
                 <div class="serendipity_center serendipity_msg_important">{$CONST.COMMENTS_CLOSED}</div>
 
