@@ -19,7 +19,7 @@
         {if $is_commentform_showToolbar}
         <dt>&#160;</dt>
             <dd class="serendipity_commentsLabel">
-                <input id="checkbox_remember" type="checkbox" name="serendipity[remember]" {$commentform_remember}/>&#160;<label for="checkbox_remember">{$CONST.REMEMBER_INFO}</label>
+                <input id="checkbox_remember" type="checkbox" name="serendipity[remember]" {$commentform_remember}>&#160;<label for="checkbox_remember">{$CONST.REMEMBER_INFO}</label>
                 {if $is_allowSubscriptions}
                 <br>
                 <input id="checkbox_subscribe" type="checkbox" name="serendipity[subscribe]" {$commentform_subscribe}/>&#160;<label for="checkbox_subscribe">{$CONST.SUBSCRIBE_TO_THIS_ENTRY}</label>
@@ -31,9 +31,12 @@
         <dt class="serendipity_commentsValue serendipity_msg_important">{$CONST.COMMENTS_WILL_BE_MODERATED}</dt>
             <dd>&#160;</dd>
         {/if}
-    <dt>&#160;</dt><dd class="serendipity_commentsLabel">
-    <input type="submit" name="serendipity[submit]" value="{$CONST.SUBMIT_COMMENT}">
-    <input type="submit" id="serendipity_preview" name="serendipity[preview]" value="{$CONST.PREVIEW}"></dd>
-    </dl>
+
+        <dt>&#160;</dt>
+            <dd class="serendipity_commentsLabel">
+                <input type="submit" name="serendipity[submit]" value="{$CONST.SUBMIT_COMMENT}">
+                <input type="submit" id="serendipity_preview" name="serendipity[preview]" value="{$CONST.PREVIEW}">
+            </dd>
+        </dl>
     </form>
 </div>
