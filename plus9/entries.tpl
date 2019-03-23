@@ -105,14 +105,18 @@
                 <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
             </p>
 
+            <div id="serendipity_trackbacklist">
             {serendipity_printTrackbacks entry=$entry.id}
+            </div>
         {/if}
 
         {if $is_single_entry AND NOT $is_preview}
             <a id="comments"></a>
             <h3 class="reply">{$entry.comments} {$entry.label_comments|default:''} {$CONST.J_TO} {$entry.title}</h3>
 
+            <div id="serendipity_commentlist">
             {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
+            </div>
 
           {if isset($entry.is_entry_owner)}
             {if $entry.allow_comments}
@@ -132,7 +136,7 @@
             <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}</div>
           {elseif $is_comment_moderate}
             <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br>{$CONST.THIS_COMMENT_NEEDS_REVIEW}</div>
-          {elseif not $entry.allow_comments}
+          {elseif NOT $entry.allow_comments}
             <div class="serendipity_center serendipity_msg_important">{$CONST.COMMENTS_CLOSED}</div>
           {else}
             <h3 class="reply">{$CONST.ADD_COMMENT}</h3>
