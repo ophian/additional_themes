@@ -108,7 +108,7 @@
             <p class="serendipity_msg_notice">{$CONST.COMMENT_ADDED}</p>
         {elseif $is_comment_moderate}
             <p class="serendipity_msg_notice">{$CONST.COMMENT_ADDED}: {$CONST.THIS_COMMENT_NEEDS_REVIEW}</p>
-        {elseif not $entry.allow_comments}
+        {elseif NOT $entry.allow_comments}
             <p class="serendipity_msg_important">{$CONST.COMMENTS_CLOSED}</p>
         {/if}
         {if $entry.allow_comments}
