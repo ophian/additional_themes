@@ -84,7 +84,7 @@
         {$entry.plugin_display_dat}
     {/if}
 
-        {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
+        {if $is_single_entry AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|sprintf:$CONST.UNSUBSCRIBE_OK}</div>
             {/if}
@@ -105,9 +105,6 @@
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</div>
             {/if}
 
-        {/if}
-
-        {if $is_single_entry AND NOT $is_preview}
             <div class="serendipity_comments serendipity_section_trackbacks">
                 <a id="trackbacks"></a>
                 <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
@@ -118,6 +115,7 @@
                 {serendipity_printTrackbacks entry=$entry.id}
                 </div>
             </div>
+
             <div class="serendipity_comments serendipity_section_comments">
                 <a id="comments"></a>
                 <div class="serendipity_commentsTitle">{$CONST.COMMENTS}</div>
