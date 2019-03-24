@@ -1025,5 +1025,10 @@ article.serendipity_staticpage .content.serendipity_entry_body,
     font-size: x-small;
 }
 
+.newsbox {
+    border-color: dimgray;
+    border-width: thin;
+    border-style: solid; }
+
 /* End Additional event plugin styles */
 
