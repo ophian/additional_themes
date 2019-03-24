@@ -202,6 +202,22 @@ p code, p samp, p kbd {
 [type="checkbox"],
 [type="radio"] {
     vertical-align: middle; }
+pre {
+    white-space: pre; /*fallback*/
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: auto; }
+pre {
+    font-family: Menlo,Consolas,Monaco,monospace;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: .5em; }
+/* overwrite possible white-space: pre in highlight.css */
+pre code {
+    white-space: pre-wrap !important;
+    overflow-x: auto; }
+    code.hljs {
+        word-break: break-all; }
 .serendipity_Entry_Date.freetag_cloud {
     display: inline-block;
     margin-bottom: 1em; }
@@ -221,11 +237,23 @@ h2.staticpage_title {
     border: 1px solid #ccc;
     padding: .5em .5em;
     background-color: #efefef;
-    font-size: small;
-}
+    font-size: small; }
 #content .serendipity_freetag_taglist .ftr-empty {
-    margin-left: 0;
-}
+    margin-left: 0; }
+h3#respond {
+    margin: .5em auto; }
+.serendipity_comment.comment_oddbox .serendipity_commentBody,
+.serendipity_comment.comment_evenbox .serendipity_commentBody {
+    padding: .25em;
+    border: 1px solid #ddd;
+    color: #555; }
+/* comment_oddbox is single entry view cycles, while serendipity_comment.odd is for comment summary pages */
+.serendipity_comment.comment_oddbox .serendipity_commentBody {
+    background-color: #f5f5f5; }
+.serendipity_comment.comment_evenbox .serendipity_commentBody {
+    background-color: #fafbfc; }
+.serendipity_comment.odd .comment_content {
+    background-color: #eee; }
 
 
 /* backend preview */
@@ -341,7 +369,7 @@ h2.serendipity_title a:hover{
 	color: #58BBEB;
 }
 h3.serendipity_date{
-	font-size: 1.8em;
+	font-size: 1.2em;
 	color: #6F6F6F;
     text-align: right;
 }
@@ -463,9 +491,7 @@ h3#trackbacks{
 /*************************************
  Comment Form
  *************************************/
-#commentform {
-	
-}
+#commentform {}
 
 #serendipity_commentform_name,
 #serendipity_commentform_email,
@@ -481,7 +507,7 @@ h3#trackbacks{
 }
 #serendipity_commentform_comment {
 	border: 1px solid #d1d1d1;
-	width: 420px;
+	width: 348px;
 }
 #serendipity_submit, #serendipity_preview {
 	background: #c0c0c0;
