@@ -870,5 +870,14 @@ article.serendipity_staticpage.serendipity_entry {
     border-top: 1px solid #666;
 }
 
+.newsbox {
+    border-color: dimgray;
+    border-width: thin;
+    border-style: dotted; }
+    .newsbox .serendipity_entry {
+        border: 1px solid #666; }
+    .newsbox .serendipity_title {
+        border: 0 none; }
+
 /* End Additional event plugin styles */
 
