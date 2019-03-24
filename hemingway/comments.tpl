@@ -1,4 +1,4 @@
-{if $entry.viewmode eq $CONST.VIEWMODE_LINEAR}
+{if isset($entry) AND $entry.viewmode eq $CONST.VIEWMODE_LINEAR}
 <ol id="comments">
 {foreach $comments AS $comment}
     <a id="c{$comment.id|default:0}"></a>
@@ -17,7 +17,7 @@
         {if isset($comment.id) AND isset($entry.allow_comments) AND $comment.body != 'COMMENT_DELETED'}
             (<a class="comment_reply" href="#serendipity_CommentForm" id="serendipity_reply_{$comment.id}" onclick="document.getElementById('serendipity_replyTo').value='{$comment.id}'; {$comment_onchange|default:''}">{$CONST.REPLY}</a>)
         {/if}
-        {if isset($entry) AND NOT empty($entry.is_entry_owner) AND NOT empty($comment.id)}
+        {if NOT empty($entry.is_entry_owner) AND NOT empty($comment.id)}
             (<a class="comment_source_ownerlink" href="{$comment.link_delete}" onclick="return confirm('{$CONST.COMMENT_DELETE_CONFIRM|sprintf:$comment.id:$comment.author}');">delete</a>)
         {/if}
         </div>
@@ -28,7 +28,7 @@
 {else}
 <ol id="comments">
 {foreach $comments AS $comment}
-    <li class="serendipity_comment_author_{$comment.author|makeFilename}{if $entry.author == $comment.author} serendipity_comment_author_self{/if}">
+    <li class="serendipity_comment_author_{$comment.author|makeFilename}{if isset($entry) AND $entry.author == $comment.author} serendipity_comment_author_self{/if}">
         <a id="c{$comment.id|default:0}"></a>
         <cite>
             <span class="author">
