@@ -159,7 +159,7 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     display: inline-block; }
 .serendipity_entry_body table,
 .serendipity_entry_extended table {
-    border: 1px solid #eee;
+    border: 1px solid #555;
     display: inline-grid;
     max-width: 100%;
     width: auto;
@@ -192,6 +192,31 @@ p code, p samp, p kbd {
 [type="radio"] {
     vertical-align: middle;
     margin-right: 2px; }
+/* Mozilla experimental https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color */
+pre {
+    scrollbar-color: #222 #444; /*moz*/
+    scrollbar-width: thin; /*moz*/
+}
+pre .hljs {
+    padding-bottom: .75em;
+    border-left: 5px solid #444;
+    background: rgba(57, 57, 57, 0.6);
+    color: #fff; }
+pre::-webkit-scrollbar,
+.hljs::-webkit-scrollbar {
+    width: auto;
+    height: .5em; }
+pre::-webkit-scrollbar-thumb,
+.hljs::-webkit-scrollbar-thumb,
+pre::-webkit-scrollbar-track,
+.hljs::-webkit-scrollbar-track  {
+    background-color: #222; }
+pre::-webkit-scrollbar-track-piece,
+.hljs::-webkit-scrollbar-track-piece  {
+    background-color: #444; }
+pre code.hljs .hljs-keyword, pre code.hljs .hljs-selector-tag, pre code.hljs .hljs-subst {
+    color: #ff9393; }
+
 #secondary .comment-head {
     padding: 0.8em 0 1em; }
 #secondary .comment-head,
@@ -224,7 +249,9 @@ p code, p samp, p kbd {
 .serendipity_comment.odd{
     background-color: #1b1b1b; }
 .serendipity_entry_body pre {
-    display: inline-block; }
+    display: inline-block;
+    background-color: transparent;
+    border: 0 none; }
 .staticpage_sbList {
     margin: 0;
     padding: 0; }
@@ -238,7 +265,7 @@ p code, p samp, p kbd {
     padding-top: 1.5rem;
     text-align: left; }
 .serendipity_calendar {
-    max-width: 300px; }
+    max-width: 220px; }
 .comments_permalink {
     margin-left: .5em; }
 .serendipity_date {
@@ -261,8 +288,15 @@ p code, p samp, p kbd {
 .secondary .serendipity_freetag_taglist .ftr-empty {
     margin-left: 0;
     margin-bottom: 1rem;
-    display: inline-block;
-}
+    display: inline-block; }
+.newsbox {
+    border-color: darkslategray; }
+    .newsbox_title {
+        font-style: italic;
+        font-weight: bold;
+        font-size: .9125rem; }
+#serendipity_comment_page #comment-form {
+    margin: 2em; }
 
 
 /* backend preview */
