@@ -52,7 +52,7 @@
              dc:identifier="{$entry.rdf_ident}" />
     </rdf:RDF>
     -->
-  {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
+  {if $is_single_entry AND NOT $is_preview}
     {if $CONST.DATA_UNSUBSCRIBED}
     <p class="serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|sprintf:$CONST.UNSUBSCRIBE_OK}</p>
     {/if}
@@ -68,9 +68,7 @@
     {if $CONST.DATA_COMMENT_APPROVED}
     <p class="serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</p>
     {/if}
-  {/if}
 
-  {if $is_single_entry AND NOT $is_preview}
     <div id="comments">
     {if $entry.trackbacks > 0}
         <h3>{$entry.trackbacks} {$entry.label_trackbacks} {$CONST.PIX_FORTHIS}</h3>
