@@ -91,7 +91,7 @@
         -->
         {$entry.plugin_display_dat}
 
-        {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
+        {if $is_single_entry AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|sprintf:$CONST.UNSUBSCRIBE_OK}</div>
             {/if}
@@ -112,71 +112,69 @@
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</div>
             {/if}
 
-        <div class="shadow">
-            <div class="serendipity_comments serendipity_section_trackbacks drop">
-                <a id="trackbacks"></a>
-                <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
+            <div class="shadow">
+                <div class="serendipity_comments serendipity_section_trackbacks drop">
+                    <a id="trackbacks"></a>
+                    <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
                     <div class="serendipity_center">
                         <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
                     </div>
                     <div id="serendipity_trackbacklist">
                     {serendipity_printTrackbacks entry=$entry.id}
                     </div>
+                </div>
             </div>
-        </div>
-        {/if}
 
-        {if $is_single_entry AND NOT $is_preview}
-        <div class="shadow">
-            <div class="serendipity_comments serendipity_section_comments drop">
-                <a id="comments"></a>
-                <div class="serendipity_commentsTitle">{$CONST.COMMENTS}</div>
-                <div class="serendipity_center">{$CONST.DISPLAY_COMMENTS_AS}
-                {if $entry.viewmode eq $CONST.VIEWMODE_LINEAR}
-                    ({$CONST.COMMENTS_VIEWMODE_LINEAR} | <a rel="nofollow" href="{$entry.link_viewmode_threaded}#comments">{$CONST.COMMENTS_VIEWMODE_THREADED}</a>)
-                {else}
-                    (<a rel="nofollow" href="{$entry.link_viewmode_linear}#comments">{$CONST.COMMENTS_VIEWMODE_LINEAR}</a> | {$CONST.COMMENTS_VIEWMODE_THREADED})
-                {/if}
-                </div>
-                <div id="serendipity_commentlist">
-                {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
-                </div>
-
-                {if NOT empty($entry.is_entry_owner)}
-                    {if $entry.allow_comments}
-                    <div class="serendipity_center">(<a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>)</div>
+            <div class="shadow">
+                <div class="serendipity_comments serendipity_section_comments drop">
+                    <a id="comments"></a>
+                    <div class="serendipity_commentsTitle">{$CONST.COMMENTS}</div>
+                    <div class="serendipity_center">{$CONST.DISPLAY_COMMENTS_AS}
+                    {if $entry.viewmode eq $CONST.VIEWMODE_LINEAR}
+                        ({$CONST.COMMENTS_VIEWMODE_LINEAR} | <a rel="nofollow" href="{$entry.link_viewmode_threaded}#comments">{$CONST.COMMENTS_VIEWMODE_THREADED}</a>)
                     {else}
-                    <div class="serendipity_center">(<a href="{$entry.link_allow_comments}">{$CONST.COMMENTS_ENABLE}</a>)</div>
+                        (<a rel="nofollow" href="{$entry.link_viewmode_linear}#comments">{$CONST.COMMENTS_VIEWMODE_LINEAR}</a> | {$CONST.COMMENTS_VIEWMODE_THREADED})
                     {/if}
-                {/if}
-                <a id="feedback"></a>
+                    </div>
+                    <div id="serendipity_commentlist">
+                    {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
+                    </div>
 
-                {foreach $comments_messagestack AS $message}
-                <div class="serendipity_center serendipity_msg_important">{$message}</div>
-                {/foreach}
+                    {if NOT empty($entry.is_entry_owner)}
+                        {if $entry.allow_comments}
+                        <div class="serendipity_center">(<a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>)</div>
+                        {else}
+                        <div class="serendipity_center">(<a href="{$entry.link_allow_comments}">{$CONST.COMMENTS_ENABLE}</a>)</div>
+                        {/if}
+                    {/if}
+                    <a id="feedback"></a>
 
-                {if $is_comment_added}
+                    {foreach $comments_messagestack AS $message}
+                    <div class="serendipity_center serendipity_msg_important">{$message}</div>
+                    {/foreach}
 
-                <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}</div>
+                    {if $is_comment_added}
 
-                {elseif $is_comment_moderate}
+                    <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}</div>
 
-                <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br>{$CONST.THIS_COMMENT_NEEDS_REVIEW}</div>
+                    {elseif $is_comment_moderate}
 
-                {elseif NOT $entry.allow_comments}
+                    <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br>{$CONST.THIS_COMMENT_NEEDS_REVIEW}</div>
 
-                <div class="serendipity_center serendipity_msg_important">{$CONST.COMMENTS_CLOSED}</div>
+                    {elseif NOT $entry.allow_comments}
 
-                {else}
+                    <div class="serendipity_center serendipity_msg_important">{$CONST.COMMENTS_CLOSED}</div>
 
-                <div class="serendipity_section_commentform">
-                    <div class="serendipity_commentsTitle">{$CONST.ADD_COMMENT}</div>
-                    {$COMMENTFORM}
+                    {else}
+
+                    <div class="serendipity_section_commentform">
+                        <div class="serendipity_commentsTitle">{$CONST.ADD_COMMENT}</div>
+                        {$COMMENTFORM}
+                    </div>
+
+                    {/if}
                 </div>
-
-                {/if}
             </div>
-        </div>
         {/if}
 
         {$entry.backend_preview}
