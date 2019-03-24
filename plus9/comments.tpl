@@ -7,15 +7,13 @@
                 <div class="comment_text">{if $comment.body == 'COMMENT_DELETED'}{$CONST.COMMENT_IS_DELETED}{else}{$comment.body}{/if}</div>
 
                 <div class="comment_author">
-                    <p>
-                        <strong>{if $comment.url}<a class="comment_source_url" href="{$comment.url}" title="{$comment.url|escape}">{/if}{$comment.author|default:$CONST.ANONYMOUS}{if $comment.url}</a>{/if}</strong>
-                        {if isset($comment.entryauthor) AND $comment.entryauthor == $comment.author AND isset($entry) AND $entry.email == $comment.clear_email} <span class="pc-owner">Post author</span>{/if}
-                    </p>
+                    <strong>{if $comment.url}<a class="comment_source_url" href="{$comment.url}" title="{$comment.url|escape}">{/if}{$comment.author|default:$CONST.ANONYMOUS}{if $comment.url}</a>{/if}</strong>
+                    {if isset($comment.entryauthor) AND $comment.entryauthor == $comment.author AND isset($entry) AND $entry.email == $comment.clear_email} <span class="pc-owner">Post author</span>{/if}
 
-                    <p><small>{$comment.timestamp|formatTime:'%d %b %y'} {$CONST.AT} <a href="#c{$comment.id|default:0}">{$comment.timestamp|formatTime:'%H:%M'}</a>{if isset($entry) AND NOT empty($entry.is_entry_owner) AND NOT empty($comment.id)} <a class="comment_source_ownerlink" href="{$comment.link_delete}" onclick="return confirm('{$CONST.COMMENT_DELETE_CONFIRM|sprintf:$comment.id|default:'':$comment.author}');">{$CONST.DELETE}</a>{/if}</small></p>
+                    <small>{$comment.timestamp|formatTime:'%d %b %y'} {$CONST.AT} <a href="#c{$comment.id|default:0}">{$comment.timestamp|formatTime:'%H:%M'}</a>{if isset($entry) AND NOT empty($entry.is_entry_owner) AND NOT empty($comment.id)} <a class="comment_source_ownerlink" href="{$comment.link_delete}" onclick="return confirm('{$CONST.COMMENT_DELETE_CONFIRM|sprintf:$comment.id|default:'':$comment.author}');">{$CONST.DELETE}</a>{/if}</small>
 
                 {if isset($comment.id) AND NOT empty($entry.allow_comments) AND $comment.body != 'COMMENT_DELETED'}
-                    <p><small><a class="comment_reply" href="#serendipity_CommentForm" id="serendipity_reply_{$comment.id}" onclick="document.getElementById('serendipity_replyTo').value='{$comment.id}'; {$comment_onchange|default:''}">{$CONST.REPLY}</a></small></p>
+                    <small><a class="comment_reply" href="#serendipity_CommentForm" id="serendipity_reply_{$comment.id}" onclick="document.getElementById('serendipity_replyTo').value='{$comment.id}'; {$comment_onchange|default:''}">{$CONST.REPLY}</a></small>
                     <div id="serendipity_replyform_{$comment.id}"></div>
                 {/if}
                 </div>

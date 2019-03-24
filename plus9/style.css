@@ -736,7 +736,7 @@ ol.commentlist {
 .comment_author {
     margin: 10px 0;
     float: right;
-    width: 190px;
+    /*width: 190px;*/
 }
 
 .comment_author img {
