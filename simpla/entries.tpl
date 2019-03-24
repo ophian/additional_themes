@@ -135,7 +135,7 @@
             {$entry.plugin_display_dat}
             {/if}
 
-        {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
+        {if $is_single_entry AND NOT $is_preview}
 
             {if $CONST.DATA_UNSUBSCRIBED}
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|sprintf:$CONST.UNSUBSCRIBE_OK}</div>
@@ -157,58 +157,39 @@
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</div>
             {/if}
 
-            <h3 id="trackbacks">{$CONST.TRACKBACKS}</h3>
-
-            <br>
-            <a href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
-            <br>
-
-            <ol id="serendipity_trackbacklist" class="commentlist">
-            {serendipity_printTrackbacks entry=$entry.id}
-            </ol>
-
-        {/if}
-
-        {if $is_single_entry AND NOT $is_preview}
-
-            <div class="commentsblock">
-
-                <h3 id="comments">{$CONST.COMMENTS}</h3>
-
-                <!--
-                <div style="text-align: right">
-
-                {if $entry.viewmode eq $CONST.VIEWMODE_LINEAR}
-
-                <img src="{serendipity_getFile file='images/page_down.gif'}" border="0" width="16" height="16" alt="{$CONST.COMMENTS_VIEWMODE_LINEAR}">
-                <a rel="nofollow" href="{$entry.link_viewmode_threaded}#comments"><img src="{serendipity_getFile file='images/page_right.gif'}" border="0" width="16" height="16" alt="{$CONST.COMMENTS_VIEWMODE_THREADED}"></a>
-
-                {else}
-
-                <a rel="nofollow" href="{$entry.link_viewmode_linear}#comments"><img src="{serendipity_getFile file='images/page_down.gif'}" border="0" width="16" height="16" alt="{$CONST.COMMENTS_VIEWMODE_LINEAR}"></a>
-                <img src="{serendipity_getFile file='images/page_right.gif'}" border="0" width="16" height="16" alt="{$CONST.COMMENTS_VIEWMODE_THREADED}">
-
-                {/if}
-
+            <div class="serendipity_comments serendipity_section_trackbacks">
+                <a id="trackbacks"></a>
+                <h3 id="trackbacks">{$CONST.TRACKBACKS}</h3>
+                <div class="serendipity_center">
+                    <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
                 </div>
-                -->
+                <ol id="serendipity_trackbacklist" class="commentlist">
+                {serendipity_printTrackbacks entry=$entry.id}
+                </ol>
+            </div>
 
+            <div class="serendipity_comments commentsblock serendipity_section_comments">
+                <a id="comments"></a>
+                <h3 id="comments">{$CONST.COMMENTS}</h3>
+                <div class="serendipity_center">{$CONST.DISPLAY_COMMENTS_AS}
+                {if $entry.viewmode eq $CONST.VIEWMODE_LINEAR}
+                    ({$CONST.COMMENTS_VIEWMODE_LINEAR} | <a href="{$entry.link_viewmode_threaded}#comments">{$CONST.COMMENTS_VIEWMODE_THREADED}</a>)
+                {else}
+                    (<a href="{$entry.link_viewmode_linear}#comments">{$CONST.COMMENTS_VIEWMODE_LINEAR}</a> | {$CONST.COMMENTS_VIEWMODE_THREADED})
+                {/if}
+                </div>
                 <ol id="serendipity_commentlist" class="commentlist">
                 {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
                 </ol>
 
             {if NOT empty($entry.is_entry_owner)}
-
                 {if $entry.allow_comments}
 
                 <div class="serendipity_center">(<a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a>)</div>
-
                 {else}
 
                 <div class="serendipity_center">(<a href="{$entry.link_allow_comments}">{$CONST.COMMENTS_ENABLE}</a>)</div>
-
                 {/if}
-
             {/if}
 
                 <a id="feedback"></a>
@@ -220,33 +201,21 @@
             {if $is_comment_added}
 
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}</div>
-
-                </div>
-
             {elseif $is_comment_moderate}
 
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br>{$CONST.THIS_COMMENT_NEEDS_REVIEW}</div>
-
-                </div>
-
             {elseif NOT $entry.allow_comments}
 
                 <div class="serendipity_center serendipity_msg_important">{$CONST.COMMENTS_CLOSED}</div>
-
-                </div>
             {else}
 
-            </div><!-- commentsblock ende -->
-
-            <h3 id="respond">{$CONST.ADD_COMMENT}</h3>
-
+                <h3 id="respond">{$CONST.ADD_COMMENT}</h3>
                 {$COMMENTFORM}
-
             {/if}
-
+            </div><!-- commentsblock end -->
         {/if}
 
-    {$entry.backend_preview}
+        {$entry.backend_preview}
     {/foreach}
     </div>
 {/foreach}
