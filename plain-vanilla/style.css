@@ -271,11 +271,11 @@ h4 {
     border: 1px solid #ccc;
     padding: .5em .5em;
     background-color: #efefef;
-    font-size: small;
-}
+    font-size: small; }
 #content .serendipity_freetag_taglist .ftr-empty {
-    margin-left: 0;
-}
+    margin-left: 0; }
+.serendipity_entries_footer {
+    text-align: center; }
 
 /* backend preview */
 body.save_preview_body {
