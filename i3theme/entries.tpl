@@ -63,7 +63,7 @@
         -->
         {/if}
 
-        {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
+        {if $is_single_entry AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|sprintf:$CONST.UNSUBSCRIBE_OK}</div>
             {/if}
@@ -91,9 +91,7 @@
                 {serendipity_printTrackbacks entry=$entry.id}
                 </div>
             </div>
-        {/if}
 
-        {if $is_single_entry AND NOT $is_preview}
             <div class="serendipity_comments serendipity_section_comments">
                 <a id="comments"></a>
                 <h3 id="comments_h3">{$entry.comments} {$CONST.COMMENTS}</h3>
