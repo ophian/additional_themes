@@ -32,7 +32,7 @@
                 </div>
             </div>
             {$entry.plugin_display_dat}
-            {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
+            {if $is_single_entry AND NOT $is_preview}
                 {if $CONST.DATA_UNSUBSCRIBED}
                     <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|sprintf:$CONST.UNSUBSCRIBE_OK}</div>
                 {/if}
@@ -48,13 +48,16 @@
                 {if $CONST.DATA_COMMENT_APPROVED}
                     <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</div>
                 {/if}
+
+                <div class="serendipity_comments serendipity_section_trackbacks">
                     <h3><a id="trackbacks">{$CONST.TRACKBACKS}</a></h3>
                     <a href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape:html}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
                     <ol id="serendipity_trackbacklist" class="commentlist">
                     {serendipity_printTrackbacks entry=$entry.id}
                     </ol>
-            {/if}
-            {if $is_single_entry AND NOT $is_preview}
+                </div>
+
+                <div class="serendipity_comments serendipity_section_comments">
                     <h3><a id="comments">{$CONST.COMMENTS}</a></h3>
                     <p>{$CONST.DISPLAY_COMMENTS_AS}
                     {if $entry.viewmode eq $CONST.VIEWMODE_LINEAR}
@@ -91,6 +94,7 @@
                     {$COMMENTFORM}
 
                 {/if}
+                </div>
             {/if}
             {$entry.backend_preview}
         </div>
