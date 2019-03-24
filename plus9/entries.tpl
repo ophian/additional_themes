@@ -81,7 +81,7 @@
         {$entry.plugin_display_dat}
     {/if}
 
-        {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
+        {if $is_single_entry AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|sprintf:$CONST.UNSUBSCRIBE_OK}</div>
             {/if}
@@ -98,50 +98,56 @@
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</div>
             {/if}
 
-            <a id="trackbacks"></a>
-            <h3 class="reply">{$entry.trackbacks} {$entry.label_trackbacks} {$CONST.J_TO} {$entry.title}</h3>
+            <div class="serendipity_comments serendipity_section_trackbacks">
+                <a id="trackbacks"></a>
+            {if $entry.trackbacks > 0}
+                <h3 class="reply">{$entry.trackbacks} {$entry.label_trackbacks} {$CONST.J_TO} {$entry.title}</h3>
 
-            <p class="comment_meta">
-                <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
-            </p>
+                <p class="comment_meta">
+                    <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
+                </p>
 
-            <div id="serendipity_trackbacklist">
-            {serendipity_printTrackbacks entry=$entry.id}
+                <div id="serendipity_trackbacklist">
+                {serendipity_printTrackbacks entry=$entry.id}
+                </div>
+            {/if}
             </div>
-        {/if}
 
-        {if $is_single_entry AND NOT $is_preview}
-            <a id="comments"></a>
-            <h3 class="reply">{$entry.comments} {$entry.label_comments|default:''} {$CONST.J_TO} {$entry.title}</h3>
+            <div class="serendipity_comments serendipity_section_comments">
+                <a id="comments"></a>
+            {if $entry.comments > 0}
+                <h3 class="reply">{$entry.comments} {$entry.label_comments} {$CONST.J_TO} {$entry.title}</h3>
 
-            <div id="serendipity_commentlist">
-            {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
-            </div>
+                <div id="serendipity_commentlist">
+                {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
+                </div>
+            {/if}
 
           {if isset($entry.is_entry_owner)}
             {if $entry.allow_comments}
-            <p class="comment_meta"><a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a></p>
+                <p class="comment_meta"><a href="{$entry.link_deny_comments}">{$CONST.COMMENTS_DISABLE}</a></p>
             {else}
-            <p class="comment_meta"><a href="{$entry.link_allow_comments}">{$CONST.COMMENTS_ENABLE}</a></p>
+                <p class="comment_meta"><a href="{$entry.link_allow_comments}">{$CONST.COMMENTS_ENABLE}</a></p>
             {/if}
           {/if}
 
-            <a id="feedback"></a>
+                <a id="feedback"></a>
 
-          {foreach $comments_messagestack AS $message}
-            <div class="serendipity_center serendipity_msg_important">{$message}</div>
-          {/foreach}
+            {foreach $comments_messagestack AS $message}
+                <div class="serendipity_center serendipity_msg_important">{$message}</div>
+            {/foreach}
 
-          {if $is_comment_added}
-            <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}</div>
-          {elseif $is_comment_moderate}
-            <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br>{$CONST.THIS_COMMENT_NEEDS_REVIEW}</div>
-          {elseif NOT $entry.allow_comments}
-            <div class="serendipity_center serendipity_msg_important">{$CONST.COMMENTS_CLOSED}</div>
-          {else}
-            <h3 class="reply">{$CONST.ADD_COMMENT}</h3>
-            {$COMMENTFORM}
-          {/if}
+            {if $is_comment_added}
+                <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}</div>
+            {elseif $is_comment_moderate}
+                <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br>{$CONST.THIS_COMMENT_NEEDS_REVIEW}</div>
+            {elseif NOT $entry.allow_comments}
+                <div class="serendipity_center serendipity_msg_important">{$CONST.COMMENTS_CLOSED}</div>
+            {else}
+                <h3 class="reply">{$CONST.ADD_COMMENT}</h3>
+                {$COMMENTFORM}
+            {/if}
+            </div>
         {/if}
         {$entry.backend_preview}
     {/foreach}
