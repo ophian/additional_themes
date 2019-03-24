@@ -73,7 +73,7 @@
             <h2>{if $entry.comments == 0}{$CONST.NO_COMMENTS}{else}{$entry.comments} {if $entry.comments >= 2}{$CONST.COMMENTS}{else}{$CONST.COMMENT}{/if}{/if}</h2>
             <span class="details"><a href="#comment-form">Jump to comment form</a> | <a href="{$serendipityBaseURL}/feeds/comments.rss2">{$CONST.COMMENTS} RSS</a> | <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a></span></div>
 
-        {if $is_single_entry AND NOT $use_popups AND NOT $is_preview}
+        {if $is_single_entry AND NOT $is_preview}
             {if $CONST.DATA_UNSUBSCRIBED}
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_UNSUBSCRIBED|sprintf:$CONST.UNSUBSCRIBE_OK}</div>
             {/if}
@@ -93,27 +93,33 @@
             {if $CONST.DATA_COMMENT_APPROVED}
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}</div>
             {/if}
-        {/if}
 
-        {if $is_single_entry AND NOT $is_preview}
-            {if $entry.trackbacks >= 1}
+            <div class="serendipity_section_trackbacks">
+                <a id="trackbacks"></a>
+                <h3 id="trackbacks">{$entry.trackbacks} {$CONST.TRACKBACKS}</h3>
+
+                <div class="serendipity_center">
+                    <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
+                </div>
                 <div id="serendipity_trackbacklist">
                 {serendipity_printTrackbacks entry=$entry.id}
                 </div>
-            {/if}
+            </div>
 
-                 <a id="comments"></a>
-                 <p>
-            {if NOT $entry.comments == 0}
-                {$CONST.DISPLAY_COMMENTS_AS} {if $entry.viewmode eq $CONST.VIEWMODE_LINEAR}{$CONST.COMMENTS_VIEWMODE_LINEAR} | <a href="{$entry.link_viewmode_threaded}#comments">{$CONST.COMMENTS_VIEWMODE_THREADED}</a>)
-            {else}
-                (<a href="{$entry.link_viewmode_linear}#comments">{$CONST.COMMENTS_VIEWMODE_LINEAR}</a> | {$CONST.COMMENTS_VIEWMODE_THREADED})
-            {/if}
-                </p>
+            <div class="serendipity_section_comments">
+                <a id="comments"></a>
+                <h3 id="comments">{$entry.comments} {$CONST.COMMENTS}</h3>
+
+                <div class="serendipity_center">{$CONST.DISPLAY_COMMENTS_AS}
+                {if $entry.viewmode eq $CONST.VIEWMODE_LINEAR}
+                    ({$CONST.COMMENTS_VIEWMODE_LINEAR} | <a href="{$entry.link_viewmode_threaded}#comments" rel="nofollow">{$CONST.COMMENTS_VIEWMODE_THREADED}</a>)
+                {else}
+                    (<a rel="nofollow" href="{$entry.link_viewmode_linear}#comments">{$CONST.COMMENTS_VIEWMODE_LINEAR}</a> | {$CONST.COMMENTS_VIEWMODE_THREADED})
+                {/if}
+                </div>
                 <div id="serendipity_commentlist">
                 {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
                 </div>
-        {/if}
 
             {if NOT empty($entry.is_entry_owner)}
                 <p>
@@ -149,9 +155,10 @@
                 {$COMMENTFORM}
 
                 {/if}
+            </div>
         {/if}
-    {$entry.backend_preview}
-    {serendipity_hookPlugin hook="entries_footer"}
+        {$entry.backend_preview}
+        {serendipity_hookPlugin hook="entries_footer"}
     {/foreach}
 {/foreach}
 {else}
