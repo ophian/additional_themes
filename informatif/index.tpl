@@ -1,52 +1,42 @@
 {if $is_embedded != true}
-{if $is_xhtml}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-{else}
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-           "http://www.w3.org/TR/html4/loose.dtd">
-{/if}
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}">
+<!DOCTYPE html>
+<html lang="{$lang}">
 <head>
-    <title>{$head_title|default:$blogTitle} {if $head_subtitle} - {$head_subtitle}{/if}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset={$head_charset}" />
-    <meta name="generator" content="Serendipity v.{$serendipityVersion}" />
+    <meta charset="{$head_charset}">
+    <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
 {if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
-    <meta name="robots" content="index,follow" />
+    <meta name="robots" content="index,follow">
 {else}
-    <meta name="robots" content="noindex,follow" />
+    <meta name="robots" content="noindex,follow">
 {/if}
-{if ($view == "entry")}
-    <link rel="canonical" href="{$entry.rdf_ident}" />
+{if $view == 'entry'}
+    <link rel="canonical" href="{$entry.rdf_ident}">
 {/if}
 {if in_array($view, ['start', 'entries'])}
-    <link rel="canonical" href="{$serendipityBaseURL}" />
+    <link rel="canonical" href="{$serendipityBaseURL}">
 {/if}
-    <link rel="stylesheet" type="text/css" href="{$head_link_stylesheet}" />
-    <link rel="alternate"  type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2" />
-    <link rel="alternate"  type="application/x.atom+xml"  title="{$blogTitle} Atom feed"  href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/atom.xml" />
+    <link rel="stylesheet" type="text/css" href="{$head_link_stylesheet}">
+{if $template_option.colorset == 'beige'}
+    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="beige.css"}">
+{elseif $template_option.colorset == 'pink'}
+    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="pink.css"}">
+{elseif $template_option.colorset == 'caramel'}
+    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="caramel.css"}">
+{elseif $template_option.colorset == 'olive'}
+    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="olive.css"}">
+{elseif $template_option.colorset == 'black'}
+    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="black.css"}">
+{/if}
+    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="black.css"}">
+    <link rel="alternate" type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2">
+    <link rel="alternate" type="application/x.atom+xml" title="{$blogTitle} Atom feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/atom.xml">
 {if $entry_id}
-    <link rel="pingback" href="{$serendipityBaseURL}comment.php?type=pingback&amp;entry_id={$entry_id}" />
+    <link rel="pingback" href="{$serendipityBaseURL}comment.php?type=pingback&amp;entry_id={$entry_id}">
 {/if}
 
 {serendipity_hookPlugin hook="frontend_header"}
-{if $template_option.colorset == 'beige'}
-<link rel="stylesheet" type="text/css" href="{serendipity_getFile file="beige.css"}" />
-{elseif $template_option.colorset == 'pink'}
-<link rel="stylesheet" type="text/css" href="{serendipity_getFile file="pink.css"}" />
-{elseif $template_option.colorset == 'caramel'}
-<link rel="stylesheet" type="text/css" href="{serendipity_getFile file="caramel.css"}" />
-{elseif $template_option.colorset == 'olive'}
-<link rel="stylesheet" type="text/css" href="{serendipity_getFile file="olive.css"}" />
-{elseif $template_option.colorset == 'black'}
-<link rel="stylesheet" type="text/css" href="{serendipity_getFile file="black.css"}" />
-{/if}
-
-{if $template_option.colorset == 'beige'}
-<link rel="stylesheet" type="text/css" href="{serendipity_getFile file="beige.css"}" />
-{/if}
-
 </head>
 
 <body>
@@ -58,9 +48,8 @@
 
 <div id="header">
     <div id="logo">
-    <h2><a  href="{$serendipityBaseURL}">{$head_title|default:$blogTitle}</a></h2>
-
-    <h1><a  href="{$serendipityBaseURL}">{$head_subtitle|default:$blogDescription}</a> </h1>
+        <h2><a href="{$serendipityBaseURL}">{$head_title|default:$blogTitle}</a></h2>
+        <h1><a href="{$serendipityBaseURL}">{$head_subtitle|default:$blogDescription}</a></h1>
     </div>
     <div id="menu">
         <ul>
@@ -71,34 +60,30 @@
     </div>
 </div>
 
-<table id="mainpane">
-    <tr>&nbsp;
+<div id="mainpane">
+    <div id="serendipityLeftSideBar">
+        {serendipity_printSidebar side="left"}
+    </div>
+    <div id="serendipityRightSideBar">
+        {serendipity_printSidebar side="right"}
+    </div>
+    <div id="content">
+        {$CONTENT}
+    </div>
+</div>
 
-{if $leftSidebarElements > 0}
-        <td id="serendipityLeftSideBar" valign="top">{serendipity_printSidebar side="left"}</td>
-{/if}
-{if $rightSidebarElements > 0}
-        <td id="serendipityRightSideBar" valign="top">{serendipity_printSidebar side="right"}</td>
-{/if}<td id="content" valign="top">{$CONTENT}</td>
-    </tr>
-</table>
 <div id="footer">
     <p>
-    {$CONST.POWERED_BY} <a href="http://www.s9y.org">Serendipity {$serendipityVersion}</a>.<br />
-    Design<a href="http://www.freecsstemplates.org/">:Free CSS Templates</a>
-ported by <a href="http://katalog-it.de">RL</a>
+    {$CONST.POWERED_BY} <a href="https://ophian.github.io/">Serendipity Styx Edition</a>.<br />
+    Design<a href="http://www.freecsstemplates.org/">:Free CSS Templates</a> ported by <a href="http://katalog-it.de">RL</a>
     </p>
 </div>
-{/if}
+<script type="text/javascript" src="{serendipity_getFile file="informatif.js"}"></script>
 
+{/if}
 {$raw_data}
-
+{serendipity_hookPlugin hook="frontend_footer"}
 {if $is_embedded != true}
-
-{if $template_option.colorset == 'beige'}
-<link rel="stylesheet" type="text/css" href="{serendipity_getFile file="beige.css"}" />
-{/if}
-
 </body>
 </html>
 {/if}
