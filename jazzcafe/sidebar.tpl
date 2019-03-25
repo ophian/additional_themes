@@ -1,8 +1,14 @@
-<ul id="categories">
+{if $is_raw_mode}
+<div id="serendipity{$pluginside}SideBar">
+{/if}
 {foreach $plugindata AS $item}
-        <li>
-            {if $item.title != ""}<h3>{$item.title}</h3>{/if}
-            {$item.content}
-    </li>
+{if NOT empty($item.content)}
+    <div class="serendipitySideBarItem container_{$item.class}">
+        {if $item.title != ""}<h3 class="serendipitySideBarTitle {$item.class}">{$item.title}</h3>{/if}
+        <div class="serendipitySideBarContent">{$item.content}</div>
+    </div>
+{/if}
 {/foreach}
-</ul>
+{if $is_raw_mode}
+</div>
+{/if}

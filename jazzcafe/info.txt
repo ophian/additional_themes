@@ -1,3 +1,6 @@
-Name: JazzCafe (2009-08-17)
+Name: JazzCafe
 Author: Piotr Polak and Ahmet Usal
-Date: 04/03-2006
+Date: 2019-03-20
+
+Summary: Additional old mid-screen, concatenated sidebar to right theme from 2006-03-04 to 2008-08-17, with a fixed content width of 750px.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. <u>Not</u> mobile friendly!
