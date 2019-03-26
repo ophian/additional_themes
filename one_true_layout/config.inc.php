@@ -2,10 +2,7 @@
 
 if (IN_serendipity !== true) { die ("Don't hack!"); }
 
-// Be nice to the frontend users. They don't need the additional constants and file lookups. Only load them when in Admin mode.
-if (defined('IN_serendipity_admin')) {
-    @serendipity_plugin_api::load_language(dirname(__FILE__));
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 $template_config = array(
     array(
@@ -24,13 +21,6 @@ $template_config = array(
         'radio'         => array('value' => array('true', 'false'),
                                  'desc'  => array(SMALL_BOX, BELOW_ENTRY)),
         'default'       => 'true',
-    ),
-    array(
-        'var'           => 'amount',
-        'name'          => 'Number of navlinks',
-        'description'   => 'Enter the number of navlinks you want to use in the navbar.',
-        'type'          => 'string',
-        'default'       => '5',
     ),
 );
 
