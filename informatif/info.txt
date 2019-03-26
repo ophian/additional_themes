@@ -1,3 +1,6 @@
-Name: Informatif (2009-08-17)
+Name: Informatif
 Author: Free CSS Templates ported by Reinhard Linnemann 
-Date: 12-07-2007
+Date: 2019-03-25
+
+Summary: Additional old full-screen, sidebars-to-left theme from 2007-07-12 to 2009-08-17.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and Mobile friendly!
