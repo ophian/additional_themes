@@ -137,10 +137,12 @@ body.save_preview_body a {
 #content.save_preview_content {
     background: 0 none;
     border: 0;
-    padding: 0;
 }
 #page.save_preview_container {
     font-size: 1rem;
+}
+#content.preview_preview_content {
+    width: 100%;
 }
 
 /** Modern Serendipity image sizing default **/
