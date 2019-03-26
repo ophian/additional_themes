@@ -2,5 +2,5 @@ Name: One True Layout
 Author: Carl Galloway & Matthias Mees
 Date: 2019-03-26
 
-Summary: Additional old full-screen, 2-sidebar colorset theme from 2013-10-26.
+Summary: Additional old full-screen, 2-sidebar colorset theme from 2009-08-27.
 Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Fully responsive but <u>not</u> small-device mobile friendly!
