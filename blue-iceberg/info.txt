@@ -1,3 +1,6 @@
-Name: Blue Iceberg (2007-04-03)
+Name: Blue Iceberg
 Author: Evan Nemerson
-Date: 23/06/2004
+Date: 2019-03-27
+
+Summary: Additional old full-screen, 2-sidebar and styles only theme from 2004-06-23 to 2007-04-03, fully based on default template files.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Fully responsive and mobile friendly!
