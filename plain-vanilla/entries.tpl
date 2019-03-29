@@ -35,7 +35,7 @@
                 <a id="extended"></a>
                 {$entry.extended}
                 {/if}
-            {if $is_single_entry AND NOT $is_preview}
+            {if NOT $is_preview}
 
                 <div class="postmetadata{if $is_single_entry} graybox{/if}">
                     <small>
