@@ -295,6 +295,12 @@ ul#serendipity_syndication_list li:first-of-type,
 }
 
 /* entries */
+.serendipity_entry pre {
+    background-color: transparent;
+    border: 1px solid #444;
+    padding: .5em;
+}
+
 .serendipity_Entry_Date.freetag_cloud h2.serendipity_date,
 .serendipity_Entry_Date h3.serendipity_date {
     text-align: right;
