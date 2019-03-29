@@ -388,8 +388,8 @@ input, select, textarea {
     padding: 0;
     background-color: #999;
     color: #333;
-  font-family: verdana, arial, sans-serif;
-  border: thin white dotted;
+    font-family: verdana, arial, sans-serif;
+    border: thin white dotted;
     vertical-align: top;
     min-width: 170px;
     width: 42%;
@@ -682,8 +682,10 @@ div.serendipity_entryFooter {
 .serendipity_comment .serendipity_commentBody {
     font-size: medium;
 }
+.comments_for_entry .comment_content,
 .serendipity_comment .serendipity_commentBody {
     border: 1px solid #ddd;
+    background-color: #fafafa;
 }
 .serendipity_content_message,
 .serendipity_commentBody,
