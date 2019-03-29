@@ -203,7 +203,7 @@ code, pre {
 #wrapper {
     width: 700px;
     margin: 0 auto;
-    box-shadow: 0px -10px 10px #888; }
+    box-shadow: 0 -10px 10px #888; }
 #header {
     height: auto;
     color: #fff; }
@@ -382,8 +382,8 @@ body {
     font-size: 9pt;
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 #serendipity_banner {
@@ -427,8 +427,8 @@ a.homelink1:visited,
 #serendipity_banner h1 {
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
-    font-size : 20pt;
-    margin: 0px;
+    font-size: 20pt;
+    margin: 0;
     text-decoration: none;
 }
 
@@ -440,7 +440,7 @@ a.homelink2:visited,
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16pt;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 5px;
     text-decoration: none;
 }
@@ -511,7 +511,7 @@ a.homelink2:visited,
 
 img.serendipity_entryIcon {
     float: right;
-    border: 0px;
+    border: 0;
     padding: 5px;
     clear: both;
 }
@@ -611,7 +611,7 @@ div.serendipityPlug {
 
 div.serendipityPlug a {
     text-decoration: none;
-    border: 0px;
+    border: 0;
 }
 
 .serendipityImageButton {
@@ -681,10 +681,10 @@ td.serendipity_calendarHeader a:hover {
 }
 
 .serendipity_imageComment_img, .serendipity_imageComment_img img {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     text-align: center;
-    border: 0px;
+    border: 0;
 }
 
 .serendipity_imageComment_txt {
@@ -810,7 +810,7 @@ code, pre {
 
 .one-image {
     text-align: center;
-    border: 0px;
+    border: 0;
 }
 
 /* gallery plugin */
@@ -884,7 +884,7 @@ code, pre {
 
 .serendipity_freeTag_xmlButton {
     text-align: absolute-middle;
-    border: 0px;
+    border: 0;
 }
 
 /* style for rss image of tags */
@@ -922,7 +922,7 @@ a.serendipity_image_link:link,
 a.serendipity_image_link:visited,
 a.serendipity_image_link:active {
     background: none;
-    border: 0px;
+    border: 0;
 }
 
 /* a little fix for entry image link - we do NOT show link symbol on the right */

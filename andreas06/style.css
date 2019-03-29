@@ -735,10 +735,10 @@ f   ont-weight: 400;
     color: #505050; }
 
 .comment_link {
-    padding : 0 0 0 14px;
+    padding: 0 0 0 14px;
     background: url('{TEMPLATE_PATH}img/comments.gif') no-repeat 0 50%; }
 .trackback_link {
-    padding : 0 0 0 14px;
+    padding: 0 0 0 14px;
     background: url('{TEMPLATE_PATH}img/trackbacks.gif') no-repeat 0 50%; }
 
 .serendipity_entries_footer {
