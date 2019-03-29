@@ -308,7 +308,8 @@ function xkur_helper_store($special_key, $special_val, &$eventData) {
     }
 }
 
-function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$addData) {
+if (!function_exists('serendipity_plugin_api_pre_event_hook')) {
+  function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$addData) {
     global $serendipity;
 
     // Check what Event is coming in, only react to those we want.
@@ -360,6 +361,7 @@ function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$add
             break;
     }
 
+  }
 }
 
 ?>
