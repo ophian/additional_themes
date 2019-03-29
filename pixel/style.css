@@ -188,6 +188,10 @@ p code, p samp, p kbd {
 [type="radio"] {
     vertical-align: middle;
     margin-right: 2px; }
+.serendipity_entry pre {
+    overflow: auto; }
+.serendipity_entry pre strong {
+    font-size: initial; }
 .serendipity_Entry_Date {
     margin-bottom: 2.5em; }
 .comments_by_author_pagination.bottom {
