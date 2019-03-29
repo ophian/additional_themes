@@ -197,6 +197,9 @@ p code, p samp, p kbd {
 
 /** Theme fixes depending presets and theme styles **/
 
+body#serendipity_comment_page {
+    background: #fff;
+    padding: .5em; }
 [type="checkbox"],
 [type="radio"] {
     vertical-align: middle;
@@ -213,6 +216,12 @@ p code, p samp, p kbd {
     list-style: none;
     margin: 0;
     padding: 0; }
+#serendipity_comment_page .serendipity_commentsTitle,
+.popup_content.serendipity_commentsTitle {
+    margin-bottom: 1em; }
+#serendipity_comment_page .serendipity_commentsTitle {
+    font-weight: bold;
+    font-size: 1.2rem; }
 .serendipity_commentBody,
 .comment_content {
     display: block;
