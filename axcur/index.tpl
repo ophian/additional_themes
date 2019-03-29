@@ -59,14 +59,17 @@
                         <div id="slogan-text" class="art-Logo-text"><a href="{$serendipityBaseURL}">{$head_subtitle|default:$blogDescription}</a></div>
                     </div>
                 </div>
-            {if $template_option.enablehmenue =="true"}
+            {if $template_option.enablehmenue === true}
+
                 <div class="art-nav">
                     <div class="l"></div>
                     <div class="r"></div>
                     <ul class="art-menu">
                         <li>
-                            <a href="{$serendipityBaseURL}" class=" active"><span class="l"></span><span class="r"></span>{if $currpage==$serendipityBaseURL}  {/if}><span class="t">{$CONST.HOMEPAGE}</span></a></li>
+                            <a href="{$serendipityBaseURL}" class=" active"><span class="l"></span><span class="r"></span>{if $currpage==$serendipityBaseURL}  {/if}><span class="t">{$CONST.HOMEPAGE}</span></a>
+                        </li>
                     {foreach $navlinks AS $navlink}
+
                         <li>
                             <a href="{$navlink.href}"><span class="l"></span><span class="r"></span><span class="t">{$navlink.title}</span></a>
                         {if $navlink.drop != "0"}
@@ -75,32 +78,34 @@
                                 <li> <a {if $currpage==$sub.href}class="currentpage" {/if}href="{$sub.href}" title="{$sub.title}" >{$sub.title}</a></li>
                             {/foreach}
                             </ul>
-                            {/if}
+                        {/if}
+
                         </li>
                     {/foreach}
                     {if $is_logged_in}
+
                         <li>
                         <a href="#"><span class="l"></span><span class="r"></span><span class="t">{$CONST.EDIT}</span></a>
                             <ul>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=personal">{$CONST.PERSONAL_SETTINGS}</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=entries&amp;serendipity[adminAction]=new">{$CONST.ENTRIES}</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=entries&amp;serendipity[adminAction]=editSelect">{$CONST.EDIT_ENTRIES}</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=category&amp;serendipity[adminAction]=view">{$CONST.CATEGORIES}</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages">{$CONST.PLUGIN_STATICPAGELIST_TITLE_DEFAULT}</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=media&amp;serendipity[adminAction]=addSelect">{$CONST.ADD_MEDIA}</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=media">{$CONST.MEDIA_LIBRARY}</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=media&amp;serendipity[adminAction]=directorySelect">{$CONST.MANAGE_DIRECTORIES}</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=media&amp;serendipity[adminAction]=sync">{$CONST.CREATE_THUMBS}</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=templates">{$CONST.MANAGE_STYLES}</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=plugins">{$CONST.CONFIGURE_PLUGINS}</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=plugins&amp;serendipity[adminAction]=addnew">+ Sidebar-Plugin</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=plugins&amp;serendipity[adminAction]=addnew&amp;serendipity[type]=event">+ Event-Plugin</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=configuration">{$CONST.CONFIGURATION}</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=users">{$CONST.MANAGE_USERS}</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=groups">{$CONST.MANAGE_GROUPS}</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=import">{$CONST.IMPORT_ENTRIES}</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=export">{$CONST.EXPORT_ENTRIES}</a></li>
-                                <li><a href="{$serendipityBaseURL}/serendipity_admin.php?serendipity[adminModule]=logout" rel="gb_page_center[500, 500]">Logout</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=personal">{$CONST.PERSONAL_SETTINGS}</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=entries&amp;serendipity[adminAction]=new">{$CONST.ENTRIES}</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=entries&amp;serendipity[adminAction]=editSelect">{$CONST.EDIT_ENTRIES}</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=category&amp;serendipity[adminAction]=view">{$CONST.CATEGORIES}</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages">{$CONST.PLUGIN_STATICPAGELIST_TITLE_DEFAULT}</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=media&amp;serendipity[adminAction]=addSelect">{$CONST.ADD_MEDIA}</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=media">{$CONST.MEDIA_LIBRARY}</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=media&amp;serendipity[adminAction]=directorySelect">{$CONST.MANAGE_DIRECTORIES}</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=media&amp;serendipity[adminAction]=sync">{$CONST.CREATE_THUMBS}</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=templates">{$CONST.MANAGE_STYLES}</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=plugins">{$CONST.CONFIGURE_PLUGINS}</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=plugins&amp;serendipity[adminAction]=addnew">+ Sidebar-Plugin</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=plugins&amp;serendipity[adminAction]=addnew&amp;serendipity[type]=event">+ Event-Plugin</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=configuration">{$CONST.CONFIGURATION}</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=users">{$CONST.MANAGE_USERS}</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=groups">{$CONST.MANAGE_GROUPS}</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=import">{$CONST.IMPORT_ENTRIES}</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=export">{$CONST.EXPORT_ENTRIES}</a></li>
+                                <li><a href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=logout" rel="gb_page_center[500, 500]">Logout</a></li>
                             </ul>
                         </li>
                     {else}
@@ -109,23 +114,22 @@
                         </li>
                     {/if}
                     </ul>
-                </div>
+                </div><!-- art-nav end -->
             {/if}
-                  <div class="art-contentLayout">
+
+                <div class="art-contentLayout">
                     <div class="art-sidebar1">
-                         {if $leftSidebarElements > 0}{serendipity_printSidebar side="left"}{/if}
-                         {if $rightSidebarElements > 0}{serendipity_printSidebar side="right"}{/if}
+                        {if $leftSidebarElements > 0}{serendipity_printSidebar side="left"}{/if}
+                        {if $rightSidebarElements > 0}{serendipity_printSidebar side="right"}{/if}
 
                     </div>
                     <div class="art-content">
-
-                    {$CONTENT}
-                     </div>
-                </div>
+                        {$CONTENT}
+                    </div><!-- art-content end -->
+                </div><!-- art-contentLayout end -->
                 <div class="cleared"></div>
                 <div class="art-Footer">
                     <div class="art-Footer-inner">
-
                         <div class="art-Footer-text">
                             <p>
                                 {$date|default:''|formatTime:'%Y'} <span class="url fn org">{$blogTitle}</span> |
@@ -135,11 +139,13 @@
                     </div>
                     <div class="art-Footer-background"></div>
                 </div>
-            </div>
-        </div>
+            </div><!-- art-Sheet body end -->
+        </div><!-- art-Sheet end -->
         <div class="cleared"></div>
         <p class="art-page-footer">&nbsp;</p>
-    </div>
+    </div><!-- art-main end -->
+
+</div><!-- wrap end  -->
 
 {/if}
 {$raw_data}

@@ -3,35 +3,35 @@
 {if NOT empty($entries)}{* catch a staticpage startpage which has no $entries array set *}
     {foreach $entries AS $dategroup}
     <div class="art-Post">
-        <div class="art-Post-tl"></div>
-        <div class="art-Post-tr"></div>
-        <div class="art-Post-bl"></div>
-        <div class="art-Post-br"></div>
-        <div class="art-Post-tc"></div>
-        <div class="art-Post-bc"></div>
-        <div class="art-Post-cl"></div>
-        <div class="art-Post-cr"></div>
-        <div class="art-Post-cc"></div>
-        <div class="art-Post-body">
-            <div class="art-Post-inner art-article">
+      <div class="art-Post-tl"></div>
+      <div class="art-Post-tr"></div>
+      <div class="art-Post-bl"></div>
+      <div class="art-Post-br"></div>
+      <div class="art-Post-tc"></div>
+      <div class="art-Post-bc"></div>
+      <div class="art-Post-cl"></div>
+      <div class="art-Post-cr"></div>
+      <div class="art-Post-cc"></div>
+      <div class="art-Post-body">
+    {if $dategroup.is_sticky}
 
-            {if $dategroup.is_sticky}
-                <div class="art-PostHeaderIcons art-metadata-icons">
-                    <img class="art-metadata-icon" src="{serendipity_getFile file="img/PostDateIcon.png"}" width="18" height="18" alt="PostDateIcon">
-                    {$CONST.STICKY_POSTINGS}
-                </div>
-            {else}
+        <div class="art-PostHeaderIcons art-metadata-icons">
+            <img class="art-metadata-icon" src="{serendipity_getFile file="img/PostDateIcon.png"}" width="18" height="18" alt="PostDateIcon">
+            {$CONST.STICKY_POSTINGS}
+        </div>
+    {else}
 
-                <div class="art-PostHeaderIcons art-metadata-icons">
-                    <img class="art-metadata-icon" src="{serendipity_getFile file="img/PostDateIcon.png"}" width="18" height="18" alt="PostDateIcon">
-                    {$dategroup.date|formatTime:DATE_FORMAT_ENTRY}
-                </div>
-            {/if}
+        <div class="art-PostHeaderIcons art-metadata-icons">
+            <img class="art-metadata-icon" src="{serendipity_getFile file="img/PostDateIcon.png"}" width="18" height="18" alt="PostDateIcon">
+            {$dategroup.date|formatTime:DATE_FORMAT_ENTRY}
+        </div>
+    {/if}
 
     {foreach $dategroup.entries AS $entry}
         {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
-           <h2 class="art-PostHeaderIcon-wrapper"><span class="art-PostHeader"><a href="{$entry.link}">{$entry.title}</a></span></h2>
-           <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename}{if NOT empty($entry.is_entry_owner)} serendipity_entry_author_self{/if}">
+        <div class="art-Post-inner art-article">
+            <h2 class="art-PostHeaderIcon-wrapper"><span class="art-PostHeader"><a href="{$entry.link}">{$entry.title}</a></span></h2>
+            <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename}{if NOT empty($entry.is_entry_owner)} serendipity_entry_author_self{/if}">
               {if NOT empty($entry.categories)}
                  <span class="serendipity_entryIcon">
                   {foreach $entry.categories AS $entry_category}
@@ -46,7 +46,10 @@
                 </div>
 
             {if $entry.is_extended}
-                <div class="serendipity_entry_extended"><a id="extended"></a>{$entry.extended}</div>
+                <div class="serendipity_entry_extended">
+                    <a id="extended"></a>
+                    {$entry.extended}
+                </div>
             {/if}
 
             {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
@@ -98,8 +101,8 @@
             </div>
         {/if}
 
-          </div>
-        </div>
+            </div><!-- s_entry end -->
+
         <!--
         <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
@@ -111,6 +114,7 @@
                  dc:identifier="{$entry.rdf_ident}" />
         </rdf:RDF>
         -->
+
         {$entry.plugin_display_dat}
 
         {if $is_single_entry AND NOT $is_preview}
@@ -192,12 +196,14 @@
                 </div>
 
                 {/if}
-            </div>
+            </div><!-- commentsect end -->
         {/if}
+        </div><!-- Post-inner end -->
 
         {$entry.backend_preview}
     {/foreach}
-    </div>
+      </div><!-- Post body -->
+    </div><!-- post end -->
 {/foreach}
 {else}
     {if NOT $plugin_clean_page AND $view != '404'}
