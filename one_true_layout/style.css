@@ -273,6 +273,12 @@ ul#serendipity_syndication_list li:first-of-type,
 }
 
 /* entries */
+.serendipity_entry pre {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    padding: .25em;
+}
+
 .serendipity_Entry_Date.freetag_cloud h2.serendipity_date,
 .serendipity_Entry_Date h3.serendipity_date {
     text-align: right;
@@ -1322,7 +1328,7 @@ body#modern, #modern .s9y_wrap {
 
 #modern a.homelink1, #modern a.homelink1:hover, #modern a.homelink1:link, #modern a.homelink1:visited, #modern #serendipity_banner h1 {
     padding-left: 5px;
-    text-transform:l owercase;
+    text-transform: lowercase;
     color: #8DC919;
     font-size: 26pt;
     font-family: 'Trebuchet MS', Verdana, Arial, Geneva, Helvetica, sans-serif; }
@@ -1332,13 +1338,19 @@ body#modern, #modern .s9y_wrap {
     color: #8DC919;
     font-size: 12pt; }
 #modern #navbar {
-    top:97px; background-image: url('{TEMPLATE_PATH}img/span_bg.gif'); height: 33px;    }
+    top: 97px;
+    background-image: url('{TEMPLATE_PATH}img/span_bg.gif');
+    height: 33px;    }
 #modern #navbar li a, #modern #navbar li a:link {
-    color: #fff; font: normal 15pt 'Trebuchet MS', Verdana, Arial, sans-serif;text-transform:lowercase; }
+    color: #fff;
+    font: normal 15pt 'Trebuchet MS', Verdana, Arial, sans-serif;
+    text-transform: lowercase; }
 #modern #navbar li a:hover {
-    color: #fff;background-color: #76BEE5;text-decoration:none; }
+    color: #fff;
+    background-color: #76BEE5;
+    text-decoration: none; }
 #modern #footer a {
-    color:#151515; }
+    color: #151515; }
 #modern .serendipity_entry a:link, #modern .serendipity_entry a:visited {
     text-decoration: underline; }
 #modern .serendipity_date {
@@ -1421,17 +1433,25 @@ body#modern, #modern .s9y_wrap {
 
 
 /****** Caramel Colorset ******/
-body#caramel, #caramel .s9y_wrap {background-color: #f7eed4; color: #000; }
+body#caramel, #caramel .s9y_wrap {
+    background-color: #f7eed4;
+    color: #000; }
 
-#caramel p { text-align: justify; }
+#caramel p {
+    text-align: justify; }
 
-#caramel code, #caramel pre { font-size: .95em; }
+#caramel code, #caramel pre {
+    font-size: .95em; }
 
-#caramel #serendipity_banner {background: url({TEMPLATE_PATH}img/caramelbackground.png);
-   border-left: none; border-right: none; }
+#caramel #serendipity_banner {
+    background: url('{TEMPLATE_PATH}img/caramelbackground.png');
+    border-left: none;
+    border-right: none; }
 
-#caramel #navbar {background: url({TEMPLATE_PATH}img/navbar_grey_monotone.png);
-   border-top: 1px solid #000; border-bottom: 1px solid #000; }
+#caramel #navbar {
+    background: url('{TEMPLATE_PATH}img/navbar_grey_monotone.png');
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000; }
 
 #caramel .serendipity_title a, #caramel .serendipity_title a:link,
 #caramel .serendipity_title a:visited, #caramel .serendipity_title a:active,
@@ -1496,7 +1516,7 @@ body#caramel, #caramel .s9y_wrap {background-color: #f7eed4; color: #000; }
 #caramel #serendipityQuickSearchTermField {
     width: 95%; }
 
-#caramel .serendipitySideBarContent input, #caramel .serendipitySideBarContent select {
+#caramel .serendipitySideBarContent input:not(type="checkbox"), #caramel .serendipitySideBarContent select {
    width: 100%; }
 
 #caramel .serendipitySideBarTitle {
