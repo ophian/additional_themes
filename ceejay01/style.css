@@ -250,6 +250,12 @@ ul#serendipity_syndication_list li:first-of-type,
 }
 
 /* entries */
+.serendipity_entry pre {
+    background-color: transparent;
+    border: 1px solid #eee;
+    padding: .25em;
+}
+
 .serendipity_Entry_Date.freetag_cloud h2.serendipity_date,
 .serendipity_Entry_Date h3.serendipity_date {
     text-align: right;
@@ -657,10 +663,10 @@ h3 a:link, h3 a:visited, h3 a:active {
     color: #f9f7e8;
     font-size: 8pt;
     font-weight: bolder;
-    text-decoration :none;
+    text-decoration: none;
     margin: 0;
     padding: 0;
-    line-height:10pt; }
+    line-height: 10pt; }
 
 #search {
     width: 835px;
