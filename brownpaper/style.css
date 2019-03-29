@@ -411,6 +411,12 @@ ul#serendipity_syndication_list li:first-of-type,
 }
 
 /* entries */
+.serendipity_entry pre {
+    background-color: transparent;
+    border: 1px solid #cbcbcb;
+    padding: .25em;
+}
+
 .serendipity_Entry_Date.freetag_cloud h2.serendipity_date,
 .serendipity_Entry_Date h3.serendipity_date {
     text-align: right;
@@ -757,8 +763,8 @@ a.homelink1:visited,
 #serendipity_banner h1 {
     color: #000;
     font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
-    font-size : 20px;
-    padding-left:15px;
+    font-size: 20px;
+    padding-left: 15px;
     padding-top: 10px;
     margin: 0;
     text-decoration: none;
