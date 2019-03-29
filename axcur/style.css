@@ -199,6 +199,10 @@ body.save_preview_body {
     font-size: initial;
 }
 
+.art-Post {
+    padding-bottom: 1em;
+}
+
 .serendipity_freetag_taglist {
     display: inline-table; }
 #art-main .serendipity_freetag_taglist .ftr-empty {
@@ -228,6 +232,12 @@ table.serendipity_calendar {
 }
 
 /* entries */
+.serendipity_entry pre {
+    background-color: transparent;
+    border: 1px solid #eee;
+    padding: .25em;
+}
+
 .serendipity_entry_read_more {
     margin: 1em auto;
 }
@@ -675,7 +685,7 @@ display: block;
 position: absolute;
 left: 0;
 top: 19px;
-width: 255px;
+width: 280px;
 }
 
 h1.art-Logo-name,h1.art-Logo-name a,h1.art-Logo-name a:link,h1.art-Logo-name a:visited,h1.art-Logo-name a:hover {
