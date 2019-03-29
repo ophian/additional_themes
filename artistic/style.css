@@ -231,6 +231,12 @@ table.serendipity_calendar {
 }
 
 /* entries */
+.serendipity_entry pre {
+    background-color: transparent;
+    border: 1px solid #eee;
+    padding: .25em;
+}
+
 .serendipity_entry_read_more {
     margin: 1em auto;
 }
