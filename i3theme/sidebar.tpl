@@ -2,7 +2,7 @@
 <div id="serendipity{$pluginside}SideBar">
 {/if}
 {foreach $plugindata AS $item}
-    {if $item.class != "serendipity_quicksearch_plugin" AND NOT empty($item.content)}
+    {if $item.class != "serendipity_plugin_quicksearch" AND NOT empty($item.content)}
     <div id="{$item.id|replace:'@':''}" class="dbx-box">
         <h3 class="dbx-handle">{$item.title}</h3>
         <div class="dbx-content">{$item.content}</div>
