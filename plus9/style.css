@@ -1009,7 +1009,7 @@ p.song {
     padding: 8px 0 0 19px;
 }
 
-#serendipity_calendar_plugin  h3 {
+#serendipity_calendar_plugin h3 {
     text-align: center;
     font: bold 20px Arial, Helvetica, sans-serif;
     border-bottom: 1px solid #bbbbbb;
@@ -1245,15 +1245,15 @@ table.serendipity_calendar a  {
 .serendipity_msg_notice { color: #2ecc40; }
 
 /* Sidebar plugins */
-.container_serendipity_archives_plugin ul,
-.container_serendipity_syndication_plugin ul,
-.container_serendipity_authors_plugin ul,
+.container_serendipity_plugin_archives ul,
+.container_serendipity_plugin_syndication ul,
+.container_serendipity_plugin_authors ul,
 .container_serendipity_plugin_entrylinks ul {
     list-style: none;
     padding-left: 0;
 }
 
-.container_serendipity_authors_plugin .serendipitySideBarContent div {
+.container_serendipity_plugin_authors .serendipitySideBarContent div {
     margin: 5px 0;
     padding-left: 0;
 }
