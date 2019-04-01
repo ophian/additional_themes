@@ -2132,8 +2132,8 @@ img.serendipity_freeTag_xmlButton{border: none;padding-left: 2px}
 .container_serendipity_plugin_comments br{line-height: .5em}
 .plugin_comment_wrap{display: block;border-top: 1px solid #ddecfb;border-bottom: 1px solid #ddecfb;background-color: #fafbfc;color: #505050;margin: 15px 0 0}
 .plugin_comment_body{font-style: oblique;padding: 3px 0}
-.container_serendipity_archives_plugin ul,.container_serendipity_syndication_plugin ul,.container_serendipity_authors_plugin ul,.container_serendipity_plugin_entrylinks ul{list-style: none;margin-left: 0;padding-left: 12px}
-.container_serendipity_authors_plugin .serendipitySideBarContent div{padding-left: 12px;margin: 5px 0}
+.container_serendipity_plugin_archives ul,.container_serendipity_plugin_syndication ul,.container_serendipity_plugin_authors ul,.container_serendipity_plugin_entrylinks ul{list-style: none;margin-left: 0;padding-left: 12px}
+.container_serendipity_plugin_authors .serendipitySideBarContent div{padding-left: 12px;margin: 5px 0}
 .serendipity_history_intro,.serendipity_history_info{margin-bottom: 3px}
 .serendipity_history_body{margin-bottom: 10px}
 .serendipity_recententries_entrylink{margin-bottom: 2px}
