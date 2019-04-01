@@ -570,7 +570,9 @@ h2.serendipity_title, h4.serendipity_title {
 
 
 /********* Calendar Styles *********/
-.container_serendipity_calendar_plugin {width:158px;padding-right:2px;}
+.container_serendipity_plugin_calendar {
+    width: 158px;
+    padding-right: 2px; }
 
 table.serendipity_calendar {
     border-collapse: separate;
