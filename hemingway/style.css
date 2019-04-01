@@ -770,8 +770,8 @@ ul.dates, ul.counts, ul.blogroll ul, ul.pages, .serendipitySideBarContent {
 ul.dates li, ul.counts li, ul.blogroll ul li, ul.pages li,
 .container_serendipity_plugin_staticpage a,
 .container_serendipity_plugin_recententries .serendipitySideBarContent div,
-.container_serendipity_syndication_plugin .serendipitySideBarContent div,
-.container_serendipity_archives_plugin a, .container_serendipity_authors_plugin div,
+.container_serendipity_plugin_syndication .serendipitySideBarContent div,
+.container_serendipity_plugin_archives a, .container_serendipity_plugin_authors div,
 .serendipitySideBarContent li, .plugin_comment_wrap {
     list-style-type:none;
     margin:0;
@@ -783,22 +783,22 @@ ul.dates li, ul.counts li, ul.blogroll ul li, ul.pages li,
     padding:0;
 }
 .container_serendipity_plugin_staticpage .serendipitySideBarContent,
-.container_serendipity_syndication_plugin .serendipitySideBarContent,
+.container_serendipity_plugin_syndication .serendipitySideBarContent,
 .container_serendipity_plugin_recententries .serendipitySideBarContent,
-.container_serendipity_authors_plugin .serendipitySideBarContent,
-.container_serendipity_archives_plugin .serendipitySideBarContent,
+.container_serendipity_plugin_authors .serendipitySideBarContent,
+.container_serendipity_plugin_archives .serendipitySideBarContent,
 .container_serendipity_plugin_comments .serendipitySideBarContent,
 .container_serendipity_plugin_linklist .serendipitySideBarContent li {
     border-bottom: none;}
 .container_serendipity_plugin_linklist .serendipitySideBarContent li { padding:0; }
 
-.container_serendipity_authors_plugin .serendipitySideBarContent { margin-bottom:1em; }
+.container_serendipity_plugin_authors .serendipitySideBarContent { margin-bottom:1em; }
 .container_serendipity_plugin_staticpage a,
-.container_serendipity_archives_plugin a,
-.container_serendipity_superuser_plugin a { display:block; }
+.container_serendipity_plugin_archives a,
+.container_serendipity_plugin_superuser a { display:block; }
 
 .plugin_comment_wrap br,
-.container_serendipity_categories_plugin br,
+.container_serendipity_plugin_categories br,
 .container_serendipity_plugin_recententries br { line-height:0.01em; }
 .container_serendipity_plugin_shoutbox br { line-height:0.5em; }
 
@@ -809,7 +809,7 @@ ul.dates .date {
     color:#858585;
     padding:0 1.5em 0 0;
 }
-.container_serendipity_plugin_staticpage br, .container_serendipity_archives_plugin br { display:none; }
+.container_serendipity_plugin_staticpage br, .container_serendipity_plugin_archives br { display:none; }
 
 ul.counts .count {
     float:right;
@@ -819,8 +819,8 @@ ul.counts .count {
 ul.dates a, ul.counts a, ul.blogroll a, ul.pages a,
 .container_serendipity_plugin_staticpage a,
 .serendipitySideBarContent div a,
-.container_serendipity_archives_plugin a,
-.container_serendipity_superuser_plugin a,
+.container_serendipity_plugin_archives a,
+.container_serendipity_plugin_superuser a,
 .serendipitySideBarContent li a,
 .serendipitySideBarContent td a,
 .container_serendipity_plugin_recententries a,
@@ -831,8 +831,8 @@ ul.dates a, ul.counts a, ul.blogroll a, ul.pages a,
 ul.dates a:hover, ul.dates a:hover .date, ul.counts a:hover, ul.counts a:hover .count, ul.blogroll a:hover, ul.pages a:hover,
 .container_serendipity_plugin_staticpage a:hover,
 .serendipitySideBarContent div a:hover,
-.container_serendipity_archives_plugin a:hover,
-.container_serendipity_superuser_plugin a:hover,
+.container_serendipity_plugin_archives a:hover,
+.container_serendipity_plugin_superuser a:hover,
 .serendipitySideBarContent li a:hover,
 .serendipitySideBarContent td a:hover,
 .container_serendipity_plugin_recententries a:hover,

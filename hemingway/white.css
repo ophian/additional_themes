@@ -69,17 +69,17 @@ ul.dates, ul.counts, ul.blogroll li ul, ul.pages, .serendipitySideBarContent{
 	border-bottom:1px solid #C2C2C2; }
 
 ul.dates li, ul.counts li, ul.blogroll ul li, ul.pages li, .container_serendipity_plugin_staticpage a,
-.container_serendipity_plugin_recententries .serendipitySideBarContent div, .container_serendipity_syndication_plugin .serendipitySideBarContent div, .container_serendipity_archives_plugin a, .container_serendipity_authors_plugin div, .serendipitySideBarContent li, .plugin_comment_wrap{
+.container_serendipity_plugin_recententries .serendipitySideBarContent div, .container_serendipity_plugin_syndication .serendipitySideBarContent div, .container_serendipity_plugin_archives a, .container_serendipity_plugin_authors div, .serendipitySideBarContent li, .plugin_comment_wrap{
 	border-bottom:1px solid #C2C2C2;
 }
 
 ul.dates .date, ul.counts .count{
 	color:#7A7A7A;
 }
-ul.dates a, ul.counts a, ul.blogroll a, ul.pages a,.container_serendipity_plugin_staticpage a, .serendipitySideBarContent div a, .container_serendipity_archives_plugin a, .container_serendipity_superuser_plugin a, .serendipitySideBarContent li a, .serendipitySideBarContent td a, .container_serendipity_plugin_recententries a, .container_serendipity_plugin_recententries a {
+ul.dates a, ul.counts a, ul.blogroll a, ul.pages a,.container_serendipity_plugin_staticpage a, .serendipitySideBarContent div a, .container_serendipity_plugin_archives a, .container_serendipity_superuser_plugin a, .serendipitySideBarContent li a, .serendipitySideBarContent td a, .container_serendipity_plugin_recententries a, .container_serendipity_plugin_recententries a {
 	color:#404040;
 }
-ul.dates a:hover, ul.dates a:hover .date, ul.counts a:hover, ul.counts a:hover .count, ul.blogroll a:hover, ul.pages a:hover,.container_serendipity_plugin_staticpage a:hover, .serendipitySideBarContent div a:hover, .container_serendipity_archives_plugin a:hover, .container_serendipity_superuser_plugin a:hover, .serendipitySideBarContent li a:hover, .serendipitySideBarContent td a:hover, .container_serendipity_plugin_recententries a:hover,.dtree a.node:hover, .dtree a.nodeSel:hover, div.linklist a:hover { color:#000; }
+ul.dates a:hover, ul.dates a:hover .date, ul.counts a:hover, ul.counts a:hover .count, ul.blogroll a:hover, ul.pages a:hover,.container_serendipity_plugin_staticpage a:hover, .serendipitySideBarContent div a:hover, .container_serendipity_plugin_archives a:hover, .container_serendipity_superuser_plugin a:hover, .serendipitySideBarContent li a:hover, .serendipitySideBarContent td a:hover, .container_serendipity_plugin_recententries a:hover,.dtree a.node:hover, .dtree a.nodeSel:hover, div.linklist a:hover { color:#000; }
 
 #footer{ color: #666; }
 #footer a, #footer p.attributes a{
