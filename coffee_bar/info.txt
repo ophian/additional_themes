@@ -1,4 +1,6 @@
-Name: Coffee Bar v1.1 (2008-02-14)
+Name: Coffee Bar
 Author: David Cummins
-Date: 3-8-06
+Date: 2019-04-01
 
+Summary: Additional old mid-screen, concatenated sidebar to left theme from 2006-08-03 to 2008-02-14 as v1.1 with a fixed content size of 760px.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. <u>Not</u> mobile friendly! Authors successor theme of Coffee Cup (competition).
