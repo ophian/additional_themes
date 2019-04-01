@@ -1158,7 +1158,7 @@ dd {
 }
 
 .invisible,
-.container_serendipity_syndication_plugin .serendipity_xml_icon {
+.container_serendipity_plugin_syndication .serendipity_xml_icon {
     position: absolute;
     left: -9999em;
 }
