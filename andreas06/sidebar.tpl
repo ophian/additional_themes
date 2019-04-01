@@ -2,7 +2,7 @@
 <div id="serendipity{$pluginside}SideBar">
 {/if}
 {foreach $plugindata AS $item}
-{if $item.class =="serendipity_categories_plugin"}<a id="sectionmenu"></a>{/if}
+{if $item.class == "serendipity_plugin_categories"}<a id="sectionmenu"></a>{/if}
     <div class="serendipitySideBarItem container_{$item.class}">
         {if $item.title != ""}<h4 class="serendipitySideBarTitle {$item.class}">{$item.title}</h4>{/if}
         <div class="serendipitySideBarContent">{$item.content}</div>
