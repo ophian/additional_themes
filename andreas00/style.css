@@ -447,7 +447,7 @@ body {
     color: #286ea0;
 }
 
-#LeftSideBar .serendipity_categories_plugin, #LeftSideBar .serendipity_plugin_staticpage {
+#LeftSideBar .serendipity_plugin_categories, #LeftSideBar .serendipity_plugin_staticpage {
     display: none;
 }
 
