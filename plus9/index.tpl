@@ -36,10 +36,10 @@
             <ul>
                 <li><a href="{$serendipityBaseURL}index.php">Home</a></li>
             {if NOT empty($template_option.enablecat)}
-                <li><a href="#">{$CONST.CATEGORY}</a> <ul> {serendipity_showPlugin class="serendipity_categories_plugin"}</ul></li>
+                <li><a href="#">{$CONST.CATEGORY}</a> <ul> {serendipity_showPlugin class="serendipity_plugin_categories"}</ul></li>
             {/if}
             {if NOT empty($template_option.enablearch)}
-                <li><a href="#">{$CONST.ARCHIVES}</a> {serendipity_showPlugin class="serendipity_archives_plugin"}</li>
+                <li><a href="#">{$CONST.ARCHIVES}</a> {serendipity_showPlugin class="serendipity_plugin_archives"}</li>
             {/if}
             {if NOT empty($template_option.enablestat)}
                 <li><a href="#">{$template_option.statheader} </a><ul>{serendipity_showPlugin class="serendipity_plugin_staticpage"}</ul></li>
