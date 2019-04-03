@@ -1,4 +1,6 @@
 Name: Mozilla Modern Tribute
 Author: Garvin Hicking
-Date: 2004-03-02
-Require Serendipity: 0.8
+Date: 2019-04-03
+
+Summary: Additional old full-screen, 2-sidebar theme from 2004-03-02.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but <u>not</u> fully mobile friendly!
