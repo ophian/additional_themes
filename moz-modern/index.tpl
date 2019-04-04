@@ -53,7 +53,6 @@
     <div id="content">
 {/if}
         {$CONTENT}
-        {$raw_data}
     </div>
 
 {if $rightSidebarElements > 0}
