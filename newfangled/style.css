@@ -275,6 +275,12 @@ hr {
 }
 /* main grid end */
 
+.plainList {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
 #content .serendipity_Entry_Date {
   margin: 0 10px 10px;
 }
@@ -817,7 +823,7 @@ fieldset {
         width: 560px;
     }
     #mainpane .serendipitySideBarTitle {
-        border-radius: 9px 9px 0px 0px;
+        border-radius: 9px 9px 0 0;
     }
     #footer {
         width: 960px;
@@ -924,7 +930,7 @@ pre {
     padding-right: 10px;
     padding-top: 10px;
     /*margin-top: 15px;
-    border: 0px solid green*/
+    border: 0 solid green*/
 }
 
 #serendipityRightSideBar .boxed .title h3 {
@@ -943,9 +949,9 @@ pre {
 
 body {
     margin: 20px 0;
-    background: #FFFFFF;
+    background: #fff;
     font: normal small "Trebuchet MS", Arial, Helvetica, sans-serif;
-    color: #666666;
+    color: #666;
 }
 
 input, textarea {
@@ -1080,7 +1086,7 @@ a.homelink2:visited,
 }
 
 .serendipity_entry {
-    padding: 15px 15px 5px 0px;
+    padding: 15px 15px 5px 0;
     color: #444;
     font-size: 11px;
 }
@@ -1110,7 +1116,7 @@ div.serendipity_Entry_Date {
 .serendipity_commentsTitle {
     display: block;
     width: 100%;
-    color: #666666;
+    color: #666;
     font-size: small;
     font-weight: bold;
     margin-bottom: 5px;
@@ -1136,7 +1142,7 @@ div.serendipity_Entry_Date {
 
 #footer a {
     text-decoration: underline;
-    color: #666666;
+    color: #666;
 }
 
 #footer a:hover {
@@ -1147,7 +1153,7 @@ div.serendipity_Entry_Date {
 
 img.serendipity_entryIcon {
     float: right;
-    border: 0px;
+    border: 0;
     margin: 5px;
 }
 
@@ -1168,7 +1174,7 @@ td.serendipity_commentsLabel {
 
 .serendipity_commentForm {
     font-size: x-small;
-    color: #666666;
+    color: #666;
     margin-bottom: 13px;
     margin-right: 10px;
     margin-left: 10px;
@@ -1177,7 +1183,7 @@ td.serendipity_commentsLabel {
     font-size: x-small;
     margin-right: 10px;
     margin-left: 10px;
-    color: #666666;
+    color: #666;
     padding: 3px;
     border-right: 1px dotted #BBB;
     border-left: 1px dotted #BBB;
@@ -1228,37 +1234,37 @@ td.serendipity_calendarHeader a:hover {
 div.serendipityPlug, div.serendipityPlug a {
     font-size: 11px;
     text-decoration: none;
-    border: 0px;
+    border: 0;
     text-align: center;
 }
 
 /* Container for each item on the side bar */
 .serendipitySideBarContent {
-    border-radius: 0px 0px 9px 9px;
-    padding-right: 0px;
-    margin-right: 0px;
+    border-radius: 0 0 9px 9px;
+    padding-right: 0;
+    margin-right: 0;
     padding-left: 5px;
     background: url('{TEMPLATE_PATH}img/img07.gif') repeat-x;
 }
 div.serendipitySideBarItem {
-    color: #666666;
+    color: #666;
     font-family: 'Trebuchet MS', sans-serif;
     font-size: x-small;
     text-align: left;
     margin-bottom: 15px;
-    border: 0px solid green;
+    border: 0 solid green;
     line-height: normal;
     padding: 3px;
-    margin-right: 0px;
+    margin-right: 0;
     margin-bottom:10px;
-    margin-top: 0px;
-    padding:  0px;
-    border-top: 1px solid #FFFFFF;
+    margin-top: 0;
+    padding:  0;
+    border-top: 1px solid #fff;
 }
 
 /* title of an individual item */
 .serendipitySideBarTitle {
-    border-radius: 9px 9px 0px 0px;
+    border-radius: 9px 9px 0 0;
     color: #fff;
     font-family: Arial, sans-serif;
     font-size: x-small;
@@ -1307,6 +1313,32 @@ blockquote {
     border-bottom: 1px solid #c3c3b5;
     border-top: 1px solid #c3c3b5;
     padding: 3px;
-    border-radius: 0px 8px 8px 0px;
+    border-radius: 0 8px 8px 0;
 }
+
+/*** Additional plugin styles needed for the modernized output code ***/
+
+.container_serendipity_plugin_authors .serendipitySideBarContent div {
+    margin: 5px 0;
+    padding-left: 0;
+}
+
+.serendipity_history_author { font-weight: bolder; }
+
+.serendipity_history_intro,
+.serendipity_history_info { margin-bottom: 3px; }
+
+.serendipity_history_body { margin-bottom: 10px; }
+
+.serendipity_recententries_entrylink { margin-bottom: 2px; }
+
+.serendipity_recententries_entrydate { margin: 0 0 4px 0; }
+
+.plugin_comment_body { padding: 3px 0; }
+
+.serendipity_shoutbox_date { margin: 5px 0 2px 0; }
+
+.serendipity_shoutbox_comment { padding: 3px 0; }
+
+/*** End Additional plugin styles ***/
 

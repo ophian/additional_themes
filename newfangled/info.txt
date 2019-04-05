@@ -1,6 +1,6 @@
 Name: newfangled
 Author:  based on Free CSS Templates. - ported by Reinhard
-Date: 2019-04-03
+Date: 2019-04-04
 
 Summary: Additional old mid-screen, 2-sidebar theme from 2007-07-07 to 2009-08-27, with a fixed maximum content size of 960px width.
 Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and mobile friendly!
