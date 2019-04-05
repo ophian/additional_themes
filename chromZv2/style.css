@@ -629,7 +629,7 @@ h3.serendipity_date {
 }
 */
 body {
-    background: #FFFFFF url('{TEMPLATE_PATH}images/img01.gif') repeat-x;
+    background: #fff url('{TEMPLATE_PATH}images/img01.gif') repeat-x;
     font: normal small Verdana, Arial, Helvetica, sans-serif;
     color: #959595;
 }
@@ -670,7 +670,7 @@ ol {
 ol li {}
 
 a {
-    color: #666666;
+    color: #666;
 }
 
 a:hover {
@@ -718,7 +718,7 @@ input, textarea {
     border-bottom: 5px solid #CC6600;
     font-size: xx-small;
     font-weight: bold;
-    color: #FFFFFF;
+    color: #fff;
 }
 
 #menu a:hover, #menu .active a {
@@ -755,7 +755,7 @@ input, textarea {
     text-decoration: none;
     text-transform: lowercase;
     font-weight: normal;
-    color: #FFFFFF
+    color: #fff
 }
 
 .serendipity_entry {}
@@ -803,13 +803,13 @@ td.serendipity_commentsValue textarea {
 }
 
 .serendipity_commentForm {
-    font-size:x-small;
+    font-size: x-small;
     margin-bottom: 13px;
     margin-right: 10px;
     margin-left: 10px;
 }
 .serendipity_comment {
-    width:200px;
+    width: 200px;
     font-size: x-small;
     border-right: 1px dotted #BBB;
     overflow: auto;
@@ -820,16 +820,12 @@ td.serendipity_commentsValue textarea {
     padding-left: 5px;
 }
 
-td.serendipity_admin {
-    padding: 10px;
-}
-
 a {
     text-decoration:none;
 }
 
 a:hover {
-    color:#666666;
+    color: #666;
     text-decoration: underline; }
 
 table.serendipity_calendar td {
@@ -948,7 +944,7 @@ td.serendipity_admin_list_item {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 10px;
-    color: #FFFFFF;
+    color: #fff;
 }
 
 #serendipityRightSideBar .boxed .content {
@@ -1027,7 +1023,7 @@ td.serendipity_admin_list_item {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 10px;
-    color: #FFFFFF;
+    color: #fff;
     border-left: 1px solid #528489;
     border-right: 1px solid #528489;
 }
@@ -1036,7 +1032,7 @@ td.serendipity_admin_list_item {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 10px;
-    color: #FFFFFF;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -1071,7 +1067,7 @@ td.serendipity_admin_list_item {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 10px;
-    color: #FFFFFF;
+    color: #fff;
     border-left: 0;
     border-right: 0;
 }
