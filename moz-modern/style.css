@@ -229,6 +229,12 @@ hr {
     min-width: 200px;
 }
 
+.plainList {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
 #serendipity_syndication_list li:nth-of-type(1) a:hover {
     background: transparent;
 }
@@ -696,7 +702,7 @@ fieldset {
 
 body {
   background-color: #C7D0D9;
-  color: #FFFFFF;
+  color: #fff;
   font-family: Trebuchet MS, Tahoma, Verdana;
   margin: 0;
   padding: 0;
@@ -768,7 +774,7 @@ a.homelink2:visited,
 }
 
 #serendipity_banner h2 a:hover {
-  color: #FFFFFF;
+  color: #fff;
 }
 
 /* Calendar */
@@ -785,7 +791,7 @@ table.serendipity_calendar a,
 table.serendipity_calendar a:link,
 table.serendipity_calendar a:visited,
 table.serendipity_calendar a:hover {
-  color: #999999;
+  color: #999;
 }
 
 table.serendipity_calendar td {
@@ -839,7 +845,7 @@ td.serendipity_calendarHeader a:hover {
 }
 
 div.serendipitySideBarItem {
-  color: #666666;
+  color: #666;
   font-size: small;
   font-weight: normal;
   margin-bottom: 12px;
@@ -923,8 +929,7 @@ div.serendipity_Entry_Date {
   background-color: #BAC6D1;
 }
 
-.serendipity_title,
-.serendipity_Admin_title {
+.serendipity_title {
   border-top: 1px solid #8F9FB1;
   border-left: 5px solid #8F9FB1;
   font-size: large;
@@ -934,8 +939,7 @@ div.serendipity_Entry_Date {
   border-top-left-radius: 16px;
 }
 
-.serendipity_entry,
-.serendipity_admin {
+.serendipity_entry {
   background-color: #BAC6D1;
   margin-top: 10px;
   color: #494F5D;
@@ -1010,6 +1014,10 @@ img.serendipity_entryIcon {
   margin-top: 10px;
 }
 
+.serendipity_comment_author_self .serendipity_comment_source {
+    background-color: #fff;
+}
+
 /* Copyright stuff */
 
 #copyright {
@@ -1017,25 +1025,9 @@ img.serendipity_entryIcon {
   margin: 10px;
 }
 
-div.serendipityPlug {
-    text-align: center;
-}
-
-.serendipity_comment_author_self .serendipity_comment_source {
-    background-color: #FFFFFF;
-}
-
-
 /*** Additional plugin styles needed for the modernized output code ***/
-/*** added by Matthias 'YellowLed' Mees                             ***/
 
-.plainList {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-}
-
-.container_serendipity_authors_plugin .serendipitySideBarContent div {
+.container_serendipity_plugin_authors .serendipitySideBarContent div {
     margin: 5px 0;
     padding-left: 0;
 }
@@ -1053,8 +1045,11 @@ div.serendipityPlug {
 
 .plugin_comment_body { padding: 3px 0; }
 
+.serendipityPlug { text-align: center; }
+
 .serendipity_shoutbox_date { margin: 5px 0 2px 0; }
 
 .serendipity_shoutbox_comment { padding: 3px 0; }
 
-/*** End Additional plugin styles                                   ***/
+/*** End Additional plugin styles ***/
+
