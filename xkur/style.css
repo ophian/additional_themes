@@ -240,6 +240,12 @@ body.save_preview_body {
     background-color: #fefefe;
     font-size: small;
 }
+.plainList {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
 .sidebar .art-header-tag-icon {
     padding: 0 0 0 1rem;
 }
@@ -1082,7 +1088,6 @@ img.serendipity_freeTag_xmlButton {
 
 
 /*** Additional plugin styles needed for the modernized output code ***/
-/*** added by Matthias 'YellowLed' Mees                             ***/
 
 .container_serendipity_plugin_archives ul,
 .container_serendipity_plugin_syndication ul,
@@ -1115,7 +1120,7 @@ img.serendipity_freeTag_xmlButton {
 
 .serendipity_shoutbox_comment { padding: 3px 0; }
 
-/*** End Additional plugin styles                                   ***/
+/*** End Additional plugin styles ***/
 
 .art-Block {
     zoom:1;
