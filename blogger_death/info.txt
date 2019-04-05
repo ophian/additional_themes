@@ -1,5 +1,5 @@
 Name: Blogger-Death
-Author: Frederic Wenzel, blog.magenson.de
+Author: Frederic Wenzel
 Date: 2019-03-27
 
 Summary: Additional old full-screen, 2-sidebar and styles only theme from 2004-10-14 to 2007-04-03 as v0.1, fully based on default template files.
