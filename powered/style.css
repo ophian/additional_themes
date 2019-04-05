@@ -721,10 +721,6 @@ td.serendipity_commentsValue input:not(type="checkbox"), td.serendipity_comments
     padding-left: 5px;
 }
 
-td.serendipity_admin {
-    padding: 10px;
-}
-
 a {
     color: #000055;
     text-decoration: none;
