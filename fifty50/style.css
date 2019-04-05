@@ -672,7 +672,7 @@ body {
 #serendipity_banner, #header {
     background: url('{TEMPLATE_PATH}/img/head.jpg') no-repeat;
     font-family: sans-serif;
-    color: #FFFFFF;
+    color: #fff;
     text-align: left;
     width: 844px;
     height: 356px;
@@ -815,10 +815,6 @@ td.serendipity_commentsValue input:not(type="checkbox"), td.serendipity_comments
 .serendipity_comment_source {
     margin-top: 5px;
     padding-left: 5px;
-}
-
-td.serendipity_admin {
-    padding: 10px;
 }
 
 a {
