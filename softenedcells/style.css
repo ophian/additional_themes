@@ -308,7 +308,7 @@ td.serendipity_commentsLabel {
     font-weight: bold;
     vertical-align: top;
 }
-td.serendipity_commentsValue input, td.serendipity_commentsValue select, td.serendipity_commentsValue textarea {
+td.serendipity_commentsValue input:not(type="button"), td.serendipity_commentsValue select, td.serendipity_commentsValue textarea {
     border: 1px solid #bbb;
     padding: 2px;
 }
