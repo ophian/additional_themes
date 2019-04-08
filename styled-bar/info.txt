@@ -1,3 +1,6 @@
-Name: Styled Bar (colorsets) (2008-02-14)
-Author: Mads Sigvert @ www.evilsun.dk
-Date: 07-10-2005
+Name: Styled Bar (colorsets)
+Author: Mads Sigvert
+Date: 2019-04-08
+
+Summary: Additional old mid-screen, 2-sidebar colorset theme from 2005-10-07 to 2008-02-14, with a fixed content size of 860px.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!
