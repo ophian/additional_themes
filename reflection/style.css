@@ -693,7 +693,7 @@ td.serendipity_commentsLabel {
     vertical-align: top; }
 
 /* styles for input boxes in comments form */
-td.serendipity_commentsValue input, td.serendipity_commentsValue select, td.serendipity_commentsValue textarea {
+td.serendipity_commentsValue input:not(type="button"), td.serendipity_commentsValue select, td.serendipity_commentsValue textarea {
     border: 1px solid #333;
     padding: 2px; }
 
