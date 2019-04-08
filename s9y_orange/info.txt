@@ -1,3 +1,6 @@
-Name: Orange (2007-04-03)
+Name: Orange
 Author: Kaustubh Srikanth
-Date: 15/12/2004
+Date: 2019-04-05
+
+Summary: Additional old mid-screen, 2-sidebar theme from 2004-12-15 to 2007-04-03, with a fixed content size of 750px and a disabled banner.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!
