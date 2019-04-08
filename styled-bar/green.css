@@ -1,0 +1,28 @@
+body {
+    background-color: #5a8a4f;
+    background-image: url('green/bg.gif');
+}
+
+#top_bar {
+    background-image: url('green/top_bar.gif');
+}
+
+#serendipity_banner {
+    background-color: #32bd26;
+    background-image: url('green/bar_gloss.gif');
+    background-position: center top;
+    background-repeat: repeat-x;
+    border: 1px solid #000;
+    width: 860px;
+    height: 96px;
+}
+
+a:link,
+a:visited,
+a:active { color: #58874d; }
+
+a:hover { color: #98e192; }
+
+.newsbox {
+    border: 1px solid #5a8a4f;
+}

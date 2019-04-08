@@ -1,0 +1,28 @@
+body {
+    background-color: #9c6262;
+    background-image: url('red_nogloss/bg.gif');
+}
+
+#top_bar {
+    background-image: url('red_nogloss/top_bar.gif');
+}
+
+#serendipity_banner {
+    background-color: #e14750;
+    background-image: url('red_nogloss/bar_gloss.gif');
+    background-position: center top;
+    background-repeat: repeat-x;
+    border: 1px solid #000;
+    width: 860px;
+    height: 96px;
+}
+
+a:link,
+a:visited,
+a:active { color: #9e6363; }
+
+a:hover { color: #f4a6aa; }
+
+.newsbox {
+    border: 1px solid #9c6262;
+}
