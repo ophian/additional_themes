@@ -406,6 +406,8 @@ table.archives_listing {
     margin-bottom: 1em; }
 .comments_by_author .serendipity_entry {
     padding-right: 0; }
+.serendipity_commentsTitle {
+    margin: 1em auto; }
 #serendipity_comment_page {
     background: 0 none;
     margin: .5rem; }
