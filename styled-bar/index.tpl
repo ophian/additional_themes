@@ -19,7 +19,7 @@
 {/if}
     <link rel="stylesheet" type="text/css" href="{$head_link_stylesheet}">
 {if NOT empty($template_option.colorset) AND $template_option.colorset != 'default'}
-    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="{$template_option.colorset}.css"}" />
+    <link rel="stylesheet" type="text/css" href="{serendipity_getFile file="{$template_option.colorset}.css"}">
 {/if}
     <link rel="alternate" type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2">
     <link rel="alternate" type="application/x.atom+xml" title="{$blogTitle} Atom feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/atom.xml">
