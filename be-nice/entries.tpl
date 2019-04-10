@@ -37,7 +37,7 @@
         {if NOT $is_preview}{$entry.add_footer|default:''}{/if}
         </div>
             {if NOT $is_single_entry AND NOT $entry.is_extended}
-            <div class='serendipity_entryFooter_comment'>
+            <div class="serendipity_entryFooter_comment">
                  {if $entry.has_comments}
                     {if $use_popups}
                         <a href="{$entry.link_popup_comments}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{if $entry.comments == 0}{$CONST.BE_FIRST_TO_COMMENT}{else}{$entry.comments} {$entry.label_comments}{/if}</a>
