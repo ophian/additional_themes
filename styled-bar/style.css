@@ -740,11 +740,6 @@ img.serendipity_entryIcon {
     border: 0;
 }
 
-img.serendipity_entryIcon {
-    float: right;
-    border: 0;
-}
-
 td.serendipity_commentsValue input:not(type="button"),
 td.serendipity_commentsValue select,
 td.serendipity_commentsValue textarea {
