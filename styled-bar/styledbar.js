@@ -1,5 +1,5 @@
 /* toggle content/left sidebar markup nodes for responsiveness
- - or leave blank to disable structure and to not fall back . */
+ - or leave blank to disable structure responsiveness change and to not fall back. */
 (function ($) {
     if ($(window).width() < 860) {
         $("#serendipityLeftSideBar").before($("#content"));
