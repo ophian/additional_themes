@@ -49,7 +49,7 @@
 {/if}
 </div>
 <hr class="hide" />
-    <div class='secondary'>
+    <div class="secondary">
     {if $template_option.about_title != ''}
             <h2>{$template_option.about_title}</h2>
         <div class="featured">
