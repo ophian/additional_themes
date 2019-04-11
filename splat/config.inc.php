@@ -4,6 +4,12 @@ if (IN_serendipity !== true) { die ("Don't hack!"); }
 
 $template_config = array(
     array(
+        'var'           => 'infoxxx',
+        'name'          => 'infoxxx',
+        'type'          => 'content',
+        'default'       => 'Take care, that if you have a singlequote (&laquo;\'&raquo;) in your General Settings - Blog (sub) description option field, eg &laquo;John Doe\'s personal blog&raquo;, it will be replaced with a "215000 &euro;" image by the image font javascript replacement handler.',
+    ),
+    array(
         'var'           => 'navlink1text',
         'name'          => 'Navlink #1 Text',
         'description'   => 'Enter the first navigation text',
