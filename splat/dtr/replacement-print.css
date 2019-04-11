@@ -1,10 +1,8 @@
 
-span.print-text
-{
+span.print-text {
     display: inline !important ;
 }
 
-img.replacement
-{
+img.replacement {
     display: none ;
 }
