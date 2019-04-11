@@ -1,4 +1,6 @@
-Name: SPLAT! v1.1 (2019-04-11)
+Name: SPLAT!
 Author: David Cummins
-Date: 2007-01-24
+Date: 2019-04-11
 
+Summary: Additional old mid-screen, 2-sidebar theme from 2007-01-24 to 2013-10-26 as v1.0.1, with a fixed content size of 1024px.
+Description: Upgraded to v.1.1. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!

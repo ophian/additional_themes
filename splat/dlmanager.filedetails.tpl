@@ -1,47 +1,49 @@
-<div id="entry_top">
-<h4 class="serendipity_title"><a href="#">{$headline}</a></h4>
-<h3 class="serendipity_date">{$pagetitle}</h3>
-</div>
+{* modified copy of plugins dlmanager.filedetails.tpl last modified 2018-08-08 *}
+<div id="downloadmanager" class="serendipity_Entry_Date">
+    <div id="entry_top">
+        <h4 class="serendipity_date">{$pagetitle}</h4>
+        <h5 class="serendipity_title">{$headline}</h5>
+    </div>
+    <div id="entry_mid">
+        <div class="serendipity_entry_body">
+    {if !empty($dlm_intro)}<div class="dlm_intro">{$dlm_intro}</div>{/if}
 
-<div id="entry_mid">
-<div class="serendipity_entry_body">
+    {if $dlm_is_registered == false || $is_logged_in}
+        {if $showfile}
 
-    {if $showfile}
-    <b>{$CONST.PLUGIN_DOWNLOADMANAGER_CATEGORY}: {$catname}</b> [<a href="{$basepage}?serendipity[subpage]={$pageurl}&thiscat={$catid}">{$CONST.PLUGIN_DOWNLOADMANAGER_BACK}</a>]<br />
-    <b>{$CONST.PLUGIN_DOWNLOADMANAGER_SUBCATEGORIES}:</b> {$num_subcats}<br />
-    <b>{$CONST.PLUGIN_DOWNLOADMANAGER_DLS_IN_THIS_CAT}:</b> {$num_dls}<br />
-    <b>{$CONST.PLUGIN_DOWNLOADMANAGER_THIS_FILE}: {$filename}</b><br />
-    <br />
+        <ul class="plainList">
+            <li><strong>{$CONST.PLUGIN_DOWNLOADMANAGER_CATEGORY}: {$catname}</strong> [<a href="{$basepage}?serendipity[subpage]={$pageurl}&amp;thiscat={$catid}">{$CONST.PLUGIN_DOWNLOADMANAGER_BACK}&hellip;</a>]</li>
+            <li><strong>{$CONST.PLUGIN_DOWNLOADMANAGER_SUBCATEGORIES}:</strong> {$num_subcats}</li>
+            <li><strong>{$CONST.PLUGIN_DOWNLOADMANAGER_DLS_IN_THIS_CAT}:</strong> {$num_files}</li>
+        </ul>
 
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-            <td> <b>{$CONST.PLUGIN_DOWNLOADMANAGER_NUM_DOWNLOADS_BLAH}:</b> {$dlcount} </td>
-        </tr>
-        <tr>
-            <td> <b>{$filesize_field}:</b> {$filesize} </td>
-        </tr>
-        <tr>
-            <td> <b>{$filedate_field}:</b> {$filedate} </td>
-        </tr>
-        <tr>
-            <td> <b>{$CONST.PLUGIN_DOWNLOADMANAGER_EDIT_FILE_DESC}:</b>
-                <br /> 
-                {$description} 
-            </td>
-        </tr>
-        <tr>
-            <td> &nbsp; </td>
-        </tr>
-        <tr>
-            <td> &nbsp; </td>
-        </tr>
-    </table>
+        <h5>{$CONST.PLUGIN_DOWNLOADMANAGER_THIS_FILE}:</h5>
+        {* $thisfile is a single array without index - no need for loops *}
+        {if is_array($thisfile)}
+
+        <dl>
+            <dt><img src="{$thisfile.iconfile}" width="{$thisfile.iconwidth}" height="{$thisfile.iconheight}" alt="{$thisfile.icontype}" title="{$thisfile.icontype}" /> {$thisfile.filename}</dt>
+            <dd><strong>{$CONST.PLUGIN_DOWNLOADMANAGER_EDIT_FILE_DESC}:</strong> {$thisfile.description|strip_tags}</dd>
+            <dd><strong>{$CONST.PLUGIN_DOWNLOADMANAGER_NUM_DOWNLOADS_BLAH}:</strong> {$thisfile.dlcount}</dd>
+            <dd><strong>{$thisfile.filesize_field}:</strong> {$thisfile.filesize}</dd>
+            <dd><strong>{$thisfile.filedate_field}:</strong> {$thisfile.filedate}</dd>
+        </dl>
+
+        <h5>{$CONST.PLUGIN_DOWNLOADMANAGER_DOWNLOAD_FILE}</h5>
+
+        <div id="dlm_button"><a href="{$thisfile.dlurl}"><img src="{$httppath}/img/download.png" alt="Download" /></a></div>
+        {/if}
+        {/if}
+    {else}
+
+        <div class="dlm_info">{$CONST.PLUGIN_DOWNLOADMANAGER_REGISTERED_ONLY_ERROR}</div>
     {/if}
+        </div>
+    </div>
 
-</div>
-</div>
-<div class="serendipity_entryFooter">
-{if $showfile}
-    <a href="{$dlurl}"><img src="templates/splat/img/download.gif" border=0 /></a><br /><b>{$CONST.PLUGIN_DOWNLOADMANAGER_DOWNLOAD_FILE}</b>
-{/if}
+    <div class="serendipity_entryFooter">
+    {if $showfile}
+        <a href="{$dlurl}"><img src="templates/splat/img/download.gif" border=0 /></a><br><b>{$CONST.PLUGIN_DOWNLOADMANAGER_DOWNLOAD_FILE}</b>
+    {/if}
+    </div>
 </div>
