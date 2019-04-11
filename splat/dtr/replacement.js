@@ -10,7 +10,7 @@ function com_stewartspeak_replacement() {
     */
 
     /* replaceSelector("h1", "/templates/splat/dtr/heading.php",true); */
-    replaceSelector("h2", REPLACEMENT_DTR_BASEPATH + "/heading.php", true);
+    replaceSelector("h2.head", REPLACEMENT_DTR_BASEPATH + "/heading.php", true);
     var testURL = REPLACEMENT_DTR_BASEPATH + "/test.png";
 
     var doNotPrintImages = false;
