@@ -350,6 +350,7 @@ p img {
     font-size: small; }
 
 /* messages letting you know something has happened eg comment saved */
+.serendipity_msg_success,
 .serendipity_msg_notice {
     color: green;
     font-weight: bold;
