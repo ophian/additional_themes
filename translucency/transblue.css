@@ -44,7 +44,7 @@ body {
 }
 
 .serendipity_comment_source {
-    background-color:#3E4448;
+   /* background-color:#3E4448;*/
     color:#9AAEBF;
 }
 
@@ -60,7 +60,7 @@ div.serendipity_entryFooterTop {
 
 div.serendipity_entryFooterMain {
     color: #1C3447;
-    font-size: xx-small;
+    display: inline-block;
     background-color:#93A4B1;
 }
 
@@ -87,7 +87,7 @@ div.serendipity_entryFooterBottom {
 
 .serendipity_commentFooter {
     color:#9AAEBF;
-    background-color:#3E4448;
+    /*background-color:#3E4448;*/
 }
 
 .serendipitySideBarContent a:hover {
