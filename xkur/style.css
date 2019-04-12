@@ -350,6 +350,7 @@ table.serendipity_calendar {
 }
 .serendipity_comment .serendipity_commentBody {
     border: 1px solid #ddd;
+    background-color: #fff;
 }
 .serendipity_content_message,
 .serendipity_commentBody,
@@ -518,6 +519,7 @@ h2.comments_permalink {
     border: 1px solid #ddd;
 }
 
+.serendipity_msg_success,
 .serendipity_msg_notice {
     color: #2ecc40;
     background-color: #fff;
@@ -535,6 +537,10 @@ h2.comments_permalink {
     padding: .5em .5em;
     background-color: #efefef;
     min-width: 564px;
+}
+#serendipity_comment_page #serendipity_trackbacklist,
+#serendipity_comment_page .serendipity_comments  .nocomments {
+    min-width: auto;
 }
 
 
