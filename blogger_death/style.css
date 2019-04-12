@@ -592,6 +592,7 @@ h2.comments_permalink {
     border: 1px solid #ddd;
 }
 
+.serendipity_msg_success,
 .serendipity_msg_notice {
     color: #2ecc40;
     background-color: #fff;
@@ -1031,6 +1032,7 @@ td.serendipitySideBar {
     border-right: 1px dashed #4068ab;
 }
 
+.serendipity_msg_success,
 .serendipity_msg_notice {
     color: white;
 }
