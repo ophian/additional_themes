@@ -256,6 +256,33 @@ code, pre {
     margin-left: .5rem;
 }
 
+/** Messaging **/
+
+.staticpage_results,
+.serendipity_search,
+.serendipity_content_message,
+.serendipity_msg_success,
+.serendipity_msg_important {
+    display: table;
+    width: 100%;
+    border: 1px solid #aaa;
+    box-shadow: 1px 2px 3px #ccc;
+    padding: .5em .25em;
+    margin-bottom: 1em;
+}
+.serendipity_search {
+    background-color: lightgray;
+}
+.serendipity_content_message {
+    background-color: #f0f8ff;
+}
+.serendipity_msg_success {
+    background-color: lightgreen;
+}
+.serendipity_msg_important {
+    background-color: #fff0f0;
+}
+
 /* backend preview */
 body.save_preview_body {
     font-family: initial;
@@ -961,6 +988,12 @@ html > body #content .commentlist dd.author_comment {
 .serendipity_imageComment_left a img,
 .serendipity_imageComment_right a img {
     border: 0px;
+}
+
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto;
 }
 
 .serendipity_imageComment_left{
