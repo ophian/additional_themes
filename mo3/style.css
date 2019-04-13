@@ -957,6 +957,7 @@ padding-left:20px
     color: #ff4136;
     margin: 1em;
 }
+.serendipity_msg_success,
 .serendipity_msg_notice {
     color: #2ecc40;
     margin: 1em;
@@ -983,6 +984,11 @@ padding-left:20px
     background-color: #f2f2f2;
     padding: 0;
     text-align: center;
+}
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto;
 }
 .serendipity_imageComment_center {
     margin: 10px auto 5px;
