@@ -298,6 +298,33 @@ pre code.hljs .hljs-keyword, pre code.hljs .hljs-selector-tag, pre code.hljs .hl
 #serendipity_comment_page #comment-form {
     margin: 2em; }
 
+/** Messaging **/
+
+.staticpage_results,
+.serendipity_search,
+.serendipity_content_message,
+.serendipity_msg_success,
+.serendipity_msg_important {
+    display: table;
+    width: 100%;
+    border: 1px solid #aaa;
+    box-shadow: 1px 2px 3px #ccc;
+    padding: .5em .25em;
+    margin-bottom: 1em;
+}
+.serendipity_search {
+    background-color: lightgray;
+}
+.serendipity_content_message {
+    background-color: #f0f8ff;
+}
+.serendipity_msg_success {
+    background-color: lightgreen;
+}
+.serendipity_msg_important {
+    background-color: #fff0f0;
+}
+
 
 /* backend preview */
 body.save_preview_body {
@@ -1008,6 +1035,11 @@ ul.pages ul li {
     margin: 5px;
     padding: 5px;
     text-align: center; }
+
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto; }
 
 .serendipity_imageComment_center {
     margin: auto; }
