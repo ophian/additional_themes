@@ -188,6 +188,39 @@ p code, p samp, p kbd {
 [type="radio"] {
     vertical-align: middle;
     margin-right: 2px; }
+/* when pre uses overflows scroll */
+pre {
+    padding-bottom: .5em;
+    font-family: Menlo,Consolas,Monaco,monospace;
+}
+/* Mozilla experimental https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color */
+pre {
+    scrollbar-color: #222 #444; /*moz*/
+    scrollbar-width: thin; /*moz*/
+}
+pre .hljs {
+    padding-bottom: .75em;
+    border-left: 5px solid #444;
+    background: rgba(57, 57, 57, 0.6);
+    color: #fff; }
+pre::-webkit-scrollbar,
+.hljs::-webkit-scrollbar {
+    width: auto;
+    height: .5em; /*6px*/
+}
+pre::-webkit-scrollbar-thumb,
+.hljs::-webkit-scrollbar-thumb,
+pre::-webkit-scrollbar-track,
+.hljs::-webkit-scrollbar-track  {
+    background-color: #222; }
+pre::-webkit-scrollbar-track-piece,
+.hljs::-webkit-scrollbar-track-piece  {
+    background-color: #444; }
+hr {
+    height: 1px;
+    border: 0;
+    background: transparent;
+    border-top: 1px solid #666; }
 .serendipity_entry pre {
     overflow: auto; }
 .serendipity_entry pre strong {
@@ -307,7 +340,7 @@ hr {
 
 pre {
   height: auto;
-  overflow-x:scroll;
+  overflow: auto;
 }
 
 fieldset {
@@ -1097,6 +1130,7 @@ dd {
 
 .serendipity_msg_important { color: #ff4136; }
 
+.serendipity_msg_success,
 .serendipity_msg_notice { color: #2ecc40; }
 
 .serendipity_image_left,
@@ -1119,6 +1153,11 @@ dd {
     margin: 0 0 10px 10px;
 }
 
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto;
+}
 .serendipity_image_center {
     display: block;
     margin: 0 auto 10px auto;
