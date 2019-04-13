@@ -436,6 +436,11 @@ td.serendipity_commentsLabel {
 .serendipity_image_center {
     padding: .25em;
 }
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto;
+}
 /* overwrite fallback gallery comment container margins and some of this comment styles */
 .serendipity_image_block .serendipity_imageComment_left,
 .serendipity_image_block .serendipity_imageComment_right {
@@ -479,6 +484,7 @@ h2.comments_permalink {
     border: 1px solid #ddd;
 }
 
+.serendipity_msg_success,
 .serendipity_msg_notice {
     color: #2ecc40;
     background-color: #fff;
@@ -821,6 +827,7 @@ td.serendipitySideBar {
     font-size: small;
 }
 
+.serendipity_msg_success,
 .serendipity_msg_notice {
     font-weight: bold;
     font-size: small;
