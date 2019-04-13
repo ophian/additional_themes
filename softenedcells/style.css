@@ -57,6 +57,7 @@ a img, .emoticon {
     font-weight: bold;
     font-size: small;
 }
+.serendipity_msg_success,
 .serendipity_msg_notice {
     color: green;
     font-weight: bold;
@@ -440,6 +441,12 @@ td.serendipity_calendarHeader a:link, td.serendipity_calendarHeader a:visited, t
     margin: 3px;
     padding: 3px;
     text-align: center;
+}
+
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto;
 }
 
 .serendipity_imageComment_center {
