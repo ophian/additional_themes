@@ -282,9 +282,32 @@ pre code {
     margin-left: 0;
     padding-left: 0;
 }
+
 .serendipity_center {
+    margin: .5em auto;
+    text-align: center;
     font-size: small;
 }
+
+.serendipity_msg_important{
+    color: #ff4136;
+    font-size: .75rem;
+}
+.serendipity_msg_important:not(.msg_error) {
+    background-color: #f3f8fc;
+    padding: .5em;
+    border: 1px solid #ddd;
+}
+
+.serendipity_msg_success,
+.serendipity_msg_notice {
+    color: #2ecc40;
+    background-color: #fff;
+    padding: .5em;
+    border: 1px solid #ddd;
+    font-size: .75rem;
+}
+
 .serendipity_commentsValue {
     max-width: 450px;
 }
@@ -534,6 +557,11 @@ article.serendipity_staticpage {
 .serendipity_image_center {
     padding: .25em;
 }
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto;
+}
 /* overwrite fallback gallery comment container margins and some of this comment styles */
 .serendipity_image_block .serendipity_imageComment_left,
 .serendipity_image_block .serendipity_imageComment_right {
@@ -568,8 +596,7 @@ body.save_preview_body {
     float: inherit;
     width: 96%;
     font: inherit;
-    margin: .5em;
-    padding: 0; }
+    margin: .5em; }
 #content.preview_preview_content .serendipity_entryFooter {
     display: none;
     visibility: hidden; }
