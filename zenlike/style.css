@@ -627,6 +627,12 @@ ul.controls {
     text-align: center;
 }
 
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto;
+}
+
 .serendipity_imageComment_center {
     margin: auto;
 }
