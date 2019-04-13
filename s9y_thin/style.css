@@ -264,6 +264,32 @@ pre code {
     padding-left: 0;
 }
 
+.serendipity_center {
+    margin: .5em auto;
+    text-align: center;
+    font-size: small;
+}
+
+.serendipity_msg_important{
+    color: #ff4136;
+    font-size: .75rem;
+}
+.serendipity_msg_important:not(.msg_error) {
+    background-color: #f3f8fc;
+    padding: .5em;
+    border: 1px solid #ddd;
+}
+
+.serendipity_msg_success,
+.serendipity_msg_notice {
+    color: #2ecc40;
+    background-color: #fff;
+    padding: .5em;
+    border: 1px solid #ddd;
+    font-size: .75rem;
+}
+
+
 @media screen and (min-width: 750px) {
     #mainpane {
         width: 100%;
@@ -345,6 +371,10 @@ pre code {
     padding-bottom: 10px; }
 /*#content > .serendipity_staticpage {
     margin: 0 1em; }*/
+body#serendipity_comment_page {
+    margin: .5rem;
+    background-color: #fff;
+    overflow-x: hidden; }
 #serendipityCommentFormC {
     display: inline-table;
     border-color: #ddd;
@@ -437,6 +467,11 @@ article.serendipity_staticpage {
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
+}
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
 .serendipity_image_block .serendipity_imageComment_left,
