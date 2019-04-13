@@ -392,11 +392,9 @@ abbr, acronym {
 .serendipity_msg_important {
     color: #ff4136; }
 
+.serendipity_msg_success,
 .serendipity_msg_notice {
     color: #2ecc40; }
-
-.serendipityAdminMsgSuccess{
-    padding-left:160px; }
 
 /********* End of General Styles *********/
 
@@ -660,17 +658,25 @@ td.Active a:hover {
     color:#505050;
     line-height:1.5em; }
 
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto;
+}
 /* style to center image and text within entry */
 .serendipity_imageComment_center {
-    display:block; margin:0 auto 5px auto; }
+    display:block;
+    margin:0 auto 5px auto; }
 
 /* style to left align image and text within entry */
 .serendipity_imageComment_left {
-    float:left; margin:0 12px 5px 0; }
+    float:left;
+    margin:0 12px 5px 0; }
 
 /* style to right align image and text within entry */
 .serendipity_imageComment_right {
-    float:right; margin:0 0 5px 12px; }
+    float:right;
+    margin:0 0 5px 12px; }
 
 /* styles for the images */
 .serendipity_imageComment_img, .serendipity_imageComment_img img {
