@@ -345,6 +345,7 @@ a img, img, .emoticon, .serendipity_entry img {
     font-size: small; }
 
 /* messages letting you know something has happened eg comment saved */
+.serendipity_msg_success,
 .serendipity_msg_notice {
     color: green;
     font-weight: bold;
@@ -811,6 +812,11 @@ td.serendipity_calendarHeader a:link, td.serendipity_calendarHeader a:visited, t
     padding: 3px;
     text-align: center; }
 
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto;
+}
 /* style to center image and text within entry */
 .serendipity_imageComment_center {
     margin: auto; }
