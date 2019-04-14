@@ -381,6 +381,11 @@ h2.comments_permalink {
 .serendipity_entry p > .serendipity_image_right {
     margin: .25em auto;
 }
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto;
+}
 .serendipity_imageComment_center {
     margin: .25em auto;
 }
@@ -453,6 +458,7 @@ h2.comments_permalink {
     border: 1px solid #ddd;
 }
 
+.serendipity_msg_success,
 .serendipity_msg_notice {
     color: #2ecc40;
     background-color: #fff;
