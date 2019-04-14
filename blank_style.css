@@ -96,8 +96,6 @@ a.homelink2:visited,
 }
 
 .serendipity_entry_body,
-.serendipity_entry_body_folded,
-.serendipity_entry_body_unfolded,
 .serendipity_entry_extended {
 /* Inner blocks of .serendipity_entry, can be used for further customization */
 
@@ -107,6 +105,7 @@ div.serendipity_entryFooter {
 
 }
 
+/* try to not touch default browser margins or paddings ...! */
 .serendipity_entry p {
 
 }
@@ -119,12 +118,23 @@ img.serendipity_entryIcon {
 
 }
 
+.serendipity_entries_footer {
+
+}
+
+table.archives_listing {
+
+}
+
+ul.entries_summary {
+
+}
 
 /* #################### */
 /* # SIDEBAR ELEMENTS # */
 /* #################### */
 
-.serendipitySideBarContent input {
+.serendipitySideBarContent input:not(type="checkbox") {
 
 }
 
@@ -135,6 +145,22 @@ div.serendipitySideBarItem {
 
 /* title of an individual item */
 .serendipitySideBarTitle {
+
+}
+
+#serendipity_categories_list {
+
+}
+
+div.serendipityPlug {
+
+}
+
+div.serendipityPlug a {
+
+}
+
+img.serendipity_freeTag_xmlButton {
 
 }
 
@@ -177,7 +203,16 @@ td.serendipity_calendarHeader a:hover {
 
 }
 
+.serendipity_comment_author_self .serendipity_comment_source {
+
+}
+
 .serendipity_commentBody {
+
+}
+
+/* commentBody equivalent in comment summary pages */
+.comment_content {
 
 }
 
@@ -185,11 +220,38 @@ td.serendipity_calendarHeader a:hover {
 
 }
 
+/* comment_oddbox/_evenbox is single entry view cycles  */
+.serendipity_comment.comment_oddbox .serendipity_commentBody {
+
+}
+.serendipity_comment.comment_evenbox .serendipity_commentBody {
+
+}
+
+/* same for comment summary pages */
+.serendipity_comment.odd .comment_content {
+
+}
+.serendipity_comment.even .comment_content {
+
+}
+
+/* comment summary pages */
+.comments_permalink {
+
+}
+.comments_by_author{
+
+}
+.comments_for_entry {
+
+}
+
 td.serendipity_commentsLabel {
 
 }
 
-td.serendipity_commentsValue input,
+td.serendipity_commentsValue input:not(type="button"),
 td.serendipity_commentsValue select,
 td.serendipity_commentsValue textarea {
 
@@ -202,6 +264,14 @@ td.serendipity_commentsValue textarea {
 
 }
 
+#serendipityCommentFormC {
+
+}
+
+/* comment popups */
+#serendipity_comment_page {
+
+}
 
 /* ################## */
 /* # IMAGE ELEMENTS # */
@@ -211,10 +281,15 @@ td.serendipity_commentsValue textarea {
 
 }
 
+/** EXTENDED default version in default theme - grab it there **/
 /** Embedded images with the s9y image manager **/
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
 .serendipity_imageComment_right {
+
+}
+
+.serendipity_image_center {
 
 }
 
@@ -240,15 +315,39 @@ td.serendipity_commentsValue textarea {
 }
 
 
+/* ########################## */
+/* # BACKEND PREVIEW & SAVE # */
+/* ########################## */
+
+body.preview_preview_body {
+
+}
+
+body.save_preview_body {
+
+}
+
+body.save_preview_body a {
+
+}
+
+#mainpane.preview_preview_container {
+
+}
+
+#content.save_preview_content {
+
+}
+
+#content.preview_preview_content .serendipity_entryFooter {
+
+}
+
 /* ################## */
 /* # OTHER ELEMENTS # */
 /* ################## */
 
-div.serendipityPlug {
-
-}
-
-div.serendipityPlug a {
+.plainList {
 
 }
 
@@ -260,35 +359,37 @@ div.serendipityPlug a {
 
 }
 
+.serendipity_msg_success,
 .serendipity_msg_notice {
 
 }
 
-.serendipity_comment_author_self .serendipity_comment_source {
+.serendipity_freeTag {
 
 }
 
-.serendipity_freeTag
-{
+.serendipity_freetag_taglist {
 
 }
 
-.serendipity_freetag_taglist
-{
+.serendipity_freeTag a {
 
 }
 
-.serendipity_freeTag a
-{
+.serendipity_freeTag a:hover {
 
 }
 
-.serendipity_freeTag a:hover
-{
+article.serendipity_staticpage {
 
 }
 
-img.serendipity_freeTag_xmlButton
-{
+article.serendipity_staticpage header h2 {
 
 }
+
+.serendipity_staticpage .content.serendipity_preface,
+.serendipity_staticpage .content.staticpage_childpages {
+
+}
+
