@@ -298,12 +298,14 @@ pre code {
 .serendipity_center {
     margin-bottom: 1em; }
 .serendipity_msg_important,
+.serendipity_msg_success,
 .serendipity_msg_notice {
     display: inherit;
     padding: .5em;
     border: 1px solid #777; }
 .serendipity_msg_important {
     background-color: aliceblue; }
+.serendipity_msg_success,
 .serendipity_msg_notice {
     background-color: azure; }
 .serendipity_entryFooter {
@@ -455,6 +457,7 @@ a:hover {
 .serendipity_msg_important {
     color: #ff4136; }
 /* messages letting you know something has happened eg comment saved */
+.serendipity_msg_success,
 .serendipity_msg_notice {
     color: #2ecc40; }
 /* style to temporarily change something to grey */
@@ -794,6 +797,11 @@ td.Today {
 /* style for image container when hovered over */
 .serendipity_imageComment_center a:hover, .serendipity_imageComment_left a:hover, .serendipity_imageComment_right a:hover {
     background: none; }
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto;
+}
 /* style to center image and text within entry */
 .serendipity_imageComment_center {
     margin: auto; }
