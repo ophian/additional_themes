@@ -249,6 +249,7 @@ body {
     text-align: center; }
 .serendipity_msg_important {
     color: #ff4136; }
+.serendipity_msg_success,
 .serendipity_msg_notice {
     color: #2ecc40; }
 h1, h2, h3, h4, h5, h6 {
@@ -444,6 +445,10 @@ h3.entrytitle a, h3.entrytitle a:visited, .serendipity_title a, .serendipity_tit
     margin: 5px;
     padding: 5px;
     text-align: center; }
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto; }
 .serendipity_imageComment_center {
     margin: 5px auto; }
 .serendipity_imageComment_left {
