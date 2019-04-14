@@ -778,6 +778,11 @@ div.serendipitySideBarItem a:hover{
 .serendipity_imageComment_right a img {
     border: 0px }
 
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto;
+}
 
 .serendipity_imageComment_left{
     float: left;
@@ -819,6 +824,7 @@ div.serendipitySideBarItem a:hover{
     background-color:inherit;
 }
 
+.serendipity_msg_success,
 .serendipity_msg_notice {
     color: #2ecc40;
     background-color:inherit;
