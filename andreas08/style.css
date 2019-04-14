@@ -370,6 +370,7 @@ blockquote {
     color: #ff4136; }
 
 /* messages letting you know something has happened eg comment saved */
+.serendipity_msg_success,
 .serendipity_msg_notice {
     color: #2ecc40; }
 
@@ -739,6 +740,11 @@ tr.serendipity_calendar td {
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
+}
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
 .serendipity_image_block .serendipity_imageComment_left,
