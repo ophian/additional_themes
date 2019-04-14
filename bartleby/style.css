@@ -404,6 +404,7 @@ fieldset,
 }
 
 .serendipity_msg_important,
+.serendipity_msg_success,
 .serendipity_msg_notice {
     font-size: .8125em;
     line-height: 1.8462;
@@ -417,6 +418,7 @@ fieldset,
     border: 1px solid;
 }
 
+.serendipity_msg_success,
 .serendipity_msg_notice {
     border: 1px solid;
 }
