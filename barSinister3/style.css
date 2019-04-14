@@ -186,6 +186,33 @@ p code, p samp, p kbd {
 
 /** Modernizing Serendipity Styx default styles END **/
 
+/** Messaging **/
+
+.staticpage_results,
+.serendipity_search,
+.serendipity_content_message,
+.serendipity_msg_success,
+.serendipity_msg_important {
+    display: table;
+    width: 100%;
+    border: 1px solid #aaa;
+    box-shadow: 1px 2px 3px #ccc;
+    padding: .5em .25em;
+    margin-bottom: 1em;
+}
+.serendipity_search {
+    background-color: lightgray;
+}
+.serendipity_content_message {
+    background-color: #f0f8ff;
+}
+.serendipity_msg_success {
+    background-color: lightgreen;
+}
+.serendipity_msg_important {
+    background-color: #fff0f0;
+}
+
 /** Theme fixes depending presets and theme styles **/
 
 ul li {
@@ -755,6 +782,11 @@ td.serendipitySideBar {
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
+}
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
 .serendipity_image_block .serendipity_imageComment_left,
