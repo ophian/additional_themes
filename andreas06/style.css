@@ -801,6 +801,7 @@ img.serendipity_freeTag_xmlButton {
 .serendipity_msg_important {
     color: #ff4136; }
 
+.serendipity_msg_success,
 .serendipity_msg_notice {
     color: #2ecc40; }
 
@@ -855,6 +856,11 @@ img.serendipity_freeTag_xmlButton {
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
+}
+/* style to center */
+.serendipity_image_center {
+    display: inherit;
+    margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
 .serendipity_image_block .serendipity_imageComment_left,
