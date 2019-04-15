@@ -18,7 +18,7 @@
             {if NOT $is_single_entry AND NOT $is_preview}
                 <a href="{$entry.link}">
                     {if isset($entry.properties.ep_featuredImage)}
-                        <img class="featuredImage lazy" {if NOT $dategroup.is_sticky && $template_option.lazyload == true}data-original="{else}src="{/if}{$entry.properties.ep_featuredImage}" />
+                        <img class="featuredImage lazyload" {if NOT $dategroup.is_sticky && $template_option.lazyload === true}data-src="{else}src="{/if}{$entry.properties.ep_featuredImage}" />
                         <noscript><img class="featuredImage" src="{$entry.properties.ep_featuredImage}" /></noscript>
                     {else}
                         <span class="featuredImage"></span>
@@ -38,7 +38,7 @@
 
         {if $is_single_entry OR $is_preview}
             <div class="clearfix content serendipity_entry_body">
-            {if isset($entry.properties.ep_featuredImage)}<a class="serendipity_image_link" href="{$entry.properties.ep_featuredImage|replace:'.serendipityThumb':''}"><img id="featuredImage" {if $template_option.lazyload == true}class="lazy" data-original="{else}src="{/if}{$entry.properties.ep_featuredImage}" /><noscript><img id="featuredImage" src="{$entry.properties.ep_featuredImage}" /></noscript></a>{/if}
+            {if isset($entry.properties.ep_featuredImage)}<a class="serendipity_image_link" href="{$entry.properties.ep_featuredImage|replace:'.serendipityThumb':''}"><img id="featuredImage" {if $template_option.lazyload === true}class="lazyload" data-src="{else}src="{/if}{$entry.properties.ep_featuredImage}" /><noscript><img id="featuredImage" src="{$entry.properties.ep_featuredImage}" /></noscript></a>{/if}
             {$entry.body}
             {if $entry.is_extended}
                 <div id="extended" class="clearfix content">

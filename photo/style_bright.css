@@ -53,6 +53,7 @@ input[type="submit"], button {
     color: black;
 }
 .serendipity_msg_important,
+.serendipity_msg_success,
 .serendipity_msg_notice {
     text-shadow: 0 1px 0 rgba(255,255,255,.5);
 }
@@ -63,6 +64,7 @@ input[type="submit"], button {
     color: #b94a48;
 }
 
+.serendipity_msg_success,
 .serendipity_msg_notice {
     background: #dff0d8;
     border-color: #d6e9c6;

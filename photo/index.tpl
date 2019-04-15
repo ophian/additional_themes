@@ -20,6 +20,7 @@
     <link rel="canonical" href="{$serendipityBaseURL}">
 {/if}
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {assign "gfonts" []}
     {if $template_option.headlines_webfonts == 'aleo'}
         <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Aleo:700">
     {elseif $template_option.headlines_webfonts == 'philo'}
@@ -54,22 +55,12 @@
         <link rel="stylesheet" href="{serendipity_getFile file="style_bright.css"}">
     {/if}
     <script src="{serendipity_getFile file="js/modernizr-2.7.1.min.js"}"></script>
-
     <link rel="alternate" type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2">
     <link rel="alternate" type="application/x.atom+xml"  title="{$blogTitle} Atom feed"  href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/atom.xml">
 {if $entry_id}
     <link rel="pingback" href="{$serendipityBaseURL}comment.php?type=pingback&amp;entry_id={$entry_id}">
 {/if}
 {serendipity_hookPlugin hook="frontend_header"}
-    {if $template_option.magnific == true}
-    <script src="{serendipity_getFile file="js/jquery.magnific.js"}"></script>
-    {/if}
-    {if $template_option.sticky_carousel == true}
-    <script src="{serendipity_getFile file="/js/jquery.bxslider.min.js"}"></script>
-    {/if}
-    {if $template_option.lazyload == true}
-    <script src="{serendipity_getFile file="/js/jquery.lazyload.min.js"}"></script>
-    {/if}
     <script src="{$head_link_script}"></script>
 
 </head>
@@ -112,8 +103,18 @@
     <footer id="sidebar_bottom" class="clearfix">
         {serendipity_printSidebar side="bottom"}
     </footer>
-<script src="{serendipity_getFile file="js/2k11.min.js"}"></script>
 </section>
+
+<script src="{serendipity_getFile file="js/2k11.min.js"}"></script>
+{if $template_option.magnific === true}
+<script src="{serendipity_getFile file="js/jquery.magnific-popup.min.js"}"></script>
+{/if}
+{if $template_option.sticky_carousel === true}
+<script src="{serendipity_getFile file="js/jquery.bxslider.min.js"}"></script>
+{/if}
+{if $template_option.lazyload === true}
+<script src="{serendipity_getFile file="js/jquery.lazyload.min.js"}"></script>
+{/if}
 {/if}
 {$raw_data}
 {serendipity_hookPlugin hook="frontend_footer"}

@@ -8,6 +8,45 @@ a {
     color: #C5FF40;
 }
 
+/* when pre uses overflows scroll */
+pre {
+    padding-bottom: .5em;
+    font-family: Menlo,Consolas,Monaco,monospace;
+}
+/* Mozilla experimental https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color */
+pre {
+    scrollbar-color: #222 #444; /*moz*/
+    scrollbar-width: thin; /*moz*/
+}
+pre .hljs {
+    padding-bottom: .75em;
+    border-left: 5px solid #444;
+    background: rgba(57, 57, 57, 0.6);
+    color: #fff;
+}
+pre::-webkit-scrollbar,
+.hljs::-webkit-scrollbar {
+    width: auto;
+    height: .5em; /*6px*/
+}
+pre::-webkit-scrollbar-thumb,
+.hljs::-webkit-scrollbar-thumb,
+pre::-webkit-scrollbar-track,
+.hljs::-webkit-scrollbar-track  {
+    background-color: #222;
+}
+pre::-webkit-scrollbar-track-piece,
+.hljs::-webkit-scrollbar-track-piece  {
+    background-color: #444;
+}
+
+hr {
+    height: 1px;
+    border: 0;
+    background: transparent;
+    border-top: 1px solid #666;
+}
+
 #identity a {
     color: #F1F1F1;
 }
@@ -54,6 +93,7 @@ input[type="submit"], button {
     color: #F1F1F1;
 }
 
+.serendipity_msg_success,
 .serendipity_msg_notice {
     background: #D0F381;
     border-color: #CCCA14;

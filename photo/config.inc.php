@@ -35,10 +35,10 @@ if (is_array($required_fieldlist)) {
 
 $template_config = array(
     array(
-        'var'           => 'about',
-        'name'          => 'Template Readme',
-        'type'          => 'custom',
-        'custom'        => PHOTO_ABOUT
+        'var'           => 'infoxxx',
+        'name'          => 'infoxxx',
+        'type'          => 'content',
+        'default'       => 'Create the <b>custom field</b> to embed the photos into the entry that will also be shown in the overview.<br>1. Install the plugin Extended properties for entries (serendipity_event_entryproperties).<br>2. Enter its configuration and create a customfield named&colon; <b>featuredImage</b><br>3. Make sure custom fields are ticked to show up in entries and save.<br>4. When writing an entry, there will be a bottom-lined section "<u>Custom Fields</u>".<br>5. There, click on the image icon of the featuredImage field and select the image you want to show up.',
     ),
     array(
         'var'           => 'colorset',
@@ -74,31 +74,31 @@ $template_config = array(
         'var'           => 'quote_webfonts',
         'name'          => PHOTO_QUOTE_WEBFONTS,
         'type'          => 'boolean',
-        'default'       => false
+        'default'       => 'false'
     ),
     array(
         'var'           => 'magnific',
         'name'          => PHOTO_MAGNFIC_ENABLED,
         'type'          => 'boolean',
-        'default'       => true
+        'default'       => 'true'
     ),
     array(
         'var'           => 'lazyload',
         'name'          => PHOTO_LAZYLOAD,
         'type'          => 'boolean',
-        'default'       => true
+        'default'       => 'true'
     ),
     array(
         'var'           => 'sticky_carousel',
         'name'          => PHOTO_USE_CAROUSEL,
         'type'          => 'boolean',
-        'default'       => true
+        'default'       => 'true'
     ),
     array(
         'var'           => 'refcomments',
         'name'          => TWOK11_REFCOMMENTS,
         'type'          => 'boolean',
-        'default'       => false
+        'default'       => 'false'
     ),
     array(
         'var'           => 'header_img',
@@ -127,7 +127,7 @@ $template_config = array(
         'var'           => 'use_corenav',
         'name'          => TWOK11_USE_CORENAV,
         'type'          => 'boolean',
-        'default'       => false
+        'default'       => 'false'
     )
 );
 
@@ -139,68 +139,77 @@ $template_global_config = array('navigation' => true);
 $template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
 serendipity_loadGlobalThemeOptions($template_config, $template_loaded_config, $template_global_config);
 
-function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$addData) {
-      //Check what Event is coming in, only react to those we want.
+if (!function_exists('serendipity_plugin_api_pre_event_hook')) {
+  function serendipity_plugin_api_pre_event_hook($event, &$bag, &$eventData, &$addData) {
+    global $serendipity;
+    //Check what Event is coming in, only react to those we want.
     switch($event) {
         case 'js':
-            global $serendipity;
             $template_config = array();
             $top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
             $template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
 
-            if (! isset($template_loaded_config['lazyload']) || $template_loaded_config['lazyload'] == true) {
-                echo "(function( $ ) {
-                $(document).ready(function() {
-                    $('.lazy').show().lazyload( {
-                        failure_limit: 10,
-                        effect: 'fadeIn'
-                    } );
-                });
-                })(jQuery);\n\n";
+            if (isset($template_loaded_config['lazyload']) && $template_loaded_config['lazyload'] === true) {
+echo "(function( $ ) {
+    $(document).ready(function() {
+        $('.lazyload').show().lazyload( {
+            failure_limit: 10,
+            effect: 'fadeIn'
+        } );
+    });
+})(jQuery);\n\n";
             }
     
-            if (! isset($template_loaded_config['magnific']) || $template_loaded_config['magnific'] == true) {
-                echo "(function( $ ) {
-                $(document).ready(function() {
-                    $('.serendipity_image_link').magnificPopup({
-                                type:'image',
-                                gallery: {
-                                    enabled: true
-                                }
-                            });
+            if (isset($template_loaded_config['magnific']) && $template_loaded_config['magnific'] === true) {
+echo "(function( $ ) {
+    $(document).ready(function() {
+        $('.serendipity_image_link').magnificPopup({
+                    type:'image',
+                    gallery: {
+                        enabled: true
+                    }
                 });
-                })(jQuery);\n\n";
+    });
+})(jQuery);\n\n";
             }
 
-            if (! isset($template_loaded_config['sticky_carousel']) || $template_loaded_config['sticky_carousel'] == true) {
-                echo "(function( $ ) {
-                $(document).ready(function() {
-                    $('#bxslider').bxSlider();
-                });
-                })(jQuery);\n\n";
+            if (isset($template_loaded_config['sticky_carousel']) && $template_loaded_config['sticky_carousel'] === true) {
+echo "(function( $ ) {
+    $(document).ready(function() {
+        $('#bxslider').bxSlider();
+    });
+})(jQuery);\n\n";
                 
             }
-            return true;
             break;
             
         case 'frontend_display':
-            global $serendipity;
             $template_config = array();
             $top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
             $template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
-            
-            if (! isset($template_loaded_config['lazyload']) || $template_loaded_config['lazyload'] == true) {
+
+            if (! isset($template_loaded_config['lazyload']) || $template_loaded_config['lazyload'] === true) {
                 $text = $eventData['body'];
-                $text = preg_replace('/<img([^>]*)/','<img\1 /><noscript><img\1 /></noscript',$text); # create noscript-fallback image
-                $text = preg_replace('/(?<!<noscript>)<img([^>]*)src="([\S ]+?)"/','<img\1data-original="\2"',$text); # move src to data-original
-                $text = preg_replace('/class="([\S ]+?)serendipity_image_left([\S ]+?)"/','class="\1serendipity_image_left lazy\2"',$text); # add lazy class to s9y-images
-                $text = preg_replace('/class="([\S ]+?)serendipity_image_center([\S ]+?)"/','class="\1serendipity_image_center lazy\2"',$text);
-                $text = preg_replace('/class="([\S ]+?)serendipity_image_right([\S ]+?)"/','class="\1serendipity_image_right lazy\2"',$text);
+                #$text = preg_replace('/<img([^>]*)/', '<img\1><noscript><img$1></noscript', $text); # create noscript-fallback image. Eh, no need, since running both src attributes!
+                $text = preg_replace('/<img([^>]*)src="([\S ]+?)"/', '<img$1 data-src="$2"', $text); # copy src to data-src
+                #$text = preg_replace('/class="([\S ]+?)serendipity_image_left([\S ]+?)"/', 'class="$1serendipity_image_left lazyload$2"', $text); # add lazyload class to s9y-images
+                #$text = preg_replace('/class="([\S ]+?)serendipity_image_center([\S ]+?)"/', 'class="$1serendipity_image_center lazyload$2"', $text);
+                #$text = preg_replace('/class="([\S ]+?)serendipity_image_right([\S ]+?)"/', 'class="$1serendipity_image_right lazyload$2"', $text);
+                // use str_replace, since exorbitant faster
+                $text = str_replace(
+                              array('serendipity_image_left',
+                                    'serendipity_image_center',
+                                    'serendipity_image_right'),
+                              array('serendipity_image_left lazyload',
+                                    'serendipity_image_center lazyload',
+                                    'serendipity_image_right lazyload'),
+                              $text);
                 $eventData['body'] = $text;
             }
-            return true;
             break;
     }
+
+  }
 }
 
 if (isset($_SESSION['serendipityUseTemplate'])) {
