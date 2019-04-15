@@ -1,3 +1,6 @@
-Name: soccer2006 v1.1 (2009-08-17)
+Name: soccer2006
 Author: Carl Galloway
-Date: 24 August 2006
+Date: 2019-04-15
+
+Summary: Additional old mid-screen, concatenated sidebar-to-left theme from 2006-08-24 to 2009-08-17 as v1.1, with a fixed content size of 780px.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not mobile friendly!
