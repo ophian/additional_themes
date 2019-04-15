@@ -1,3 +1,6 @@
-Name: wp-clone (2007-04-03)
+Name: wp-clone
 Author: Evan Nemerson
-Date: 24/06/2004
+Date: 2019-04-15
+
+Summary: Additional old full-screen, 2-sidebar and styles only theme from 2004-06-24 to 2007-04-03, fully based on default template files.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and fully mobile friendly!
