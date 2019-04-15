@@ -877,22 +877,6 @@ div.serendipitySideBarItem {}
 
 td.serendipitySideBar {}
 
-div.serendipity_admin_title {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 12px;
-}
-
-div.serendipity_admin_list_title {
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-td.serendipity_admin_list_item {
-    border: dashed 1px #000000;
-}
-
 .serendipity_entry b {}
 .serendipity_entry i {
     color:#135022;
