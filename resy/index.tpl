@@ -1,15 +1,12 @@
 {if $is_embedded != true}
-<!doctype html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="{$lang}"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="{$lang}"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="{$lang}"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="{$lang}"> <!--<![endif]-->
+<!DOCTYPE html>
+<html lang="{$lang}">
 <head>
     <meta charset="{$head_charset}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{$blogTitle}</title>
-    {serendipity_hookPlugin hook="frontend_header"}
-    <meta name="generator" content="Serendipity v.{$serendipityVersion}">
+    <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Serendipity Styx Edition v.{$serendipityVersion}">
 {if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow">
 {else}
@@ -32,11 +29,10 @@
     {if $entry_id}
         <link rel="pingback" href="{$serendipityBaseURL}comment.php?type=pingback&amp;entry_id={$entry_id}" />
     {/if}
+    {serendipity_hookPlugin hook="frontend_header"}
 </head>
 <body>
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-{else}
-    {serendipity_hookPlugin hook="frontend_header"}
 {/if}
 
 {if $is_raw_mode != true}
