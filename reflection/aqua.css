@@ -37,5 +37,6 @@ table.serendipity_calendar a, table.serendipity_calendar a:link, table.serendipi
 td.serendipity_calendarHeader a:link, td.serendipity_calendarHeader a:visited, td.serendipity_calendarHeader a:hover {
      color: #00f1f4; }
 
+/* plugin comment link selector */
 .highlight {
      color: #00f1f4; }
