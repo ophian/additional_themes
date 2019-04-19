@@ -30,14 +30,14 @@ $template_config = array(
             'left' => RESY_LEFT,
             'right' => RESY_RIGHT)
     ),
-
+/* (#Ian: DO NOT do this!!! it breaks your (sidebar) plugin manager which can be healed "only" by resetting the serendipity options table!)
     array (
         'var'           => 'sidebars',
         'type'          => 'hidden',
         'default'       => 'left,hide,right'
     ),
-
-    # Options which are allowed in the Verekia-template but need refining:
+*/
+    # Options which are allowed in the Verekia-template but need refining: (#Ian: Well, then keeping it here and in index.tpl is kind of lazy!)
     array (
         'var'           => 'navigation',
         'type'          => 'hidden',

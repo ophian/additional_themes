@@ -32,19 +32,16 @@
     {serendipity_hookPlugin hook="frontend_header"}
 </head>
 <body>
-<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 {/if}
 
 {if $is_raw_mode != true}
     <div id="header-container">
         <header class="wrapper clearfix">
             <div id="title">
-                <h1><a class="homelink1" href="{$serendipityBaseURL}"
-                    >{$head_title|default:$blogTitle}</a></h1>
-                <h2><a class="homelink2" href="{$serendipityBaseURL}"
-                    >{$head_subtitle|default:$blogDescription}</a></h2>
+                <h1><a class="homelink1" href="{$serendipityBaseURL}">{$head_title|default:$blogTitle}</a></h1>
+                <h2><a class="homelink2" href="{$serendipityBaseURL}">{$head_subtitle|default:$blogDescription}</a></h2>
             </div>
-            {if $template_option.navigation == 'true'}
+            {if $template_option.navigation === true}
                 <nav>
                     <ul>
                         <li><a href="#">Link 1</a></li>
@@ -79,7 +76,7 @@
         </div> <!-- #main -->
     </div> <!-- #main-container -->
 
-    {if $template_option.footer == 'true'}
+    {if $template_option.footer === true}
         <div id="footer-container">
             <footer class="wrapper">
             </footer>
