@@ -38,6 +38,8 @@
     {serendipity_printTrackbacks entry=$entry_id}
     </div>
 
+    <br>
+
 {elseif $is_showcomments}
 
     <div class="serendipity_commentsTitle">{$CONST.COMMENTS}</div>
@@ -50,6 +52,7 @@
         <div class="serendipity_commentsTitle">{$CONST.ADD_COMMENT}</div>
         {$COMMENTFORM}
     {else}
+        <br>
         <div class="serendipity_center serendipity_msg_important">{$CONST.COMMENTS_CLOSED}</div>
     {/if}
 
