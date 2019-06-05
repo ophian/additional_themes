@@ -2,6 +2,7 @@
 
 if (IN_serendipity !== true) { die ("Don't hack!"); }
 
+#implement lang files first, then allow
 #@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 $template_config = array(
