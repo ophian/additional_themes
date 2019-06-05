@@ -1060,18 +1060,18 @@ img.serendipity_entryIcon {
 div.serendipity_entry_extended,
 p.submeta { clear: both; }
 
-#serendipity_categories_plugin ul li {
+ul#serendipity_categories_list li {
     background: url('{TEMPLATE_PATH}img/mini-category.gif') no-repeat;
     padding-left: 18px;
 }
 
-#serendipity_plugin_staticpage div.dbx-content a,
+#serendipity_plugin_staticpage div.dbx-content :not(.serendipity_edit_nugget) a,
 #serendipity_plugin_recententries div.dbx-content a {
     background: url('{TEMPLATE_PATH}img/mini-page.gif') no-repeat;
     padding-left: 18px!important;
 }
 
-#serendipity_archives_plugin div.dbx-content a {
+#serendipity_plugin_archives div.dbx-content ul li a {
     background: url('{TEMPLATE_PATH}img/mini-archive.gif') no-repeat;
     padding-left: 18px;
 }

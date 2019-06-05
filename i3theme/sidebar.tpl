@@ -3,7 +3,7 @@
 {/if}
 {foreach $plugindata AS $item}
     {if $item.class != "serendipity_plugin_quicksearch" AND NOT empty($item.content)}
-    <div id="{$item.id|replace:'@':''}" class="dbx-box">
+    <div id="{$item.class}" class="dbx-box">
         <h3 class="dbx-handle">{$item.title}</h3>
         <div class="dbx-content">{$item.content}</div>
     </div>
