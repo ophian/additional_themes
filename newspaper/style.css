@@ -727,12 +727,6 @@ fieldset {
     #serendipityRightSideBar > div {
         margin-right: initial;
     }
-    @-moz-document url-prefix() {
-        #serendipityLeftSideBar,
-        #serendipityRightSideBar {
-            height: 100%;
-        }
-    }
     #serendipityLeftSideBar {
         border-left: 0 none;
         /*border-right: 1px dashed #222;*/
