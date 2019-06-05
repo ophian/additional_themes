@@ -751,12 +751,6 @@ fieldset {
         background: inherit;
         border: 1px solid rgb(216,210,195);
     }
-    @-moz-document url-prefix() {
-        #serendipityLeftSideBar,
-        #serendipityRightSideBar {
-            height: 100%;
-        }
-    }
     #serendipityLeftSideBar {
         border-left: 0 none;
         /*border-right: 1px dashed #222;*/
