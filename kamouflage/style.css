@@ -344,6 +344,10 @@ pre code {
     margin-left: 0; }
 .serendipity_freetag_taglist_related {
     color: #222; }
+.newsbox {
+    border: 1px solid #74784b; }
+.serendipitySideBarItem.container_serendipity_plugin_comments {
+    word-break: break-word; }
 
 /* MIDDLE SCREENS PLUS */
 @media screen and (min-width: 926px) {
@@ -375,12 +379,6 @@ pre code {
     .serendipity_entry {
        word-wrap: break-word;  /* this is more or less for Chromium, to explicitly break loooong urls */
        word-break: break-word; /* and words, which do expand the flexing content width on certain screens */
-    }
-    /* reset for MOZ, since being able to automatically break AND since it interprets -webkit ONLY @media screen and (-webkit-min-device-pixel-ratio:0) conditions now too(!) */
-    @-moz-document url-prefix() {
-      .serendipity_entry {
-        word-wrap: initial;
-        word-break: normal; }
     }
 }
 
