@@ -19,9 +19,6 @@
     <link rel="stylesheet" type="text/css" href="{$head_link_stylesheet}"/>
     </head>
     <body>
-
-        {$debug}
-
         <div id="header">
             <div id="title"><h1>{$head_title|default:$blogTitle}</h1></div>
             <div id="headline"><h2>{$head_subtitle|default:$blogDescription}</h2></div>
@@ -35,13 +32,14 @@
         <div id="footer">
             <a id="n"></a>
             <div id="nav">
-                {if $footer_next_page}
+                {if NOT empty($footer_next_page)}
                      <div class="navItem"><span class="naviItemAK">[#]</span> <a accesskey="#" href="{$footer_next_page}">{$CONST.NEXT_PAGE}</a></div>
                  {/if}
-                 {if $footer_prev_page}
+                 {if NOT empty($footer_prev_page)}
                     <div class="navItem"><span class="naviItemAK">[*]</span> <a accesskey="*" href="{$footer_prev_page}">{$CONST.PREVIOUS_PAGE}</a></div>
                  {/if}
                 <div class="navItem"><span class="naviItemAK">[0]</span> <a accesskey="0" href="{$serendipityBaseURL}">{$CONST.HOMEPAGE}</a></div>
+                {if isset($categories)}
                 {foreach $categories AS $plugin_category}
                     <div class="navItem">
                         {if $plugin_category.access_key <= 9}
@@ -53,6 +51,7 @@
                         {/if}
                     </div>
                 {/foreach}
+                {/if}
             </div>
         </div>
 
