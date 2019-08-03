@@ -8,5 +8,4 @@
 @define('SORRY', 'Omluva');
 @define('READ_MORE', 'čti dál');
 @define('STICKY_POST', 'Přilepený:');
-@define('STATIC_POST', 'Statický:');
 
