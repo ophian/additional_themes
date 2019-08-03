@@ -64,7 +64,7 @@
     <script src="{$head_link_script}"></script>
 
 </head>
-<body class="{if $template_option.webfonts != 'none'}{$template_option.webfonts}{/if}{if $template_option.headlines_webfonts != 'none'} {$template_option.headlines_webfonts}{/if}">
+<body class="{if isset($template_option.webfonts) AND $template_option.webfonts != 'none'}{$template_option.webfonts}{/if}{if $template_option.headlines_webfonts != 'none'} {$template_option.headlines_webfonts}{/if}">
 {else}
 {serendipity_hookPlugin hook="frontend_header"}
 {/if}
