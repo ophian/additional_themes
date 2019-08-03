@@ -3,7 +3,6 @@
 @define('NAV_LINK_DESC', 'Enter the navbar link text');
 @define('NAV_LINK_URL_DESC', 'Enter the full URL of your link');
 @define('SAYS', 'said');
-@define('STICKY_POST', 'gepinnt:');
 @define('NAV_LINK_IMG', 'Picture for the active Link');
 @define('NAV_LINK_IMG_DESC', 'The picture is shown when link is active. available: 90 .. 99  if you choose 94 the file greenway/images/pic94.jpg must exist');
 @define('NAV_LINK_BAR', 'Aktiver Linktext ');
