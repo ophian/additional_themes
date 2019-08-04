@@ -1,6 +1,8 @@
 Name: Softened Cells
 Author: Carl Galloway
 Date: 2019-01-11
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old theme from 2006-08-25 to 2009-08-27 as v.1.1 with a concatenated sidebar to the right and a size of ~640 pixel content width.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not <u>fully</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
