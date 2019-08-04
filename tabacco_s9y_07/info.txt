@@ -1,7 +1,9 @@
 Name: Blogger-Tabacco
 Author: Frederic Wenzel
 Date: 2019-04-05
+Responsive: Yes
+Mobile: Yes
 
 Summary: Additional old full-screen, 2-sidebar and styles only theme from 2004-10-17 to 2007-04-03 as v0.1, fully based on default template files.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and fully mobile friendly! Based on a blogger template&colon;
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Based on a blogger template&colon;
 "//blogger-templates.blogspot.com/2004_03_14_blogger-templates_archive.html#107996288536718375"
