@@ -1,6 +1,8 @@
 Name: Hemingway
 Author: Carl Galloway
 Date: 2019-02-14
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old WP-port theme from 2006-08-27 to 2014-01-09, with a minimum content size of ~800px.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
