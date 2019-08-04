@@ -1,6 +1,8 @@
 Name: Bar Sinister
 Author: Martin, Carl Galloway
 Date: 2019-02-22
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old theme from 2006-04-01 to 2008-02-14 with a fixed content size of 780px width.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
