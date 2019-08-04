@@ -1,6 +1,8 @@
 Name: leaf
 Author: Ivon Fong (ported by Ziyad Saeed)
 Date: 2019-02-16
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old theme from 2005-09-01 to 2014-01-09 with a fixed content size of ~770px. Parent structure of glossy_white and blix themes.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
