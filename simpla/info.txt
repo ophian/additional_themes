@@ -2,6 +2,8 @@ Name: simpla
 Author: Phu ported by Kunze Media
 Date: 2019-01-16
 Require Serendipity: 1.5
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old theme from 2010-01-19 with a default, but configurable size of ~760 pixel content width.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not <u>fully</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
