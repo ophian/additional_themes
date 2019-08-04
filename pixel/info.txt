@@ -3,4 +3,6 @@ Author: 85ideas.com (Ported to s9y by YellowLed, sponsored by serendipity-templa
 Date: 2019-01-25
 
 Summary: Additional old theme from 2010-11-30 to 2013-10-26 with a fixed size of ~960px width. Ported to s9y by YellowLed.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but not mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
+Responsive: Yes
+Mobile: No
