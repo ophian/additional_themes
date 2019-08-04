@@ -1,6 +1,8 @@
 Name: fifty50
 Author: Rainer Steinke
 Date: 2019-03-20
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old mid-screen, 2-sidebar to left theme from 2006-08-19 to 2008-02-14, with a fixed content width of 800 to 844px.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. <u>Not</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
