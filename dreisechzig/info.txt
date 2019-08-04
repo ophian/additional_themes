@@ -1,6 +1,8 @@
 Name: XBox 360 (dreisechzig)
 Author: Garvin Hicking
 Date: 2019-03-20
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old mid-screen, concatenated sidebar to right theme from 2005-05-21 to 2008-02-14, with a fixed content width of 745 to 824px.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. <u>Not</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
