@@ -1,6 +1,8 @@
 Name: Powered
 Author: Rainer Steinke
 Date: 2019-03-11
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old small-screen theme from 2006-03-09 to 2009-02-14, with a fixed content width of 760px.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. <u>Not</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
