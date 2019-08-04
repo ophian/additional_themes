@@ -2,6 +2,8 @@ Name: RESY
 Author: Manuel Hiptmair, based on a template by Jonathan Verrecchia
 Require Serendipity: 1.6
 Date: 2019-04-19
+Responsive: Yes
+Mobile: Yes
 
 Summary: Additional mid-screen, concatenated sidebar-to-right theme from 2012-04-21 to 2012-04-25.
-Description: Marginally fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and fully mobile friendly!
+Description: Marginally fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
