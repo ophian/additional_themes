@@ -1,6 +1,8 @@
 Name: Modern World
 Author: nerdwg.org port of Luka Cvrk Theme
 Date: 2019-03-11
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old small-screen theme from 2006-07-23 to 2008-02-14, with a fixed content width of 850px.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. <u>Not</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
