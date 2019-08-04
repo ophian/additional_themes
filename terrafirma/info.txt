@@ -1,6 +1,8 @@
 Name: terrafirma
 Author: NodeThirtyThree (ported by Christian Hoffmann)
 Date: 2019-01-16
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old theme from 2007-06-20 to 2009-08-16 with a fixed size of ~748 pixel content width.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not <u>fully</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
