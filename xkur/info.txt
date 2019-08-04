@@ -1,6 +1,8 @@
 Name: xkur
 Author: Reinhard Linnemann
 Date: 2019-03-10
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old small-screen theme from 2006-01-26 to 2013-10-26, with a fixed content width of 1024px.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly! Based on Carl Galloway`s Serendipity Theme 3.0.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Based on Carl Galloway`s Serendipity Theme 3.0.
