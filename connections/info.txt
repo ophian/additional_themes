@@ -1,6 +1,8 @@
 Name: Connections
 Author: Carl Galloway
 Date: 2019-02-18
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old WP-port theme from 2005-12-10 to 2008-02-14, with a fixed content size of 760px.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions, leaving the "old" index main table design. Partial inner responsive, but <u>not</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions, leaving the "old" index main table design.
