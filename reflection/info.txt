@@ -1,6 +1,8 @@
 Name: Reflection
 Author: Carl Galloway
 Date: 2019-01-25
+Responsive: Yes
+Mobile: Yes
 
 Summary: Additional old theme from 2006-08-28 to 2008-02-14 as v1.1. Design by snop, photo by plasticboy.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
