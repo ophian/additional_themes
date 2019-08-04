@@ -1,6 +1,8 @@
 Name: blix
 Author: Sebastian Schmieg (ported by Christian Hoffmann)
 Date: 2019-02-19
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old theme from 2006-01-03 to 2014-01-09, with a fixed content size of 770px. Structural child sibling of leaf and glossy_white themes.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
