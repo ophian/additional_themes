@@ -1,6 +1,8 @@
 Name: 1024px
 Author: Carl Galloway & Andreas Viklund
 Date: 2019-01-29
+Responsive: Yes
+Mobile: No
 
 Summary: Additional old theme from 2006-08-27 to 2009-08-16 as v.1.1 with a fixed size of ~970px. Structural child of andreas.. themes.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but <u>not</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
