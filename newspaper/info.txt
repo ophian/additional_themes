@@ -1,6 +1,8 @@
 Name: Newspaper Blog
 Author: Jannis Hermanns, Ian Styx
 Date: 2019-04-22
+Responsive: Yes
+Mobile: Yes
 
 Summary: Additional full-screen, 2-sidebar styles only theme from 2003-06-26. Previously used an old method of render which got obsolete with Serendipity 2.0. Uses fallback cascade now.
-Description: Cleaned, fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and fully mobile friendly!
+Description: Cleaned, fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
