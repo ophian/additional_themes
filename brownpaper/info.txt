@@ -1,6 +1,8 @@
 Name: Brown Paper
 Author: Abdussamad Abdurrazzaq, Ian Styx
 Date: 2019-03-17
+Responsive: Yes
+Mobile: Yes
 
 Summary: Additional old 2-sidebar full-screen theme from 2006-04-28 to 2008-02-14.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Now - with 2019 - a full modern grid/flexible system theme with a browsers content size up to ~96 percent. Responsive, <u>and</u> fully mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Now - with 2019 revision - a full modern grid/flexible system theme with a browsers content size up to ~96 percent.
