@@ -1,6 +1,8 @@
 Name: Joshua
 Author: Hendrik Scholz
 Date: 2019-03-13
+Responsive: Yes
+Mobile: No
 
 Summary: Additional old mid-screen theme from 2005-06-14 to 2008-02-14, with a fixed content width of 780px.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but <u>not</u> fully mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
