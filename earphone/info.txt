@@ -1,6 +1,8 @@
 Name: Earphone
 Author: Sebastian Nohn
 Date: 2019-03-27
+Responsive: Yes
+Mobile: Yes
 
 Summary: Additional old full-screen, 2-sidebar and styles only theme from 2005-05-21 to 2007-04-03, fully based on default template files.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Fully responsive and mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
