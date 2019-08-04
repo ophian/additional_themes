@@ -2,6 +2,8 @@ Name: Plus9
 Author: Reinhard Linnemann
 Date: 2019-01-11
 Require Serendipity: 2.1
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old theme from 2014-01-09
-Description: Basically upgraded for Serendipity Styx 2.1+ revisions. Not fully mobile friendly!
+Description: Basically upgraded for Serendipity Styx 2.1+ revisions.
