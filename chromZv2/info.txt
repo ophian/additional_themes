@@ -1,6 +1,8 @@
 Name: chromZv2
 Author: Reinhard Linnemann, Design:Free CSS Templates 
 Date: 2019-03-20
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old mid-screen, up to 2-sidebar to right theme from 2007-07-15 to 2009-08-17, with a fixed content width of 760px.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. <u>Not</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
