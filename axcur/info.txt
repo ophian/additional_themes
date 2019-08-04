@@ -1,6 +1,8 @@
 Name: xcur
 Author: reinhardl
 Date: 2019-03-09
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old small-screen theme from 2009-08-13 to 2013-10-26, with a fixed content width of 1000px.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly! Derivate of xkur theme.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Derivate of xkur theme.
