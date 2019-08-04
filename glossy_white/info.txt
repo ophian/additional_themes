@@ -1,6 +1,8 @@
 Name: glossy white
 Author: Christian Hoffmann (ported by Ziyad Saeed)
 Date: 2019-02-16
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old theme from 2005-12-13 to 2014-01-09, with a concatenated sidebar to the right and with a fixed content size of 770px. Structural child of leaf and (parent) sibling of blix theme.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
