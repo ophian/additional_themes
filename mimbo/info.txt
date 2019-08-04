@@ -1,6 +1,8 @@
 Name: Mimbo
 Author: Darren Hoyt, ported to s9y by Matthias 'YellowLed' Mees.
 Date: 2019-02-04
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old, magazine like theme from 2009-04-01(?) to 2013-10-26 with a fixed size of ~900 pixels content width.
-Description: Plugin dependency&colon; event_entryproperties plugin.<br>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Inner responsive, but <u>not</u> mobile friendly!
+Description: Plugin dependency&colon; event_entryproperties plugin.<br>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
