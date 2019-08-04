@@ -2,6 +2,8 @@ Name: i3Theme
 Author: N.Design Studio & MangoOrange, ported to s9y by YellowLed
 Date: 2019-01-11
 Require Serendipity: 1.1
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old theme from 2009-04-01 to 2013-10-26 as v.1.6
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
