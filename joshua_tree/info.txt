@@ -1,6 +1,8 @@
 Name: Joshua Tree
 Author: David Cummins
 Date: 2019-03-16
+Responsive: Yes
+Mobile: No
 
 Summary: Additional old mid-screen theme from 2005-12-31 to 2008-02-14, with a fixed content width of 800px and a concatenated single sidebar.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but <u>not</u> fully mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
