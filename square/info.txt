@@ -1,6 +1,8 @@
 Name: square
 Author: David Cummins
 Date: 2019-01-20
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old theme from 2006-10-02 to 2009-02-14 (v1.0.1) with a fixed size of ~900 pixel content width.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not <u>fully</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
