@@ -1,6 +1,8 @@
 Name: Green Mile
 Author: Christian Hoffmann (Lordcoffee)
 Date: 2019-02-25
+Responsive: Partly Yes
+Mobile: No
 
 Summary: Additional old theme from 2006-02-27 to 2013-10-26 as v1.1, with a fixed content size of 852px width.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but <u>not</u> mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
