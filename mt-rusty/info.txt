@@ -1,7 +1,9 @@
 Name: MT - Rusty
 Author: Evan Nemerson, Ian Styx
 Date: 2019-03-03
+Responsive: Yes
+Mobile: Yes
 
 Summary: Additional full-screen theme from 2004-06-29. Now 2019, and as an example, fully mobile first responsive.
 Description: This "MT-Trendy" child port (by date), basically an early days ~2003 MovableType "Rusty" theme port, is styled by CSS only. Theme-wise it is a sister theme of MT-GettysBurg.
-Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!
+Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
