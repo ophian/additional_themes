@@ -1,6 +1,8 @@
 Name: adaptation
 Author: Alp Uçkan
 Date: 2019-01-28
+Responsive: Yes
+Mobile: Basically Yes
 
 Summary: Additional old theme from 2008-05-02 to 2009-08-25 as v.0.81
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and basically mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
