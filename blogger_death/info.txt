@@ -1,7 +1,9 @@
 Name: Blogger-Death
 Author: Frederic Wenzel
 Date: 2019-03-27
+Responsive: Yes
+Mobile: Yes
 
 Summary: Additional old full-screen, 2-sidebar and styles only theme from 2004-10-14 to 2007-04-03 as v0.1, fully based on default template files.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Fully responsive and mobile friendly! Based on a blogger template&colon;
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Based on a blogger template&colon;
 "//blogger-templates.blogspot.com/2004_03_14_blogger-templates_archive.html#108060235862359662"
