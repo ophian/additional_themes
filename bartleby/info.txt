@@ -4,6 +4,8 @@ Date: 2019-01-08
 Engine: 2k11
 Require Serendipity: 2.0
 Recommended: Yes
+Responsive: Yes
+Mobile: Yes
 
 Summary: Simplified additional <u>engine</u> theme from Mar 4, 2015, with no sidebars.
-Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive mobile friendly!
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
