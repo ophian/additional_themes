@@ -45,7 +45,8 @@ hr {
     border: 0;
     background: transparent;
     border-top: 1px solid #666;
-}
+    display: inline-block;
+    width: 100%; }
 
 #identity a {
     color: #F1F1F1;
