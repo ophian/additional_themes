@@ -1,4 +1,4 @@
-Name: newfangled
+Name: Newfangled
 Author:  based on Free CSS Templates. - ported by Reinhard
 Date: 2019-04-04
 Responsive: Yes
