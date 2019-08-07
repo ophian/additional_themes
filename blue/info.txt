@@ -1,4 +1,4 @@
-Name: blue
+Name: Blue
 Author: Sebastian Bergmann
 Date: 2019-04-15
 
