@@ -1,4 +1,4 @@
-Name: xcur
+Name: Axcur
 Author: reinhardl
 Date: 2019-03-09
 Responsive: Partly Yes
