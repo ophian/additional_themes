@@ -1,4 +1,4 @@
-Name: codeschmiede
+Name: Codeschmiede
 Author: Florian Anderiasch
 Date: 2019-03-22
 Responsive: Yes
