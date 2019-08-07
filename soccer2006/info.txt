@@ -1,4 +1,4 @@
-Name: soccer2006
+Name: Soccer2006
 Author: Carl Galloway
 Date: 2019-04-15
 Responsive: Partly Yes
