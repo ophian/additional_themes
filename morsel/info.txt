@@ -1,4 +1,4 @@
-Name: morsel
+Name: Morsel
 Author: risc
 Date: 2019-03-12
 Responsive: Yes
