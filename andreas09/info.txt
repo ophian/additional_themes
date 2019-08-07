@@ -1,4 +1,4 @@
-Name: andreas09
+Name: Andreas09
 Author: Carl Galloway, Rebecca Hemstad, Andreas Viklund
 Date: 2019-02-25
 Responsive: Partly Yes
