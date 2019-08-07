@@ -275,9 +275,9 @@ if (!empty($template_loaded_config['enablehmenue'])) {
 }
 $serendipity['smarty']->assignByRef('navlinks', $navlinks);
 
-$serendipity['smarty']->assign('tab1_cat', str_replace('&nbsp;', '', trim(@$catsel[$template_loaded_config['catx1']])) ?? null);
-$serendipity['smarty']->assign('tab2_cat', str_replace('&nbsp;', '', trim(@$catsel[$template_loaded_config['catx2']])) ?? null);
-$serendipity['smarty']->assign('tab3_cat', str_replace('&nbsp;', '', trim(@$catsel[$template_loaded_config['catx3']])) ?? null);
+$serendipity['smarty']->assign('tab1_cat', (str_replace('&nbsp;', '', trim(@$catsel[$template_loaded_config['catx1']])) ?? null));
+$serendipity['smarty']->assign('tab2_cat', (str_replace('&nbsp;', '', trim(@$catsel[$template_loaded_config['catx2']])) ?? null));
+$serendipity['smarty']->assign('tab3_cat', (str_replace('&nbsp;', '', trim(@$catsel[$template_loaded_config['catx3']])) ?? null));
 
 // CODE EXAMPLE:  How to save custom field variables within the serendipity "Edit/Create Entry" backend.
 //                Any custom variables can later be queried inside the .tpl files through
