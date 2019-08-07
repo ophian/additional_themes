@@ -1,4 +1,4 @@
-Name: glossy white
+Name: Glossy white
 Author: Christian Hoffmann (ported by Ziyad Saeed)
 Date: 2019-02-16
 Responsive: Partly Yes
