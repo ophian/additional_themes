@@ -1,6 +1,8 @@
 Name: Truth
 Author: Eddie Traversa
 Date: 2019-02-03
+Responsive: Yes
+Mobile: Yes
 
 Summary: THEME_INFO_SUMMARY (text in lang_info_en.inc.php pattern)
 Description: THEME_INFO_DESC (and LANG_CHARSET depending language files)
