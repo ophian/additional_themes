@@ -365,7 +365,7 @@ hr {
     height: 1px;
     margin: 10px 0;
     width: 98%;
-}
+    display: inline-block; }
 
 dt {
     font-weight: 700;
