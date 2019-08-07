@@ -92,7 +92,7 @@ if (isset($_SERVER['HTTP_REFERER']) && (stristr($_SERVER['HTTP_REFERER'], 'googl
     $_SESSION['from_searchengine'] = true;
 }
 
-$serendipity['smarty']->assign('from_searchengine', $_SESSION['from_searchengine'] ?? null);
+$serendipity['smarty']->assign('from_searchengine', ($_SESSION['from_searchengine'] ?? null));
 
 $icons = array();
 
