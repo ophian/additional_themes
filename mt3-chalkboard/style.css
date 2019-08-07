@@ -242,7 +242,8 @@ hr {
     border: 0;
     background: transparent;
     border-top: 1px solid #666;
-}
+    display: inline-block;
+    width: 100%; }
 
 a {
     text-decoration: underline;
