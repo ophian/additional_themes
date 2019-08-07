@@ -695,7 +695,8 @@ hr {
     color: #d0d0d0;
     background-color: #c0c0c0;
     margin: 10px 0;
-}
+    display: inline-block;
+    width: 100%; }
 .content {
     margin: 0 auto;
     width: 900px;
