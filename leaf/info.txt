@@ -1,4 +1,4 @@
-Name: leaf
+Name: Leaf
 Author: Ivon Fong (ported by Ziyad Saeed)
 Date: 2019-02-16
 Responsive: Partly Yes
