@@ -1,4 +1,4 @@
-Name: simpla
+Name: Simpla
 Author: Phu ported by Kunze Media
 Date: 2019-01-16
 Require Serendipity: 1.5
