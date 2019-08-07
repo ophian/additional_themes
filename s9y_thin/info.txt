@@ -1,4 +1,4 @@
-Name: s9y Thin
+Name: S9y Thin
 Author: Kaustubh Srikanth
 Date: 2019-04-05
 Responsive: Yes
