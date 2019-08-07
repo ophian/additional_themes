@@ -205,7 +205,8 @@ hr {
     border: 0;
     background: transparent;
     border-top: 1px solid #aaa;
-}
+    display: inline-block;
+    width: 100%; }
 
 a.serendipity_image_link {
     text-decoration: none;
