@@ -1,4 +1,4 @@
-Name: wp-clone
+Name: WP-clone
 Author: Evan Nemerson, Ian Styx
 Date: 2019-04-15
 Responsive: Yes
