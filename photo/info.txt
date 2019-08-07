@@ -1,4 +1,4 @@
-Name: photo
+Name: Photo
 Author: onli
 Date: 2019-04-1 5
 Engine: 2k11
