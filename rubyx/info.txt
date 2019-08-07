@@ -1,3 +1,8 @@
-Name: RubyX (2008-02-14)
+Name: RubyX
 Author: nuvio/kendahlin (ported by fwaggle)
-Date: 2007-07-21
+Date: 2019-04-21
+Responsive: No
+Mobile: No
+
+Summary: Additional old small-screen theme of 770px in width, with content, right-sidebar and navigation from 2008-02-14.
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
