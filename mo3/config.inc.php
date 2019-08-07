@@ -559,6 +559,6 @@ for ($i = 0; $i < $template_loaded_config['amount']; $i++) {
 
 $serendipity['smarty']->assignByRef('catlinks', $catlinks);
 
-$serendipity['smarty']->assign('tab1_cat', $catsel[$template_loaded_config['catx1']] ?? null);
-$serendipity['smarty']->assign('tab2_cat', $catsel[$template_loaded_config['catx2']] ?? null);
-$serendipity['smarty']->assign('tab3_cat', $catsel[$template_loaded_config['catx3']] ?? null);
+$serendipity['smarty']->assign('tab1_cat', ($catsel[$template_loaded_config['catx1']] ?? null));
+$serendipity['smarty']->assign('tab2_cat', ($catsel[$template_loaded_config['catx2']] ?? null));
+$serendipity['smarty']->assign('tab3_cat', ($catsel[$template_loaded_config['catx3']] ?? null));
