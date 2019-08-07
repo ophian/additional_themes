@@ -1,4 +1,4 @@
-Name: blix
+Name: Blix
 Author: Sebastian Schmieg (ported by Christian Hoffmann)
 Date: 2019-02-19
 Responsive: Partly Yes
