@@ -1,4 +1,4 @@
-Name: fifty50
+Name: Fifty50
 Author: Rainer Steinke
 Date: 2019-03-20
 Responsive: Partly Yes
