@@ -36,6 +36,8 @@
 
     {serendipity_printComments entry=$entry_id}
 
+    {* NO popup viewmode possible without assigning/scoping entry array or assigning these variables singularly *}
+
     {if $is_comment_allowed}
         <h3 id="respond">{$CONST.ADD_COMMENT}</h3>
         {$COMMENTFORM}

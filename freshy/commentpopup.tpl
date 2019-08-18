@@ -43,6 +43,8 @@
 
     <h3 id="comments">{$CONST.COMMENTS}</h3>
 
+    {* NO popup viewmode possible without assigning/scoping entry array or assigning these variables singularly *}
+
     <div id="serendipity_commentlist">
     {serendipity_printComments entry=$entry_id}
     </div>
