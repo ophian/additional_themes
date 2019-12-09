@@ -231,7 +231,7 @@ body, h2, h3, h4, h5, h6, .post h2, .sidebar h2, .commentlist li, #serendipity_c
 #content .serendipity_freetag_taglist .ftr-empty {
     margin-left: 0; }
 
-/** Embedded images with the s9y image manager **/
+/** Embedded images with the Serendipity Styx image manager **/
 
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
