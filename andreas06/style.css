@@ -805,7 +805,7 @@ img.serendipity_freeTag_xmlButton {
 .serendipity_msg_notice {
     color: #2ecc40; }
 
-/** Embedded images with the s9y image manager **/
+/** Embedded images with the Serendipity Styx image manager **/
 
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
