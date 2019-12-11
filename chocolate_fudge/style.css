@@ -438,7 +438,7 @@ h3.entrytitle a, h3.entrytitle a:visited, .serendipity_title a, .serendipity_tit
 .serendipity_Entry_Date {
     margin-bottom:50px; }
 
-/****** Embedded images with the s9y image manager ******/
+/****** Embedded images with the Serendipity Styx image manager ******/
 .serendipity_imageComment_center, .serendipity_imageComment_left, .serendipity_imageComment_right {
     border: 1px solid #220d0c;
     background-color: #4d2a26;
