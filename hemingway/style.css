@@ -1028,7 +1028,7 @@ ul.pages ul li {
 }
 .serendipity_livesearch_result a { color:#fff; }
 
-/* Embedded images with the s9y image manager */
+/* Embedded images with the Serendipity Styx image manager */
 .serendipity_imageComment_center, .serendipity_imageComment_left, .serendipity_imageComment_right {
     border: 1px solid #1c1c1c;
     background-color: #0C0C0C;

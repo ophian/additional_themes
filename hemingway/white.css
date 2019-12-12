@@ -96,7 +96,7 @@ ul.dates a:hover, ul.dates a:hover .date, ul.counts a:hover, ul.counts a:hover .
 #search .searchimg{
 	background:url(img/white/search.gif) 0 0 no-repeat;
 }
-/* Embedded images with the s9y image manager */
+/* Embedded images with the Serendipity Styx image manager */
 .serendipity_imageComment_center, .serendipity_imageComment_left, .serendipity_imageComment_right {
 	border: 1px solid #f1f1f1;
 	background-color: #F5F5F5;
