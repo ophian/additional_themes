@@ -346,7 +346,7 @@ div.serendipity_entryFooter {
   width: 100%;
 }
 
-/** Embedded images with the s9y image manager **/
+/** Embedded images with the Serendipity Styx image manager **/
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
 .serendipity_imageComment_right {
