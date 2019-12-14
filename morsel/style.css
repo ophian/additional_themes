@@ -446,7 +446,7 @@ td.serendipity_commentsLabel {
     background-color: #fff;
 }
 
-/** Embedded images with the s9y image manager **/
+/** Embedded images with the Serendipity Styx image manager **/
 
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
@@ -523,7 +523,7 @@ td.serendipity_commentsLabel {
     max-width: 645px;
 }
 
-/** Embedded images with the s9y image manager end **/
+/** Embedded images with the Serendipity Styx image manager end **/
 
 h2.comments_permalink {
     margin: 0;
