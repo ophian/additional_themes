@@ -507,7 +507,7 @@ td.serendipity_commentsLabel {
     padding-bottom: 1em;
 }
 
-/** Embedded images with the s9y image manager **/
+/** Embedded images with the Serendipity Styx image manager **/
 
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
@@ -585,7 +585,7 @@ td.serendipity_commentsLabel {
     max-width: 100%;
 }
 
-/** Embedded images with the s9y image manager end **/
+/** Embedded images with the Serendipity Styx image manager end **/
 
 h2.comments_permalink {
     margin-top: 15px;
