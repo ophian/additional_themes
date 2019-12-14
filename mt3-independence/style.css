@@ -817,7 +817,7 @@ h2.comments_permalink {
     border: 1px solid #666;
 }
 
-/** Embedded images with the s9y image manager **/
+/** Embedded images with the Serendipity Styx image manager **/
 
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
@@ -890,7 +890,7 @@ h2.comments_permalink {
     margin-top: -6px;
 }
 
-/** Embedded images with the s9y image manager end **/
+/** Embedded images with the Serendipity Styx image manager end **/
 
 /** this && that **/
 
