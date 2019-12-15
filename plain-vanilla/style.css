@@ -297,7 +297,7 @@ body.preview_preview_body {
     border-right: 1px solid #ddd;
     margin: auto 6em; }
 
-/** Embedded images with the s9y image manager (copy of default theme) **/
+/** Embedded images with the Serendipity Styx image manager (copy of default theme) **/
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
 .serendipity_imageComment_right {
