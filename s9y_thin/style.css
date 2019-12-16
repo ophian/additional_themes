@@ -417,7 +417,7 @@ h4 {
 article.serendipity_staticpage {
     margin: .25em; }
 
-/** Embedded images with the s9y image manager **/
+/** Embedded images with the Serendipity Styx image manager **/
 
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
@@ -495,7 +495,7 @@ article.serendipity_staticpage {
     max-width: 100%;
 }
 
-/** Embedded images with the s9y image manager end **/
+/** Embedded images with the Serendipity Styx image manager end **/
 
 /* backend preview*/
 body.preview_preview_body,
