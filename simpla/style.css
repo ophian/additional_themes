@@ -255,7 +255,7 @@ h3#respond {
 .serendipity_comment.odd .comment_content {
     background-color: #eee; }
 
-/** Embedded images with the s9y image manager **/
+/** Embedded images with the Serendipity Styx image manager **/
 
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
