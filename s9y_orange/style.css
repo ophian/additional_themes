@@ -415,7 +415,7 @@ h4 {
 .newsbox {
     margin: 1em auto; }
 
-/** Embedded images with the s9y image manager **/
+/** Embedded images with the Serendipity Styx image manager **/
 
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
@@ -493,7 +493,7 @@ h4 {
     max-width: 100%;
 }
 
-/** Embedded images with the s9y image manager end **/
+/** Embedded images with the Serendipity Styx image manager end **/
 
 /* backend preview*/
 body.preview_preview_body,
