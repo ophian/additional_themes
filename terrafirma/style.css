@@ -145,7 +145,7 @@ img, video {
 .comments_by_author_pagination.bottom {
     margin: 2em auto; }
 
-/** Embedded images with the s9y image manager **/
+/** Embedded images with the Serendipity Styx image manager **/
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
 .serendipity_imageComment_right {
