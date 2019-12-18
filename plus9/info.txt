@@ -1,6 +1,6 @@
 Name: Plus9
 Author: Reinhard Linnemann
-Date: 2019-01-11
+Date: 2019-12-16
 Require Serendipity: 2.1
 Responsive: Partly Yes
 Mobile: No

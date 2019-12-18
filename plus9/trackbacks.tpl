@@ -8,7 +8,7 @@
        <div class="comment_author">
            <strong><a href="{$trackback.url|strip_tags}" {'blank'|xhtml_target}>{$trackback.author|default:$CONST.ANONYMOUS}</a></strong>
 
-           <small>{$trackback.timestamp|formatTime:'%d %b %y'} {$CONST.AT} <a href="#c{$trackback.id}">{$trackback.timestamp|formatTime:'%H:%M'}</a>{if isset($entry.is_entry_owner)} <a href="{$serendipityBaseURL}comment.php?serendipity[delete]={$trackback.id}&amp;serendipity[entry]={$trackback.entry_id}&amp;serendipity[type]=trackbacks">{$CONST.DELETE}</a>{/if}</small>
+           <small>{$trackback.timestamp|formatTime:'%d %b %y'} {$CONST.AT} <a href="#c{$trackback.id}">{$trackback.timestamp|formatTime:'%H:%M'}</a>{if isset($entry.is_entry_owner)} <a href="{$trackback.link_delete}">{$CONST.DELETE}</a>{/if}</small>
        </div>
 
        <div class="clear"></div>
