@@ -6,4 +6,7 @@
 @define('I3_META', 'Display meta box?');
 @define('I3_SAYS', 'says');
 @define('I3_SUBMIT', 'Submit');
+@define('I3_PLINK_TEXT', 'Link');
+@define('I3_PLINK_TITLE', 'Permanent link for this comment');
+@define('I3_REPLYORIGIN', 'Origin');
 
