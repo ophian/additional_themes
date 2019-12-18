@@ -10,7 +10,7 @@
         <div class="content">
             <em><a href="{$trackback.url|strip_tags}" {'blank'|xhtml_target}>{$trackback.title}</a></em><br />
             {$trackback.body|strip_tags|escape:all}<br />
-            {if NOT empty($entry.is_entry_owner)}(<a href="{$serendipityBaseURL}comment.php?serendipity[delete]={$trackback.id}&amp;serendipity[entry]={$trackback.entry_id}&amp;serendipity[type]=trackbacks">{$CONST.DELETE}</a>){/if}
+            {if NOT empty($entry.is_entry_owner)}(<a href="{$trackback.link_delete}">{$CONST.DELETE}</a>){/if}
         </div>
         <div class="clear"></div>
      </li>
