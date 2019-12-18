@@ -9,7 +9,7 @@
             <b>{$CONST.WEBLOG}:</b> {$trackback.author|default:$CONST.ANONYMOUS}<br />
             <b>{$CONST.TRACKED}:</b> {$trackback.timestamp|formatTime:'%b %d, %H:%M'}
         {if NOT empty($entry.is_entry_owner)}
-            (<a href="{$serendipityBaseURL}comment.php?serendipity[delete]={$trackback.id}&amp;serendipity[entry]={$trackback.entry_id}&amp;serendipity[type]=trackbacks">{$CONST.DELETE}</a>)
+            (<a href="{$trackback.link_delete}">{$CONST.DELETE}</a>)
         {/if}
         </div>
     </div>
