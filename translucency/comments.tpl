@@ -12,7 +12,7 @@
             {else}
             {/if}
             {if $comment.url}
-               <a href="{$comment.url}" title="{$comment.url|escape}">{$comment.author|default:$CONST.ANONYMOUS}</a>
+               <a href="{$comment.url|escape:'htmlall'}" title="{$comment.url|escape}">{$comment.author|default:$CONST.ANONYMOUS}</a>
             {/if}
             {if isset($comment.entryauthor) AND $comment.entryauthor == $comment.author AND isset($entry) AND $entry.email == $comment.clear_email} <span class="pc-owner">Post author</span> {/if}
 
