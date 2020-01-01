@@ -11,11 +11,11 @@
        {serendipity_hookPlugin hook="frontend_comment" data=$commentform_entry}
     </p>
 {if $is_commentform_showToolbar}
-    <p><input id="checkbox_remember" type="checkbox" name="serendipity[remember]" {$commentform_remember}>
+    <p><input id="checkbox_remember" type="checkbox" name="serendipity[remember]"{$commentform_remember}>
        <label for="checkbox_remember">{$CONST.REMEMBER_INFO}</label>
        {if $is_allowSubscriptions}
        <br>
-       <input id="checkbox_subscribe" type="checkbox" name="serendipity[subscribe]" {$commentform_subscribe}>
+       <input id="checkbox_subscribe" type="checkbox" name="serendipity[subscribe]"{$commentform_subscribe}>
        <label for="checkbox_subscribe">{$CONST.SUBSCRIBE_TO_THIS_ENTRY}</label>
        {/if}
     </p>
