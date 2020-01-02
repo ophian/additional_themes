@@ -9,7 +9,7 @@
                 <p>
                     <cite>
                         {if $comment.url}<a href="{$comment.url}">{$comment.author|default:$CONST.ANONYMOUS}:</a>{else}{$comment.author|default:$CONST.ANONYMOUS}:{/if}
-                        {if isset($comment.entryauthor) AND $comment.entryauthor == $comment.author AND isset($entry) AND $entry.email == $comment.clear_email} <span class="pc-owner">Post author</span>{/if}
+                        {if isset($comment.entryauthor) AND $comment.entryauthor == $comment.author AND $comment.authoremail == $comment.clear_email} <span class="pc-owner">Post author</span>{/if}
                     </cite>
                     {if isset($comment.type) AND $comment.type == 'TRACKBACK'}{$comment.body|strip_tags:false} [&hellip;]{else}{$comment.body}{/if}
                 </p>
