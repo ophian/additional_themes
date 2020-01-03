@@ -1,6 +1,6 @@
 Name: CoSTa's Nature Theme
 Author: Kostas CoSTa Brzezinski
-Date: 2019-12-16
+Date: 2020-01-01
 Responsive: Partly Yes
 Mobile: No
 
