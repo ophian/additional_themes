@@ -1,6 +1,6 @@
 Name: i3Theme
 Author: N.Design Studio & MangoOrange, ported to s9y by YellowLed
-Date: 2019-12-16
+Date: 2020-01-01
 Require Serendipity: 1.1
 Responsive: Partly Yes
 Mobile: No
