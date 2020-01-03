@@ -1,6 +1,6 @@
 Name: Kubrick
 Author: Tom Sommer
-Date: 2019-12-16
+Date: 2020-01-01
 Require Serendipity: 1.7
 Responsive: Partly Yes
 Mobile: Basically Yes
