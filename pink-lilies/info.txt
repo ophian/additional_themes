@@ -1,6 +1,6 @@
 Name: Pink Lilies
 Author: Carl Galloway and Naoko M
-Date: 2019-01-25
+Date: 2020-01-01
 
 Summary: Additional old theme from 2006-03-06 to 2009-08-17 with a concatenated sidebar to the right and a fixed size of ~718px width.
 Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
