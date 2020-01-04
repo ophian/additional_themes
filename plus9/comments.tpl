@@ -8,7 +8,7 @@
 
                 <div class="comment_author">
                     <strong>{if $comment.url}<a class="comment_source_url" href="{$comment.url}" title="{$comment.url|escape}">{/if}{$comment.author|default:$CONST.ANONYMOUS}{if $comment.url}</a>{/if}</strong>
-                    {if isset($comment.entryauthor) AND $comment.entryauthor == $comment.author AND isset($entry) AND $entry.email == $comment.clear_email} <span class="pc-owner">Post author</span>{/if}
+                    {if isset($comment.entryauthor) AND $comment.entryauthor == $comment.author AND $comment.authoremail == $comment.clear_email} <span class="pc-owner">Post author</span>{/if}
 
                     <small>{$comment.timestamp|formatTime:'%d %b %y'} {$CONST.AT} <a href="#c{$comment.id|default:0}">{$comment.timestamp|formatTime:'%H:%M'}</a>{if isset($entry) AND NOT empty($entry.is_entry_owner) AND NOT empty($comment.id)} <a class="comment_source_ownerlink" href="{$comment.link_delete}" onclick="return confirm('{$CONST.COMMENT_DELETE_CONFIRM|sprintf:$comment.id|default:'':$comment.author}');">{$CONST.DELETE}</a>{/if}</small>
 
