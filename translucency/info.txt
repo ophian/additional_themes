@@ -1,6 +1,6 @@
 Name: Translucency
 Author: Christian Hoffmann
-Date: 2019-01-16
+Date: 2020-01-01
 Responsive: Partly Yes
 Mobile: No
 

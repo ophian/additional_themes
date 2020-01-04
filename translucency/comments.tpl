@@ -14,7 +14,7 @@
             {if $comment.url}
                <a href="{$comment.url|escape:'htmlall'}" title="{$comment.url|escape}">{$comment.author|default:$CONST.ANONYMOUS}</a>
             {/if}
-            {if isset($comment.entryauthor) AND $comment.entryauthor == $comment.author AND isset($entry) AND $entry.email == $comment.clear_email} <span class="pc-owner">Post author</span> {/if}
+            {if isset($comment.entryauthor) AND $comment.entryauthor == $comment.author AND $comment.authoremail == $comment.clear_email} <span class="pc-owner">Post author</span> {/if}
 
             {if isset($entry) AND NOT empty($entry.is_entry_owner) AND NOT empty($comment.id)}
                 (<a href="{$comment.link_delete}" onclick="return confirm('{$CONST.COMMENT_DELETE_CONFIRM|sprintf:$comment.id:$comment.author}');">delete</a>)
