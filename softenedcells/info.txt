@@ -1,6 +1,6 @@
 Name: Softened Cells
 Author: Carl Galloway
-Date: 2019-01-11
+Date: 2020-01-01
 Responsive: Partly Yes
 Mobile: No
 
