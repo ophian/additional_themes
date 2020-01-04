@@ -1,6 +1,6 @@
 Name: Truth
 Author: Eddie Traversa
-Date: 2019-12-16
+Date: 2020-01-01
 Responsive: Yes
 Mobile: Yes
 
