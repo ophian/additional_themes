@@ -1,6 +1,6 @@
 Name: Sagittarius-A
 Author: Reinhard Linnemann
-Date: 2019-03-11
+Date: 2020-01-07
 Responsive: Partly Yes
 Mobile: No
 

@@ -495,7 +495,7 @@ h2.comments_permalink {
 #page_margins, #page, .page_margins, .page {
     height: 1%; }
 #page_margins, #page, .page_margins, .page, #header, #nav, #main, #footer {
-    zoom:1; }
+    *zoom:1; }
 .page_margins {
     width: auto;
     min-width: 740px;
