@@ -185,7 +185,7 @@ p code, p samp, p kbd {
 
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
+.clearfix { *zoom: 1; }
 #mainpane {
     display: table; }
 [type="checkbox"],
