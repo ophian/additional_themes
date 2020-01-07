@@ -1,6 +1,6 @@
 Name: Bartleby
 Author: onli
-Date: 2019-01-08
+Date: 2020-01-07
 Engine: 2k11
 Require Serendipity: 2.0
 Recommended: Yes
