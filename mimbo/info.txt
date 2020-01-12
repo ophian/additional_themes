@@ -1,6 +1,6 @@
 Name: Mimbo
 Author: Darren Hoyt, ported to s9y by Matthias 'YellowLed' Mees.
-Date: 2019-12-16
+Date: 2020-01-12
 Responsive: Partly Yes
 Mobile: No
 
