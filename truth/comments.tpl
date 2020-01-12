@@ -11,7 +11,7 @@
             {/if}
             {if isset($comment.entryauthor) AND $comment.entryauthor == $comment.author AND $comment.authoremail == $comment.clear_email} <span class="pc-owner">Post author</span> {/if}
             {if $comment.url}
-                (<a href="{$comment.url}" title="{$comment.url|escape}">Link</a>)
+                (<a href="{$comment.url|escape:'htmlall'}" title="{$comment.url|escape}">Link</a>)
             {/if}
             {$CONST.ON}
             {$comment.timestamp|formatTime:$CONST.DATE_FORMAT_SHORT}
