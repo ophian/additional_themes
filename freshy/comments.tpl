@@ -13,7 +13,7 @@
             <a class="comment_source_trace" href="#c{$comment.id}">#{$comment.trace}</a>
             <strong class="author">
             {if $comment.url}
-                <a href="{$comment.url}" title="{$comment.url|escape}">{$comment.author|default:$CONST.ANONYMOUS}</a>
+                <a href="{$comment.url|escape:'htmlall'}" title="{$comment.url|escape}">{$comment.author|default:$CONST.ANONYMOUS}</a>
             {else}
                 {$comment.author|default:$CONST.ANONYMOUS}
             {/if}
