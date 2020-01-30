@@ -1,6 +1,6 @@
 Name: 1024px
 Author: Carl Galloway & Andreas Viklund
-Date: 2019-01-29
+Date: 2020-01-30
 Responsive: Yes
 Mobile: No
 

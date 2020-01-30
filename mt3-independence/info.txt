@@ -1,6 +1,6 @@
 Name: MT3 - Independence
 Author: Kaustubh Srikanth & Tom Sommer, Ian Styx
-Date: 2019-03-06
+Date: 2020-01-30
 Responsive: Yes
 Mobile: Yes
 

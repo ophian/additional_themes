@@ -1,6 +1,6 @@
 Name: Peruns Vorlage
 Author: Vladimir Simovic (aka Perun) | www.perun.net | www.vlad-design.de
-Date: 2019-03-11
+Date: 2020-01-30
 Responsive: Partly Yes
 Mobile: No
 

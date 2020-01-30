@@ -1,6 +1,6 @@
 Name: S9y Thin
 Author: Kaustubh Srikanth
-Date: 2019-04-05
+Date: 2020-01-30
 Responsive: Yes
 Mobile: Yes
 

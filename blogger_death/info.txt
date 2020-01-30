@@ -1,6 +1,6 @@
 Name: Blogger-Death
 Author: Frederic Wenzel
-Date: 2019-03-27
+Date: 2020-01-30
 Responsive: Yes
 Mobile: Yes
 

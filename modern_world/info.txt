@@ -1,6 +1,6 @@
 Name: Modern World
 Author: nerdwg.org port of Luka Cvrk Theme
-Date: 2019-03-11
+Date: 2020-01-30
 Responsive: Partly Yes
 Mobile: No
 

@@ -1,6 +1,6 @@
 Name: Xkur
 Author: Reinhard Linnemann
-Date: 2020-01-07
+Date: 2020-01-30
 Responsive: Partly Yes
 Mobile: No
 
