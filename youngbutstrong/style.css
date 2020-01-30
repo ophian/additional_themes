@@ -67,8 +67,6 @@ pre {
     -moz-border-radius: 3px;
     border-radius: 3px;
     padding: .625em; }
-.serendipity_image_link {
-    display: initial; }
 .content_post_body table {
     border: 1px solid #ddd;
     display: inline-grid;
