@@ -289,6 +289,10 @@ td.serendipity_commentsValue textarea {
 
 }
 
+.serendipity_image_link {
+    display: initial;
+}
+
 .serendipity_image_center {
 
 }

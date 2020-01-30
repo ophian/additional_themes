@@ -425,7 +425,7 @@ fieldset,
 /** Embedded images with the Serendipity Styx image manager **/
 
 .serendipity_image_link {
-    display: inline-block;
+    display: initial;
 }
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,

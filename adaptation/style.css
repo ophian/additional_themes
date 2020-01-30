@@ -156,7 +156,7 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
     border-radius: 3px;
     padding: .625em; }
 .serendipity_image_link {
-    display: inline-block; }
+    display: initial; }
 .serendipity_entry table {
     border: 1px solid #aaa;
     display: inline-grid;

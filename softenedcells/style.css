@@ -97,7 +97,7 @@ p code, p samp, p kbd {
     border-radius: 3px;
     padding: .625em; }
 .serendipity_image_link {
-    display: inline-block; }
+    display: initial; }
 .serendipity_entry_body table,
 .serendipity_entry_extended table {
     border: 1px solid #ddd;
