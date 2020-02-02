@@ -734,6 +734,7 @@ fieldset {
     #serendipityRightSideBar {
         min-width: 16em;
         width: 16em;
+        max-width: 16em;
         padding: 0 1em 1em;
         height: auto;
         color: inherit;

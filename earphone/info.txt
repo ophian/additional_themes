@@ -1,6 +1,6 @@
 Name: Earphone
 Author: Sebastian Nohn
-Date: 2020-01-30
+Date: 2020-02-02
 Responsive: Yes
 Mobile: Yes
 
