@@ -506,12 +506,12 @@ td.serendipity_commentsLabel {
     padding-bottom: 1em;
 }
 
-/** Embedded images with the Serendipity Styx image manager **/
+/** Embedded images with the s9y image manager **/
 
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
 .serendipity_imageComment_right {
-    border: 1px solid #ddd;
+    border: 1px solid #594545;
     background-color: transparent;
     margin: .25em;
     padding: .25em;
@@ -546,13 +546,42 @@ td.serendipity_commentsLabel {
     font-size: small;
     color: #222;
 }
-/* image parent comment box responsiveness for mobile screens */
+/* The image parent comment box responsiveness for mobile screens - touches all: old styled and new "figure" styled. */
 .serendipity_imageComment_left,
-.serendipity_imageComment_center,
 .serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
+    width: auto;
+    display: inline-block;
 }
+.serendipity_imageComment_center {
+    width: auto;
+    display: block;
+}
+/* Auto scales 400px left and right oriented image thumbs with floated text - DOES NOT touch smaller defined images, which is perfect! */
+.serendipity_entry .serendipity_imageComment_left,
+.serendipity_entry .serendipity_imageComment_right,
+.serendipity_entry p .serendipity_image_left,
+.serendipity_entry p .serendipity_image_right {
+    max-width: 46%; }
+@media screen and (min-width: 1360px) {
+    .serendipity_entry .serendipity_imageComment_left,
+    .serendipity_entry .serendipity_imageComment_right,
+    .serendipity_entry p .serendipity_image_left,
+    .serendipity_entry p .serendipity_image_right {
+        max-width: initial; }
+}
+/* Set this fluidable for a certain range, which forces to overrule delivered inline styles, but keeps smaller images with a commentbox together. */
+@media screen and (min-width: 1024px) {
+    figure.serendipity_imageComment_center {
+        display: contents; /* force overwrite delivered inline styles */
+    }
+}
+/* Set back to a block element for big screens, since we don't want the commentbox to expand into space. This was tested with an image of 1000px width. Others may vary! */
+@media screen and (min-width: 1595px) {
+    figure.serendipity_imageComment_center {
+        display: block; /* must be "block" on very big content width again .. to center */
+    }
+}
+
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
@@ -581,10 +610,10 @@ td.serendipity_commentsLabel {
 }
 
 .serendipity_image_block {
-    max-width: 100%;
+    max-width: 99%;
 }
 
-/** Embedded images with the Serendipity Styx image manager end **/
+/** Embedded images with the s9y image manager end **/
 
 h2.comments_permalink {
     margin-top: .25em;
