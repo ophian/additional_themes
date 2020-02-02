@@ -693,6 +693,7 @@ fieldset {
     #serendipityRightSideBar {
         min-width: 14em;
         width: 14em;
+        max-width: 14em;
         height: auto;
         color: inherit;
         text-shadow: inherit;
