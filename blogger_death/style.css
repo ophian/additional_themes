@@ -413,7 +413,8 @@ select#serendipity_replyTo {
 }
 
 .serendipity_comment .serendipity_commentBody {
-    border: 1px solid #ddd;
+    border: 1px solid #e34949;
+    color: #ffe4c4;
 }
 .serendipity_content_message,
 .serendipity_commentBody,
@@ -433,10 +434,10 @@ select#serendipity_replyTo {
 }
 /* comment_oddbox is single entry view cycles, while serendipity_comment.odd is for comment summary pages */
 .serendipity_comment.comment_oddbox .serendipity_commentBody {
-    background-color: #f5f5f5;
+    background-color: #6f0606;
 }
 .serendipity_comment.comment_evenbox .serendipity_commentBody {
-    background-color: #fafbfc;
+    background-color: #06000059;
 }
 .serendipity_comment.odd .comment_content {
     background-color: #eee;
@@ -532,13 +533,50 @@ td.serendipity_commentsLabel {
     font-size: small;
     color: #222;
 }
-/* image parent comment box responsiveness for mobile screens */
+/* The image parent comment box responsiveness for mobile screens - touches all: old styled and new "figure" styled. */
 .serendipity_imageComment_left,
-.serendipity_imageComment_center,
 .serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
+    width: auto;
+    display: inline-block;
 }
+.serendipity_imageComment_center {
+    width: auto;
+    display: block;
+}
+/* Auto scales 400px left and right oriented image thumbs with floated text - DOES NOT touch smaller defined images, which is perfect! */
+.serendipity_entry .serendipity_imageComment_left,
+.serendipity_entry .serendipity_imageComment_right,
+.serendipity_entry p .serendipity_image_left,
+.serendipity_entry p .serendipity_image_right {
+    max-width: 46%; }
+@media screen and (min-width: 1360px) {
+    .serendipity_entry .serendipity_imageComment_left,
+    .serendipity_entry .serendipity_imageComment_right,
+    .serendipity_entry p .serendipity_image_left,
+    .serendipity_entry p .serendipity_image_right {
+        max-width: initial; }
+}
+/* Set this fluidable for a certain range, which forces to overrule delivered inline styles, but keeps smaller images with a commentbox together. */
+@media screen and (min-width: 1024px) {
+    figure.serendipity_imageComment_center {
+        display: contents; /* force overwrite delivered inline styles */
+    }
+}
+/* Set back to a block element for big screens, since we don't want the commentbox to expand into space. This was tested with an image of 1000px width. Others may vary! */
+@media screen and (min-width: 1595px) {
+    figure.serendipity_imageComment_center {
+        display: block; /* must be "block" on very big content width again .. to center */
+    }
+}
+
+source.serendipity_image_center {
+    display: contents;
+}
+
+/* inherit keeps inner margins, else set auto or initial */
+.serendipity_imageComment_img {
+    margin: auto; }
+
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
@@ -660,6 +698,9 @@ fieldset {
     font-size: .9375rem;
     padding: 0 .5em; }
 
+.serendipity_entryIcon {
+    display: none;
+}
 
 /** Bigger screens **/
 
@@ -667,8 +708,11 @@ fieldset {
     .serendipity_entry_body,
     .serendipity_entry_extended {
         display: block;
-        clear: both;
         width: auto;
+    }
+    .serendipity_entryIcon {
+        margin: 0 0 .5em .5em;
+        display: inherit;
     }
 }
 @media screen and (min-width: 980px) {
@@ -704,9 +748,10 @@ fieldset {
         border-right: 1px dashed #222;
     }
     #serendipityRightSideBar {
-        border-left: 1px dashed #222;/**/
+        border-left: 1px dashed #222;
         float: inherit;
     }
+
     .serendipity_entry table {
         display: inline-table;
         margin-top: .5em;
@@ -750,32 +795,19 @@ h6 {
     margin: auto;
     width: 100%;
 }
-/*
-#content {
-    padding: 30px 10px 10px 2%;
-    margin: 10px;
-}
-*/
 #serendipityRightSideBar {
-    /*width: 170px;
-    border-left: 1px dashed #000000;
-    padding: 10px;*/
     vertical-align: top;
 }
 
 #serendipityLeftSideBar {
-    /*width: 250px;
-    margin: 20px 0 0 1em;
-    border-right: 1px dashed #000000;*/
     text-align: left;
-    /*padding: 30px 0 0;*/
     vertical-align: top;
 }
 
 body {
     background: #B11312 url('{TEMPLATE_PATH}img/death.gif') bottom left no-repeat fixed;
     font-family: "Trebuchet MS", Trebuchet, Verdana, Sans-Serif;
-    color: #000;
+    color: #bbb;
     margin-bottom: 30px;
 }
 
@@ -843,7 +875,7 @@ a.homelink2:visited,
 
 .serendipity_entry {
     font-family:"Trebuchet MS", Trebuchet, Verdana, Sans-Serif;
-    color: #000;
+    color: #e6cdcd;
     font-size: 100%;
     font-weight: normal;
     padding-right: 10px;
@@ -865,16 +897,6 @@ a.homelink2:visited,
     font-family: "Trebuchet MS", Trebuchet, Verdana, Sans-Serif;
     font-size: 105%;
     color: #333;
-/*    margin: 20px 0 0;
-    text-align: left;
-    padding-top: 5px;
-    padding-left: 5px;
-    border-top-width: 1px;
-    border-right-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-top-style: dashed;
-    border-left-style: dashed;*/
 }
 
 .serendipity_commentsTitle {
