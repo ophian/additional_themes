@@ -383,7 +383,7 @@ select#serendipity_replyTo {
     list-style: none;
 }
 #serendipity_trackbacklist .serendipity_commentBody {
-    background-color: #fff;
+    background-color: #353535;
 }
 #serendipity_trackbacklist .serendipity_comment_source a {
     color: #456687;
@@ -540,11 +540,11 @@ td.serendipity_commentsLabel {
     text-align: center;
 }
 .serendipity_imageComment_txt {
-    border-top: 1px solid #ccc;
-    background-color: #efefef;
+    border-top: 1px solid #6A5F54;
+    background-color: #534B43;
     padding: .25em;
     font-size: small;
-    color: #222;
+    color: #c2c1c1;
 }
 /* The image parent comment box responsiveness for mobile screens - touches all: old styled and new "figure" styled. */
 .serendipity_imageComment_left,
@@ -634,7 +634,7 @@ h2.comments_permalink {
     font-size: .75rem;
 }
 .serendipity_msg_important:not(.msg_error) {
-    background-color: #080605;
+    background-color: #291e19;
     padding: .5em;
     border: 1px solid #604646;
 }
@@ -884,7 +884,7 @@ a.homelink2:visited,
 	padding-top: 12px;
 	padding-right: 0;
 	padding-bottom: 30px;
-	padding-left: 30px;
+	padding-left: 10px;
 }
 
 .serendipity_entry h3, 
