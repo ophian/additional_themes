@@ -186,6 +186,7 @@ p code, p samp, p kbd {
 
 /** Theme fixes depending presets and theme styles **/
 
+html,body {width:fit-content;}
 #wrap {
     display: flex;
     flex-direction: column;
@@ -351,7 +352,7 @@ pre code {
 @media screen and (min-width: 926px) {
     #wrap {
         display: grid;
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
         border: 1px solid #222;
         border-top: 0; }
@@ -384,6 +385,16 @@ pre code {
 @media screen and (min-width: 1024px) {
     .serendipity_entry table {
         display: table; }
+}
+
+@media screen and (min-width: 1440px) {
+    #wrap {
+        width: 94%; }
+}
+
+@media screen and (min-width: 1600px) {
+    #wrap {
+        width: 90%; }
 }
 
 /* backend preview */
@@ -780,6 +791,9 @@ td.Today {
 /********* End of Calendar Styles *********/
 
 /********* Embedded images with the Serendipity Styx image manager *********/
+/* Gallery-Container: default (fallback for no rows, no cols) */
+.serendipity_image_block > div {
+    display: inline-block; }
 /* container for images and text */
 .serendipity_imageComment_center, .serendipity_imageComment_left, .serendipity_imageComment_right {
     border: 1px solid #333E17;
@@ -797,6 +811,39 @@ td.Today {
 .serendipity_image_center {
     display: inherit;
     margin: 0 auto 1em auto;
+}
+/* The image parent comment box responsiveness for mobile screens - touches all: old styled and new "figure" styled. */
+.serendipity_imageComment_left,
+.serendipity_imageComment_right {
+    width: auto;
+    display: inline-block;
+}
+.serendipity_imageComment_center {
+    width: auto;
+    display: block;
+}
+/* Auto scales 400px left and right oriented image thumbs with floated text - DOES NOT touch smaller defined images, which is perfect! */
+.serendipity_entry .serendipity_imageComment_left,
+.serendipity_entry .serendipity_imageComment_right,
+.serendipity_entry p .serendipity_image_left,
+.serendipity_entry p .serendipity_image_right {
+    max-width: 46%;
+}
+/* Set this fluidable for a certain range, which forces to overrule delivered inline styles, but keeps smaller images with a commentbox together. */
+@media screen and (min-width: 1024px) {
+    figure.serendipity_imageComment_center {
+        display: contents; /* force overwrite delivered inline styles */
+    }
+}
+/* Set back to a block element for big screens, since we don't want the commentbox to expand into space. This was tested with an image of 1000px width. Others may vary! */
+@media screen and (min-width: 1595px) {
+    figure.serendipity_imageComment_center {
+        display: block; /* must be "block" on very big content width again .. to center */
+    }
+}
+
+source.serendipity_image_center {
+    display: contents;
 }
 /* style to center image and text within entry */
 .serendipity_imageComment_center {
