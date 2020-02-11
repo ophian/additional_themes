@@ -172,11 +172,13 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
 .content.staticpage_content p > .serendipity_image_right {
     margin: .25em auto; }
 p {
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hypens: auto;
     hyphens: auto; }
 p code, p samp, p kbd {
+    overflow-wrap: anywhere;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hypens: none;
