@@ -208,11 +208,6 @@ p code, p samp, p kbd {
 .serendipity_imageComment_right {
     float: right;
     margin-left: .5em; }
-.serendipity_imageComment_img,
-.serendipity_imageComment_img img {
-    margin: 0;
-    padding: 0;
-    text-align: center; }
 .serendipity_imageComment_txt {
     border-top: 1px solid #DDD;
     margin: 0;
@@ -769,9 +764,6 @@ td.serendipity_calendarHeader a:link, td.serendipity_calendarHeader a:visited, t
 
 .serendipity_imageComment_img,
 .serendipity_imageComment_img img {
-    margin: 0px;
-    padding: 0px;
-    text-align: center;
     background-color: #464646;
 }
 

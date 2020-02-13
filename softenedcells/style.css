@@ -459,13 +459,6 @@ td.serendipity_calendarHeader a:link, td.serendipity_calendarHeader a:visited, t
     float: right;
 }
 
-.serendipity_imageComment_img,
-.serendipity_imageComment_img img {
-    margin: 0px;
-    padding: 0px;
-    text-align: center;
-}
-
 .serendipity_imageComment_txt {
     margin: 0px auto;
     padding: 3px;

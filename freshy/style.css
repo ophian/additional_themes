@@ -1007,13 +1007,6 @@ html > body #content .commentlist dd.author_comment {
     margin: auto;
 }
 
-.serendipity_imageComment_img,
-.serendipity_imageComment_img img {
-    margin: 0px;
-    padding: 0px;
-    text-align: center;
-}
-
 .serendipity_imageComment_txt {
     border-top: 1px solid #ccc;
     margin: 0px;

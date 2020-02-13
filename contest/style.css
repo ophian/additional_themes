@@ -526,13 +526,6 @@ td.serendipity_calendarHeader a:hover {
     float: right;
 }
 
-.serendipity_imageComment_img,
-.serendipity_imageComment_img img {
-    margin: 0px;
-    padding: 0px;
-    text-align: center;
-}
-
 .serendipity_imageComment_txt {
     border-top: 1px solid #DDDDDD;
     margin: 0px;
