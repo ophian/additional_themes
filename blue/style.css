@@ -296,14 +296,6 @@ div.serendipity_entryFooter {
     float: right;
 }
 
-.serendipity_imageComment_img,
-.serendipity_imageComment_img img {
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
-    text-align: center;
-}
-
 .serendipity_imageComment_txt {
     margin: 0px;
     padding: 3px;
