@@ -307,7 +307,7 @@ td.serendipity_commentsValue textarea {
 
 .serendipity_imageComment_img,
 .serendipity_imageComment_img img {
-
+/* don't add redundancy ! */
 }
 
 .serendipity_imageComment_txt {
