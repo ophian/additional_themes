@@ -442,8 +442,19 @@ form#serendipity_comment {
     padding-bottom: 1em;
 }
 input#serendipity_commentform_name,
-select#serendipity_replyTo {
-    width: 98%;
+select#serendipity_replyTo,
+textarea#serendipity_commentform_comment {
+    min-width: 9rem;
+    width: 100%;
+    max-width: max-content;
+}
+#serendipity_comment table td {
+    display: table-row;
+}
+@media screen and (min-width: 480px) {
+    #serendipity_comment table td {
+        display: table-cell;
+    }
 }
 .serendipity_commentForm {
     color: #666;
