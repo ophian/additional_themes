@@ -743,6 +743,9 @@ h4.serendipitySideBarTitle {
 td.serendipitySideBar {
     font-size: x-small; }
 
+.plugin_comment_body {
+    overflow-wrap: break-word;
+}
 /********* End of Sidebar Styles *********/
 
 
