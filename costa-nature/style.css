@@ -802,6 +802,7 @@ code, pre {
 
 .plugin_comment_body {
     clear: both;
+    overflow-wrap: break-word;
 }
 
 /* comments plugin */
