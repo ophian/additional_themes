@@ -984,6 +984,7 @@ img.serendipity_freeTag_xmlButton {
 /* style for comment body within sidebar */
 #RightSideBar .plugin_comment_body {
     font-style: oblique;
+    overflow-wrap: break-word;
 }
 
 #RightSideBar .plugin_comment_wrap {
