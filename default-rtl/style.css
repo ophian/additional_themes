@@ -55,11 +55,13 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
     overflow: auto;
     padding: 2px; }
 p {
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hypens: auto;
     hyphens: auto; }
 p code, p samp, p kbd {
+    overflow-wrap: anywhere;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hypens: none;
@@ -451,7 +453,6 @@ div.serendipitySideBarItem {
 .serendipity_imageComment_right {
     float: left;
 }
-
 
 .serendipity_imageComment_txt {
     border-top: 1px solid #DDDDDD;
