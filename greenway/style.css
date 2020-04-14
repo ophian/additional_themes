@@ -613,7 +613,8 @@ tr.serendipity_calendar td {
     line-height: 0.5em; }
 
 .plugin_comment_body {
-    font-style: oblique; }
+    font-style: oblique;
+    overflow-wrap: break-word; }
 
 .serendipity_freetag_taglist,
 .staticpage_navigation {
