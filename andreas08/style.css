@@ -789,7 +789,8 @@ tr.serendipity_calendar td {
 
 /* style for comment body within sidebar */
 .plugin_comment_body {
-    font-style: oblique; }
+    font-style: oblique;
+    overflow-wrap: break-word; }
 
 /* container cloud for tags and static page navigation */
 .serendipity_freetag_taglist, .staticpage_navigation, .serendipity_search {
