@@ -919,6 +919,7 @@ td.FirstInRow {
 /* style for comment body within sidebar */
 .plugin_comment_body {
     font-style: oblique;
+    overflow-wrap: break-word;
 }
 
 /* container cloud for tags and static page navigation */
