@@ -180,11 +180,13 @@ pre {
 .serendipity_entry p > .serendipity_image_right {
     margin: .25em auto; }
 p {
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hypens: auto;
     hyphens: auto; }
 p code, p samp, p kbd {
+    overflow-wrap: anywhere;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hypens: none;
