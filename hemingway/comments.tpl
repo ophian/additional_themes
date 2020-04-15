@@ -12,7 +12,7 @@
         <div class="content">
             {$comment.body}<br />
         {if $comment.url}
-            (<a class="comment_source_url" href="{$comment.url}" title="{$comment.url|escape}">Link</a>)
+            (<a class="comment_source_url" href="{$comment.url|escape:'htmlall'}" title="{$comment.url|escape}">Link</a>)
         {/if}
         {if isset($comment.id) AND isset($entry.allow_comments) AND $comment.body != 'COMMENT_DELETED'}
             (<a class="comment_reply" href="#serendipity_CommentForm" id="serendipity_reply_{$comment.id}" onclick="document.getElementById('serendipity_replyTo').value='{$comment.id}'; {$comment_onchange|default:''}">{$CONST.REPLY}</a>)
@@ -39,7 +39,7 @@
         <div class="content{if $comment.depth >= 1} child{/if}">
             {$comment.body}<br />
         {if $comment.url}
-            (<a class="comment_source_url" href="{$comment.url}" title="{$comment.url|escape}">Link</a>)
+            (<a class="comment_source_url" href="{$comment.url|escape:'htmlall'}" title="{$comment.url|escape}">Link</a>)
         {/if}
         {if isset($comment.id) AND isset($entry.allow_comments) AND $comment.body != 'COMMENT_DELETED'}
             (<a class="comment_reply" href="#serendipity_CommentForm" id="serendipity_reply_{$comment.id}" onclick="document.getElementById('serendipity_replyTo').value='{$comment.id}'; {$comment_onchange|default:''}">{$CONST.REPLY}</a>)

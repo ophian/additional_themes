@@ -1,6 +1,6 @@
 Name: Hemingway
 Author: Carl Galloway
-Date: 2020-01-30
+Date: 2020-04-14
 Responsive: Partly Yes
 Mobile: No
 
