@@ -941,5 +941,6 @@ img.serendipity_freeTag_xmlButton {
     color: #505050; }
 /* style for comment body within sidebar */
 .plugin_comment_body {
-    font-style: oblique; }
+    font-style: oblique;
+    overflow-wrap: break-word; }
 /********* End Plugin Styles *********/
