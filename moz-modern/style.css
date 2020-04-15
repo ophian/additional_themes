@@ -176,11 +176,13 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     padding: .5em;
     font-size: smaller; }
 p {
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hypens: auto;
     hyphens: auto; }
 p code, p samp, p kbd {
+    overflow-wrap: anywhere;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hypens: none;
@@ -1053,7 +1055,7 @@ img.serendipity_entryIcon {
 
 .serendipity_recententries_entrydate { margin: 0 0 4px 0; }
 
-.plugin_comment_body { padding: 3px 0; }
+.plugin_comment_body { padding: 3px 0; overflow-wrap: break-word; }
 
 .serendipityPlug { text-align: center; }
 
