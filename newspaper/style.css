@@ -907,7 +907,7 @@ div.serendipity_Entry_Date {
 
 .serendipity_recententries_entrydate { margin: 0 0 4px 0; }
 
-.plugin_comment_body { padding: 3px 0; }
+.plugin_comment_body { padding: 3px 0; overflow-wrap: break-word; }
 
 .serendipityPlug { text-align: center; }
 
