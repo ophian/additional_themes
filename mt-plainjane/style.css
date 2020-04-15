@@ -164,11 +164,13 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     padding: .5em;
     font-size: smaller; }
 p {
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hypens: auto;
     hyphens: auto; }
 p code, p samp, p kbd {
+    overflow-wrap: anywhere;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hypens: none;
@@ -501,7 +503,8 @@ ul#serendipity_categories_list {
 }
 
 .plugin_comment_body {
-    padding: .25em 0; }
+    padding: .25em 0;
+    overflow-wrap: break-word; }
 
 .serendipity_shoutbox_date {
     margin: 5px 0 2px 0; }
