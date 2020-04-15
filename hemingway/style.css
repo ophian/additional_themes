@@ -174,11 +174,13 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
 .serendipity_entry_extended p > .serendipity_image_right {
     margin: .25em auto; }
 p {
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hypens: auto;
     hyphens: auto; }
 p code, p samp, p kbd {
+    overflow-wrap: anywhere;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hypens: none;
@@ -830,7 +832,7 @@ ul.dates li, ul.counts li, ul.blogroll ul li, ul.pages li,
 .container_serendipity_plugin_shoutbox br { line-height:0.5em; }
 
 
-.plugin_comment_body { font-style:oblique; }
+.plugin_comment_body { font-style:oblique; overflow-wrap: break-word; }
 .plugin_comment_date { font-size:0.8em; }
 ul.dates .date {
     color:#858585;
