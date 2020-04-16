@@ -81,11 +81,13 @@ a img, .emoticon {
 
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 p {
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hypens: auto;
     hyphens: auto; }
 p code, p samp, p kbd {
+    overflow-wrap: anywhere;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hypens: none;
@@ -466,6 +468,9 @@ td.serendipity_calendarHeader a:link, td.serendipity_calendarHeader a:visited, t
     font-variant:small-caps;
     text-align: center;
     line-height:120%;
+}
+.plugin_comment_body {
+    overflow-wrap: break-word;
 }
 /* End Image Manager Styles */
 
