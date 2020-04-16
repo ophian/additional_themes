@@ -182,11 +182,13 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
 .serendipity_calendarHeader {
     text-align: center; }
 p {
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hypens: auto;
     hyphens: auto; }
 p code, p samp, p kbd {
+    overflow-wrap: anywhere;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hypens: none;
@@ -258,11 +260,11 @@ p code, p samp, p kbd {
     padding: .5em .5em;
     background-color: #336;
     font-size: small;
-    color: #fff;
-}
+    color: #fff; }
+.plugin_comment_body {
+    overflow-wrap: break-word; }
 #content .serendipity_freetag_taglist .ftr-empty {
-    margin-left: 0;
-}
+    margin-left: 0; }
 @media screen and (max-width: 480px) {
     #serendipity_comment td { display: block; width:100%; }
     #serendipity_comment input:not(type="checkbox"),
