@@ -164,11 +164,13 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     padding: .5em;
     font-size: smaller; }
 p {
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hypens: auto;
     hyphens: auto; }
 p code, p samp, p kbd {
+    overflow-wrap: anywhere;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hypens: none;
@@ -209,11 +211,15 @@ body.save_preview_body {
     padding: 0 .25em;
 }
 
+.plugin_comment_body {
+    overflow-wrap: break-word;
+}
 .serendipity_edit_nugget {
     text-align: right;
 }
 .serendipity_freetag_taglist {
-    display: inline-table; }
+    display: inline-table;
+}
 #content .serendipity_freetag_taglist .ftr-empty {
     margin-left: auto;
 }
