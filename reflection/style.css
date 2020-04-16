@@ -168,11 +168,13 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
 .serendipity_entry p > .serendipity_image_right {
     margin: .25em auto; }
 p {
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hypens: auto;
     hyphens: auto; }
 p code, p samp, p kbd {
+    overflow-wrap: anywhere;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hypens: none;
@@ -232,11 +234,11 @@ p code, p samp, p kbd {
     border: 1px solid #aaa;
     padding: .5em .5em;
     background-color: transparent;
-    font-size: small;
-}
+    font-size: small; }
+.plugin_comment_body {
+    overflow-wrap: break-word; }
 #content .serendipity_freetag_taglist .ftr-empty {
-    margin-left: 0;
-}
+    margin-left: 0; }
 
 /* backend preview */
 body.preview_preview_body {
