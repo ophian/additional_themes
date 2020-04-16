@@ -178,11 +178,13 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
     margin-bottom: 1.5em;
     font-size: initial; }
 p {
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hypens: auto;
     hyphens: auto; }
 p code, p samp, p kbd {
+    overflow-wrap: anywhere;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hypens: none;
@@ -309,6 +311,8 @@ body.preview_preview_body {
     background-color: #BE8780;
     border-radius: 1em;
     padding: .5em; }
+.plugin_comment_body {
+    overflow-wrap: break-word; }
 
 /* General Styles */
 
