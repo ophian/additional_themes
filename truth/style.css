@@ -168,11 +168,13 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 #content > .serendipity_staticpage header h2 {
     margin-top: 0; }
 p {
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hypens: auto;
     hyphens: auto; }
 p code, p samp, p kbd {
+    overflow-wrap: anywhere;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hypens: none;
@@ -488,6 +490,10 @@ td.serendipity_commentsValue textarea {
     margin-bottom: 5px;
     padding-bottom: 3px;
     border-bottom: 1px solid #36558C;
+}
+
+.plugin_comment_body {
+    overflow-wrap: break-word;
 }
 
 a:link,
