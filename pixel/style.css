@@ -168,11 +168,13 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
 .topPost p > .serendipity_image_right {
     margin: .25em auto; }
 p {
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hypens: auto;
     hyphens: auto; }
 p code, p samp, p kbd {
+    overflow-wrap: anywhere;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hypens: none;
@@ -237,6 +239,8 @@ hr {
     list-style: none;
     margin: 0;
     padding: 0; }
+.plugin_comment_body {
+    overflow-wrap: break-word; }
 .serendipity_commentBody,
 .comment_content {
     display: block;
