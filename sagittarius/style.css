@@ -201,6 +201,8 @@ body.save_preview_body {
 .serendipity_edit_nugget {
     text-align: right;
 }
+.plugin_comment_body {
+    overflow-wrap: break-word; }
 .serendipity_freetag_taglist {
     display: inline-table; }
 .maincontent .serendipity_freetag_taglist .ftr-empty {
