@@ -47,11 +47,13 @@ input[type="checkbox"] {
     vertical-align: middle; }
 
 p {
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hypens: auto;
     hyphens: auto; }
 p code, p samp, p kbd {
+    overflow-wrap: anywhere;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hypens: none;
@@ -165,6 +167,9 @@ body.save_preview_body #outer {
 #content.preview_preview_content .divider2 {
     display: none;
     visibility: hidden; }
+
+.plugin_comment_body {
+    overflow-wrap: break-word; }
 
 
 /*
