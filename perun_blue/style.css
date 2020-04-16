@@ -164,11 +164,13 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     padding: .5em;
     font-size: smaller; }
 p {
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hypens: auto;
     hyphens: auto; }
 p code, p samp, p kbd {
+    overflow-wrap: anywhere;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hypens: none;
@@ -198,7 +200,6 @@ body.save_preview_body {
     background: none;
     text-align: left;
 }
-
 
 .serendipity_edit_nugget {
     text-align: right;
@@ -233,6 +234,9 @@ table.serendipity_calendar {
 .serendipity_calendarHeader {
     text-align: center;
 }
+
+.plugin_comment_body {
+    overflow-wrap: break-word; }
 
 #serendipity_category_form ul {
     margin: 0 0 1em;
