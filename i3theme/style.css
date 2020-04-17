@@ -988,7 +988,7 @@ body.preview_preview_body { background: #fff; }
 /* As long as not being a fully responsive theme for mobile screens and using the Styx Gallery styles keep this */
 .serendipity_image_link,
 .serendipity_image_block.row, .serendipity_image_block.col {
-    display: inline-block; }
+    display: block; }
 
 .serendipity_center {
     margin: 5px auto 10px;
