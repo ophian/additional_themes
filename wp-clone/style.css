@@ -192,6 +192,8 @@ p code, p samp, p kbd {
 
 /* Theme additions and fixes */
 
+html { overflow-x: hidden; }
+img { width: auto; }
 pre {
     white-space: pre; /*fallback*/
     white-space: pre-wrap;
@@ -330,9 +332,10 @@ ul#serendipity_syndication_list li:first-of-type,
 }
 
 /* entries */
-.serendipity_entry > pre {
+.serendipity_entry pre {
     background-color: transparent;
     border: 1px solid #eee;
+    min-width: 6em;
 }
 
 .serendipity_Entry_Date.freetag_cloud h2.serendipity_date,
@@ -518,6 +521,12 @@ td.serendipity_commentsLabel {
 
 /** Embedded images with the Serendipity Styx image manager **/
 
+/* wp-theme and alike theme specific only */
+figure.serendipity_imageComment_center {
+    width: auto !important;
+    display: table !important;
+}
+
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
 .serendipity_imageComment_right {
@@ -550,20 +559,13 @@ td.serendipity_commentsLabel {
     font-size: small;
     color: #222;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -738,9 +740,18 @@ fieldset {
         border-left: 1px dotted #ccc;
         float: inherit;
     }
+    /* special case for non-column c(2/3/4) signed col galleries */
+    .serendipity_image_block.col {
+        display: initial;
+    }
     .serendipity_entry table {
         display: inline-table;
         margin-top: .5em;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .serendipity_image_block.col {
+        display: block;
     }
 }
 
@@ -789,8 +800,7 @@ a img {
   border-top: solid 1px #9a9;
   letter-spacing: 0.2em;
   margin: 0;
-  padding-right: 10px;
-  padding-bottom: 15px
+  padding-bottom: 15px;
   color: #fff;
 }
 

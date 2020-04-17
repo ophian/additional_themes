@@ -1,6 +1,6 @@
 Name: WP-clone
 Author: Evan Nemerson, Ian Styx
-Date: 2020-02-02
+Date: 2020-04-17
 Responsive: Yes
 Mobile: Yes
 
