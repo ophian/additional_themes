@@ -160,7 +160,7 @@ img, video {
     margin: .25em auto; }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto; }
 .serendipity_imageComment_center {
     margin: .25em auto; }
@@ -187,11 +187,15 @@ img, video {
 .serendipity_imageComment_center,
 .serendipity_imageComment_right {
     width: auto !important; /* force overwrite delivered inline styles */
-    display: table; }
+    display: table !important; }
 
 /* defaults */
 
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+/* overwrite highlight.css code */
+pre code {
+    max-width: 46em;
+    display: inline-block; }
 #serendipity_comment_0 { /* a new unsaved comment preview only */
     border: 1px solid #ddd;
     -webkit-border-radius: 3px;
@@ -199,7 +203,7 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
     border-radius: 3px;
     padding: .625em; }
 .serendipity_image_link {
-    display: initial; }
+    display: inline-block; }
 .serendipity_entry table {
     border: 1px solid #eee;
     display: inline-grid;
