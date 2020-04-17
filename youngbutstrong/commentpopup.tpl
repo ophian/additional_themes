@@ -42,9 +42,9 @@
 
 {elseif $is_showcomments}
 
-    <h3 class="popup_content serendipity_commentsTitle">{$CONST.COMMENTS}</h3>
-
     {* NO popup viewmode possible without assigning/scoping entry array or assigning these variables singularly *}
+
+    <h3 class="popup_content serendipity_commentsTitle">{$CONST.COMMENTS}</h3>
 
     <ol id="serendipity_commentlist">
     {serendipity_printComments entry=$entry_id}

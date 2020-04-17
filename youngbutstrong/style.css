@@ -79,6 +79,7 @@ pre {
 .content_post p > .serendipity_image_right {
     margin: .25em auto; }
 p {
+    display: inline-block;
     overflow-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
@@ -145,20 +146,13 @@ p code, p samp, p kbd {
     font-size: 8pt;
     text-align: center;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -205,7 +199,8 @@ div#container {
     width: 850px;
     background: #342b22 url('{TEMPLATE_PATH}images/bg_body.jpg') repeat-y;
     margin: 0 auto;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 div#logo {
