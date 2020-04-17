@@ -190,7 +190,6 @@ p code, p samp, p kbd {
     vertical-align: middle;
     margin-right: 2px; }
 .serendipity_Entry_Date {
-    display: table;
     margin-bottom: 2.5em;
     width: 100%; }
 .comments_by_author_pagination.bottom {
@@ -265,9 +264,9 @@ img {
     width: auto;
 }
 .urllogo {
-font-size: 14px;
- font-family: Garamond, verdana, arial, helvetica, sans-serif;
- color: #9B62A6;
+    font-size: 14px;
+    font-family: Garamond, verdana, arial, helvetica, sans-serif;
+    color: #9B62A6;
 }
 
 
@@ -321,6 +320,7 @@ th, td {
 
 p, td, th, div, span {
     font-family: Garamond, verdana, arial, helvetica, sans-serif;
+    font-size: 1rem;
 }
 
 #serendipity_banner {
@@ -606,20 +606,13 @@ div.serendipitySideBarItem {
     font-size: 8pt;
     text-align: center;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
