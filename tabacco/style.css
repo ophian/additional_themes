@@ -326,6 +326,9 @@ table.serendipity_calendar {
 .serendipitySideBarContent a.node {
     display: initial;
 }
+.dtree a {
+    color: #d2d2d2;
+}
 
 ul#serendipity_syndication_list li:first-of-type,
 #mainpane .container_serendipity_plugin_freetag li {
@@ -367,6 +370,8 @@ textarea#serendipity_commentform_comment {
 }
 form#serendipity_comment {
     padding-bottom: 1em;
+    background-color: #372d2d;
+    color: #A2918A;
 }
 input#serendipity_commentform_name,
 select#serendipity_replyTo,
@@ -594,7 +599,7 @@ td.serendipity_commentsLabel {
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
