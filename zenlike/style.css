@@ -96,6 +96,7 @@ p code, p samp, p kbd {
     border-radius: 3px;
     padding: .625em; }
 .serendipity_image_link {
+    display: block;
     min-width: 4em; }
 .contentarea p > .serendipity_image_left,
 .contentarea p > .serendipity_imageComment_center,
@@ -168,9 +169,11 @@ body.save_preview_body #outer {
     display: none;
     visibility: hidden; }
 
+.post {
+    display: block;
+    min-width: 360px; }
 .plugin_comment_body {
     overflow-wrap: break-word; }
-
 
 /*
 	zenlike1.0 by nodethirtythree design
