@@ -286,13 +286,13 @@ hr {
 
     #mainpane {
         width: 760px;
-        display: table;
+        display: block;
         border-top: 3px solid #003A77;
     }
     #content,
     #serendipityLeftSideBar,
     #serendipityRightSideBar {
-        display: table-cell;
+        display: inline-block;
     }
     #serendipityRightSideBar {
         border-left: 1px dashed #005EA0;
@@ -303,6 +303,7 @@ hr {
     }
     #content {
         width: auto;
+        max-width: 416px;
         float: unset;
         border-right: 0 none;
         border-bottom: initial;
@@ -340,6 +341,10 @@ hr {
 .serendipitySideBarTitle > div,
 .serendipitySideBarTitle > a {
     display: inline-table;
+}
+
+.plugin_comment_body {
+    overflow-wrap: break-word;
 }
 
 #content .serendipity_Entry_Date {
@@ -649,20 +654,13 @@ td.serendipity_commentsLabel {
     font-size: small;
     color: #222;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
