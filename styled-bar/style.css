@@ -346,11 +346,11 @@ table.archives_listing {
         width: 100%;
         max-width: 860px;
         border: 1px solid black;
-        display: table; }
+        display: block; }
     #content,
     #serendipityLeftSideBar,
     #serendipityRightSideBar {
-        display: table-cell; }
+        display: inline-block; }
     #serendipityLeftSideBar,
     #serendipityRightSideBar {
         min-width: 142px;  }
@@ -359,7 +359,7 @@ table.archives_listing {
     #serendipityRightSideBar {
         border-left: 1px dotted #666; }
     #content {
-        width: 510px;
+        width: 54%;
         /*min-width: 500.33px;*/
         padding: .25em;
         border-bottom: 0 none; }
@@ -543,21 +543,13 @@ article.serendipity_staticpage {
 .plugin_comment_body {
     overflow-wrap: break-word;
 }
-
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
