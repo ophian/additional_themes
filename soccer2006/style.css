@@ -420,20 +420,13 @@ article.serendipity_staticpage {
     font-size: small;
     color: #222;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -738,4 +731,5 @@ form textarea  {margin-bottom: 10px; }
 /* style for comment body within sidebar */
 .plugin_comment_body, .serendipitySideBarDate {
     font-style: oblique;
-    overflow-wrap: break-word; }
+    overflow-wrap: break-word;
+}
