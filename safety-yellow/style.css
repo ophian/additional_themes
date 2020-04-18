@@ -192,11 +192,13 @@ p code, p samp, p kbd {
 
 /* Theme additions and fixes */
 
+img { width: auto; }
 pre {
     white-space: pre; /*fallback*/
     white-space: pre-wrap;
     word-wrap: break-word;
-    overflow: auto; }
+    overflow: auto;
+    min-width: 10em; }
 pre {
     font-family: Menlo,Consolas,Monaco,monospace;
     background-color: #fafafa;
@@ -229,7 +231,6 @@ hr {
     margin: 0;
     padding: 0;
     width: auto;
-    float: none;
     vertical-align: top;
 }
 #serendipityLeftSideBar,
@@ -238,7 +239,6 @@ hr {
     flex-wrap: wrap;
     justify-content: space-between;
     width: auto;
-    float: none;
     padding: 1em;
     vertical-align: top;
     border: 0 none;
@@ -511,6 +511,9 @@ td.serendipity_commentsLabel {
 
 /** Embedded images with the Serendipity Styx image manager **/
 
+.serendipity_image_block > div {
+    display: inline-block; }
+
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
 .serendipity_imageComment_right {
@@ -524,6 +527,9 @@ td.serendipity_commentsLabel {
 .serendipity_entry p > .serendipity_imageComment_center,
 .serendipity_entry p > .serendipity_image_right {
     margin: .25em auto;
+}
+figure.serendipity_imageComment_center {
+    display: contents;
 }
 .serendipity_imageComment_center {
     margin: .25em auto;
@@ -543,20 +549,13 @@ td.serendipity_commentsLabel {
     font-size: small;
     color: #222;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -694,19 +693,15 @@ fieldset {
 @media screen and (min-width: 980px) {
     #mainpane {
         width: 100%;
-        display: table;
+        display: flex;
     }
     #content,
     #serendipityLeftSideBar,
     #serendipityRightSideBar {
-        display: table-cell;
-    }
-    #serendipityLeftSideBar {
-        float: left;
+        display: initial;
     }
     #content {
         width: 100%;
-        float: unset;
         border-right: 0 none;
     }
     #serendipityLeftSideBar,
@@ -727,15 +722,24 @@ fieldset {
         border-left: 0 none;
         /*border-right: 1px dashed #222;*/
     }
-
+    /* special case for non-column c(2/3/4) signed col galleries */
+    .serendipity_image_block.col {
+        display: initial;
+    }
     #serendipityRightSideBar {
         /*border-left: 1px dashed #222;*/
-        float: inherit;
     }
-
+    .serendipity_entry {
+        display: contents;
+    }
     .serendipity_entry table {
         display: inline-table;
         margin-top: .5em;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .serendipity_image_block.col {
+        display: block;
     }
 }
 
