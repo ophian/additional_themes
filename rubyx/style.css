@@ -216,6 +216,16 @@ h2.serendipity_title {
     overflow-wrap: break-word;
 }
 
+/* overwrite fallback plain image padding */
+.serendipity_image_center {
+    padding: .25em;
+}
+/* style to center */
+.serendipity_image_center {
+    display: block;
+    margin: 0 auto 1em auto;
+}
+
 /*
 ** RubyX
 ** Based on CrystalX by Nuvio (http: //www.nuvio.cz/)
