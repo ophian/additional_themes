@@ -720,7 +720,7 @@ td.serendipity_calendarHeader a:hover {
     line-height:1.5em; }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* style to center image and text within entry */
