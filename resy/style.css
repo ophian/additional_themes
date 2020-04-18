@@ -79,7 +79,7 @@ a{text-decoration:none;}a:hover{text-decoration:underline;}
 h1,h2,h3,h4,h5,h6{font-family:Georgia, serif;}
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 .serendipity_entry{margin-bottom:3em;}
@@ -101,6 +101,10 @@ h1,h2,h3,h4,h5,h6{font-family:Georgia, serif;}
     text-align: center;
     margin: 1em auto;
     padding-bottom: 1em;
+}
+pre code {
+    display: block;
+    width: auto;
 }
 .serendipity_section_trackbacks{font-weight:bold;border-bottom:1px solid;}
 .serendipity_sideNavigation,.serendipity_commentsTitle{font-weight:bold;}
