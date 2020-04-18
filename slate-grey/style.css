@@ -196,7 +196,8 @@ pre {
     white-space: pre; /*fallback*/
     white-space: pre-wrap;
     word-wrap: break-word;
-    overflow: auto; }
+    overflow: auto;
+    min-width: 10em; }
 pre {
     font-family: Menlo,Consolas,Monaco,monospace;
     background-color: #fafafa;
@@ -585,16 +586,13 @@ td.serendipity_commentsLabel {
     }
 }
 
-source.serendipity_image_center {
-    display: contents;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
