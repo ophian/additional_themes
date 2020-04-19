@@ -332,13 +332,6 @@ body.preview_preview_body {
     font-size: 8pt;
     text-align: center;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 .serendipity_comments {
 }
 /* overwrite fallback plain image padding */
@@ -347,7 +340,7 @@ body.preview_preview_body {
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
