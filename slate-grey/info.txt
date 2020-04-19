@@ -1,5 +1,5 @@
 Name: Slate Grey
-Author: Evan Nemerson
+Author: Evan Nemerson, Ian Styx
 Date: 2020-04-15
 Responsive: Yes
 Mobile: Yes
