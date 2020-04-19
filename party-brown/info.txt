@@ -1,6 +1,6 @@
 Name: Party Brown
-Author: Evan Nemerson
-Date: 2020-02-02
+Author: Evan Nemerson, Ian Styx
+Date: 2020-04-17
 Responsive: Yes
 Mobile: Yes
 
