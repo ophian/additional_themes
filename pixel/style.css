@@ -1160,7 +1160,7 @@ dd {
 
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 .serendipity_image_center {
