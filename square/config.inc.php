@@ -60,12 +60,24 @@ $template_config = array(
         'description'   => NAVLINK4_URL_DESC,
         'type'          => 'string',
         'default'       => '#',
+    ),
+    /* amount scoped 'local' or 'single' does need array('navigation' => false) like further down to pass by the global navigation sets and use
+    the "new" backend_templates_globalthemeoptions $template_config $supported hook to re-invent these local only navlink sets into the $template_loaded_config
+    setting $supported['navigation'] to false, eg.
+    $supported = array('navigation' => false); // false, when NOT using the global navigation but use a local one
+    serendipity_plugin_api::hook_event('backend_templates_globalthemeoptions', $template_config, $supported);
+    */
+    array(
+        'var'           => 'amount',
+        'name'          => NAVLINK_AMOUNT,
+        'type'          => 'string',
+        'default'       => '4',
+        'scope'         => 'local',
     )
 );
-
 /* PLEASE NOTE: These predefined navlink items are not the recommended way for modern Serendipity dynamic (global) navlinks.
                 They are an old, more statically alike approach to build navigation items.
-                If tweaking the amount you have to remove them manually and their usage in the index.tpl file. */
+                If tweaking the amount you have to remove them manually and their usage as navlink items in the index.tpl file. */
 
 /* when using a $template_config_array(), even without the global set navigation items, you need to keep this following code */
 $top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
