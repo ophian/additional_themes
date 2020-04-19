@@ -424,6 +424,9 @@ fieldset,
 
 /** Embedded images with the Serendipity Styx image manager **/
 
+.serendipity_image_link {
+    display: inline-block;
+}
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
 .serendipity_imageComment_right {
@@ -456,20 +459,13 @@ fieldset,
     font-size: small;
     color: #222;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit !important;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -1106,11 +1102,11 @@ ul.bxslider {
 
 @font-face {
   font-family: 'fa';
-  src: url('{TEMPLATE_PATH}/font/fa.eot?20691182');
-  src: url('{TEMPLATE_PATH}/font/fa.eot?20691182#iefix') format('embedded-opentype'),
-       url('{TEMPLATE_PATH}/font/fa.woff?20691182') format('woff'),
-       url('{TEMPLATE_PATH}/font/fa.ttf?20691182') format('truetype'),
-       url('{TEMPLATE_PATH}/font/fa.svg?20691182#fa') format('svg');
+  src: url('{TEMPLATE_PATH}font/fa.eot?20691182');
+  src: url('{TEMPLATE_PATH}font/fa.eot?20691182#iefix') format('embedded-opentype'),
+       url('{TEMPLATE_PATH}font/fa.woff?20691182') format('woff'),
+       url('{TEMPLATE_PATH}font/fa.ttf?20691182') format('truetype'),
+       url('{TEMPLATE_PATH}font/fa.svg?20691182#fa') format('svg');
   font-weight: normal;
   font-style: normal;
 }
