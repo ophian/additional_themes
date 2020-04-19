@@ -364,6 +364,7 @@ ul#serendipity_syndication_list li:first-of-type,
 }
 .serendipity_entry pre {
     background-color: transparent;
+    min-width: 10em;
 }
 /*
 .serendipity_Entry_Date.freetag_cloud h2.serendipity_date,
@@ -585,20 +586,13 @@ td.serendipity_commentsLabel {
     font-size: small;
     color: #222;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -748,7 +742,7 @@ fieldset {
         min-width: 860px;
         max-width: 960px;
         width: auto;
-        display: table;
+        display: flex;
         margin-bottom: 1em;
     }
     #serendipity_banner {
@@ -759,7 +753,7 @@ fieldset {
     #content,
     #serendipityLeftSideBar,
     #serendipityRightSideBar {
-        display: table-cell;
+        display: inline-block;
     }
     #serendipityLeftSideBar {
         float: left;

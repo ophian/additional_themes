@@ -1,6 +1,6 @@
 Name: Newfangled
 Author:  based on Free CSS Templates. - ported by Reinhard
-Date: 2020-01-30
+Date: 2020-04-17
 Responsive: Yes
 Mobile: Yes
 
