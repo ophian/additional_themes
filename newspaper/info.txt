@@ -1,6 +1,6 @@
 Name: Newspaper Blog
 Author: Jannis Hermanns, Ian Styx
-Date: 2020-04-17
+Date: 2020-04-19
 Responsive: Yes
 Mobile: Yes
 
