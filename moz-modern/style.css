@@ -520,6 +520,9 @@ td.serendipity_commentsLabel {
 
 /** Embedded images with the Serendipity Styx image manager **/
 
+.serendipity_image_block > div {
+    display: inline-block; }
+
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
 .serendipity_imageComment_right {
@@ -537,6 +540,10 @@ td.serendipity_commentsLabel {
 .serendipity_imageComment_center {
     margin: .25em auto;
 }
+figure.serendipity_imageComment_center {
+    width: auto !important;
+    display: table !important;
+}
 .serendipity_imageComment_left {
     float: left;
     margin-right: .5em;
@@ -552,20 +559,13 @@ td.serendipity_commentsLabel {
     font-size: small;
     color: #222;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -850,6 +850,7 @@ td.serendipity_calendarHeader a:hover {
 
 #serendipityRightSideBar {
   width: 200px;
+  max-width: 200px;
   right: 2px;
   padding: 5px;
   margin: 3px;

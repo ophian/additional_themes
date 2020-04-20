@@ -1,6 +1,6 @@
 Name: Mozilla Modern Tribute
 Author: Garvin Hicking
-Date: 2020-01-30
+Date: 2020-04-19
 Responsive: Yes
 Mobile: No
 
