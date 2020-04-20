@@ -729,6 +729,9 @@ h2.comments_permalink {
 
 /** Embedded images with the Serendipity Styx image manager **/
 
+.serendipity_image_block > div {
+    display: inline-block; }
+
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
 .serendipity_imageComment_right {
@@ -760,20 +763,13 @@ h2.comments_permalink {
     padding: .25em;
     font-size: x-small;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
