@@ -123,9 +123,9 @@
 
 {if $template_option.enabletaba === true}
     {if $view2 == "start"}
-        {if $template_option.enablesticky !="true"}
+        {if $template_option.enablesticky !== true}
             {assign var="tab3" value='id="selected"'}
-            {if $template_option.enabletabx3 !="true"}{assign var="tab2" value='id="selected"'} {/if}
+            {if $template_option.enabletabx3 !== true}{assign var="tab2" value='id="selected"'} {/if}
         {/if}
 
         {assign var="view3" value="selected"}
@@ -135,7 +135,7 @@
                     <li id="{$view3}">
                         <a href="{$serendipityBaseURL}{if isset($template_option.tabx1)}{getCategoryLinkByID cid=$template_option.tabx1}{/if}">
                             {assign var="view3" value="noselected"}
-                            {$tab1_cat}
+                            {$tab1_cat|default:$CONST.ENTRIES}
                         </a>
                         <ul>
                             <li>
@@ -178,7 +178,7 @@
                     </li>
                 {/if}
 
-                {if $template_option.enablesticky !="atrue"}
+                {if $template_option.enablesticky !== true}
                     <li id={$view3}><a href="#nogo">
                         {assign var="view3" value="noselected"}
                         {$template_option.stickyheader}
