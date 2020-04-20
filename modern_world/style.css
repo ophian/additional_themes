@@ -195,6 +195,10 @@ body.save_preview_body {
     font-size: initial;
 }
 
+.plugin_comment_body {
+    overflow-wrap: break-word;
+}
+
 .serendipity_edit_nugget {
     text-align: right;
 }
@@ -381,7 +385,7 @@ h2.comments_permalink {
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 .serendipity_imageComment_center {
@@ -395,18 +399,17 @@ h2.comments_permalink {
     float: right;
     margin-left: .5em;
 }
+.serendipity_imageComment_img,
+.serendipity_imageComment_img img {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
 .serendipity_imageComment_txt {
     border-top: 1px solid #777;
     background-color: #efefef;
     padding: .25em;
     font-size: x-small;
-}
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
 }
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
