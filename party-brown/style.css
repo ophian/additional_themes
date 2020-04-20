@@ -531,6 +531,8 @@ td.serendipity_commentsLabel {
 }
 .serendipity_imageComment_center {
     margin: .25em auto;
+}
+figure.serendipity_imageComment_center {
     width: auto !important;
     display: table !important;
 }
