@@ -230,8 +230,7 @@ p code, p samp, p kbd {
 .serendipity_image_block .serendipity_imageComment_right {
     margin-top: auto;
     margin-right: unset;
-    background-color: unset;
-    padding-top: 0; }
+    background-color: unset; }
 
 /** Theme fixes depending presets and theme styles **/
 
