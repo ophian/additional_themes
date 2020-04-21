@@ -1,6 +1,6 @@
 Name: Blogger-Tabacco
 Author: Frederic Wenzel
-Date: 2020-04-17
+Date: 2020-04-20
 Responsive: Yes
 Mobile: Yes
 
