@@ -1,6 +1,6 @@
 Name: HippoRatorium
 Author: Rainer Steinke
-Date: 2020-01-30
+Date: 2020-04-15
 Responsive: Partly Yes
 Mobile: No
 

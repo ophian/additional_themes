@@ -465,20 +465,13 @@ td.serendipity_commentsLabel {
     padding: .25em;
     font-size: small;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -487,7 +480,6 @@ td.serendipity_commentsLabel {
     margin-top: auto;
     margin-right: unset;
     background-color: unset;
-    padding-top: 0;
 }
 .serendipity_entry_body > .serendipity_imageComment_center > .serendipity_imageComment_txt,
 .serendipity_entry_extended > .serendipity_imageComment_center > .serendipity_imageComment_txt {
@@ -496,7 +488,7 @@ td.serendipity_commentsLabel {
 /* inside image blocks closely append .serendipity_imageComment_txt */
 .serendipity_image_block > .serendipity_imageComment_left > .serendipity_imageComment_txt,
 .serendipity_image_block > .serendipity_imageComment_right > .serendipity_imageComment_txt {
-    margin-top: -6px;
+    padding: 0;
 }
 
 .serendipity_image_block {
@@ -661,7 +653,7 @@ body {
     vertical-align: top;
 }
 #serendipity_banner, #header {
-    background: url('{TEMPLATE_PATH}/img/banner.jpg') no-repeat;
+    background: url('{TEMPLATE_PATH}img/banner.jpg') no-repeat;
     font-family: sans-serif;
     color: #fff;
     text-align: left;
