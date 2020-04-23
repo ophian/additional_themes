@@ -144,11 +144,11 @@
                 <div class="serendipity_center serendipity_msg_important">{$message}</div>
                 {/foreach}
 
-               {if $is_comment_added AND NOT $is_moderate_comments}
+               {if $is_comment_added AND NOT $is_moderate_comments === true}
 
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}</div>
 
-                {elseif $is_comment_moderate or ($is_moderate_comments and $is_comment_added)}
+                {elseif $is_comment_moderate OR (isset($is_moderate_comments) AND $is_moderate_comments === true AND $is_comment_added)}
 
                 <div class="serendipity_center serendipity_msg_notice">{$CONST.COMMENT_ADDED}<br>{$CONST.THIS_COMMENT_NEEDS_REVIEW}</div>
 
