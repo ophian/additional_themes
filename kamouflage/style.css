@@ -236,7 +236,8 @@ pre {
     border: 1px solid #69653C;
     padding: .5em; }
 #content .serendipity_entry pre {
-    background: #CCC898; }
+    background: #CCC898;
+    min-width: 10em; }
 /* overwrite possible white-space: pre in highlight.css */
 pre code {
     white-space: pre-wrap !important;
@@ -381,6 +382,10 @@ pre code {
        word-wrap: break-word;  /* this is more or less for Chromium, to explicitly break loooong urls */
        word-break: break-word; /* and words, which do expand the flexing content width on certain screens */
     }
+    /* special case for non-column c(2/3/4) signed col galleries */
+    .serendipity_image_block.col {
+        display: initial;
+    }
 }
 
 /* DESKTOP SCREENS PLUS */
@@ -392,6 +397,9 @@ pre code {
 @media screen and (min-width: 1440px) {
     #wrap {
         width: 94%; }
+    .serendipity_image_block.col {
+        display: block;
+    }
 }
 
 @media screen and (min-width: 1600px) {
@@ -811,7 +819,7 @@ td.Today {
     background: none; }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* The image parent comment box responsiveness for mobile screens - touches all: old styled and new "figure" styled. */
@@ -823,6 +831,10 @@ td.Today {
 .serendipity_imageComment_center {
     width: auto;
     display: block;
+}
+figure.serendipity_imageComment_center {
+    width: auto !important;
+    display: table !important;
 }
 /* Auto scales 400px left and right oriented image thumbs with floated text - DOES NOT touch smaller defined images, which is perfect! */
 .serendipity_entry .serendipity_imageComment_left,
@@ -844,9 +856,6 @@ td.Today {
     }
 }
 
-source.serendipity_image_center {
-    display: contents;
-}
 /* style to center image and text within entry */
 .serendipity_imageComment_center {
     margin: auto; }
