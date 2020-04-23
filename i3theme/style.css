@@ -1017,7 +1017,7 @@ body.preview_preview_body { background: #fff; }
 
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 
