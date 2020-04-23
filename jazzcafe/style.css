@@ -210,6 +210,13 @@ a.serendipity_image_link {
     text-decoration: none;
     border-bottom: initial;
 }
+.serendipity_image_link:hover {
+    border-bottom: transparent;
+}
+
+.plugin_comment_body {
+    overflow-wrap: break-word;
+}
 
 .serendipity_edit_nugget {
     text-align: right;
@@ -478,20 +485,13 @@ td.serendipity_commentsLabel {
     padding: .25em;
     font-size: small;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -500,7 +500,6 @@ td.serendipity_commentsLabel {
     margin-top: auto;
     margin-right: unset;
     background-color: unset;
-    padding-top: 0;
 }
 .serendipity_entry_body > .serendipity_imageComment_center > .serendipity_imageComment_txt,
 .serendipity_entry_extended > .serendipity_imageComment_center > .serendipity_imageComment_txt {
@@ -509,7 +508,7 @@ td.serendipity_commentsLabel {
 /* inside image blocks closely append .serendipity_imageComment_txt */
 .serendipity_image_block > .serendipity_imageComment_left > .serendipity_imageComment_txt,
 .serendipity_image_block > .serendipity_imageComment_right > .serendipity_imageComment_txt {
-    margin-top: -6px;
+    padding: 0;
 }
 
 .serendipity_image_block {
@@ -719,7 +718,7 @@ img.categoryIcon {
     padding-top: .2em;
     font-size: 1.5em;
     letter-spacing: .1em; }
-a {
+a:not(.serendipity_image_link) {
     color: #A72002;
     text-decoration: none;
     border-bottom: 1px dotted #A72002;
