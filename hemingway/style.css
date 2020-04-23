@@ -156,7 +156,7 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; overflow: 
     border-radius: 3px;
     padding: .625em; }
 .serendipity_image_link {
-    display: initial; }
+    display: inline-block; }
 .serendipity_entry_body table,
 .serendipity_entry_extended table {
     border: 1px solid #555;
@@ -1024,8 +1024,8 @@ ul.pages ul li {
     border: 1px solid #111;
     padding: 2px;color:#fff;
     background-color: #444;
-    -moz-opacity:0.4;
-    opacity:40%;
+    -moz-opacity: 0.4;
+    opacity: 40%;
     filter-opacity:0.4;
 }
 .serendipity_livesearch_result a { color:#fff; }
@@ -1040,7 +1040,7 @@ ul.pages ul li {
 
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto; }
 
 .serendipity_imageComment_center {
