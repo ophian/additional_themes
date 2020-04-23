@@ -346,6 +346,7 @@ body.preview_preview_body {
     .serendipity_image_block.col .serendipity_image_link {
         margin: 0;
     }
+    /* special case for non-column c(2/3/4) signed col galleries */
 }
 
 
@@ -615,11 +616,11 @@ a.homelink2, a.homelink2:hover, a.homelink2:link, a.homelink2:visited, #serendip
     display: none; }
 
 /* style for links within entries */
-.serendipity_entry_body a, .serendipity_entry_extended a {
+.serendipity_entry_body a:not(.serendipity_image_link), .serendipity_entry_extended a:not(.serendipity_image_link) {
     padding-right: 11px; }
 
 /* style for links when hovered over within entries */
-.serendipity_entry_body a:hover, .serendipity_entry_extended a:hover {}
+.serendipity_entry_body a:hover:not(.serendipity_image_link), .serendipity_entry_extended a:hover:not(.serendipity_image_link) {}
 
 /* the meta box that includes links to comments, trackbacks etc */
 div.serendipity_entryFooter {
@@ -887,6 +888,10 @@ td.Today {
 .serendipity_imageComment_center {
     margin: .25em auto;
 }
+figure.serendipity_imageComment_center {
+    width: auto !important;
+    display: table !important;
+}
 .serendipity_imageComment_left {
     float: left;
     margin-right: .5em;
@@ -903,20 +908,13 @@ td.Today {
     font-size: 8pt;
     text-align: center;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -925,7 +923,6 @@ td.Today {
     margin-top: auto;
     margin-right: unset;
     background-color: unset;
-    padding-top: 0;
 }
 .serendipity_entry_body > .serendipity_imageComment_center > .serendipity_imageComment_txt,
 .serendipity_entry_extended > .serendipity_imageComment_center > .serendipity_imageComment_txt {
@@ -934,9 +931,13 @@ td.Today {
 /* inside image blocks closely append .serendipity_imageComment_txt */
 .serendipity_image_block > .serendipity_imageComment_left > .serendipity_imageComment_txt,
 .serendipity_image_block > .serendipity_imageComment_right > .serendipity_imageComment_txt {
-    margin-top: -6px;
+    padding: 0;
 }
 
+/* special case for non-column c(2/3/4) signed col galleries */
+.serendipity_image_block.col {
+    display: initial;
+}
 /********* End of Image Manager Styles *********/
 
 /********* Plugin Styles *********/
