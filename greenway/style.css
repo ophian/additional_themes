@@ -188,15 +188,20 @@ p code, p samp, p kbd {
 
 /** Theme fixes depending presets and theme styles **/
 
+html {
+    overflow-x: hidden;
+}
 code, pre {
     font-size: 1em; }
 [type="checkbox"],
 [type="radio"] {
     vertical-align: middle;
     margin-right: 2px; }
-.serendipity_entry_body,
+.serendipity_entry_body {
+    display: block; }
+div,
 .serendipity_entry_extended {
-    display: inline-block; }
+    display: flow-root; }
 .serendipity_comment {
     margin-bottom: 1.5em;
     overflow: hidden; }
@@ -557,20 +562,13 @@ tr.serendipity_calendar td {
     font-size: 8pt;
     text-align: center;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -579,7 +577,6 @@ tr.serendipity_calendar td {
     margin-top: auto;
     margin-right: unset;
     background-color: unset;
-    padding-top: 0;
 }
 .serendipity_entry_body > .serendipity_imageComment_center > .serendipity_imageComment_txt,
 .serendipity_entry_extended > .serendipity_imageComment_center > .serendipity_imageComment_txt {
@@ -588,7 +585,7 @@ tr.serendipity_calendar td {
 /* inside image blocks closely append .serendipity_imageComment_txt */
 .serendipity_image_block > .serendipity_imageComment_left > .serendipity_imageComment_txt,
 .serendipity_image_block > .serendipity_imageComment_right > .serendipity_imageComment_txt {
-    margin-top: -6px;
+    padding: 0;
 }
 
 /* end default image styles*/
@@ -827,10 +824,10 @@ hr {
     padding: 0;
     text-align: justify;
 }
-#left_side img {
+/*#left_side img {
     float: left;
     padding: 0 10px 5px 0;
-}
+}*/
 #left_side blockquote {
     padding-left: 10px;
     border-left: 3px solid #a7cc44;
