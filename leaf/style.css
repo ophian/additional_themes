@@ -241,6 +241,8 @@ p code, p samp, p kbd {
     margin-left: .5em; }
 .serendipity_date {
     text-align: right; }
+.plugin_comment_body {
+    overflow-wrap: break-word; }
 .serendipity_freeTag {
     display: inline-block;
     width: 100%;}
@@ -612,7 +614,7 @@ div.serendipitySideBarItem {
 
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 
