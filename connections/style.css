@@ -241,7 +241,8 @@ p code, p samp, p kbd {
 #sidebar .serendipitySideBarContent {
     border-top: 1px solid #e6e4e1;
     border-bottom: 1px solid #e6e4e1; }
-
+.plugin_comment_body {
+    overflow-wrap: break-word; }
 
 /* backend preview */
 body.save_preview_body {
@@ -713,7 +714,7 @@ td.serendipity_calendarHeader a:link, td.serendipity_calendarHeader a:visited, t
 
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 
