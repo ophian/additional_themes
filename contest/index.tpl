@@ -35,17 +35,27 @@
     <h2><a class="homelink2" href="{$serendipityBaseURL}">{if $view == 'plugin'}{$blogDescription}{else}{$head_subtitle|default:$blogDescription}{/if}</a></h2>
 </div>
 
-<table id="mainpane">
-    <tr>
+<div id="mainpane">
 {if $leftSidebarElements > 0}
-        <td id="serendipityLeftSideBar" valign="top"><div class="sideBarSpacer">{serendipity_printSidebar side="left"}</div></td>
+        <div id="serendipityLeftSideBar">
+            <div class="sideBarSpacer">
+                {serendipity_printSidebar side="left"}
+            </div>
+        </div>
 {/if}
-    <td valign="top" id="content"><div id="contentSpacer">{$CONTENT}</div></td>
+    <div id="content">
+        <div id="contentSpacer">
+            {$CONTENT}
+        </div>
+    </div>
 {if $rightSidebarElements > 0}
-        <td id="serendipityRightSideBar" valign="top"><div class="sideBarSpacer">{serendipity_printSidebar side="right"}</div></td>
+        <div id="serendipityRightSideBar">
+            <div class="sideBarSpacer">
+                {serendipity_printSidebar side="right"}
+            </div>
+        </div>
 {/if}
-    </tr>
-</table>
+</div>
 {/if}
 
 {$raw_data}
@@ -54,6 +64,7 @@
 {if $is_embedded != true}
 <div id="copyright">Design <a href="http://garv.in/">Garvin Hicking</a>, Icons <a href="http://tango-project.org/">Tango Project</a></div>
 
+    <script type="text/javascript" src="{serendipity_getFile file="default.js"}"></script>
 </body>
 </html>
 {/if}

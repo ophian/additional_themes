@@ -1,8 +1,8 @@
 Name: Blue Streak (contest)
-Author: Garvin Hicking
-Date: 2020-01-30
-Require Serendipity: 1.7
+Author: Garvin Hicking, Ian Styx
+Date: 2020-04-18
+Responsive: Yes
+Mobile: Yes
 
 Summary: Old 2-sidebar theme from the early 2003+ years.
-Description: Untouched for additional themes upgrade, since moved out of core relatively late.
-Mobile: No
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
