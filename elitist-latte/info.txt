@@ -1,6 +1,6 @@
 Name: Elitist Latte
-Author: Evan Nemerson
-Date: 2020-02-02
+Author: Evan Nemerson, Ian Styx
+Date: 2020-04-18
 Responsive: Yes
 Mobile: Yes
 
