@@ -239,9 +239,10 @@ body.save_preview_body {
     display: inline-flex;
     flex-flow: wrap;
     justify-content: space-between;
-    padding: 1em;
+    padding: 1em 1em 1em 3em;
     width: 60vw;
-    min-width: 150px;
+    min-width: 280px;
+    overflow-wrap: anywhere;
 }
 
 @media only screen and (min-width: 768px) {
@@ -310,16 +311,18 @@ body.save_preview_body {
     #serendipityLeftSideBar {
         left: -68%; /* width of content */
         padding: 0 .5em 1em 1em;
+        min-width: 150px;
     }
     #content {
         left: 16%; /* width of sidebar left */
         width: 68%;
         margin: 0 auto;
-        padding: .0 1rem;
+        padding: 0 1rem;
     }
     #serendipityRightSideBar {
         right: 0;
         padding: 0 1em 1em .5em;
+        min-width: 150px;
     }
     /* reset the flexing mobile flow */
     #serendipityLeftSideBar,
@@ -577,7 +580,7 @@ td.serendipity_commentsLabel {
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
 .serendipity_imageComment_right {
-    border: 1px solid #666;
+    border: 1px solid #b9b9b9;
     background-color: transparent;
     margin: 0.25em;
     padding: 0.25em;
@@ -651,7 +654,7 @@ td.serendipity_commentsLabel {
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -660,7 +663,6 @@ td.serendipity_commentsLabel {
     margin-top: auto;
     margin-right: unset;
     background-color: unset;
-    padding-top: 0;
 }
 .serendipity_entry_body > .serendipity_imageComment_center > .serendipity_imageComment_txt,
 .serendipity_entry_extended > .serendipity_imageComment_center > .serendipity_imageComment_txt {
@@ -669,7 +671,7 @@ td.serendipity_commentsLabel {
 /* inside image blocks closely append .serendipity_imageComment_txt */
 .serendipity_image_block > .serendipity_imageComment_left > .serendipity_imageComment_txt,
 .serendipity_image_block > .serendipity_imageComment_right > .serendipity_imageComment_txt {
-    margin-top: -6px;
+    padding: 0;
 }
 
 .serendipity_image_block {
