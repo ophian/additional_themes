@@ -292,7 +292,8 @@ blockquote {
     font-size: small; }
 #content .serendipity_freetag_taglist .ftr-empty {
     margin-left: 0; }
-
+.plugin_comment_body {
+    overflow-wrap: break-word; }
 
 /* backend preview */
 body.save_preview_body {
@@ -660,7 +661,7 @@ td.serendipity_calendarHeader a:hover {
 .serendipity_imageComment_center,
 .serendipity_imageComment_left,
 .serendipity_imageComment_right {
-    border: 1px solid #333333;
+    border: 1px solid #ddd;
     background-color: #F5F5F5;
     margin: 5px;
     padding: 5px;
@@ -669,12 +670,16 @@ td.serendipity_calendarHeader a:hover {
 
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 
 .serendipity_imageComment_center {
     margin: auto;
+}
+
+.serendipity_image_link {
+    display: contents;
 }
 
 .serendipity_imageComment_left {
@@ -693,14 +698,16 @@ td.serendipity_calendarHeader a:hover {
 }
 
 .serendipity_imageComment_txt {
-    border-top: 1px solid #333333;
+    border-top: 1px solid #ddd;
     margin-top: 3px;
     padding: 3px;
     clear: both;
     font-size: 8pt;
     text-align: center;
 }
-
+.serendipity_image_block.row .serendipity_image_link {
+    padding: 0;
+}
 
 /* ============================================================ */
 /*                        added styles                          */
@@ -802,7 +809,6 @@ code, pre {
 
 .plugin_comment_body {
     clear: both;
-    overflow-wrap: break-word;
 }
 
 /* comments plugin */
