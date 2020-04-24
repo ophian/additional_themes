@@ -290,6 +290,7 @@ a.homelink1:visited,
     text-decoration: none;
     border: none;
     white-space: nowrap;
+    overflow: hidden;
 }
 
 a.homelink2,
@@ -527,7 +528,8 @@ ul#serendipity_categories_list {
     margin: 0 0 .25em 0; }
 
 .plugin_comment_body {
-    padding: .25em 0; }
+    padding: .25em 0;
+    overflow-wrap: break-word; }
 
 .serendipity_shoutbox_date {
     margin: 5px 0 2px 0; }
@@ -821,20 +823,13 @@ h2.comments_permalink {
     padding: .25em;
     font-size: x-small;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -843,7 +838,6 @@ h2.comments_permalink {
     margin-top: auto;
     margin-right: unset;
     background-color: unset;
-    padding-top: 0;
 }
 .serendipity_entry_body > .serendipity_imageComment_center > .serendipity_imageComment_txt,
 .serendipity_entry_extended > .serendipity_imageComment_center > .serendipity_imageComment_txt {
@@ -852,7 +846,7 @@ h2.comments_permalink {
 /* inside image blocks closely append .serendipity_imageComment_txt */
 .serendipity_image_block > .serendipity_imageComment_left > .serendipity_imageComment_txt,
 .serendipity_image_block > .serendipity_imageComment_right > .serendipity_imageComment_txt {
-    margin-top: -6px;
+    padding: 0;
 }
 
 /** Embedded images with the Serendipity Styx image manager end **/
