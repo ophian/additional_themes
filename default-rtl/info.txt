@@ -1,7 +1,8 @@
 Name: RTL-Languages
 Author: Tom Sommer, Omid Mottaghi
-Date: 2020-01-30
-Require Serendipity: 1.7
+Date: 2020-04-18
+Responsive: Partly Yes
+Mobile: No
 
 Summary: THEME_INFO_SUMMARY (text in lang_info_en.inc.php pattern)
 Description: THEME_INFO_DESC (and LANG_CHARSET depending language files)
