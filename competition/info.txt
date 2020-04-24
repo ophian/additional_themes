@@ -1,8 +1,8 @@
 Name: Coffee Cup (competition)
 Author: David Cummins
-Date: 2020-01-30
-Require Serendipity: 1.7
+Date: 2020-04-18
+Responsive: Yes (partly)
+Mobile: No
 
 Summary: Old 2-sidebar theme from the early 2003+ years.
-Description: Untouched for additional themes upgrade, since moved out of core relatively late.
-Mobile: No
+Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.

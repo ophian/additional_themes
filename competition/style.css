@@ -34,7 +34,7 @@ h2 {
 pre {
     width: auto;
     min-width: 20em;
-    display: inline-block;
+    display: grid;
 }
 
 /* backend preview */
@@ -62,6 +62,7 @@ pre {
     margin-top: 10px;
     width: 90%;
     background-color: #FFFAF0;
+    display: flex;
 }
 #content {
     padding: 5px;
@@ -70,6 +71,8 @@ pre {
 }
 #serendipityRightSideBar {
     width: 180px;
+    min-width: 180px;
+    max-width: 180px;
     border-left: 1px dotted #16425e;
     padding: 10px;
     margin-top: 10px;
@@ -77,6 +80,8 @@ pre {
 }
 #serendipityLeftSideBar {
     width: 180px;
+    min-width: 180px;
+    max-width: 180px;
     border-right: 1px dotted #16425e;
     padding: 10px;
     margin-top: 10px;
@@ -84,7 +89,7 @@ pre {
 }
 body {
     font-size: 10pt;
-    margin: 1;
+    margin: 0;
     background-color: #16425E;
     font-family: verdana, arial, helvetica, sans-serif;
     margin-bottom: 30px;
@@ -110,7 +115,7 @@ p, td, th, div, span {
     height: 116px;
     background-color: #708090;
     background-position: 0px 0px;
-    background-image: url(templates/competition/img/background.png);
+    background-image: url({TEMPLATE_PATH}img/background.png);
     background-repeat: no-repeat;
 }
 a.homelink1,
@@ -167,7 +172,7 @@ a.homelink2:visited,
    color: #431100;
 }
 .serendipity_entry {
-    font-family:Verdana, Arial, Geneva, Helvetica, sans-serif;
+    font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
     color: #333333;
     font-size: small;
     font-weight: normal;
@@ -182,7 +187,7 @@ a.homelink2:visited,
     /* Inner blocks of .serendipity_entry, can be used for further customization */
 }
 div.serendipity_entryFooter {
-    font-family:Verdana, Arial, Geneva, Helvetica, sans-serif;
+    font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
     font-size: x-small;
     color: #000000;
     text-align: center;
@@ -268,7 +273,7 @@ td.serendipity_commentsLabel.toolbar {
     vertical-align: top;
     }
 .serendipity_comment {
-    font-size: X-SMALL;
+    font-size: x-small;
     margin-top: 10px;
     margin-right: 15px;
     margin-left: 15px;
@@ -294,7 +299,7 @@ a:hover {
     text-decoration: underline;
 }
 table.serendipity_calendar td {
-    font-size:x-small;
+    font-size: x-small;
     text-align: center;
     font-family: Arial, Helvetica, verdana, sans-serif;
     padding: 3px;
@@ -312,7 +317,7 @@ table.serendipity_calendar a:hover {
 }
 td.serendipity_weekDayName {
     color: #607080;
-    font-size:x-small;
+    font-size: x-small;
     font-weight: bold;
 }
 td.serendipity_calendarHeader a:link,
@@ -333,7 +338,7 @@ div.serendipitySideBarItem {
     padding-bottom: 12px;
     margin-bottom: 12px;
     font-size: x-small;
-    font-weight:normal;
+    font-weight: normal;
     border-bottom: solid 2px #708090;
 }
 /* title of an individual item */
@@ -374,6 +379,13 @@ div.serendipitySideBarItem {
 
 .serendipity_imageComment_center {
     margin: auto;
+}
+.col.serendipity_image_block {
+    display: initial;
+}
+figure.serendipity_imageComment_center {
+    width: auto !important;
+    display: table !important;
 }
 .serendipity_imageComment_left {
     float: left;
@@ -462,7 +474,6 @@ img.serendipity_freeTag_xmlButton {
     display: inline;
     border: 0px
 }
-
 
 /*** Additional plugin styles needed for the modernized output code ***/
 /*** added by Matthias 'YellowLed' Mees                             ***/
