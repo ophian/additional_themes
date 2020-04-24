@@ -304,6 +304,10 @@ table.serendipity_calendar {
     text-align: center;
 }
 
+.plugin_comment_body {
+    overflow-wrap: break-word;
+}
+
 #serendipity_category_form ul {
     margin: 0 0 1em;
     padding: 0;
@@ -340,6 +344,7 @@ ul#serendipity_syndication_list li:first-of-type,
 }
 .serendipity_entry pre {
     background-color: transparent;
+    min-width: 10em;
 }
 /*
 .serendipity_Entry_Date.freetag_cloud h2.serendipity_date,
@@ -546,6 +551,10 @@ td.serendipity_commentsLabel {
 .serendipity_imageComment_center {
     margin: .25em auto;
 }
+figure.serendipity_imageComment_center {
+    width: auto !important;
+    display: table !important;
+}
 .serendipity_imageComment_left {
     float: left;
     margin-right: .5em;
@@ -561,20 +570,13 @@ td.serendipity_commentsLabel {
     font-size: small;
     color: #222;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -583,7 +585,6 @@ td.serendipity_commentsLabel {
     margin-top: auto;
     margin-right: unset;
     background-color: unset;
-    padding-top: 0;
 }
 .serendipity_entry_body > .serendipity_imageComment_center > .serendipity_imageComment_txt,
 .serendipity_entry_extended > .serendipity_imageComment_center > .serendipity_imageComment_txt {
@@ -592,7 +593,7 @@ td.serendipity_commentsLabel {
 /* inside image blocks closely append .serendipity_imageComment_txt */
 .serendipity_image_block > .serendipity_imageComment_left > .serendipity_imageComment_txt,
 .serendipity_image_block > .serendipity_imageComment_right > .serendipity_imageComment_txt {
-    margin-top: -6px;
+    padding: 0;
 }
 
 .serendipity_image_block {
@@ -721,13 +722,13 @@ fieldset {
 @media screen and (min-width: 980px) {
     #mainpane {
         width: 100%;
-        display: table;
+        display: flex;
         margin-bottom: 1em;
     }
     #content,
     #serendipityLeftSideBar,
     #serendipityRightSideBar {
-        display: table-cell;
+        display: inline-block;
     }
     #serendipityLeftSideBar {
         float: left;
@@ -758,6 +759,10 @@ fieldset {
         float: inherit;
     }
 
+    /* special case for non-column c(2/3/4) signed col galleries */
+    .serendipity_image_block.col {
+        display: initial;
+    }
     .serendipity_title,
     .serendipity_entry {
         /*border: 1px solid #443029;*/
@@ -765,6 +770,11 @@ fieldset {
     .serendipity_entry table {
         display: inline-table;
         margin-top: .5em;
+    }
+}
+@media screen and (min-width: 1240px) {
+    .serendipity_image_block.col {
+        display: block;
     }
 }
 
@@ -828,7 +838,7 @@ h4.serendipity_title a {
     text-decoration: none; }
 
 #serendipity_banner {
-    background-image: url('{TEMPLATE_PATH}/img/earphone.jpg');
+    background-image: url('{TEMPLATE_PATH}img/earphone.jpg');
     background-repeat: no-repeat;
     background-position: right bottom;
     margin: 0;

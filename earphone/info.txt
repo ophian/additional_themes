@@ -1,6 +1,6 @@
 Name: Earphone
-Author: Sebastian Nohn
-Date: 2020-02-02
+Author: Sebastian Nohn, Ian Styx
+Date: 2020-04-18
 Responsive: Yes
 Mobile: Yes
 
