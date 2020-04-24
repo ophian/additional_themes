@@ -537,6 +537,12 @@ td.serendipity_commentsLabel {
     float: right;
     margin-left: .5em;
 }
+.serendipity_imageComment_img,
+.serendipity_imageComment_img img {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
 .serendipity_imageComment_txt {
     border-top: 1px solid #ccc;
     background-color: #efefef;
@@ -544,12 +550,9 @@ td.serendipity_commentsLabel {
     font-size: small;
     color: #222;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
+figure.serendipity_imageComment_center {
+    width: auto !important;
+    display: table !important;
 }
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
@@ -557,7 +560,7 @@ td.serendipity_commentsLabel {
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -566,7 +569,6 @@ td.serendipity_commentsLabel {
     margin-top: auto;
     margin-right: unset;
     background-color: unset;
-    padding-top: 0;
 }
 .serendipity_entry_body > .serendipity_imageComment_center > .serendipity_imageComment_txt,
 .serendipity_entry_extended > .serendipity_imageComment_center > .serendipity_imageComment_txt {
@@ -575,7 +577,7 @@ td.serendipity_commentsLabel {
 /* inside image blocks closely append .serendipity_imageComment_txt */
 .serendipity_image_block > .serendipity_imageComment_left > .serendipity_imageComment_txt,
 .serendipity_image_block > .serendipity_imageComment_right > .serendipity_imageComment_txt {
-    margin-top: -6px;
+    padding: 0;
 }
 
 .serendipity_image_block {
@@ -743,9 +745,18 @@ fieldset {
         float: inherit;
     }
 
+    /* special case for non-column c(2/3/4) signed col galleries */
+    .serendipity_image_block.col {
+        display: initial;
+    }
     .serendipity_entry table {
         display: inline-table;
         margin-top: .5em;
+    }
+}
+@media screen and (min-width: 1304px) {
+    .serendipity_image_block.col {
+        display: block;
     }
 }
 
