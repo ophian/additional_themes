@@ -330,6 +330,8 @@ h3.serendipity_date {
     padding-bottom: 10px; }
 .serendipity_calendar {
     max-width: 300px; }
+.plugin_comment_body {
+    overflow-wrap: break-word; }
 #serendipity_syndication_list li {
     margin-bottom: .25em; }
 #serendipity_categories_list {
@@ -825,7 +827,7 @@ div.serendipitySideBarItem {
 
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 
