@@ -7,4 +7,4 @@
 
 $info['theme_info_summary'] = 'CSS complete theme only.';
 
-$info['theme_info_desc'] = 'Simple example theme from 2004 using all the template files from the old default fallback (Serendipity 2.3) theme. Styled by CSS only.';
+$info['theme_info_desc'] = 'Simple example theme from 2004 using all the template files from the default theme. Styled by CSS only. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.';
