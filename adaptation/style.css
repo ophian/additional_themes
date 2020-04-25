@@ -148,7 +148,7 @@ img, video {
 
 /* defaults */
 
-pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; display: grid; }
 #c0 { /* a new unsaved comment preview only */
     border: 1px solid #ddd;
     -webkit-border-radius: 3px;
@@ -156,7 +156,7 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
     border-radius: 3px;
     padding: .625em; }
 .serendipity_image_link {
-    display: initial; }
+    display: inline-block; }
 .serendipity_entry table {
     border: 1px solid #aaa;
     display: inline-grid;
@@ -200,6 +200,8 @@ p code, p samp, p kbd {
 
 /** Theme fixes depending presets and theme styles **/
 
+html {
+    overflow-x: hidden; }
 [type="checkbox"],
 [type="radio"] {
     vertical-align: middle; }
@@ -232,6 +234,8 @@ body, h2, h3, h4, h5, h6, .post h2, .sidebar h2, .commentlist li, #serendipity_c
     font-size: small; }
 #content .serendipity_freetag_taglist .ftr-empty {
     margin-left: 0; }
+.plugin_comment_body {
+    overflow-wrap: break-word; }
 
 /** Embedded images with the Serendipity Styx image manager **/
 
@@ -251,6 +255,10 @@ body, h2, h3, h4, h5, h6, .post h2, .sidebar h2, .commentlist li, #serendipity_c
 }
 .serendipity_imageComment_center {
     margin: .25em auto;
+}
+figure.serendipity_imageComment_center {
+    width: auto !important;
+    display: table !important;
 }
 .serendipity_imageComment_left {
     float: left;
@@ -274,20 +282,13 @@ body, h2, h3, h4, h5, h6, .post h2, .sidebar h2, .commentlist li, #serendipity_c
     font-size: 8pt;
     text-align: center;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -344,6 +345,18 @@ body, h2, h3, h4, h5, h6, .post h2, .sidebar h2, .commentlist li, #serendipity_c
     visibility: hidden; }
 #content.preview_preview_content .preview_entry .entry {
     padding-bottom: inherit; }
+
+@media screen and (min-width: 980px) {
+   /* special case for non-column c(2/3/4) signed col galleries */
+    .serendipity_image_block.col {
+        display: initial;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .serendipity_image_block.col {
+        display: block;
+    }
+}
 
 
 /*  
