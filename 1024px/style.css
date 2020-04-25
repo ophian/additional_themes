@@ -206,6 +206,8 @@ p code, p samp, p kbd {
     margin: .5em 0;
     padding: .5em;
     border: 1px solid #ddd; }
+.plugin_comment_body {
+    overflow-wrap: break-word; }
 .serendipity_entry_body pre {
     display: inline-block; }
 .staticpage_sbJsList .dtree a.node {
@@ -242,6 +244,10 @@ p code, p samp, p kbd {
 #content .serendipity_freetag_taglist .ftr-empty {
     margin-left: 0; }
 
+/* special case for non-column c(2/3/4) signed col galleries */
+.serendipity_image_block.col {
+    display: initial;
+}
 
 /* SMALL SCREENS ONLY */
 @media only screen and (max-width: 551px) {
@@ -322,7 +328,7 @@ blockquote {
     border-left: 5px solid #dadada;
     margin: 20px 10px;
     padding: 8px;
-    width: 600px;
+    max-width: 600px;
 }
 
 /******** Main wrap ********/
@@ -331,6 +337,8 @@ blockquote {
     width: 970px;
     margin: 10px auto;
     padding: 0;
+    width: 100%;
+    max-width: 1000px;
 }
 
 #pagetop {
@@ -392,11 +400,12 @@ blockquote {
 /******** Content variations ********/
 #content {
     line-height: 1.5em;
-    width: 750px;
+    width: 92%;
+    max-width: 750px;
     float: right;
     text-align: left;
-    margin: 0;
-    padding: 0;
+    margin: 0 1em auto auto;
+    padding: 0 .5em;
 }
 
 #contentalt {
@@ -542,6 +551,10 @@ code {
 .serendipity_imageComment_center {
     margin: .25em auto;
 }
+figure.serendipity_imageComment_center {
+    width: auto !important;
+    display: table !important;
+}
 .serendipity_imageComment_left {
     float: left;
     margin-right: .5em;
@@ -558,20 +571,13 @@ code {
     font-size: 8pt;
     text-align: center;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -580,7 +586,6 @@ code {
     margin-top: auto;
     margin-right: unset;
     background-color: unset;
-    padding-top: 0;
 }
 .serendipity_entry_body > .serendipity_imageComment_center > .serendipity_imageComment_txt,
 .serendipity_entry_extended > .serendipity_imageComment_center > .serendipity_imageComment_txt {
@@ -589,7 +594,7 @@ code {
 /* inside image blocks closely append .serendipity_imageComment_txt */
 .serendipity_image_block > .serendipity_imageComment_left > .serendipity_imageComment_txt,
 .serendipity_image_block > .serendipity_imageComment_right > .serendipity_imageComment_txt {
-    margin-top: -6px;
+    padding: 0;
 }
 
 /********* End of Image Manager Styles *********/
