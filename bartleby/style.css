@@ -361,11 +361,12 @@ fieldset,
 .serendipity_imageComment_left {
     display: block;
     float: left;
-    margin: 0 0 1em;
+    margin: 0 .5em 1em 0;
 }
 
 .serendipity_image_right, .serendipity_imageComment_right {
     float: right;
+    margin: 0 0 1em .5em;
 }
 
 .serendipity_image_center {
