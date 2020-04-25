@@ -407,20 +407,13 @@ h2.comments_permalink {
     padding: .25em;
     font-size: x-small;
 }
-/* image parent comment box responsiveness for mobile screens */
-.serendipity_imageComment_left,
-.serendipity_imageComment_center,
-.serendipity_imageComment_right {
-    width: auto !important; /* force overwrite delivered inline styles */
-    display: table;
-}
 /* overwrite fallback plain image padding */
 .serendipity_image_center {
     padding: .25em;
 }
 /* style to center */
 .serendipity_image_center {
-    display: inherit;
+    display: block;
     margin: 0 auto 1em auto;
 }
 /* overwrite fallback gallery comment container margins and some of this comment styles */
@@ -429,7 +422,6 @@ h2.comments_permalink {
     margin-top: auto;
     margin-right: unset;
     background-color: unset;
-    padding-top: 0;
 }
 .serendipity_entry_body > .serendipity_imageComment_center > .serendipity_imageComment_txt,
 .serendipity_entry_extended > .serendipity_imageComment_center > .serendipity_imageComment_txt {
@@ -438,7 +430,7 @@ h2.comments_permalink {
 /* inside image blocks closely append .serendipity_imageComment_txt */
 .serendipity_image_block > .serendipity_imageComment_left > .serendipity_imageComment_txt,
 .serendipity_image_block > .serendipity_imageComment_right > .serendipity_imageComment_txt {
-    margin-top: -6px;
+    padding: 0;
 }
 
 /** Embedded images with the Serendipity Styx image manager end **/
@@ -2132,7 +2124,7 @@ img.serendipity_freeTag_xmlButton{border: none;padding-left: 2px}
 .container_serendipity_plugin_comments{color: #333}
 .container_serendipity_plugin_comments br{line-height: .5em}
 .plugin_comment_wrap{display: block;border-top: 1px solid #ddecfb;border-bottom: 1px solid #ddecfb;background-color: #fafbfc;color: #505050;margin: 15px 0 0}
-.plugin_comment_body{font-style: oblique;padding: 3px 0}
+.plugin_comment_body{font-style: oblique;padding: 3px 0;overflow-wrap: break-word;}
 .container_serendipity_plugin_archives ul,.container_serendipity_plugin_syndication ul,.container_serendipity_plugin_authors ul,.container_serendipity_plugin_entrylinks ul{list-style: none;margin-left: 0;padding-left: 12px}
 .container_serendipity_plugin_authors .serendipitySideBarContent div{padding-left: 12px;margin: 5px 0}
 .serendipity_history_intro,.serendipity_history_info{margin-bottom: 3px}
