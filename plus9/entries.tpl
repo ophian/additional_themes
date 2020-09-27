@@ -110,6 +110,11 @@
                 <div id="serendipity_trackbacklist">
                 {serendipity_printTrackbacks entry=$entry.id}
                 </div>
+            {else}
+                <p class="comment_meta">
+                    <a rel="nofollow" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape} &raquo;{$entry.rdf_ident|escape}&laquo;">{$CONST.TRACKBACK_SPECIFIC}</a>
+                </p>
+
             {/if}
             </div>
 
