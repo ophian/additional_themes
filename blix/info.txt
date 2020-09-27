@@ -1,6 +1,6 @@
 Name: Blix
 Author: Sebastian Schmieg (ported by Christian Hoffmann)
-Date: 2020-04-21
+Date: 2020-09-27
 Responsive: Partly Yes
 Mobile: No
 
