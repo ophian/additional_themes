@@ -1,11 +1,10 @@
-# 2019 - Additional themes for [Serendipity Styx](https://ophian.github.io/themes/)
+# 2020 - Additional themes for [Serendipity Styx](https://ophian.github.io/themes/)
 
-The themes contained here are automatically synced by Serendipity Styx 3.0 (dev) Spartacus.
-An update for the Styx website will follow later, when having sorted out how to get around different branches.
+The themes contained here are automatically synced by Serendipity Styx 3.0 Spartacus.
 
 ## UPGRADE NOTE:
 
-**DO NOT** use as a drop-in replacement for previous Themes. Wait for use with a current **Serendipity Styx 3.0** (dev+) Edition.
+**DO NOT** use as a drop-in replacement for previous Themes. Wait for use with a current **Serendipity Styx 3.0** Edition.
 All additional_themes were **upgraded** to **HTML5**, were fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
 
 **DO NOT (!)** just drop them over previous installs!
