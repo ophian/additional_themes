@@ -1,6 +1,6 @@
 Name: JazzCafe
 Author: Piotr Polak and Ahmet Usal
-Date: 2020-04-17
+Date: 2020-10-06
 Responsive: Partly Yes
 Mobile: No
 
