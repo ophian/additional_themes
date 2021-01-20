@@ -1,6 +1,6 @@
 Name: Styled Bar (colorsets)
 Author: Mads Sigvert
-Date: 2020-04-15
+Date: 2021-01-19
 Responsive: Yes
 Mobile: Yes
 
