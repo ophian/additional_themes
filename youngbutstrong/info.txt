@@ -1,6 +1,6 @@
 Name: YoungButStrong port
 Author: Stefan2k1 (Ported by fwaggle)
-Date: 2020-04-15
+Date: 2021-01-19
 Responsive: Partly Yes
 Mobile: No
 
