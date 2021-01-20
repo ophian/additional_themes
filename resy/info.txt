@@ -1,7 +1,7 @@
 Name: RESY
 Author: Manuel Hiptmair, based on a template by Jonathan Verrecchia
 Require Serendipity: 1.6
-Date: 2020-04-16
+Date: 2021-01-19
 Responsive: Yes
 Mobile: Yes
 
