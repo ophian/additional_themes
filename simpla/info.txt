@@ -1,6 +1,6 @@
 Name: Simpla
 Author: Phu ported by Kunze Media
-Date: 2020-10-06
+Date: 2021-01-19
 Require Serendipity: 1.5
 Responsive: Partly Yes
 Mobile: No
