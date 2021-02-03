@@ -13,7 +13,7 @@
                     <small>{$comment.timestamp|formatTime:'%d %b %y'} {$CONST.AT} <a href="#c{$comment.id|default:0}">{$comment.timestamp|formatTime:'%H:%M'}</a>{if isset($entry) AND NOT empty($entry.is_entry_owner) AND NOT empty($comment.id)} <a class="comment_source_ownerlink" href="{$comment.link_delete}" onclick="return confirm('{$CONST.COMMENT_DELETE_CONFIRM|sprintf:$comment.id|default:'':$comment.author}');">{$CONST.DELETE}</a>{/if}</small>
 
                 {if isset($comment.id) AND NOT empty($entry.allow_comments) AND $comment.body != 'COMMENT_DELETED'}
-                    <small><a class="comment_reply" href="#serendipity_CommentForm" id="serendipity_reply_{$comment.id}" onclick="document.getElementById('serendipity_replyTo').value='{$comment.id}'; {$comment_onchange|default:''}">{$CONST.REPLY}</a></small>
+                    <small><a class="comment_reply" href="#serendipity_CommentForm" id="serendipity_reply_{$comment.id}" onclick="document.getElementById('serendipity_replyTo').value='{$comment.id}';{if NOT empty($comment_onchange)} {$comment_onchange|default:''}{/if}">{$CONST.REPLY}</a></small>
                     <div id="serendipity_replyform_{$comment.id}"></div>
                 {/if}
                 </div>
