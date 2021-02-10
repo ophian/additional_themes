@@ -62,10 +62,13 @@
 {$raw_data}
 {serendipity_hookPlugin hook="frontend_footer"}
 
-{if $is_embedded != true}
-<div id="copyright">Design <a href="http://garv.in/">Garvin Hicking</a>, Icons <a href="http://tango-project.org/">Tango Project</a></div>
+{if $is_embedded !== true AND NOT isset($mode)}
 
-    <script type="text/javascript" src="{serendipity_getFile file="default.js"}"></script>
+<div id="copyright">Design <a href="http://garv.in/">Garvin Hicking</a>, Icons <a href="http://tango-project.org/">Tango Project</a></div>
+<script type="text/javascript" src="{serendipity_getFile file="default.js"}"></script>
+{/if}
+{if $is_embedded !== true}
+
 </body>
 </html>
 {/if}
