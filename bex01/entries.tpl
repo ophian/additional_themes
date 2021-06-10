@@ -9,7 +9,7 @@
         <h2 class="serendipity_date"><span class="serendipity_datetab">{$dategroup.date|formatTime:DATE_FORMAT_ENTRY}</span></h2>
     {/if}
     {foreach $dategroup.entries AS $entry}
-        {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
+        {if $is_single_entry AND $view == 'entry'}{assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" - $entry array relates in trackbacks - and index.tpl Rich Text Editor asset includes *}{/if}
 
         <h2 class="serendipity_commentsTitle"><a href="{$entry.link}">{$entry.title|default:$entry.body|truncate:200:" ..."}</a></h2>
 
