@@ -6,7 +6,7 @@
     <div class="serendipity_Entry_Date">
 
         {foreach $dategroup.entries AS $entry}
-        {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
+        {if $is_single_entry AND $view == 'entry'}{assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" - $entry array relates in trackbacks - and index.tpl Rich Text Editor asset includes *}{/if}
         <h3 class="serendipity_title"><a href="{$entry.link}">{$entry.title}</a></h3>
 
         {if $dategroup.is_sticky}
