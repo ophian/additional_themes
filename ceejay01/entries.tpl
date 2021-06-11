@@ -4,7 +4,7 @@
     {foreach $entries AS $dategroup}
     <div class="serendipity_Entry_Date">
         {foreach $dategroup.entries AS $entry}
-        {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
+        {if $is_single_entry AND $view == 'entry'}{assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" - $entry array relates in trackbacks - and index.tpl Rich Text Editor asset includes *}{/if}
         <h3><a href="{$entry.link}">{$entry.title|default:$entry.id}</a> <span class="postdate">{if $dategroup.is_sticky}{$CONST.STICKY_POSTINGS}{else}{$dategroup.date|formatTime:DATE_FORMAT_CEEJAY01_TITLE}{/if}</span></h3>
         <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename}{if NOT empty($entry.is_entry_owner)} serendipity_entry_author_self{/if}">
             {if NOT empty($entry.categories)}
