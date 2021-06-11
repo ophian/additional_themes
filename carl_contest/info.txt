@@ -1,6 +1,6 @@
 Name: Serendipity v3.0 (carl_contest)
 Author: Carl Galloway
-Date: 2021-01-19
+Date: 2021-06-10
 Require Serendipity: 1.7
 
 Summary: Old 2-sidebar theme from the early 2003+ years.
