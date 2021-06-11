@@ -4,7 +4,7 @@
     {foreach $entries AS $dategroup}
     <div class="serendipity_Entry_Date">
         {foreach $dategroup.entries AS $entry}
-        {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
+        {if $is_single_entry AND $view == 'entry'}{assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" - $entry array relates in trackbacks - and index.tpl Rich Text Editor asset includes *}{/if}
         {assign "daymonth" $dategroup.date|formatTime:"%A%B"|count_characters}{* trying to make date block move when long - depending language though *}
         <p class="post-date{if $daymonth > 12} lmonth{/if} {$daymonth}">{if $dategroup.is_sticky}{$CONST.STICKY_POSTINGS}{else}{$dategroup.date|formatTime:DATE_FORMAT_ENTRY}{/if}</p>
 
