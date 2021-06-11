@@ -4,7 +4,7 @@
     {foreach $entries AS $dategroup}
     <div class="boxed">
         {foreach $dategroup.entries AS $entry}
-            {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
+            {if $is_single_entry AND $view == 'entry'}{assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" - $entry array relates in trackbacks - and index.tpl Rich Text Editor asset includes *}{/if}
             <h2 class="title"><a href="{$entry.link}" >{$entry.title}</a></h2>
             <div class="content">
                 <div class="serendipity_Entry_Date">

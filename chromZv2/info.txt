@@ -1,6 +1,6 @@
 Name: ChromZv2
 Author: Reinhard Linnemann, Design Free CSS Templates
-Date: 2021-01-19
+Date: 2021-06-10
 Responsive: Partly Yes
 Mobile: No
 
