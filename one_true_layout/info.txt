@@ -1,6 +1,6 @@
 Name: One True Layout
 Author: Carl Galloway & Matthias Mees
-Date: 2021-01-19
+Date: 2021-06-10
 Responsive: Yes
 Mobile: Yes (partly)
 
