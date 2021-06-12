@@ -1,6 +1,6 @@
 Name: Informatif
 Author: Free CSS Templates ported by Reinhard Linnemann 
-Date: 2021-01-19
+Date: 2021-06-10
 
 Responsive: Yes
 Mobile: Yes
