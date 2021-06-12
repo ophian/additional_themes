@@ -5,7 +5,7 @@
         <div class="morselDate">
             <h3>{$dategroup.date|formatTime:DATE_FORMAT_ENTRY}</h3>
             {foreach $dategroup.entries AS $entry}
-            {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
+            {if $is_single_entry AND $view == 'entry'}{assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" - $entry array relates in trackbacks - and index.tpl Rich Text Editor asset includes *}{/if}
             <div class="aMorsel">
                 <h4><a href="{$entry.link}" rel="external">{$entry.title}</a></h4>
                 <div class="morselBody">
