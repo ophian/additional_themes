@@ -1,6 +1,6 @@
 Name: Photo
 Author: onli
-Date: 2021-01-19
+Date: 2021-06-10
 Engine: 2k11
 Require Serendipity: 2.0
 Responsive: Yes
