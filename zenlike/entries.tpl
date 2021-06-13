@@ -3,7 +3,7 @@
 {if NOT empty($entries)}{* catch a staticpage startpage which has no $entries array set *}
     {foreach $entries AS $dategroup}
         {foreach $dategroup.entries AS $entry}
-        {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
+        {if $is_single_entry AND $view == 'entry'}{assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" - $entry array relates in trackbacks - and index.tpl Rich Text Editor asset includes *}{/if}
     <div class="post">
         <h4><a href="{$entry.link}">{$entry.title}</a> {if $dategroup.is_sticky}({$CONST.STICKY_POSTINGS}){/if}</h4>
         <div class="contentarea">
