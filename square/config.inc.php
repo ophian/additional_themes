@@ -80,7 +80,7 @@ $template_config = array(
                 If tweaking the amount you have to remove them manually and their usage as navlink items in the index.tpl file. */
 
 /* when using a $template_config_array(), even without the global set navigation items, you need to keep this following code */
-$top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
+$top = $serendipity['smarty_vars']['template_option'] ?? '';
 $template_config_groups = NULL;
 $template_global_config = array('navigation' => false); // false, when not using the global navigation
 $template_loaded_config = serendipity_loadThemeOptions($template_config, $top); // Add additional third parameter ", true" to support boolean defaults, if have
