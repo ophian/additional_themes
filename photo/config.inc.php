@@ -133,7 +133,7 @@ $template_config = array(
 
 $template_config['sidebars'] = array('hide,bottom');
 $serendipity['sidebars'] = array('hide', 'bottom');
-$top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
+$top = $serendipity['smarty_vars']['template_option'] ?? '';
 $template_config_groups = NULL;
 $template_global_config = array('navigation' => true);
 $template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
@@ -146,7 +146,7 @@ if (!function_exists('serendipity_plugin_api_pre_event_hook')) {
     switch($event) {
         case 'js':
             $template_config = array();
-            $top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
+            $top = $serendipity['smarty_vars']['template_option'] ?? '';
             $template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
 
             if (isset($template_loaded_config['lazyload']) && $template_loaded_config['lazyload'] === true) {
@@ -185,7 +185,7 @@ echo "(function( $ ) {
             
         case 'frontend_display':
             $template_config = array();
-            $top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
+            $top = $serendipity['smarty_vars']['template_option'] ?? '';
             $template_loaded_config = serendipity_loadThemeOptions($template_config, $top, true);
 
             if (! isset($template_loaded_config['lazyload']) || $template_loaded_config['lazyload'] === true) {
