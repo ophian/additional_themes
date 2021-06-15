@@ -49,7 +49,7 @@ $template_config = array(
     ),
 );
 
-$top = isset($serendipity['smarty_vars']['template_option']) ? $serendipity['smarty_vars']['template_option'] : '';
+$top = $serendipity['smarty_vars']['template_option'] ?? '';
 $template_config_groups = NULL;
 $template_global_config = array('navigation' => false);
 $template_loaded_config = serendipity_loadThemeOptions($template_config, $top, false);
