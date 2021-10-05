@@ -9,7 +9,7 @@
         </cite>
         <div class="content">
             <em><a href="{$trackback.url|strip_tags}" {'blank'|xhtml_target}>{$trackback.title}</a></em><br />
-            {$trackback.body|strip_tags|escape:all}<br />
+            {$trackback.body|strip_tags|escape:'htmlall'}<br />
             {if NOT empty($entry.is_entry_owner)}(<a href="{$trackback.link_delete}">{$CONST.DELETE}</a>){/if}
         </div>
         <div class="clear"></div>
