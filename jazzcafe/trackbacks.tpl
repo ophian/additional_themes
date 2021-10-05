@@ -3,7 +3,7 @@
         <a id="c{$trackback.id}"></a>
         <cite><a href="{$trackback.url|strip_tags}" {'blank'|xhtml_target}>{$trackback.title}</a></cite>{if $trackback.type == 'TRACKBACK'}<br>{/if}
         <div class="serendipity_commentBody">
-            {$trackback.body|strip_tags|escape:all} [&hellip;]
+            {$trackback.body|strip_tags|escape:'htmlall'} [&hellip;]
         </div>
         <div class="commentmetadata">
             <strong>{$CONST.WEBLOG}:</strong> {$trackback.author|default:$CONST.ANONYMOUS}<br>
