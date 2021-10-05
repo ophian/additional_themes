@@ -3,7 +3,7 @@
    <li id="c{$trackback.id}">
        <div class="comment_mod"></div>
 
-       <div class="comment_text">{if $trackback.type == 'PINGBACK'}{$trackback.type}{else}{$trackback.body|strip_tags|escape:all}{/if}</div>
+       <div class="comment_text">{if $trackback.type == 'PINGBACK'}{$trackback.type}{else}{$trackback.body|strip_tags|escape:'htmlall'}{/if}</div>
 
        <div class="comment_author">
            <strong><a href="{$trackback.url|strip_tags}" {'blank'|xhtml_target}>{$trackback.author|default:$CONST.ANONYMOUS}</a></strong>
