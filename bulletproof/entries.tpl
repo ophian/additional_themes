@@ -85,8 +85,8 @@
                         {if $template_option.addthiswidget == 'true'}
                             <div class="addthiswidget">
                                 <script type="text/javascript">
-                                    addthis_url = '{$entry.rdf_ident|escape:url}';
-                                    addthis_title = '{$entry.title|escape:url}';
+                                    addthis_url = '{$entry.rdf_ident|escape:"url"}';
+                                    addthis_title = '{$entry.title|escape:"url"}';
                                     addthis_pub = '{$template_option.addthisaccount|escape}';
                                 </script>
                                 <script type="text/javascript" src="//s7.addthis.com/js/addthis_widget.php?v=12" ></script>
@@ -211,7 +211,7 @@
 
                         {if $template_option.addthiswidget == 'true'}
                             <div class="addthiswidget">
-                                <a href="//www.addthis.com/bookmark.php?v=250" onmouseover="return addthis_open(this, '', encodeURIComponent('{$entry.rdf_ident}'), encodeURIComponent('{$entry.title|escape:url}'));" onmouseout="addthis_close()" onclick="return addthis_sendto()" title="Bookmark and Share" target="_blank" rel="noopener"><img src="//s7.addthis.com/static/btn/lg-bookmark-en.gif" width="125" height="16" alt="Bookmark and Share" /></a>
+                                <a href="//www.addthis.com/bookmark.php?v=250" onmouseover="return addthis_open(this, '', encodeURIComponent('{$entry.rdf_ident}'), encodeURIComponent('{$entry.title|escape:"url"}'));" onmouseout="addthis_close()" onclick="return addthis_sendto()" title="Bookmark and Share" target="_blank" rel="noopener"><img src="//s7.addthis.com/static/btn/lg-bookmark-en.gif" width="125" height="16" alt="Bookmark and Share" /></a>
                                 <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js?pub={$template_option.addthisaccount|escape}"></script>
                             </div>
                         {/if}
@@ -266,8 +266,8 @@
                         {if $template_option.addthiswidget == 'true'}
                             <div class="addthiswidget">
                                 <script type="text/javascript">
-                                    addthis_url = '{$entry.rdf_ident|escape:url}';
-                                    addthis_title = '{$entry.title|escape:url}';
+                                    addthis_url = '{$entry.rdf_ident|escape:"url"}';
+                                    addthis_title = '{$entry.title|escape:"url"}';
                                     addthis_pub = '{$template_option.addthisaccount|escape}';
                                 </script>
                                 <script type="text/javascript" src="//s7.addthis.com/js/addthis_widget.php?v=12" ></script>
