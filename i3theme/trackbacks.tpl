@@ -7,7 +7,7 @@
            {if NOT empty($entry.is_entry_owner)}&bull; <a href="{$trackback.link_delete}">{$CONST.DELETE}</a>{/if}
        </small>
        <p><a href="{$trackback.url|strip_tags}" {'blank'|xhtml_target}>{$trackback.title}</a><br />
-          {$trackback.body|strip_tags|escape:all}</p>
+          {$trackback.body|strip_tags|escape:'htmlall'}</p>
    </li>
 {foreachelse}
    <li class="alt">{$CONST.NO_TRACKBACKS}</li>
