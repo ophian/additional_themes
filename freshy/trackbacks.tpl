@@ -13,7 +13,7 @@
             <strong class="author">
                 <a href="{$trackback.url|strip_tags}" {'blank'|xhtml_target}>{$trackback.title}</a>
             </strong> <div class="comment_text">
-                {$trackback.body|strip_tags|escape:all}
+                {$trackback.body|strip_tags|escape:'htmlall'}
             </div>
             <b>Weblog:</b> {$trackback.author|default:$CONST.ANONYMOUS}<br />
             <b>{$CONST.TRACKED}:</b> {$trackback.timestamp|formatTime:'%b %d, %H:%M'}
