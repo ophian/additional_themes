@@ -123,6 +123,10 @@ table td { display: table-cell; vertical-align: top; }
 [type="submit"] {
   width: auto !important; }
 
+html {
+    overflow-x: hidden;
+}
+
 body.save_preview_body {
     background: 0 none;
     background-color: #fff;
@@ -639,6 +643,12 @@ figure.serendipity_imageComment_center {
     width: auto;
     max-width: initial;
 }
+
+/* special fix for media column galleries with comment containered images to overwrite the image inline width !! */
+.serendipity_image_block.col .serendipity_imageComment_left, .serendipity_image_block.col .serendipity_imageComment_right {
+    width: auto !important;
+}
+
 /** Embedded images with the Serendipity Styx image manager end **/
 
 h2.comments_permalink {
