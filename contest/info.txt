@@ -1,6 +1,6 @@
 Name: Blue Streak (contest)
 Author: Garvin Hicking, Ian Styx
-Date: 2021-06-10
+Date: 2021-11-16
 Responsive: Yes
 Mobile: Yes
 
