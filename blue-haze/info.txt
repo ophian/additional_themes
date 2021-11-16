@@ -1,6 +1,6 @@
 Name: Blue Haze
 Author: Evan Nemerson, Ian Styx
-Date: 2020-04-19
+Date: 2021-11-16
 Responsive: Yes
 Mobile: Yes
 
