@@ -123,6 +123,10 @@ table td { display: table-cell; vertical-align: top; }
 [type="submit"] {
   width: auto !important; }
 
+html {
+    overflow-x: hidden;
+}
+
 body.save_preview_body {
     background: 0 none;
     background-color: #fff;
@@ -235,6 +239,7 @@ hr {
 }
 #serendipityLeftSideBar,
 #serendipityRightSideBar {
+    display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
