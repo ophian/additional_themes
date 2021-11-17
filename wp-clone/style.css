@@ -236,6 +236,7 @@ hr {
 }
 #serendipityLeftSideBar,
 #serendipityRightSideBar {
+    display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -587,6 +588,11 @@ figure.serendipity_imageComment_center {
 
 .serendipity_image_block {
     max-width: 100%;
+}
+
+/* special fix for media column galleries with comment containered images to overwrite the image inline width !! */
+.serendipity_image_block.col .serendipity_imageComment_left, .serendipity_image_block.col .serendipity_imageComment_right {
+    width: auto !important;
 }
 
 /** Embedded images with the Serendipity Styx image manager end **/
