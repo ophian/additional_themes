@@ -25,6 +25,10 @@ video, img {
     height: auto;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
   color: #999;
   background: white;
@@ -389,6 +393,11 @@ img.serendipity_entryIcon {
     float: right;
     border: 0px;
     padding: 0.3em;
+}
+
+/* special fix for media column galleries with comment containered images to overwrite the image inline width !! */
+.serendipity_image_block.col .serendipity_imageComment_left, .serendipity_image_block.col .serendipity_imageComment_right {
+    width: auto !important;
 }
 
 .serendipity_admin_list_item_even {
