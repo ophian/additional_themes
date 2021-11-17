@@ -188,8 +188,13 @@ p code, p samp, p kbd {
 
 /** Theme fixes depending presets and theme styles **/
 
+html {
+    overflow-x: hidden;
+}
+
 html,body {width:fit-content;}
 #wrap {
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -879,6 +884,10 @@ figure.serendipity_imageComment_center {
     clear: both;
     font-size: 8pt;
     text-align: center; }
+/* special fix for media column galleries with comment containered images to overwrite the image inline width !! */
+.serendipity_image_block.col .serendipity_imageComment_left, .serendipity_image_block.col .serendipity_imageComment_right {
+    width: auto !important;
+}
 /********* End of Media Manager Styles *********/
 
 /********* Plugin Styles *********/
