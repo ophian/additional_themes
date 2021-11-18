@@ -845,6 +845,10 @@ td.serendipity_calendarHeader a:link, td.serendipity_calendarHeader a:visited, t
     text-align: center;
     line-height:120%; }
 
+.serendipity_image_block.col .serendipity_imageComment_left,
+.serendipity_image_block.col .serendipity_imageComment_right {
+    background: #666; }
+
 /********* End of Media Manager Styles *********/
 
 
