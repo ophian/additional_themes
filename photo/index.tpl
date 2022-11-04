@@ -7,7 +7,7 @@
 <head>
     <meta charset="{$head_charset}">
     <title>{$head_title|default:$blogTitle}{if $head_subtitle} | {$head_subtitle}{/if}</title>
-    <meta name="generator" content="Serendipity v.{$head_version}">
+    <meta name="generator" content="Serendipity Styx v.{$serendipityVersion}">
 {if in_array($view, ['start', 'entries', 'entry', 'feed', 'plugin']) OR NOT empty($staticpage_pagetitle) OR (isset($robots_index) AND $robots_index == 'index')}
     <meta name="robots" content="index,follow">
 {else}
