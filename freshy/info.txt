@@ -1,6 +1,6 @@
 Name: Freshy
 Author: Julien De Luca (ported by Abdussamad Abdurrazzaq)
-Date: 2021-10-04
+Date: 2023-03-10
 
 Responsive: Partly Yes
 Mobile: No
