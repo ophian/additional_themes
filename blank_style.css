@@ -251,7 +251,7 @@ td.serendipity_commentsLabel {
 
 }
 
-td.serendipity_commentsValue input:not(type="button"),
+td.serendipity_commentsValue input:not([type="button"]),
 td.serendipity_commentsValue select,
 td.serendipity_commentsValue textarea {
 
