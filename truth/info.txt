@@ -1,6 +1,6 @@
 Name: Truth (contains author link notes)
 Author: Eddie Traversa
-Date: 2021-10-04
+Date: 2023-03-10
 Responsive: Yes
 Mobile: No
 
