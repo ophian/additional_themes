@@ -1,6 +1,6 @@
 Name: Pixel
 Author: 85ideas.com (Ported to s9y by YellowLed, sponsored by serendipity-templates.org)
-Date: 2023-03-10
+Date: 2024-03-17
 
 Summary: Additional old theme from 2010-11-30 to 2013-10-26 with a fixed size of ~960px width. Ported to s9y by YellowLed.
 Description: Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.
