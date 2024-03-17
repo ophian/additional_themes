@@ -1,6 +1,6 @@
 Name: Bartleby
 Author: onli
-Date: 2023-03-10
+Date: 2024-03-17
 Engine: 2k11
 Require Serendipity: 2.0
 Responsive: Yes
