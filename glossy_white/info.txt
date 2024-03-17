@@ -1,6 +1,6 @@
 Name: Glossy white
 Author: Christian Hoffmann (ported by Ziyad Saeed)
-Date: 2023-03-10
+Date: 2024-03-17
 Responsive: Partly Yes
 Mobile: No
 
