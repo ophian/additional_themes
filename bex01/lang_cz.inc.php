@@ -1,10 +1,10 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/16
  */
-@define('SAYS', '¯Ìk·');
+@define('SAYS', '≈ô√≠k√°');
 @define('SORRY', 'Omluva');
-@define('READ_MORE', 'Ëti d·l');
+@define('READ_MORE', 'ƒçti d√°l');
 
