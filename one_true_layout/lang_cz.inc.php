@@ -1,13 +1,13 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/15
  */
 @define('THEME_COLORSET', 'Barva');
-@define('THEME_COLORSET_DESC', 'Vyberte barevné schéma pro Vá¹ blog');
-@define('FOOTER_POSITION', 'Poloha patièky pøíspìvkù');
-@define('FOOTER_POSITION_DESC', 'Malı obdelník v pravém horním rohu nebo pod pøíspìvkem?');
-@define('SMALL_BOX', 'Obdelník vpravo nahoøe');
-@define('BELOW_ENTRY', 'Patièka = pod pøíspìvkem');
+@define('THEME_COLORSET_DESC', 'Vyberte barevnÃ© schÃ©ma pro VÃ¡Å¡ blog');
+@define('FOOTER_POSITION', 'Poloha patiÄky pÅ™Ã­spÄ›vkÅ¯');
+@define('FOOTER_POSITION_DESC', 'MalÃ½ obdelnÃ­k v pravÃ©m hornÃ­m rohu nebo pod pÅ™Ã­spÄ›vkem?');
+@define('SMALL_BOX', 'ObdelnÃ­k vpravo nahoÅ™e');
+@define('BELOW_ENTRY', 'PatiÄka = pod pÅ™Ã­spÄ›vkem');
 
