@@ -1,10 +1,10 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/15
  */
 @define('THEME_COLORSET', 'Barva');
-@define('THEME_COLORSET_DESC', 'Vyberte barevné schéma pro Vá¹ blog');
-@define('BE_FIRST_TO_COMMENT', 'zatím ¾ádné komentáøe, buï první!');
+@define('THEME_COLORSET_DESC', 'Vyberte barevnÃ© schÃ©ma pro VÃ¡Å¡ blog');
+@define('BE_FIRST_TO_COMMENT', 'zatÃ­m Å¾Ã¡dnÃ© komentÃ¡Å™e, buÄ prvnÃ­!');
 
