@@ -1,8 +1,8 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/14
  */
-@define('STICKY_POST', 'Pøilepený:');
+@define('STICKY_POST', 'PÅ™ilepenÃ½:');
 
