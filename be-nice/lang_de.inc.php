@@ -1,6 +1,6 @@
 <?php
 
-@define('NAV_DEFAULT_0', 'Über mich');
+@define('NAV_DEFAULT_0', 'Ãœber mich');
 @define('NAV_DEFAULT_1', 'Fotos');
 @define('NAV_DEFAULT_2', 'Musik');
 @define('NAV_DEFAULT_3', 'Kontakt');

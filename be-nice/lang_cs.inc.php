@@ -1,17 +1,17 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/15
  */
-@define('NAV_DEFAULT_0', 'O mì');
+@define('NAV_DEFAULT_0', 'O mÄ›');
 @define('NAV_DEFAULT_1', 'Fotky');
 @define('NAV_DEFAULT_2', 'Hudba');
 @define('NAV_DEFAULT_3', 'Kontakt');
-@define('FILED_UNDER', 'a je zaøazen v');
+@define('FILED_UNDER', 'a je zaÅ™azen v');
 @define('SORRY', 'Omluva');
-@define('SAYS', 'øíká');
-@define('REPLIED', 'Odpovìdìl');
-@define('ADDS_THIS', 'pøidal tento komentáø');
-@define('BE_FIRST_TO_COMMENT', 'zatím ádné komentáøe, buï první!');
+@define('SAYS', 'Å™Ã­kÃ¡');
+@define('REPLIED', 'OdpovÄ›dÄ›l');
+@define('ADDS_THIS', 'pÅ™idal tento komentÃ¡Å™');
+@define('BE_FIRST_TO_COMMENT', 'zatÃ­m Å¾Ã¡dnÃ© komentÃ¡Å™e, buÄ prvnÃ­!');
 
