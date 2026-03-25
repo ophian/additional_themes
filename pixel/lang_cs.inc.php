@@ -1,18 +1,18 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2010/12/25
  */
-@define('PIX_MORE', 'Více');
-@define('PIX_FORTHIS', 'pro tento pøíspìvek');
-@define('PIX_TOCONTENT', 'Pøeskoèit na obsah');
+@define('PIX_MORE', 'VÃ­ce');
+@define('PIX_FORTHIS', 'pro tento pÅ™Ã­spÄ›vek');
+@define('PIX_TOCONTENT', 'PÅ™eskoÄit na obsah');
 @define('PIX_NFTITLE', 'Nenalezeno');
-@define('PIX_NFTEXT', 'Bohuel tato stránka na blogu neexistuje.');
+@define('PIX_NFTEXT', 'BohuÅ¾el tato strÃ¡nka na blogu neexistuje.');
 @define('PIX_MYFBID', 'Feedburner-ID');
-@define('PIX_SUBMAIL', 'Pøihlásit se ke kanálu pomocí emailu');
-@define('PIX_SHOWWELCOME', 'Zobrazovat uvítací blok?');
-@define('PIX_WELCOMETITLE', 'Nadpis uvítacího bloku');
-@define('PIX_WELCOMETEXT', 'Uvítací blok');
-@define('PIX_SEARCHHINT', 'Nenašli jste to, co jste hledali? Napište komentáø k pøíspìvku nebo nás kontaktujte mailem!');
+@define('PIX_SUBMAIL', 'PÅ™ihlÃ¡sit se ke kanÃ¡lu pomocÃ­ emailu');
+@define('PIX_SHOWWELCOME', 'Zobrazovat uvÃ­tacÃ­ blok?');
+@define('PIX_WELCOMETITLE', 'Nadpis uvÃ­tacÃ­ho bloku');
+@define('PIX_WELCOMETEXT', 'UvÃ­tacÃ­ blok');
+@define('PIX_SEARCHHINT', 'NenaÅ¡li jste to, co jste hledali? NapiÅ¡te komentÃ¡Å™ k pÅ™Ã­spÄ›vku nebo nÃ¡s kontaktujte mailem!');
 

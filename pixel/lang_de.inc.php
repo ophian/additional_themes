@@ -1,7 +1,7 @@
 <?php
 
 @define('PIX_MORE', 'Mehr');
-@define('PIX_FORTHIS', 'für diesen Eintrag');
+@define('PIX_FORTHIS', 'fÃ¼r diesen Eintrag');
 @define('PIX_TOCONTENT', 'Zum Inhalt springen');
 @define('PIX_NFTITLE', 'Nicht gefunden');
 @define('PIX_NFTEXT', 'Entschuldigung, aber diese Seite gibt es in diesem Blog nicht.');
