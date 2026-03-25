@@ -1,12 +1,12 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/14
  */
-@define('ENTRY_POSTED_BY', 'Tento pøíspìvek napsal');
-@define('FILED_UNDER', 'a je zaøazen v');
-@define('LEAVE_RESPONSE', 'Mù¾ete %snechat odpovìï%s nebo %sodezvu%s z Va¹eho vlastního blogu.');
-@define('SUBJECT_TO_MODERATION', 'V¹echny nové komentáøe musí bıt pøed zobrazením schváleny.');
-@define('COMMENTS_CLOSED', 'Jak komentáøe, tak odezvy jsou zakázány.');
+@define('ENTRY_POSTED_BY', 'Tento pÅ™Ã­spÄ›vek napsal');
+@define('FILED_UNDER', 'a je zaÅ™azen v');
+@define('LEAVE_RESPONSE', 'MÅ¯Å¾ete %snechat odpovÄ›Ä%s nebo %sodezvu%s z VaÅ¡eho vlastnÃ­ho blogu.');
+@define('SUBJECT_TO_MODERATION', 'VÅ¡echny novÃ© komentÃ¡Å™e musÃ­ bÃ½t pÅ™ed zobrazenÃ­m schvÃ¡leny.');
+@define('COMMENTS_CLOSED', 'Jak komentÃ¡Å™e, tak odezvy jsou zakÃ¡zÃ¡ny.');
 
