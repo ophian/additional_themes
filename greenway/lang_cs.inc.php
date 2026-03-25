@@ -1,19 +1,19 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/25
  */
 @define('NAV_LINK_DESC', 'Zadejte text odkazu');
-@define('NAV_LINK_URL_DESC', 'Zadejte plnou URL adresu, na kterou m· mÌ¯it odkaz.');
-@define('SAYS', '¯Ìk·');
-@define('NAV_LINK_IMG', 'Obr·zek pro aktivnÌ odkaz');
-@define('NAV_LINK_IMG_DESC', 'Obr·zek je zobrazen, pokud je odkaz aktivnÌ. P¯ÌpustnÈ hodnoty: 90 aû 99. PouûitÌ: ˙okud je hodnota 94, pak musÌ existovat soubor greenway/images/pic94.jpg');
-@define('NAV_LINK_BAR', 'Text aktivnÌho odkazu');
-@define('NAV_LINK_BAR_DESC', 'Tento text se zobrazuje v öedivÈm obdelnÌku, pokud je odkaz aktivnÌ');
+@define('NAV_LINK_URL_DESC', 'Zadejte plnou URL adresu, na kterou m√° m√≠≈ôit odkaz.');
+@define('SAYS', '≈ô√≠k√°');
+@define('NAV_LINK_IMG', 'Obr√°zek pro aktivn√≠ odkaz');
+@define('NAV_LINK_IMG_DESC', 'Obr√°zek je zobrazen, pokud je odkaz aktivn√≠. P≈ô√≠pustn√© hodnoty: 90 a≈æ 99. Pou≈æit√≠: √∫okud je hodnota 94, pak mus√≠ existovat soubor greenway/images/pic94.jpg');
+@define('NAV_LINK_BAR', 'Text aktivn√≠ho odkazu');
+@define('NAV_LINK_BAR_DESC', 'Tento text se zobrazuje v ≈°ediv√©m obdeln√≠ku, pokud je odkaz aktivn√≠');
 @define('ICONS_LINK_TEXT', 'Ikona');
-@define('ICONS_LINK_URL_DESC', '»Ìslo ikony v pravÈm hornÌm rohu');
+@define('ICONS_LINK_URL_DESC', 'ƒå√≠slo ikony v prav√©m horn√≠m rohu');
 @define('ICONS_LINK_URL', 'URL adresa ikony');
 @define('ICONS_LINK_IMG', 'Soubor s ikonou');
-@define('ICONS_LINK_IMG_DESC', 'Pokud zad·te 4, pak musÌ existovat soubor greenway/images/ico4.jpg.');
+@define('ICONS_LINK_IMG_DESC', 'Pokud zad√°te 4, pak mus√≠ existovat soubor greenway/images/ico4.jpg.');
 
