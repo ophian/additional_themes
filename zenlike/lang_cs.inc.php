@@ -1,10 +1,10 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/15
  */
-@define('HEADCONT_TEXT', 'Pøídavnı text (bude zobrazen v samostatné oblasti nad pøíspìvky)');
-@define('HEADCONT_TITLE', 'Nadpis pro pøídavnı text');
-@define('USE_HEADCONT', 'Vloit pøídavnı text a jeho nadpis do blogu?');
+@define('HEADCONT_TEXT', 'PÅ™Ã­davnÃ½ text (bude zobrazen v samostatnÃ© oblasti nad pÅ™Ã­spÄ›vky)');
+@define('HEADCONT_TITLE', 'Nadpis pro pÅ™Ã­davnÃ½ text');
+@define('USE_HEADCONT', 'VloÅ¾it pÅ™Ã­davnÃ½ text a jeho nadpis do blogu?');
 
