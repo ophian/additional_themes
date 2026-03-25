@@ -1,6 +1,6 @@
 <?php
 
-@define('J_INSTR', '<strong>Plugins to install</strong>: <br>to make the menu bar working correct, you have to install the plugin : <em><br><br>Archive </em>(hidden sidebar) <br>- Show number of entries per category?&nbsp; No <br>- Hide archives link when no entries were made:&nbsp; No<br><br><em>Categories </em>(hidden sidebar)<br>- XML-Button :none<br>- Allow visitors to display multiple categories at once? No<br>- Enable Smarty-Templates? &nbsp; Yes<br /><br><em>Staticpage&nbsp; </em>&nbsp;<br />Icons or plain Text <b>: </b>Plain Text<br>Use plugin image directory : No<br><br><b>Note:</b> For the tags to display correctly in the template, you need to go to the configuration of the event plugins Tagging of entries and set the option Show tags in footer to <strong>Smarty</strong>.<br><b><br>');
+@define('J_INSTR', '<strong>Plugins to install</strong>: <br>to make the menu bar working correct, you have to install the plugin : <em><br><br>Archive </em>(hidden sidebar) <br>- Show number of entries per category?&nbsp; No <br>- Hide archives link when no entries were made:&nbsp; No<br><br><em>Categories </em>(hidden sidebar)<br>- XML-Button :none<br>- Allow visitors to display multiple categories at once? No<br>- Enable Smarty-Templates? &nbsp; Yes<br /><br><em>Staticpage&nbsp; </em>&nbsp;<br />Icons or plain Text <b>: </b>Plain Text<br>Use plugin image directory : No<br><br><b>Note:</b>For the tags to display correctly in the template, you need to go to the configuration of the event plugins Tagging of entries and set the option Show tags in footer to <strong>Smarty</strong>.<br><b><br>');
 @define('J_MENUTITLE', 'Title for the menu in the sidebar');
 @define('J_MENUTEXT', 'Pages');
 @define('J_SEARCHFIELD', 'Enter keyword to search');
@@ -12,7 +12,6 @@
 @define('J_POSTED', 'Posted');
 @define('J_COMMTS', 'Comments');
 @define('J_TO', 'to');
-
 @define('WPP_DDD', 'Advertising');
 @define('ADDVTEXT', 'your Google code');
 @define('DROP_D1', 'Enter number of links for the User Drop Down Menu');

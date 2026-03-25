@@ -1,7 +1,7 @@
 <?php
 
-@define('J_INSTR', '<b>zu installierende Plugins:</b> Damit das Menü korrekt funktioniert, müssen folgende Plugins installiert sein: <em><br>Archive </em>(Spalte versteckt) <br>- <strong>Anzahl der Einträge pro Kategorie anzeigen?&nbsp; Nein <br>- Versteckt den Archiv-Link, wenn es keine Einträge für einen Zeitraum gab:&nbsp; Nein<br><br></strong>K<em><strong>ategorien </strong></em><strong><br>- XML-Button</strong> :none<br><strong>- Besuchern erlauben, mehrere Kategorien gleichzeit darzustellen? Nein</strong><br>-<strong>Smarty-Templating aktivieren?</strong>&nbsp; Ja<br /><br /><b>Hinweis:</b> Damit im Template die Anzeige der Tags korrekt funktioniert, muss in der Konfiguration des Event-Plugins <em>Freie Artikel-Tags</em> die Option <em>Zeige die Tags in der Fußzeile an?</em> auf <em>Smarty</em> gesetzt werden');
-@define('J_MENUTITLE', 'Titel für das Menü in der Seitenleiste');
+@define('J_INSTR', '<strong>zu installierende Plugins</strong>: <br>Damit das MenÃ¼ korrekt funktioniert, mÃ¼ssen folgende Plugins installiert sein: <em><br>Archive </em>(Spalte versteckt) <br>- Anzahl der EintrÃ¤ge pro Kategorie anzeigen?&nbsp; Nein <br>- Versteckt den Archiv-Link, wenn es keine EintrÃ¤ge fÃ¼r einen Zeitraum gab:&nbsp; Nein<br><br>K<em>ategorien </em>(Spalte versteckt)<br>- XML-Button :none<br>- Besuchern erlauben, mehrere Kategorien gleichzeit darzustellen? Nein<br>-Smarty-Templating aktivieren?&nbsp; Ja<br /><br><em>Statischen Seiten&nbsp; </em>&nbsp;<br />Icons bzw. Klartext <b>: </b>Klartext<br>Grafiken fÃ¼r Baumstruktur aktivieren: Nein<b><br><br>Hinweis:</b> Damit im Template die Anzeige der Tags korrekt funktioniert, muss in der Konfiguration des Event-Plugins <em>Freie Artikel-Tags</em> die Option <em>Zeige die Tags in der FuÃŸzeile an?</em> auf <em>Smarty</em> gesetzt werden<br><br>');
+@define('J_MENUTITLE', 'Titel fÃ¼r das MenÃ¼ in der Seitenleiste');
 @define('J_MENUTEXT', 'Seiten');
 @define('J_SEARCHFIELD', 'Suchbegriffe eingeben');
 @define('J_SEARCHINFO', 'Archive der Seite durchsuchen');
@@ -12,7 +12,6 @@
 @define('J_POSTED', 'Abgelegt');
 @define('J_COMMTS', 'Kommentaren');
 @define('J_TO', 'zu');
-
 @define('WPP_DDD', 'Werbungsblock');
 @define('ADDVTEXT', 'your Google code');
 @define('DRNAV_LINK_TEXT', 'Text des Drop Down-Links');
@@ -23,11 +22,11 @@
 @define('ENABLE_CAT', 'Anzeige der Kategorien im Menue');
 @define('ENABLE_ARCH', 'Anzeige der Archive im Menue');
 @define('ENABLE_STAT', 'Anzeige der statischen Seiten im Menue');
-@define('ENABLE_USER', 'Anzeige des User Drop Down Menü Punktes. (Einträge und Anzahl weiter unten)');
-@define('ENABLE_LOG', 'Anzeige des Login und Verwaltungsmenus im Menue');
-@define('STAT_HEADER', 'Beschriftung Drop Down Menüpunkt der statischen Seiten');
+@define('ENABLE_USER', 'Anzeige des User Drop Down MenÃ¼ Punktes. (EintrÃ¤ge und Anzahl weiter unten)');
+@define('ENABLE_LOG', 'Anzeige des Login und VerwaltungsmenÃ¼s im Menue');
+@define('STAT_HEADER', 'Beschriftung Drop Down Menuepunkt der statischen Seiten');
 @define('MY_ADDTHIS_ACCOUNT', 'Dein AddThis.com Name. Hast Du keinen mach Dir dort einen');
 @define('ENABLE_AD', 'Anzeige des ADDTHIS Buttons?');
-@define('SHOW_PAGITOP', 'Zusätzliche Seitennummerierung im Fuss anzeigen');
-@define('SHOW_PAGIBOTTOM', 'Zusätzliche Seitennummerierung im Content-Kopf anzeigen');
+@define('SHOW_PAGIBOTTOM', 'Zusaetzliche Seitennummerierung im Fuss anzeigen');
+@define('SHOW_PAGITOP', 'Zusaetzliche Seitennummerierung im Content-Kopf anzeigen');
 

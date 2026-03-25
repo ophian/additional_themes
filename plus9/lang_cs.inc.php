@@ -1,37 +1,36 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/05
- */
-@define('J_INSTR', '<strong>Pluginy,  které je tøeba nainstalovat</strong>: <br>aby navigaèní menu fungovalo správnì,  musí bıt nainstalované pluginy: <em><br><br>Archiv </em>(postranní blok skrytı) <br>- Zobrazovat poèet pøíspìvkù v kategoriích?&nbsp; Ne <br>- Skrıt odkaz na archiv,  pokud neobsahuje ádné pøíspìvky:&nbsp; Ne<br><br><em>Kategorie </em>(skrytı postranní sloupec)<br>- XML-Tlaèítka : ádná<br>- Umonit návštìvníkùm zobrazit více kateogirií najednou? Ne<br>- Povolit šablony Smarty? &nbsp; Ano<br /><br><em>Statické stránky&nbsp; </em>&nbsp;<br />Ikony nebo èistı text <b>: </b>Èistı text<br>Pouívat podadresáø s obrázky v adresáøi pluginu: <b>Ne<br><br></b>Pokud chcete pouít <strong>statické stránky</strong> v navigaèní lištì,  musíte zmìnit øádku 252 v souboru&nbsp; <em><strong>/plugins/serendipity_event_staticpage/serendipity_plugin_staticpage.php&nbsp;&nbsp; </strong></em>z <br>starı kód: <strong><em>? sprintf(&nbsp; &quot;&lt;a href=\&quot;%s\&quot; title=\&quot;%s\&quot; style=\&quot;padding-left: %dpx;\&quot;&gt;%s&lt;/a&gt;&lt;br /&gt;\n&quot;,  </em></strong><br><br>na <br>novı kód: <strong><em>? sprintf( &quot;&lt;li&gt; &lt;a href=\&quot;%s\&quot; &gt;%s&lt;/a&gt;&lt;/li&gt;\n&quot;, </em></strong><b><br><br><br>Poznámky:</b>Aby se v šablonì zobrazily správnì tagy,  musíte jít na nastavení pluginu Tagování pøíspìvkù (klíèová slova) a nastavit volbu "Zobrazovat tagy v patièce" na <strong>Smarty</strong>.<br><b><br>');
-@define('J_MENUTITLE', 'Nadpis menu v postranním sloupci');
-@define('J_MENUTEXT', 'Stránky');
-@define('J_SEARCHFIELD', 'Zadejte slovo k vyhledávání');
+ */@define('J_INSTR', '<strong>Pluginy,  kterÃ© je tÅ™eba nainstalovat</strong>: <br>aby navigaÄnÃ­ menu fungovalo sprÃ¡vnÄ›,  musÃ­ bÃ½t nainstalovanÃ© pluginy: <em><br><br>Archiv </em>(postrannÃ­ blok skrytÃ½) <br>- Zobrazovat poÄet pÅ™Ã­spÄ›vkÅ¯ v kategoriÃ­ch?&nbsp; Ne <br>- SkrÃ½t odkaz na archiv,  pokud neobsahuje Å¾Ã¡dnÃ© pÅ™Ã­spÄ›vky:&nbsp; Ne<br><br><em>Kategorie </em>(skrytÃ½ postrannÃ­ sloupec)<br>- XML-TlaÄÃ­tka : Å¾Ã¡dnÃ¡<br>- UmoÅ¾nit nÃ¡vÅ¡tÄ›vnÃ­kÅ¯m zobrazit vÃ­ce kateogiriÃ­ najednou? Ne<br>- Povolit Å¡ablony Smarty? &nbsp; Ano<br /><br><em>StatickÃ© strÃ¡nky&nbsp; </em>&nbsp;<br />Ikony nebo ÄistÃ½ text <b>: </b>ÄŒistÃ½ text<br>PouÅ¾Ã­vat podadresÃ¡Å™ s obrÃ¡zky v adresÃ¡Å™i pluginu: <b>Ne<br><br></b>Pokud chcete pouÅ¾Ã­t <strong>statickÃ© strÃ¡nky</strong> v navigaÄnÃ­ liÅ¡tÄ›,  musÃ­te zmÄ›nit Å™Ã¡dku 252 v souboru&nbsp; <em><strong>/plugins/serendipity_event_staticpage/serendipity_plugin_staticpage.php&nbsp;&nbsp; </strong></em>z <br>starÃ½ kÃ³d: <strong><em>? sprintf(&nbsp; &quot;&lt;a href=\&quot;%s\&quot; title=\&quot;%s\&quot; style=\&quot;padding-left: %dpx;\&quot;&gt;%s&lt;/a&gt;&lt;br /&gt;\n&quot;,  </em></strong><br><br>na <br>novÃ½ kÃ³d: <strong><em>? sprintf( &quot;&lt;li&gt; &lt;a href=\&quot;%s\&quot; &gt;%s&lt;/a&gt;&lt;/li&gt;\n&quot;, </em></strong><b><br><br><br>PoznÃ¡mky:</b>Aby se v Å¡ablonÄ› zobrazily sprÃ¡vnÄ› tagy,  musÃ­te jÃ­t na nastavenÃ­ pluginu TagovÃ¡nÃ­ pÅ™Ã­spÄ›vkÅ¯ (klÃ­ÄovÃ¡ slova) a nastavit volbu "Zobrazovat tagy v patiÄce" na <strong>Smarty</strong>.<br><b><br>');
+@define('J_MENUTITLE', 'Nadpis menu v postrannÃ­m sloupci');
+@define('J_MENUTEXT', 'StrÃ¡nky');
+@define('J_SEARCHFIELD', 'Zadejte slovo k vyhledÃ¡vÃ¡nÃ­');
 @define('J_SEARCHINFO', 'prohledat archivy');
 @define('J_SUBMITTEXT', 'Hledej');
-@define('J_SUBMITALT', 'Klikni pro prohledání archivù');
+@define('J_SUBMITALT', 'Klikni pro prohledÃ¡nÃ­ archivÅ¯');
 @define('J_WITH', 's');
 @define('J_WITHOUT', 'bez');
-@define('J_POSTED', 'Publikováno');
-@define('J_COMMTS', 'Komentáøe');
+@define('J_POSTED', 'PublikovÃ¡no');
+@define('J_COMMTS', 'KomentÃ¡Å™e');
 @define('J_TO', 'pro');
 
 @define('WPP_DDD', 'Reklamy');
-@define('ADDVTEXT', 'google kód');
-@define('DROP_D1', 'Zadejte poèet odkazù pro Rozbalovací menu');
-@define('USER_DROP', 'Povolit Rozbalovací menu');
-@define('DROP_HEADER', 'Název rozbalovacího odkazu');
+@define('ADDVTEXT', 'google kÃ³d');
+@define('DROP_D1', 'Zadejte poÄet odkazÅ¯ pro RozbalovacÃ­ menu');
+@define('USER_DROP', 'Povolit RozbalovacÃ­ menu');
+@define('DROP_HEADER', 'NÃ¡zev rozbalovacÃ­ho odkazu');
 @define('ENABLE_CAT', 'Zobrazit kategorie v menu');
 @define('ENABLE_ARCH', 'Zobrazit archivy v menu');
-@define('ENABLE_STAT', 'Zobrazit statické stránky v menu');
-@define('ENABLE_USER', 'Zobrazit rozbalovací menu (pøíspìvky a èísla stránek)');
-@define('ENABLE_LOG', 'Zobrazit pøihlášení v menu');
-@define('DRNAV_LINK_TEXT', 'Text Rozbalovacího odkazu');
-@define('DRNAV_LINK_URL', 'URL Rozbalovacího odkazu');
-@define('STAT_HEADER', 'Nadpis rozbalovacího menu pro statické stránky');
-@define('ENABLE_AD', 'Zobrazit tlaèítko "addthis"?');
-@define('MY_ADDTHIS_ACCOUNT', 'Váš addthis úèet. Pokud ho nemáte,  mùete si ho zaloit na http://www.addthis.com');
-@define('SHOW_PAGITOP', 'Zobrazit doplòující èísla stránek v záhlaví obsahu');
-@define('SHOW_PAGIBOTTOM', 'Zobrazit doplòující èísla stránek v patièce');
+@define('ENABLE_STAT', 'Zobrazit statickÃ© strÃ¡nky v menu');
+@define('ENABLE_USER', 'Zobrazit rozbalovacÃ­ menu (pÅ™Ã­spÄ›vky a ÄÃ­sla strÃ¡nek)');
+@define('ENABLE_LOG', 'Zobrazit pÅ™ihlÃ¡Å¡enÃ­ v menu');
+@define('DRNAV_LINK_TEXT', 'Text RozbalovacÃ­ho odkazu');
+@define('DRNAV_LINK_URL', 'URL RozbalovacÃ­ho odkazu');
+@define('STAT_HEADER', 'Nadpis rozbalovacÃ­ho menu pro statickÃ© strÃ¡nky');
+@define('ENABLE_AD', 'Zobrazit tlaÄÃ­tko "addthis"?');
+@define('MY_ADDTHIS_ACCOUNT', 'VÃ¡Å¡ addthis ÃºÄet. Pokud ho nemÃ¡te,  mÅ¯Å¾ete si ho zaloÅ¾it na http://www.addthis.com');
+@define('SHOW_PAGITOP', 'Zobrazit doplÅˆujÃ­cÃ­ ÄÃ­sla strÃ¡nek v zÃ¡hlavÃ­ obsahu');
+@define('SHOW_PAGIBOTTOM', 'Zobrazit doplÅˆujÃ­cÃ­ ÄÃ­sla strÃ¡nek v patiÄce');
 
