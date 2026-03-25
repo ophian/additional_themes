@@ -1,9 +1,9 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/14
  */
 @define('DATE_FORMAT_ENTRY_LILIES', '%d %B %Y');
-@define('FILED_UNDER', 'a je zaøazen v');
+@define('FILED_UNDER', 'a je zaÅ™azen v');
 
