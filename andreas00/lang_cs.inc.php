@@ -1,11 +1,11 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/14
  */
-@define('SAYS', 'øíká');
+@define('SAYS', 'Å™Ã­kÃ¡');
 @define('SORRY', 'Omluva');
-@define('READ_MORE', 'èti dál');
-@define('STICKY_POST', 'Pøilepenı:');
+@define('READ_MORE', 'Äti dÃ¡l');
+@define('STICKY_POST', 'PÅ™ilepenÃ½:');
 
